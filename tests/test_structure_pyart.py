@@ -39,6 +39,13 @@ KIWA_TOP_TILT_DEG = 19.51
 CSAPR_NYQUIST_MS = 16.52
 CSAPR_TILTS = 17
 
+# Matches "22x Nyquist", "22x-Nyquist", "22x the Nyquist" and
+# "22x the 16.52 m/s Nyquist" (also "m s", "m s^-1" and LaTeX "m s$^{-1}$").
+# The units clause is optional and deliberately tolerant: an earlier version
+# spelled it out with \\s between the unit letters, which cannot match the "/"
+# in "m/s", so it silently saw only the unit-less phrasings.
+NYQ_RATIO_PATTERN = r"\b(2\d)\s*[x\u00d7][\s-]*(?:the\s+)?(?:[\d.]+[^.\n]{0,24}?)?Nyquist"
+
 
 def read(skill, name="SKILL.md"):
     p = skill / name
@@ -189,8 +196,12 @@ def test_dealias_ratio_arithmetic():
     if not skill.exists():
         pytest.skip("dealias skill not in this repo")
     text = read(skill)
-    ratios = set(numbers_near(text, r"\b(2\d)\s*[x\u00d7]\s*(?:the\s+)?"
-                                    r"(?:[\d.]+\s*m\s*s[^)]*)?Nyquist"))
+    # Accept every phrasing the tranche uses: "22x Nyquist", "22x-Nyquist",
+    # "22x the Nyquist", and "22x the 16.52 m/s Nyquist" (or "m s^-1", or a
+    # LaTeX'd "m s$^{-1}$"). The units clause is optional AND may contain a
+    # slash, which \s does not match - the reason an earlier version of this
+    # pattern could only see the unit-less phrasings.
+    ratios = set(numbers_near(text, NYQ_RATIO_PATTERN))
     assert ratios, "no NxNyquist ratio found in the dealias skill"
     lows = numbers_near(text, r"[-\u2212](3\d\d\.\d)\s*to")
     assert lows, "no failed-dealias velocity range found"
@@ -199,6 +210,36 @@ def test_dealias_ratio_arithmetic():
     assert any(abs(implied - r) < 1.0 for r in ratios), (
         f"stated ratios {sorted(ratios)} do not match {worst} m/s / "
         f"{CSAPR_NYQUIST_MS} m/s = {implied:.1f}")
+
+
+def test_dealias_ratio_pattern_matches_every_phrasing():
+    """The ratio-extraction pattern must see all wordings the tranche uses.
+
+    The pattern in test_dealias_ratio_arithmetic is the only thing standing
+    between a reworded headline and an unchecked claim. An earlier version
+    required whitespace between the unit letters, so it silently could not match
+    "22x the 16.52 m/s Nyquist" - it passed only because the prose also carried a
+    unit-less "22x Nyquist" elsewhere. If the pattern stops matching a phrasing
+    that appears in real prose, the arithmetic check goes vacuous instead of
+    failing loudly, so pin it here.
+    """
+    pattern = NYQ_RATIO_PATTERN
+    phrasings = [
+        "gave 22x Nyquist",
+        "one with 22x-Nyquist garbage",
+        "reached 22x the Nyquist",
+        "22x the 16.52 m/s Nyquist",
+        "22x the 16.52 m s Nyquist",
+        "22\u00d7 the 16.52 m s$^{-1}$ Nyquist",   # LaTeX units, multiplication sign
+        "22x the 16.52 m s^-1 Nyquist",
+        "29\u00d7 Nyquist",
+    ]
+    for phrase in phrasings:
+        found = re.findall(pattern, phrase)
+        assert found, f"ratio pattern does not match {phrase!r}"
+    # And it must not invent a ratio where none is stated.
+    assert not re.findall(pattern, "the Nyquist velocity is 16.52 m/s"), \
+        "ratio pattern matches prose that states no ratio"
 
 
 def test_cone_radius_grows_with_height():
