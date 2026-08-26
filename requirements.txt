@@ -1,0 +1,13 @@
+# Offline structural suite needs only pytest.
+pytest>=8.0
+
+# Live suites additionally need the science stack:
+# arm-pyart
+# xradar>=0.12
+# icechunk>=2
+# zarr>=3
+# xarray
+# boto3
+# certifi
+# pandas
+# numpy

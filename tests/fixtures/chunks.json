@@ -1,0 +1,34 @@
+{
+ "bare_chunk_s": {
+  "mean": 0.467,
+  "p50": 0.423,
+  "n": 8
+ },
+ "reassembly": {
+  "wall_s": 12.69,
+  "n_indices": 3,
+  "sweeps_read": 21,
+  "per_read_s": 0.604,
+  "probes": 51
+ },
+ "probe_only": {
+  "wall_s": 3.37,
+  "n": 51,
+  "per_probe_s": 0.066
+ },
+ "volume_indices_call_s": 7.29,
+ "convective_20260727_16_19Z": {
+  "n": 32,
+  "mean_MB": 13.29,
+  "min_MB": 7.96,
+  "max_MB": 16.95,
+  "first8_mean_MB": 8.42
+ },
+ "quiet_20260823_01_04Z": {
+  "n": 34,
+  "mean_MB": 7.67,
+  "min_MB": 5.21,
+  "max_MB": 8.46,
+  "first8_mean_MB": 6.08
+ }
+}

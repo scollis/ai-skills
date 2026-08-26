@@ -1,0 +1,75 @@
+{
+ "raw_list": {
+  "n_volumes": 32,
+  "wall_s": 0.8,
+  "mean_MB": 13.29,
+  "total_MB": 425.3,
+  "n_requests": 4
+ },
+ "raw_download_one": {
+  "MB": 7.96,
+  "wall_s": 6.85,
+  "MB_per_s": 1.2
+ },
+ "raw_decode_full": {
+  "wall_s": 0.98,
+  "nsweeps": 17,
+  "nfields": 7,
+  "Mgates": 15.17,
+  "ram_MB": 424.7
+ },
+ "raw_decode_lazy": {
+  "wall_s": 0.8
+ },
+ "arco_open": {
+  "wall_s": 4.9
+ },
+ "arco_time_axis": {
+  "wall_s": 1.36,
+  "n_scans": 226560,
+  "n_requests": 1,
+  "note": "vcp_time is one chunk"
+ },
+ "arco_one_field_one_sweep": {
+  "wall_s": 0.48,
+  "MB": 5.28,
+  "n_requests": 1,
+  "shape": [
+   720,
+   1832
+  ]
+ },
+ "arco_full_volume_dbzh": {
+  "wall_s": 20.38,
+  "n_indices": 3,
+  "sweeps_read": 21,
+  "MB": 59.9,
+  "n_requests": 72
+ },
+ "arco_dualpol_one_sweep": {
+  "wall_s": 3.68,
+  "MB": 26.4,
+  "n_requests": 5
+ },
+ "lowsweeps_time_axis": {
+  "wall_s": 5.59,
+  "n_scans": 1007476,
+  "n_requests": 17,
+  "note": "vcp_time chunked 62170"
+ },
+ "lowsweeps_one_scan": {
+  "wall_s": 1.26,
+  "MB": 5.28,
+  "n_requests": 1,
+  "shape": [
+   720,
+   1832
+  ]
+ },
+ "lowsweeps_24_scans": {
+  "wall_s": 16.73,
+  "MB": 126.6,
+  "per_scan_s": 0.7,
+  "n_requests": 24
+ }
+}

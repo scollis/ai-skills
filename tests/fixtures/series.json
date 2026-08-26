@@ -1,0 +1,11 @@
+{
+ "n": 8,
+ "raw_download_s": 57.5,
+ "raw_MB": 67.4,
+ "raw_MB_per_s": 1.2,
+ "raw_decode_s": 8.8,
+ "raw_total_s": 66.3,
+ "lowsweeps_s": 2.9,
+ "speedup": 22.8,
+ "raw_per_volume_s": 7.19
+}

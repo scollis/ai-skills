@@ -1,0 +1,64 @@
+{
+ "per_chunk_s": 0.438,
+ "raw_total_s": 7.6499999999999995,
+ "raw_MB": 7.96,
+ "decoded_chunk_MB": 5.28,
+ "wire_chunk_MB_p50": 1.22,
+ "crossover_chunks": 17,
+ "timings": [
+  [
+   "DBZH",
+   "sweep_0",
+   0.593,
+   5.28
+  ],
+  [
+   "DBZH",
+   "sweep_6",
+   0.201,
+   2.64
+  ],
+  [
+   "ZDR",
+   "sweep_0",
+   0.745,
+   5.28
+  ],
+  [
+   "ZDR",
+   "sweep_6",
+   0.233,
+   2.64
+  ],
+  [
+   "RHOHV",
+   "sweep_0",
+   0.724,
+   5.28
+  ],
+  [
+   "RHOHV",
+   "sweep_6",
+   0.185,
+   2.64
+  ],
+  [
+   "PHIDP",
+   "sweep_0",
+   0.867,
+   5.28
+  ],
+  [
+   "PHIDP",
+   "sweep_6",
+   0.192,
+   2.64
+  ],
+  [
+   "VRADH",
+   "sweep_6",
+   0.205,
+   2.64
+  ]
+ ]
+}
