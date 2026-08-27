@@ -57,6 +57,33 @@ lives only in `cmac-vap`. A Py-ART user should never have to install
 `scikit-fuzzy` to follow a `pyart-*` skill; `test_structure_pyart.py` enforces
 that boundary.
 
+### Scattering forward models
+
+| skill | what it does |
+|---|---|
+| [`rustmatrix-scattering`](skills/rustmatrix-scattering/) | T-matrix scattering for nonspherical hydrometeors: `Scatterer`, polarimetric observables, PSD tabulation, orientation averaging, `HydroMix`. Carries the axis-ratio convention the upstream docs invert, the solver's convergence envelope, and the paths that return silently wrong numbers |
+| [`rustmatrix-spectra`](skills/rustmatrix-spectra/) | The Doppler and polarimetric spectra engine: `SpectralIntegrator`, fall-speed presets and their real validity limits, turbulence and beam broadening, receiver noise, `BeamIntegrator` over a scene |
+
+[rustmatrix](https://github.com/swnesbitt/rustmatrix) is by **Prof. Stephen W.
+Nesbitt** (University of Illinois Urbana-Champaign) — a Rust-backed replacement
+for the numerical core of pytmatrix, adding multi-species mixtures, spectral
+polarimetry, and beam-pattern integration, and growing out of his ATMS 410 Radar
+Meteorology course and *Radar Meteorology: A First Course* (Rauber & Nesbitt,
+2018). These two skills document it; they do not vendor it.
+
+Measured against rustmatrix 2.2.0 on macOS arm64 / CPython 3.13. The library
+itself validated well — Mie parity at 7.7e-08 across six bands with zero
+convergence failures at default settings, exact reflectivity additivity in
+`HydroMix`, a spectral-to-bulk round-trip closing to 1 ulp. What the skills are
+*for* is the other half: several of rustmatrix's traps produce wrong numbers
+rather than exceptions, so each is documented with the measured magnitude — a
+scatter table loaded at the wrong wavelength costs 30 dB in Ka-band Zh, an even
+`n_alpha` in orientation averaging aliases by up to 2.3 dB and does not improve
+with refinement, and passing a drop-shape relation directly to `axis_ratio`
+inverts the sign of Zdr with no error at all. Solver limits raise
+`pyo3_runtime.PanicException`, which subclasses `BaseException`, so `except
+Exception` misses them.
+
 Two skills referenced by the NEXRAD tranche are **not yet published here**:
 `nexrad-site-rainfall` and `nexrad-area-over-threshold`. They belong to a later
 tranche; until then those cross-references point at nothing in this repo.
@@ -90,6 +117,7 @@ and literal top-level assignments. `tests/test_structure.py` enforces that.
 pip install -r requirements.txt
 pytest tests/test_structure.py        # offline, all skills, runs on every push
 pytest tests/test_structure_pyart.py  # offline, pyart-* + cmac-vap claim checks
+pytest tests/test_structure_rustmatrix.py   # offline, rustmatrix-* claim checks
 pytest tests/test_live_*.py           # hits live buckets, runs weekly
 ```
 
@@ -101,7 +129,20 @@ stated Nyquist), internal consistency (a number stated twice must agree), and
 provenance (measured values carry a named radar and date; every helper the prose
 tells you to call exists). One of them exists because the drift already happened
 — a KDP row that paired one run's runtime with another run's percentiles — and it
-fails if either half of that pair is quoted alone. The live suites are the ones that
+fails if either half of that pair is quoted alone.
+
+`test_structure_rustmatrix.py` does the same for the scattering tranche, and
+where rustmatrix is installed it re-derives the load-bearing claims rather than
+trusting the prose: it solves for the drop-shape zero crossings, checks that the
+documented axis-ratio recipe gives positive Zdr while the bare relation gives
+negative, reproduces the `n_alpha` parity result, and confirms a solver panic
+still arrives as a `BaseException`. Two of its checks also exist because the
+drift already happened: an "exact to floating point" claim that the document's
+own table contradicted (five-decimal display of a 3.0e-07 residual), so
+exactness now has to be stated with a ulp or residual figure; and a guard-rail
+check that fails any `assert_*`/`check_*` helper containing no `assert` or
+`raise`, which caught a Mie-parity gate that documented a tolerance and never
+enforced it. The live suites are the ones that
 detect service drift — a changed bucket layout or store schema shows up as a
 failing scheduled run rather than as a wrong answer in someone's analysis.
 
