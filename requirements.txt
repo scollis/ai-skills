@@ -1,6 +1,10 @@
 # Offline structural suite needs only pytest.
 pytest>=8.0
 
+# tests/test_arm_standards.py runs its drift guards on pytest alone; its
+# file-writing round trips need netCDF4 and skip without it:
+# netCDF4
+
 # Live suites additionally need the science stack:
 # arm-pyart
 # xradar>=0.12
