@@ -57,6 +57,23 @@ lives only in `cmac-vap`. A Py-ART user should never have to install
 `scikit-fuzzy` to follow a `pyart-*` skill; `test_structure_pyart.py` enforces
 that boundary.
 
+### ARM data standards
+
+| skill | what it does |
+|---|---|
+| [`arm-netcdf-standards`](skills/arm-netcdf-standards/) | The ARM Data File Standards (DOE/SC-ARM-15-004 v1.3) made operational: filename and datastream construction, the `base_time`/`time_offset`/`time` triple, coordinate and location variables, required attributes, bit-packed QC, state and source variables, global attributes. Ships `arm_standards_check.py`, a rule engine that cites the section behind every finding, and helpers that write a compliant file rather than retrofit one |
+
+Calibrating this one against released ARM data changed it. Run against one file
+from each of 143 local datastreams, five rules turned out to be wrong rather
+than the files — §6.1.4 makes `units` *not* recommended on a bounds variable,
+which alone was 55 false positives — and the survivors are deviations the
+standard itself records as retired practice: `units = "unitless"`, `valid_min`
+used as a QC limit, `"Quality check results on field:"`. So the skill documents
+what ARM's own files do as well as what the document says, and the checker
+carries two profiles: what the ADC's published files actually satisfy, and the
+literal reading of §6.7.1. A released file is not a safe compliance template,
+which is the sort of thing you only learn by measuring.
+
 ### Scattering forward models
 
 | skill | what it does |
@@ -118,6 +135,7 @@ pip install -r requirements.txt
 pytest tests/test_structure.py        # offline, all skills, runs on every push
 pytest tests/test_structure_pyart.py  # offline, pyart-* + cmac-vap claim checks
 pytest tests/test_structure_rustmatrix.py   # offline, rustmatrix-* claim checks
+pytest tests/test_arm_standards.py    # offline, arm-netcdf-standards drift + round trips
 pytest tests/test_live_*.py           # hits live buckets, runs weekly
 ```
 
