@@ -13,9 +13,37 @@ import re
 import pytest
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SKILLS = sorted(p for p in (ROOT / "skills").iterdir() if p.is_dir())
+
+
+def discover(root):
+    """Every skill directory under skills/, at any depth.
+
+    A skill is a directory holding a SKILL.md. Tranches may nest one level - the
+    ARM instrument skills live in skills/arm-instruments/arm-instrument-<code>/,
+    with skills/arm-instruments/ itself the index skill - so a flat iterdir()
+    would both miss them and treat the tranche directory as a broken skill.
+    """
+    return sorted((p for p in root.rglob("*") if p.is_dir() and (p / "SKILL.md").exists()),
+                  key=lambda p: str(p))
+
+
+SKILLS = discover(ROOT / "skills")
 NAMES = [p.name for p in SKILLS]
 DEAD_BUCKET = "noaa-nexrad-level2"
+
+
+def test_no_skill_dir_without_skill_md():
+    """A directory under skills/ is either a skill or a tranche of skills."""
+    orphans = []
+    for p in (ROOT / "skills").rglob("*"):
+        if not p.is_dir() or p.name == "__pycache__":
+            continue
+        if (p / "SKILL.md").exists():
+            continue
+        if any(c.is_dir() and (c / "SKILL.md").exists() for c in p.iterdir()):
+            continue
+        orphans.append(str(p.relative_to(ROOT)))
+    assert not orphans, f"directories under skills/ that are neither: {orphans}"
 
 
 def sidecars():
