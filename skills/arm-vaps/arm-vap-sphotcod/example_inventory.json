@@ -1,0 +1,366 @@
+{
+ "vap": "sphotcod",
+ "datastream": "sgpsphotcod2chiuC1.c1",
+ "filename": "sgpsphotcod2chiuC1.c1.20191227.143730.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 23,
+ "dims": {
+  "time": 95,
+  "bound": 2,
+  "modis_channel": 7,
+  "channel": 6,
+  "gain": 3
+ },
+ "n_qc_vars": 1,
+ "time_resolution_s": 300.0,
+ "time_span": [
+  "2019-12-27T14:37:30",
+  "2019-12-27T22:27:30"
+ ],
+ "global_attrs": {
+  "command_line": "sphotcod2chiu -n sphotcod2chiu -s sgp -f C1 -b 20191227 --asynchronous",
+  "process_version": "vap-sphotcod2chiu-1.0-0.el7",
+  "dod_version": "sphotcod2chiu-c1-2.0",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpsphotcod2chiuC1.c1",
+  "doi": "10.5439/1668057"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    95
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    95,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "modis_wavelength": {
+   "dims": [
+    "modis_channel"
+   ],
+   "shape": [
+    7
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Central wavelength of modis_channel",
+   "has_qc": false
+  },
+  "modis_white_sky_albedo": {
+   "dims": [
+    "modis_channel"
+   ],
+   "shape": [
+    7
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Area average of white sky albedo for modis_channel",
+   "has_qc": true
+  },
+  "qc_modis_white_sky_albedo": {
+   "dims": [
+    "modis_channel"
+   ],
+   "shape": [
+    7
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Area average of white sky albedo for modis_channel",
+   "has_qc": false
+  },
+  "wavelength": {
+   "dims": [
+    "channel"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Effective Wavelength",
+   "has_qc": false
+  },
+  "spectral_irradiance_at_toa": {
+   "dims": [
+    "channel"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "float32",
+   "units": "W m-2 um-1",
+   "long_name": "Spectral Irradiance at TOA",
+   "has_qc": false
+  },
+  "solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    95
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Solar zenith angle",
+   "has_qc": false
+  },
+  "radiance_0440": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized zenith radiance at 440nm",
+   "has_qc": false
+  },
+  "radiance_0870": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized zenith radiance at 870nm",
+   "has_qc": false
+  },
+  "radiance_1640": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized zenith radiance at 1640nm",
+   "has_qc": false
+  },
+  "cloud_optical_depth": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cloud Optical Depth",
+   "has_qc": false
+  },
+  "cloud_optical_depth_std": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation of cloud optical depth",
+   "has_qc": false
+  },
+  "liquid_water_path": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "float32",
+   "units": "g/m2",
+   "long_name": "Liquid Water Path",
+   "has_qc": false
+  },
+  "liquid_water_path_std": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "float32",
+   "units": "g/m2",
+   "long_name": "Standard deviation of liquid water path",
+   "has_qc": false
+  },
+  "effective_radius": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Effective radius",
+   "has_qc": false
+  },
+  "effective_radius_std": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Standard deviation of effective radius",
+   "has_qc": false
+  },
+  "number_of_solutions": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "float64",
+   "units": "count",
+   "long_name": "Number of Solutions",
+   "has_qc": false
+  },
+  "retrieval_flag": {
+   "dims": [
+    "time",
+    "gain"
+   ],
+   "shape": [
+    95,
+    3
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    95
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "gain": {
+   "dims": [
+    "gain"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Coordinate variable for gain",
+   "has_qc": false
+  },
+  "modis_channel": {
+   "dims": [
+    "modis_channel"
+   ],
+   "shape": [
+    7
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Coordinate variable for modis_channel",
+   "has_qc": false
+  },
+  "channel": {
+   "dims": [
+    "channel"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "int32",
+   "units": "nm",
+   "long_name": "Nominal  wavelength for channel",
+   "has_qc": false
+  }
+ }
+}

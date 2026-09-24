@@ -127,6 +127,41 @@ water-vapour channel cannot be Langley-calibrated the way the other six are (hb 
 `tools/arm_instrument_build/` holds the pipeline that produced them, so the next instrument
 is a re-run rather than a rewrite.
 
+### ARM value-added products
+
+ARM does not only publish instrument data. It publishes **value-added products** - retrievals
+and quality-controlled composites computed from instrument datastreams, each documented in its
+own technical report. This tranche is 80 of them, built with the same pipeline and the same
+grounding rule as the instrument skills:
+
+| skill | what it does |
+|---|---|
+| [`arm-vaps`](skills/arm-vaps/) | The index: coverage by category, the honesty markers explained, and how to route between a product and its input instrument |
+| `arm-vap-<code>` × 80 | One per product: the retrieval algorithm, declared input instruments, reported quantities, retrieval settings, embedded-QC coverage measured on a real file, the variable inventory, and the documented conditions where the retrieval is invalid or biased — 1029 of them across the tranche |
+
+ARSCL, KAZR-ARSCL, MWRRET, QCRAD, MICROBASE, LASSO, VARANAL, RADFLUXANAL, PBLHT, the AOD
+products, the Raman and Doppler lidar profile products, the CMAC radar products. 151 developers
+and mentors are credited from the report covers, in a Credit section that cites the technical
+report rather than the skill.
+
+The rule these carry that the instrument skills do not: **a VAP inherits every limitation of
+its inputs.** Each skill names its declared input classes and links to `arm-instrument-<code>`
+for them, because when a retrieved value looks wrong the input instrument and its DQRs are the
+first place to look, not the algorithm.
+
+Three honesty markers appear in these files, each enforced by a test. **Scope of this report**
+where a report covers a sibling product — `arscl` and `kazrarscl` share a 2001 MMCR-era
+document that predates the KAZR implementation entirely, and four other pairs share one report.
+**Extraction coverage** where the report is longer than the extractor's 110,000-character
+window — LASSO is 171 pages of which 60 were read, ARMTRAJ 176 of which about a quarter — so
+those skills mark their lists as lower bounds rather than inventories. And **no example
+verified** for the 6 products that could not be opened: two served only at level `a0`, two
+serving 0.8–2.4 GB files, one truncated tar, one HDF error on two separate files.
+
+One product was rejected rather than published on the wrong document: `aod`, whose linked report
+turned out to document the SAS-He AOD product rather than the MFRSR/NIMFR one it serves.
+`arm-vap-aod-mfrsr` and `arm-vap-aod-nimfr` carry the right report.
+
 ### Scattering forward models
 
 | skill | what it does |

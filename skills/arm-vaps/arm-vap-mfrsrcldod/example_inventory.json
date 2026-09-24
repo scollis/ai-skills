@@ -1,0 +1,1283 @@
+{
+ "vap": "mfrsrcldod",
+ "datastream": "sgpmfrsrcldod1minC1.c1",
+ "filename": "sgpmfrsrcldod1minC1.c1.20260503.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 106,
+ "dims": {
+  "time": 4320,
+  "n_Io": 181
+ },
+ "n_qc_vars": 47,
+ "time_resolution_s": 20.0,
+ "time_span": [
+  "2026-05-03T00:00:00",
+  "2026-05-03T23:59:40"
+ ],
+ "global_attrs": {
+  "command_line": "mfrsrcldod1min -s sgp -f C1 -b 20260503 -e 20260504 --max-runtime 86400",
+  "process_version": "mfrsrcldod1min-3.19.1",
+  "dod_version": "mfrsrcldod1min-c1-3.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpmfrsrcldod1minC1.c1",
+  "doi": "10.5439/1027296"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "optical_depth_instantaneous": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cloud Optical Depth (Instantaneous)",
+   "has_qc": true
+  },
+  "qc_optical_depth_instantaneous": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud Optical Depth (Instantaneous)",
+   "has_qc": false
+  },
+  "effective_radius_instantaneous": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Effective Radius (Instantaneous)",
+   "has_qc": true
+  },
+  "qc_effective_radius_instantaneous": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Effective Radius (Instantaneous)",
+   "has_qc": false
+  },
+  "optical_depth_average": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Five-Minute Running Average of Cloud Optical Depth",
+   "has_qc": true
+  },
+  "qc_optical_depth_average": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Five-Minute Running Average of Cloud Optical Depth",
+   "has_qc": false
+  },
+  "effective_radius_average": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Five-Minute Running Average of Effective Radius",
+   "has_qc": true
+  },
+  "qc_effective_radius_average": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Five-Minute Running Average of Effective Radius",
+   "has_qc": false
+  },
+  "cldtaui_error1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Instantaneous Cloud Tau Error1 (1% uncertainty in total irradiance)",
+   "has_qc": true
+  },
+  "qc_cldtaui_error1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Cloud Tau Error1 (1% uncertainty in total irradiance)",
+   "has_qc": false
+  },
+  "cldtaui_error2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Instantaneous Cloud Tau Error2 (uncertainty is standard deviation of calibrated Io points)",
+   "has_qc": true
+  },
+  "qc_cldtaui_error2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Cloud Tau Error2 (uncertainty is standard deviation of calibrated Io points)",
+   "has_qc": false
+  },
+  "cldtaui_error3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Instantaneous Cloud Tau Error3 (uncertainty in liquid water path (lwp) 0.001mm larger, using scaling factor with 0.015 mm)",
+   "has_qc": true
+  },
+  "qc_cldtaui_error3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Cloud Tau Error3 (uncertainty in liquid water path (lwp) 0.001mm larger, using scaling factor with 0.015 mm)",
+   "has_qc": false
+  },
+  "cldtaui_error4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Instantaneous Cloud Tau Error4 (uncertainty is 0.01 in surface albedo)",
+   "has_qc": true
+  },
+  "qc_cldtaui_error4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Cloud Tau Error4 (uncertainty is 0.01 in surface albedo)",
+   "has_qc": false
+  },
+  "cldtaui_error5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Instantaneous Cloud Tau Error5 (uncertainty in 3um higher of effective radius when there is no MWR data)",
+   "has_qc": true
+  },
+  "qc_cldtaui_error5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Cloud Tau Error5 (uncertainty in 3um higher of effective radius when there is no MWR data)",
+   "has_qc": false
+  },
+  "cldtaui_toterror": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Instantaneous Cloud Tau Total Uncertainty",
+   "has_qc": true
+  },
+  "qc_cldtaui_toterror": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Cloud Tau Total Uncertainty",
+   "has_qc": false
+  },
+  "cldtaua_error1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average Cloud Tau Error1 (1% uncertainty in total irradiance)",
+   "has_qc": true
+  },
+  "qc_cldtaua_error1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average Cloud Tau Error1 (1% uncertainty in total irradiance)",
+   "has_qc": false
+  },
+  "cldtaua_error2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average Cloud Tau Error2 (uncertainty is standard deviation of calibrated Io points)",
+   "has_qc": true
+  },
+  "qc_cldtaua_error2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average Cloud Tau Error2 (uncertainty is standard deviation of calibrated Io points)",
+   "has_qc": false
+  },
+  "cldtaua_error3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average Cloud Tau Error3 (uncertainty in liquid water path (lwp) 0.001mm larger, using scaling factor with 0.015 mm)",
+   "has_qc": true
+  },
+  "qc_cldtaua_error3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average Cloud Tau Error3 (uncertainty in liquid water path (lwp) 0.001mm larger, using scaling factor with 0.015 mm)",
+   "has_qc": false
+  },
+  "cldtaua_error4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average Cloud Tau Error4 (uncertainty is 0.01 in surface albedo)",
+   "has_qc": true
+  },
+  "qc_cldtaua_error4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average Cloud Tau Error4 (uncertainty is 0.01 in surface albedo)",
+   "has_qc": false
+  },
+  "cldtaua_toterror": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average Cloud Tau Total Uncertainty",
+   "has_qc": true
+  },
+  "qc_cldtaua_toterror": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average Cloud Tau Total Uncertainty",
+   "has_qc": false
+  },
+  "reffi_error1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Instantaneous Effective Radius Error1 (1% uncertainty in total irradiance)",
+   "has_qc": true
+  },
+  "qc_reffi_error1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Effective Radius Error1 (1% uncertainty in total irradiance)",
+   "has_qc": false
+  },
+  "reffi_error2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Instantaneous Effective Radius Error2 (uncertainty is standard deviation of calibrated Io points)",
+   "has_qc": true
+  },
+  "qc_reffi_error2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Effective Radius Error2 (uncertainty is standard deviation of calibrated Io points)",
+   "has_qc": false
+  },
+  "reffi_error3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Instantaneous Effective Radius Error3 (uncertainty in liquid water path (lwp) 0.001mm larger, using scaling factor with 0.015 mm)",
+   "has_qc": true
+  },
+  "qc_reffi_error3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Effective Radius Error3 (uncertainty in liquid water path (lwp) 0.001mm larger, using scaling factor with 0.015 mm)",
+   "has_qc": false
+  },
+  "reffi_error4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Instantaneous Effective Radius Error4 (uncertainty is 0.01 in surface albedo)",
+   "has_qc": true
+  },
+  "qc_reffi_error4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Effective Radius Error4 (uncertainty is 0.01 in surface albedo)",
+   "has_qc": false
+  },
+  "reffi_toterror": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Instantaneous Effective Radius Total Error",
+   "has_qc": true
+  },
+  "qc_reffi_toterror": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instantaneous Effective Radius Total Error",
+   "has_qc": false
+  },
+  "reffa_error1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Average Effective Radius Error1 (1% uncertainty in total irradiance)",
+   "has_qc": true
+  },
+  "qc_reffa_error1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average Effective Radius Error1 (1% uncertainty in total irradiance)",
+   "has_qc": false
+  },
+  "reffa_error2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Average Effective Radius Error2 (uncertainty is standard deviation of calibrated Io points)",
+   "has_qc": true
+  },
+  "qc_reffa_error2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average Effective Radius Error2 (uncertainty is standard deviation of calibrated Io points)",
+   "has_qc": false
+  },
+  "reffa_error3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Average Effective Radius Error3 (uncertainty in liquid water path (lwp) 0.001mm larger, using scaling factor with 0.015 mm)",
+   "has_qc": true
+  },
+  "qc_reffa_error3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average Effective Radius Error3 (uncertainty in liquid water path (lwp) 0.001mm larger, using scaling factor with 0.015 mm)",
+   "has_qc": false
+  },
+  "reffa_error4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Average Effective Radius Error4 (uncertainty is 0.01 in surface albedo)",
+   "has_qc": true
+  },
+  "qc_reffa_error4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average Effective Radius Error4 (uncertainty is 0.01 in surface albedo)",
+   "has_qc": false
+  },
+  "reffa_toterror": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Average Effective Radius Total Error",
+   "has_qc": true
+  },
+  "qc_reffa_toterror": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average Effective Radius Total Error",
+   "has_qc": false
+  },
+  "cosine_solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine Solar Zenith Angle",
+   "has_qc": true
+  },
+  "qc_cosine_solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cosine Solar Zenith Angle",
+   "has_qc": false
+  },
+  "total_transmittance_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total transmittance of Narrowband Hemispheric Irradiance, Filter 1",
+   "has_qc": true
+  },
+  "qc_total_transmittance_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total transmittance of Narrowband Hemispheric Irradiance, Filter 1",
+   "has_qc": false
+  },
+  "total_transmittance_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total transmittance of Narrowband Hemispheric Irradiance, Filter 2",
+   "has_qc": true
+  },
+  "qc_total_transmittance_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total transmittance of Narrowband Hemispheric Irradiance, Filter 2",
+   "has_qc": false
+  },
+  "total_transmittance_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total transmittance of Narrowband Hemispheric Irradiance, Filter 3",
+   "has_qc": true
+  },
+  "qc_total_transmittance_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total transmittance of Narrowband Hemispheric Irradiance, Filter 3",
+   "has_qc": false
+  },
+  "total_transmittance_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total transmittance of Narrowband Hemispheric Irradiance, Filter 4",
+   "has_qc": true
+  },
+  "qc_total_transmittance_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total transmittance of Narrowband Hemispheric Irradiance, Filter 4",
+   "has_qc": false
+  },
+  "total_transmittance_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total transmittance of Narrowband Hemispheric Irradiance, Filter 5",
+   "has_qc": true
+  },
+  "qc_total_transmittance_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total transmittance of Narrowband Hemispheric Irradiance, Filter 5",
+   "has_qc": false
+  },
+  "direct_transmittance_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Direct transmittance of Narrowband Direct Normal Irradiance, Filter 1",
+   "has_qc": true
+  },
+  "qc_direct_transmittance_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Direct transmittance of Narrowband Direct Normal Irradiance, Filter 1",
+   "has_qc": false
+  },
+  "direct_transmittance_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Direct transmittance of Narrowband Direct Normal Irradiance, Filter 2",
+   "has_qc": true
+  },
+  "qc_direct_transmittance_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Direct transmittance of Narrowband Direct Normal Irradiance, Filter 2",
+   "has_qc": false
+  },
+  "direct_transmittance_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Direct transmittance of Narrowband Direct Normal Irradiance, Filter 3",
+   "has_qc": true
+  },
+  "qc_direct_transmittance_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Direct transmittance of Narrowband Direct Normal Irradiance, Filter 3",
+   "has_qc": false
+  },
+  "direct_transmittance_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Direct transmittance of Narrowband Direct Normal Irradiance, Filter 4",
+   "has_qc": true
+  },
+  "qc_direct_transmittance_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Direct transmittance of Narrowband Direct Normal Irradiance, Filter 4",
+   "has_qc": false
+  },
+  "direct_transmittance_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Direct transmittance of Narrowband Direct Normal Irradiance, Filter 5",
+   "has_qc": true
+  },
+  "qc_direct_transmittance_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Direct transmittance of Narrowband Direct Normal Irradiance, Filter 5",
+   "has_qc": false
+  },
+  "pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Total water vapor along MWR LOS path",
+   "has_qc": true
+  },
+  "qc_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total water vapor along MWR LOS path",
+   "has_qc": false
+  },
+  "lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Total liquid water along LOS path",
+   "has_qc": true
+  },
+  "qc_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total liquid water along LOS path",
+   "has_qc": false
+  },
+  "ir_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "IR Brightness Temperature",
+   "has_qc": true
+  },
+  "qc_ir_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: IR Brightness Temperature",
+   "has_qc": false
+  },
+  "cloudfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Estimated Average Fractional Sky Cover over the Hemispheric Dome (cf)",
+   "has_qc": true
+  },
+  "qc_cloudfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated Average Fractional Sky Cover over the Hemispheric Dome (cf)",
+   "has_qc": false
+  },
+  "cloudbasebestestimate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "LASER Cloud Base Height Best Estimate",
+   "has_qc": true
+  },
+  "qc_cloudbasebestestimate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: LASER Cloud Base Height Best Estimate",
+   "has_qc": false
+  },
+  "lwp_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "lwp uncertainty if derived from mfrsr.b1",
+   "has_qc": true
+  },
+  "qc_lwp_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: lwp uncertainty if derived from mfrsr.b1",
+   "has_qc": false
+  },
+  "source_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable: Total liquid water along LOS path",
+   "has_qc": false
+  },
+  "Io_time": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Langley time series",
+   "has_qc": false
+  },
+  "Io_filter1": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Solar constant corrected for solar distance for the Direct Narrowband Filter1",
+   "has_qc": true
+  },
+  "qc_Io_filter1": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Solar constant corrected for solar distance for the Direct Narrowband Filter1",
+   "has_qc": false
+  },
+  "Io_filter2": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Solar constant corrected for solar distance for the Direct Narrowband Filter2",
+   "has_qc": true
+  },
+  "qc_Io_filter2": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Solar constant corrected for solar distance for the Direct Narrowband Filter2",
+   "has_qc": false
+  },
+  "Io_filter3": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Solar constant corrected for solar distance for the Direct Narrowband Filter3",
+   "has_qc": true
+  },
+  "qc_Io_filter3": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Solar constant corrected for solar distance for the Direct Narrowband Filter3",
+   "has_qc": false
+  },
+  "Io_filter4": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Solar constant corrected for solar distance for the Direct Narrowband Filter4",
+   "has_qc": true
+  },
+  "qc_Io_filter4": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Solar constant corrected for solar distance for the Direct Narrowband Filter4",
+   "has_qc": false
+  },
+  "Io_filter5": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Solar constant corrected for solar distance for the Direct Narrowband Filter5",
+   "has_qc": true
+  },
+  "qc_Io_filter5": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Solar constant corrected for solar distance for the Direct Narrowband Filter5",
+   "has_qc": false
+  },
+  "Io_filter1_flag": {
+   "dims": [
+    "n_Io"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Io rejection flag for Direct Narrowband Filter1",
+   "has_qc": false
+  },
+  "Io_filter1_final": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "The final Io that is used to determine total transmission",
+   "has_qc": false
+  },
+  "cal_start_date": {
+   "dims": [],
+   "shape": [],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Start day for the Io data selected for calibration",
+   "has_qc": false
+  },
+  "cal_end_date": {
+   "dims": [],
+   "shape": [],
+   "dtype": "object",
+   "units": null,
+   "long_name": "End day for the Io data selected for calibration",
+   "has_qc": false
+  },
+  "Io_filter1_standard_deviation": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Standard deviation of Io_filter1",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

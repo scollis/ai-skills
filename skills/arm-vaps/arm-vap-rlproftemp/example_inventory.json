@@ -1,0 +1,288 @@
+{
+ "vap": "rlproftemp",
+ "datastream": "sgprlproftemp2news10mC1.c0",
+ "filename": "sgprlproftemp2news10mC1.c0.20260918.000500.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 19,
+ "dims": {
+  "time": 144,
+  "bound": 2,
+  "height": 299
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 600.0,
+ "time_span": [
+  "2026-09-18T00:05:00",
+  "2026-09-18T23:55:00"
+ ],
+ "global_attrs": {
+  "command_line": "idl -R -n rlprof2_temp_10 -s sgp -f C1 -b 20260918 -e 20260919 --max-runtime 86400",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c0",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "process_version": "vap-rlprof2_temp-1.1-3.el9",
+  "dod_version": "rlproftemp2news10m-c0-1.0",
+  "doi": "10.5439/1415138",
+  "datastream": "sgprlproftemp2news10mC1.c0"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    144,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "height_bounds": {
+   "dims": [
+    "height",
+    "bound"
+   ],
+   "shape": [
+    299,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Height cell bounds",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Calibrated temperature from the rotational Raman channels",
+   "has_qc": false
+  },
+  "temperature_error": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Uncertainty of calibrated temperature from the rotational Raman channels",
+   "has_qc": false
+  },
+  "rot_raman_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Raw ratio, R1/R2",
+   "has_qc": false
+  },
+  "rot_raman_ratio_error": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Precision of the raw ratio, R1/R2",
+   "has_qc": false
+  },
+  "a_coef": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibration coefficient a",
+   "has_qc": false
+  },
+  "b_coef": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibration coefficient b",
+   "has_qc": false
+  },
+  "olap_function": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Overlap function",
+   "has_qc": false
+  },
+  "temp_sonde": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Temperature from radiosondes",
+   "has_qc": false
+  },
+  "pres_sonde": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "mb",
+   "long_name": "Pressure from radiosondes",
+   "has_qc": false
+  },
+  "mr_sonde": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Water vapor mixing ratio from radiosondes",
+   "has_qc": false
+  },
+  "time_sonde": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag indicating sonde launch",
+   "has_qc": false
+  },
+  "cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Median cloud base height",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    299
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height above ground level",
+   "has_qc": false
+  }
+ }
+}

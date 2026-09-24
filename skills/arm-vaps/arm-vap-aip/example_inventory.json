@@ -1,0 +1,1789 @@
+{
+ "vap": "aip",
+ "datastream": "sgpaipavg1ogrenC1.c1",
+ "filename": "sgpaipavg1ogrenC1.c1.20170327.000000.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 147,
+ "dims": {
+  "time": 24
+ },
+ "n_qc_vars": 71,
+ "time_resolution_s": 3600.0,
+ "time_span": [
+  "2017-03-27T00:00:00",
+  "2017-03-27T23:00:00"
+ ],
+ "global_attrs": {
+  "process_version": "vap-aip1ogren-4.3-0.el6",
+  "dod_version": "aipavg1ogren-c1-1.1",
+  "command_line": "aip1ogren -s sgp -f C1 -b 20170327 -R",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "data_level": "c1",
+  "datastream": "sgpaipavg1ogrenC1.c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "Ba_G_Dry_1um_PSAP1W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_Ba_G_Dry_1um_PSAP1W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Absorption coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "Ba_G_Dry_10um_PSAP1W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption coefficient, green wavelength, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_Ba_G_Dry_10um_PSAP1W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Absorption coefficient, green wavelength, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "Ba_R_Dry_10um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption coefficient, red wavelength, 3 wavelength PSAP, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_Ba_R_Dry_10um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Absorption coefficient, red wavelength, 3 wavelength PSAP, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "Ba_G_Dry_10um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption coefficient, green wavelength, 3 wavelength PSAP, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_Ba_G_Dry_10um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Absorption coefficient, green wavelength, 3 wavelength PSAP, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "Ba_B_Dry_10um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption coefficient, blue wavelength, 3 wavelength PSAP, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_Ba_B_Dry_10um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Absorption coefficient, blue wavelength, 3 wavelength PSAP, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "Ba_R_Dry_1um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption coefficient, red wavelength, 3 wavelength PSAP, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_Ba_R_Dry_1um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Absorption coefficient, red wavelength, 3 wavelength PSAP, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "Ba_G_Dry_1um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption coefficient, green wavelength, 3 wavelength PSAP, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_Ba_G_Dry_1um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Absorption coefficient, green wavelength, 3 wavelength PSAP, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "Ba_B_Dry_1um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption coefficient, blue wavelength, 3 wavelength PSAP, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_Ba_B_Dry_1um_PSAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Absorption coefficient, blue wavelength, 3 wavelength PSAP, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "RH_NephVol_Dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity inside dry nephelometer",
+   "has_qc": true
+  },
+  "qc_RH_NephVol_Dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity inside dry nephelometer",
+   "has_qc": false
+  },
+  "Bs_R_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Total scattering coefficient, red wavelength, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_Bs_R_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total scattering coefficient, red wavelength, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "Bs_G_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Total scattering coefficient, green wavelength, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_Bs_G_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total scattering coefficient, green wavelength, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "Bs_B_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Total scattering coefficient, blue wavelength, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_Bs_B_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total scattering coefficient, blue wavelength, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "Bs_R_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Total scattering coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_Bs_R_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total scattering coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "Bs_G_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Total scattering coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_Bs_G_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total scattering coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "Bs_B_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Total scattering coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_Bs_B_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total scattering coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "Bbs_R_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Back-scattering coefficient, red wavelength, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_Bbs_R_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Back-scattering coefficient, red wavelength, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "Bbs_G_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Back-scattering coefficient, green wavelength, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_Bbs_G_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Back-scattering coefficient, green wavelength, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "Bbs_B_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Back-scattering coefficient, blue wavelength, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_Bbs_B_Dry_10um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Back-scattering coefficient, blue wavelength, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "Bbs_R_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Back-scattering coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_Bbs_R_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Back-scattering coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "Bbs_G_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Back-scattering coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_Bbs_G_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Back-scattering coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "Bbs_B_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Back-scattering coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_Bbs_B_Dry_1um_Neph3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Back-scattering coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "ssa_R_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo, red wavelength, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_ssa_R_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo, red wavelength, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "ssa_G_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo, green wavelength, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_ssa_G_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo, green wavelength, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "ssa_B_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo, blue wavelength, low RH, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_ssa_B_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo, blue wavelength, low RH, 10 um size cut",
+   "has_qc": false
+  },
+  "ssa_R_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo, red wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_ssa_R_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo, red wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "ssa_G_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo, green wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_ssa_G_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo, green wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "ssa_B_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo, blue wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_ssa_B_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo, blue wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "bsf_R_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Hemispheric backscatter fraction, red wavelength, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_bsf_R_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Hemispheric backscatter fraction, red wavelength, 10 um size cut",
+   "has_qc": false
+  },
+  "bsf_G_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Hemispheric backscatter fraction, green wavelength, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_bsf_G_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Hemispheric backscatter fraction, green wavelength, 10 um size cut",
+   "has_qc": false
+  },
+  "bsf_B_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Hemispheric backscatter fraction, blue wavelength, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_bsf_B_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Hemispheric backscatter fraction, blue wavelength, 10 um size cut",
+   "has_qc": false
+  },
+  "bsf_R_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Hemispheric backscatter_fraction, red wavelength, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_bsf_R_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Hemispheric backscatter_fraction, red wavelength, 1 um size cut",
+   "has_qc": false
+  },
+  "bsf_G_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Hemispheric backscatter fraction, green wavelength, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_bsf_G_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Hemispheric backscatter fraction, green wavelength, 1 um size cut",
+   "has_qc": false
+  },
+  "bsf_B_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Hemispheric backscatter fraction, blue wavelength, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_bsf_B_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Hemispheric backscatter fraction, blue wavelength, 1 um size cut",
+   "has_qc": false
+  },
+  "usf_R_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average upscatter fraction, red wavelength, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_usf_R_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average upscatter fraction, red wavelength, 10 um size cut",
+   "has_qc": false
+  },
+  "usf_G_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average upscatter fraction, green wavelength, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_usf_G_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average upscatter fraction, green wavelength, 10 um size cut",
+   "has_qc": false
+  },
+  "usf_B_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average upscatter fraction, blue wavelength, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_usf_B_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average upscatter fraction, blue wavelength, 10 um size cut",
+   "has_qc": false
+  },
+  "usf_R_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average upscatter fraction, red wavelength, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_usf_R_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average upscatter fraction, red wavelength, 1 um size cut",
+   "has_qc": false
+  },
+  "usf_G_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average upscatter fraction, green wavelength, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_usf_G_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average upscatter fraction, green wavelength, 1 um size cut",
+   "has_qc": false
+  },
+  "usf_B_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average upscatter fraction, blue wavelength, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_usf_B_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average upscatter fraction, blue wavelength, 1 um size cut",
+   "has_qc": false
+  },
+  "Bs_angstrom_exponent_BG_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/green ratio, 10 um size cut, Neph3W total scatter data",
+   "has_qc": true
+  },
+  "qc_Bs_angstrom_exponent_BG_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/green ratio, 10 um size cut, Neph3W total scatter data",
+   "has_qc": false
+  },
+  "Bs_angstrom_exponent_BR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/red ratio, 10 um size cut, Neph3W total scatter data",
+   "has_qc": true
+  },
+  "qc_Bs_angstrom_exponent_BR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/red ratio, 10 um size cut, Neph3W total scatter data",
+   "has_qc": false
+  },
+  "Bs_angstrom_exponent_GR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from green/red ratio, 10 um size cut, Neph3W total scatter data",
+   "has_qc": true
+  },
+  "qc_Bs_angstrom_exponent_GR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from green/red ratio, 10 um size cut, Neph3W total scatter data",
+   "has_qc": false
+  },
+  "Bs_angstrom_exponent_BG_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/green ratio, 1 um size cut, Neph3W total scatter data",
+   "has_qc": true
+  },
+  "qc_Bs_angstrom_exponent_BG_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/green ratio, 1 um size cut, Neph3W total scatter data",
+   "has_qc": false
+  },
+  "Bs_angstrom_exponent_BR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/red ratio, 1 um size cut, Neph3W total scatter data",
+   "has_qc": true
+  },
+  "qc_Bs_angstrom_exponent_BR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/red ratio, 1 um size cut, Neph3W total scatter data",
+   "has_qc": false
+  },
+  "Bs_angstrom_exponent_GR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from green/red ratio, 1 um size cut, Neph3W total scatter data",
+   "has_qc": true
+  },
+  "qc_Bs_angstrom_exponent_GR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from green/red ratio, 1 um size cut, Neph3W total scatter data",
+   "has_qc": false
+  },
+  "Bbs_angstrom_exponent_BG_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/green ratio, 10 um size cut, Neph3W backscatter data",
+   "has_qc": true
+  },
+  "qc_Bbs_angstrom_exponent_BG_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/green ratio, 10 um size cut, Neph3W backscatter data",
+   "has_qc": false
+  },
+  "Bbs_angstrom_exponent_BR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/red ratio, 10 um size cut, Neph3W backscatter data",
+   "has_qc": true
+  },
+  "qc_Bbs_angstrom_exponent_BR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/red ratio, 10 um size cut, Neph3W backscatter data",
+   "has_qc": false
+  },
+  "Bbs_angstrom_exponent_GR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from green/red ratio, 10 um size cut, Neph3W backscatter data",
+   "has_qc": true
+  },
+  "qc_Bbs_angstrom_exponent_GR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from green/red ratio, 10 um size cut, Neph3W backscatter data",
+   "has_qc": false
+  },
+  "Bbs_angstrom_exponent_BG_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/green ratio, 1 um size cut, Neph3W backscatter data",
+   "has_qc": true
+  },
+  "qc_Bbs_angstrom_exponent_BG_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/green ratio, 1 um size cut, Neph3W backscatter data",
+   "has_qc": false
+  },
+  "Bbs_angstrom_exponent_BR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/red ratio, 1 um size cut, Neph3W backscatter data",
+   "has_qc": true
+  },
+  "qc_Bbs_angstrom_exponent_BR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/red ratio, 1 um size cut, Neph3W backscatter data",
+   "has_qc": false
+  },
+  "Bbs_angstrom_exponent_GR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from green/red ratio, 1 um size cut, Neph3W backscatter data",
+   "has_qc": true
+  },
+  "qc_Bbs_angstrom_exponent_GR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from green/red ratio, 1 um size cut, Neph3W backscatter data",
+   "has_qc": false
+  },
+  "Ba_angstrom_exponent_BG_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/green ratio, 10 um size cut, PSAP3W data",
+   "has_qc": true
+  },
+  "qc_Ba_angstrom_exponent_BG_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/green ratio, 10 um size cut, PSAP3W data",
+   "has_qc": false
+  },
+  "Ba_angstrom_exponent_BR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/red ratio, 10 um size cut, PSAP3W data",
+   "has_qc": true
+  },
+  "qc_Ba_angstrom_exponent_BR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/red ratio, 10 um size cut, PSAP3W data",
+   "has_qc": false
+  },
+  "Ba_angstrom_exponent_GR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from green/red ratio, 10 um size cut, PSAP3W data",
+   "has_qc": true
+  },
+  "qc_Ba_angstrom_exponent_GR_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from green/red ratio, 10 um size cut, PSAP3W data",
+   "has_qc": false
+  },
+  "Ba_angstrom_exponent_BG_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/green ratio, 1 um size cut, PSAP3W data",
+   "has_qc": true
+  },
+  "qc_Ba_angstrom_exponent_BG_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/green ratio, 1 um size cut, PSAP3W data",
+   "has_qc": false
+  },
+  "Ba_angstrom_exponent_BR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/red ratio, 1 um size cut, PSAP3W data",
+   "has_qc": true
+  },
+  "qc_Ba_angstrom_exponent_BR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/red ratio, 1 um size cut, PSAP3W data",
+   "has_qc": false
+  },
+  "Ba_angstrom_exponent_GR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from green/red ratio, 1 um size cut, PSAP3W data",
+   "has_qc": true
+  },
+  "qc_Ba_angstrom_exponent_GR_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from green/red ratio, 1 um size cut, PSAP3W data",
+   "has_qc": false
+  },
+  "asymmetry_parameter_R_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Asymmetry factor, red wavelength, 10um size cut",
+   "has_qc": true
+  },
+  "qc_asymmetry_parameter_R_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Asymmetry factor, red wavelength, 10um size cut",
+   "has_qc": false
+  },
+  "asymmetry_parameter_G_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Asymmetry factor, green wavelength, 10um size cut",
+   "has_qc": true
+  },
+  "qc_asymmetry_parameter_G_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Asymmetry factor, green wavelength, 10um size cut",
+   "has_qc": false
+  },
+  "asymmetry_parameter_B_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Asymmetry factor, blue wavelength, 10um size cut",
+   "has_qc": true
+  },
+  "qc_asymmetry_parameter_B_Dry_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Asymmetry factor, blue wavelength, 10um size cut",
+   "has_qc": false
+  },
+  "asymmetry_parameter_R_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Asymmetry factor, red wavelength, 1um size cut",
+   "has_qc": true
+  },
+  "qc_asymmetry_parameter_R_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Asymmetry factor, red wavelength, 1um size cut",
+   "has_qc": false
+  },
+  "asymmetry_parameter_G_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Asymmetry factor, green wavelength, 1um size cut",
+   "has_qc": true
+  },
+  "qc_asymmetry_parameter_G_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Asymmetry factor, green wavelength, 1um size cut",
+   "has_qc": false
+  },
+  "asymmetry_parameter_B_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Asymmetry factor, blue wavelength, 1um size cut",
+   "has_qc": true
+  },
+  "qc_asymmetry_parameter_B_Dry_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Asymmetry factor, blue wavelength, 1um size cut",
+   "has_qc": false
+  },
+  "aerosol_forcing_efficiency_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol forcing per unit optical depth, 10 um size cut",
+   "has_qc": true
+  },
+  "qc_aerosol_forcing_efficiency_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol forcing per unit optical depth, 10 um size cut",
+   "has_qc": false
+  },
+  "aerosol_forcing_efficiency_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol forcing per unit optical depth, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_aerosol_forcing_efficiency_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol forcing per unit optical depth, 1 um size cut",
+   "has_qc": false
+  },
+  "submicron_fraction_absorption_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Submicron absorption fraction, red wavelength, low RH",
+   "has_qc": true
+  },
+  "qc_submicron_fraction_absorption_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Submicron absorption fraction, red wavelength, low RH",
+   "has_qc": false
+  },
+  "submicron_fraction_absorption_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Submicron absorption fraction, green wavelength, low RH",
+   "has_qc": true
+  },
+  "qc_submicron_fraction_absorption_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Submicron absorption fraction, green wavelength, low RH",
+   "has_qc": false
+  },
+  "submicron_fraction_absorption_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Submicron absorption fraction, blue wavelength, low RH",
+   "has_qc": true
+  },
+  "qc_submicron_fraction_absorption_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Submicron absorption fraction, blue wavelength, low RH",
+   "has_qc": false
+  },
+  "submicron_fraction_scattering_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Submicron scattering fraction, red wavelength, low RH",
+   "has_qc": true
+  },
+  "qc_submicron_fraction_scattering_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Submicron scattering fraction, red wavelength, low RH",
+   "has_qc": false
+  },
+  "submicron_fraction_scattering_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Submicron scattering fraction, green wavelength, low RH",
+   "has_qc": true
+  },
+  "qc_submicron_fraction_scattering_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Submicron scattering fraction, green wavelength, low RH",
+   "has_qc": false
+  },
+  "submicron_fraction_scattering_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Submicron scattering fraction, blue wavelength, low RH",
+   "has_qc": true
+  },
+  "qc_submicron_fraction_scattering_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Submicron scattering fraction, blue wavelength, low RH",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

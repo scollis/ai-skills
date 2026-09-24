@@ -1,0 +1,815 @@
+{
+ "vap": "varanal",
+ "datastream": "sgp60varanarapC1.c1",
+ "filename": "sgp60varanarapC1.c1.20190801.000000.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 62,
+ "dims": {
+  "time": 744,
+  "lev": 37
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 3600.0,
+ "time_span": [
+  "2019-08-01T00:00:00",
+  "2019-08-31T23:05:26"
+ ],
+ "global_attrs": {
+  "command_line": "proc_output_nwp.pro",
+  "process_version": "N/A",
+  "dod_version": "v1.0",
+  "data_level": "c1",
+  "datastream": "sgp60varanarapC1.c1",
+  "site_id": "sgp",
+  "facility_id": "C1 ",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "doi": "10.5439/1647174"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "phis": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m2/s2",
+   "long_name": "Surface geopotential height",
+   "has_qc": false
+  },
+  "T": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Temperature",
+   "has_qc": false
+  },
+  "q": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Water vapor mixing ratio",
+   "has_qc": false
+  },
+  "u": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Horizontal wind U component",
+   "has_qc": false
+  },
+  "v": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Horizontal wind V component",
+   "has_qc": false
+  },
+  "omega": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "hPa/hr",
+   "long_name": "Vertical velocity",
+   "has_qc": false
+  },
+  "div": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "1/s",
+   "long_name": "Horizontal wind divergence",
+   "has_qc": false
+  },
+  "T_adv_h": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "K/hr",
+   "long_name": "Horizontal Temperature advection",
+   "has_qc": false
+  },
+  "T_adv_v": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "K/hr",
+   "long_name": "Vertical Temperature advection",
+   "has_qc": false
+  },
+  "q_adv_h": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "g/kg/hr",
+   "long_name": "Horizontal water vapor mixing ratio advection",
+   "has_qc": false
+  },
+  "q_adv_v": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "g/kg/hr",
+   "long_name": "Vertical water vapor mixing ratio advection",
+   "has_qc": false
+  },
+  "s": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Dry static energy/Cp",
+   "has_qc": false
+  },
+  "s_adv_h": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "K/hr",
+   "long_name": "Horizontal dry static energy advection/Cp",
+   "has_qc": false
+  },
+  "s_adv_v": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "K/hr",
+   "long_name": "Vertical dry static energy advection/Cp",
+   "has_qc": false
+  },
+  "dsdt": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "K/hr",
+   "long_name": "Derivative of dry static energy/Cp with respect to time",
+   "has_qc": false
+  },
+  "dTdt": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "K/hr",
+   "long_name": "Derivative of air temperature with respect to time",
+   "has_qc": false
+  },
+  "dqdt": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "g/kg/hr",
+   "long_name": "Derivative of water vapor mixing ratio with respect to time",
+   "has_qc": false
+  },
+  "q1": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "K/hr",
+   "long_name": "Apparent heat sources Yanai (1973)",
+   "has_qc": false
+  },
+  "q2": {
+   "dims": [
+    "time",
+    "lev"
+   ],
+   "shape": [
+    744,
+    37
+   ],
+   "dtype": "float32",
+   "units": "K/hr",
+   "long_name": "Apparent moisture sinks Yanai (1973)",
+   "has_qc": false
+  },
+  "prec_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Surface precipitation",
+   "has_qc": false
+  },
+  "LH": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Surface latent heat flux, upward positive",
+   "has_qc": false
+  },
+  "SH": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Surface sensible heat flux, upward positive",
+   "has_qc": false
+  },
+  "p_srf_aver": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Surface pressure averaged over the domain",
+   "has_qc": false
+  },
+  "p_srf_center": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Surface pressure at center of the domain",
+   "has_qc": false
+  },
+  "T_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Surface air temperature",
+   "has_qc": false
+  },
+  "T_soil": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Soil temperature",
+   "has_qc": false
+  },
+  "RH_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Surface air relative humidity",
+   "has_qc": false
+  },
+  "wspd_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Surface wind speed",
+   "has_qc": false
+  },
+  "u_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Surface U component",
+   "has_qc": false
+  },
+  "v_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Surface V component",
+   "has_qc": false
+  },
+  "rad_net_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Surface net radiation, Downward",
+   "has_qc": false
+  },
+  "lw_net_toa": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Satellite-measured TOA longwave flux, upward positive",
+   "has_qc": false
+  },
+  "sw_net_toa": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Satellite-measured TOA net shortwave flux, downward positive",
+   "has_qc": false
+  },
+  "sw_dn_toa": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Satellite-measured TOA solar insolation",
+   "has_qc": false
+  },
+  "cld_low": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Satellite-measured low level cloud",
+   "has_qc": false
+  },
+  "cld_mid": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Satellite-measured middle level cloud",
+   "has_qc": false
+  },
+  "cld_high": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Satellite-measured high level cloud",
+   "has_qc": false
+  },
+  "cld_tot": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Satellite-measured total cloud",
+   "has_qc": false
+  },
+  "cld_thick": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Satellite-measured cloud thickness",
+   "has_qc": false
+  },
+  "cld_top": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Satellite-measured cloud top",
+   "has_qc": false
+  },
+  "LWP": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Cloud liquid water path",
+   "has_qc": false
+  },
+  "dh2odt_col": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Column-integrated derivative of H2O with respect to time",
+   "has_qc": false
+  },
+  "h2o_adv_col": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Column-integrated H2O advection",
+   "has_qc": false
+  },
+  "evap_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Surface evaporation",
+   "has_qc": false
+  },
+  "dsdt_col": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Column derivative of dry static energy/Cp with respect to time",
+   "has_qc": false
+  },
+  "s_adv_col": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Column dry static energy advection",
+   "has_qc": false
+  },
+  "rad_heat_col": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Column radiative heating",
+   "has_qc": false
+  },
+  "LH_col": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Column latent heating",
+   "has_qc": false
+  },
+  "omega_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "hPa/hr",
+   "long_name": "Surface omega",
+   "has_qc": false
+  },
+  "q_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "kg/kg",
+   "long_name": "Water vapor mixing ratio at the near-surface",
+   "has_qc": false
+  },
+  "s_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Dry static energy/Cp at the near-surface",
+   "has_qc": false
+  },
+  "PWV": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Column precipitable water",
+   "has_qc": false
+  },
+  "lw_up_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Surface upwelling longwave",
+   "has_qc": false
+  },
+  "lw_dn_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Surface downwelling longwave",
+   "has_qc": false
+  },
+  "sw_up_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Surface upwelling shortwave",
+   "has_qc": false
+  },
+  "sw_dn_srf": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Surface downwelling shortwave",
+   "has_qc": false
+  },
+  "T_skin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Surface skin temperature",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degrees_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    744
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "lev": {
+   "dims": [
+    "lev"
+   ],
+   "shape": [
+    37
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure levels",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,599 @@
+{
+ "vap": "rlprof",
+ "datastream": "sgp10rlprofbe1newsC1.c1",
+ "filename": "sgp10rlprofbe1newsC1.c1.20150918.000500.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 43,
+ "dims": {
+  "time": 144,
+  "height": 198
+ },
+ "n_qc_vars": 11,
+ "time_resolution_s": 600.0,
+ "time_span": [
+  "2015-09-18T00:05:00",
+  "2015-09-18T23:55:00"
+ ],
+ "global_attrs": {
+  "process_version": "$State: vap-rlprof_be-0.5-0.el6$",
+  "command_line": "/apps/process/bin/rlprof_be10 -f C1 -s sgp -d 20150918",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "dod_version": "0.1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "asr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol scattering ratio",
+   "has_qc": true
+  },
+  "qc_asr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol scattering ratio",
+   "has_qc": false
+  },
+  "asr_err": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol scattering ratio uncertainty",
+   "has_qc": false
+  },
+  "bscat": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "1/(ster km)",
+   "long_name": "Aerosol backscatter coefficient",
+   "has_qc": true
+  },
+  "qc_bscat": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol backscatter coefficient",
+   "has_qc": false
+  },
+  "bscat_err": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "1/(ster km)",
+   "long_name": "Aerosol backscatter coefficient uncertainty",
+   "has_qc": false
+  },
+  "ext": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "km^(-1)",
+   "long_name": "Aerosol extinction coefficient",
+   "has_qc": true
+  },
+  "qc_ext": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol extinction coefficient",
+   "has_qc": false
+  },
+  "ext_err": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "km^(-1)",
+   "long_name": "Aerosol extinction coefficient uncertainty",
+   "has_qc": false
+  },
+  "aod": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol optical depth",
+   "has_qc": true
+  },
+  "qc_aod": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol optical depth",
+   "has_qc": false
+  },
+  "aod_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol optical depth uncertainty",
+   "has_qc": false
+  },
+  "aod_profile": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol optical depth profile",
+   "has_qc": true
+  },
+  "qc_aod_profile": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol optical depth profile",
+   "has_qc": false
+  },
+  "aod_max_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Maximum height for aod",
+   "has_qc": false
+  },
+  "dep": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Linear depolarization ratio profile",
+   "has_qc": true
+  },
+  "qc_dep": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Linear depolarization ratio profile",
+   "has_qc": false
+  },
+  "dep_err": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Linear depolarization ratio uncertainty",
+   "has_qc": false
+  },
+  "cot": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cloud optical depth from elastic data",
+   "has_qc": true
+  },
+  "qc_cot": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Cloud optical depth from elastic data",
+   "has_qc": false
+  },
+  "cot_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Uncertainty in cloud optical depth from elastic data",
+   "has_qc": false
+  },
+  "pwv_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Precipitable water vapor from microwave radiometer",
+   "has_qc": false
+  },
+  "pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Precipitable water vapor observed by the Raman lidar",
+   "has_qc": true
+  },
+  "qc_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Precipitable water vapor observed by the Raman lidar",
+   "has_qc": false
+  },
+  "pwv_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Uncertainty in precipitable water vapor observed by the Raman lidar",
+   "has_qc": false
+  },
+  "pwv_fraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Fraction of the total column amount of water vapor the Raman lidar senses",
+   "has_qc": false
+  },
+  "mr_max_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Suggested maximum altitude to use the water vapor from the Raman lidar",
+   "has_qc": false
+  },
+  "mr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "g/km",
+   "long_name": "Water vapor mixing ratio observed by the Raman lidar",
+   "has_qc": true
+  },
+  "qc_mr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Water vapor mixing ratio observed by the Raman lidar",
+   "has_qc": false
+  },
+  "mr_err": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "g/km",
+   "long_name": "Uncertainty in water vapor mixing ratio observed by the Raman lidar",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity observed by the Raman lidar",
+   "has_qc": true
+  },
+  "qc_rh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity observed by the Raman lidar",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Temperature from sgpaeriprof3feltzC1.c1",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "mb",
+   "long_name": "Pressure from sgpaeriprof3feltzC1.c1",
+   "has_qc": false
+  },
+  "mr_sonde": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Sonde mixing ratio",
+   "has_qc": false
+  },
+  "sample_times_sonde": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Sonde sample times",
+   "has_qc": false
+  },
+  "cmask": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Cloud mask from depolarization VAP",
+   "has_qc": true
+  },
+  "qc_cmask": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    198
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Cloud mask from depolarization VAP",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    198
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height above ground level",
+   "has_qc": false
+  }
+ }
+}

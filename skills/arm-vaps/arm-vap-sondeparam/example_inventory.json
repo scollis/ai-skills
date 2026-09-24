@@ -1,0 +1,280 @@
+{
+ "vap": "sondeparam",
+ "datastream": "sgpsondeparamC1.c1",
+ "filename": "sgpsondeparamC1.c1.20260917.185609.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 19,
+ "dims": {
+  "time": 4956,
+  "parcel_type": 3
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-09-17T18:56:09",
+  "2026-09-17T20:18:44"
+ ],
+ "global_attrs": {
+  "command_line": "sondeparam -s sgp -f C1 -b 20260917 -e 20260918 -a dsdb_data --max-runtime 86400",
+  "process_version": "sondeparam-1.2.6",
+  "dod_version": "sondeparam-c1-1.2",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpsondeparamC1.c1",
+  "doi": "10.5439/1827079",
+  "serial_number": "X4352028"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4956
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_highest_level": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4956
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "The time when radiosonde reaches the highest level",
+   "has_qc": false
+  },
+  "parcel_layer": {
+   "dims": [
+    "time",
+    "parcel_type"
+   ],
+   "shape": [
+    4956,
+    3
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "The height of the parcel for a given parcel type",
+   "has_qc": false
+  },
+  "sonde_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4956
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "The highest level of radiosonde",
+   "has_qc": false
+  },
+  "cape": {
+   "dims": [
+    "time",
+    "parcel_type"
+   ],
+   "shape": [
+    4956,
+    3
+   ],
+   "dtype": "float32",
+   "units": "J kg-1",
+   "long_name": "Convective available potential energy",
+   "has_qc": false
+  },
+  "cin": {
+   "dims": [
+    "time",
+    "parcel_type"
+   ],
+   "shape": [
+    4956,
+    3
+   ],
+   "dtype": "float32",
+   "units": "J kg-1",
+   "long_name": "Convective inhibition",
+   "has_qc": false
+  },
+  "lcl": {
+   "dims": [
+    "time",
+    "parcel_type"
+   ],
+   "shape": [
+    4956,
+    3
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Lifting condensation level",
+   "has_qc": false
+  },
+  "lfc": {
+   "dims": [
+    "time",
+    "parcel_type"
+   ],
+   "shape": [
+    4956,
+    3
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Level of free convection",
+   "has_qc": false
+  },
+  "lnb": {
+   "dims": [
+    "time",
+    "parcel_type"
+   ],
+   "shape": [
+    4956,
+    3
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Level of neutral buoyancy",
+   "has_qc": false
+  },
+  "elr_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4956
+   ],
+   "dtype": "float32",
+   "units": "degC km-1",
+   "long_name": "Environmental temperature lapse rates from 0km to 3km",
+   "has_qc": false
+  },
+  "elr_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4956
+   ],
+   "dtype": "float32",
+   "units": "degC km-1",
+   "long_name": "Environmental temperature lapse rates from 3km to 6km",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4956
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Low-level relative humidity from 0km to 5km",
+   "has_qc": false
+  },
+  "wind_shear": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4956
+   ],
+   "dtype": "float32",
+   "units": "s-1",
+   "long_name": "Wind shear from 0km to 5km",
+   "has_qc": false
+  },
+  "data_quality": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4956
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag indicating quality of the input data",
+   "has_qc": false
+  },
+  "lcl_lfc_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4956
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Warning flag when LCL equals to LFC",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4956
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "parcel_type": {
+   "dims": [
+    "parcel_type"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Types of parcel",
+   "has_qc": false
+  }
+ }
+}

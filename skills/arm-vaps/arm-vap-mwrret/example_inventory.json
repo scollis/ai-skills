@@ -1,0 +1,1001 @@
+{
+ "vap": "mwrret",
+ "datastream": "sgpmwrret1liljclouC1.c1",
+ "filename": "sgpmwrret1liljclouC1.c1.20260915.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 81,
+ "dims": {
+  "time": 3985,
+  "nlevels": 54,
+  "nvbias": 100
+ },
+ "n_qc_vars": 28,
+ "time_resolution_s": 20.0,
+ "time_span": [
+  "2026-09-15T00:00:00",
+  "2026-09-15T23:59:29"
+ ],
+ "global_attrs": {
+  "command_line": "mwrret1liljclou -d 20260915 -f C1 -s sgp --run-samples 1 --ceil 300",
+  "process_version": "vap-mwrret1liljclou-1.20-0.el9",
+  "dod_version": "mwrret1liljclou-c1-1.6",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpmwrret1liljclouC1.c1",
+  "sampling_interval": "20 seconds",
+  "doi": "10.5439/1285691"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "sonde_level": {
+   "dims": [
+    "nlevels"
+   ],
+   "shape": [
+    54
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Sonde level height",
+   "has_qc": false
+  },
+  "be_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Precipitable water vapor best-estimate value",
+   "has_qc": true
+  },
+  "qc_be_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Precipitable water vapor best-estimate value",
+   "has_qc": false
+  },
+  "be_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Liquid water path best-estimate value",
+   "has_qc": true
+  },
+  "qc_be_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Liquid water path best-estimate value",
+   "has_qc": false
+  },
+  "be_retrieval_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Best-estimate retrieval status",
+   "has_qc": false
+  },
+  "cloud_base_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Cloud base height",
+   "has_qc": true
+  },
+  "qc_cloud_base_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud base height",
+   "has_qc": false
+  },
+  "cloud_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Cloud temperature used in the retrieval",
+   "has_qc": true
+  },
+  "qc_cloud_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud temperature used in the retrieval",
+   "has_qc": false
+  },
+  "surface_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Surface temperature",
+   "has_qc": true
+  },
+  "qc_surface_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface temperature",
+   "has_qc": false
+  },
+  "surface_vapor_pres": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Surface vapor pressure",
+   "has_qc": true
+  },
+  "qc_surface_vapor_pres": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface vapor pressure",
+   "has_qc": false
+  },
+  "surface_pres": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Surface pressure",
+   "has_qc": true
+  },
+  "qc_surface_pres": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface pressure",
+   "has_qc": false
+  },
+  "surface_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Surface relative humidity",
+   "has_qc": true
+  },
+  "qc_surface_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface relative humidity",
+   "has_qc": false
+  },
+  "tbsky23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Sky brightness temperature at 23.8 GHz",
+   "has_qc": true
+  },
+  "qc_tbsky23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sky brightness temperature at 23.8 GHz",
+   "has_qc": false
+  },
+  "tbsky31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Sky brightness temperature at 31.4 GHz",
+   "has_qc": true
+  },
+  "qc_tbsky31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sky brightness temperature at 31.4 GHz",
+   "has_qc": false
+  },
+  "orig_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Total water vapor along LOS path",
+   "has_qc": true
+  },
+  "qc_orig_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total water vapor along LOS path",
+   "has_qc": false
+  },
+  "orig_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Total liquid water along LOS path",
+   "has_qc": true
+  },
+  "qc_orig_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total liquid water along LOS path",
+   "has_qc": false
+  },
+  "tbsky23_nobias": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Sky brightness temperature at 23.8 GHz, with the bias removed",
+   "has_qc": false
+  },
+  "tbsky31_nobias": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Sky brightness temperature at 31.4 GHz, with the bias removed",
+   "has_qc": false
+  },
+  "stat2_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Precipitable water vapor retrieved using predicted mean radiating temperatures and retrieval coefficients",
+   "has_qc": true
+  },
+  "qc_stat2_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Precipitable water vapor retrieved using predicted mean radiating temperatures and retrieval coefficients",
+   "has_qc": false
+  },
+  "stat2_pwv_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "1-sigma uncertainty in precipitable water vapor retrieved using the stat2 approach",
+   "has_qc": false
+  },
+  "stat2_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Cloud liquid water path retrieved using predicted mean radiating temperatures and retrieval coefficients",
+   "has_qc": true
+  },
+  "qc_stat2_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud liquid water path retrieved using predicted mean radiating temperatures and retrieval coefficients",
+   "has_qc": false
+  },
+  "stat2_lwp_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "1-sigma uncertainty in cloud liquid water path retrieved using the stat2 approach",
+   "has_qc": false
+  },
+  "stat2_tliq_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Status flag indicating stat2 cloud liquid water temperature ranges",
+   "has_qc": false
+  },
+  "tbsky23_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Calculated sky brightness temperature at 23.8 GHz",
+   "has_qc": true
+  },
+  "qc_tbsky23_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calculated sky brightness temperature at 23.8 GHz",
+   "has_qc": false
+  },
+  "tbsky31_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Calculated sky brightness temperature at 31.4 GHz",
+   "has_qc": true
+  },
+  "qc_tbsky31_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calculated sky brightness temperature at 31.4 GHz",
+   "has_qc": false
+  },
+  "phys_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Precipitable water vapor retrieved using a physical/iterative approach",
+   "has_qc": true
+  },
+  "qc_phys_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Precipitable water vapor retrieved using a physical/iterative approach",
+   "has_qc": false
+  },
+  "phys_pwv_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "1-sigma uncertainty in precipitable water vapor retrieved using a physical/iterative approach",
+   "has_qc": true
+  },
+  "qc_phys_pwv_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 1-sigma uncertainty in precipitable water vapor retrieved using a physical/iterative approach",
+   "has_qc": false
+  },
+  "phys_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Cloud liquid water path retrieved using a physical/iterative approach",
+   "has_qc": true
+  },
+  "qc_phys_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud liquid water path retrieved using a physical/iterative approach",
+   "has_qc": false
+  },
+  "phys_lwp_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "1-sigma uncertainty in cloud liquid water path retrieved using a physical/iterative approach",
+   "has_qc": true
+  },
+  "qc_phys_lwp_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 1-sigma uncertainty in cloud liquid water path retrieved using a physical/iterative approach",
+   "has_qc": false
+  },
+  "phys_niter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float64",
+   "units": "count",
+   "long_name": "Number of iterations needed by the physical retrieval for convergence",
+   "has_qc": true
+  },
+  "qc_phys_niter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number of iterations needed by the physical retrieval for convergence",
+   "has_qc": false
+  },
+  "phys_rms": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Root mean square difference between the computed and observed brightness temperatures for the last iteration",
+   "has_qc": true
+  },
+  "qc_phys_rms": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Root mean square difference between the computed and observed brightness temperatures for the last iteration",
+   "has_qc": false
+  },
+  "phys_converge": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Convergence value for the physical retrieval",
+   "has_qc": true
+  },
+  "qc_phys_converge": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Convergence value for the physical retrieval",
+   "has_qc": false
+  },
+  "sonde_launch_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Flag indicating when the sonde launches occurred",
+   "has_qc": false
+  },
+  "sonde_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Precipitable water vapor integrated from the radiosonde profile",
+   "has_qc": true
+  },
+  "qc_sonde_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Precipitable water vapor integrated from the radiosonde profile",
+   "has_qc": false
+  },
+  "mean_pwv_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Ensemble average for MWR vapor (orig_pwv) in window centered upon current sample",
+   "has_qc": false
+  },
+  "sdev_pwv_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Standard deviation of ensemble average for MWR vapor (orig_pwv)",
+   "has_qc": false
+  },
+  "num_pwv_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Size of MWR ensemble for mean_pwv_mwr field",
+   "has_qc": false
+  },
+  "mean_lwp_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Ensemble average for MWR liquid (orig_lwp) in window centered upon current sample",
+   "has_qc": false
+  },
+  "sdev_lwp_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Standard deviation of ensemble average for MWR liq (orig_lwp)",
+   "has_qc": false
+  },
+  "num_lwp_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Size of MWR ensemble for mean_lwp_mwr field",
+   "has_qc": false
+  },
+  "mean_tbsky23_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ensemble average for MWR 23.8 GHz sky brightness temperature in window centered upon current sample",
+   "has_qc": true
+  },
+  "qc_mean_tbsky23_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ensemble average for MWR 23.8 GHz sky brightness temperature in window centered upon current sample",
+   "has_qc": false
+  },
+  "sdev_tbsky23_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Standard deviation for ensemble average for MWR 23.8 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_sdev_tbsky23_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation for ensemble average for MWR 23.8 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "num_tbsky23_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Size of MWR ensemble for mean_tbsky23_mwr field",
+   "has_qc": false
+  },
+  "mean_tbsky31_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ensemble average for MWR 31.4 GHz sky brightness temperature in window centered upon current sample",
+   "has_qc": true
+  },
+  "qc_mean_tbsky31_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ensemble average for MWR 31.4 GHz sky brightness temperature in window centered upon current sample",
+   "has_qc": false
+  },
+  "sdev_tbsky31_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Standard deviation for ensemble average for MWR 31.4 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_sdev_tbsky31_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation for ensemble average for MWR 31.4 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "num_tbsky31_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Size of MWR ensemble for mean_tbsky31_mwr field",
+   "has_qc": false
+  },
+  "vbias_yyyymmdd": {
+   "dims": [
+    "nvbias"
+   ],
+   "shape": [
+    100
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Variable bias date",
+   "has_qc": false
+  },
+  "vbias_hour": {
+   "dims": [
+    "nvbias"
+   ],
+   "shape": [
+    100
+   ],
+   "dtype": "float32",
+   "units": "hour",
+   "long_name": "Variable bias hour",
+   "has_qc": false
+  },
+  "vbias_23": {
+   "dims": [
+    "nvbias"
+   ],
+   "shape": [
+    100
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Variable bias offset at 23.8 GHz",
+   "has_qc": false
+  },
+  "vbias_31": {
+   "dims": [
+    "nvbias"
+   ],
+   "shape": [
+    100
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Variable bias offset at 31.4 GHz",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3985
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

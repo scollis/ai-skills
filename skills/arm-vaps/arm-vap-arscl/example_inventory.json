@@ -1,0 +1,102 @@
+{
+ "vap": "arscl",
+ "datastream": "sgparsclcbh1clothC1.c1",
+ "filename": "sgparsclcbh1clothC1.c1.20110101.000000.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 6,
+ "dims": {
+  "time": 8640
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 10.0,
+ "time_span": [
+  "0.0",
+  "86390.0"
+ ],
+ "global_attrs": {
+  "datastream": "sgparsclcbh1clothC1.c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Beginning Time of File",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float64",
+   "units": "seconds",
+   "long_name": "Time Offset from base_time",
+   "has_qc": false
+  },
+  "CloudBasePrecipitation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "m AGL",
+   "long_name": "Microwave Radiometer Wet Window/Optical Rain Gauge Cloud Base Height",
+   "has_qc": false
+  },
+  "CloudBaseCeilometerStd": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "m AGL",
+   "long_name": "BLC/VCEIL Standard Algorithm Cloud Base Height",
+   "has_qc": false
+  },
+  "CloudBaseCeilometerCloth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "m AGL",
+   "long_name": "BLC/VCEIL Clothiaux et al. Algorithm Cloud Base Height",
+   "has_qc": false
+  },
+  "CloudBaseMplZwang": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "m AGL",
+   "long_name": "MPL Wang and Sassen Algorithm Cloud Base Height",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float64",
+   "units": "seconds",
+   "long_name": "Time Offset from base_time",
+   "has_qc": false
+  }
+ }
+}

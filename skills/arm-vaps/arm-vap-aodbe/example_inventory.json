@@ -1,0 +1,1334 @@
+{
+ "vap": "aodbe",
+ "datastream": "sgpaodbe5chC1.c1",
+ "filename": "sgpaodbe5chC1.c1.20241204.060000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 108,
+ "dims": {
+  "time": 1440,
+  "bound": 2,
+  "ncomparisons": 6
+ },
+ "n_qc_vars": 25,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2024-12-04T06:00:00",
+  "2024-12-05T05:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "aodbe -n aodbe5ch -s sgp -f C1 -b 20240608 -e 20241205 -R --max-runtime 0",
+  "process_version": "aodbe-2.3.0",
+  "dod_version": "aodbe5ch-c1-1.3",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpaodbe5chC1.c1",
+  "doi": "10.5439/1885158"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "aod_cimel_380": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 380 nm from CIMEL",
+   "has_qc": false
+  },
+  "aod_cimel_380_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_cimel_380",
+   "has_qc": false
+  },
+  "be_aod_cimel_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Best estimate of Aerosol Optical Depth at 415 nm based on a polynomial fit of CIMEL data",
+   "has_qc": false
+  },
+  "aod_cimel_440": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 440 nm from CIMEL",
+   "has_qc": false
+  },
+  "aod_cimel_440_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_cimel_440",
+   "has_qc": false
+  },
+  "aod_cimel_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 500 nm from CIMEL",
+   "has_qc": false
+  },
+  "aod_cimel_500_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_cimel_500",
+   "has_qc": false
+  },
+  "be_aod_cimel_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Best estimate of Aerosol Optical Depth at 615 nm based on a polynomial fit of CIMEL data",
+   "has_qc": false
+  },
+  "aod_cimel_675": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 675 nm from CIMEL",
+   "has_qc": false
+  },
+  "aod_cimel_675_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_cimel_675",
+   "has_qc": false
+  },
+  "aod_cimel_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 870 nm from CIMEL",
+   "has_qc": false
+  },
+  "aod_cimel_870_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_cimel_870",
+   "has_qc": false
+  },
+  "aod_mfrsr_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 415 nm from the primary MFRSR",
+   "has_qc": true
+  },
+  "aod_mfrsr_415_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_mfrsr_415",
+   "has_qc": false
+  },
+  "qc_aod_mfrsr_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 415 nm from the primary MFRSR",
+   "has_qc": false
+  },
+  "aod_mfrsr_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 500 nm from the primary MFRSR",
+   "has_qc": true
+  },
+  "aod_mfrsr_500_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_mfrsr_500",
+   "has_qc": false
+  },
+  "qc_aod_mfrsr_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 500 nm from the primary MFRSR",
+   "has_qc": false
+  },
+  "aod_mfrsr_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 615 nm from the primary MFRSR",
+   "has_qc": true
+  },
+  "aod_mfrsr_615_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_mfrsr_615",
+   "has_qc": false
+  },
+  "qc_aod_mfrsr_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 615 nm from the primary MFRSR",
+   "has_qc": false
+  },
+  "aod_mfrsr_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 673 nm from the primary MFRSR",
+   "has_qc": true
+  },
+  "aod_mfrsr_673_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_mfrsr_673",
+   "has_qc": false
+  },
+  "qc_aod_mfrsr_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 673 nm from the primary MFRSR",
+   "has_qc": false
+  },
+  "aod_mfrsr_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 870 nm from the primary MFRSR",
+   "has_qc": true
+  },
+  "aod_mfrsr_870_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_mfrsr_870",
+   "has_qc": false
+  },
+  "qc_aod_mfrsr_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 870 nm from the primary MFRSR",
+   "has_qc": false
+  },
+  "aod_mfrsr_additional_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 415 nm from the additional MFRSR",
+   "has_qc": true
+  },
+  "aod_mfrsr_additional_415_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_mfrsr_additional_415",
+   "has_qc": false
+  },
+  "qc_aod_mfrsr_additional_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 415 nm from the additional MFRSR",
+   "has_qc": false
+  },
+  "aod_mfrsr_additional_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 500 nm from the additional MFRSR",
+   "has_qc": true
+  },
+  "aod_mfrsr_additional_500_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_mfrsr_additional_500",
+   "has_qc": false
+  },
+  "qc_aod_mfrsr_additional_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 500 nm from the additional MFRSR",
+   "has_qc": false
+  },
+  "aod_mfrsr_additional_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 615 nm from the additional MFRSR",
+   "has_qc": true
+  },
+  "aod_mfrsr_additional_615_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_mfrsr_additional_615",
+   "has_qc": false
+  },
+  "qc_aod_mfrsr_additional_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 615 nm from the additional MFRSR",
+   "has_qc": false
+  },
+  "aod_mfrsr_additional_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 673 nm from the additional MFRSR",
+   "has_qc": true
+  },
+  "aod_mfrsr_additional_673_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_mfrsr_additional_673",
+   "has_qc": false
+  },
+  "qc_aod_mfrsr_additional_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 673 nm from the additional MFRSR",
+   "has_qc": false
+  },
+  "aod_mfrsr_additional_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 870 nm from the additional MFRSR",
+   "has_qc": true
+  },
+  "aod_mfrsr_additional_870_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_mfrsr_additional_870",
+   "has_qc": false
+  },
+  "qc_aod_mfrsr_additional_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 870 nm from the additional MFRSR",
+   "has_qc": false
+  },
+  "aod_nimfr_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 415 nm from NIMFR",
+   "has_qc": true
+  },
+  "aod_nimfr_415_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_nimfr_415",
+   "has_qc": false
+  },
+  "qc_aod_nimfr_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 415 nm from NIMFR",
+   "has_qc": false
+  },
+  "aod_nimfr_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 500 nm from NIMFR",
+   "has_qc": true
+  },
+  "aod_nimfr_500_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_nimfr_500",
+   "has_qc": false
+  },
+  "qc_aod_nimfr_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 500 nm from NIMFR",
+   "has_qc": false
+  },
+  "aod_nimfr_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 615 nm from NIMFR",
+   "has_qc": true
+  },
+  "aod_nimfr_615_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_nimfr_615",
+   "has_qc": false
+  },
+  "qc_aod_nimfr_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 615 nm from NIMFR",
+   "has_qc": false
+  },
+  "aod_nimfr_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 673 nm from NIMFR",
+   "has_qc": true
+  },
+  "aod_nimfr_673_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_nimfr_673",
+   "has_qc": false
+  },
+  "qc_aod_nimfr_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 673 nm from NIMFR",
+   "has_qc": false
+  },
+  "aod_nimfr_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol Optical Depth at 870 nm from NIMFR",
+   "has_qc": true
+  },
+  "aod_nimfr_870_goodfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Metric goodfraction for variable aod_nimfr_870",
+   "has_qc": false
+  },
+  "qc_aod_nimfr_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol Optical Depth at 870 nm from NIMFR",
+   "has_qc": false
+  },
+  "aod_be_polyfit_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "AOD best estimate at 415 nm. Polynomial best fit of any AOD points considered good.",
+   "has_qc": true
+  },
+  "qc_aod_be_polyfit_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: AOD best estimate at 415 nm. Polynomial best fit of any AOD points considered good.",
+   "has_qc": false
+  },
+  "aod_be_mean_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "AOD best estimate at 415 nm. Mean of any AOD points considered good.",
+   "has_qc": true
+  },
+  "qc_aod_be_mean_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: AOD best estimate at 415 nm. Mean of any AOD points considered good.",
+   "has_qc": false
+  },
+  "aod_be_415_random_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation of data points used in AOD best estimates at 415 nm when 2 or more measurements available. Standard value of 0.02 when 1 AOD variable used.",
+   "has_qc": false
+  },
+  "aod_be_415_quadrature_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Quadrature of uncertainty values used in AOD best estimates at 415 nm",
+   "has_qc": false
+  },
+  "aod_be_415_range": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Range of AOD values (max-min) used in AOD best estimates at 415 nm",
+   "has_qc": false
+  },
+  "source_aod_be_415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable: AOD best estimates at 415 nm",
+   "has_qc": false
+  },
+  "aod_be_polyfit_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "AOD best estimate at 500 nm. Polynomial best fit of any AOD points considered good.",
+   "has_qc": true
+  },
+  "qc_aod_be_polyfit_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: AOD best estimate at 500 nm. Polynomial best fit of any AOD points considered good.",
+   "has_qc": false
+  },
+  "aod_be_mean_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "AOD best estimate at 500 nm. Mean of any AOD points considered good.",
+   "has_qc": true
+  },
+  "qc_aod_be_mean_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: AOD best estimate at 500 nm. Mean of any AOD points considered good.",
+   "has_qc": false
+  },
+  "aod_be_500_random_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation of data points used in AOD best estimates at 500 nm when 2 or more measurements available. Standard value of 0.02 when 1 AOD variable used.",
+   "has_qc": false
+  },
+  "aod_be_500_quadrature_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Quadrature of uncertainty values used in AOD best estimates at 500 nm",
+   "has_qc": false
+  },
+  "aod_be_500_range": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Range of AOD values (max-min) used in AOD best estimates at 500 nm",
+   "has_qc": false
+  },
+  "source_aod_be_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable: AOD best estimates at 500 nm",
+   "has_qc": false
+  },
+  "aod_be_polyfit_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "AOD best estimate at 615 nm. Polynomial best fit of any AOD points considered good.",
+   "has_qc": true
+  },
+  "qc_aod_be_polyfit_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: AOD best estimate at 615 nm. Polynomial best fit of any AOD points considered good.",
+   "has_qc": false
+  },
+  "aod_be_mean_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "AOD best estimate at 615 nm. Mean of any AOD points considered good.",
+   "has_qc": true
+  },
+  "qc_aod_be_mean_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: AOD best estimate at 615 nm. Mean of any AOD points considered good.",
+   "has_qc": false
+  },
+  "aod_be_615_random_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation of data points used in AOD best estimates at 615 nm when 2 or more measurements available. Standard value of 0.02 when 1 AOD variable used.",
+   "has_qc": false
+  },
+  "aod_be_615_quadrature_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Quadrature of uncertainty values used in AOD best estimates at 615 nm",
+   "has_qc": false
+  },
+  "aod_be_615_range": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Range of AOD values (max-min) used in AOD best estimates at 615 nm",
+   "has_qc": false
+  },
+  "source_aod_be_615": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable: AOD best estimates at 615 nm",
+   "has_qc": false
+  },
+  "aod_be_polyfit_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "AOD best estimate at 673 nm. Polynomial best fit of any AOD points considered good.",
+   "has_qc": true
+  },
+  "qc_aod_be_polyfit_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: AOD best estimate at 673 nm. Polynomial best fit of any AOD points considered good.",
+   "has_qc": false
+  },
+  "aod_be_mean_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "AOD best estimate at 673 nm. Mean of any AOD points considered good.",
+   "has_qc": true
+  },
+  "qc_aod_be_mean_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: AOD best estimate at 673 nm. Mean of any AOD points considered good.",
+   "has_qc": false
+  },
+  "aod_be_673_random_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation of data points used in AOD best estimates at 673 nm when 2 or more measurements available. Standard value of 0.02 when 1 AOD variable used.",
+   "has_qc": false
+  },
+  "aod_be_673_quadrature_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Quadrature of uncertainty values used in AOD best estimates at 673 nm",
+   "has_qc": false
+  },
+  "aod_be_673_range": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Range of AOD values (max-min) used in AOD best estimates at 673 nm",
+   "has_qc": false
+  },
+  "source_aod_be_673": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable: AOD best estimates at 673 nm",
+   "has_qc": false
+  },
+  "aod_be_polyfit_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "AOD best estimate at 870 nm. Polynomial best fit of any AOD points considered good.",
+   "has_qc": true
+  },
+  "qc_aod_be_polyfit_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: AOD best estimate at 870 nm. Polynomial best fit of any AOD points considered good.",
+   "has_qc": false
+  },
+  "aod_be_mean_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "AOD best estimate at 870 nm. Mean of any AOD points considered good.",
+   "has_qc": true
+  },
+  "qc_aod_be_mean_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: AOD best estimate at 870 nm. Mean of any AOD points considered good.",
+   "has_qc": false
+  },
+  "aod_be_870_random_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation of data points used in AOD best estimates at 870 nm when 2 or more measurements available. Standard value of 0.02 when 1 AOD variable used.",
+   "has_qc": false
+  },
+  "aod_be_870_quadrature_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Quadrature of uncertainty values used in AOD best estimates at 870 nm",
+   "has_qc": false
+  },
+  "aod_be_870_range": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Range of AOD values (max-min) used in AOD best estimates at 870 nm",
+   "has_qc": false
+  },
+  "source_aod_be_870": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable: AOD best estimates at 870 nm",
+   "has_qc": false
+  },
+  "daily_R2_500": {
+   "dims": [
+    "ncomparisons"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Square of correlation coefficient between two variables for 500 nm",
+   "has_qc": false
+  },
+  "daily_npoint_500": {
+   "dims": [
+    "ncomparisons"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of points available for comparison between two variables for 500 nm",
+   "has_qc": false
+  },
+  "daily_mean_bias_500": {
+   "dims": [
+    "ncomparisons"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Mean bias between two variables for 500 nm",
+   "has_qc": false
+  },
+  "daily_slope_500": {
+   "dims": [
+    "ncomparisons"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Slope of linear regression line between two variables for 500 nm",
+   "has_qc": false
+  },
+  "good_data_flag": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Daily value indicating which of 4 AOD datastreams declared good for a given day",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "ncomparisons": {
+   "dims": [
+    "ncomparisons"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Coordinate variable for ncomparisons",
+   "has_qc": false
+  }
+ }
+}

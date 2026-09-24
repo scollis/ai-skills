@@ -1,0 +1,269 @@
+{
+ "vap": "qcecor",
+ "datastream": "ena30qcecorC1.c1",
+ "filename": "ena30qcecorC1.c1.20240907.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 20,
+ "dims": {
+  "time": 48,
+  "bound": 2
+ },
+ "n_qc_vars": 7,
+ "time_resolution_s": 1800.0,
+ "time_span": [
+  "2024-09-07T00:00:00",
+  "2024-09-07T23:30:00"
+ ],
+ "global_attrs": {
+  "command_line": "idl -R -n qcecor -s ena -f C1 -b 20240710 -e 20240911 -R --max-runtime 0",
+  "process_version": "vap-qcecor-1.8-0.el9",
+  "dod_version": "30qcecor-c1-1.2",
+  "site_id": "ena",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Eastern North Atlantic (ENA), Graciosa Island, Azores",
+  "datastream": "ena30qcecorC1.c1",
+  "doi": "10.5439/1097546"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    48,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "corrected_sensible_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Corrected sensible heat flux at surface",
+   "has_qc": true
+  },
+  "qc_corrected_sensible_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Corrected sensible heat flux at surface",
+   "has_qc": false
+  },
+  "corrected_latent_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Corrected latent heat flux at surface",
+   "has_qc": true
+  },
+  "qc_corrected_latent_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Corrected latent heat flux at surface",
+   "has_qc": false
+  },
+  "corrected_co2_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "umol/(s m^2)",
+   "long_name": "Corrected CO2 flux",
+   "has_qc": true
+  },
+  "qc_corrected_co2_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Corrected CO2 flux",
+   "has_qc": false
+  },
+  "uncorrected_sensible_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Uncorrected sensible heat flux at surface",
+   "has_qc": true
+  },
+  "qc_uncorrected_sensible_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Uncorrected sensible heat flux at surface",
+   "has_qc": false
+  },
+  "uncorrected_latent_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Uncorrected latent heat flux at surface",
+   "has_qc": true
+  },
+  "qc_uncorrected_latent_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Uncorrected latent heat flux at surface",
+   "has_qc": false
+  },
+  "uncorrected_co2_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "umol/(s m^2)",
+   "long_name": "Uncorrected CO2 flux",
+   "has_qc": true
+  },
+  "qc_uncorrected_co2_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Uncorrected CO2 flux",
+   "has_qc": false
+  },
+  "wetness": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Wetness, rain detector",
+   "has_qc": true
+  },
+  "qc_wetness": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wetness, rain detector",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

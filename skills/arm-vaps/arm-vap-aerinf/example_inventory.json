@@ -1,0 +1,356 @@
+{
+ "vap": "aerinf",
+ "datastream": "sgpaerich2nf1turnC1.c1",
+ "filename": "sgpaerich2nf1turnC1.c1.20260916.000409.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 25,
+ "dims": {
+  "time": 3927,
+  "wnum": 2532,
+  "wnum2": 2531
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 16.0,
+ "time_span": [
+  "2026-09-16T00:04:09",
+  "2026-09-16T23:54:22"
+ ],
+ "global_attrs": {
+  "command_line": "aerinoisefilter -s sgp -f C1 -b 20260911 -e 20260921 --max-runtime 0",
+  "process_version": "vap-aerinoisefilter-3.1-5.el9",
+  "dod_version": "aerich2nf1turn-c1-1.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpaerich2nf1turnC1.c1",
+  "doi": "10.5439/1027273"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "AERIunitNumber": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "AERI instrument unit serial number",
+   "has_qc": false
+  },
+  "instrumentUnitNumber": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Character string containing instrument name",
+   "has_qc": false
+  },
+  "systemReleaseNumber": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Version number of Operational Software",
+   "has_qc": false
+  },
+  "sceneViewDuration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Duration of scene view",
+   "has_qc": false
+  },
+  "outsideAirTemp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ambient air temperature at hatch opening",
+   "has_qc": false
+  },
+  "BBsupportStructureTemp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Temperature of the AERI blackbody support structure",
+   "has_qc": false
+  },
+  "atmosphericRelativeHumidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity measured near Blackbodies. Use with Air Temperature Near BBs only.",
+   "has_qc": false
+  },
+  "atmosphericPressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Observation atmospheric pressure in AERI electronics",
+   "has_qc": false
+  },
+  "sceneMirrorAngle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Scene mirror view angle in non-negative degrees, measured clockwise looking into interferometer window",
+   "has_qc": false
+  },
+  "hatchOpen": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Hatch Open Flag",
+   "has_qc": false
+  },
+  "channelNumber": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "AERI instrument data channel number",
+   "has_qc": false
+  },
+  "calibrationAmbientTemp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ambient temperature used in calibration",
+   "has_qc": false
+  },
+  "calibrationCBBtemp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Cold blackbody temperature used in calibration",
+   "has_qc": false
+  },
+  "calibrationHBBtemp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Hot blackbody temperature used in calibration",
+   "has_qc": false
+  },
+  "calibratedSceneID": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated Scene Type Identification",
+   "has_qc": false
+  },
+  "sceneMirPosEncoderMaxDrift": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Scene Mirror Position Encoder Maximum Drift",
+   "has_qc": false
+  },
+  "mean_rad": {
+   "dims": [
+    "time",
+    "wnum"
+   ],
+   "shape": [
+    3927,
+    2532
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Downwelling radiance interpolated to standard wavenumber scale",
+   "has_qc": false
+  },
+  "standard_dev_mean_rad": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3927,
+    2531
+   ],
+   "dtype": "float32",
+   "units": "(mW/(m^2 sr cm^-1))^2",
+   "long_name": "Difference between the sky view's radiance variance and the hot black body view's variance",
+   "has_qc": false
+  },
+  "missingDataFlag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Logical flag indicating that a data record is missing (true/false)",
+   "has_qc": false
+  },
+  "eigenvalues": {
+   "dims": [
+    "wnum"
+   ],
+   "shape": [
+    2532
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Eigenvalues used to reconstruct radiance derived from principal component with largest variance",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3927
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "wnum": {
+   "dims": [
+    "wnum"
+   ],
+   "shape": [
+    2532
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Wave number in reciprocal centimeters",
+   "has_qc": false
+  },
+  "wnum2": {
+   "dims": [
+    "wnum2"
+   ],
+   "shape": [
+    2531
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Wave number 2 in reciprocal centimeters",
+   "has_qc": false
+  }
+ }
+}

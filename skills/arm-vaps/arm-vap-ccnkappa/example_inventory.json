@@ -1,0 +1,368 @@
+{
+ "vap": "ccnkappa",
+ "datastream": "enaaosccnsmpskappaC1.c1",
+ "filename": "enaaosccnsmpskappaC1.c1.20260920.000826.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 24,
+ "dims": {
+  "time": 96,
+  "bound": 2,
+  "diameter_mobility": 192,
+  "droplet_size": 20,
+  "setpoint": 7
+ },
+ "n_qc_vars": 8,
+ "time_resolution_s": 640.0,
+ "time_span": [
+  "2026-09-20T00:08:26",
+  "2026-09-20T23:52:41"
+ ],
+ "global_attrs": {
+  "command_line": "aosccnsmpskappa -n aosccnsmpskappa -s ena -f C1 -b 20260920 -e 20260921 --max-runtime 86400",
+  "process_version": "aosccnsmpskappa-1.7.0",
+  "dod_version": "aosccnsmpskappa-c1-1.3",
+  "site_id": "ena",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Eastern North Atlantic (ENA), Graciosa Island, Azores",
+  "datastream": "enaaosccnsmpskappaC1.c1",
+  "doi": "10.5439/1729907"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    96,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "diameter_mobility_bounds": {
+   "dims": [
+    "diameter_mobility",
+    "bound"
+   ],
+   "shape": [
+    192,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Mobility diameter bin boundaries",
+   "has_qc": false
+  },
+  "droplet_size_bounds": {
+   "dims": [
+    "droplet_size",
+    "bound"
+   ],
+   "shape": [
+    20,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Droplet bin bounds",
+   "has_qc": false
+  },
+  "kappa": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Hygroscopicity parameter kappa",
+   "has_qc": true
+  },
+  "qc_kappa": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Hygroscopicity parameter kappa",
+   "has_qc": false
+  },
+  "critical_diameter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Critical diameter",
+   "has_qc": true
+  },
+  "qc_critical_diameter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Critical diameter",
+   "has_qc": false
+  },
+  "supersaturation_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Mean calculated supersaturation values for a fixed supersaturation set point",
+   "has_qc": true
+  },
+  "qc_supersaturation_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean calculated supersaturation values for a fixed supersaturation set point",
+   "has_qc": false
+  },
+  "aerosol_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol particle number concentration",
+   "has_qc": true
+  },
+  "qc_aerosol_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol particle number concentration",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature read at top of column",
+   "has_qc": true
+  },
+  "qc_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature read at top of column",
+   "has_qc": false
+  },
+  "N_CCN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Mean number concentration of N_CCN",
+   "has_qc": true
+  },
+  "qc_N_CCN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean number concentration of N_CCN",
+   "has_qc": false
+  },
+  "N_CCN_dN": {
+   "dims": [
+    "time",
+    "droplet_size"
+   ],
+   "shape": [
+    96,
+    20
+   ],
+   "dtype": "float32",
+   "units": "count/s",
+   "long_name": "Droplet count by bin size",
+   "has_qc": true
+  },
+  "qc_N_CCN_dN": {
+   "dims": [
+    "time",
+    "droplet_size"
+   ],
+   "shape": [
+    96,
+    20
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Droplet count by bin size",
+   "has_qc": false
+  },
+  "dN_dlogDp": {
+   "dims": [
+    "time",
+    "diameter_mobility"
+   ],
+   "shape": [
+    96,
+    192
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number size distribution, electrical mobility diameter",
+   "has_qc": true
+  },
+  "qc_dN_dlogDp": {
+   "dims": [
+    "time",
+    "diameter_mobility"
+   ],
+   "shape": [
+    96,
+    192
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number size distribution, electrical mobility diameter",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "diameter_mobility": {
+   "dims": [
+    "diameter_mobility"
+   ],
+   "shape": [
+    192
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Midpoint of geometric mean mobility diameter",
+   "has_qc": false
+  },
+  "droplet_size": {
+   "dims": [
+    "droplet_size"
+   ],
+   "shape": [
+    20
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Size bins for CCN droplets",
+   "has_qc": false
+  },
+  "setpoint": {
+   "dims": [
+    "setpoint"
+   ],
+   "shape": [
+    7
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Supersaturation set point values",
+   "has_qc": false
+  }
+ }
+}

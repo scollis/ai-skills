@@ -1,0 +1,840 @@
+{
+ "vap": "aerioe",
+ "datastream": "sgpaerioe1turnC1.c1",
+ "filename": "sgpaerioe1turnC1.c1.20230611.000348.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 58,
+ "dims": {
+  "time": 2976,
+  "bound": 2,
+  "height": 55,
+  "gas_dim": 3,
+  "dfs_dim": 16,
+  "index_dim": 5,
+  "obs_dim": 350,
+  "arb": 123,
+  "arb2": 123
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 18.0,
+ "time_span": [
+  "2023-06-11T00:03:48",
+  "2023-06-11T21:59:43"
+ ],
+ "global_attrs": {
+  "command_line": "aerioeag -n aerioeag -D 2 -R -b 20230611 -s sgp -f C1",
+  "process_version": "$",
+  "dod_version": "aerioe1turn-c1-1.0",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "doi": "10.5439/1483830",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpaerioe1turnC1.c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    2976,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "hour": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time",
+   "has_qc": false
+  },
+  "aqc_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Manual QC flag",
+   "has_qc": false
+  },
+  "height_bounds": {
+   "dims": [
+    "height",
+    "bound"
+   ],
+   "shape": [
+    55,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Height cell bounds",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature",
+   "has_qc": false
+  },
+  "waterVapor": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Water vapor mixing ratio",
+   "has_qc": false
+  },
+  "lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "g/m2",
+   "long_name": "Liquid water path",
+   "has_qc": false
+  },
+  "lReff": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Liquid water effective radius",
+   "has_qc": false
+  },
+  "iTau": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ice cloud optical depth (geometric limit)",
+   "has_qc": false
+  },
+  "iReff": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Ice effective radius",
+   "has_qc": false
+  },
+  "co2": {
+   "dims": [
+    "time",
+    "gas_dim"
+   ],
+   "shape": [
+    2976,
+    3
+   ],
+   "dtype": "float32",
+   "units": "ppm",
+   "long_name": "Carbon dioxide concentration",
+   "has_qc": false
+  },
+  "ch4": {
+   "dims": [
+    "time",
+    "gas_dim"
+   ],
+   "shape": [
+    2976,
+    3
+   ],
+   "dtype": "float32",
+   "units": "ppm",
+   "long_name": "Methane concentration",
+   "has_qc": false
+  },
+  "n2o": {
+   "dims": [
+    "time",
+    "gas_dim"
+   ],
+   "shape": [
+    2976,
+    3
+   ],
+   "dtype": "float32",
+   "units": "ppm",
+   "long_name": "Nitrous oxide concentration",
+   "has_qc": false
+  },
+  "sigma_temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "1-sigma uncertainty in temperature",
+   "has_qc": false
+  },
+  "sigma_waterVapor": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "1-sigma uncertainty in water vapor mixing ratio",
+   "has_qc": false
+  },
+  "sigma_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "g/m2",
+   "long_name": "1-sigma uncertainty in liquid water path",
+   "has_qc": false
+  },
+  "sigma_lReff": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "1-sigma uncertainty in liquid water effective radius",
+   "has_qc": false
+  },
+  "sigma_iTau": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "1-sigma uncertainty in ice cloud optical depth (geometric limit)",
+   "has_qc": false
+  },
+  "sigma_iReff": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "1-sigma uncertainty in ice effective radius",
+   "has_qc": false
+  },
+  "sigma_co2": {
+   "dims": [
+    "time",
+    "gas_dim"
+   ],
+   "shape": [
+    2976,
+    3
+   ],
+   "dtype": "float32",
+   "units": "ppm",
+   "long_name": "1-sigma uncertainty in carbon dioxide concentration",
+   "has_qc": false
+  },
+  "sigma_ch4": {
+   "dims": [
+    "time",
+    "gas_dim"
+   ],
+   "shape": [
+    2976,
+    3
+   ],
+   "dtype": "float32",
+   "units": "ppm",
+   "long_name": "1-sigma uncertainty in methane concentration",
+   "has_qc": false
+  },
+  "sigma_n2o": {
+   "dims": [
+    "time",
+    "gas_dim"
+   ],
+   "shape": [
+    2976,
+    3
+   ],
+   "dtype": "float32",
+   "units": "ppm",
+   "long_name": "1-sigma uncertainty in nitrous oxide concentration",
+   "has_qc": false
+  },
+  "converged_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Convergence flag",
+   "has_qc": false
+  },
+  "gamma": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Gamma parameter",
+   "has_qc": false
+  },
+  "n_iter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Number of iterations performed",
+   "has_qc": false
+  },
+  "rmsr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Root mean square error between AERI obs in the observation vector and the forward calculation",
+   "has_qc": false
+  },
+  "rmsa": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Root mean square error between observation vector and the forward calculation",
+   "has_qc": false
+  },
+  "rmsp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Root mean square error between prior T/q profile and the retrieved T/q profile",
+   "has_qc": false
+  },
+  "chi2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Chi-square statistic of Y vs. F(Xn)",
+   "has_qc": false
+  },
+  "convergence_criteria": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Convergence criteria di^2",
+   "has_qc": false
+  },
+  "dfs": {
+   "dims": [
+    "time",
+    "dfs_dim"
+   ],
+   "shape": [
+    2976,
+    16
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Degrees of freedom of signal",
+   "has_qc": false
+  },
+  "sic": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Shannon information content",
+   "has_qc": false
+  },
+  "vres_temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Vertical resolution of the temperature profile",
+   "has_qc": false
+  },
+  "vres_waterVapor": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Vertical resolution of the water vapor profile",
+   "has_qc": false
+  },
+  "hatchOpen": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag indicating if the AERIs hatch was open",
+   "has_qc": false
+  },
+  "cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Cloud base height above ground level",
+   "has_qc": false
+  },
+  "cbh_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag indicating the source of the cloud base height",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "mbar",
+   "long_name": "Derived pressure",
+   "has_qc": false
+  },
+  "theta": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Potential temperature",
+   "has_qc": false
+  },
+  "thetae": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Equivalent potential temperature",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity",
+   "has_qc": false
+  },
+  "dewpt": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2976,
+    55
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Dew point temperature",
+   "has_qc": false
+  },
+  "dindices": {
+   "dims": [
+    "time",
+    "index_dim"
+   ],
+   "shape": [
+    2976,
+    5
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Derived indices",
+   "has_qc": false
+  },
+  "sigma_dindices": {
+   "dims": [
+    "time",
+    "index_dim"
+   ],
+   "shape": [
+    2976,
+    5
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "1-sigma uncertainties in the derived indices",
+   "has_qc": false
+  },
+  "obs_flag": {
+   "dims": [
+    "obs_dim"
+   ],
+   "shape": [
+    350
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag indicating type of observation for each vector element",
+   "has_qc": false
+  },
+  "obs_vector": {
+   "dims": [
+    "time",
+    "obs_dim"
+   ],
+   "shape": [
+    2976,
+    350
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Observation vector Y",
+   "has_qc": false
+  },
+  "obs_vector_uncertainty": {
+   "dims": [
+    "time",
+    "obs_dim"
+   ],
+   "shape": [
+    2976,
+    350
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "1-sigma uncertainty in the observation vector (sigY)",
+   "has_qc": false
+  },
+  "forward_calc": {
+   "dims": [
+    "time",
+    "obs_dim"
+   ],
+   "shape": [
+    2976,
+    350
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Forward calculation from state vector (i.e., F(Xn))",
+   "has_qc": false
+  },
+  "Xop": {
+   "dims": [
+    "time",
+    "arb"
+   ],
+   "shape": [
+    2976,
+    123
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Optimal solution",
+   "has_qc": false
+  },
+  "Sop": {
+   "dims": [
+    "time",
+    "arb",
+    "arb2"
+   ],
+   "shape": [
+    2976,
+    123,
+    123
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Covariance matrix of the solution",
+   "has_qc": false
+  },
+  "Akernal": {
+   "dims": [
+    "time",
+    "arb",
+    "arb2"
+   ],
+   "shape": [
+    2976,
+    123,
+    123
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Averaging kernal",
+   "has_qc": false
+  },
+  "Xa": {
+   "dims": [
+    "arb"
+   ],
+   "shape": [
+    123
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Prior mean state",
+   "has_qc": false
+  },
+  "Sa": {
+   "dims": [
+    "arb",
+    "arb2"
+   ],
+   "shape": [
+    123,
+    123
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Prior covariance",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2976
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    55
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height",
+   "has_qc": false
+  },
+  "index_dim": {
+   "dims": [
+    "index_dim"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Index dimension for derived indeces",
+   "has_qc": false
+  },
+  "obs_dim": {
+   "dims": [
+    "obs_dim"
+   ],
+   "shape": [
+    350
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Dimension of the observation vector",
+   "has_qc": false
+  },
+  "arb": {
+   "dims": [
+    "arb"
+   ],
+   "shape": [
+    123
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Arbitrary dimension",
+   "has_qc": false
+  }
+ }
+}

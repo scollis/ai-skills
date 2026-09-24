@@ -1,0 +1,228 @@
+{
+ "vap": "radarcfad",
+ "datastream": "sgpkazrcfadC1.c1",
+ "filename": "sgpkazrcfadC1.c1.20170828.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 12,
+ "dims": {
+  "time": 21600,
+  "time_hour": 24,
+  "range": 2,
+  "height": 200,
+  "dBZ": 15
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 4.0,
+ "time_span": [
+  "2017-08-28T00:00:00",
+  "2017-08-28T23:59:56"
+ ],
+ "global_attrs": {
+  "command_line": ".run process_v1_calibrated_sgp.pro",
+  "process_version": " ",
+  "dod_version": " kazrcfad-c1-1.0",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpkazrcfadC1.c1",
+  "doi": "10.5439/1876547"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_hour_bounds": {
+   "dims": [
+    "time_hour",
+    "range"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float64",
+   "units": null,
+   "long_name": "Time range for the hourly statistics, in time offset from midnight",
+   "has_qc": false
+  },
+  "height_bounds": {
+   "dims": [
+    "height",
+    "range"
+   ],
+   "shape": [
+    200,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Height range for the statistics, above mean sea level",
+   "has_qc": false
+  },
+  "dBZ_bounds": {
+   "dims": [
+    "dBZ",
+    "range"
+   ],
+   "shape": [
+    15,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "dBZ range for the statistics.",
+   "has_qc": false
+  },
+  "Reflectivity_BestEstimate": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    200
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Best-estimate hydrometeor reflectivity statistically aligned with CloudSat at 100m vertical resolution",
+   "has_qc": false
+  },
+  "Reflectivity_NoClutter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    200
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Best-estimate reflectivity statistically aligned with CloudSat with Clutter Removed at 100m vertical resolution",
+   "has_qc": false
+  },
+  "CFAD_high": {
+   "dims": [
+    "time_hour",
+    "dBZ",
+    "height"
+   ],
+   "shape": [
+    24,
+    15,
+    200
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Joint histogram of equivalent reflectivity factor over height with Reflectivity_BestEstimate",
+   "has_qc": false
+  },
+  "CFAD_low": {
+   "dims": [
+    "time_hour",
+    "dBZ",
+    "height"
+   ],
+   "shape": [
+    24,
+    15,
+    200
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Joint histogram of equivalent reflectivity factor over height with Reflectivity_NoClutter",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "time_hour": {
+   "dims": [
+    "time_hour"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float64",
+   "units": "hour",
+   "long_name": "Hourly time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    200
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height at the middle point of the layer, above mean sea level",
+   "has_qc": false
+  },
+  "dBZ": {
+   "dims": [
+    "dBZ"
+   ],
+   "shape": [
+    15
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "dBZe at the middle point of the bin",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,2027 @@
+{
+ "vap": "tbsmerged",
+ "datastream": "sgptbsmergedC1.c1",
+ "filename": "sgptbsmergedC1.c1.20241111.170511.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 147,
+ "dims": {
+  "time": 13235,
+  "num_cpc": 1,
+  "num_imet": 1,
+  "num_xq2": 1,
+  "num_pops": 1,
+  "num_anem": 1
+ },
+ "n_qc_vars": 67,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2024-11-11T17:05:11",
+  "2024-11-11T20:45:49"
+ ],
+ "global_attrs": {
+  "command_line": "tbsmerged -n tbsmerged -s sgp -f C1 -b 20240804 -e 20241201 -D 2 -R --filter-overlaps",
+  "process_version": "tbsmerged-1.1.0",
+  "dod_version": "tbsmerged-c1-1.5",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgptbsmergedC1.c1",
+  "doi": "10.5439/1862017"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "bl_height_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "First boundary layer height candidate",
+   "has_qc": true
+  },
+  "qc_bl_height_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: First boundary layer height candidate",
+   "has_qc": false
+  },
+  "bl_height_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Second boundary layer height candidate",
+   "has_qc": true
+  },
+  "qc_bl_height_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Second boundary layer height candidate",
+   "has_qc": false
+  },
+  "bl_height_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Third boundary layer height candidate",
+   "has_qc": true
+  },
+  "qc_bl_height_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Third boundary layer height candidate",
+   "has_qc": false
+  },
+  "bl_index_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality index for first boundary layer height candidate",
+   "has_qc": true
+  },
+  "qc_bl_index_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Quality index for first boundary layer height candidate",
+   "has_qc": false
+  },
+  "bl_index_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality index for second boundary layer height candidate",
+   "has_qc": true
+  },
+  "qc_bl_index_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Quality index for second boundary layer height candidate",
+   "has_qc": false
+  },
+  "bl_index_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality index for third boundary layer height candidate",
+   "has_qc": true
+  },
+  "qc_bl_index_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Quality index for third boundary layer height candidate",
+   "has_qc": false
+  },
+  "first_cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Lowest cloud base height",
+   "has_qc": true
+  },
+  "qc_first_cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Lowest cloud base height",
+   "has_qc": false
+  },
+  "second_cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Second lowest cloud base height",
+   "has_qc": true
+  },
+  "qc_second_cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Second lowest cloud base height",
+   "has_qc": false
+  },
+  "third_cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Third cloud base height",
+   "has_qc": true
+  },
+  "qc_third_cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Third cloud base height",
+   "has_qc": false
+  },
+  "detection_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Detection status",
+   "has_qc": false
+  },
+  "tbscpc_total_concentration": {
+   "dims": [
+    "time",
+    "num_cpc"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total number concentration from CPC for the aerosol particles larger than 10 nm",
+   "has_qc": true
+  },
+  "qc_tbscpc_total_concentration": {
+   "dims": [
+    "time",
+    "num_cpc"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration from CPC for the aerosol particles larger than 10 nm",
+   "has_qc": false
+  },
+  "tbscpc_alt": {
+   "dims": [
+    "time",
+    "num_cpc"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from iMET sensor from CPC",
+   "has_qc": true
+  },
+  "qc_tbscpc_alt": {
+   "dims": [
+    "time",
+    "num_cpc"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level from iMET sensor from CPC",
+   "has_qc": false
+  },
+  "tbscpc_lat": {
+   "dims": [
+    "time",
+    "num_cpc"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from iMET sensor from CPC",
+   "has_qc": true
+  },
+  "qc_tbscpc_lat": {
+   "dims": [
+    "time",
+    "num_cpc"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude from iMET sensor from CPC",
+   "has_qc": false
+  },
+  "tbscpc_lon": {
+   "dims": [
+    "time",
+    "num_cpc"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from iMET sensor from CPC",
+   "has_qc": true
+  },
+  "qc_tbscpc_lon": {
+   "dims": [
+    "time",
+    "num_cpc"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude from iMET sensor from CPC",
+   "has_qc": false
+  },
+  "tbsimet_air_temperature": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature corrected for solar radiation from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_air_temperature": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Air temperature corrected for solar radiation from iMET",
+   "has_qc": false
+  },
+  "tbsimet_air_temperature_raw": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Raw air temperature from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_air_temperature_raw": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Raw air temperature from iMET",
+   "has_qc": false
+  },
+  "tbsimet_ascent_rate": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Ascent rate of iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_ascent_rate": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ascent rate of iMET",
+   "has_qc": false
+  },
+  "tbsimet_battery_volt": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Voltage of iMET battery",
+   "has_qc": true
+  },
+  "qc_tbsimet_battery_volt": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Voltage of iMET battery",
+   "has_qc": false
+  },
+  "tbsimet_frostpoint": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Frostpoint of iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_frostpoint": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Frostpoint of iMET",
+   "has_qc": false
+  },
+  "tbsimet_gps_ascent_rate": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Ascent rate derived from iMET GPS measurements",
+   "has_qc": true
+  },
+  "qc_tbsimet_gps_ascent_rate": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ascent rate derived from iMET GPS measurements",
+   "has_qc": false
+  },
+  "tbsimet_gps_num_satellites": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of GPS satellites from which iMET is receiving signals",
+   "has_qc": true
+  },
+  "qc_tbsimet_gps_num_satellites": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number of GPS satellites from which iMET is receiving signals",
+   "has_qc": false
+  },
+  "tbsimet_gps_pressure": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Atmospheric pressure derived from GPS height and radiosonde temperature and humidity observations from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_gps_pressure": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Atmospheric pressure derived from GPS height and radiosonde temperature and humidity observations from iMET",
+   "has_qc": false
+  },
+  "tbsimet_imet_altitude": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height above ground level from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_imet_altitude": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Height above ground level from iMET",
+   "has_qc": false
+  },
+  "tbsimet_imet_file_name": {
+   "dims": [
+    "num_imet"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "Filenames of iMET",
+   "has_qc": false
+  },
+  "tbsimet_internal_temperature": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Internal iMET temperature",
+   "has_qc": true
+  },
+  "qc_tbsimet_internal_temperature": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Internal iMET temperature",
+   "has_qc": false
+  },
+  "tbsimet_pressure": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Air pressure from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_pressure": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Air pressure from iMET",
+   "has_qc": false
+  },
+  "tbsimet_pressure_sensor_temperature": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of iMET pressure sensor",
+   "has_qc": true
+  },
+  "qc_tbsimet_pressure_sensor_temperature": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature of iMET pressure sensor",
+   "has_qc": false
+  },
+  "tbsimet_rh": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_rh": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Relative humidity from iMET",
+   "has_qc": false
+  },
+  "tbsimet_rh_sensor_temperature": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of humidity sensor from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_rh_sensor_temperature": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature of humidity sensor from iMET",
+   "has_qc": false
+  },
+  "tbsimet_theta": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Potential temperature from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_theta": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Potential temperature from iMET",
+   "has_qc": false
+  },
+  "tbsimet_total_column_water": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Total column water from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_total_column_water": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total column water from iMET",
+   "has_qc": false
+  },
+  "tbsimet_vapor_mixing_ratio": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Water vapor mixing ratio from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_vapor_mixing_ratio": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Water vapor mixing ratio from iMET",
+   "has_qc": false
+  },
+  "tbsimet_alt": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Altitude above mean sea level from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_alt": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level from iMET",
+   "has_qc": false
+  },
+  "tbsimet_lat": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_lat": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude from iMET",
+   "has_qc": false
+  },
+  "tbsimet_lon": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from iMET",
+   "has_qc": true
+  },
+  "qc_tbsimet_lon": {
+   "dims": [
+    "time",
+    "num_imet"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude from iMET",
+   "has_qc": false
+  },
+  "tbsimetxq2_air_temperature": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature corrected for solar radiation from XQ2",
+   "has_qc": true
+  },
+  "qc_tbsimetxq2_air_temperature": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Air temperature corrected for solar radiation from XQ2",
+   "has_qc": false
+  },
+  "tbsimetxq2_pressure": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Air pressure from XQ2",
+   "has_qc": true
+  },
+  "qc_tbsimetxq2_pressure": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Air pressure from XQ2",
+   "has_qc": false
+  },
+  "tbsimetxq2_rh": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity from XQ2",
+   "has_qc": true
+  },
+  "qc_tbsimetxq2_rh": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Relative humidity from XQ2",
+   "has_qc": false
+  },
+  "tbsimetxq2_rh_sensor_temperature": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of humidity sensor from XQ2",
+   "has_qc": true
+  },
+  "qc_tbsimetxq2_rh_sensor_temperature": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature of humidity sensor from XQ2",
+   "has_qc": false
+  },
+  "tbsimetxq2_sat_count": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Satellite count from XQ2",
+   "has_qc": true
+  },
+  "qc_tbsimetxq2_sat_count": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Satellite count from XQ2",
+   "has_qc": false
+  },
+  "tbsimetxq2_serial_number": {
+   "dims": [
+    "num_xq2"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Serial number from XQ2 sensors",
+   "has_qc": false
+  },
+  "tbsimetxq2_xq2_file_name": {
+   "dims": [
+    "num_xq2"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "Filenames of iMET XQ2 sensor",
+   "has_qc": false
+  },
+  "tbsimetxq2_alt": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from XQ2",
+   "has_qc": true
+  },
+  "qc_tbsimetxq2_alt": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level from XQ2",
+   "has_qc": false
+  },
+  "tbsimetxq2_lat": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Latitude in decimal degrees from XQ2",
+   "has_qc": true
+  },
+  "qc_tbsimetxq2_lat": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Latitude in decimal degrees from XQ2",
+   "has_qc": false
+  },
+  "tbsimetxq2_lon": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "Longitude in decimal degrees from XQ2",
+   "has_qc": true
+  },
+  "qc_tbsimetxq2_lon": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Longitude in decimal degrees from XQ2",
+   "has_qc": false
+  },
+  "tbspops_dn_135_150": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 135 nm to 150 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_135_150": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 135 nm to 150 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_1380_1760": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 1380 nm to 1760 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_1380_1760": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 1380 nm to 1760 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_150_170": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 150 nm to 170 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_150_170": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 150 nm to 170 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_170_195": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 170 nm to 195 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_170_195": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 170 nm to 195 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_1760_2550": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 1760 nm to 2550 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_1760_2550": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 1760 nm to 2550 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_195_220": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 195 nm to 220 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_195_220": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 195 nm to 220 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_220_260": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 220 nm to 260 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_220_260": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 220 nm to 260 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_2550_3615": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 2550 nm to 3615 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_2550_3615": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 2550 nm to 3615 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_260_335": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 260 nm to 335 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_260_335": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 260 nm to 335 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_335_510": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 335 nm to 510 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_335_510": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 335 nm to 510 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_510_705": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 510 nm to 705 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_510_705": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 510 nm to 705 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_dn_705_1380": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 705 nm to 1380 nm from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_dn_705_1380": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol number concentration between 705 nm to 1380 nm from POPS",
+   "has_qc": false
+  },
+  "tbspops_gps_pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "GPS pressure from iMET sensor from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_gps_pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: GPS pressure from iMET sensor from POPS",
+   "has_qc": false
+  },
+  "tbspops_imet_pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure from iMET sensor from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_imet_pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Pressure from iMET sensor from POPS",
+   "has_qc": false
+  },
+  "tbspops_imet_temperature": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature from iMET sensor from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_imet_temperature": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature from iMET sensor from POPS",
+   "has_qc": false
+  },
+  "tbspops_pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Pressure from POPS",
+   "has_qc": false
+  },
+  "tbspops_relative_humidity": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_relative_humidity": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Relative humidity from POPS",
+   "has_qc": false
+  },
+  "tbspops_temperature": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature from POPS",
+   "has_qc": true
+  },
+  "qc_tbspops_temperature": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature from POPS",
+   "has_qc": false
+  },
+  "tbspops_total_concentration": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total number concentration from POPS including anything less than 135 nm",
+   "has_qc": true
+  },
+  "qc_tbspops_total_concentration": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration from POPS including anything less than 135 nm",
+   "has_qc": false
+  },
+  "tbswind_altitude_datastream": {
+   "dims": [
+    "num_anem"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "Datastream to use altitude measurements for WIND",
+   "has_qc": false
+  },
+  "tbswind_altitude_fname": {
+   "dims": [
+    "num_anem"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "Filename from which to retrieve WIND location information",
+   "has_qc": false
+  },
+  "tbswind_anem_file_name": {
+   "dims": [
+    "num_anem"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "Anemometer file names from WIND",
+   "has_qc": false
+  },
+  "tbswind_serial_number": {
+   "dims": [
+    "num_anem"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "Serial number of anemometers from WIND",
+   "has_qc": false
+  },
+  "tbswind_wind_direction": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction from WIND",
+   "has_qc": true
+  },
+  "qc_tbswind_wind_direction": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind direction from WIND",
+   "has_qc": false
+  },
+  "tbswind_wind_gust": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind gust from WIND",
+   "has_qc": true
+  },
+  "qc_tbswind_wind_gust": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind gust from WIND",
+   "has_qc": false
+  },
+  "tbswind_wind_speed": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed from WIND",
+   "has_qc": true
+  },
+  "qc_tbswind_wind_speed": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind speed from WIND",
+   "has_qc": false
+  },
+  "tbswind_vertical_wind": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Vertical wind component from WIND",
+   "has_qc": true
+  },
+  "qc_tbswind_vertical_wind": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Vertical wind component from WIND",
+   "has_qc": false
+  },
+  "tbswind_alt": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from WIND",
+   "has_qc": true
+  },
+  "qc_tbswind_alt": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level from WIND",
+   "has_qc": false
+  },
+  "tbswind_lat": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from WIND",
+   "has_qc": true
+  },
+  "qc_tbswind_lat": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude from WIND",
+   "has_qc": false
+  },
+  "tbswind_lon": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from WIND",
+   "has_qc": true
+  },
+  "qc_tbswind_lon": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13235,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude from WIND",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13235
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

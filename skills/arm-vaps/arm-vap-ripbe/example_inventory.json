@@ -1,0 +1,2241 @@
+{
+ "vap": "ripbe",
+ "datastream": "sgpripbe1mcfarlaneC1.c1",
+ "filename": "sgpripbe1mcfarlaneC1.c1.20110603.000030.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 172,
+ "dims": {
+  "time": 1440,
+  "level": 628,
+  "layer": 627,
+  "rrtm_band": 14,
+  "fu_liou_band": 6,
+  "gcm2_band": 2,
+  "edwards_slingo_band": 5
+ },
+ "n_qc_vars": 39,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2011-06-03T00:00:30",
+  "2011-06-03T23:59:30"
+ ],
+ "global_attrs": {
+  "process_version": "$",
+  "command_line": "ripbe -R -D -s sgp -f C1 -d 20110603",
+  "site_id": "sgp",
+  "facility_id": "C1: Lamont, Oklahoma",
+  "dod_version": "ripbe1mcfarlane-c1-0.2",
+  "datastream": "sgpripbe1mcfarlaneC1.c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "solar_zenith": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Solar zenith angle",
+   "has_qc": false
+  },
+  "solar_distance_factor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Scale factor to solar source function for earth/sun distance",
+   "has_qc": false
+  },
+  "clear_sky_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Clear sky flag from shortwave flux analysis (swfanal)",
+   "has_qc": true
+  },
+  "qc_clear_sky_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Clear sky flag from shortwave flux analysis (swfanal)",
+   "has_qc": false
+  },
+  "aqc_summary_clear_sky_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for clear_sky_flag",
+   "has_qc": false
+  },
+  "precip_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Precipitation flag",
+   "has_qc": false
+  },
+  "mixed_phase_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Mixed phase cloud flag",
+   "has_qc": false
+  },
+  "pressure_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure at each level",
+   "has_qc": true
+  },
+  "qc_pressure_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pressure at each level",
+   "has_qc": false
+  },
+  "source_pressure_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of pressure_level",
+   "has_qc": false
+  },
+  "aqc_summary_pressure_level": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for pressure_level",
+   "has_qc": false
+  },
+  "pressure_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure at midpoint of each layer",
+   "has_qc": true
+  },
+  "qc_pressure_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pressure at midpoint of each layer",
+   "has_qc": false
+  },
+  "source_pressure_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of pressure_layer",
+   "has_qc": false
+  },
+  "aqc_summary_pressure_layer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for pressure_layer",
+   "has_qc": false
+  },
+  "temperature_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "float32",
+   "units": "degK",
+   "long_name": "Temperature at each level",
+   "has_qc": true
+  },
+  "qc_temperature_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature at each level",
+   "has_qc": false
+  },
+  "source_temperature_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of temperature_level",
+   "has_qc": false
+  },
+  "aqc_summary_temperature_level": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for temperature_level",
+   "has_qc": false
+  },
+  "temperature_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "degK",
+   "long_name": "Temperature at midpoint of each layer",
+   "has_qc": true
+  },
+  "qc_temperature_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature at midpoint of each layer",
+   "has_qc": false
+  },
+  "source_temperature_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of temperature_layer",
+   "has_qc": false
+  },
+  "aqc_summary_temperature_layer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for temperature_layer",
+   "has_qc": false
+  },
+  "watervapor_mr_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "float32",
+   "units": "kg/kg",
+   "long_name": "watervapor mixing ratio at each level",
+   "has_qc": true
+  },
+  "qc_watervapor_mr_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: watervapor mixing ratio at each level",
+   "has_qc": false
+  },
+  "source_watervapor_mr_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of watervapor_mr_level",
+   "has_qc": false
+  },
+  "aqc_summary_watervapor_mr_level": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for watervapor_mr_level",
+   "has_qc": false
+  },
+  "watervapor_mr_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "kg/kg",
+   "long_name": "watervapor mixing ratio at each layer",
+   "has_qc": true
+  },
+  "qc_watervapor_mr_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: watervapor mixing ratio at each layer",
+   "has_qc": false
+  },
+  "source_watervapor_mr_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of watervapor_mr_layer",
+   "has_qc": false
+  },
+  "aqc_summary_watervapor_mr_layer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for watervapor_mr_layer",
+   "has_qc": false
+  },
+  "watervapor_rh_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity over water at each level",
+   "has_qc": true
+  },
+  "qc_watervapor_rh_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity over water at each level",
+   "has_qc": false
+  },
+  "source_watervapor_rh_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of watervapor_rh_level",
+   "has_qc": false
+  },
+  "aqc_summary_watervapor_rh_level": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for watervapor_rh_level",
+   "has_qc": false
+  },
+  "watervapor_rh_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity over water at each layer",
+   "has_qc": true
+  },
+  "qc_watervapor_rh_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity over water at each layer",
+   "has_qc": false
+  },
+  "source_watervapor_rh_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of watervapor_rh",
+   "has_qc": false
+  },
+  "aqc_summary_watervapor_rh_layer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for watervapor_rh_layer",
+   "has_qc": false
+  },
+  "airdensity_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "float32",
+   "units": "g/m3",
+   "long_name": "Density of air at each level",
+   "has_qc": true
+  },
+  "qc_airdensity_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Density of air at each level",
+   "has_qc": false
+  },
+  "source_airdensity_level": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of airdensity_level",
+   "has_qc": false
+  },
+  "aqc_summary_airdensity_level": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for airdensity_level",
+   "has_qc": false
+  },
+  "airdensity_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "g/m3",
+   "long_name": "Density of air at each layer",
+   "has_qc": true
+  },
+  "qc_airdensity_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Density of air at each layer",
+   "has_qc": false
+  },
+  "source_airdensity_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of airdensity",
+   "has_qc": false
+  },
+  "aqc_summary_airdensity_layer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for airdensity_layer",
+   "has_qc": false
+  },
+  "cld_lwp": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "g/m2",
+   "long_name": "Cloud liquid water path across layer",
+   "has_qc": true
+  },
+  "qc_cld_lwp": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Cloud liquid water path across layer",
+   "has_qc": false
+  },
+  "source_cld_lwp": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of cld_lwp field",
+   "has_qc": false
+  },
+  "aqc_summary_cld_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for cld_lwp",
+   "has_qc": false
+  },
+  "cld_iwp": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "g/m2",
+   "long_name": "Cloud ice water path across layer",
+   "has_qc": true
+  },
+  "qc_cld_iwp": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Cloud ice water path across layer",
+   "has_qc": false
+  },
+  "source_cld_iwp": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of cld_iwp field",
+   "has_qc": false
+  },
+  "aqc_summary_cld_iwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for cld_iwp",
+   "has_qc": false
+  },
+  "cld_reliq": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Cloud liquid effective radius in each layer",
+   "has_qc": true
+  },
+  "qc_cld_reliq": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Cloud liquid effective radius in each layer",
+   "has_qc": false
+  },
+  "source_cld_reliq": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of cld_reliq field",
+   "has_qc": false
+  },
+  "aqc_summary_cld_reliq": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for cld_reliq",
+   "has_qc": false
+  },
+  "cld_dgeice": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Cloud generalized ice effective diameter (Fu) in layer",
+   "has_qc": true
+  },
+  "qc_cld_dgeice": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Cloud generalized ice effective diameter (Fu) in layer",
+   "has_qc": false
+  },
+  "source_cld_dgeice": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of dgeice field",
+   "has_qc": false
+  },
+  "aqc_summary_cld_dgeice": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for cld_dgeice",
+   "has_qc": false
+  },
+  "aerosol_angstrom": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol angstrom parameter",
+   "has_qc": true
+  },
+  "qc_aerosol_angstrom": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol angstrom parameter",
+   "has_qc": false
+  },
+  "source_aerosol_angstrom": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of aerosol_angstrom field",
+   "has_qc": false
+  },
+  "aqc_summary_aerosol_angstrom": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for aerosol_angstrom",
+   "has_qc": false
+  },
+  "aerosol_aod_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol optical depth at 500nm",
+   "has_qc": true
+  },
+  "qc_aerosol_aod_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol optical depth at 500nm",
+   "has_qc": false
+  },
+  "source_aerosol_aod_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of aerosol_aod_500 field",
+   "has_qc": false
+  },
+  "aqc_summary_aerosol_aod_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for aerosol_aod_500",
+   "has_qc": false
+  },
+  "aerosol_ext_500": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "km-1",
+   "long_name": "Aerosol extinction profile at 500 nm",
+   "has_qc": true
+  },
+  "qc_aerosol_ext_500": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol extinction profile at 500 nm",
+   "has_qc": false
+  },
+  "source_aerosol_ext_500": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of aerosol_ext_500 field",
+   "has_qc": false
+  },
+  "aqc_summary_aerosol_ext_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for aerosol_ext_500",
+   "has_qc": false
+  },
+  "aerosol_ssa_500": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol single scattering albedo at 500 nm",
+   "has_qc": true
+  },
+  "qc_aerosol_ssa_500": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol single scattering albedo at 500 nm",
+   "has_qc": false
+  },
+  "source_aerosol_ssa_500": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of aerosol_ssa_500 field",
+   "has_qc": false
+  },
+  "aqc_summary_aerosol_ssa_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for aerosol_ssa_500",
+   "has_qc": false
+  },
+  "aerosol_g_500": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol asymmetry parameter at 500nm",
+   "has_qc": true
+  },
+  "qc_aerosol_g_500": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol asymmetry parameter at 500nm",
+   "has_qc": false
+  },
+  "source_aerosol_g_500": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    1440,
+    627
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of aerosol_g_500 field",
+   "has_qc": false
+  },
+  "aqc_summary_aerosol_g_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for aerosol_g_500",
+   "has_qc": false
+  },
+  "ozone_mr": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Ozone volume mixing ratio at level heights",
+   "has_qc": true
+  },
+  "qc_ozone_mr": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ozone volume mixing ratio at level heights",
+   "has_qc": false
+  },
+  "source_ozone_mr": {
+   "dims": [
+    "time",
+    "level"
+   ],
+   "shape": [
+    1440,
+    628
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of ozone_mr field",
+   "has_qc": false
+  },
+  "aqc_summary_ozone_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for ozone_mr",
+   "has_qc": false
+  },
+  "column_ozone": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "DU",
+   "long_name": "Total column ozone",
+   "has_qc": true
+  },
+  "qc_column_ozone": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total column ozone",
+   "has_qc": false
+  },
+  "source_column_ozone": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for each element of column_ozone field",
+   "has_qc": false
+  },
+  "aqc_summary_column_ozone": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for column_ozone",
+   "has_qc": false
+  },
+  "start_wnum_rrtm": {
+   "dims": [
+    "rrtm_band"
+   ],
+   "shape": [
+    14
+   ],
+   "dtype": "float32",
+   "units": "cm-1",
+   "long_name": "Wavenumber for start of rrtm band",
+   "has_qc": false
+  },
+  "end_wnum_rrtm": {
+   "dims": [
+    "rrtm_band"
+   ],
+   "shape": [
+    14
+   ],
+   "dtype": "float32",
+   "units": "cm-1",
+   "long_name": "Wavenumber for end of rrtm band",
+   "has_qc": false
+  },
+  "surface_albedo_rrtm": {
+   "dims": [
+    "time",
+    "rrtm_band"
+   ],
+   "shape": [
+    1440,
+    14
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Surface albedo in rrtm wavenumber bands",
+   "has_qc": true
+  },
+  "qc_surface_albedo_rrtm": {
+   "dims": [
+    "time",
+    "rrtm_band"
+   ],
+   "shape": [
+    1440,
+    14
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Surface albedo in rrtm wavenumber bands",
+   "has_qc": false
+  },
+  "source_surface_albedo_rrtm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for surface_albedo_rrtm",
+   "has_qc": false
+  },
+  "aqc_summary_surface_albedo_rrtm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for surface_albedo_rrtm",
+   "has_qc": false
+  },
+  "start_wnum_fu_liou": {
+   "dims": [
+    "fu_liou_band"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "float32",
+   "units": "cm-1",
+   "long_name": "Wavenumber for start of fu_liou band",
+   "has_qc": false
+  },
+  "end_wnum_fu_liou": {
+   "dims": [
+    "fu_liou_band"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "float32",
+   "units": "cm-1",
+   "long_name": "Wavenumber for end of fu_liou band",
+   "has_qc": false
+  },
+  "surface_albedo_fu_liou": {
+   "dims": [
+    "time",
+    "fu_liou_band"
+   ],
+   "shape": [
+    1440,
+    6
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Surface albedo in fu_liou wavenumber bands",
+   "has_qc": true
+  },
+  "qc_surface_albedo_fu_liou": {
+   "dims": [
+    "time",
+    "fu_liou_band"
+   ],
+   "shape": [
+    1440,
+    6
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Surface albedo in fu_liou wavenumber bands",
+   "has_qc": false
+  },
+  "source_surface_albedo_fu_liou": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for surface_albedo_fu_liou",
+   "has_qc": false
+  },
+  "aqc_summary_surface_albedo_fu_liou": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for surface_albedo_fu_liou",
+   "has_qc": false
+  },
+  "start_wnum_gcm2": {
+   "dims": [
+    "gcm2_band"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "cm-1",
+   "long_name": "Wavenumber for start of gcm2 band",
+   "has_qc": false
+  },
+  "end_wnum_gcm2": {
+   "dims": [
+    "gcm2_band"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "cm-1",
+   "long_name": "Wavenumber for end of gcm2 band",
+   "has_qc": false
+  },
+  "surface_albedo_gcm2": {
+   "dims": [
+    "time",
+    "gcm2_band"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Surface albedo in gcm2 wavenumber bands",
+   "has_qc": true
+  },
+  "qc_surface_albedo_gcm2": {
+   "dims": [
+    "time",
+    "gcm2_band"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Surface albedo in gcm2 wavenumber bands",
+   "has_qc": false
+  },
+  "source_surface_albedo_gcm2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for surface_albedo_gcm2",
+   "has_qc": false
+  },
+  "aqc_summary_surface_albedo_gcm2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for surface_albedo_gcm2",
+   "has_qc": false
+  },
+  "start_wnum_edwards_slingo": {
+   "dims": [
+    "edwards_slingo_band"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "float32",
+   "units": "cm-1",
+   "long_name": "Wavenumber for start of edwards_slingo band",
+   "has_qc": false
+  },
+  "end_wnum_edwards_slingo": {
+   "dims": [
+    "edwards_slingo_band"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "float32",
+   "units": "cm-1",
+   "long_name": "Wavenumber for end of edwards_slingo band",
+   "has_qc": false
+  },
+  "surface_albedo_edwards_slingo": {
+   "dims": [
+    "time",
+    "edwards_slingo_band"
+   ],
+   "shape": [
+    1440,
+    5
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Surface albedo in edwards_slingo wavenumber bands",
+   "has_qc": true
+  },
+  "qc_surface_albedo_edwards_slingo": {
+   "dims": [
+    "time",
+    "edwards_slingo_band"
+   ],
+   "shape": [
+    1440,
+    5
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Surface albedo in edwards_slingo wavenumber bands",
+   "has_qc": false
+  },
+  "source_surface_albedo_edwards_slingo": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for surface_albedo_edwards_slingo",
+   "has_qc": false
+  },
+  "aqc_summary_surface_albedo_edwards_slingo": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for surface_albedo_edwards_slingo",
+   "has_qc": false
+  },
+  "co2_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Volume mixing ratio for CO2; assumed constant with height",
+   "has_qc": true
+  },
+  "qc_co2_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Volume mixing ratio for CO2; assumed constant with height",
+   "has_qc": false
+  },
+  "source_co2_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for co2_mr",
+   "has_qc": false
+  },
+  "aqc_summary_co2_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for co2_mr",
+   "has_qc": false
+  },
+  "ch4_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Volume mixing ratio for CH4",
+   "has_qc": true
+  },
+  "qc_ch4_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Volume mixing ratio for CH4",
+   "has_qc": false
+  },
+  "source_ch4_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for ch4_mr",
+   "has_qc": false
+  },
+  "aqc_summary_ch4_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for ch4_mr",
+   "has_qc": false
+  },
+  "n2o_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Volume mixing ratio for N2O",
+   "has_qc": true
+  },
+  "qc_n2o_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Volume mixing ratio for N2O",
+   "has_qc": false
+  },
+  "source_n2o_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for n2o_mr",
+   "has_qc": false
+  },
+  "aqc_summary_n2o_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for n2o_mr",
+   "has_qc": false
+  },
+  "ccl4_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Volume mixing ratio for CCL4",
+   "has_qc": true
+  },
+  "qc_ccl4_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Volume mixing ratio for CCL4",
+   "has_qc": false
+  },
+  "source_ccl4_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for ccl4_mr",
+   "has_qc": false
+  },
+  "aqc_summary_ccl4_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for ccl4_mr",
+   "has_qc": false
+  },
+  "f11_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Volume mixing ratio for CFC11",
+   "has_qc": true
+  },
+  "qc_f11_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Volume mixing ratio for CFC11",
+   "has_qc": false
+  },
+  "source_f11_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for f11_mr",
+   "has_qc": false
+  },
+  "aqc_summary_f11_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for f11_mr",
+   "has_qc": false
+  },
+  "f12_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Volume mixing ratio for CFC12",
+   "has_qc": true
+  },
+  "qc_f12_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Volume mixing ratio for CFC12",
+   "has_qc": false
+  },
+  "source_f12_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for f12_mr",
+   "has_qc": false
+  },
+  "aqc_summary_f12_mr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for f12_mr",
+   "has_qc": false
+  },
+  "precip": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Total precipitation",
+   "has_qc": true
+  },
+  "qc_precip": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total precipitation",
+   "has_qc": false
+  },
+  "source_precip": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for precip",
+   "has_qc": false
+  },
+  "aqc_summary_precip": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for precip",
+   "has_qc": false
+  },
+  "surface_rad_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degK",
+   "long_name": "Surface radiating temperature",
+   "has_qc": true
+  },
+  "qc_surface_rad_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Surface radiating temperature",
+   "has_qc": false
+  },
+  "source_surface_rad_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for surf_rad_temp",
+   "has_qc": false
+  },
+  "aqc_summary_surface_rad_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for surface_rad_temp",
+   "has_qc": false
+  },
+  "meas_up_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Measured upwelling longwave flux at surface",
+   "has_qc": true
+  },
+  "qc_meas_up_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Measured upwelling longwave flux at surface",
+   "has_qc": false
+  },
+  "source_meas_up_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for meas_up_long_hemisp",
+   "has_qc": false
+  },
+  "aqc_summary_meas_up_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for meas_up_long_hemisp",
+   "has_qc": false
+  },
+  "meas_down_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Measured longwave flux at surface",
+   "has_qc": true
+  },
+  "qc_meas_down_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Measured longwave flux at surface",
+   "has_qc": false
+  },
+  "source_meas_down_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for meas_down_long_hemisp",
+   "has_qc": false
+  },
+  "aqc_summary_meas_down_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for meas_down_long_hemisp",
+   "has_qc": false
+  },
+  "meas_down_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Measure shortwave total flux at surface",
+   "has_qc": true
+  },
+  "qc_meas_down_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Measure shortwave total flux at surface",
+   "has_qc": false
+  },
+  "source_meas_down_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for meas_down_short_hemisp",
+   "has_qc": false
+  },
+  "aqc_summary_meas_down_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for meas_down_short_hemisp",
+   "has_qc": false
+  },
+  "meas_down_short_diffuse_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Measured shortwave diffuse flux at surface",
+   "has_qc": true
+  },
+  "qc_meas_down_short_diffuse_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Measured shortwave diffuse flux at surface",
+   "has_qc": false
+  },
+  "source_meas_down_short_diffuse_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for meas_down_short_diffuse_hemisp",
+   "has_qc": false
+  },
+  "aqc_summary_meas_down_short_diffuse_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for meas_down_short_diffuse_hemisp",
+   "has_qc": false
+  },
+  "meas_short_direct_normal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m2",
+   "long_name": "Measured shortwave direct normal flux at surface",
+   "has_qc": true
+  },
+  "qc_meas_short_direct_normal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Measured shortwave direct normal flux at surface",
+   "has_qc": false
+  },
+  "source_meas_short_direct_normal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source field for meas_short_direct_normal",
+   "has_qc": false
+  },
+  "aqc_summary_meas_short_direct_normal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Summary quality control field for meas_short_direct_normal",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "layer": {
+   "dims": [
+    "layer"
+   ],
+   "shape": [
+    627
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Heights of the center of each layer above mean sea level",
+   "has_qc": false
+  },
+  "level": {
+   "dims": [
+    "level"
+   ],
+   "shape": [
+    628
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Heights of the boundaries of each layer above mean sea level",
+   "has_qc": false
+  }
+ }
+}

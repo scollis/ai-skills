@@ -1,0 +1,677 @@
+{
+ "vap": "radfluxanal",
+ "datastream": "sgpradfluxbrs1longC1.c1",
+ "filename": "sgpradfluxbrs1longC1.c1.20250819.060000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 54,
+ "dims": {
+  "time": 1440,
+  "bound": 2
+ },
+ "n_qc_vars": 12,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2025-08-19T06:00:00",
+  "2025-08-20T05:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "radflux1long -n radfluxbrs1long -s sgp -f C1 -b 20250701 -e 20250901 --max-runtime 0",
+  "process_version": "radflux1long-3.17.0",
+  "dod_version": "radfluxbrs1long-c1-1.6",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpradfluxbrs1longC1.c1",
+  "doi": "10.5439/1395156"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Broadband downwelling shortwave irradiance from sum or global pyranometer",
+   "has_qc": true
+  },
+  "source_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable: Broadband downwelling shortwave irradiance from sum or global pyranometer",
+   "has_qc": false
+  },
+  "qc_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Broadband downwelling shortwave irradiance from sum or global pyranometer",
+   "has_qc": false
+  },
+  "clearsky_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky broadband downwelling shorwave irradiance",
+   "has_qc": false
+  },
+  "downwelling_longwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave irradiance from pyrgeometer",
+   "has_qc": true
+  },
+  "qc_downwelling_longwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Downwelling longwave irradiance from pyrgeometer",
+   "has_qc": false
+  },
+  "clearsky_downwelling_longwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky downwelling longwave irradiance",
+   "has_qc": false
+  },
+  "upwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling shortwave irradiance from pyranometer",
+   "has_qc": true
+  },
+  "qc_upwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling shortwave irradiance from pyranometer",
+   "has_qc": false
+  },
+  "clearsky_upwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky upwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "upwelling_longwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling longwave irradiance from pyrgeometer",
+   "has_qc": true
+  },
+  "qc_upwelling_longwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling longwave irradiance from pyrgeometer",
+   "has_qc": false
+  },
+  "clearsky_upwelling_longwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky upwelling longwave irradiance",
+   "has_qc": false
+  },
+  "diffuse_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Measured broadband diffuse downwelling shortwave irradiance",
+   "has_qc": true
+  },
+  "source_diffuse_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable: Measured broadband diffuse downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "qc_diffuse_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Measured broadband diffuse downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "clearsky_diffuse_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky diffuse downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "direct_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Measured direct downwelling shortwave irradiance",
+   "has_qc": true
+  },
+  "source_direct_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable: Measured direct downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "qc_direct_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Measured direct downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "clearsky_direct_downwelling_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky direct downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "clearsky_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Clear-sky status",
+   "has_qc": false
+  },
+  "cloudfraction_longwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Estimated effective longwave fractional sky cover",
+   "has_qc": false
+  },
+  "cloudfraction_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Estimated shortwave fractional sky cover",
+   "has_qc": false
+  },
+  "cloudfraction_shortwave_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Status for field:  Estimated shortwave fractional sky cover",
+   "has_qc": false
+  },
+  "visible_cloud_optical_depth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Estimated effective visible cloud optical depth",
+   "has_qc": false
+  },
+  "brightness_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Sky brightness temperature from downwelling_longwave",
+   "has_qc": false
+  },
+  "cloud_radiating_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Estimated effective cloud radiating temperature",
+   "has_qc": false
+  },
+  "clearsky_emissivity_longwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Effective clear-sky longwave emissivity",
+   "has_qc": false
+  },
+  "cosine_zenith": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine of solar zenith angle",
+   "has_qc": false
+  },
+  "cloud_transmissivity_shortwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Shortwave cloud transmissivity",
+   "has_qc": false
+  },
+  "tau_asymmetry_parameter_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Optical depth asymmetry parameter flag",
+   "has_qc": false
+  },
+  "tau_temperature_limit_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Method used to determine temperature limit in optical depth calculation",
+   "has_qc": false
+  },
+  "ice_cloud_temperature_limit": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Temperature limit defined as ice cloud",
+   "has_qc": false
+  },
+  "rh_adjustment_to_clearsky_emissivity_longwave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Fraction of clear sky emissivity due to relative humidity correction",
+   "has_qc": false
+  },
+  "wind_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed",
+   "has_qc": true
+  },
+  "qc_wind_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind speed",
+   "has_qc": false
+  },
+  "wind_direction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction",
+   "has_qc": true
+  },
+  "qc_wind_direction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind direction",
+   "has_qc": false
+  },
+  "air_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Air temperature",
+   "has_qc": true
+  },
+  "qc_air_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Air temperature",
+   "has_qc": false
+  },
+  "relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity",
+   "has_qc": true
+  },
+  "qc_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Relative humidity",
+   "has_qc": false
+  },
+  "vapor_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mb",
+   "long_name": "Vapor pressure",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Atmospheric pressure",
+   "has_qc": true
+  },
+  "qc_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Atmospheric pressure",
+   "has_qc": false
+  },
+  "precipitation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Precipitation",
+   "has_qc": true
+  },
+  "qc_precipitation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Precipitation",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

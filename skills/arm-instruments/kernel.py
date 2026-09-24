@@ -14,6 +14,7 @@ import urllib.request
 
 ARM_ES_URL = "https://www.arm.gov/api/es/{index}/_search"
 ARM_HANDBOOK_DIR = "https://www.arm.gov/publications/tech_reports/handbooks/"
+ARM_TECH_REPORT_DIR = "https://www.arm.gov/publications/tech_reports/"
 ARM_INSTRUMENT_PAGE = "https://www.arm.gov/capabilities/instruments/{code}"
 ARM_ES_INDEXES = ["ds", "measurements"]
 
@@ -155,7 +156,16 @@ def arm_handbook_candidates(code):
             continue
         # the catalog copy published with this skill stores bare PDF filenames to fit the
         # registry's per-file limit; the repo copy stores full URLs. Accept either.
-        urls.append(val if val.startswith("http") else ARM_HANDBOOK_DIR + val)
+        val = val.strip()
+        # ARM's url_techreport field sometimes carries trailing whitespace, which a
+        # request encodes as %20 and the server answers 404 for.
+        if val.startswith("http"):
+            urls.append(val)
+        elif val.startswith("tr/"):
+            # VAP technical reports sit one directory up from the handbooks
+            urls.append(ARM_TECH_REPORT_DIR + val[3:])
+        else:
+            urls.append(ARM_HANDBOOK_DIR + val)
     seen = []
     for u in urls:
         u = u.replace("http://", "https://").replace("https://arm.gov", "https://www.arm.gov")

@@ -1,0 +1,518 @@
+{
+ "vap": "rlprof-fex",
+ "datastream": "sgprlproffexext1thorC1.c0",
+ "filename": "sgprlproffexext1thorC1.c0.20260920.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 34,
+ "dims": {
+  "time": 720,
+  "height_high": 667,
+  "height_low": 290
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 120.0,
+ "time_span": [
+  "2026-09-20T00:00:00",
+  "2026-09-20T23:58:00"
+ ],
+ "global_attrs": {
+  "command_line": "rlprof_fex.m -s sgp -f C1 -b 20260920 -e 20260921 --max-runtime 86400",
+  "process_version": "1.7-7.el9",
+  "dod_version": "rlproffexext1thor-c0-1.0",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c0",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgprlproffexext1thorC1.c0",
+  "doi": "10.5439/1373938"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_n2": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Particulate backscatter coefficient calculated from the scattering ratio derived from the high elastic and nitrogen channels",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_n2_uncertainty_random": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Random uncertainty in particulate_backscatter_e_n2",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_n2_uncertainty_systematic": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Systematic uncertainty in particulate_backscatter_e_n2",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_n2_low": {
+   "dims": [
+    "time",
+    "height_low"
+   ],
+   "shape": [
+    720,
+    290
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Particulate backscatter coefficient calculated from the scattering ratio derived from the low elastic and nitrogen channels",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_n2_low_uncertainty_random": {
+   "dims": [
+    "time",
+    "height_low"
+   ],
+   "shape": [
+    720,
+    290
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Random uncertainty in particulate_backscatter_e_n2_low",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_n2_low_uncertainty_systematic": {
+   "dims": [
+    "time",
+    "height_low"
+   ],
+   "shape": [
+    720,
+    290
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Systematic uncertainty in particulate_backscatter_e_n2_low",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_beS": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Particulate backscatter coefficient from the high elastic channels  calculated with the Fernald solution using the best-estimate lidar ratios.",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_beS_uncertainty_random": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Random uncertainty in particulate_backscatter_e_beS",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_beS_uncertainty_systematic": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Systematic uncertainty in particulate_backscatter_e_beS",
+   "has_qc": false
+  },
+  "particulate_backscatter_e": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Particulate backscatter coefficient from the high elastic channels calculated with the Fernald solution using the high elastic channel lidar ratio",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_uncertainty_random": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Random uncertainty in particulate_backscatter_e",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_uncertainty_systematic": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Systematic uncertainty in particulate_backscatter_e",
+   "has_qc": false
+  },
+  "lidar_ratio_e_n2": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Lidar ratio from the high nitrogen channel extinction and particulate_backscatter_e_n2",
+   "has_qc": false
+  },
+  "lidar_ratio_e_n2_uncertainty_random": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Random uncertainty in lidar_ratio_e_n2",
+   "has_qc": false
+  },
+  "lidar_ratio_e_n2_low": {
+   "dims": [
+    "time",
+    "height_low"
+   ],
+   "shape": [
+    720,
+    290
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Lidar ratio from the low nitrogen channel extinction and particulate_backscatter_e_n2_ low",
+   "has_qc": false
+  },
+  "lidar_ratio_e_n2_low_uncertainty_random": {
+   "dims": [
+    "time",
+    "height_low"
+   ],
+   "shape": [
+    720,
+    290
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Random uncertainty in lidar_ratio_e_n2_low",
+   "has_qc": false
+  },
+  "lidar_ratio_e": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Lidar ratio from the high elastic channels",
+   "has_qc": false
+  },
+  "lidar_ratio_e_uncertainty_random": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Random uncertainty in lidar_ratio_e",
+   "has_qc": false
+  },
+  "lidar_ratio_e_uncertainty_systematic": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Systematic uncertainty in lidar_ratio_e",
+   "has_qc": false
+  },
+  "source_lidar_ratio_e": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for field: Lidar ratio from the high elastic channels",
+   "has_qc": false
+  },
+  "particulate_backscatter_be_noMS": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Best-estimate of the particulate backscatter coefficient without accounting for multiple scattering effects",
+   "has_qc": false
+  },
+  "lidar_ratio_be_noMS": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Best-estimate of the lidar ratio without accounting for multiple scattering effects",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_n2_noMS": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Particulate backscatter coefficient calculated from scattering_ratio_e_n2 without accounting for multiple scattering effects",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_n2_low_noMS": {
+   "dims": [
+    "time",
+    "height_low"
+   ],
+   "shape": [
+    720,
+    290
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Particulate backscatter coefficient calculated from scattering_ratio_e_n2_low without accounting for multiple scattering effects",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_beS_noMS": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Particulate backscatter coefficient from the high elastic channels using the best-estimate lidar ratios without accounting for multiple scattering effects",
+   "has_qc": false
+  },
+  "particulate_backscatter_e_noMS": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1/(km*sr)",
+   "long_name": "Particulate backscatter coefficient from the high elastic channels without accounting for multiple scattering effects",
+   "has_qc": false
+  },
+  "lidar_ratio_e_n2_noMS": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Lidar ratio from the high nitrogen channel extinction and particulate_backscatter_e_n2 without accounting for multiple scattering effects",
+   "has_qc": false
+  },
+  "lidar_ratio_e_n2_low_noMS": {
+   "dims": [
+    "time",
+    "height_low"
+   ],
+   "shape": [
+    720,
+    290
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Lidar ratio from the low nitrogen channel extinction and particulate_backscatter_e_n2_low without accounting for multiple scattering effects",
+   "has_qc": false
+  },
+  "lidar_ratio_e_noMS": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    720,
+    667
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Lidar ratio from the high elastic channels without accounting for multiple scattering effects",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height_high": {
+   "dims": [
+    "height_high"
+   ],
+   "shape": [
+    667
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height above ground level for the high (NFOV) channels",
+   "has_qc": false
+  },
+  "height_low": {
+   "dims": [
+    "height_low"
+   ],
+   "shape": [
+    290
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height above ground level for the low (WFOV) channels",
+   "has_qc": false
+  }
+ }
+}

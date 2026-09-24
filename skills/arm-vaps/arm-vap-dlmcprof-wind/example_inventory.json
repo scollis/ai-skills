@@ -1,0 +1,347 @@
+{
+ "vap": "dlmcprof-wind",
+ "datastream": "mosdlmcprofwindnewsM1.c1",
+ "filename": "mosdlmcprofwindnewsM1.c1.20200917.001508.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 22,
+ "dims": {
+  "time": 96,
+  "bound": 2,
+  "height": 103
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 901.0,
+ "time_span": [
+  "2020-09-17T00:15:08",
+  "2020-09-18T00:01:46"
+ ],
+ "global_attrs": {
+  "command_line": "dlmcprof_wind -s mos -f M1 -b 20191011 -e 20200921 run-dlmcprof_wind-20231221.log",
+  "process_version": "dlmcprof_wind-1.0.0",
+  "dod_version": "dlmcprofwindnews-c1-1.0",
+  "site_id": "mos",
+  "facility_id": "M1",
+  "data_level": "c1",
+  "location_description": "Multidisciplinary drifting Observatory for the Study of Arctic Climate (MOSAiC)  , Research Vessel PolarStern",
+  "datastream": "mosdlmcprofwindnewsM1.c1",
+  "serial_number": "0319-160",
+  "doi": "10.5439/1872823"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    96,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "scan_duration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "float32",
+   "units": "second",
+   "long_name": "MCUSR scan duration",
+   "has_qc": false
+  },
+  "nbeams": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Number of beams (azimuth angles) used in wind vector estimation",
+   "has_qc": false
+  },
+  "u": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Eastward component of wind vector",
+   "has_qc": false
+  },
+  "u_error": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Estimated error in eastward component of wind vector",
+   "has_qc": false
+  },
+  "v": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Northward component of wind vector",
+   "has_qc": false
+  },
+  "v_error": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Estimated error in northward component of wind vector",
+   "has_qc": false
+  },
+  "w": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Vertical component of wind vector",
+   "has_qc": false
+  },
+  "w_error": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Estimated error in vertical component of wind vector",
+   "has_qc": false
+  },
+  "wind_speed": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed",
+   "has_qc": false
+  },
+  "wind_speed_error": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed error",
+   "has_qc": false
+  },
+  "wind_direction": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction",
+   "has_qc": false
+  },
+  "wind_direction_error": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction error",
+   "has_qc": false
+  },
+  "residual": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Fit residual",
+   "has_qc": false
+  },
+  "correlation": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Fit correlation coefficient",
+   "has_qc": false
+  },
+  "chisq": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Chi squared",
+   "has_qc": false
+  },
+  "mean_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    96,
+    103
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Signal-to-noise ratio averaged over nbeams",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    103
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above ground level",
+   "has_qc": false
+  }
+ }
+}

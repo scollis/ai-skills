@@ -1,0 +1,241 @@
+{
+ "vap": "microbase",
+ "datastream": "sgpmicrobasepiavgC1.c1",
+ "filename": "sgpmicrobasepiavgC1.c1.20101227.001000.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 17,
+ "dims": {
+  "time": 72,
+  "nheights": 233
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 1200.0,
+ "time_span": [
+  "2010-12-27T00:10:00",
+  "2010-12-27T23:50:00"
+ ],
+ "global_attrs": {
+  "process_version": "$State: vap-microbasepi-1.2-1.sol5_10 $",
+  "command_line": "microbasepi -d 20101227 -f sgpC1",
+  "site_id": "sgp",
+  "facility_id": "C1: Lamont, Oklahoma",
+  "datastream": "sgpmicrobasepiavgC1.c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    72
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "Heights": {
+   "dims": [
+    "nheights"
+   ],
+   "shape": [
+    233
+   ],
+   "dtype": "float32",
+   "units": "m ASL",
+   "long_name": "Height of Computed Value",
+   "has_qc": false
+  },
+  "Avg_Retrieved_LWC": {
+   "dims": [
+    "time",
+    "nheights"
+   ],
+   "shape": [
+    72,
+    233
+   ],
+   "dtype": "float32",
+   "units": "g m-3",
+   "long_name": "Retrieved, MWR-Scaled, Liquid Water Concentration in-cloud Averaged over 1200 seconds",
+   "has_qc": false
+  },
+  "Avg_Retrieved_IWC": {
+   "dims": [
+    "time",
+    "nheights"
+   ],
+   "shape": [
+    72,
+    233
+   ],
+   "dtype": "float32",
+   "units": "mg m-3",
+   "long_name": "Retrieved Ice Water Concentration in-cloud Averaged over 1200 seconds",
+   "has_qc": false
+  },
+  "Avg_LiqEffectiveRadius": {
+   "dims": [
+    "time",
+    "nheights"
+   ],
+   "shape": [
+    72,
+    233
+   ],
+   "dtype": "float32",
+   "units": "micron",
+   "long_name": "Liquid Effective Radius in-cloud Averaged over 1200 seconds",
+   "has_qc": false
+  },
+  "Avg_IceEffectiveRadius": {
+   "dims": [
+    "time",
+    "nheights"
+   ],
+   "shape": [
+    72,
+    233
+   ],
+   "dtype": "float32",
+   "units": "micron",
+   "long_name": "Ice Effective Radius in-cloud Averaged over 1200 seconds",
+   "has_qc": false
+  },
+  "Avg_CloudFraction": {
+   "dims": [
+    "time",
+    "nheights"
+   ],
+   "shape": [
+    72,
+    233
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cloud Fraction Averaged over 1200 seconds",
+   "has_qc": false
+  },
+  "Missing_Liquid_Percentage": {
+   "dims": [
+    "time",
+    "nheights"
+   ],
+   "shape": [
+    72,
+    233
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Percentage of points where presence of liquid could not be determined in averaged height bins during 1200 seconds",
+   "has_qc": false
+  },
+  "Missing_Ice_Percentage": {
+   "dims": [
+    "time",
+    "nheights"
+   ],
+   "shape": [
+    72,
+    233
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Percentage of points where presence of ice could not be determined in averaged height bins during 1200 seconds",
+   "has_qc": false
+  },
+  "MWR_Missing_Percentage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    72
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Percentage of profiles with liquid for which MWR data were unavailable during 1200 seconds",
+   "has_qc": false
+  },
+  "Integrated_CloudFraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    72
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Maximum of Column Cloud Fraction Averaged over 1200 Seconds",
+   "has_qc": false
+  },
+  "aqc_CloudFraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    72
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Fraction of averaging period time profiles that contain cloud (at any height level), based on any of ceilometer, mpl and radar",
+   "has_qc": false
+  },
+  "aqc_CloudMissing": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    72
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Fraction of averaging period time profiles for which clear/cloudy status cannot be determined",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    72
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,478 @@
+{
+ "vap": "aod-mfrsr",
+ "datastream": "sgpmfrsr7nchcalC1.c1",
+ "filename": "sgpmfrsr7nchcalC1.c1.20260920.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 35,
+ "dims": {
+  "time": 1,
+  "Io_interquartile_time": 62,
+  "Io_wavelength": 6,
+  "Io_gauss_time": 61
+ },
+ "n_qc_vars": 7,
+ "time_resolution_s": null,
+ "time_span": [
+  "2026-09-20T00:00:00",
+  "2026-09-20T00:00:00"
+ ],
+ "global_attrs": {
+  "command_line": "mfraod -n mfraod_mfrsr7nch -s sgp -f C1 -b 20260920 -e 20260921 --max-runtime 86400",
+  "process_version": "vap-mfraod-2.17-0.el9",
+  "dod_version": "mfrsr7nchcal-c1-1.3",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpmfrsr7nchcalC1.c1",
+  "serial_number": "Refer to logger_id and head_id",
+  "doi": "10.5439/1756637"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "surface_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Surface pressure",
+   "has_qc": false
+  },
+  "Io_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 1",
+   "has_qc": true
+  },
+  "qc_Io_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 1",
+   "has_qc": false
+  },
+  "Io_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 2",
+   "has_qc": true
+  },
+  "qc_Io_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 2",
+   "has_qc": false
+  },
+  "Io_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 3",
+   "has_qc": true
+  },
+  "qc_Io_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 3",
+   "has_qc": false
+  },
+  "Io_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 4",
+   "has_qc": true
+  },
+  "qc_Io_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 4",
+   "has_qc": false
+  },
+  "Io_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 5",
+   "has_qc": true
+  },
+  "qc_Io_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 5",
+   "has_qc": false
+  },
+  "Io_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 7",
+   "has_qc": true
+  },
+  "qc_Io_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 7",
+   "has_qc": false
+  },
+  "Ozone_column_amount": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "DU",
+   "long_name": "Ozone column amount from satellite",
+   "has_qc": true
+  },
+  "qc_Ozone_column_amount": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ozone column amount from satellite",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 1",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 2",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 3",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 4",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 5",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 7",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone_absorption coefficient, filter 1",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone_absorption coefficient, filter 2",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone_absorption coefficient, filter 3",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone_absorption coefficient, filter 4",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone_absorption coefficient, filter 5",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone_absorption coefficient, filter 7",
+   "has_qc": false
+  },
+  "sun_to_earth_distance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "astronomical_unit",
+   "long_name": "Sun to earth distance",
+   "has_qc": false
+  },
+  "Io_interquartile_values": {
+   "dims": [
+    "Io_interquartile_time",
+    "Io_wavelength"
+   ],
+   "shape": [
+    62,
+    6
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Interquartile Io values",
+   "has_qc": false
+  },
+  "Io_gauss_values": {
+   "dims": [
+    "Io_gauss_time",
+    "Io_wavelength"
+   ],
+   "shape": [
+    61,
+    6
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Io values after gaussian filter",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "Io_interquartile_time": {
+   "dims": [
+    "Io_interquartile_time"
+   ],
+   "shape": [
+    62
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time for interquartile Io sample times",
+   "has_qc": false
+  },
+  "Io_gauss_time": {
+   "dims": [
+    "Io_gauss_time"
+   ],
+   "shape": [
+    61
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time for Ios after gaussian filter",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,545 @@
+{
+ "vap": "rlprofmr",
+ "datastream": "sgp10rlprofmr1turnC1.c1",
+ "filename": "sgp10rlprofmr1turnC1.c1.20040103.000000.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 38,
+ "dims": {
+  "time": 144,
+  "height_low": 25,
+  "height_high": 102,
+  "height": 104
+ },
+ "n_qc_vars": 1,
+ "time_resolution_s": 600.0,
+ "time_span": [
+  "2004-01-03T00:00:00",
+  "2004-01-03T23:50:00"
+ ],
+ "global_attrs": {
+  "datastream": "sgp10rlprofmr1turnC1.c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "mode": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "int16",
+   "units": "unitless",
+   "long_name": "Mode of the dataset (as defined by the filter arrangement of the lidar)",
+   "has_qc": false
+  },
+  "shots_summed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "counts",
+   "long_name": "Number of laser shots in the ensemble",
+   "has_qc": false
+  },
+  "average_energy": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "mJ",
+   "long_name": "Average laser energy of the ensemble shots",
+   "has_qc": false
+  },
+  "tweaks": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "int16",
+   "units": "unitless",
+   "long_name": "Flag denoting the occurrence of power or alignment tweaks",
+   "has_qc": false
+  },
+  "qc_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Data quality flag",
+   "has_qc": false
+  },
+  "calib_high_low": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Calibration factor used to match the high channel mixing ratio to the low channel mixing ratio",
+   "has_qc": false
+  },
+  "calib_factor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Calibration factor for entire profile",
+   "has_qc": false
+  },
+  "liq_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Cloud liquid water vapor by the microwave radiometer",
+   "has_qc": false
+  },
+  "pwv_mwr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Precipitable water vapor observed by the microwave radiometer",
+   "has_qc": false
+  },
+  "pwv_rl": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Precipitable water vapor observed by the Raman lidar",
+   "has_qc": false
+  },
+  "pwv_rl_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Random error in the precipitable water vapor observed by the Raman lidar",
+   "has_qc": false
+  },
+  "pwv_rl_fraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Fraction of the total column amount of water vapor the Raman lidar senses",
+   "has_qc": false
+  },
+  "wv_rl_max_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Suggested maximum altitude to use the water vapor data from the Raman lidar",
+   "has_qc": false
+  },
+  "mixing_ratio_low": {
+   "dims": [
+    "time",
+    "height_low"
+   ],
+   "shape": [
+    144,
+    25
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Water vapor mixing ratio profile from the low channel",
+   "has_qc": false
+  },
+  "mixing_ratio_high": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    144,
+    102
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Water vapor mixing ratio profile from the high channel",
+   "has_qc": false
+  },
+  "diff_trans_aerosol_corr": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    144,
+    102
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Differential transmission correction for aerosols",
+   "has_qc": false
+  },
+  "mixing_ratio_1": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    144,
+    102
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Water vapor mixing ratio profile created by merging the two channels",
+   "has_qc": false
+  },
+  "mixing_ratio_2": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    144,
+    102
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Water vapor mixing ratio profile created by merging the two calibrated channels",
+   "has_qc": false
+  },
+  "mixing_ratio_3": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    104
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Water vapor mixing ratio profile created by merging the two calibrated channels together with the surface in-situ measurements",
+   "has_qc": false
+  },
+  "relative_humidity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    104
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity calculated from the merged water vapor mixing ratio data",
+   "has_qc": false
+  },
+  "relative_humidity_over_ice": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    104
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity over ice calculated from the merged water vapor mixing ratio data",
+   "has_qc": false
+  },
+  "mixing_ratio_error_low": {
+   "dims": [
+    "time",
+    "height_low"
+   ],
+   "shape": [
+    144,
+    25
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Uncertainty of the water vapor mixing ratio profile from the low channel",
+   "has_qc": false
+  },
+  "mixing_ratio_error_high": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    144,
+    102
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Uncertainty of the water vapor mixing ratio profile from the high channel",
+   "has_qc": false
+  },
+  "mixing_ratio_1_error": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    144,
+    102
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Uncertainty of the water vapor mixing ratio profile created by merging the two channels",
+   "has_qc": false
+  },
+  "mixing_ratio_2_error": {
+   "dims": [
+    "time",
+    "height_high"
+   ],
+   "shape": [
+    144,
+    102
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Uncertainty of the water vapor mixing ratio profile created by merging the two calibrated channels",
+   "has_qc": false
+  },
+  "mixing_ratio_3_error": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    104
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Uncertainty of the water vapor mixing ratio profile created by merging the two calibrated channels",
+   "has_qc": false
+  },
+  "vertical_resolution_normal_mode": {
+   "dims": [
+    "height_high"
+   ],
+   "shape": [
+    102
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Vertical resolution of normal mode (mode == 1) data",
+   "has_qc": false
+  },
+  "vertical_resolution_bright_mode": {
+   "dims": [
+    "height_high"
+   ],
+   "shape": [
+    102
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Vertical resolution of bright mode (mode == 2) data",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    104
+   ],
+   "dtype": "float32",
+   "units": "mb",
+   "long_name": "Pressure",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature",
+   "has_qc": false
+  },
+  "mixing_ratio_other": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    104
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Water vapor mixing ratio",
+   "has_qc": false
+  },
+  "sample_times_other": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "int16",
+   "units": "unitless",
+   "long_name": "Flag indicating whether or not there was a sample from the temperature_source dataset during the lidars averaging interval (1) or not (0)",
+   "has_qc": false
+  },
+  "cloud_base_height_other": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "km AGL",
+   "long_name": "Cloud base height",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "north latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "east longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "meters above Mean Sea Level",
+   "long_name": "altitude",
+   "has_qc": false
+  },
+  "height_low": {
+   "dims": [
+    "height_low"
+   ],
+   "shape": [
+    25
+   ],
+   "dtype": "float32",
+   "units": "km AGL",
+   "long_name": "Height range of the low channel water vapor mixing ratio profile",
+   "has_qc": false
+  },
+  "height_high": {
+   "dims": [
+    "height_high"
+   ],
+   "shape": [
+    102
+   ],
+   "dtype": "float32",
+   "units": "km AGL",
+   "long_name": "Height range of the high channel water vapor mixing ratio profile",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    104
+   ],
+   "dtype": "float32",
+   "units": "km AGL",
+   "long_name": "Height range of the merged water vapor mixing ratio profile",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  }
+ }
+}

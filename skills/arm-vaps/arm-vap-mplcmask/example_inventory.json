@@ -1,0 +1,431 @@
+{
+ "vap": "mplcmask",
+ "datastream": "sgp30smplcmask1zwangC1.c1",
+ "filename": "sgp30smplcmask1zwangC1.c1.20260920.000003.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 30,
+ "dims": {
+  "time": 2880,
+  "bound": 2,
+  "height": 667,
+  "layer": 50,
+  "num_deadtime_corr": 18
+ },
+ "n_qc_vars": 5,
+ "time_resolution_s": 30.0,
+ "time_span": [
+  "2026-09-20T00:00:03",
+  "2026-09-20T23:59:36"
+ ],
+ "global_attrs": {
+  "command_line": "mplcmask -s sgp -f C1 -b 20260920 -e 20260921 --afterpulse 2 --max-runtime 86400",
+  "process_version": "vap-mplcmask-1.4-0.el9",
+  "dod_version": "30smplcmask1zwang-c1-1.3",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgp30smplcmask1zwangC1.c1",
+  "serial_number": "107",
+  "data_level": "c1",
+  "doi": "10.5439/1508389"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    2880,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "height_bounds": {
+   "dims": [
+    "height",
+    "bound"
+   ],
+   "shape": [
+    667,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Height cell bounds",
+   "has_qc": false
+  },
+  "cloud_base": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Lowest cloud base height above ground level (AGL)",
+   "has_qc": false
+  },
+  "cloud_top": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Highest cloud top height above ground level (AGL)",
+   "has_qc": false
+  },
+  "num_cloud_layers": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of cloud layers",
+   "has_qc": false
+  },
+  "linear_depol_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Linear depolarization ratio",
+   "has_qc": true
+  },
+  "qc_linear_depol_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Linear depolarization ratio",
+   "has_qc": false
+  },
+  "linear_depol_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Signal to noise ratio for the linear depolarization ratio",
+   "has_qc": true
+  },
+  "qc_linear_depol_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Signal to noise ratio for the linear depolarization ratio",
+   "has_qc": false
+  },
+  "cloud_mask": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Cloud mask",
+   "has_qc": true
+  },
+  "qc_cloud_mask": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Cloud mask",
+   "has_qc": false
+  },
+  "cloud_base_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    2880,
+    50
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Cloud base for each layer",
+   "has_qc": false
+  },
+  "cloud_top_layer": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    2880,
+    50
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Cloud top for each layer above ground level (AGL)",
+   "has_qc": false
+  },
+  "backscatter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Total attenuated backscatter",
+   "has_qc": true
+  },
+  "qc_backscatter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total attenuated backscatter",
+   "has_qc": false
+  },
+  "backscatter_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Signal to noise ratio of backscatter",
+   "has_qc": true
+  },
+  "qc_backscatter_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Signal to noise ratio of backscatter",
+   "has_qc": false
+  },
+  "background_signal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Background signal",
+   "has_qc": false
+  },
+  "cloud_top_attenuation_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Flag indicating whether the beam was extinguished at indicated cloud top",
+   "has_qc": false
+  },
+  "shots_summed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of lidar pulses summed",
+   "has_qc": false
+  },
+  "deadtime_correction_counts": {
+   "dims": [
+    "num_deadtime_corr"
+   ],
+   "shape": [
+    18
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Laboratory measured counts used to calculate the deadtime correction samples",
+   "has_qc": false
+  },
+  "deadtime_correction": {
+   "dims": [
+    "num_deadtime_corr"
+   ],
+   "shape": [
+    18
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Deadtime correction factor",
+   "has_qc": false
+  },
+  "overlap_correction": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    667
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Overlap correction",
+   "has_qc": false
+  },
+  "afterpulse_correction_copol": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    667
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Detector afterpulse (copol) from laser flash that has been degraded",
+   "has_qc": false
+  },
+  "afterpulse_correction_cross": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    667
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Detector afterpulse (cross) from laser flash that has been degraded",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    667
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Vertical height above ground level (AGL) corresponding to the bottom of height bin",
+   "has_qc": false
+  }
+ }
+}

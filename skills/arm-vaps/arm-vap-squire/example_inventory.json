@@ -1,0 +1,204 @@
+{
+ "vap": "squire",
+ "datastream": "bnfcsapr2squireS3.c1",
+ "filename": "bnfcsapr2squireS3.c1.20250619.000416.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 8,
+ "dims": {
+  "time": 142,
+  "y": 171,
+  "x": 141
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 603.0,
+ "time_span": [
+  "2025-06-19T00:04:16",
+  "2025-06-19T00:00:00"
+ ],
+ "global_attrs": {
+  "command_line": "squire -s bnf -f S3 -b 20250619.000000 -e 20250620.000000 -D 1 -R --asynchronous",
+  "process_version": "vap-squire-0.0-0.dev0.dirty.el8",
+  "dod_version": "csapr2squire-c1-1.1",
+  "site_id": "bnf",
+  "facility_id": "S3",
+  "data_level": "c1",
+  "location_description": "Southeast U.S. in Bankhead National Forest (BNF), Decatur, Alabama",
+  "datastream": "bnfcsapr2squireS3.c1",
+  "doi": "10.5439/2588229"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    142
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "rain_rate_A": {
+   "dims": [
+    "time",
+    "y",
+    "x"
+   ],
+   "shape": [
+    142,
+    171,
+    141
+   ],
+   "dtype": "float32",
+   "units": "mm hr-1",
+   "long_name": "Rainfall rate calculated from specific attenuation",
+   "has_qc": false
+  },
+  "rain_rate_Z": {
+   "dims": [
+    "time",
+    "y",
+    "x"
+   ],
+   "shape": [
+    142,
+    171,
+    141
+   ],
+   "dtype": "float32",
+   "units": "mm hr-1",
+   "long_name": "Rainfall rate calculated from reflectivity",
+   "has_qc": false
+  },
+  "rain_rate_combined": {
+   "dims": [
+    "time",
+    "y",
+    "x"
+   ],
+   "shape": [
+    142,
+    171,
+    141
+   ],
+   "dtype": "float32",
+   "units": "mm hr-1",
+   "long_name": "Rainfall rate calculated from a blend of rainfall rate estimates from specific attenuation, reflectivity",
+   "has_qc": false
+  },
+  "corrected_reflectivity": {
+   "dims": [
+    "time",
+    "y",
+    "x"
+   ],
+   "shape": [
+    142,
+    171,
+    141
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Corrected reflectivity",
+   "has_qc": false
+  },
+  "lowest_height": {
+   "dims": [
+    "time",
+    "y",
+    "x"
+   ],
+   "shape": [
+    142,
+    171,
+    141
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height of the lowest radar gate",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    142
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "y": {
+   "dims": [
+    "y"
+   ],
+   "shape": [
+    171
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Y distance on the projection plane to the origin",
+   "has_qc": false
+  },
+  "x": {
+   "dims": [
+    "x"
+   ],
+   "shape": [
+    141
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "X distance on the projection plane to the origin",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "y",
+    "x"
+   ],
+   "shape": [
+    171,
+    141
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "y",
+    "x"
+   ],
+   "shape": [
+    171,
+    141
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  }
+ }
+}

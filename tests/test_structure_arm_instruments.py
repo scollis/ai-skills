@@ -136,8 +136,10 @@ def test_code_is_in_catalog(skill):
 
 
 def test_catalog_skill_column_matches_directories():
+    """The catalog is shared with the VAP tranche, so compare only the instrument rows."""
     cat = catalog()
-    claimed = {r["skill"] for r in cat.values() if r.get("skill")}
+    claimed = {r["skill"] for r in cat.values()
+               if (r.get("skill") or "").startswith("arm-instrument-")}
     assert claimed == set(IDS), (
         "catalog.csv disagrees with the shipped skills; "
         f"only in csv: {sorted(claimed - set(IDS))}, only on disk: {sorted(set(IDS) - claimed)}")
@@ -304,3 +306,28 @@ def test_coverage_is_classified_for_every_skill():
     bad = {code_of(s): cat[code_of(s)].get("handbook_coverage") for s in SKILLS
            if cat[code_of(s)].get("handbook_coverage") not in allowed}
     assert not bad, f"unrecognised handbook_coverage values: {bad}"
+
+
+def test_index_counts_match_the_shipped_tranche():
+    """The index's own numbers must agree with what is on disk - the same drift that put a
+    self-contradictory verified count into the VAP index."""
+    text = (TRANCHE / "SKILL.md").read_text()
+    n_skills = len(SKILLS)
+    n_verified = sum(1 for s in SKILLS if (s / "example_inventory.json").exists())
+
+    m = re.search(r"\*\*(\d+) instruments\*\*", text)
+    assert m and int(m.group(1)) == n_skills, \
+        f"index claims {m.group(1) if m else '?'} instruments; {n_skills} directories exist"
+
+    m = re.search(r"(\d+) files opened with ACT", text)
+    assert m and int(m.group(1)) == n_verified, \
+        f"index claims {m.group(1) if m else '?'} files opened; {n_verified} ship an inventory"
+
+    m = re.search(r"(\d+) of the (\d+) skills were checked", text)
+    assert m, "index does not state the verified fraction"
+    assert (int(m.group(1)), int(m.group(2))) == (n_verified, n_skills), \
+        f"index claims {m.group(1)}/{m.group(2)} verified; on disk it is {n_verified}/{n_skills}"
+
+    m = re.search(r"other (\d+) say so", text)
+    assert m and int(m.group(1)) == n_skills - n_verified, \
+        f"index claims {m.group(1) if m else '?'} unverified; on disk it is {n_skills - n_verified}"

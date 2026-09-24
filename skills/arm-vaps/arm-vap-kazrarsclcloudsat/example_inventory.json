@@ -1,0 +1,497 @@
+{
+ "vap": "kazrarsclcloudsat",
+ "datastream": "sgparsclkazrcloudsatC1.c1",
+ "filename": "sgparsclkazrcloudsatC1.c1.20170828.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 33,
+ "dims": {
+  "time": 21600,
+  "height": 596,
+  "radar_mode": 4,
+  "layer": 10
+ },
+ "n_qc_vars": 7,
+ "time_resolution_s": 4.0,
+ "time_span": [
+  "2017-08-28T00:00:00",
+  "2017-08-28T23:59:56"
+ ],
+ "global_attrs": {
+  "command_line": "kazrarsclcloudsat -s sgp -f C1 -b 20170812 -e 20170901 -R",
+  "process_version": "vap-kazrarsclcloudsat-1.0-0.el7",
+  "dod_version": "arsclkazrcloudsat-c1-1.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgparsclkazrcloudsatC1.c1",
+  "doi": "10.5439/1728666"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "reflectivity_best_estimate": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Best-estimate reflectivity statistically aligned with CloudSat",
+   "has_qc": true
+  },
+  "qc_reflectivity_best_estimate": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Best-estimate reflectivity statistically aligned with CloudSat",
+   "has_qc": false
+  },
+  "reflectivity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Reflectivity statistically aligned with CloudSat",
+   "has_qc": true
+  },
+  "qc_reflectivity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Reflectivity statistically aligned with CloudSat",
+   "has_qc": false
+  },
+  "mean_doppler_velocity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean Doppler velocity",
+   "has_qc": true
+  },
+  "qc_mean_doppler_velocity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean Doppler velocity",
+   "has_qc": false
+  },
+  "spectral_width": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Spectral width",
+   "has_qc": true
+  },
+  "qc_spectral_width": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Spectral width",
+   "has_qc": false
+  },
+  "linear_depolarization_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Linear depolarization ratio",
+   "has_qc": true
+  },
+  "qc_linear_depolarization_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Linear depolarization ratio",
+   "has_qc": false
+  },
+  "signal_to_noise_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal-to-noise ratio",
+   "has_qc": false
+  },
+  "reflectivity_clutter_flag": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Reflectivity clutter flag",
+   "has_qc": false
+  },
+  "cloudsat_reflectivity_offset_applied": {
+   "dims": [
+    "radar_mode"
+   ],
+   "shape": [
+    4
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Statistically-derived reflectivity offset between KAZR and CloudSat",
+   "has_qc": false
+  },
+  "cloudsat_rmse": {
+   "dims": [
+    "radar_mode"
+   ],
+   "shape": [
+    4
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Root mean square error of statistically-derived reflectivity offset between KAZR and CloudSat",
+   "has_qc": false
+  },
+  "cloudsat_num_samples": {
+   "dims": [
+    "radar_mode"
+   ],
+   "shape": [
+    4
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of available CloudSat and KAZR samples used to estimate reflectivity offset",
+   "has_qc": false
+  },
+  "radar_first_top": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "KAZR top height of lowest significant detection layer, before clutter removal",
+   "has_qc": false
+  },
+  "mean_doppler_velocity_dealias_flag": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Indication of whether or not dealiasing was performed on the mean_doppler_velocity",
+   "has_qc": false
+  },
+  "radar_mode_flag": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Radar mode flag",
+   "has_qc": false
+  },
+  "cloud_source_flag": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Instrument source flag for cloud (hydrometeor) detections",
+   "has_qc": false
+  },
+  "precip_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Precipitation mean from rain gauge",
+   "has_qc": true
+  },
+  "qc_precip_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Precipitation mean from rain gauge",
+   "has_qc": false
+  },
+  "mwr_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Liquid water path best-estimate from microwave radiometer",
+   "has_qc": true
+  },
+  "qc_mwr_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Liquid water path best-estimate from microwave radiometer",
+   "has_qc": false
+  },
+  "cloud_base_best_estimate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Cloud base best estimate, based on ceilometer and micropulse lidar",
+   "has_qc": false
+  },
+  "cloud_layer_base_height": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    21600,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Base height of hydrometeor layers for up to 10 layers, based on combined radar and micropulse lidar observations",
+   "has_qc": false
+  },
+  "cloud_layer_top_height": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    21600,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Top height of hydrometeor layers for up to 10 layers, based on combined radar and micropulse lidar observations",
+   "has_qc": false
+  },
+  "cloud_mask_mpl": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    21600,
+    596
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Cloud mask from 30smplcmask1zwang",
+   "has_qc": false
+  },
+  "instrument_availability_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Indicates which instruments have data available",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    596
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above ground level",
+   "has_qc": false
+  },
+  "layer": {
+   "dims": [
+    "layer"
+   ],
+   "shape": [
+    10
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Cloud layer number",
+   "has_qc": false
+  },
+  "radar_mode": {
+   "dims": [
+    "radar_mode"
+   ],
+   "shape": [
+    4
+   ],
+   "dtype": "|S2",
+   "units": "1",
+   "long_name": "Radar mode names",
+   "has_qc": false
+  }
+ }
+}

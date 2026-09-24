@@ -14,6 +14,11 @@ archive actually serves.
 Load the per-instrument skill when you know the instrument. Load this one to find it, or
 when you need the catalog itself.
 
+ARM's **value-added products** - retrievals computed from these instruments - are a separate
+tranche: load `arm-vaps` for its index, or `arm-vap-<code>` directly. Both tranches share the
+`catalog.csv` and helpers in this skill; its `product_type` column says which a class is, and
+`vap_inputs` names a product's input instruments.
+
 ## Credit
 
 These skills are derived references. The instrument knowledge in them is the work of the

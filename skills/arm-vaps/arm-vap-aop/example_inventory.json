@@ -1,0 +1,1614 @@
+{
+ "vap": "aop",
+ "datastream": "sgpaoppsap1flynn1mC1.c1",
+ "filename": "sgpaoppsap1flynn1mC1.c1.20170926.000030.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 132,
+ "dims": {
+  "time": 1440,
+  "bound": 2
+ },
+ "n_qc_vars": 58,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2017-09-26T00:00:30",
+  "2017-09-26T23:59:30"
+ ],
+ "global_attrs": {
+  "command_line": "aosaop -n aosaoppsap -s sgp -f C1 -D -b 20161115 -e 20180128 -R",
+  "process_version": "vap-aosaop-1.2-0.el6",
+  "dod_version": "aoppsap1flynn1m-c1-1.2",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpaoppsap1flynn1mC1.c1",
+  "averaging_interval": "1 minute",
+  "doi": "10.5439/1369240"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "impactor_state": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Impactor state in terms of aerodynamic diameter cut off",
+   "has_qc": false
+  },
+  "Bs_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_Bs_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "Bs_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_Bs_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "Bs_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_Bs_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "AE_BG": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/green total scattering with truncation correction",
+   "has_qc": true
+  },
+  "qc_AE_BG": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/green total scattering with truncation correction",
+   "has_qc": false
+  },
+  "AE_BR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/red total scattering with truncation correction",
+   "has_qc": true
+  },
+  "qc_AE_BR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/red total scattering with truncation correction",
+   "has_qc": false
+  },
+  "AE_GR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from green/red total scattering with truncation correction",
+   "has_qc": true
+  },
+  "qc_AE_GR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from green/red total scattering with truncation correction",
+   "has_qc": false
+  },
+  "Bbs_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_Bbs_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "Bbs_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_Bbs_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "Bbs_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_Bbs_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "AE_Bbs_BG": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/green hemispheric back scattering with truncation correction",
+   "has_qc": true
+  },
+  "qc_AE_Bbs_BG": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/green hemispheric back scattering with truncation correction",
+   "has_qc": false
+  },
+  "AE_Bbs_BR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/red hemispheric back scattering with truncation correction",
+   "has_qc": true
+  },
+  "qc_AE_Bbs_BR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue/red hemispheric back scattering with truncation correction",
+   "has_qc": false
+  },
+  "AE_Bbs_GR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from green/red hemispheric back scattering with truncation correction",
+   "has_qc": true
+  },
+  "qc_AE_Bbs_GR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from green/red hemispheric back scattering with truncation correction",
+   "has_qc": false
+  },
+  "bsf_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Backscattering fraction, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_bsf_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Backscattering fraction, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "bsf_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Backscattering fraction, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_bsf_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Backscattering fraction, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "bsf_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Backscattering fraction, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_bsf_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Backscattering fraction, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "g_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Asymmetry parameter, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_g_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Asymmetry parameter, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "g_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Asymmetry parameter, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_g_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Asymmetry parameter, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "g_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Asymmetry parameter, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_g_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Asymmetry parameter, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "Ba_B_combined": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal blue channel",
+   "has_qc": true
+  },
+  "qc_Ba_B_combined": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal blue channel",
+   "has_qc": false
+  },
+  "Ba_G_combined": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal green channel",
+   "has_qc": true
+  },
+  "qc_Ba_G_combined": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal green channel",
+   "has_qc": false
+  },
+  "Ba_R_combined": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal red channel",
+   "has_qc": true
+  },
+  "qc_Ba_R_combined": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal red channel",
+   "has_qc": false
+  },
+  "AAE_BG": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue and green combined absorption coefficients",
+   "has_qc": true
+  },
+  "qc_AAE_BG": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue and green combined absorption coefficients",
+   "has_qc": false
+  },
+  "AAE_BR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue and red combined absorption coefficients",
+   "has_qc": true
+  },
+  "qc_AAE_BR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from blue and red combined absorption coefficients",
+   "has_qc": false
+  },
+  "AAE_GR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from green and red combined absorption coefficients",
+   "has_qc": true
+  },
+  "qc_AAE_GR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Angstrom exponent computed from green and red combined absorption coefficients",
+   "has_qc": false
+  },
+  "ssa_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo at measured blue absorption wavelength",
+   "has_qc": true
+  },
+  "qc_ssa_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo at measured blue absorption wavelength",
+   "has_qc": false
+  },
+  "ssa_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo at measured green absorption wavelength",
+   "has_qc": true
+  },
+  "qc_ssa_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo at measured green absorption wavelength",
+   "has_qc": false
+  },
+  "ssa_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo at measured red absorption wavelength",
+   "has_qc": true
+  },
+  "qc_ssa_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo at measured red absorption wavelength",
+   "has_qc": false
+  },
+  "Ba_B_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal blue channel, using wavelength-averaged corrections per Virkkula 2010",
+   "has_qc": true
+  },
+  "qc_Ba_B_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal blue channel, using wavelength-averaged corrections per Virkkula 2010",
+   "has_qc": false
+  },
+  "Ba_G_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal green channel, sing wavelength-averaged corrections per Virkkula 2010",
+   "has_qc": true
+  },
+  "qc_Ba_G_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal green channel, sing wavelength-averaged corrections per Virkkula 2010",
+   "has_qc": false
+  },
+  "Ba_R_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal red channel, using wavelength-averaged corrections per Virkkula 2010",
+   "has_qc": true
+  },
+  "qc_Ba_R_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal red channel, using wavelength-averaged corrections per Virkkula 2010",
+   "has_qc": false
+  },
+  "ssa_B_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo at measured blue absorption wavelength with Virkkula corrections",
+   "has_qc": true
+  },
+  "qc_ssa_B_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo at measured blue absorption wavelength with Virkkula corrections",
+   "has_qc": false
+  },
+  "ssa_G_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo at measured green absorption wavelength with Virkkula corrections",
+   "has_qc": true
+  },
+  "qc_ssa_G_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo at measured green absorption wavelength with Virkkula corrections",
+   "has_qc": false
+  },
+  "ssa_R_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Single scattering albedo at measured red absorption wavelength with Virkkula corrections",
+   "has_qc": true
+  },
+  "qc_ssa_R_Virkkula": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Single scattering albedo at measured red absorption wavelength with Virkkula corrections",
+   "has_qc": false
+  },
+  "Ba_B_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol light absorption coefficient, blue channel at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_B_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol light absorption coefficient, blue channel at dry or reference RH",
+   "has_qc": false
+  },
+  "Ba_G_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol light absorption coefficient, green channel at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_G_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol light absorption coefficient, green channel at dry or reference RH",
+   "has_qc": false
+  },
+  "Ba_R_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol light absorption coefficient, red channel at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_R_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol light absorption coefficient, red channel at dry or reference RH",
+   "has_qc": false
+  },
+  "sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Sample flow rate",
+   "has_qc": true
+  },
+  "qc_sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sample flow rate",
+   "has_qc": false
+  },
+  "transmittance_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Transmittance, blue channel",
+   "has_qc": true
+  },
+  "qc_transmittance_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Transmittance, blue channel",
+   "has_qc": false
+  },
+  "transmittance_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Transmittance, green channel",
+   "has_qc": true
+  },
+  "qc_transmittance_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Transmittance, green channel",
+   "has_qc": false
+  },
+  "transmittance_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Transmittance, red channel",
+   "has_qc": true
+  },
+  "qc_transmittance_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Transmittance, red channel",
+   "has_qc": false
+  },
+  "Ba_B_BondOgren": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal blue channel, corrected per Bond et al 1999 and Ogren 2010",
+   "has_qc": true
+  },
+  "qc_Ba_B_BondOgren": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal blue channel, corrected per Bond et al 1999 and Ogren 2010",
+   "has_qc": false
+  },
+  "Ba_G_BondOgren": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal green channel, corrected per Bond et al 1999 and Ogren 2010",
+   "has_qc": true
+  },
+  "qc_Ba_G_BondOgren": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal green channel, corrected per Bond et al 1999 and Ogren 2010",
+   "has_qc": false
+  },
+  "Ba_R_BondOgren": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal red channel, corrected per Bond et al 1999 and Ogren 2010",
+   "has_qc": true
+  },
+  "qc_Ba_R_BondOgren": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal red channel, corrected per Bond et al 1999 and Ogren 2010",
+   "has_qc": false
+  },
+  "Bs_B_Dry_Neph3W_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol total light scattering coefficient, nominal blue wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Bs_B_Dry_Neph3W_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol total light scattering coefficient, nominal blue wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "Bs_G_Dry_Neph3W_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol total light scattering coefficient, nominal green wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Bs_G_Dry_Neph3W_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol total light scattering coefficient, nominal green wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "Bs_R_Dry_Neph3W_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol total light scattering coefficient, nominal red wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Bs_R_Dry_Neph3W_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol total light scattering coefficient, nominal red wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "P_Neph_Dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure inside reference nephelometer",
+   "has_qc": true
+  },
+  "qc_P_Neph_Dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pressure inside reference nephelometer",
+   "has_qc": false
+  },
+  "T_Neph_Dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Sample temperature inside reference nephelometer",
+   "has_qc": true
+  },
+  "qc_T_Neph_Dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sample temperature inside reference nephelometer",
+   "has_qc": false
+  },
+  "RH_Neph_Dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity inside reference nephelometer",
+   "has_qc": true
+  },
+  "qc_RH_Neph_Dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity inside reference nephelometer",
+   "has_qc": false
+  },
+  "AE_Bs_BG_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/green total scattering without truncation correction",
+   "has_qc": false
+  },
+  "AE_Bs_BR_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from blue/red total scattering without truncation correction",
+   "has_qc": false
+  },
+  "AE_Bs_GR_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from green/red total scattering without truncation correction",
+   "has_qc": false
+  },
+  "Bs_B_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol total light scattering coefficient adjusted to measured blue wavelength of absorption measurement.",
+   "has_qc": false
+  },
+  "Bs_G_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol total light scattering coefficient adjusted to measured green wavelength of absorption measurement.",
+   "has_qc": false
+  },
+  "Bs_R_uncorrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol total light scattering coefficient adjusted to measured red wavelength of absorption measurement.",
+   "has_qc": false
+  },
+  "Bs_B_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, nominal blue wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Bs_B_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, nominal blue wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "Bs_G_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, nominal green wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Bs_G_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, nominal green wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "Bs_R_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, nominal red wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Bs_R_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, nominal red wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "Bbs_B_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, nominal blue wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Bbs_B_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, nominal blue wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "Bbs_G_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, nominal green wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Bbs_G_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, nominal green wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "Bbs_R_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, nominal red wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Bbs_R_Dry_Neph3W": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, nominal red wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "Ba_B_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal blue channel, corrected for filter loading",
+   "has_qc": true
+  },
+  "qc_Ba_B_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal blue channel, corrected for filter loading",
+   "has_qc": false
+  },
+  "Ba_G_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal green channel, corrected for filter loading",
+   "has_qc": true
+  },
+  "qc_Ba_G_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal green channel, corrected for filter loading",
+   "has_qc": false
+  },
+  "Ba_R_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal red channel, corrected for filter loading",
+   "has_qc": true
+  },
+  "qc_Ba_R_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal red channel, corrected for filter loading",
+   "has_qc": false
+  },
+  "K1_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Bond 1999 K1 scattering correction factor for blue wavelength",
+   "has_qc": false
+  },
+  "K1_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Bond 1999 K1 scattering correction factor for green wavelength",
+   "has_qc": false
+  },
+  "K1_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Bond 1999 K1 scattering correction factor for red wavelength",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

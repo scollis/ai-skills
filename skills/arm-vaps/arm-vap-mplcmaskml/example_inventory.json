@@ -1,0 +1,387 @@
+{
+ "vap": "mplcmaskml",
+ "datastream": "sgpmplcmaskmlC1.c1",
+ "filename": "sgpmplcmaskmlC1.c1.20260920.000003.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 26,
+ "dims": {
+  "time": 2880,
+  "bound": 2,
+  "height": 667
+ },
+ "n_qc_vars": 7,
+ "time_resolution_s": 30.0,
+ "time_span": [
+  "2026-09-20T00:00:03",
+  "2026-09-20T00:00:00"
+ ],
+ "global_attrs": {
+  "command_line": "mplcmaskml -s sgp -f C1 -b 20260920 -e 20260921 --max-runtime 86400",
+  "process_version": "mplcmaskml-1.4.1",
+  "dod_version": "mplcmaskml-c1-1.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpmplcmaskmlC1.c1",
+  "serial_number": "107",
+  "doi": "10.5439/1637940"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    2880,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "height_bounds": {
+   "dims": [
+    "height",
+    "bound"
+   ],
+   "shape": [
+    667,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Height cell bounds",
+   "has_qc": false
+  },
+  "backscatter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Total attenuated backscatter",
+   "has_qc": true
+  },
+  "qc_backscatter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total attenuated backscatter",
+   "has_qc": false
+  },
+  "range_corrected_backscatter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "float32",
+   "units": "km^2*count/us",
+   "long_name": "Range-corrected total attenuated backscatter",
+   "has_qc": false
+  },
+  "preprocess_backscatter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Preprocessed range-corrected total attenuated backscatter for model",
+   "has_qc": true
+  },
+  "qc_preprocess_backscatter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Preprocessed range-corrected total attenuated backscatter for model",
+   "has_qc": false
+  },
+  "linear_depol_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Linear depolarization ratio",
+   "has_qc": true
+  },
+  "qc_linear_depol_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Linear depolarization ratio",
+   "has_qc": false
+  },
+  "preprocess_linear_depol_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Preprocessed linear depolarization ratio for model",
+   "has_qc": true
+  },
+  "qc_preprocess_linear_depol_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Preprocessed linear depolarization ratio for model",
+   "has_qc": false
+  },
+  "cloud_mask_dl": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Cloud mask from deep learning model",
+   "has_qc": false
+  },
+  "cloud_mask_confidence": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Model confidence in cloud prediction",
+   "has_qc": false
+  },
+  "cloud_mask_zwang": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Cloud mask from 30smplcmask1zwang.c1",
+   "has_qc": true
+  },
+  "qc_cloud_mask_zwang": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud mask from 30smplcmask1zwang.c1",
+   "has_qc": false
+  },
+  "cloud_mask": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Cloud mask from deep learning model with clustering and merging applied",
+   "has_qc": true
+  },
+  "qc_cloud_mask": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    667
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud mask from deep learning model with clustering and merging applied",
+   "has_qc": false
+  },
+  "cloud_base": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Lowest cloud base height above ground level (AGL)",
+   "has_qc": false
+  },
+  "cloud_top": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Highest cloud top height above ground level (AGL)",
+   "has_qc": false
+  },
+  "num_cloud_layers": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of cloud layers",
+   "has_qc": true
+  },
+  "qc_num_cloud_layers": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number of cloud layers",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    667
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Vertical height above ground level (AGL) corresponding to the bottom of height bin",
+   "has_qc": false
+  }
+ }
+}

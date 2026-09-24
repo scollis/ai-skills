@@ -1,0 +1,437 @@
+{
+ "vap": "mascparticles",
+ "datastream": "nsamascparticlesavgC1.c1",
+ "filename": "nsamascparticlesavgC1.c1.20250509.151230.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 34,
+ "dims": {
+  "time": 2,
+  "bound": 2
+ },
+ "n_qc_vars": 14,
+ "time_resolution_s": null,
+ "time_span": [
+  "2025-05-09T15:12:30",
+  "2025-05-09T18:07:30"
+ ],
+ "global_attrs": {
+  "command_line": "masc_flake_anal --max-runtime 0 -s nsa -f C1 -b 20250509 -e 20250510",
+  "process_version": "masc_flake_anal-1.2.0",
+  "dod_version": "mascparticlesavg-c1-1.0",
+  "site_id": "nsa",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "North Slope of Alaska (NSA), Barrow, Alaska",
+  "datastream": "nsamascparticlesavgC1.c1",
+  "doi": "10.5439/1239673"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    2,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "num_particles_total": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Total number of particles that fell into this bin.",
+   "has_qc": true
+  },
+  "qc_num_particles_total": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total number of particles that fell into this bin.",
+   "has_qc": false
+  },
+  "num_particles_for_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Number of particles used to average",
+   "has_qc": true
+  },
+  "qc_num_particles_for_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Number of particles used to average",
+   "has_qc": false
+  },
+  "fall_speed_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Average fallspeed",
+   "has_qc": true
+  },
+  "qc_fall_speed_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average fallspeed",
+   "has_qc": false
+  },
+  "maximum_dimension_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Average maximum dimension",
+   "has_qc": true
+  },
+  "qc_maximum_dimension_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average maximum dimension",
+   "has_qc": false
+  },
+  "particle_area_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "mm^2",
+   "long_name": "Average particle area",
+   "has_qc": true
+  },
+  "qc_particle_area_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average particle area",
+   "has_qc": false
+  },
+  "area_eq_radius_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Average area equivalent radius",
+   "has_qc": true
+  },
+  "qc_area_eq_radius_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average area equivalent radius",
+   "has_qc": false
+  },
+  "perimeter_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Average perimeter",
+   "has_qc": true
+  },
+  "qc_perimeter_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average perimeter",
+   "has_qc": false
+  },
+  "orientation_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Average orientation",
+   "has_qc": true
+  },
+  "qc_orientation_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average orientation",
+   "has_qc": false
+  },
+  "aspect_ratio_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average aspect ratio",
+   "has_qc": true
+  },
+  "qc_aspect_ratio_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average aspect ratio",
+   "has_qc": false
+  },
+  "complexity_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average complexity",
+   "has_qc": true
+  },
+  "qc_complexity_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average complexity",
+   "has_qc": false
+  },
+  "geometric_cross_section_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "mm^2",
+   "long_name": "Average geometric cross section",
+   "has_qc": true
+  },
+  "qc_geometric_cross_section_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average geometric cross section",
+   "has_qc": false
+  },
+  "mean_pixel_intensity_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average mean pixel intensity",
+   "has_qc": true
+  },
+  "qc_mean_pixel_intensity_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average mean pixel intensity",
+   "has_qc": false
+  },
+  "mean_pixel_intensity_variability_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average mean pixel intensity variability",
+   "has_qc": true
+  },
+  "qc_mean_pixel_intensity_variability_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average mean pixel intensity variability",
+   "has_qc": false
+  },
+  "flatness_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Average flatness",
+   "has_qc": true
+  },
+  "qc_flatness_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Average flatness",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}
