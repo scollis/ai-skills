@@ -1,0 +1,158 @@
+{
+ "instrument": "irt-air",
+ "datastream": "bnfaafirtU2.b1",
+ "filename": "bnfaafirtU2.b1.20260910.163628.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 10,
+ "dims": {
+  "time": 74864
+ },
+ "n_qc_vars": 4,
+ "time_resolution_s": 0.0,
+ "time_span": [
+  "2026-09-10T16:36:28",
+  "2026-09-10T20:17:27"
+ ],
+ "global_attrs": {
+  "command_line": "aafirtcorr -s bnf -f U2 -R --filter-overlaps --max-runtime 0",
+  "process_version": "ingest-aafirtcorr-1.0-2.el9",
+  "dod_version": "aafirt-b1-2.0",
+  "site_id": "bnf",
+  "facility_id": "U2",
+  "data_level": "b1",
+  "location_description": "Southeast U.S. in Bankhead National Forest (BNF), ArcticShark Unmanned Aerial System",
+  "datastream": "bnfaafirtU2.b1",
+  "doi": "10.5439/1821129"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    74864
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "sky_ir_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    74864
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Sky/cloud infrared temperature",
+   "has_qc": true
+  },
+  "qc_sky_ir_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    74864
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sky/cloud infrared temperature",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    74864
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    74864
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    74864
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    74864
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    74864
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    74864
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    74864
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

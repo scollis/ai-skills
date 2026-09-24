@@ -1,0 +1,367 @@
+{
+ "instrument": "tbswind",
+ "datastream": "sgptbswindC1.b1",
+ "filename": "sgptbswindC1.b1.20241111.170031.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 24,
+ "dims": {
+  "time": 13467,
+  "num_anem": 1
+ },
+ "n_qc_vars": 10,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2024-11-11T17:00:31",
+  "2024-11-11T20:44:58"
+ ],
+ "global_attrs": {
+  "command_line": "tbswindcorr -s sgp -f C1",
+  "process_version": "ingest-tbswindcorr-1.2-1.el7",
+  "dod_version": "tbswind-b1-3.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgptbswindC1.b1",
+  "doi": "10.5439/1515075"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13467
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "anem_file_name": {
+   "dims": [
+    "num_anem"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "Anemometer file names",
+   "has_qc": false
+  },
+  "serial_number": {
+   "dims": [
+    "num_anem"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "Serial number of anemometers",
+   "has_qc": false
+  },
+  "wind_speed": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed",
+   "has_qc": true
+  },
+  "qc_wind_speed": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind speed",
+   "has_qc": false
+  },
+  "wind_direction": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction",
+   "has_qc": true
+  },
+  "qc_wind_direction": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind direction",
+   "has_qc": false
+  },
+  "wind_gust": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind gust",
+   "has_qc": true
+  },
+  "qc_wind_gust": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind gust",
+   "has_qc": false
+  },
+  "vertical_wind": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Vertical wind component",
+   "has_qc": true
+  },
+  "qc_vertical_wind": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Vertical wind component",
+   "has_qc": false
+  },
+  "pulse_count": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Pulse count",
+   "has_qc": true
+  },
+  "qc_pulse_count": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Pulse count",
+   "has_qc": false
+  },
+  "pitch": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Pitch from compass module",
+   "has_qc": true
+  },
+  "qc_pitch": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Pitch from compass module",
+   "has_qc": false
+  },
+  "roll": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Roll from compass module",
+   "has_qc": true
+  },
+  "qc_roll": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Roll from compass module",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude of sensor",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude of sensor",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude of sensor",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude of sensor",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level of sensor",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time",
+    "num_anem"
+   ],
+   "shape": [
+    13467,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level of sensor",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13467
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

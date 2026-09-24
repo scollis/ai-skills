@@ -37,11 +37,12 @@ Cite the handbook, not this skill, for any fact marked `hb p. N`. This file is a
 navigational layer over their document plus a measurement of one data file; it
 replaces neither, and where it is thinner than the handbook the handbook is right.
 
-> **Scope of this handbook.** The same document covers `aps` as well as
-> this instrument, so much of what follows is family- or system-level rather than
-> specific to `opc`. Where a number has to be per-instrument - a frequency, a
-> detection limit, a serial number - check it against the handbook section for this
-> class before using it.
+> **Scope of this handbook.** The document ARM links here, DOE/SC-ARM-TR-343, is the
+> **Aerodynamic Particle Sizer handbook**, and it mentions an optical particle counter only
+> as a co-located comparison instrument - established by a full-text search of the PDF while
+> extracting `opc-air`. The same document is linked from `aps`, where it is the right
+> handbook. Treat the facts below as APS-and-AOS-level: they describe the instrument suite
+> this counter sits in, not the counter itself. ARM publishes no OPC-specific handbook.
 
 ## How it measures
 

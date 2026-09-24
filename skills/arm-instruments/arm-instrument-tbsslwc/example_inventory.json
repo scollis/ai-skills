@@ -1,0 +1,439 @@
+{
+ "instrument": "tbsslwc",
+ "datastream": "olitbsslwcM1.b1",
+ "filename": "olitbsslwcM1.b1.20201113.082841.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 30,
+ "dims": {
+  "time": 5873,
+  "num_slwc": 1
+ },
+ "n_qc_vars": 8,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2020-11-13T08:28:41",
+  "2020-11-13T10:57:29"
+ ],
+ "global_attrs": {
+  "command_line": "tbsslwc -s oli -f M1 -DR",
+  "process_version": "ingest-tbsslwc-1.0-0.el7",
+  "dod_version": "tbsslwc-b1-2.0",
+  "site_id": "oli",
+  "facility_id": "M1",
+  "data_level": "b1",
+  "location_description": "North Slope of Alaska (NSA), Oliktok Point, Alaska",
+  "datastream": "olitbsslwcM1.b1",
+  "doi": "10.5439/1246826"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5873
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "imet_file_name": {
+   "dims": [
+    "num_slwc"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "iMet flle names",
+   "has_qc": false
+  },
+  "imet_altitude": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Altitude above mean sea level from iMet instrument",
+   "has_qc": true
+  },
+  "qc_imet_altitude": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level from iMet instrument",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Air pressure",
+   "has_qc": true
+  },
+  "qc_pressure": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Air pressure",
+   "has_qc": false
+  },
+  "air_temperature": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature corrected for solar radiation",
+   "has_qc": true
+  },
+  "qc_air_temperature": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Air temperature corrected for solar radiation",
+   "has_qc": false
+  },
+  "slwc_frequency": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Frequency of the SLWC (Supercooled Liquid Water Content sonde)",
+   "has_qc": true
+  },
+  "qc_slwc_frequency": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Frequency of the SLWC (Supercooled Liquid Water Content sonde)",
+   "has_qc": false
+  },
+  "smooth_slwc_frequency": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Smoothed slwc_frequency using LOESS",
+   "has_qc": false
+  },
+  "deriv_smooth_slwc_frequency": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float32",
+   "units": "Hz/s",
+   "long_name": "Derivative of smooth_slwc_frequency over time",
+   "has_qc": false
+  },
+  "slwc": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float64",
+   "units": "g/m^3",
+   "long_name": "Estimated supercooled liquid water content",
+   "has_qc": true
+  },
+  "qc_slwc": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated supercooled liquid water content",
+   "has_qc": false
+  },
+  "wind_speed": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed",
+   "has_qc": true
+  },
+  "qc_wind_speed": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind speed",
+   "has_qc": false
+  },
+  "air_density": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float64",
+   "units": "kg/m^3",
+   "long_name": "Air density",
+   "has_qc": false
+  },
+  "dynamic_air_viscosity": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float64",
+   "units": "Pa*s",
+   "long_name": "Dynamic viscosity of the airstream",
+   "has_qc": false
+  },
+  "reynolds_number": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Reynolds number",
+   "has_qc": false
+  },
+  "inertia": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Langmuir inertia parameter (K)",
+   "has_qc": false
+  },
+  "modified_inertia_param": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Modified inertia parameter (K0)",
+   "has_qc": false
+  },
+  "droplet_collection_efficiency": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Droplet collection efficiency",
+   "has_qc": false
+  },
+  "un_iced_slwc_frequency": {
+   "dims": [
+    "num_slwc"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Un-iced wire frequency",
+   "has_qc": false
+  },
+  "wire_diameter": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Wire diameter",
+   "has_qc": false
+  },
+  "droplet_diameter": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Estimate of median droplet diameter",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Latitude in decimal degrees from GPS",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Latitude in decimal degrees from GPS",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "Longitude in decimal degrees from GPS",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time",
+    "num_slwc"
+   ],
+   "shape": [
+    5873,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Longitude in decimal degrees from GPS",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5873
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

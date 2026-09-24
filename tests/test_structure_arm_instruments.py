@@ -262,3 +262,45 @@ def test_index_lists_every_shipped_skill():
     text = (TRANCHE / "SKILL.md").read_text()
     missing = [n for n in IDS if n not in text]
     assert not missing, f"arm-instruments/SKILL.md does not list: {missing}"
+
+
+@pytest.mark.parametrize("skill", SKILLS, ids=IDS)
+def test_parent_handbook_is_declared(skill):
+    """A class with no handbook of its own must say whose handbook it is using.
+
+    21 of these skills are documented only inside a parent system's handbook, and for 9
+    of those the document never names the class at all. Publishing either without saying
+    so would present another instrument's facts as this one's - the exact misattribution
+    this tranche exists to avoid.
+    """
+    row = catalog()[code_of(skill)]
+    if row.get("handbook_is_parent", "") != "True":
+        return
+    text = (skill / "SKILL.md").read_text()
+    assert "ARM links no handbook to this class" in text, \
+        f"{skill.name}: uses a parent handbook but does not declare it"
+    if row.get("handbook_coverage") == "parent-system-level":
+        assert "every fact in this skill is" in text and "parent-system-level" in text, \
+            f"{skill.name}: handbook never names this class, but the skill does not say so"
+
+
+def test_rejected_classes_ship_no_skill():
+    """Classes whose linked handbook turned out to describe a different instrument were
+    rejected. The reason is recorded, and no skill may claim them."""
+    cat = catalog()
+    rejected = {c: r["no_handbook_reason"] for c, r in cat.items() if r.get("no_handbook_reason")}
+    assert rejected, "catalog.csv records no rejected classes; the audit trail is missing"
+    for code, reason in rejected.items():
+        assert len(reason) > 30, f"{code}: rejection reason too thin to judge"
+        assert not (TRANCHE / f"arm-instrument-{code}").exists(), \
+            f"{code} was rejected ({reason[:60]}...) but a skill directory exists"
+
+
+def test_coverage_is_classified_for_every_skill():
+    """Every skill states how its handbook relates to it, so a reader never has to guess."""
+    cat = catalog()
+    allowed = {"own handbook", "class-specific", "parent-system-level",
+               "different instrument (APS handbook)", ""}
+    bad = {code_of(s): cat[code_of(s)].get("handbook_coverage") for s in SKILLS
+           if cat[code_of(s)].get("handbook_coverage") not in allowed}
+    assert not bad, f"unrecognised handbook_coverage values: {bad}"

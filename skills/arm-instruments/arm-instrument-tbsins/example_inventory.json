@@ -1,0 +1,216 @@
+{
+ "instrument": "tbsins",
+ "datastream": "sgptbsinpC1.a1",
+ "filename": "sgptbsinpC1.a1.20220426.142826.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 14,
+ "dims": {
+  "time": 1,
+  "temperature": 27
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": null,
+ "time_span": [
+  "2022-04-26T14:28:26",
+  "2022-04-26T14:28:26"
+ ],
+ "global_attrs": {
+  "command_line": "tbsinp_ingest -s sgp -f C1",
+  "process_version": "ingest-tbsinp-1.0-0.el7",
+  "dod_version": "tbsinp-a1-1.0",
+  "input_source": "/data/collection/sgp/sgptbsinpC1.00/AGINSGP_TBS_2022-04-26_142826.csv",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "a1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgptbsinpC1.a1",
+  "doi": "10.5439/2001041"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "start_utc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Filter collection start time",
+   "has_qc": false
+  },
+  "stop_utc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Filter collection end time",
+   "has_qc": false
+  },
+  "lower_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Lower height AGL",
+   "has_qc": false
+  },
+  "upper_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Upper height AGL",
+   "has_qc": false
+  },
+  "total_volume": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "L",
+   "long_name": "Total volume of air passed through filter at STP",
+   "has_qc": false
+  },
+  "n_inp_stp": {
+   "dims": [
+    "time",
+    "temperature"
+   ],
+   "shape": [
+    1,
+    27
+   ],
+   "dtype": "float32",
+   "units": "count/L",
+   "long_name": "Number of ice nucleating particles per L of air at STP",
+   "has_qc": false
+  },
+  "lower_ci": {
+   "dims": [
+    "time",
+    "temperature"
+   ],
+   "shape": [
+    1,
+    27
+   ],
+   "dtype": "float32",
+   "units": "count/L",
+   "long_name": "95% lower confidence limit for number of ice nucleating particles per L of air at STP",
+   "has_qc": false
+  },
+  "upper_ci": {
+   "dims": [
+    "time",
+    "temperature"
+   ],
+   "shape": [
+    1,
+    27
+   ],
+   "dtype": "float32",
+   "units": "count/L",
+   "long_name": "95% upper confidence limit for number of ice nucleating particles per L of air at STP",
+   "has_qc": false
+  },
+  "treatment_flag": {
+   "dims": [
+    "time",
+    "temperature"
+   ],
+   "shape": [
+    1,
+    27
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Treatment flag",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "temperature"
+   ],
+   "shape": [
+    27
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Freezing temperature",
+   "has_qc": false
+  }
+ }
+}
