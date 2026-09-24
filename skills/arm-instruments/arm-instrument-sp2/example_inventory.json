@@ -1,0 +1,254 @@
+{
+ "instrument": "sp2",
+ "datastream": "bnfaossp2xrM1.b1",
+ "filename": "bnfaossp2xrM1.b1.20260919.000001.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 16,
+ "dims": {
+  "time": 86398,
+  "rBC_mass_bin": 100,
+  "bound": 2,
+  "scatter_diam_bin": 100
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-09-19T00:00:01",
+  "2026-09-19T23:59:59"
+ ],
+ "global_attrs": {
+  "command_line": "aossp2xr_ingest -s bnf -f M1 --max-runtime 86400",
+  "process_version": "ingest-aossp2xr-1.0-0.el9",
+  "dod_version": "aossp2xr-b1-1.0",
+  "input_source": "/data/collection/bnf/bnfaossp2xrM1.00/SP2XR_hk_20260919000000_x0001.csv",
+  "site_id": "bnf",
+  "facility_id": "M1",
+  "data_level": "b1",
+  "location_description": "Southeast U.S. in Bankhead National Forest (BNF), Bankhead National Forest, Alabama",
+  "datastream": "bnfaossp2xrM1.b1",
+  "doi": "10.5439/2507427"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86398
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "rBC_mass_bin_bounds": {
+   "dims": [
+    "rBC_mass_bin",
+    "bound"
+   ],
+   "shape": [
+    100,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Incandescent particle mass bin boundaries",
+   "has_qc": false
+  },
+  "rBC_particle_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86398
+   ],
+   "dtype": "float32",
+   "units": "count/cm^3",
+   "long_name": "Concentration of all particles showing an incandescent signal, with or without a scattering signal",
+   "has_qc": false
+  },
+  "rBC_mass_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86398
+   ],
+   "dtype": "float32",
+   "units": "ng/m^3",
+   "long_name": "Number of incandescent particles multiplied by the size information to give mass loading",
+   "has_qc": false
+  },
+  "rBC_bins": {
+   "dims": [
+    "time",
+    "rBC_mass_bin"
+   ],
+   "shape": [
+    86398,
+    100
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of particles in incandescence bins",
+   "has_qc": false
+  },
+  "scatter_diam_bin_bounds": {
+   "dims": [
+    "scatter_diam_bin",
+    "bound"
+   ],
+   "shape": [
+    100,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Scattering particle diameter bin boundaries",
+   "has_qc": false
+  },
+  "scattering_particle_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86398
+   ],
+   "dtype": "float32",
+   "units": "count/cm^3",
+   "long_name": "Concentration of particles showing only a scattering signal, particles which also show incandescence are not counted",
+   "has_qc": false
+  },
+  "scatter_bins": {
+   "dims": [
+    "time",
+    "scatter_diam_bin"
+   ],
+   "shape": [
+    86398,
+    100
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of particles in scattering bins",
+   "has_qc": false
+  },
+  "sample_flow_read_volume": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86398
+   ],
+   "dtype": "float32",
+   "units": "cm^3/min",
+   "long_name": "Volumetric flow reading from the sample flow controller",
+   "has_qc": false
+  },
+  "sample_flow_read_mass": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86398
+   ],
+   "dtype": "float32",
+   "units": "cm^3/min",
+   "long_name": "Mass flow reading from the sample flow controllers in sccm",
+   "has_qc": false
+  },
+  "inlet_air_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86398
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature at the inlet to the case",
+   "has_qc": false
+  },
+  "cavity_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86398
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Air pressure in cavity",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86398
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "rBC_mass_bin": {
+   "dims": [
+    "rBC_mass_bin"
+   ],
+   "shape": [
+    100
+   ],
+   "dtype": "float32",
+   "units": "fg",
+   "long_name": "Incandescent particle mass bin midpoint (geometric mean)",
+   "has_qc": false
+  },
+  "scatter_diam_bin": {
+   "dims": [
+    "scatter_diam_bin"
+   ],
+   "shape": [
+    100
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Scattering particle diameter bin midpoint (geometric mean)",
+   "has_qc": false
+  }
+ }
+}

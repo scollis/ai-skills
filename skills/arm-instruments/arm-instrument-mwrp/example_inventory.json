@@ -1,0 +1,598 @@
+{
+ "instrument": "mwrp",
+ "datastream": "nsamwrpC1.b1",
+ "filename": "nsamwrpC1.b1.20230926.000814.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 45,
+ "dims": {
+  "time": 2639,
+  "frequency": 12,
+  "height": 47
+ },
+ "n_qc_vars": 15,
+ "time_resolution_s": 25.0,
+ "time_span": [
+  "2023-09-26T00:08:14",
+  "2023-09-26T23:58:08"
+ ],
+ "global_attrs": {
+  "command_line": "mwrp_ingest -s nsa -f C1",
+  "process_version": "ingest-mwrp-13.2-0.el7",
+  "dod_version": "mwrp-b1-3.1",
+  "input_source": "/data/collection/nsa/nsamwrpC1.00/2023-09-26_00-07-12_lv1.csv",
+  "site_id": "nsa",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "North Slope of Alaska (NSA), Barrow, Alaska",
+  "datastream": "nsamwrpC1.b1",
+  "serial_number": "Not available",
+  "sampling_interval": "varies",
+  "averaging_interval": "500 ms",
+  "doi": "10.5439/1025254"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "azimuth": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Azimuth angle",
+   "has_qc": false
+  },
+  "elevation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Elevation angle",
+   "has_qc": false
+  },
+  "surfacePressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Surface pressure at instrument",
+   "has_qc": true
+  },
+  "qc_surfacePressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface pressure at instrument",
+   "has_qc": false
+  },
+  "surfaceTemperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Surface absolute temperature at instrument",
+   "has_qc": true
+  },
+  "qc_surfaceTemperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface absolute temperature at instrument",
+   "has_qc": false
+  },
+  "surfaceRelativeHumidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Surface relative humidity at instrument",
+   "has_qc": true
+  },
+  "qc_surfaceRelativeHumidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface relative humidity at instrument",
+   "has_qc": false
+  },
+  "surfaceWaterVaporDensity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "g/m^3",
+   "long_name": "Surface water vapor density at instrument",
+   "has_qc": true
+  },
+  "qc_surfaceWaterVaporDensity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface water vapor density at instrument",
+   "has_qc": false
+  },
+  "brightnessTemperature": {
+   "dims": [
+    "time",
+    "frequency"
+   ],
+   "shape": [
+    2639,
+    12
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Microwave brightness temperature",
+   "has_qc": true
+  },
+  "qc_brightnessTemperature": {
+   "dims": [
+    "time",
+    "frequency"
+   ],
+   "shape": [
+    2639,
+    12
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Microwave brightness temperature",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2639,
+    47
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Retrieved absolute temperature",
+   "has_qc": true
+  },
+  "qc_temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2639,
+    47
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved absolute temperature",
+   "has_qc": false
+  },
+  "temperatureRmsError": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    47
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Expected root-mean-square error in temperature retrieval",
+   "has_qc": false
+  },
+  "waterVaporDensity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2639,
+    47
+   ],
+   "dtype": "float32",
+   "units": "g/m^3",
+   "long_name": "Retrieved water vapor density",
+   "has_qc": true
+  },
+  "qc_waterVaporDensity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2639,
+    47
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved water vapor density",
+   "has_qc": false
+  },
+  "waterVaporDensityRmsError": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    47
+   ],
+   "dtype": "float32",
+   "units": "g/m^3",
+   "long_name": "Expected root-mean-square error in water vapor density retrieval",
+   "has_qc": false
+  },
+  "totalPrecipitableWater": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Retrieved total precipitable water vapor",
+   "has_qc": true
+  },
+  "qc_totalPrecipitableWater": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved total precipitable water vapor",
+   "has_qc": false
+  },
+  "totalPrecipitableWaterRmsError": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Expected root-mean-square error in precipitable water retrieval",
+   "has_qc": false
+  },
+  "totalPrecipitableWater2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Retrieved total precipitable water vapor using only 23.835 and 30.0 GHz",
+   "has_qc": true
+  },
+  "qc_totalPrecipitableWater2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved total precipitable water vapor using only 23.835 and 30.0 GHz",
+   "has_qc": false
+  },
+  "totalPrecipitableWater2RmsError": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Expected root-mean-square error in precipitable water retrieval using only 23.835 and 30.0 GHz",
+   "has_qc": false
+  },
+  "liquidWaterPath": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Retrieved liquid water path",
+   "has_qc": true
+  },
+  "qc_liquidWaterPath": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved liquid water path",
+   "has_qc": false
+  },
+  "liquidWaterPathRmsError": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Expected root-mean-square error in liquid water path retrieval",
+   "has_qc": false
+  },
+  "liquidWaterPath2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Retrieved liquid water path using only 23.835 and 30.0 GHz",
+   "has_qc": true
+  },
+  "qc_liquidWaterPath2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved liquid water path using only 23.835 and 30.0 GHz",
+   "has_qc": false
+  },
+  "liquidWaterPath2RmsError": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Expected root-mean-square error in liquid water path retrieval using only 23.835 and 30.0 GHz",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2639,
+    47
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Derived pressure",
+   "has_qc": true
+  },
+  "qc_pressure": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2639,
+    47
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Derived pressure",
+   "has_qc": false
+  },
+  "relativeHumidity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2639,
+    47
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Derived relative humidity",
+   "has_qc": true
+  },
+  "qc_relativeHumidity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2639,
+    47
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Derived relative humidity",
+   "has_qc": false
+  },
+  "infraredTemperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Zenith-pointing infrared temperature at 10um",
+   "has_qc": true
+  },
+  "qc_infraredTemperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Zenith-pointing infrared temperature at 10um",
+   "has_qc": false
+  },
+  "blackbodyTemperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Internal blackbody reference temperature",
+   "has_qc": true
+  },
+  "qc_blackbodyTemperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Internal blackbody reference temperature",
+   "has_qc": false
+  },
+  "wetWindowFlag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag indicating moisture sensor status",
+   "has_qc": false
+  },
+  "dataQualityFlags": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2639,
+    47
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Data quality flags",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2639
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "frequency": {
+   "dims": [
+    "frequency"
+   ],
+   "shape": [
+    12
+   ],
+   "dtype": "float32",
+   "units": "GHz",
+   "long_name": "Frequency",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    47
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above ground level",
+   "has_qc": false
+  }
+ }
+}

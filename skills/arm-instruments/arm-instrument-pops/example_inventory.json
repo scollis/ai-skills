@@ -1,0 +1,489 @@
+{
+ "instrument": "pops",
+ "datastream": "dstpops1mM1.b1",
+ "filename": "dstpops1mM1.b1.20260817.000030.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 35,
+ "dims": {
+  "time": 1440,
+  "bound": 2,
+  "diameter_optical": 16,
+  "diameter_optical_AS": 16
+ },
+ "n_qc_vars": 4,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2026-08-17T00:00:30",
+  "2026-08-17T23:59:30"
+ ],
+ "global_attrs": {
+  "command_line": "pops1m -s dst -f M1 --max-runtime 86400",
+  "process_version": "ingest-pops1m-1.0-0.el9",
+  "dod_version": "pops1m-b1-1.0",
+  "site_id": "dst",
+  "facility_id": "M1",
+  "data_level": "b1",
+  "location_description": "Desert-Urban SysTem IntegratEd AtmospherIc Monsoon (DUSTIEAIM), Phoenix, Arizona",
+  "datastream": "dstpops1mM1.b1",
+  "sampling_interval": "1 second",
+  "averaging_interval": "1 minute",
+  "doi": "10.5439/2405212"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "diameter_optical_bounds": {
+   "dims": [
+    "diameter_optical",
+    "bound"
+   ],
+   "shape": [
+    16,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Optical diameter bin boundaries (PSL)",
+   "has_qc": false
+  },
+  "dlogDp": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    16
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Relative width of bins (PSL)",
+   "has_qc": false
+  },
+  "dN_dlogDp": {
+   "dims": [
+    "time",
+    "diameter_optical"
+   ],
+   "shape": [
+    1440,
+    16
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Particle size distribution (PSL)",
+   "has_qc": false
+  },
+  "dD_to_dSA": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    16
+   ],
+   "dtype": "float64",
+   "units": "nm^2",
+   "long_name": "Particle surface area (PSL)",
+   "has_qc": false
+  },
+  "total_SA_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "nm^2/cm^3",
+   "long_name": "Total surface area concentration from integrated size distribution (PSL)",
+   "has_qc": false
+  },
+  "dD_to_dV": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    16
+   ],
+   "dtype": "float64",
+   "units": "nm^3",
+   "long_name": "Particle volume (PSL)",
+   "has_qc": false
+  },
+  "total_V_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "nm^3/cm^3",
+   "long_name": "Total volume concentration from integrated size distribution (PSL)",
+   "has_qc": false
+  },
+  "diameter_optical_bounds_AS": {
+   "dims": [
+    "diameter_optical_AS",
+    "bound"
+   ],
+   "shape": [
+    16,
+    2
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Optical diameter bin boundaries (AS)",
+   "has_qc": false
+  },
+  "dlogDp_AS": {
+   "dims": [
+    "diameter_optical_AS"
+   ],
+   "shape": [
+    16
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Relative width of bins (AS)",
+   "has_qc": false
+  },
+  "dN_dlogDp_AS": {
+   "dims": [
+    "time",
+    "diameter_optical_AS"
+   ],
+   "shape": [
+    1440,
+    16
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Particle size distribution (AS)",
+   "has_qc": false
+  },
+  "dD_to_dSA_AS": {
+   "dims": [
+    "diameter_optical_AS"
+   ],
+   "shape": [
+    16
+   ],
+   "dtype": "float64",
+   "units": "nm^2",
+   "long_name": "Particle surface area (AS)",
+   "has_qc": false
+  },
+  "total_SA_conc_AS": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "nm^2/cm^3",
+   "long_name": "Total surface area concentration from integrated size distribution (AS)",
+   "has_qc": false
+  },
+  "dD_to_dV_AS": {
+   "dims": [
+    "diameter_optical_AS"
+   ],
+   "shape": [
+    16
+   ],
+   "dtype": "float64",
+   "units": "nm^3",
+   "long_name": "Particle volume (AS)",
+   "has_qc": false
+  },
+  "total_V_conc_AS": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "nm^3/cm^3",
+   "long_name": "Total volume concentration from integrated size distribution (AS)",
+   "has_qc": false
+  },
+  "total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total number concentration",
+   "has_qc": true
+  },
+  "qc_total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration",
+   "has_qc": false
+  },
+  "sample_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Sample temperature",
+   "has_qc": true
+  },
+  "qc_sample_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample temperature",
+   "has_qc": false
+  },
+  "sample_temperature_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Standard deviation of sample temperature",
+   "has_qc": false
+  },
+  "sample_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity",
+   "has_qc": true
+  },
+  "qc_sample_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Relative humidity",
+   "has_qc": false
+  },
+  "sample_relative_humidity_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Standard deviation of relative humidity",
+   "has_qc": false
+  },
+  "sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "cm^3/s",
+   "long_name": "Sample flow rate",
+   "has_qc": true
+  },
+  "qc_sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample flow rate",
+   "has_qc": false
+  },
+  "sample_flow_rate_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "cm^3/s",
+   "long_name": "Standard deviation of sample flow rate",
+   "has_qc": false
+  },
+  "total_count": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "count/s",
+   "long_name": "Total number of raw counts",
+   "has_qc": false
+  },
+  "total_count_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "count/s",
+   "long_name": "Standard deviation of total number of raw counts",
+   "has_qc": false
+  },
+  "raw_bin_counts": {
+   "dims": [
+    "time",
+    "diameter_optical"
+   ],
+   "shape": [
+    1440,
+    16
+   ],
+   "dtype": "float32",
+   "units": "count/s",
+   "long_name": "Raw counts in each bin",
+   "has_qc": false
+  },
+  "raw_bin_counts_std": {
+   "dims": [
+    "time",
+    "diameter_optical"
+   ],
+   "shape": [
+    1440,
+    16
+   ],
+   "dtype": "float32",
+   "units": "count/s",
+   "long_name": "Standard deviation of raw counts in each bin",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "diameter_optical": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    16
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Optical diameter bin midpoints (PSL)",
+   "has_qc": false
+  },
+  "diameter_optical_AS": {
+   "dims": [
+    "diameter_optical_AS"
+   ],
+   "shape": [
+    16
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Optical diameter bin midpoints (AS)",
+   "has_qc": false
+  }
+ }
+}

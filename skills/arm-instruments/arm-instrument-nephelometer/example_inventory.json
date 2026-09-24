@@ -1,0 +1,377 @@
+{
+ "instrument": "nephelometer",
+ "datastream": "pvcaosnephwetM1.c1",
+ "filename": "pvcaosnephwetM1.c1.20130621.000000.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 29,
+ "dims": {
+  "time": 1440
+ },
+ "n_qc_vars": 12,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2013-06-21T00:00:00",
+  "2013-06-21T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "aosmqc_ingest -s pvc -f M1 -n aosmqc -R -D",
+  "process_version": "ingest-aosmqc-1.2-0.el6",
+  "dod_version": "aosnephwet-c1-1.3",
+  "site_id": "pvc",
+  "facility_id": "M1",
+  "location_description": "Two-Column Aerosol Project (TCAP), Cape Cod, Massachusetts",
+  "data_level": "c1",
+  "input_source": "/data/collection/pvc/pvcaosM1.01/pvcwetnephM1.00.20130621.000000.edit.asc",
+  "sampling_interval": "1 second",
+  "averaging_interval": "not averaged",
+  "serial_number": "N/A",
+  "datastream": "pvcaosnephwetM1.c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "Bs_B_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, nominal blue wavelength at ramped RH",
+   "has_qc": true
+  },
+  "qc_Bs_B_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, nominal blue wavelength at ramped RH",
+   "has_qc": false
+  },
+  "Bs_G_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, nominal green wavelength at ramped RH",
+   "has_qc": true
+  },
+  "qc_Bs_G_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, nominal green wavelength at ramped RH",
+   "has_qc": false
+  },
+  "Bs_R_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, nominal red wavelength at ramped RH",
+   "has_qc": true
+  },
+  "qc_Bs_R_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, nominal red wavelength at ramped RH",
+   "has_qc": false
+  },
+  "Bbs_B_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, nominal blue wavelength at ramped RH",
+   "has_qc": true
+  },
+  "qc_Bbs_B_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, nominal blue wavelength at ramped RH",
+   "has_qc": false
+  },
+  "Bbs_G_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-emispheric light scattering coefficient, nominal green wavelength at ramped RH",
+   "has_qc": true
+  },
+  "qc_Bbs_G_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-emispheric light scattering coefficient, nominal green wavelength at ramped RH",
+   "has_qc": false
+  },
+  "Bbs_R_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, nominal red wavelength at ramped RH",
+   "has_qc": true
+  },
+  "qc_Bbs_R_Wet_Neph3W_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, nominal red wavelength at ramped RH",
+   "has_qc": false
+  },
+  "P_Neph_Wet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure inside reference nephelometer",
+   "has_qc": true
+  },
+  "qc_P_Neph_Wet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pressure inside reference nephelometer",
+   "has_qc": false
+  },
+  "T_Neph_Inlet_Wet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature, reference nephelometer inlet",
+   "has_qc": true
+  },
+  "qc_T_Neph_Inlet_Wet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature, reference nephelometer inlet",
+   "has_qc": false
+  },
+  "T_Neph_Vol_Wet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature, inside nephelometer",
+   "has_qc": true
+  },
+  "qc_T_Neph_Vol_Wet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature, inside nephelometer",
+   "has_qc": false
+  },
+  "RH_Neph_Inlet_Wet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity, reference nephelometer inlet",
+   "has_qc": true
+  },
+  "qc_RH_Neph_Inlet_Wet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity, reference nephelometer inlet",
+   "has_qc": false
+  },
+  "RH_Neph_Vol_Wet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity, inside reference nephelometer",
+   "has_qc": true
+  },
+  "qc_RH_Neph_Vol_Wet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity, inside reference nephelometer",
+   "has_qc": false
+  },
+  "impactor_setting": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Impactor setting in terms of aerodynamic diameter cut off",
+   "has_qc": true
+  },
+  "qc_impactor_setting": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Impactor setting in terms of aerodynamic diameter cut off",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

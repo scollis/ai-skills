@@ -1,0 +1,579 @@
+{
+ "instrument": "mpl",
+ "datastream": "sgpminimplC1.b1",
+ "filename": "sgpminimplC1.b1.20260724.000003.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 46,
+ "dims": {
+  "time": 8638,
+  "range_bins": 2000,
+  "num_darkcount_corr": 2000,
+  "num_deadtime_corr": 20,
+  "num_overlap_corr": 668
+ },
+ "n_qc_vars": 7,
+ "time_resolution_s": 10.0,
+ "time_span": [
+  "2026-07-24T00:00:03",
+  "2026-07-24T23:59:52"
+ ],
+ "global_attrs": {
+  "command_line": "mplpolfs_ingest -n minimpl -s sgp -f C1 --max-runtime 86400",
+  "process_version": "ingest-mplpolfs-1.24-0.el9",
+  "dod_version": "minimpl-b1-1.0",
+  "input_source": "/data/collection/sgp/sgpminimplC1.00/202607240000.mpl",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpminimplC1.b1",
+  "serial_number": "5096",
+  "sampling_interval": "0.000400",
+  "averaging_interval": "10.000000",
+  "doi": "10.5439/2401652",
+  "ingest_software": "ingest-mplpolfs-1.24-0.el9"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "num_channels": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "count",
+   "long_name": "Number of detector channels",
+   "has_qc": false
+  },
+  "num_bins": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "count",
+   "long_name": "Number of bins stored in data block",
+   "has_qc": false
+  },
+  "range": {
+   "dims": [
+    "range_bins"
+   ],
+   "shape": [
+    2000
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Distance from transceiver to center of corresponding range_bin",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "range_bins"
+   ],
+   "shape": [
+    2000
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height above ground of the center of corresponding range_bin",
+   "has_qc": false
+  },
+  "afterpulse_correction_co_pol": {
+   "dims": [
+    "range_bins"
+   ],
+   "shape": [
+    2000
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Afterpulse correction factor co_pol",
+   "has_qc": false
+  },
+  "afterpulse_correction_cross_pol": {
+   "dims": [
+    "range_bins"
+   ],
+   "shape": [
+    2000
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Afterpulse correction factor cross_pol",
+   "has_qc": false
+  },
+  "darkcount_correction_co_pol": {
+   "dims": [
+    "num_darkcount_corr"
+   ],
+   "shape": [
+    2000
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Darkcount correction factor co_pol",
+   "has_qc": false
+  },
+  "darkcount_correction_cross_pol": {
+   "dims": [
+    "num_darkcount_corr"
+   ],
+   "shape": [
+    2000
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Darkcount correction factor cross_pol",
+   "has_qc": false
+  },
+  "deadtime_correction_counts": {
+   "dims": [
+    "num_deadtime_corr"
+   ],
+   "shape": [
+    20
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Laboratory measured counts used to calculate the deadtime correction samples",
+   "has_qc": false
+  },
+  "deadtime_correction": {
+   "dims": [
+    "num_deadtime_corr"
+   ],
+   "shape": [
+    20
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Deadtime correction factor",
+   "has_qc": false
+  },
+  "overlap_correction_heights": {
+   "dims": [
+    "num_overlap_corr"
+   ],
+   "shape": [
+    668
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Heights for overlap correction",
+   "has_qc": false
+  },
+  "overlap_correction": {
+   "dims": [
+    "num_overlap_corr"
+   ],
+   "shape": [
+    668
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Overlap correction factor",
+   "has_qc": false
+  },
+  "shots_per_avg": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of laser pulses summed during averaging interval",
+   "has_qc": false
+  },
+  "pulse_rep": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Repetition rate, or Trigger Frequency of the laser",
+   "has_qc": false
+  },
+  "max_altitude": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Maximum altitude retrieved from multichannel scalar card.",
+   "has_qc": false
+  },
+  "range_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Distance between initial range_bin and the laser flash",
+   "has_qc": true
+  },
+  "qc_range_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Distance between initial range_bin and the laser flash",
+   "has_qc": false
+  },
+  "energy_monitor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "uJ",
+   "long_name": "Energy output per pulse of transmitted laser beam at 532 nm (Doubled Nd-YLF)",
+   "has_qc": true
+  },
+  "qc_energy_monitor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Energy output per pulse of transmitted laser beam at 532 nm (Doubled Nd-YLF)",
+   "has_qc": false
+  },
+  "detector_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Detector temperature",
+   "has_qc": true
+  },
+  "qc_detector_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Detector temperature",
+   "has_qc": false
+  },
+  "scope_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Telescope temperature",
+   "has_qc": true
+  },
+  "qc_scope_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Telescope temperature",
+   "has_qc": false
+  },
+  "laser_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Laser temperature",
+   "has_qc": true
+  },
+  "qc_laser_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Laser temperature",
+   "has_qc": false
+  },
+  "background_signal_cross_pol": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Background signal, cross pol data",
+   "has_qc": false
+  },
+  "background_signal_std_cross_pol": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Background signal standard deviation, cross pol data",
+   "has_qc": false
+  },
+  "background_signal_co_pol": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Background signal, copol data",
+   "has_qc": false
+  },
+  "background_signal_std_co_pol": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Background signal standard deviation, copol data",
+   "has_qc": false
+  },
+  "range_bin_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "second",
+   "long_name": "Time in seconds for each range bin of multichannel scalar card.",
+   "has_qc": false
+  },
+  "range_bin_width": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Width of range-bins calculated from range_bin_time",
+   "has_qc": false
+  },
+  "dead_time_corrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Dead time correction flag",
+   "has_qc": false
+  },
+  "polarization_control": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Polarization control enabled flag",
+   "has_qc": false
+  },
+  "polarization_control_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Polarization control voltage setting",
+   "has_qc": false
+  },
+  "mcs_mode": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "MCS mode register.",
+   "has_qc": false
+  },
+  "signal_return_cross_pol": {
+   "dims": [
+    "time",
+    "range_bins"
+   ],
+   "shape": [
+    8638,
+    2000
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Attenuated backscatter, cross pol",
+   "has_qc": true
+  },
+  "qc_signal_return_cross_pol": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Attenuated backscatter, cross pol",
+   "has_qc": false
+  },
+  "signal_return_co_pol": {
+   "dims": [
+    "time",
+    "range_bins"
+   ],
+   "shape": [
+    8638,
+    2000
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "Attenuated backscatter, copol",
+   "has_qc": true
+  },
+  "qc_signal_return_co_pol": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Attenuated backscatter, copol",
+   "has_qc": false
+  },
+  "first_data_bin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Bin number of first data. Tells where pretrigger timing ends and end of region for background data sampling",
+   "has_qc": false
+  },
+  "laser_fire_bin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Bin number associated with zero height and time where laser transmit occurs",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8638
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "range_bins": {
+   "dims": [
+    "range_bins"
+   ],
+   "shape": [
+    2000
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Distance from leading edge of first range bin to the center of each bin.",
+   "has_qc": false
+  }
+ }
+}

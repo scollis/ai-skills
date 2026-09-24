@@ -1,0 +1,1036 @@
+{
+ "instrument": "50rwp",
+ "datastream": "sgp50rwpwindC1.b1",
+ "filename": "sgp50rwpwindC1.b1.20010328.001042.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 72,
+ "dims": {
+  "time": 24,
+  "range_gate": 75,
+  "power": 2
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 3597.0,
+ "time_span": [
+  "2001-03-28T00:10:42",
+  "2001-03-28T23:10:09"
+ ],
+ "global_attrs": {
+  "datastream": "sgp50rwpwindC1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "height_p": {
+   "dims": [
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Array of heights for each power",
+   "has_qc": false
+  },
+  "spd": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Horizontal wind speed",
+   "has_qc": false
+  },
+  "dir": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "deg",
+   "long_name": "Horizontal wind direction",
+   "has_qc": false
+  },
+  "u_wind": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Easterly Wind Component",
+   "has_qc": false
+  },
+  "v_wind": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Northerly Wind Component",
+   "has_qc": false
+  },
+  "vel0": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Beam 0 radial wind speed",
+   "has_qc": false
+  },
+  "vel1": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Beam 1 radial wind speed",
+   "has_qc": false
+  },
+  "vel2": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Beam 2 radial wind speed",
+   "has_qc": false
+  },
+  "vel3": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Beam 3 radial wind speed",
+   "has_qc": false
+  },
+  "vel4": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Beam 4 radial wind speed",
+   "has_qc": false
+  },
+  "ncns0": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of values that passed consensus, beam 0",
+   "has_qc": false
+  },
+  "ncns1": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of values that passed consensus, beam 1",
+   "has_qc": false
+  },
+  "ncns2": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of values that passed consensus, beam 2",
+   "has_qc": false
+  },
+  "ncns3": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of values that passed consensus, beam 3",
+   "has_qc": false
+  },
+  "ncns4": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of values that passed consensus, beam 4",
+   "has_qc": false
+  },
+  "snr0": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal to Noise Ratio, Beam 0",
+   "has_qc": false
+  },
+  "snr1": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal to Noise Ratio, Beam 1",
+   "has_qc": false
+  },
+  "snr2": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal to Noise Ratio, Beam 2",
+   "has_qc": false
+  },
+  "snr3": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal to Noise Ratio, Beam 3",
+   "has_qc": false
+  },
+  "snr4": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal to Noise Ratio, Beam 4",
+   "has_qc": false
+  },
+  "nheight": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of valid heights for each power",
+   "has_qc": false
+  },
+  "nrec0": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Spectra/ave int, Beam 0",
+   "has_qc": false
+  },
+  "nrec1": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Spectra/ave int, Beam 1",
+   "has_qc": false
+  },
+  "nrec2": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Spectra/ave int, Beam 2",
+   "has_qc": false
+  },
+  "nrec3": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Spectra/ave int, Beam 3",
+   "has_qc": false
+  },
+  "nrec4": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Spectra/ave int, Beam 4",
+   "has_qc": false
+  },
+  "nrcns0": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Values Required for Consensus, Beam 0",
+   "has_qc": false
+  },
+  "nrcns1": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Values Required for Consensus, Beam 1",
+   "has_qc": false
+  },
+  "nrcns2": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Values Required for Consensus, Beam 2",
+   "has_qc": false
+  },
+  "nrcns3": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Values Required for Consensus, Beam 3",
+   "has_qc": false
+  },
+  "nrcns4": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Values Required for Consensus, Beam 4",
+   "has_qc": false
+  },
+  "avgint": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "minutes",
+   "long_name": "Average Interval",
+   "has_qc": false
+  },
+  "rgs": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "meters",
+   "long_name": "Range Gate Spacing",
+   "has_qc": false
+  },
+  "sampr": {
+   "dims": [
+    "time",
+    "power"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "float32",
+   "units": "MHz",
+   "long_name": "Sample Rate",
+   "has_qc": false
+  },
+  "plen": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "nanoseconds",
+   "long_name": "Pulse Length",
+   "has_qc": false
+  },
+  "ipp": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "microseconds",
+   "long_name": "Interpulse Period",
+   "has_qc": false
+  },
+  "tditime": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "milliseconds",
+   "long_name": "Time Domain Integration Time",
+   "has_qc": false
+  },
+  "ncoh": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Coherent Samples/Spectral Point",
+   "has_qc": false
+  },
+  "dly": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "microseconds",
+   "long_name": "Delay Time",
+   "has_qc": false
+  },
+  "nspc": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Individual Spectra/Average Spectrum",
+   "has_qc": false
+  },
+  "prf": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "kHz",
+   "long_name": "Pulse Repetition Frequency",
+   "has_qc": false
+  },
+  "bswitch": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": " ",
+   "long_name": "Rx bandwidth switch code",
+   "has_qc": false
+  },
+  "sitime": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "seconds",
+   "long_name": "Individual Spectrum Integration Time",
+   "has_qc": false
+  },
+  "rgf": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height of Center of First Range Gate",
+   "has_qc": false
+  },
+  "rgl": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height of Center of Last Range Gate",
+   "has_qc": false
+  },
+  "spcavetim": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "seconds",
+   "long_name": "Ave Time per Average Spectra.  Also known as dwell.",
+   "has_qc": false
+  },
+  "pcbits": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Count",
+   "long_name": "Number of Pulse Code Bits",
+   "has_qc": false
+  },
+  "oband": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Oblique FFT Bandwidth",
+   "has_qc": false
+  },
+  "vband": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Vertical FFT Bandwidth",
+   "has_qc": false
+  },
+  "ovsr": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Oblique Velocity Spectral Resolution",
+   "has_qc": false
+  },
+  "vvsr": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Vertical Velocity Spectral Resolution",
+   "has_qc": false
+  },
+  "azimuth0": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Deg relative to true north",
+   "long_name": "Azimuth of Beam 0 for WINDS data",
+   "has_qc": false
+  },
+  "azimuth1": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Deg relative to true north",
+   "long_name": "Azimuth of Beam 1 for WINDS data",
+   "has_qc": false
+  },
+  "azimuth2": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Deg relative to true north",
+   "long_name": "Azimuth of Beam 2 for WINDS data",
+   "has_qc": false
+  },
+  "azimuth3": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Deg relative to true north",
+   "long_name": "Azimuth of Beam 3 for WINDS data",
+   "has_qc": false
+  },
+  "azimuth4": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Deg relative to true north",
+   "long_name": "Azimuth of Beam 4 for WINDS data",
+   "has_qc": false
+  },
+  "elevation0": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Deg",
+   "long_name": "Elevation angle of Beam 0 for WINDS data",
+   "has_qc": false
+  },
+  "elevation1": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Deg",
+   "long_name": "Elevation angle of Beam 1 for WINDS data",
+   "has_qc": false
+  },
+  "elevation2": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Deg",
+   "long_name": "Elevation angle of Beam 2 for WINDS data",
+   "has_qc": false
+  },
+  "elevation3": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Deg",
+   "long_name": "Elevation angle of Beam 3 for WINDS data",
+   "has_qc": false
+  },
+  "elevation4": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "Deg",
+   "long_name": "Elevation angle of Beam 4 for WINDS data",
+   "has_qc": false
+  },
+  "qcdeltaHeight1-24": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "bit offset",
+   "long_name": "qcdeltaHeight",
+   "has_qc": false
+  },
+  "qcdeltaHeight25-48": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "bit offset",
+   "long_name": "qcdeltaHeight",
+   "has_qc": false
+  },
+  "qcdeltaHeight49-72": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "bit offset",
+   "long_name": "qcdeltaHeight",
+   "has_qc": false
+  },
+  "qcdeltaTime1-24": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "bit offset",
+   "long_name": "qcdeltaTime",
+   "has_qc": false
+  },
+  "qcdeltaTime25-48": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "bit offset",
+   "long_name": "qcdeltaTime",
+   "has_qc": false
+  },
+  "qcdeltaTime49-72": {
+   "dims": [
+    "time",
+    "range_gate",
+    "power"
+   ],
+   "shape": [
+    24,
+    75,
+    2
+   ],
+   "dtype": "float32",
+   "units": "bit offset",
+   "long_name": "qcdeltaTime",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "north latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "east longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "meters above Mean Sea Level",
+   "long_name": "altitude",
+   "has_qc": false
+  },
+  "range_gate": {
+   "dims": [
+    "range_gate"
+   ],
+   "shape": [
+    75
+   ],
+   "dtype": "float32",
+   "units": "index",
+   "long_name": "Height Index",
+   "has_qc": false
+  },
+  "power": {
+   "dims": [
+    "power"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "float32",
+   "units": "none",
+   "long_name": "Power offset",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  }
+ }
+}

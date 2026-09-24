@@ -1,0 +1,603 @@
+{
+ "instrument": "cfh",
+ "datastream": "sgpcfhC1.b1",
+ "filename": "sgpcfhC1.b1.20191218.162850.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 47,
+ "dims": {
+  "time": 7539
+ },
+ "n_qc_vars": 21,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2019-12-18T16:28:50",
+  "2019-12-18T18:35:33"
+ ],
+ "global_attrs": {
+  "command_line": "cfh_ingest -s sgp -f C1 -DR",
+  "process_version": "ingest-cfh-1.1-1.el7",
+  "dod_version": "cfh-b1-1.0",
+  "input_source": "/data/collection/sgp/sgpcfhC1.00/OK068FLT.DAT",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpcfhC1.b1",
+  "doi": "10.5439/1355409"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "data_frame_number": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Data frame number",
+   "has_qc": true
+  },
+  "qc_data_frame_number": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Data frame number",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure from the radiosonde pressure sensor",
+   "has_qc": true
+  },
+  "qc_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pressure from the radiosonde pressure sensor",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Ambient temperature from the radiosonde",
+   "has_qc": true
+  },
+  "qc_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ambient temperature from the radiosonde",
+   "has_qc": false
+  },
+  "relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity over liquid from the radiosonde",
+   "has_qc": true
+  },
+  "qc_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity over liquid from the radiosonde",
+   "has_qc": false
+  },
+  "altitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Barometric altitude calculated from radiosonde pressure, temperature and humidity",
+   "has_qc": true
+  },
+  "qc_altitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Barometric altitude calculated from radiosonde pressure, temperature and humidity",
+   "has_qc": false
+  },
+  "temperature_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Ambient temperature from the radiosonde without any corrections applied",
+   "has_qc": true
+  },
+  "qc_temperature_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ambient temperature from the radiosonde without any corrections applied",
+   "has_qc": false
+  },
+  "potential_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Potential temperature",
+   "has_qc": true
+  },
+  "qc_potential_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Potential temperature",
+   "has_qc": false
+  },
+  "rs_frost_point_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Frost point temperature calculated from radiosonde relative humidity",
+   "has_qc": true
+  },
+  "qc_rs_frost_point_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Frost point temperature calculated from radiosonde relative humidity",
+   "has_qc": false
+  },
+  "imet_temp_i": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Internal temperature of the Intermet radiosonde",
+   "has_qc": true
+  },
+  "qc_imet_temp_i": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Internal temperature of the Intermet radiosonde",
+   "has_qc": false
+  },
+  "imet_temp_p": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature near the pressure sensor of the Intermet radiosonde",
+   "has_qc": true
+  },
+  "qc_imet_temp_p": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature near the pressure sensor of the Intermet radiosonde",
+   "has_qc": false
+  },
+  "imet_temp_u": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature near the humidity sensor of the Intermet radiosonde",
+   "has_qc": true
+  },
+  "qc_imet_temp_u": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature near the humidity sensor of the Intermet radiosonde",
+   "has_qc": false
+  },
+  "rs_battery_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Battery voltage of the radiosonde battery",
+   "has_qc": true
+  },
+  "qc_rs_battery_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Battery voltage of the radiosonde battery",
+   "has_qc": false
+  },
+  "cfh_frost_point_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Frost point temperature measured by the CFH",
+   "has_qc": true
+  },
+  "qc_cfh_frost_point_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Frost point temperature measured by the CFH",
+   "has_qc": false
+  },
+  "h2o_mixing_ratio": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Mixing ratio calculated from the CFH frost point temperature",
+   "has_qc": true
+  },
+  "qc_h2o_mixing_ratio": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mixing ratio calculated from the CFH frost point temperature",
+   "has_qc": false
+  },
+  "detector_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "CFH detector temperature",
+   "has_qc": true
+  },
+  "qc_detector_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: CFH detector temperature",
+   "has_qc": false
+  },
+  "detector_signal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "CFH detector signal",
+   "has_qc": true
+  },
+  "qc_detector_signal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: CFH detector signal",
+   "has_qc": false
+  },
+  "cfh_battery_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "CFH Battery voltage",
+   "has_qc": true
+  },
+  "qc_cfh_battery_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: CFH Battery voltage",
+   "has_qc": false
+  },
+  "saturation_vapor_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Saturation vapor pressure calculated from CFH frost point temperature",
+   "has_qc": true
+  },
+  "qc_saturation_vapor_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Saturation vapor pressure calculated from CFH frost point temperature",
+   "has_qc": false
+  },
+  "mixing_ratio": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Mixing ratio calculated from radiosonde pressure and CFH saturation vapor pressure",
+   "has_qc": true
+  },
+  "qc_mixing_ratio": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mixing ratio calculated from radiosonde pressure and CFH saturation vapor pressure",
+   "has_qc": false
+  },
+  "wind_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed calculated from GPS location measurements",
+   "has_qc": true
+  },
+  "qc_wind_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind speed calculated from GPS location measurements",
+   "has_qc": false
+  },
+  "wind_direction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction calculated from GPS location measurements",
+   "has_qc": true
+  },
+  "qc_wind_direction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind direction calculated from GPS location measurements",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7539
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,198 @@
+{
+ "instrument": "masc",
+ "datastream": "nsamascC1.b1",
+ "filename": "nsamascC1.b1.20260919.155142.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 14,
+ "dims": {
+  "time": 411,
+  "camera": 3
+ },
+ "n_qc_vars": 1,
+ "time_resolution_s": 4.0,
+ "time_span": [
+  "2026-09-19T15:51:42",
+  "2026-09-19T18:16:15"
+ ],
+ "global_attrs": {
+  "command_line": "masc_ingest -s nsa -f C1 --max-runtime 86400",
+  "process_version": "ingest-masc-1.3-1.el9",
+  "dod_version": "masc-b1-1.0",
+  "input_source": "/data/collection/nsa/nsamascC1.00/nsaMASCM1.a0.20260919.15.raw_dataInfo.txt",
+  "site_id": "nsa",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "North Slope of Alaska (NSA), Barrow, Alaska",
+  "datastream": "nsamascC1.b1",
+  "doi": "10.5439/1234550"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    411
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "snowflake_id": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    411
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Snowflake ID number",
+   "has_qc": false
+  },
+  "snowflake_fall_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    411
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Fall speed of the snowflake",
+   "has_qc": true
+  },
+  "qc_snowflake_fall_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    411
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Fall speed of the snowflake",
+   "has_qc": false
+  },
+  "camera_id": {
+   "dims": [
+    "time",
+    "camera"
+   ],
+   "shape": [
+    411,
+    3
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Camera IDs of images taken",
+   "has_qc": false
+  },
+  "field_of_view": {
+   "dims": [
+    "camera"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Horizontal field of view",
+   "has_qc": false
+  },
+  "crop_from_top": {
+   "dims": [
+    "camera"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Number of pixels cropped from the top of the image",
+   "has_qc": false
+  },
+  "crop_from_bottom": {
+   "dims": [
+    "camera"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Number of pixels cropped from the bottom of the image",
+   "has_qc": false
+  },
+  "crop_from_right": {
+   "dims": [
+    "camera"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Number of pixels cropped from the right of the image",
+   "has_qc": false
+  },
+  "crop_from_left": {
+   "dims": [
+    "camera"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Number of pixels cropped from the left of the image",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    411
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

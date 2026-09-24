@@ -1,0 +1,413 @@
+{
+ "instrument": "pass",
+ "datastream": "sgpaospass3wC1.a1",
+ "filename": "sgpaospass3wC1.a1.20150928.000101.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 32,
+ "dims": {
+  "time": 26732
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 2.0,
+ "time_span": [
+  "2015-09-28T00:01:01",
+  "2015-09-28T23:59:58"
+ ],
+ "global_attrs": {
+  "command_line": "aospass3w_ingest -s sgp -f C1",
+  "process_version": "ingest-aospass3w-0.2-0.el6",
+  "dod_version": "aospass3w-a1-2.0",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "a1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpaospass3wC1.a1",
+  "serial_number": "N/A",
+  "sampling_interval": "2 seconds",
+  "averaging_interval": "None",
+  "input_source": "/data/collection/sgp/sgpaospass3wC1.00/BabsBGR_20150928_00.txt"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "absorption_coefficient_405nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption coefficient, 405 nm wavelength",
+   "has_qc": false
+  },
+  "absorption_coefficient_532nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption, 532 nm wavelength",
+   "has_qc": false
+  },
+  "absorption_coefficient_781nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Absorption coefficient, 781nm wavelength",
+   "has_qc": false
+  },
+  "uncertainty_estimate_405nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncertainty estimate for absorption coefficient, 405 nm wavelength",
+   "has_qc": false
+  },
+  "uncertainty_estimate_532nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncertainty estimate for absorption coefficient, 532 nm wavelength",
+   "has_qc": false
+  },
+  "uncertainty_estimate_781nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncertainty estimate for absorption coefficient, 781nm wavelength",
+   "has_qc": false
+  },
+  "laser_power_405nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "mW",
+   "long_name": "Laser Power,  405 nm wavelength",
+   "has_qc": false
+  },
+  "laser_power_532nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "mW",
+   "long_name": "Laser Power,  532 nm wavelength",
+   "has_qc": false
+  },
+  "laser_power_781nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "mW",
+   "long_name": "Laser Power,  781 nm wavelength",
+   "has_qc": false
+  },
+  "resonance_frequency": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Resonance frequency",
+   "has_qc": false
+  },
+  "acoustic_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Acoustic pressure at resonance",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity",
+   "has_qc": false
+  },
+  "dew_point_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Dew point temperature",
+   "has_qc": false
+  },
+  "scattering_coefficient_405nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Scattering coefficient, 405 nm wavelength",
+   "has_qc": false
+  },
+  "scattering_coefficient_532nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Scattering coefficient, 532 nm wavelength",
+   "has_qc": false
+  },
+  "scattering_coefficient_781nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Scattering coefficient, 781 nm wavelength",
+   "has_qc": false
+  },
+  "temperature_laser": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Laser temperature",
+   "has_qc": false
+  },
+  "avg_background_subtracted_absorp_coef_405nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Average background subtracted from absorption coefficient, 405nm",
+   "has_qc": false
+  },
+  "avg_background_subtracted_absorp_coef_532nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Average background subtracted from absorption coefficient, 532nm",
+   "has_qc": false
+  },
+  "avg_background_subtracted_absorp_coef_781nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Average background subtracted from absorption coefficient, 781nm",
+   "has_qc": false
+  },
+  "running_average": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Running average indicator, 0=no, 1=yes",
+   "has_qc": false
+  },
+  "sample_measurement_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Indicates occurrence of background zero",
+   "has_qc": false
+  },
+  "avg_background_subtracted_scat_coef_405nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Average background subtracted from scattering coefficient, 405nm",
+   "has_qc": false
+  },
+  "avg_background_subtracted_scat_coef_532nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Average background subtracted from scattering coefficient, 532nm",
+   "has_qc": false
+  },
+  "avg_background_subtracted_scat_coef_781nm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Average background subtracted from scattering coefficient, 781nm",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26732
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

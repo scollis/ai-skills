@@ -1,0 +1,494 @@
+{
+ "instrument": "cpc-air",
+ "datastream": "bnfaafmcpcU2.b1",
+ "filename": "bnfaafmcpcU2.b1.20260911.144346.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 38,
+ "dims": {
+  "time": 7717
+ },
+ "n_qc_vars": 11,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-09-11T14:43:46",
+  "2026-09-11T16:52:26"
+ ],
+ "global_attrs": {
+  "command_line": "aafmcpccorr -s bnf -f U2 --max-runtime 86400",
+  "process_version": "ingest-aafmcpccorr-1.0-2.el9",
+  "dod_version": "aafmcpc-b1-1.0",
+  "site_id": "bnf",
+  "facility_id": "U2",
+  "data_level": "b1",
+  "location_description": "Southeast U.S. in Bankhead National Forest (BNF), ArcticShark Unmanned Aerial System",
+  "datastream": "bnfaafmcpcU2.b1",
+  "doi": "10.5439/1820906"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "concentration_ave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Average concentration for save interval",
+   "has_qc": true
+  },
+  "qc_concentration_ave": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average concentration for save interval",
+   "has_qc": false
+  },
+  "concentration_corrected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Coincidence Corrected concentration",
+   "has_qc": false
+  },
+  "concentration_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Raw uncorrected concentration",
+   "has_qc": false
+  },
+  "count": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "count/s",
+   "long_name": "Particle counts per second",
+   "has_qc": false
+  },
+  "condenser_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Condenser temperature",
+   "has_qc": false
+  },
+  "saturator_top_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Saturator top temperature",
+   "has_qc": false
+  },
+  "saturator_bottom_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Saturator bottom temperature",
+   "has_qc": false
+  },
+  "optics_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Optics block temperature",
+   "has_qc": false
+  },
+  "inlet_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Inlet temperature",
+   "has_qc": true
+  },
+  "qc_inlet_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Inlet temperature",
+   "has_qc": false
+  },
+  "flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "cm^3/min",
+   "long_name": "Sample flow rate",
+   "has_qc": false
+  },
+  "saturator_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "cm^3/min",
+   "long_name": "Saturator flow rate",
+   "has_qc": false
+  },
+  "inlet_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Ambient pressure at inlet",
+   "has_qc": false
+  },
+  "condenser_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Condenser cooler power",
+   "has_qc": true
+  },
+  "qc_condenser_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Condenser cooler power",
+   "has_qc": false
+  },
+  "saturator_top_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Saturator top heater power",
+   "has_qc": true
+  },
+  "qc_saturator_top_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Saturator top heater power",
+   "has_qc": false
+  },
+  "saturator_bottom_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Saturator bottom heater power",
+   "has_qc": true
+  },
+  "qc_saturator_bottom_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Saturator bottom heater power",
+   "has_qc": false
+  },
+  "optics_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Optics block heater power",
+   "has_qc": true
+  },
+  "qc_optics_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Optics block heater power",
+   "has_qc": false
+  },
+  "saturator_flow_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Saturator flow pump power",
+   "has_qc": true
+  },
+  "qc_saturator_flow_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Saturator flow pump power",
+   "has_qc": false
+  },
+  "exhaust_pump_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Exhaust vacuum pump power",
+   "has_qc": true
+  },
+  "qc_exhaust_pump_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Exhaust vacuum pump power",
+   "has_qc": false
+  },
+  "fill_count": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Butanol fill attempts",
+   "has_qc": false
+  },
+  "error_number": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Bit packed error codes",
+   "has_qc": false
+  },
+  "mcpc_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "MCPC master power indicator",
+   "has_qc": false
+  },
+  "mcpc_pump": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Mixing cpc pump",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7717
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

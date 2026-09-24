@@ -1,0 +1,458 @@
+{
+ "instrument": "uhsas",
+ "datastream": "enaaosuhsasC1.b1",
+ "filename": "enaaosuhsasC1.b1.20260919.000006.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 34,
+ "dims": {
+  "time": 8640,
+  "bound": 2,
+  "diameter_optical": 99
+ },
+ "n_qc_vars": 8,
+ "time_resolution_s": 10.0,
+ "time_span": [
+  "2026-09-19T00:00:06",
+  "2026-09-19T23:59:57"
+ ],
+ "global_attrs": {
+  "command_line": "aosuhsascorr -s ena -f C1 --max-runtime 86400",
+  "process_version": "ingest-aosuhsascorr-1.3-0.el9",
+  "dod_version": "aosuhsas-b1-1.2",
+  "site_id": "ena",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Eastern North Atlantic (ENA), Graciosa Island, Azores",
+  "datastream": "enaaosuhsasC1.b1",
+  "serial_number": "1309-044/WD79319",
+  "sampling_interval": "10 s",
+  "doi": "10.5439/1409033"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    8640,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "diameter_optical_bounds": {
+   "dims": [
+    "diameter_optical",
+    "bound"
+   ],
+   "shape": [
+    99,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Optical diameter bin boundaries",
+   "has_qc": false
+  },
+  "diameter_optical_lower_bound": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Lower particle size limit for each bin",
+   "has_qc": false
+  },
+  "diameter_optical_upper_bound": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Upper particle size limit for each bin",
+   "has_qc": false
+  },
+  "dN_dlogDp": {
+   "dims": [
+    "time",
+    "diameter_optical"
+   ],
+   "shape": [
+    8640,
+    99
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number size distribution, optical scattering diameter",
+   "has_qc": true
+  },
+  "qc_dN_dlogDp": {
+   "dims": [
+    "time",
+    "diameter_optical"
+   ],
+   "shape": [
+    8640,
+    99
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number size distribution, optical scattering diameter",
+   "has_qc": false
+  },
+  "total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total number concentration from integrated size distribution, UHSAS",
+   "has_qc": true
+  },
+  "qc_total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration from integrated size distribution, UHSAS",
+   "has_qc": false
+  },
+  "total_SA_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float64",
+   "units": "nm^2/cm^3",
+   "long_name": "Total surface area concentration from integrated size distribution, UHSAS",
+   "has_qc": true
+  },
+  "qc_total_SA_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total surface area concentration from integrated size distribution, UHSAS",
+   "has_qc": false
+  },
+  "dD_to_dSA": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float64",
+   "units": "nm^2",
+   "long_name": "Particle surface area",
+   "has_qc": false
+  },
+  "total_V_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float64",
+   "units": "nm^3/cm^3",
+   "long_name": "Total volume concentration from integrated size distribution, UHSAS",
+   "has_qc": true
+  },
+  "qc_total_V_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total volume concentration from integrated size distribution, UHSAS",
+   "has_qc": false
+  },
+  "dD_to_dV": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float64",
+   "units": "nm^3",
+   "long_name": "Particle volume",
+   "has_qc": false
+  },
+  "sample_accumulation_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Sample accumulation time",
+   "has_qc": false
+  },
+  "sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Sample flow rate set point",
+   "has_qc": true
+  },
+  "qc_sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample flow rate set point",
+   "has_qc": false
+  },
+  "sheath_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Sheath flow rate, measured",
+   "has_qc": true
+  },
+  "qc_sheath_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sheath flow rate, measured",
+   "has_qc": false
+  },
+  "purge_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Purge flow rate",
+   "has_qc": true
+  },
+  "qc_purge_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Purge flow rate",
+   "has_qc": false
+  },
+  "laser_reference_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Laser reference voltage",
+   "has_qc": true
+  },
+  "qc_laser_reference_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Laser reference voltage",
+   "has_qc": false
+  },
+  "sample_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Sample pressure",
+   "has_qc": false
+  },
+  "unit_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Unit temperature",
+   "has_qc": false
+  },
+  "scattering_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Scatter signal",
+   "has_qc": false
+  },
+  "current_sensor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Current sensor",
+   "has_qc": false
+  },
+  "raw_temperature_signal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Raw temperature signal",
+   "has_qc": false
+  },
+  "differential_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Differential voltage",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8640
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "diameter_optical": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Midpoint of geometric mean optical diameter",
+   "has_qc": false
+  }
+ }
+}

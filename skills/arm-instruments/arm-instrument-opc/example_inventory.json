@@ -1,0 +1,456 @@
+{
+ "instrument": "opc",
+ "datastream": "bnfminiaosopcM1.b1",
+ "filename": "bnfminiaosopcM1.b1.20260629.000002.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 36,
+ "dims": {
+  "time": 14393,
+  "bound": 2,
+  "diameter_midpoint": 32
+ },
+ "n_qc_vars": 4,
+ "time_resolution_s": 6.0,
+ "time_span": [
+  "2026-06-29T00:00:02",
+  "2026-06-29T23:59:57"
+ ],
+ "global_attrs": {
+  "command_line": "miniaosopccorr -s bnf -f M1 --max-runtime 86400",
+  "process_version": "ingest-miniaosopccorr-1.0-0.el9",
+  "dod_version": "miniaosopc-b1-1.0",
+  "site_id": "bnf",
+  "facility_id": "M1",
+  "data_level": "b1",
+  "location_description": "Southeast U.S. in Bankhead National Forest (BNF), Bankhead National Forest, Alabama",
+  "datastream": "bnfminiaosopcM1.b1",
+  "serial_number": "WD43712",
+  "sampling_interval": "6 second",
+  "doi": "10.5439/3007688"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    14393,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "diameter_midpoint_bounds": {
+   "dims": [
+    "diameter_midpoint",
+    "bound"
+   ],
+   "shape": [
+    32,
+    2
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Diameter midpoint bin boundaries",
+   "has_qc": false
+  },
+  "gravimetric_factor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Gravimetric factor",
+   "has_qc": false
+  },
+  "error_code": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Error code",
+   "has_qc": false
+  },
+  "pump_current_consumption": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Pump current consumption",
+   "has_qc": true
+  },
+  "qc_pump_current_consumption": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Pump current consumption",
+   "has_qc": false
+  },
+  "air_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Air pressure",
+   "has_qc": false
+  },
+  "calc_dust_weight": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float32",
+   "units": "ug",
+   "long_name": "Calculated dust weight that has passed the measuring cell since the last service/reset",
+   "has_qc": true
+  },
+  "qc_calc_dust_weight": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calculated dust weight that has passed the measuring cell since the last service/reset",
+   "has_qc": false
+  },
+  "air_volume": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float32",
+   "units": "L",
+   "long_name": "Volume of air that has passed the measuring cell since the last service/reset",
+   "has_qc": false
+  },
+  "sample_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Calculated relative humidity of the sample air in the measuring cell",
+   "has_qc": true
+  },
+  "qc_sample_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calculated relative humidity of the sample air in the measuring cell",
+   "has_qc": false
+  },
+  "sample_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Measured temperature at the measuring cell",
+   "has_qc": true
+  },
+  "qc_sample_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Measured temperature at the measuring cell",
+   "has_qc": false
+  },
+  "flow_rate_percent": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Flow rate",
+   "has_qc": false
+  },
+  "flow_sensor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Flow sensor volume",
+   "has_qc": false
+  },
+  "sum_particle_count": {
+   "dims": [
+    "time",
+    "diameter_midpoint"
+   ],
+   "shape": [
+    14393,
+    32
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Raw summed particle counts",
+   "has_qc": false
+  },
+  "particle_count": {
+   "dims": [
+    "time",
+    "diameter_midpoint"
+   ],
+   "shape": [
+    14393,
+    32
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Particle counts",
+   "has_qc": false
+  },
+  "dN_dlogDp": {
+   "dims": [
+    "time",
+    "diameter_midpoint"
+   ],
+   "shape": [
+    14393,
+    32
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number size distribution",
+   "has_qc": false
+  },
+  "total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total number concentration from size distribution, OPC",
+   "has_qc": false
+  },
+  "dD_to_dSA": {
+   "dims": [
+    "diameter_midpoint"
+   ],
+   "shape": [
+    32
+   ],
+   "dtype": "float64",
+   "units": "um^2",
+   "long_name": "Surface area of one particle",
+   "has_qc": false
+  },
+  "total_SA_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float64",
+   "units": "um^2/cm^3",
+   "long_name": "Total surface area concentration from size distribution, OPC",
+   "has_qc": false
+  },
+  "dD_to_dV": {
+   "dims": [
+    "diameter_midpoint"
+   ],
+   "shape": [
+    32
+   ],
+   "dtype": "float64",
+   "units": "um^3",
+   "long_name": "Volume of one particle",
+   "has_qc": false
+  },
+  "total_V_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "float64",
+   "units": "um^3/cm^3",
+   "long_name": "Total volume concentration from size distribution, OPC",
+   "has_qc": false
+  },
+  "preamplifier_voltage": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "DC voltage of the preamplifier without bias",
+   "has_qc": false
+  },
+  "photodiode_dark_voltage": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Photodiode voltage when the laser diode is switched off",
+   "has_qc": false
+  },
+  "photodiode_high_voltage": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Photodiode voltage when the laser diode is switched on",
+   "has_qc": false
+  },
+  "zero_count_high": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Counts without particles or zero count with the laser switched on",
+   "has_qc": false
+  },
+  "zero_count_dark": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Counts without particles or zero count with the laser switched off",
+   "has_qc": false
+  },
+  "low_laser_current": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mA",
+   "long_name": "Low laser current",
+   "has_qc": false
+  },
+  "high_laser_current": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mA",
+   "long_name": "High laser current",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14393
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "diameter_midpoint": {
+   "dims": [
+    "diameter_midpoint"
+   ],
+   "shape": [
+    32
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Diameter midpoint of aerosol particles",
+   "has_qc": false
+  }
+ }
+}

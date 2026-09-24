@@ -1,0 +1,1191 @@
+{
+ "instrument": "flask",
+ "datastream": "sgpghgisoflaskC1.b1",
+ "filename": "sgpghgisoflaskC1.b1.20240901.191758.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 97,
+ "dims": {
+  "time": 1
+ },
+ "n_qc_vars": 44,
+ "time_resolution_s": null,
+ "time_span": [
+  "2024-09-01T19:17:58",
+  "2024-09-01T19:17:58"
+ ],
+ "global_attrs": {
+  "command_line": "ghgisoflask_ingest -s sgp -f C1",
+  "process_version": "ingest-ghgisoflask-1.2-0.el7",
+  "dod_version": "ghgisoflask-b1-1.0",
+  "input_source": "/data/collection/sgp/sgpghgisoflaskC1.00/sgpghgisoflask.b1.20240901.191758.csv",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpghgisoflaskC1.b1",
+  "doi": "10.5439/1405314"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "sample_method": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S1",
+   "units": "unitless",
+   "long_name": "Sampling method",
+   "has_qc": false
+  },
+  "intake_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Sample intake height",
+   "has_qc": false
+  },
+  "sample_id": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S8",
+   "units": "unitless",
+   "long_name": "Sample Id",
+   "has_qc": false
+  },
+  "event_number": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Event number",
+   "has_qc": false
+  },
+  "CO2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppm",
+   "long_name": "Carbon dioxide (CO2) concentration",
+   "has_qc": true
+  },
+  "qc_CO2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Carbon dioxide (CO2) concentration",
+   "has_qc": false
+  },
+  "CH4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppb",
+   "long_name": "Methane (CH4) concentration",
+   "has_qc": true
+  },
+  "qc_CH4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Methane (CH4) concentration",
+   "has_qc": false
+  },
+  "CO": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppb",
+   "long_name": "Carbon monoxide (CO) concentration",
+   "has_qc": true
+  },
+  "qc_CO": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Carbon monoxide (CO) concentration",
+   "has_qc": false
+  },
+  "H2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Hydrogen (H2) concentration",
+   "has_qc": true
+  },
+  "qc_H2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Hydrogen (H2) concentration",
+   "has_qc": false
+  },
+  "N2O": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppb",
+   "long_name": "Nitrous oxide (N2O) concentration",
+   "has_qc": true
+  },
+  "qc_N2O": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Nitrous oxide (N2O) concentration",
+   "has_qc": false
+  },
+  "SF6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Sulfur hexafluoride (SF6) concentration",
+   "has_qc": true
+  },
+  "qc_SF6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sulfur hexafluoride (SF6) concentration",
+   "has_qc": false
+  },
+  "SF6_hats": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Sulfur hexafluoride (SF6) concentration (HATS)",
+   "has_qc": true
+  },
+  "qc_SF6_hats": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sulfur hexafluoride (SF6) concentration (HATS)",
+   "has_qc": false
+  },
+  "CO2C13": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/1E6",
+   "long_name": "Isotopic ratio of C13 in CO2",
+   "has_qc": true
+  },
+  "qc_CO2C13": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Isotopic ratio of C13 in CO2",
+   "has_qc": false
+  },
+  "CO2O18": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/1E6",
+   "long_name": "Isotopic ratio of O18 in CO2",
+   "has_qc": true
+  },
+  "qc_CO2O18": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Isotopic ratio of O18 in CO2",
+   "has_qc": false
+  },
+  "CH4C13": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/1E6",
+   "long_name": "Isotopic ratio of C13 in CH4",
+   "has_qc": true
+  },
+  "qc_CH4C13": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Isotopic ratio of C13 in CH4",
+   "has_qc": false
+  },
+  "CO2C14": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/1E6",
+   "long_name": "Isotopic ratio of C14 in CO2",
+   "has_qc": true
+  },
+  "qc_CO2C14": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Isotopic ratio of C14 in CO2",
+   "has_qc": false
+  },
+  "CFC_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Difluorodichloromethane (CCl2F2) concentration",
+   "has_qc": true
+  },
+  "qc_CFC_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Difluorodichloromethane (CCl2F2) concentration",
+   "has_qc": false
+  },
+  "CFC_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Trichlorofluoromethane (CCl3F) concentration",
+   "has_qc": true
+  },
+  "qc_CFC_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Trichlorofluoromethane (CCl3F) concentration",
+   "has_qc": false
+  },
+  "CFC_113": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Trichlorotrifluoroethane (C2Cl3F3) concentration",
+   "has_qc": true
+  },
+  "qc_CFC_113": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Trichlorotrifluoroethane (C2Cl3F3) concentration",
+   "has_qc": false
+  },
+  "CFC_115": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Chloropentafluoroethane (C2ClF5) concentration",
+   "has_qc": true
+  },
+  "qc_CFC_115": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Chloropentafluoroethane (C2ClF5) concentration",
+   "has_qc": false
+  },
+  "HCFC_22": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Chlorodifluoromethane (CHClF2) concentration",
+   "has_qc": true
+  },
+  "qc_HCFC_22": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Chlorodifluoromethane (CHClF2) concentration",
+   "has_qc": false
+  },
+  "HCFC_142b": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Chlorodifluoroethane (C2H3ClF2) concentration",
+   "has_qc": true
+  },
+  "qc_HCFC_142b": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Chlorodifluoroethane (C2H3ClF2) concentration",
+   "has_qc": false
+  },
+  "HFC_134a": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Tetrafluoroethane (C2H2F4) concentration",
+   "has_qc": true
+  },
+  "qc_HFC_134a": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Tetrafluoroethane (C2H2F4) concentration",
+   "has_qc": false
+  },
+  "HFC_152a": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Difluoroethane (C2H4F2) concentration",
+   "has_qc": true
+  },
+  "qc_HFC_152a": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Difluoroethane (C2H4F2) concentration",
+   "has_qc": false
+  },
+  "HFC_227ea": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Heptafluoropropane (C3HF7) concentration",
+   "has_qc": true
+  },
+  "qc_HFC_227ea": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Heptafluoropropane (C3HF7) concentration",
+   "has_qc": false
+  },
+  "HFC_365mfc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Pentafluorobutane (C4H5F5) concentration",
+   "has_qc": true
+  },
+  "qc_HFC_365mfc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pentafluorobutane (C4H5F5) concentration",
+   "has_qc": false
+  },
+  "HFC_125": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Pentafluoroethane (C2HF5) concentration",
+   "has_qc": true
+  },
+  "qc_HFC_125": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pentafluoroethane (C2HF5) concentration",
+   "has_qc": false
+  },
+  "HFC_32": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Difluoromethane (CH2F2) concentration",
+   "has_qc": true
+  },
+  "qc_HFC_32": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Difluoromethane (CH2F2) concentration",
+   "has_qc": false
+  },
+  "HFC_143a": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Trifluoroethane (C2H3F3) concentration",
+   "has_qc": true
+  },
+  "qc_HFC_143a": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Trifluoroethane (C2H3F3) concentration",
+   "has_qc": false
+  },
+  "CCl4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Carbon Tetrachloride (CCl4) concentration",
+   "has_qc": true
+  },
+  "qc_CCl4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Carbon Tetrachloride (CCl4) concentration",
+   "has_qc": false
+  },
+  "CH2Cl2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Dichloromethane (CH2Cl2) concentration",
+   "has_qc": true
+  },
+  "qc_CH2Cl2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Dichloromethane (CH2Cl2) concentration",
+   "has_qc": false
+  },
+  "CHCl3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Chloroform (CHCl3) concentration",
+   "has_qc": true
+  },
+  "qc_CHCl3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Chloroform (CHCl3) concentration",
+   "has_qc": false
+  },
+  "C2Cl4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Tetrachloroethene (C2Cl4) concentration",
+   "has_qc": true
+  },
+  "qc_C2Cl4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Tetrachloroethene (C2Cl4) concentration",
+   "has_qc": false
+  },
+  "C2H3Cl3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Methyl chloroform (C2H3Cl3) concentration",
+   "has_qc": true
+  },
+  "qc_C2H3Cl3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Methyl chloroform (C2H3Cl3) concentration",
+   "has_qc": false
+  },
+  "CH3Br": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Methyl bromide (CH3Br) concentration",
+   "has_qc": true
+  },
+  "qc_CH3Br": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Methyl bromide (CH3Br) concentration",
+   "has_qc": false
+  },
+  "CH3I": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Methyl iodide (CH3I) concentration",
+   "has_qc": true
+  },
+  "qc_CH3I": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Methyl iodide (CH3I) concentration",
+   "has_qc": false
+  },
+  "CHBr3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Bromoform (CHBr3) concentration",
+   "has_qc": true
+  },
+  "qc_CHBr3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Bromoform (CHBr3) concentration",
+   "has_qc": false
+  },
+  "CH2Br2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Dibromomethane (CH2Br2) concentration",
+   "has_qc": true
+  },
+  "qc_CH2Br2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Dibromomethane (CH2Br2) concentration",
+   "has_qc": false
+  },
+  "CBrClF2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Bromochlorodifluoromethane (CBrClF2) concentration",
+   "has_qc": true
+  },
+  "qc_CBrClF2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Bromochlorodifluoromethane (CBrClF2) concentration",
+   "has_qc": false
+  },
+  "CBrF3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Bromotrifluoromethane (CBrF3) concentration",
+   "has_qc": true
+  },
+  "qc_CBrF3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Bromotrifluoromethane (CBrF3) concentration",
+   "has_qc": false
+  },
+  "C2Br2F4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Dibromotetrafluoroethane (C2Br2F4) concentration",
+   "has_qc": true
+  },
+  "qc_C2Br2F4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Dibromotetrafluoroethane (C2Br2F4) concentration",
+   "has_qc": false
+  },
+  "C2H2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Acetylene (C2H2) concentration",
+   "has_qc": true
+  },
+  "qc_C2H2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Acetylene (C2H2) concentration",
+   "has_qc": false
+  },
+  "C6H6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Benzene (C6H6) concentration",
+   "has_qc": true
+  },
+  "qc_C6H6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Benzene (C6H6) concentration",
+   "has_qc": false
+  },
+  "C3H8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Propane (C3H8) concentration",
+   "has_qc": true
+  },
+  "qc_C3H8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Propane (C3H8) concentration",
+   "has_qc": false
+  },
+  "C4H10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "N-Butane (C4H10) concentration",
+   "has_qc": true
+  },
+  "qc_C4H10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: N-Butane (C4H10) concentration",
+   "has_qc": false
+  },
+  "iso_C5H12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "I-Pentane (C5H12) concentration",
+   "has_qc": true
+  },
+  "qc_iso_C5H12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: I-Pentane (C5H12) concentration",
+   "has_qc": false
+  },
+  "C5H12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "N-Pentane (C5H12) concentration",
+   "has_qc": true
+  },
+  "qc_C5H12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: N-Pentane (C5H12) concentration",
+   "has_qc": false
+  },
+  "COS": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Carbonyl sulphide (COS) concentration",
+   "has_qc": true
+  },
+  "qc_COS": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Carbonyl sulphide (COS) concentration",
+   "has_qc": false
+  },
+  "C2H6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "ppt",
+   "long_name": "Ethane (C2H6) concentration",
+   "has_qc": true
+  },
+  "qc_C2H6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ethane (C2H6) concentration",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

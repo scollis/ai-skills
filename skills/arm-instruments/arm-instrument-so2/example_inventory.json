@@ -1,0 +1,352 @@
+{
+ "instrument": "so2",
+ "datastream": "bnfaosso2M1.b1",
+ "filename": "bnfaosso2M1.b1.20260908.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 27,
+ "dims": {
+  "time": 86199
+ },
+ "n_qc_vars": 1,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-09-08T00:00:00",
+  "2026-09-08T23:59:59"
+ ],
+ "global_attrs": {
+  "command_line": "aosso2corr -s bnf -f M1 --max-runtime 86400",
+  "process_version": "ingest-aosso2corr-2.4-0.el9",
+  "dod_version": "aosso2-b1-4.0",
+  "site_id": "bnf",
+  "facility_id": "M1",
+  "data_level": "b1",
+  "location_description": "Southeast U.S. in Bankhead National Forest (BNF), Bankhead National Forest, Alabama",
+  "datastream": "bnfaosso2M1.b1",
+  "serial_number": "12318428630/WD91690",
+  "sampling_interval": "1 second",
+  "doi": "10.5439/1250820"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_of_last_state_change": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time of last state change",
+   "has_qc": false
+  },
+  "so2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "ppbv",
+   "long_name": "Sulfur dioxide (SO2) mixing ratio",
+   "has_qc": true
+  },
+  "qc_so2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sulfur dioxide (SO2) mixing ratio",
+   "has_qc": false
+  },
+  "internal_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Internal instrument temperature",
+   "has_qc": false
+  },
+  "bench_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Bench temperature",
+   "has_qc": false
+  },
+  "bench_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "mmHg",
+   "long_name": "Bench pressure",
+   "has_qc": false
+  },
+  "flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Sample flow",
+   "has_qc": false
+  },
+  "pmt_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "PMT voltage",
+   "has_qc": false
+  },
+  "lamp_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Lamp voltage",
+   "has_qc": false
+  },
+  "lamp_intensity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Measure of the current lamp intensity as a percentage of the nominal maximum",
+   "has_qc": false
+  },
+  "perm_oven_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Permeation oven temperature",
+   "has_qc": false
+  },
+  "perm_body_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Permeation body temperature",
+   "has_qc": false
+  },
+  "pump_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "mmHg",
+   "long_name": "Pump pressure",
+   "has_qc": false
+  },
+  "averaging_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Instrument averaging time",
+   "has_qc": false
+  },
+  "so2_background_correction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "ppbv",
+   "long_name": "Instrument SO2 background correction",
+   "has_qc": false
+  },
+  "low_range_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "ppbv",
+   "long_name": "Low range concentration",
+   "has_qc": false
+  },
+  "high_range_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "ppbv",
+   "long_name": "High range concentration",
+   "has_qc": false
+  },
+  "auto_range": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Indicates which concentration is being used in Auto Range Mode",
+   "has_qc": false
+  },
+  "gas_mode_state": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Instrument sample state",
+   "has_qc": false
+  },
+  "so2_flags": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "SO2 flags",
+   "has_qc": false
+  },
+  "set_point_for_MFC": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "cm^3/min",
+   "long_name": "Set point for span calibration mass flow controller",
+   "has_qc": false
+  },
+  "so2_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "float32",
+   "units": "ppbv",
+   "long_name": "Offset used in SO2 correction",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86199
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

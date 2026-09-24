@@ -1,0 +1,423 @@
+{
+ "instrument": "gvr",
+ "datastream": "nsagvrC1.c1",
+ "filename": "nsagvrC1.c1.20240703.000011.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 33,
+ "dims": {
+  "time": 4881
+ },
+ "n_qc_vars": 10,
+ "time_resolution_s": 17.0,
+ "time_span": [
+  "2024-07-03T00:00:11",
+  "2024-07-03T23:59:51"
+ ],
+ "global_attrs": {
+  "process_version": "vap-gvrpwv-4.0-0.el7",
+  "command_line": "gvrpwv -s nsa -f C1 -b 20240703 -e 20240704",
+  "dod_version": "gvr-c1-1.1",
+  "site_id": "nsa",
+  "facility_id": "C1: Barrow, Alaska",
+  "data_level": "c1",
+  "serial_number": "0001",
+  "sampling_interval": "variable (approximately 6 to 12 seconds)",
+  "averaging_interval": "None",
+  "datastream": "nsagvrC1.c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Time offset from midnight",
+   "has_qc": false
+  },
+  "tbsky1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "183.3 +/- 1 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_tbsky1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 183.3 +/- 1 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tbsky3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "183.3 +/- 3 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_tbsky3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 183.3 +/- 3 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tbsky7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "183.3 +/- 7 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_tbsky7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 183.3 +/- 7 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tbsky14": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "183.3 +/- 14 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_tbsky14": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 183.3 +/- 14 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tbsky1u": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Unfiltered 183.3 +/- 1 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tbsky3u": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Unfiltered 183.3 +/- 3 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tbsky7u": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Unfiltered183.3 +/- 7 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tbsky14u": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Unfiltered 183.3 +/- 14 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "temp_hot1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Temperature of the hot absorber at the tip",
+   "has_qc": true
+  },
+  "qc_temp_hot1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature of the hot absorber at the tip",
+   "has_qc": false
+  },
+  "temp_hot2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Temperature of the hot absorber at the center",
+   "has_qc": true
+  },
+  "qc_temp_hot2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature of the hot absorber at the center",
+   "has_qc": false
+  },
+  "temp_warm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Temperature of the warm absorber",
+   "has_qc": true
+  },
+  "qc_temp_warm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature of the warm absorber",
+   "has_qc": false
+  },
+  "temp_ext": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Temperature of external sensor",
+   "has_qc": false
+  },
+  "temp_component_plate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Physical temperature of component plate",
+   "has_qc": false
+  },
+  "temp_antenna_feed_horn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Physical temperature of antenna feed horn",
+   "has_qc": false
+  },
+  "temp_thermoelectric_cooling_plate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Physical temperature of thermoelectric cooling plate",
+   "has_qc": false
+  },
+  "temp_noise_diode": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Physical temperature of noise diode",
+   "has_qc": false
+  },
+  "pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Precipitable water vapor retrieved using a Neural Network algorithm",
+   "has_qc": true
+  },
+  "qc_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Precipitable water vapor retrieved using a Neural Network algorithm",
+   "has_qc": false
+  },
+  "pwv_error": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Estimated 1-sigma uncertainty in precipitable water vapor retrieval",
+   "has_qc": true
+  },
+  "qc_pwv_error": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Estimated 1-sigma uncertainty in precipitable water vapor retrieval",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4881
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  }
+ }
+}

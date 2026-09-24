@@ -1,0 +1,520 @@
+{
+ "instrument": "mwr",
+ "datastream": "sgpmwrlosC1.b1",
+ "filename": "sgpmwrlosC1.b1.20260922.000000.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 41,
+ "dims": {
+  "time": 3797
+ },
+ "n_qc_vars": 15,
+ "time_resolution_s": 20.0,
+ "time_span": [
+  "2026-09-22T00:00:00",
+  "2026-09-22T23:59:41"
+ ],
+ "global_attrs": {
+  "command_line": "mwr_ingest -s sgp -f C1 --max-runtime 86400",
+  "process_version": "ingest-mwr-2.3-0.el9",
+  "ingest_software": "ingest-mwr-2.3-0.el9",
+  "dod_version": "mwrlos-b1-2.3",
+  "site_id": "sgp",
+  "facility_id": "C1: Lamont, Oklahoma",
+  "data_level": "b1",
+  "input_source": "/data/collection/sgp/sgpmwrC1.00/10_20260921_230013.dat",
+  "serial_number": "10",
+  "sampling_interval": "20 seconds",
+  "datastream": "sgpmwrlosC1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Time offset from midnight",
+   "has_qc": false
+  },
+  "tknd": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Noise diode mount temperature",
+   "has_qc": true
+  },
+  "qc_tknd": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Noise diode mount temperature",
+   "has_qc": false
+  },
+  "tkxc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Mixer kinetic (physical) temperature",
+   "has_qc": true
+  },
+  "qc_tkxc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mixer kinetic (physical) temperature",
+   "has_qc": false
+  },
+  "tkbb": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Blackbody kinetic temperature",
+   "has_qc": true
+  },
+  "qc_tkbb": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Blackbody kinetic temperature",
+   "has_qc": false
+  },
+  "tkair": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ambient temperature",
+   "has_qc": true
+  },
+  "qc_tkair": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ambient temperature",
+   "has_qc": false
+  },
+  "tnd23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Noise injection temp at 23.8 GHz adjusted to tkbb",
+   "has_qc": false
+  },
+  "bb23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "23.8 GHz Blackbody signal",
+   "has_qc": true
+  },
+  "qc_bb23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 23.8 GHz Blackbody signal",
+   "has_qc": false
+  },
+  "bbn23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "23.8 GHz blackbody+noise injection signal",
+   "has_qc": true
+  },
+  "qc_bbn23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 23.8 GHz blackbody+noise injection signal",
+   "has_qc": false
+  },
+  "sky23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "23.8 GHz sky signal",
+   "has_qc": true
+  },
+  "qc_sky23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 23.8 GHz sky signal",
+   "has_qc": false
+  },
+  "tbsky23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "23.8 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_tbsky23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 23.8 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tnd31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Noise injection temp at 31.4 GHz adjusted to tkbb",
+   "has_qc": false
+  },
+  "bb31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "31.4 GHz Blackbody signal",
+   "has_qc": true
+  },
+  "qc_bb31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 31.4 GHz Blackbody signal",
+   "has_qc": false
+  },
+  "bbn31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "31.4 GHz blackbody+noise injection signal",
+   "has_qc": true
+  },
+  "qc_bbn31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 31.4 GHz blackbody+noise injection signal",
+   "has_qc": false
+  },
+  "sky31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "31.4 GHz sky signal",
+   "has_qc": true
+  },
+  "qc_sky31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 31.4 GHz sky signal",
+   "has_qc": false
+  },
+  "tbsky31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "31.4 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_tbsky31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 31.4 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "vap": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Total water vapor along LOS path",
+   "has_qc": true
+  },
+  "qc_vap": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total water vapor along LOS path",
+   "has_qc": false
+  },
+  "liq": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Total liquid water along LOS path",
+   "has_qc": true
+  },
+  "qc_liq": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total liquid water along LOS path",
+   "has_qc": false
+  },
+  "wet_window": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Water on Teflon window (1=WET, 0=DRY)",
+   "has_qc": false
+  },
+  "tnd_nom23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Noise injection temp at nominal temperature at 23.8 GHz",
+   "has_qc": false
+  },
+  "tnd_nom31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Noise injection temp at nominal temperature at 31.4 GHz",
+   "has_qc": false
+  },
+  "tc23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K/K",
+   "long_name": "Temperature correction coefficient at 23.8 GHz",
+   "has_qc": false
+  },
+  "tc31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "float32",
+   "units": "K/K",
+   "long_name": "Temperature correction coefficient at 31.4 GHz",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3797
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  }
+ }
+}

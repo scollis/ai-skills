@@ -1,0 +1,461 @@
+{
+ "instrument": "co2flx",
+ "datastream": "sgpco2flxwindC1.b1",
+ "filename": "sgpco2flxwindC1.b1.20260917.001500.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 36,
+ "dims": {
+  "time": 48,
+  "bound": 2
+ },
+ "n_qc_vars": 6,
+ "time_resolution_s": 1800.0,
+ "time_span": [
+  "2026-09-17T00:15:00",
+  "2026-09-17T23:45:00"
+ ],
+ "global_attrs": {
+  "command_line": "co2flxwind -s sgp -f C1 --max-runtime 86400",
+  "process_version": "ingest-co2flxwind-1.0-0.el9",
+  "dod_version": "co2flxwind-b1-1.0",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpco2flxwindC1.b1",
+  "doi": "10.5439/1365398"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    48,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "vertical_wind_4m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind component along the w anemometer axis at 4m",
+   "has_qc": false
+  },
+  "wind_speed_4m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean wind speed at 4m",
+   "has_qc": true
+  },
+  "qc_wind_speed_4m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean wind speed at 4m",
+   "has_qc": false
+  },
+  "max_wind_speed_4m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Maximum instantaneous wind speed at 4m",
+   "has_qc": false
+  },
+  "wind_direction_4m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Direction from which the wind blows, with respect to Geographic or Magnetic north, at 4m",
+   "has_qc": true
+  },
+  "qc_wind_direction_4m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Direction from which the wind blows, with respect to Geographic or Magnetic north, at 4m",
+   "has_qc": false
+  },
+  "wind_speed_variance_4m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of wind speed at 4m",
+   "has_qc": false
+  },
+  "cross_wind_speed_variance_4m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of cross wind speed at 4m",
+   "has_qc": false
+  },
+  "vertical_wind_variance_4m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of vertical wind at 4m",
+   "has_qc": false
+  },
+  "wind_direction_variance_4m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of wind direction at 4m",
+   "has_qc": false
+  },
+  "vertical_wind_25m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind component along the w anemometer axis at 25m",
+   "has_qc": false
+  },
+  "wind_speed_25m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean wind speed at 25m",
+   "has_qc": true
+  },
+  "qc_wind_speed_25m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean wind speed at 25m",
+   "has_qc": false
+  },
+  "max_wind_speed_25m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Maximum instantaneous wind speed at 25m",
+   "has_qc": false
+  },
+  "wind_direction_25m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Direction from which the wind blows, with respect to Geographic or Magnetic north, at 25m",
+   "has_qc": true
+  },
+  "qc_wind_direction_25m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Direction from which the wind blows, with respect to Geographic or Magnetic north, at 25m",
+   "has_qc": false
+  },
+  "wind_speed_variance_25m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of wind speed at 25m",
+   "has_qc": false
+  },
+  "cross_wind_speed_variance_25m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of cross wind speed at 25m",
+   "has_qc": false
+  },
+  "vertical_wind_variance_25m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of vertical wind at 25m",
+   "has_qc": false
+  },
+  "wind_direction_variance_25m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of wind direction at 25m",
+   "has_qc": false
+  },
+  "vertical_wind_60m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind component along the w anemometer axis at 60m",
+   "has_qc": false
+  },
+  "wind_speed_60m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean wind speed at 60m",
+   "has_qc": true
+  },
+  "qc_wind_speed_60m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean wind speed at 60m",
+   "has_qc": false
+  },
+  "max_wind_speed_60m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Maximum instantaneous wind speed at 60m",
+   "has_qc": false
+  },
+  "wind_direction_60m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Direction from which the wind blows, with respect to Geographic or Magnetic north,  at 60m",
+   "has_qc": true
+  },
+  "qc_wind_direction_60m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Direction from which the wind blows, with respect to Geographic or Magnetic north,  at 60m",
+   "has_qc": false
+  },
+  "wind_speed_variance_60m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of wind speed at 60m",
+   "has_qc": false
+  },
+  "cross_wind_speed_variance_60m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of cross wind speed at 60m",
+   "has_qc": false
+  },
+  "vertical_wind_variance_60m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of vertical wind at 60m",
+   "has_qc": false
+  },
+  "wind_direction_variance_60m": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of wind direction at 60m",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

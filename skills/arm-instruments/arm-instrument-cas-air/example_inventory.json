@@ -1,0 +1,672 @@
+{
+ "instrument": "cas-air",
+ "datastream": "enaaafcasF1.b1",
+ "filename": "enaaafcasF1.b1.20180218.122850.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 51,
+ "dims": {
+  "time": 15168,
+  "bound": 2,
+  "particle_diameter": 30
+ },
+ "n_qc_vars": 5,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2018-02-18T12:28:50",
+  "2018-02-18T16:41:37"
+ ],
+ "global_attrs": {
+  "command_line": "aafcascorr_ingest -s ena -f F1 -b 20180218 -e 20180220 -R",
+  "process_version": "ingest-aafcascorr-1.0-1.el7",
+  "dod_version": "aafcas-b1-1.0",
+  "site_id": "ena",
+  "facility_id": "F1",
+  "data_level": "b1",
+  "location_description": "Eastern North Atlantic (ENA), Gulfstream 159 (\"G1\") Aircraft",
+  "datastream": "enaaafcasF1.b1",
+  "doi": "10.5439/1438488"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    15168,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "particle_diameter_bounds": {
+   "dims": [
+    "particle_diameter",
+    "bound"
+   ],
+   "shape": [
+    30,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Particle_diameter cell bounds",
+   "has_qc": false
+  },
+  "laser_current": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "mA",
+   "long_name": "Laser current",
+   "has_qc": true
+  },
+  "qc_laser_current": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Laser current",
+   "has_qc": false
+  },
+  "laser_pd": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Laser photodiode",
+   "has_qc": false
+  },
+  "forward_block_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Forward block temperature",
+   "has_qc": false
+  },
+  "back_block_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Back block temperature",
+   "has_qc": false
+  },
+  "sizer_tec_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Sizer thermoelectric cooler temperature",
+   "has_qc": false
+  },
+  "qualifier_tec_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Qualifier thermoelectric cooler temperature",
+   "has_qc": false
+  },
+  "s_dpol_tec_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "S dual polarization thermoelectric cooler temperature",
+   "has_qc": false
+  },
+  "p_back_tec_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "P back detector thermoelectric cooler temperature",
+   "has_qc": false
+  },
+  "sizer_apd_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Sizer avalanche photodiode voltage",
+   "has_qc": false
+  },
+  "qualifer_apd_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Qualifier avalanche photodiode voltage",
+   "has_qc": false
+  },
+  "s_apd_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "S avalanche photodiode voltage",
+   "has_qc": false
+  },
+  "p_apd_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "P avalanche photodiode voltage",
+   "has_qc": false
+  },
+  "valid_counts": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Valid counts",
+   "has_qc": false
+  },
+  "total_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count/cm^3",
+   "long_name": "Total concentration",
+   "has_qc": false
+  },
+  "num_pbp_packets": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of particle by particle packets",
+   "has_qc": false
+  },
+  "sizer_hi_baseline": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "High baseline of light scattered from particles",
+   "has_qc": false
+  },
+  "sizer_hi_bandwidth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "High bandwidth of light scattered from particles",
+   "has_qc": false
+  },
+  "sizer_low_baseline": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Low baseline of light scattered from particles",
+   "has_qc": false
+  },
+  "sizer_low_bandwidth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Low bandwidth of light scattered from particles",
+   "has_qc": false
+  },
+  "qual_hi_baseline": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "High baseline of qualified particles within the depth-of-field of the instrument",
+   "has_qc": false
+  },
+  "qual_hi_bandwidth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "High bandwidth of qualified particles within the depth-of-field of the instrument",
+   "has_qc": false
+  },
+  "qual_low_baseline": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Low baseline of qualified particles within the depth-of-field of the instrument",
+   "has_qc": false
+  },
+  "qual_low_bandwidth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Low bandwidth of qualified particles within the depth-of-field of the instrument",
+   "has_qc": false
+  },
+  "s_hi_baseline": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "High baseline of intensity of light back scattered parallel to laser beam",
+   "has_qc": false
+  },
+  "s_hi_bandwidth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "High bandwidth of intensity of light back scattered parallel to laser beam",
+   "has_qc": false
+  },
+  "s_low_baseline": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Low baseline of intensity of light back scattered parallel to laser beam",
+   "has_qc": false
+  },
+  "s_low_bandwidth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Low bandwidth of intensity of light back scattered parallel to laser beam",
+   "has_qc": false
+  },
+  "p_hi_baseline": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "High baseline of intensity of light back scattered perpendicular to laser beam",
+   "has_qc": false
+  },
+  "p_hi_bandwidth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "High bandwidth of intensity of light back scattered perpendicular to laser beam",
+   "has_qc": false
+  },
+  "p_low_baseline": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Low bandwidth of intensity of light back scattered perpendicular to laser beam",
+   "has_qc": false
+  },
+  "p_low_bandwidth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Low baseline of intensity of light back scattered perpendicular to laser beam",
+   "has_qc": false
+  },
+  "sizer_oversize": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of oversized particles from the sizer",
+   "has_qc": false
+  },
+  "qual_oversize": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of oversized particles from the qualifier",
+   "has_qc": false
+  },
+  "s_oversize": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of oversized particles based on intensity of light back scattered parallel to laser beam",
+   "has_qc": false
+  },
+  "p_oversize": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of oversized particles based on intensity of light back scattered perpendicular to laser beam",
+   "has_qc": false
+  },
+  "total_particle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Total particles",
+   "has_qc": false
+  },
+  "total_transit_time1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "ms",
+   "long_name": "Total transit time1",
+   "has_qc": false
+  },
+  "total_transit_time2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float32",
+   "units": "ms",
+   "long_name": "Total transit time2",
+   "has_qc": false
+  },
+  "counts": {
+   "dims": [
+    "time",
+    "particle_diameter"
+   ],
+   "shape": [
+    15168,
+    30
+   ],
+   "dtype": "float64",
+   "units": "count",
+   "long_name": "Particle counts",
+   "has_qc": true
+  },
+  "qc_counts": {
+   "dims": [
+    "time",
+    "particle_diameter"
+   ],
+   "shape": [
+    15168,
+    30
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Particle counts",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15168
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "particle_diameter": {
+   "dims": [
+    "particle_diameter"
+   ],
+   "shape": [
+    30
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Coordinate variable for particle_diameter",
+   "has_qc": false
+  }
+ }
+}

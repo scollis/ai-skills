@@ -1,0 +1,186 @@
+{
+ "instrument": "sodar",
+ "datastream": "anxsodarM1.b1",
+ "filename": "anxsodarM1.b1.20200529.000000.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 11,
+ "dims": {
+  "time": 48,
+  "height": 38
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 1800.0,
+ "time_span": [
+  "2020-05-29T00:00:00",
+  "2020-05-29T23:30:00"
+ ],
+ "global_attrs": {
+  "command_line": "sodar_ingest -s anx -f M1",
+  "process_version": "ingest-sodar-1.4-0.el7",
+  "dod_version": "sodar-b1-2.0",
+  "input_source": "/data/collection/anx/anxsodarM1.00/200528.mnd",
+  "site_id": "anx",
+  "facility_id": "M1",
+  "data_level": "b1",
+  "location_description": "Cold-Air Outbreaks in the Marine Boundary Layer Experiment (COMBLE), Andoy, Norway",
+  "datastream": "anxsodarM1.b1",
+  "serial_number": "unknown",
+  "sampling_interval": "variable",
+  "averaging_interval": "None"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "wind_speed": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    48,
+    38
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Horizontal wind speed",
+   "has_qc": false
+  },
+  "wind_direction": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    48,
+    38
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Horizontal wind direction",
+   "has_qc": false
+  },
+  "vertical_wind_speed": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    48,
+    38
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Vertical component of wind speed",
+   "has_qc": false
+  },
+  "vertical_wind_speed_std": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    48,
+    38
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Standard deviation of vertical component of wind speed",
+   "has_qc": false
+  },
+  "instrument_error": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    48,
+    38
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Instrument error codes",
+   "has_qc": false
+  },
+  "backscatter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    48,
+    38
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Backscatter, as total intensity of received signal, filtered and range-normalized",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    38
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Center of sodar height level",
+   "has_qc": false
+  }
+ }
+}

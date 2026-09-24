@@ -1,0 +1,413 @@
+{
+ "instrument": "sasze",
+ "datastream": "sgpsaszenirC1.a1",
+ "filename": "sgpsaszenirC1.a1.20240530.000001.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 31,
+ "dims": {
+  "time": 26770,
+  "wavelength": 256
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2024-05-30T00:00:01",
+  "2024-05-30T23:59:58"
+ ],
+ "global_attrs": {
+  "command_line": "sasze_ingest -s sgp -f C1",
+  "process_version": "ingest-sasze-1.5-0.el7",
+  "dod_version": "saszenir-a1-1.0",
+  "input_source": "/data/collection/sgp/sgpsaszeC1.00/SASZe_dual_tints_vis_1s.20240529_232717.csv",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "a1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpsaszenirC1.a1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "mio_temperature_mems": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of multi-IO box from MEMS sensor",
+   "has_qc": false
+  },
+  "mio_temperature_mems_fahr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degF",
+   "long_name": "Temperature of multi-IO box from MEMS sensor in Fahrenheit",
+   "has_qc": false
+  },
+  "mio_temperature_trh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degF",
+   "long_name": "Temperature of MIO box from TRH sensor",
+   "has_qc": false
+  },
+  "mio_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "MIO relative humidity from TRH sensor",
+   "has_qc": false
+  },
+  "collector_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Collector internal temperature from TRH sensor",
+   "has_qc": false
+  },
+  "collector_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Collector internal relative humidity from TRH sensor",
+   "has_qc": false
+  },
+  "collector_dewpoint": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Collector internal dew point",
+   "has_qc": false
+  },
+  "chiller_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Spectrometer chiller internal temperature",
+   "has_qc": false
+  },
+  "chiller_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Spectrometer chiller internal RH",
+   "has_qc": false
+  },
+  "chiller_dewpoint": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Spectrometer chiller internal dew point",
+   "has_qc": false
+  },
+  "collector_x_tilt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Collector tilt along band axis",
+   "has_qc": false
+  },
+  "collector_y_tilt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Collector tilt perpendicular to band axis",
+   "has_qc": false
+  },
+  "collector_x_tilt_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Standard deviation of collector tilt measured along band axis.",
+   "has_qc": false
+  },
+  "collector_y_tilt_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Standard deviation of collector tilt measured perpendicular to band axis.",
+   "has_qc": false
+  },
+  "band_azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Band axis orientation with respect to north",
+   "has_qc": false
+  },
+  "solar_azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Solar azimuth angle relative to north",
+   "has_qc": false
+  },
+  "solar_zenith": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Solar zenith angle relative to vertical zenith.",
+   "has_qc": false
+  },
+  "inner_band_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Inner band orientation relative to operational vertical",
+   "has_qc": false
+  },
+  "inner_band_scattering_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Scattering angle occluded by point of inner band nearest to the solar position",
+   "has_qc": false
+  },
+  "clock_ticks": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Spectrometer internal clock ticks for InGaAs NIR spectrometer",
+   "has_qc": false
+  },
+  "bench_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of avantes optical bench for InGaAs NIR spectrometer",
+   "has_qc": false
+  },
+  "ad_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of avantes AD board for InGaAs NIR spectrometer",
+   "has_qc": false
+  },
+  "integration_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float32",
+   "units": "ms",
+   "long_name": "Integration time per scan for InGaAs NIR spectrometer",
+   "has_qc": false
+  },
+  "number_of_scans": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Number of spectrometer scans averaged  for InGaAs NIR spectrometer",
+   "has_qc": false
+  },
+  "responsivity": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    256
+   ],
+   "dtype": "float32",
+   "units": "(count/ms)/(W/(m^2 um sr))",
+   "long_name": "Responsivity for InGaAs NIR spectrometer",
+   "has_qc": false
+  },
+  "zenith_radiance": {
+   "dims": [
+    "time",
+    "wavelength"
+   ],
+   "shape": [
+    26770,
+    256
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 um sr)",
+   "long_name": "Spectral zenith radiance from InGaAs NIR spectrometer",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    26770
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "wavelength": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    256
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Wavelength of NIR spectrometer pixels",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,4017 @@
+{
+ "instrument": "amc",
+ "datastream": "nsaamcC1.b1",
+ "filename": "nsaamcC1.b1.20241119.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 332,
+ "dims": {
+  "time": 48,
+  "bound": 2
+ },
+ "n_qc_vars": 161,
+ "time_resolution_s": 1800.0,
+ "time_span": [
+  "2024-11-19T00:00:00",
+  "2024-11-19T23:30:00"
+ ],
+ "global_attrs": {
+  "command_line": "amc_ingest -s nsa -f C1 -RD --max-runtie 0",
+  "process_version": "ingest-amc-1.10-0.el9",
+  "dod_version": "amc-b1-3.7",
+  "input_source": "/data/reproc/D260309.15/collection/nsa/nsaamcC1.00/AMC_NSA.20241119000000.dat",
+  "site_id": "nsa",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "North Slope of Alaska (NSA), Barrow, Alaska",
+  "datastream": "nsaamcC1.b1",
+  "serial_number": "70366",
+  "sampling_interval": "5 minutes",
+  "averaging_interval": "30 minutes",
+  "doi": "10.5439/1406260"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    48,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "batt_volt_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Minimum battery voltage in 30 minute interval",
+   "has_qc": true
+  },
+  "qc_batt_volt_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Minimum battery voltage in 30 minute interval",
+   "has_qc": false
+  },
+  "panel_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average logger panel temperature",
+   "has_qc": false
+  },
+  "panel_temp_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Standard deviation of logger panel temperature",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Average logger enclosure relative humidity",
+   "has_qc": false
+  },
+  "rh_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in logger enclosure relative humidity",
+   "has_qc": false
+  },
+  "vwc_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 1",
+   "has_qc": true
+  },
+  "qc_vwc_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 1",
+   "has_qc": false
+  },
+  "ec_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 1",
+   "has_qc": true
+  },
+  "qc_ec_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 1",
+   "has_qc": false
+  },
+  "temp_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 1",
+   "has_qc": true
+  },
+  "qc_temp_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 1",
+   "has_qc": false
+  },
+  "perm_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 1",
+   "has_qc": true
+  },
+  "qc_perm_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 1",
+   "has_qc": false
+  },
+  "period_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 1",
+   "has_qc": true
+  },
+  "qc_period_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 1",
+   "has_qc": false
+  },
+  "ratio_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 1",
+   "has_qc": true
+  },
+  "qc_ratio_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 1",
+   "has_qc": false
+  },
+  "vwc_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 2",
+   "has_qc": true
+  },
+  "qc_vwc_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 2",
+   "has_qc": false
+  },
+  "ec_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 2",
+   "has_qc": true
+  },
+  "qc_ec_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 2",
+   "has_qc": false
+  },
+  "temp_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 2",
+   "has_qc": true
+  },
+  "qc_temp_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 2",
+   "has_qc": false
+  },
+  "perm_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 2",
+   "has_qc": true
+  },
+  "qc_perm_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 2",
+   "has_qc": false
+  },
+  "period_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 2",
+   "has_qc": true
+  },
+  "qc_period_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 2",
+   "has_qc": false
+  },
+  "ratio_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 2",
+   "has_qc": true
+  },
+  "qc_ratio_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 2",
+   "has_qc": false
+  },
+  "vwc_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 3",
+   "has_qc": true
+  },
+  "qc_vwc_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 3",
+   "has_qc": false
+  },
+  "ec_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 3",
+   "has_qc": true
+  },
+  "qc_ec_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 3",
+   "has_qc": false
+  },
+  "temp_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 3",
+   "has_qc": true
+  },
+  "qc_temp_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 3",
+   "has_qc": false
+  },
+  "perm_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 3",
+   "has_qc": true
+  },
+  "qc_perm_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 3",
+   "has_qc": false
+  },
+  "period_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 3",
+   "has_qc": true
+  },
+  "qc_period_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 3",
+   "has_qc": false
+  },
+  "ratio_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 3",
+   "has_qc": true
+  },
+  "qc_ratio_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 3",
+   "has_qc": false
+  },
+  "vwc_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 4",
+   "has_qc": true
+  },
+  "qc_vwc_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 4",
+   "has_qc": false
+  },
+  "ec_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 4",
+   "has_qc": true
+  },
+  "qc_ec_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 4",
+   "has_qc": false
+  },
+  "temp_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 4",
+   "has_qc": true
+  },
+  "qc_temp_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 4",
+   "has_qc": false
+  },
+  "perm_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 4",
+   "has_qc": true
+  },
+  "qc_perm_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 4",
+   "has_qc": false
+  },
+  "period_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 4",
+   "has_qc": true
+  },
+  "qc_period_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 4",
+   "has_qc": false
+  },
+  "ratio_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 4",
+   "has_qc": true
+  },
+  "qc_ratio_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 4",
+   "has_qc": false
+  },
+  "vwc_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 5",
+   "has_qc": true
+  },
+  "qc_vwc_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 5",
+   "has_qc": false
+  },
+  "ec_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 5",
+   "has_qc": true
+  },
+  "qc_ec_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 5",
+   "has_qc": false
+  },
+  "temp_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 5",
+   "has_qc": true
+  },
+  "qc_temp_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 5",
+   "has_qc": false
+  },
+  "perm_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 5",
+   "has_qc": true
+  },
+  "qc_perm_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 5",
+   "has_qc": false
+  },
+  "period_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 5",
+   "has_qc": true
+  },
+  "qc_period_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 5",
+   "has_qc": false
+  },
+  "ratio_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 5",
+   "has_qc": true
+  },
+  "qc_ratio_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 5",
+   "has_qc": false
+  },
+  "vwc_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 6",
+   "has_qc": true
+  },
+  "qc_vwc_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 6",
+   "has_qc": false
+  },
+  "ec_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 6",
+   "has_qc": true
+  },
+  "qc_ec_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 6",
+   "has_qc": false
+  },
+  "temp_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 6",
+   "has_qc": true
+  },
+  "qc_temp_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 6",
+   "has_qc": false
+  },
+  "perm_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 6",
+   "has_qc": true
+  },
+  "qc_perm_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 6",
+   "has_qc": false
+  },
+  "period_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 6",
+   "has_qc": true
+  },
+  "qc_period_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 6",
+   "has_qc": false
+  },
+  "ratio_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 6",
+   "has_qc": true
+  },
+  "qc_ratio_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 6",
+   "has_qc": false
+  },
+  "vwc_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 7",
+   "has_qc": true
+  },
+  "qc_vwc_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 7",
+   "has_qc": false
+  },
+  "ec_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 7",
+   "has_qc": true
+  },
+  "qc_ec_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 7",
+   "has_qc": false
+  },
+  "temp_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 7",
+   "has_qc": true
+  },
+  "qc_temp_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 7",
+   "has_qc": false
+  },
+  "perm_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 7",
+   "has_qc": true
+  },
+  "qc_perm_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 7",
+   "has_qc": false
+  },
+  "period_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 7",
+   "has_qc": true
+  },
+  "qc_period_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 7",
+   "has_qc": false
+  },
+  "ratio_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 7",
+   "has_qc": true
+  },
+  "qc_ratio_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 7",
+   "has_qc": false
+  },
+  "vwc_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 8",
+   "has_qc": true
+  },
+  "qc_vwc_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 8",
+   "has_qc": false
+  },
+  "ec_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 8",
+   "has_qc": true
+  },
+  "qc_ec_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 8",
+   "has_qc": false
+  },
+  "temp_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 8",
+   "has_qc": true
+  },
+  "qc_temp_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 8",
+   "has_qc": false
+  },
+  "perm_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 8",
+   "has_qc": true
+  },
+  "qc_perm_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 8",
+   "has_qc": false
+  },
+  "period_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 8",
+   "has_qc": true
+  },
+  "qc_period_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 8",
+   "has_qc": false
+  },
+  "ratio_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 8",
+   "has_qc": true
+  },
+  "qc_ratio_8": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 8",
+   "has_qc": false
+  },
+  "vwc_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 9",
+   "has_qc": true
+  },
+  "qc_vwc_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 9",
+   "has_qc": false
+  },
+  "ec_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 9",
+   "has_qc": true
+  },
+  "qc_ec_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 9",
+   "has_qc": false
+  },
+  "temp_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 9",
+   "has_qc": true
+  },
+  "qc_temp_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 9",
+   "has_qc": false
+  },
+  "perm_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 9",
+   "has_qc": true
+  },
+  "qc_perm_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 9",
+   "has_qc": false
+  },
+  "period_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 9",
+   "has_qc": true
+  },
+  "qc_period_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 9",
+   "has_qc": false
+  },
+  "ratio_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 9",
+   "has_qc": true
+  },
+  "qc_ratio_9": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 9",
+   "has_qc": false
+  },
+  "vwc_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 10",
+   "has_qc": true
+  },
+  "qc_vwc_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 10",
+   "has_qc": false
+  },
+  "ec_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 10",
+   "has_qc": true
+  },
+  "qc_ec_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 10",
+   "has_qc": false
+  },
+  "temp_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 10",
+   "has_qc": true
+  },
+  "qc_temp_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 10",
+   "has_qc": false
+  },
+  "perm_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 10",
+   "has_qc": true
+  },
+  "qc_perm_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 10",
+   "has_qc": false
+  },
+  "period_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 10",
+   "has_qc": true
+  },
+  "qc_period_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 10",
+   "has_qc": false
+  },
+  "ratio_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 10",
+   "has_qc": true
+  },
+  "qc_ratio_10": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 10",
+   "has_qc": false
+  },
+  "vwc_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 11",
+   "has_qc": true
+  },
+  "qc_vwc_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 11",
+   "has_qc": false
+  },
+  "ec_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 11",
+   "has_qc": true
+  },
+  "qc_ec_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 11",
+   "has_qc": false
+  },
+  "temp_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 11",
+   "has_qc": true
+  },
+  "qc_temp_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 11",
+   "has_qc": false
+  },
+  "perm_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 11",
+   "has_qc": true
+  },
+  "qc_perm_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 11",
+   "has_qc": false
+  },
+  "period_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 11",
+   "has_qc": true
+  },
+  "qc_period_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 11",
+   "has_qc": false
+  },
+  "ratio_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 11",
+   "has_qc": true
+  },
+  "qc_ratio_11": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 11",
+   "has_qc": false
+  },
+  "vwc_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average volumetric water content sensor 12",
+   "has_qc": true
+  },
+  "qc_vwc_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average volumetric water content sensor 12",
+   "has_qc": false
+  },
+  "ec_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "dS/m",
+   "long_name": "Average bulk soil electrical conductivity sensor 12",
+   "has_qc": true
+  },
+  "qc_ec_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil electrical conductivity sensor 12",
+   "has_qc": false
+  },
+  "temp_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average soil temperature sensor 12",
+   "has_qc": true
+  },
+  "qc_temp_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average soil temperature sensor 12",
+   "has_qc": false
+  },
+  "perm_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average bulk soil relative dielectric permittivity sensor 12",
+   "has_qc": true
+  },
+  "qc_perm_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average bulk soil relative dielectric permittivity sensor 12",
+   "has_qc": false
+  },
+  "period_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Average signal oscillation period sensor 12",
+   "has_qc": true
+  },
+  "qc_period_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average signal oscillation period sensor 12",
+   "has_qc": false
+  },
+  "ratio_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Average voltage ratio sensor 12",
+   "has_qc": true
+  },
+  "qc_ratio_12": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average voltage ratio sensor 12",
+   "has_qc": false
+  },
+  "vwc_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 1",
+   "has_qc": true
+  },
+  "qc_vwc_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 1",
+   "has_qc": false
+  },
+  "ec_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 1",
+   "has_qc": true
+  },
+  "qc_ec_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 1",
+   "has_qc": false
+  },
+  "temp_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 1",
+   "has_qc": true
+  },
+  "qc_temp_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 1",
+   "has_qc": false
+  },
+  "perm_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 1",
+   "has_qc": true
+  },
+  "qc_perm_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 1",
+   "has_qc": false
+  },
+  "period_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 1",
+   "has_qc": true
+  },
+  "qc_period_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 1",
+   "has_qc": false
+  },
+  "ratio_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 1",
+   "has_qc": true
+  },
+  "qc_ratio_1_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 1",
+   "has_qc": false
+  },
+  "vwc_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 2",
+   "has_qc": true
+  },
+  "qc_vwc_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 2",
+   "has_qc": false
+  },
+  "ec_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 2",
+   "has_qc": true
+  },
+  "qc_ec_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 2",
+   "has_qc": false
+  },
+  "temp_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 2",
+   "has_qc": true
+  },
+  "qc_temp_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 2",
+   "has_qc": false
+  },
+  "perm_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 2",
+   "has_qc": true
+  },
+  "qc_perm_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 2",
+   "has_qc": false
+  },
+  "period_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 2",
+   "has_qc": true
+  },
+  "qc_period_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 2",
+   "has_qc": false
+  },
+  "ratio_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 2",
+   "has_qc": true
+  },
+  "qc_ratio_2_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 2",
+   "has_qc": false
+  },
+  "vwc_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 3",
+   "has_qc": true
+  },
+  "qc_vwc_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 3",
+   "has_qc": false
+  },
+  "ec_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 3",
+   "has_qc": true
+  },
+  "qc_ec_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 3",
+   "has_qc": false
+  },
+  "temp_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 3",
+   "has_qc": true
+  },
+  "qc_temp_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 3",
+   "has_qc": false
+  },
+  "perm_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 3",
+   "has_qc": true
+  },
+  "qc_perm_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 3",
+   "has_qc": false
+  },
+  "period_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 3",
+   "has_qc": true
+  },
+  "qc_period_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 3",
+   "has_qc": false
+  },
+  "ratio_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 3",
+   "has_qc": true
+  },
+  "qc_ratio_3_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 3",
+   "has_qc": false
+  },
+  "vwc_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 4",
+   "has_qc": true
+  },
+  "qc_vwc_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 4",
+   "has_qc": false
+  },
+  "ec_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 4",
+   "has_qc": true
+  },
+  "qc_ec_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 4",
+   "has_qc": false
+  },
+  "temp_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 4",
+   "has_qc": true
+  },
+  "qc_temp_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 4",
+   "has_qc": false
+  },
+  "perm_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 4",
+   "has_qc": true
+  },
+  "qc_perm_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 4",
+   "has_qc": false
+  },
+  "period_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 4",
+   "has_qc": true
+  },
+  "qc_period_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 4",
+   "has_qc": false
+  },
+  "ratio_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 4",
+   "has_qc": true
+  },
+  "qc_ratio_4_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 4",
+   "has_qc": false
+  },
+  "vwc_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 5",
+   "has_qc": true
+  },
+  "qc_vwc_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 5",
+   "has_qc": false
+  },
+  "ec_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 5",
+   "has_qc": true
+  },
+  "qc_ec_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 5",
+   "has_qc": false
+  },
+  "temp_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 5",
+   "has_qc": true
+  },
+  "qc_temp_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 5",
+   "has_qc": false
+  },
+  "perm_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 5",
+   "has_qc": true
+  },
+  "qc_perm_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 5",
+   "has_qc": false
+  },
+  "period_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 5",
+   "has_qc": true
+  },
+  "qc_period_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 5",
+   "has_qc": false
+  },
+  "ratio_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 5",
+   "has_qc": true
+  },
+  "qc_ratio_5_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 5",
+   "has_qc": false
+  },
+  "vwc_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 6",
+   "has_qc": true
+  },
+  "qc_vwc_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 6",
+   "has_qc": false
+  },
+  "ec_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 6",
+   "has_qc": true
+  },
+  "qc_ec_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 6",
+   "has_qc": false
+  },
+  "temp_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 6",
+   "has_qc": true
+  },
+  "qc_temp_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 6",
+   "has_qc": false
+  },
+  "perm_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 6",
+   "has_qc": true
+  },
+  "qc_perm_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 6",
+   "has_qc": false
+  },
+  "period_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 6",
+   "has_qc": true
+  },
+  "qc_period_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 6",
+   "has_qc": false
+  },
+  "ratio_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 6",
+   "has_qc": true
+  },
+  "qc_ratio_6_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 6",
+   "has_qc": false
+  },
+  "vwc_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 7",
+   "has_qc": true
+  },
+  "qc_vwc_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 7",
+   "has_qc": false
+  },
+  "ec_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 7",
+   "has_qc": true
+  },
+  "qc_ec_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 7",
+   "has_qc": false
+  },
+  "temp_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 7",
+   "has_qc": true
+  },
+  "qc_temp_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 7",
+   "has_qc": false
+  },
+  "perm_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 7",
+   "has_qc": true
+  },
+  "qc_perm_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 7",
+   "has_qc": false
+  },
+  "period_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 7",
+   "has_qc": true
+  },
+  "qc_period_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 7",
+   "has_qc": false
+  },
+  "ratio_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 7",
+   "has_qc": true
+  },
+  "qc_ratio_7_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 7",
+   "has_qc": false
+  },
+  "vwc_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 8",
+   "has_qc": true
+  },
+  "qc_vwc_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 8",
+   "has_qc": false
+  },
+  "ec_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 8",
+   "has_qc": true
+  },
+  "qc_ec_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 8",
+   "has_qc": false
+  },
+  "temp_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 8",
+   "has_qc": true
+  },
+  "qc_temp_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 8",
+   "has_qc": false
+  },
+  "perm_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 8",
+   "has_qc": true
+  },
+  "qc_perm_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 8",
+   "has_qc": false
+  },
+  "period_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 8",
+   "has_qc": true
+  },
+  "qc_period_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 8",
+   "has_qc": false
+  },
+  "ratio_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 8",
+   "has_qc": true
+  },
+  "qc_ratio_8_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 8",
+   "has_qc": false
+  },
+  "vwc_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 9",
+   "has_qc": true
+  },
+  "qc_vwc_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 9",
+   "has_qc": false
+  },
+  "ec_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 9",
+   "has_qc": true
+  },
+  "qc_ec_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 9",
+   "has_qc": false
+  },
+  "temp_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 9",
+   "has_qc": true
+  },
+  "qc_temp_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 9",
+   "has_qc": false
+  },
+  "perm_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 9",
+   "has_qc": true
+  },
+  "qc_perm_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 9",
+   "has_qc": false
+  },
+  "period_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 9",
+   "has_qc": true
+  },
+  "qc_period_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 9",
+   "has_qc": false
+  },
+  "ratio_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 9",
+   "has_qc": true
+  },
+  "qc_ratio_9_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 9",
+   "has_qc": false
+  },
+  "vwc_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 10",
+   "has_qc": true
+  },
+  "qc_vwc_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 10",
+   "has_qc": false
+  },
+  "ec_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 10",
+   "has_qc": true
+  },
+  "qc_ec_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 10",
+   "has_qc": false
+  },
+  "temp_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 10",
+   "has_qc": true
+  },
+  "qc_temp_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 10",
+   "has_qc": false
+  },
+  "perm_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 10",
+   "has_qc": true
+  },
+  "qc_perm_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 10",
+   "has_qc": false
+  },
+  "period_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 10",
+   "has_qc": true
+  },
+  "qc_period_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 10",
+   "has_qc": false
+  },
+  "ratio_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 10",
+   "has_qc": true
+  },
+  "qc_ratio_10_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 10",
+   "has_qc": false
+  },
+  "vwc_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 11",
+   "has_qc": true
+  },
+  "qc_vwc_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 11",
+   "has_qc": false
+  },
+  "ec_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 11",
+   "has_qc": true
+  },
+  "qc_ec_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 11",
+   "has_qc": false
+  },
+  "temp_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 11",
+   "has_qc": true
+  },
+  "qc_temp_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 11",
+   "has_qc": false
+  },
+  "perm_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 11",
+   "has_qc": true
+  },
+  "qc_perm_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 11",
+   "has_qc": false
+  },
+  "period_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 11",
+   "has_qc": true
+  },
+  "qc_period_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 11",
+   "has_qc": false
+  },
+  "ratio_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 11",
+   "has_qc": true
+  },
+  "qc_ratio_11_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 11",
+   "has_qc": false
+  },
+  "vwc_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in volumetric water content sensor 12",
+   "has_qc": true
+  },
+  "qc_vwc_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in volumetric water content sensor 12",
+   "has_qc": false
+  },
+  "ec_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil electrical conductivity sensor 12",
+   "has_qc": true
+  },
+  "qc_ec_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil electrical conductivity sensor 12",
+   "has_qc": false
+  },
+  "temp_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in soil temperature sensor 12",
+   "has_qc": true
+  },
+  "qc_temp_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in soil temperature sensor 12",
+   "has_qc": false
+  },
+  "perm_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in bulk soil relative dielectric permittivity sensor 12",
+   "has_qc": true
+  },
+  "qc_perm_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in bulk soil relative dielectric permittivity sensor 12",
+   "has_qc": false
+  },
+  "period_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in signal oscillation period sensor 12",
+   "has_qc": true
+  },
+  "qc_period_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in signal oscillation period sensor 12",
+   "has_qc": false
+  },
+  "ratio_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation in voltage ratio sensor 12",
+   "has_qc": true
+  },
+  "qc_ratio_12_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation in voltage ratio sensor 12",
+   "has_qc": false
+  },
+  "par_inc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "umol/m^2/s",
+   "long_name": "Average incident PAR",
+   "has_qc": true
+  },
+  "qc_par_inc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average incident PAR",
+   "has_qc": false
+  },
+  "par_inc_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation incident PAR",
+   "has_qc": true
+  },
+  "qc_par_inc_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation incident PAR",
+   "has_qc": false
+  },
+  "par_ref": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "umol/m^2/s",
+   "long_name": "Average reflected PAR",
+   "has_qc": true
+  },
+  "qc_par_ref": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average reflected PAR",
+   "has_qc": false
+  },
+  "par_ref_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation reflected PAR",
+   "has_qc": true
+  },
+  "qc_par_ref_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation reflected PAR",
+   "has_qc": false
+  },
+  "vwc_1_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 1",
+   "has_qc": true
+  },
+  "qc_vwc_1_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 1",
+   "has_qc": false
+  },
+  "vwc_2_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 2",
+   "has_qc": true
+  },
+  "qc_vwc_2_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 2",
+   "has_qc": false
+  },
+  "vwc_3_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 3",
+   "has_qc": true
+  },
+  "qc_vwc_3_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 3",
+   "has_qc": false
+  },
+  "vwc_4_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 4",
+   "has_qc": true
+  },
+  "qc_vwc_4_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 4",
+   "has_qc": false
+  },
+  "vwc_5_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 5",
+   "has_qc": true
+  },
+  "qc_vwc_5_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 5",
+   "has_qc": false
+  },
+  "vwc_6_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 6",
+   "has_qc": true
+  },
+  "qc_vwc_6_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 6",
+   "has_qc": false
+  },
+  "vwc_7_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 7",
+   "has_qc": true
+  },
+  "qc_vwc_7_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 7",
+   "has_qc": false
+  },
+  "vwc_8_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 8",
+   "has_qc": true
+  },
+  "qc_vwc_8_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 8",
+   "has_qc": false
+  },
+  "vwc_9_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 9",
+   "has_qc": true
+  },
+  "qc_vwc_9_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 9",
+   "has_qc": false
+  },
+  "vwc_10_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 10",
+   "has_qc": true
+  },
+  "qc_vwc_10_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 10",
+   "has_qc": false
+  },
+  "vwc_11_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 11",
+   "has_qc": true
+  },
+  "qc_vwc_11_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 11",
+   "has_qc": false
+  },
+  "vwc_12_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calibrated soil volumetric water content sensor 12",
+   "has_qc": true
+  },
+  "qc_vwc_12_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calibrated soil volumetric water content sensor 12",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

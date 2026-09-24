@@ -1,0 +1,921 @@
+{
+ "instrument": "sirs",
+ "datastream": "sgpsirsC1.b1",
+ "filename": "sgpsirsC1.b1.20200523.000000.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 74,
+ "dims": {
+  "time": 1440,
+  "bound": 2
+ },
+ "n_qc_vars": 25,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2020-05-23T00:00:00",
+  "2020-05-23T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "sirs_ingest -n sirs -s sgp -f C1",
+  "process_version": "ingest-sirs-12.6-0.el7",
+  "dod_version": "sirs-b1-3.0",
+  "input_source": "/data/collection/sgp/sgpsirsC1.00/SIRS_Table213.20200523000000.dat",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpsirsC1.b1",
+  "serial_number": "PIR-UIR:       30827F3\nPIR1-DIR:      30783F3\nPIR2-DIR:      30344F3\nDiffuse PSP:   33235F3\nPSP-US:        30943F3\nNIP:           30717E6\nPSP-DS:        20386F3\n",
+  "sampling_interval": "1 second",
+  "averaging_interval": "60 seconds",
+  "doi": "10.5439/1475460"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "up_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling longwave hemispheric irradiance, pyrgeometer",
+   "has_qc": true
+  },
+  "qc_up_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling longwave hemispheric irradiance, pyrgeometer",
+   "has_qc": false
+  },
+  "down_long_hemisp_shaded": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave hemispheric irradiance, shaded pyrgeometer",
+   "has_qc": true
+  },
+  "qc_down_long_hemisp_shaded": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling longwave hemispheric irradiance, shaded pyrgeometer",
+   "has_qc": false
+  },
+  "down_long_hemisp2_shaded": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave hemispheric irradiance, shaded pyrgeometer 2",
+   "has_qc": true
+  },
+  "qc_down_long_hemisp2_shaded": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling longwave hemispheric irradiance, shaded pyrgeometer 2",
+   "has_qc": false
+  },
+  "down_short_diffuse_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling shortwave diffuse hemispheric irradiance, pyranometer",
+   "has_qc": true
+  },
+  "qc_down_short_diffuse_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling shortwave diffuse hemispheric irradiance, pyranometer",
+   "has_qc": false
+  },
+  "up_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling shortwave hemispheric irradiance, pyranometer",
+   "has_qc": true
+  },
+  "qc_up_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling shortwave hemispheric irradiance, pyranometer",
+   "has_qc": false
+  },
+  "short_direct_normal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Shortwave direct normal irradiance, pyrheliometer",
+   "has_qc": true
+  },
+  "qc_short_direct_normal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Shortwave direct normal irradiance, pyrheliometer",
+   "has_qc": false
+  },
+  "down_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling shortwave hemispheric irradiance, pyranometer",
+   "has_qc": true
+  },
+  "qc_down_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling shortwave hemispheric irradiance, pyranometer",
+   "has_qc": false
+  },
+  "up_long_hemisp_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling longwave hemispheric irradiance, pyrgeometer, standard deviation",
+   "has_qc": false
+  },
+  "down_long_hemisp_shaded_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave hemispheric irradiance, shaded pyrgeometer, standard deviation",
+   "has_qc": false
+  },
+  "down_long_hemisp2_shaded_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave hemispheric irradiance, shaded pyrgeometer 2, standard deviation",
+   "has_qc": false
+  },
+  "down_short_diffuse_hemisp_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling shortwave diffuse hemispheric irradiance, pyranometer, standard deviation",
+   "has_qc": false
+  },
+  "up_short_hemisp_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling shortwave hemispheric irradiance, pyranometer, standard deviation",
+   "has_qc": false
+  },
+  "short_direct_normal_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Shortwave direct normal irradiance, pyrheliometer, standard deviation",
+   "has_qc": false
+  },
+  "down_short_hemisp_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling shortwave hemispheric irradiance, pyranometer, standard deviation",
+   "has_qc": false
+  },
+  "up_long_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling longwave hemispheric irradiance, pyrgeometer, maxima",
+   "has_qc": true
+  },
+  "qc_up_long_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling longwave hemispheric irradiance, pyrgeometer, maxima",
+   "has_qc": false
+  },
+  "down_long_hemisp_shaded_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave hemispheric irradiance, shaded pyrgeometer, maxima",
+   "has_qc": true
+  },
+  "qc_down_long_hemisp_shaded_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling longwave hemispheric irradiance, shaded pyrgeometer, maxima",
+   "has_qc": false
+  },
+  "down_long_hemisp2_shaded_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave hemispheric irradiance, shaded pyrgeometer 2, maxima",
+   "has_qc": true
+  },
+  "qc_down_long_hemisp2_shaded_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling longwave hemispheric irradiance, shaded pyrgeometer 2, maxima",
+   "has_qc": false
+  },
+  "down_short_diffuse_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling shortwave diffuse hemispheric irradiance, pyranometer, maxima",
+   "has_qc": true
+  },
+  "qc_down_short_diffuse_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling shortwave diffuse hemispheric irradiance, pyranometer, maxima",
+   "has_qc": false
+  },
+  "up_short_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling shortwave hemispheric irradiance, pyranometer, maxima",
+   "has_qc": true
+  },
+  "qc_up_short_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling shortwave hemispheric irradiance, pyranometer, maxima",
+   "has_qc": false
+  },
+  "short_direct_normal_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Shortwave direct normal irradiance, pyrheliometer, maxima",
+   "has_qc": true
+  },
+  "qc_short_direct_normal_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Shortwave direct normal irradiance, pyrheliometer, maxima",
+   "has_qc": false
+  },
+  "down_short_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling shortwave hemispheric irradiance, pyranometer, maxima",
+   "has_qc": true
+  },
+  "qc_down_short_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling shortwave hemispheric irradiance, pyranometer, maxima",
+   "has_qc": false
+  },
+  "up_long_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling longwave hemispheric irradiance, pyrgeometer, minima",
+   "has_qc": true
+  },
+  "qc_up_long_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling longwave hemispheric irradiance, pyrgeometer, minima",
+   "has_qc": false
+  },
+  "down_long_hemisp_shaded_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave hemispheric irradiance, shaded pyrgeometer, minima",
+   "has_qc": true
+  },
+  "qc_down_long_hemisp_shaded_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling longwave hemispheric irradiance, shaded pyrgeometer, minima",
+   "has_qc": false
+  },
+  "down_long_hemisp2_shaded_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave hemispheric irradiance, shaded pyrgeometer 2, minima",
+   "has_qc": true
+  },
+  "qc_down_long_hemisp2_shaded_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling longwave hemispheric irradiance, shaded pyrgeometer 2, minima",
+   "has_qc": false
+  },
+  "down_short_diffuse_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling shortwave diffuse hemispheric irradiance, pyranometer, minima",
+   "has_qc": true
+  },
+  "qc_down_short_diffuse_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling shortwave diffuse hemispheric irradiance, pyranometer, minima",
+   "has_qc": false
+  },
+  "up_short_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling shortwave hemispheric irradiance, pyranometer, minima",
+   "has_qc": true
+  },
+  "qc_up_short_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling shortwave hemispheric irradiance, pyranometer, minima",
+   "has_qc": false
+  },
+  "short_direct_normal_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Shortwave direct normal irradiance, pyrheliometer, minima",
+   "has_qc": true
+  },
+  "qc_short_direct_normal_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Shortwave direct normal irradiance, pyrheliometer, minima",
+   "has_qc": false
+  },
+  "down_short_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling shortwave hemispheric irradiance, pyranometer, minima",
+   "has_qc": true
+  },
+  "qc_down_short_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Downwelling shortwave hemispheric irradiance, pyranometer, minima",
+   "has_qc": false
+  },
+  "down_long_hemisp1_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "rpm",
+   "long_name": "Ventilation tachometer for Downwelling Longwave Hemispheric Irradiance, Pyrgeometer1",
+   "has_qc": true
+  },
+  "qc_down_long_hemisp1_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ventilation tachometer for Downwelling Longwave Hemispheric Irradiance, Pyrgeometer1",
+   "has_qc": false
+  },
+  "down_long_hemisp2_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "rpm",
+   "long_name": "Ventilation tachometer for Downwelling Longwave Hemispheric Irradiance, Pyrgeometer2",
+   "has_qc": true
+  },
+  "qc_down_long_hemisp2_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ventilation tachometer for Downwelling Longwave Hemispheric Irradiance, Pyrgeometer2",
+   "has_qc": false
+  },
+  "down_short_diffuse_hemisp_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "rpm",
+   "long_name": "Ventilation tachometer for Downwelling Shortwave Diffuse Hemispheric Irradiance, Pyranometer",
+   "has_qc": true
+  },
+  "qc_down_short_diffuse_hemisp_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ventilation tachometer for Downwelling Shortwave Diffuse Hemispheric Irradiance, Pyranometer",
+   "has_qc": false
+  },
+  "down_short_hemisp_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "rpm",
+   "long_name": "Ventilation tachometer for Downwelling Shortwave Hemispheric Irradiance, Pyranometer",
+   "has_qc": true
+  },
+  "qc_down_short_hemisp_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ventilation tachometer for Downwelling Shortwave Hemispheric Irradiance, Pyranometer",
+   "has_qc": false
+  },
+  "logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Logger voltage",
+   "has_qc": false
+  },
+  "logger_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Logger temperature",
+   "has_qc": false
+  },
+  "inst_up_long_dome_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Instantaneous upwelling pyrgeometer dome thermistor temperature, pyrgeometer",
+   "has_qc": false
+  },
+  "inst_up_long_case_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Instantaneous upwelling pyrgeometer case thermistor temperature, pyrgeometer",
+   "has_qc": false
+  },
+  "inst_down_long_shaded_dome_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Instantaneous downwelling pyrgeometer dome thermistor temperature, shaded pyrgeometer",
+   "has_qc": false
+  },
+  "inst_down_long_shaded_case_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Instantaneous downwelling pyrgeometer case thermistor temperature, shaded pyrgeometer",
+   "has_qc": false
+  },
+  "inst_down_long2_shaded_dome_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Instantaneous downwelling pyrgeometer 2 dome thermistor temperature, shaded pyrgeometer",
+   "has_qc": false
+  },
+  "inst_down_long2_shaded_case_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Instantaneous downwelling pyrgeometer 2 case thermistor temperature, shaded pyrgeometer",
+   "has_qc": false
+  },
+  "up_long_netir": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling longwave hemispheric net infrared",
+   "has_qc": false
+  },
+  "down_long_netir": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave hemispheric net infrared",
+   "has_qc": false
+  },
+  "down_long2_netir": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave hemispheric 2 net infrared",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

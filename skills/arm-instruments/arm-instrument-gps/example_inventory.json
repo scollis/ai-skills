@@ -1,0 +1,313 @@
+{
+ "instrument": "gps",
+ "datastream": "shbgpsC1.a1",
+ "filename": "shbgpsC1.a1.19981001.000254.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 24,
+ "dims": {
+  "time": 260,
+  "max_tracked_satellites": 10
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 315.0,
+ "time_span": [
+  "1998-10-01T00:02:54",
+  "1998-10-01T23:57:39"
+ ],
+ "global_attrs": {},
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "GPS_UTC_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "float32",
+   "units": "HHMMSS.SS (hours, minutes, seconds)",
+   "long_name": "UTC time reported by GPS",
+   "has_qc": false
+  },
+  "GPS_latitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "float32",
+   "units": "ddmm.mmmm (degrees and minutes)",
+   "long_name": "Latitude reported by GPS",
+   "has_qc": false
+  },
+  "GPS_latitude_hemisphere": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "|S2",
+   "units": "None",
+   "long_name": "Hemisphere (N or S) for latitude reported by GPS",
+   "has_qc": false
+  },
+  "GPS_longitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "float32",
+   "units": "dddmm.mmmm (degrees and minutes)",
+   "long_name": "Longitude reported by GPS",
+   "has_qc": false
+  },
+  "GPS_longitude_hemisphere": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "|S2",
+   "units": "None",
+   "long_name": "Hemisphere (E or W) for longitude reported by GPS",
+   "has_qc": false
+  },
+  "GPS_altitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "float32",
+   "units": "Meters",
+   "long_name": "Altitude reported by GPS",
+   "has_qc": false
+  },
+  "GPS_heading": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Heading reported by GPS",
+   "has_qc": false
+  },
+  "GPS_pitch": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Pitch reported by GPS",
+   "has_qc": false
+  },
+  "GPS_roll": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Roll reported by GPS",
+   "has_qc": false
+  },
+  "GPS_att_phase_meas_error": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "float32",
+   "units": "Meters",
+   "long_name": "Attitude phase measurement rms error",
+   "has_qc": false
+  },
+  "GPS_att_baseline_meas_error": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "float32",
+   "units": "Meters",
+   "long_name": "Attitude baseline length measurement rms error",
+   "has_qc": false
+  },
+  "GPS_att_reset_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "|S5",
+   "units": "Meters",
+   "long_name": "Attitude reset flag 0 is good, 1 is bad",
+   "has_qc": false
+  },
+  "filename": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "|S256",
+   "units": "None",
+   "long_name": "GPS raw data filename",
+   "has_qc": false
+  },
+  "num_tracked_satellites": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "int32",
+   "units": "None",
+   "long_name": "Number of tracked satellites",
+   "has_qc": false
+  },
+  "PRN_number": {
+   "dims": [
+    "time",
+    "max_tracked_satellites"
+   ],
+   "shape": [
+    260,
+    10
+   ],
+   "dtype": "int32",
+   "units": "None",
+   "long_name": "Satellite PRN number",
+   "has_qc": false
+  },
+  "satellite_azimuth": {
+   "dims": [
+    "time",
+    "max_tracked_satellites"
+   ],
+   "shape": [
+    260,
+    10
+   ],
+   "dtype": "int32",
+   "units": "degrees",
+   "long_name": "Satellite azimuth",
+   "has_qc": false
+  },
+  "satellite_elevation": {
+   "dims": [
+    "time",
+    "max_tracked_satellites"
+   ],
+   "shape": [
+    260,
+    10
+   ],
+   "dtype": "int32",
+   "units": "degrees",
+   "long_name": "Satellite elevation",
+   "has_qc": false
+  },
+  "satellite_SNR": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "int32",
+   "units": "None",
+   "long_name": "Satellite SNR\n",
+   "has_qc": false
+  },
+  "satellite_usable_flag": {
+   "dims": [
+    "time",
+    "max_tracked_satellites"
+   ],
+   "shape": [
+    260,
+    10
+   ],
+   "dtype": "|S1",
+   "units": "None",
+   "long_name": "Satellite usable (U=usable -=not usable)",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "north latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "east longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "meters above Mean Sea Level",
+   "long_name": "altitude",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    260
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  }
+ }
+}

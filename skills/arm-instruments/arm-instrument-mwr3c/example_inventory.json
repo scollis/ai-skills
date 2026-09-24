@@ -1,0 +1,1114 @@
+{
+ "instrument": "mwr3c",
+ "datastream": "sgpmwr3cC1.b1",
+ "filename": "sgpmwr3cC1.b1.20260919.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 92,
+ "dims": {
+  "time": 67021,
+  "frequency": 3,
+  "infrared_wavelength": 1
+ },
+ "n_qc_vars": 34,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-09-19T00:00:00",
+  "2026-09-19T23:59:59"
+ ],
+ "global_attrs": {
+  "command_line": "mwr3c_ingest -s sgp -f C1 --max-runtime 86400",
+  "process_version": "ingest-mwr3c-5.9-0.el9",
+  "dod_version": "mwr3c-b1-3.6",
+  "input_source": "/data/collection/sgp/sgpmwr3cC1.00/26091900.MET.NC",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpmwr3cC1.b1",
+  "serial_number": "R-DPR-19/007",
+  "doi": "10.5439/1025248"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Azimuth",
+   "has_qc": true
+  },
+  "qc_azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Azimuth",
+   "has_qc": false
+  },
+  "elevation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Elevation",
+   "has_qc": true
+  },
+  "qc_elevation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Elevation",
+   "has_qc": false
+  },
+  "lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Liquid water path",
+   "has_qc": false
+  },
+  "lwp_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Estimated RMSE uncertainty of liquid water path",
+   "has_qc": false
+  },
+  "pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Precipitable water vapor",
+   "has_qc": false
+  },
+  "pwv_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Estimated RMSE uncertainty of precipitable water vapor",
+   "has_qc": false
+  },
+  "tbsky23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "23.84 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_tbsky23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 23.84 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tbsky31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "31.4 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_tbsky31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 31.4 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tbsky90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "90.0 GHz sky brightness temperature",
+   "has_qc": true
+  },
+  "qc_tbsky90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 90.0 GHz sky brightness temperature",
+   "has_qc": false
+  },
+  "tb_black_body": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ambient black body target temperature, from LV0 file",
+   "has_qc": true
+  },
+  "qc_tb_black_body": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ambient black body target temperature, from LV0 file",
+   "has_qc": false
+  },
+  "trec23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "23.84 GHz receiver power scaled to temperature units, from LV0 file",
+   "has_qc": true
+  },
+  "qc_trec23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 23.84 GHz receiver power scaled to temperature units, from LV0 file",
+   "has_qc": false
+  },
+  "be_calibrated_trec23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Best estimate calibrated 23.84 GHz receiver power scaled to temperature units",
+   "has_qc": true
+  },
+  "qc_be_calibrated_trec23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Best estimate calibrated 23.84 GHz receiver power scaled to temperature units",
+   "has_qc": false
+  },
+  "trec31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "31.4 GHz receiver power scaled to temperature units, from LV0 file",
+   "has_qc": true
+  },
+  "qc_trec31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 31.4 GHz receiver power scaled to temperature units, from LV0 file",
+   "has_qc": false
+  },
+  "be_calibrated_trec31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Best estimate calibrated 31.4 GHz receiver power scaled to temperature units",
+   "has_qc": true
+  },
+  "qc_be_calibrated_trec31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Best estimate calibrated 31.4 GHz receiver power scaled to temperature units",
+   "has_qc": false
+  },
+  "trec90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "90.0 GHz receiver power scaled to temperature units, from LV0 file",
+   "has_qc": true
+  },
+  "qc_trec90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 90.0 GHz receiver power scaled to temperature units, from LV0 file",
+   "has_qc": false
+  },
+  "be_calibrated_trec90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Best estimate calibrated 90.0 GHz receiver power scaled to temperature units",
+   "has_qc": true
+  },
+  "qc_be_calibrated_trec90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Best estimate calibrated 90.0 GHz receiver power scaled to temperature units",
+   "has_qc": false
+  },
+  "gain23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "V / K",
+   "long_name": "23.84 GHz channel gain (sensitivity), from LV0 file",
+   "has_qc": true
+  },
+  "qc_gain23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 23.84 GHz channel gain (sensitivity), from LV0 file",
+   "has_qc": false
+  },
+  "be_calibrated_gain23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "V / K",
+   "long_name": "Best estimate calibrated 23.84 GHz channel gain (sensitivity)",
+   "has_qc": true
+  },
+  "qc_be_calibrated_gain23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Best estimate calibrated 23.84 GHz channel gain (sensitivity)",
+   "has_qc": false
+  },
+  "gain31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "V / K",
+   "long_name": "31.4 GHz channel gain (sensitivity), from LV0 file",
+   "has_qc": true
+  },
+  "qc_gain31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 31.4 GHz channel gain (sensitivity), from LV0 file",
+   "has_qc": false
+  },
+  "be_calibrated_gain31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "V / K",
+   "long_name": "Best estimate calibrated 31.4 GHz channel gain (sensitivity)",
+   "has_qc": true
+  },
+  "qc_be_calibrated_gain31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Best estimate calibrated 31.4 GHz channel gain (sensitivity)",
+   "has_qc": false
+  },
+  "gain90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "V / K",
+   "long_name": "90.0 GHz channel gain (sensitivity), from LV0 file",
+   "has_qc": true
+  },
+  "qc_gain90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 90.0 GHz channel gain (sensitivity), from LV0 file",
+   "has_qc": false
+  },
+  "be_calibrated_gain90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "V / K",
+   "long_name": "Best estimate calibrated 90.0 GHz channel gain (sensitivity)",
+   "has_qc": true
+  },
+  "qc_be_calibrated_gain90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Best estimate calibrated 90.0 GHz channel gain (sensitivity)",
+   "has_qc": false
+  },
+  "detector_voltage23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "23.84 GHz channel detector voltage",
+   "has_qc": true
+  },
+  "qc_detector_voltage23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 23.84 GHz channel detector voltage",
+   "has_qc": false
+  },
+  "detector_voltage31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "31.4 GHz channel detector voltage",
+   "has_qc": true
+  },
+  "qc_detector_voltage31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 31.4 GHz channel detector voltage",
+   "has_qc": false
+  },
+  "detector_voltage90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "90.0 GHz channel detector voltage",
+   "has_qc": true
+  },
+  "qc_detector_voltage90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 90.0 GHz channel detector voltage",
+   "has_qc": false
+  },
+  "alpha23": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "23.84 GHz non-linearity calibration parameter",
+   "has_qc": false
+  },
+  "alpha31": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "31.4 GHz non-linearity calibration parameter",
+   "has_qc": false
+  },
+  "alpha90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "90.0 GHz non-linearity calibration parameter",
+   "has_qc": false
+  },
+  "temp_rad_23_mean": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "23.84 GHz mean radiating temperature",
+   "has_qc": false
+  },
+  "temp_rad_31_mean": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "31.4 GHz mean radiating temperature",
+   "has_qc": false
+  },
+  "temp_rad_90_mean": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "90.0 GHz mean radiating temperature",
+   "has_qc": false
+  },
+  "lwp_retrieval_coefficient_0": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Liquid water path retrieval multiple regression constant",
+   "has_qc": false
+  },
+  "lwp_retrieval_coefficient_1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Liquid water path retrieval multiple regression coefficient for 23.84 GHz",
+   "has_qc": false
+  },
+  "lwp_retrieval_coefficient_2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Liquid water path retrieval multiple regression coefficient for 31.4 GHz",
+   "has_qc": false
+  },
+  "lwp_retrieval_coefficient_3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Liquid water path retrieval multiple regression coefficient for 90.0 GHz",
+   "has_qc": false
+  },
+  "pwv_retrieval_coefficient_0": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Precipitable water vapor retrieval multiple regression constant",
+   "has_qc": false
+  },
+  "pwv_retrieval_coefficient_1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Precipitable water vapor retrieval multiple regression coefficient for 23.84 GHz",
+   "has_qc": false
+  },
+  "pwv_retrieval_coefficient_2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Precipitable water vapor retrieval multiple regression coefficient for 31.4 GHz",
+   "has_qc": false
+  },
+  "pwv_retrieval_coefficient_3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Precipitable water vapor retrieval multiple regression coefficient for 90.0 GHz",
+   "has_qc": false
+  },
+  "infrared_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Zenith-pointing infrared temperature at 10.5 um",
+   "has_qc": true
+  },
+  "qc_infrared_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Zenith-pointing infrared temperature at 10.5 um",
+   "has_qc": false
+  },
+  "ambient_target_sensor_1_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ambient target sensor 1 temperature",
+   "has_qc": true
+  },
+  "qc_ambient_target_sensor_1_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ambient target sensor 1 temperature",
+   "has_qc": false
+  },
+  "ambient_target_sensor_2_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ambient target sensor 2 temperature",
+   "has_qc": true
+  },
+  "qc_ambient_target_sensor_2_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ambient target sensor 2 temperature",
+   "has_qc": false
+  },
+  "receiver_1_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Receiver 1 temperature",
+   "has_qc": true
+  },
+  "qc_receiver_1_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Receiver 1 temperature",
+   "has_qc": false
+  },
+  "receiver_1_temperature_stability": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Receiver 1 temperature stability",
+   "has_qc": true
+  },
+  "qc_receiver_1_temperature_stability": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Receiver 1 temperature stability",
+   "has_qc": false
+  },
+  "receiver_2_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Receiver 2 temperature",
+   "has_qc": true
+  },
+  "qc_receiver_2_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Receiver 2 temperature",
+   "has_qc": false
+  },
+  "receiver_2_temperature_stability": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Receiver 2 temperature stability",
+   "has_qc": true
+  },
+  "qc_receiver_2_temperature_stability": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Receiver 2 temperature stability",
+   "has_qc": false
+  },
+  "surface_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Ambient surface temperature",
+   "has_qc": true
+  },
+  "qc_surface_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ambient surface temperature",
+   "has_qc": false
+  },
+  "surface_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Ambient surface pressure",
+   "has_qc": true
+  },
+  "qc_surface_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ambient surface pressure",
+   "has_qc": false
+  },
+  "surface_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Ambient surface relative humidity",
+   "has_qc": true
+  },
+  "qc_surface_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ambient surface relative humidity",
+   "has_qc": false
+  },
+  "rain_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int8",
+   "units": "1",
+   "long_name": "Rain flag",
+   "has_qc": false
+  },
+  "rain_intensity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "mm/s",
+   "long_name": "Rain intensity",
+   "has_qc": true
+  },
+  "qc_rain_intensity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Rain intensity",
+   "has_qc": false
+  },
+  "wind_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed",
+   "has_qc": true
+  },
+  "qc_wind_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind speed",
+   "has_qc": false
+  },
+  "wind_direction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction",
+   "has_qc": true
+  },
+  "qc_wind_direction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind direction",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67021
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "frequency": {
+   "dims": [
+    "frequency"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "float32",
+   "units": "GHz",
+   "long_name": "Frequency",
+   "has_qc": false
+  },
+  "infrared_wavelength": {
+   "dims": [
+    "infrared_wavelength"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Infrared wavelength",
+   "has_qc": false
+  }
+ }
+}

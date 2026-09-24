@@ -1,0 +1,959 @@
+{
+ "instrument": "mfr",
+ "datastream": "sgpmfr7nch25mC1.b1",
+ "filename": "sgpmfr7nch25mC1.b1.20260920.070000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 81,
+ "dims": {
+  "time": 4320,
+  "bench_angle": 181,
+  "wavelength": 750
+ },
+ "n_qc_vars": 11,
+ "time_resolution_s": 20.0,
+ "time_span": [
+  "2026-09-20T07:00:00",
+  "2026-09-21T06:59:40"
+ ],
+ "global_attrs": {
+  "command_line": "mfr7nch_ingest -n mfr7nch25m -s sgp -f C1 --max-runtime 86400",
+  "process_version": "ingest-mfr7nch-1.6-0.el9",
+  "dod_version": "mfr7nch25m-b1-1.0",
+  "input_source": "/data/collection/sgp/sgpmfr7nch25mC1.00/MFR25M_Table155.20260920070000.dat",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpmfr7nch25mC1.b1",
+  "serial_number": "Refer to logger_id and head_id",
+  "sampling_interval": "20 seconds",
+  "doi": "10.5439/1804120"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "25m surface reflected irradiance filter1, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 25m surface reflected irradiance filter1, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "25m surface reflected irradiance filter2, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 25m surface reflected irradiance filter2, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "25m surface reflected irradiance filter3, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 25m surface reflected irradiance filter3, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "25m surface reflected irradiance filter4, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 25m surface reflected irradiance filter4, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "25m surface reflected irradiance filter5, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 25m surface reflected irradiance filter5, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "25m surface reflected irradiance filter6, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 25m surface reflected irradiance filter6, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "25m surface reflected irradiance filter7, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: 25m surface reflected irradiance filter7, offset corrected, diffuse sky corrected, nominal calibration",
+   "has_qc": false
+  },
+  "head_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Detector cluster temperature",
+   "has_qc": true
+  },
+  "qc_head_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Detector cluster temperature",
+   "has_qc": false
+  },
+  "head_temp2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "HTC3000 feedback temperature",
+   "has_qc": true
+  },
+  "qc_head_temp2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: HTC3000 feedback temperature",
+   "has_qc": false
+  },
+  "logger_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Internal logger temperature",
+   "has_qc": true
+  },
+  "qc_logger_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Internal logger temperature",
+   "has_qc": false
+  },
+  "logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Data logger supply voltage",
+   "has_qc": true
+  },
+  "qc_logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Data logger supply voltage",
+   "has_qc": false
+  },
+  "solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Apparent solar zenith angle",
+   "has_qc": false
+  },
+  "cosine_solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine apparent solar zenith angle",
+   "has_qc": false
+  },
+  "elevation_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Elevation angle",
+   "has_qc": false
+  },
+  "airmass": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Airmass",
+   "has_qc": false
+  },
+  "azimuth_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Azimuth angle",
+   "has_qc": false
+  },
+  "cosine_correction_sn_filter1": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, south to north, filter1",
+   "has_qc": false
+  },
+  "cosine_correction_sn_filter2": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, south to north, filter2",
+   "has_qc": false
+  },
+  "cosine_correction_sn_filter3": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, south to north, filter3",
+   "has_qc": false
+  },
+  "cosine_correction_sn_filter4": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, south to north, filter4",
+   "has_qc": false
+  },
+  "cosine_correction_sn_filter5": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, south to north, filter5",
+   "has_qc": false
+  },
+  "cosine_correction_sn_filter6": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, south to north, filter6",
+   "has_qc": false
+  },
+  "cosine_correction_sn_filter7": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, south to north, filter7",
+   "has_qc": false
+  },
+  "cosine_correction_we_filter1": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, west to east, filter1",
+   "has_qc": false
+  },
+  "cosine_correction_we_filter2": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, west to east, filter2",
+   "has_qc": false
+  },
+  "cosine_correction_we_filter3": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, west to east, filter3",
+   "has_qc": false
+  },
+  "cosine_correction_we_filter4": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, west to east, filter4",
+   "has_qc": false
+  },
+  "cosine_correction_we_filter5": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, west to east, filter5",
+   "has_qc": false
+  },
+  "cosine_correction_we_filter6": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, west to east, filter6",
+   "has_qc": false
+  },
+  "cosine_correction_we_filter7": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine correction, west to east, filter7",
+   "has_qc": false
+  },
+  "wavelength_filter1": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter1, wavelength value obtained during instrument characterization",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter1": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter1. Measured transmittance value normalized to area under curve.",
+   "has_qc": false
+  },
+  "wavelength_filter2": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter2, wavelength value obtained during instrument characterization",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter2": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter2. Measured transmittance value normalized to area under curve.",
+   "has_qc": false
+  },
+  "wavelength_filter3": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter3, wavelength value obtained during instrument characterization",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter3": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter3. Measured transmittance value normalized to area under curve.",
+   "has_qc": false
+  },
+  "wavelength_filter4": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter4, wavelength value obtained during instrument characterization",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter4": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter4. Measured transmittance value normalized to area under curve.",
+   "has_qc": false
+  },
+  "wavelength_filter5": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter5, wavelength value obtained during instrument characterization",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter5": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter5. Measured transmittance value normalized to area under curve.",
+   "has_qc": false
+  },
+  "wavelength_filter6": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter6, wavelength value obtained during instrument characterization",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter6": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter6. Measured transmittance value normalized to area under curve.",
+   "has_qc": false
+  },
+  "wavelength_filter7": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter7, wavelength value obtained during instrument characterization",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter7": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter7. Measured transmittance value normalized to area under curve.",
+   "has_qc": false
+  },
+  "offset_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Nighttime offset subtracted from filter1 data",
+   "has_qc": false
+  },
+  "offset_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Nighttime offset subtracted from filter2 data",
+   "has_qc": false
+  },
+  "offset_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Nighttime offset subtracted from filter3 data",
+   "has_qc": false
+  },
+  "offset_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Nighttime offset subtracted from filter4 data",
+   "has_qc": false
+  },
+  "offset_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Nighttime offset subtracted from filter5 data",
+   "has_qc": false
+  },
+  "offset_filter6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Nighttime offset subtracted from filter6 data",
+   "has_qc": false
+  },
+  "offset_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Nighttime offset subtracted from filter7 data",
+   "has_qc": false
+  },
+  "diffuse_correction_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Diffuse correction derived from Cosine correction of filter1, assuming Rayleigh sky at 45 deg zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Diffuse correction derived from Cosine correction of filter2, assuming Rayleigh sky at 45 deg zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Diffuse correction derived from Cosine correction of filter3, assuming Rayleigh sky at 45 deg zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Diffuse correction derived from Cosine correction of filter4, assuming Rayleigh sky at 45 deg zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Diffuse correction derived from Cosine correction of filter5, assuming Rayleigh sky at 45 deg zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter6": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Diffuse correction derived from Cosine correction of filter6, assuming Rayleigh sky at 45 deg zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter7": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Diffuse correction derived from Cosine correction of filter7, assuming Rayleigh sky at 45 deg zenith angle",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mV/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor using standard lamp, applied to filter1 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mV/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor using standard lamp, applied to filter2 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mV/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor using standard lamp, applied to filter3 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mV/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor using standard lamp, applied to filter4 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mV/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor using standard lamp, applied to filter5 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter6": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mV/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor using standard lamp, applied to filter6 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter7": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mV/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor using standard lamp, applied to filter7 data",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "bench_angle": {
+   "dims": [
+    "bench_angle"
+   ],
+   "shape": [
+    181
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Angle of incidence during cosine bench measurements",
+   "has_qc": false
+  }
+ }
+}

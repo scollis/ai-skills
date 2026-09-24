@@ -1,0 +1,1285 @@
+{
+ "instrument": "assist",
+ "datastream": "magassistsummaryM1.b1",
+ "filename": "magassistsummaryM1.b1.20121207.000547.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 96,
+ "dims": {
+  "time": 3626,
+  "wnum1": 85,
+  "wnum2": 103
+ },
+ "n_qc_vars": 46,
+ "time_resolution_s": 16.0,
+ "time_span": [
+  "2012-12-07T00:05:47",
+  "2012-12-07T23:59:50"
+ ],
+ "global_attrs": {
+  "command_line": "assist_ingest -s mag -f M1 -d",
+  "process_version": "ingest-assist-1.5-0.el5",
+  "dod_version": "assistsummary-b1-1.2",
+  "site_id": "mag",
+  "facility_id": "M1: Horizon Spirit",
+  "input_source": "/data/collection/mag/magassistM1.00/2012_12_07_00_30_14_PROCESSED.piz",
+  "serial_number": "",
+  "data_level": "b1",
+  "sampling_interval": "",
+  "datastream": "magassistsummaryM1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Time offset from midnight",
+   "has_qc": false
+  },
+  "ch1_surface_layer_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Longwave radiance average (675-680 cm^-1) surface air",
+   "has_qc": true
+  },
+  "qc_ch1_surface_layer_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Longwave radiance average (675-680 cm^-1) surface air",
+   "has_qc": false
+  },
+  "ch1_elevated_layer_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Longwave radiance average (700_705 cm^-1) elevated air",
+   "has_qc": true
+  },
+  "qc_ch1_elevated_layer_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Longwave radiance average (700_705 cm^-1) elevated air",
+   "has_qc": false
+  },
+  "ch1_window_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Longwave window radiance average (985_990 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch1_window_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Longwave window radiance average (985_990 cm^-1)",
+   "has_qc": false
+  },
+  "ch2_surface_layer_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Shortwave radiance average (2295_2300 cm^-1) surface air",
+   "has_qc": true
+  },
+  "qc_ch2_surface_layer_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Shortwave radiance average (2295_2300 cm^-1) surface air",
+   "has_qc": false
+  },
+  "ch2_elevated_layer_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Shortwave radiance average (2282_2287 cm^-1) elevated air",
+   "has_qc": true
+  },
+  "qc_ch2_elevated_layer_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Shortwave radiance average (2282_2287 cm^-1) elevated air",
+   "has_qc": false
+  },
+  "ch2_window_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Shortwave window radiance average (2510_2515 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch2_window_radiance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Shortwave window radiance average (2510_2515 cm^-1)",
+   "has_qc": false
+  },
+  "ch1_surface_layer_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Longwave surface air brightness temperature from radiance average (675_680 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch1_surface_layer_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Longwave surface air brightness temperature from radiance average (675_680 cm^-1)",
+   "has_qc": false
+  },
+  "ch1_elevated_layer_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Longwave elevated air brightness temperature from radiance average (700_705 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch1_elevated_layer_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Longwave elevated air brightness temperature from radiance average (700_705 cm^-1)",
+   "has_qc": false
+  },
+  "ch1_window_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Longwave window brightness temperature from radiance average (985_990 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch1_window_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Longwave window brightness temperature from radiance average (985_990 cm^-1)",
+   "has_qc": false
+  },
+  "ch2_surface_layer_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Shortwave surface air brightness temperature from radiance average (2295_2300 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch2_surface_layer_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Shortwave surface air brightness temperature from radiance average (2295_2300 cm^-1)",
+   "has_qc": false
+  },
+  "ch2_elevated_layer_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Shortwave elevated air brightness temperature from radiance average (2282_2287 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch2_elevated_layer_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Shortwave elevated air brightness temperature from radiance average (2282_2287 cm^-1)",
+   "has_qc": false
+  },
+  "ch2_window_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Shortwave window brightness temperature from radiance average (2510_2515 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch2_window_bt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Shortwave window brightness temperature from radiance average (2510_2515 cm^-1)",
+   "has_qc": false
+  },
+  "ch1_surface_layer_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (675_680 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch1_surface_layer_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Radiance standard deviation during sky view averaged over (675_680 cm^-1)",
+   "has_qc": false
+  },
+  "ch1_elevated_layer_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (700_705 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch1_elevated_layer_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Radiance standard deviation during sky view averaged over (700_705 cm^-1)",
+   "has_qc": false
+  },
+  "ch1_window_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (985_990 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch1_window_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Radiance standard deviation during sky view averaged over (985_990 cm^-1)",
+   "has_qc": false
+  },
+  "ch2_surface_layer_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (2295_2300 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch2_surface_layer_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Radiance standard deviation during sky view averaged over (2295_2300 cm^-1)",
+   "has_qc": false
+  },
+  "ch2_elevated_layer_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (2282_2287 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch2_elevated_layer_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Radiance standard deviation during sky view averaged over (2282_2287 cm^-1)",
+   "has_qc": false
+  },
+  "ch2_window_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (2510_2515 cm^-1)",
+   "has_qc": true
+  },
+  "qc_ch2_window_radiance_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Radiance standard deviation during sky view averaged over (2510_2515 cm^-1)",
+   "has_qc": false
+  },
+  "ch1_sky_nen_1000wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "The noise equivalent radiance observed in the longwave channel during a sky view at 1000 cm^-1",
+   "has_qc": true
+  },
+  "qc_ch1_sky_nen_1000wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: The noise equivalent radiance observed in the longwave channel during a sky view at 1000 cm^-1",
+   "has_qc": false
+  },
+  "ch2_sky_nen_2500wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "The noise equivalent radiance observed in the shortwave channel during a sky view at 2500 cm^-1",
+   "has_qc": true
+  },
+  "qc_ch2_sky_nen_2500wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: The noise equivalent radiance observed in the shortwave channel during a sky view at 2500 cm^-1",
+   "has_qc": false
+  },
+  "ch1_hbb_nen_1000wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Longwave HBB noise-equivalent radiance",
+   "has_qc": true
+  },
+  "qc_ch1_hbb_nen_1000wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Longwave HBB noise-equivalent radiance",
+   "has_qc": false
+  },
+  "ch2_hbb_nen_2500wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Shortwave hbb noise-equivalent radiance",
+   "has_qc": true
+  },
+  "qc_ch2_hbb_nen_2500wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Shortwave hbb noise-equivalent radiance",
+   "has_qc": false
+  },
+  "ch1_responsivity_1000wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "counts/[mW/(m^2 sr cm^-1)]",
+   "long_name": "Characteristic value representing overall shortwave channel responsivity",
+   "has_qc": true
+  },
+  "qc_ch1_responsivity_1000wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Characteristic value representing overall shortwave channel responsivity",
+   "has_qc": false
+  },
+  "ch2_responsivity_2500wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "counts/[mW/(m^2 sr cm^-1)]",
+   "long_name": "Characteristic value representing overall longwave channel responsivity",
+   "has_qc": true
+  },
+  "qc_ch2_responsivity_2500wn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Characteristic value representing overall longwave channel responsivity",
+   "has_qc": false
+  },
+  "ch1_irt_band_brightness_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "float32",
+   "units": "deg K",
+   "long_name": "Brightness temperature computed over irt band with IRT responsivity.",
+   "has_qc": true
+  },
+  "qc_ch1_irt_band_brightness_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Brightness temperature computed over irt band with IRT responsivity.",
+   "has_qc": false
+  },
+  "ch1_mean_radiance": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "ASSIST longwave scene radiance spectral averages (ch1)",
+   "has_qc": true
+  },
+  "qc_ch1_mean_radiance": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: ASSIST longwave scene radiance spectral averages (ch1)",
+   "has_qc": false
+  },
+  "ch1_sky_temp": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Sky brightness temp ch1",
+   "has_qc": true
+  },
+  "qc_ch1_sky_temp": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sky brightness temp ch1",
+   "has_qc": false
+  },
+  "ch1_resp_re": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "float32",
+   "units": "counts/(mW/(m^2 sr cm^-1))",
+   "long_name": "Ch 1 responsivity, real component",
+   "has_qc": true
+  },
+  "qc_ch1_resp_re": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ch 1 responsivity, real component",
+   "has_qc": false
+  },
+  "ch1_resp_im": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "float32",
+   "units": "counts/(mW/(m^2 sr cm^-1))",
+   "long_name": "Ch 1 responsivity, imaginary component",
+   "has_qc": true
+  },
+  "qc_ch1_resp_im": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ch 1 responsivity, imaginary component",
+   "has_qc": false
+  },
+  "ch1_sky_variance": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "float32",
+   "units": "(mW/(m^2 sr cm^-1))^2",
+   "long_name": "Variance of sky radiance ch 1",
+   "has_qc": true
+  },
+  "qc_ch1_sky_variance": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Variance of sky radiance ch 1",
+   "has_qc": false
+  },
+  "ch1_sky_nen": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Scene NESR ch 1",
+   "has_qc": true
+  },
+  "qc_ch1_sky_nen": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Scene NESR ch 1",
+   "has_qc": false
+  },
+  "ch1_hbb_nen1": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "HBB 2 min NESR estimate #1 derived from variance during HBB view (ch1)",
+   "has_qc": true
+  },
+  "qc_ch1_hbb_nen1": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: HBB 2 min NESR estimate #1 derived from variance during HBB view (ch1)",
+   "has_qc": false
+  },
+  "ch1_hbb_nen2": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "HBB 2min NESR estimate #2 derived from sequential HBB views (ch1)",
+   "has_qc": true
+  },
+  "qc_ch1_hbb_nen2": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: HBB 2min NESR estimate #2 derived from sequential HBB views (ch1)",
+   "has_qc": false
+  },
+  "ch1_offset_re": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "float32",
+   "units": "mw/(m^2 sr cm^-1)",
+   "long_name": "Ch 1 calibration offset, real component",
+   "has_qc": true
+  },
+  "qc_ch1_offset_re": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ch 1 calibration offset, real component",
+   "has_qc": false
+  },
+  "ch1_offset_im": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "float32",
+   "units": "mw/(m^2 sr cm^-1)",
+   "long_name": "Ch 1 calibration offset, imaginary component",
+   "has_qc": true
+  },
+  "qc_ch1_offset_im": {
+   "dims": [
+    "time",
+    "wnum1"
+   ],
+   "shape": [
+    3626,
+    85
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ch 1 calibration offset, imaginary component",
+   "has_qc": false
+  },
+  "ch2_mean_radiance": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "ASSIST shortwave scene radiance spectral averages (ch2)",
+   "has_qc": true
+  },
+  "qc_ch2_mean_radiance": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: ASSIST shortwave scene radiance spectral averages (ch2)",
+   "has_qc": false
+  },
+  "ch2_sky_temp": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Sky brightness temp ch2",
+   "has_qc": true
+  },
+  "qc_ch2_sky_temp": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sky brightness temp ch2",
+   "has_qc": false
+  },
+  "ch2_resp_re": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "float32",
+   "units": "counts/(mW/(m^2 sr cm^-1))",
+   "long_name": "Ch 2 responsivity, real component",
+   "has_qc": true
+  },
+  "qc_ch2_resp_re": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ch 2 responsivity, real component",
+   "has_qc": false
+  },
+  "ch2_resp_im": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "float32",
+   "units": "counts/(mW/(m^2 sr cm^-1))",
+   "long_name": "Ch 2 responsivity, imaginary component",
+   "has_qc": true
+  },
+  "qc_ch2_resp_im": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ch 2 responsivity, imaginary component",
+   "has_qc": false
+  },
+  "ch2_sky_variance": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "float32",
+   "units": "(mW/(m^2 sr cm^-1))^2",
+   "long_name": "Variance of sky radiance ch 2",
+   "has_qc": true
+  },
+  "qc_ch2_sky_variance": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Variance of sky radiance ch 2",
+   "has_qc": false
+  },
+  "ch2_sky_nen": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Scene NESR ch 2",
+   "has_qc": true
+  },
+  "qc_ch2_sky_nen": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Scene NESR ch 2",
+   "has_qc": false
+  },
+  "ch2_hbb_nen1": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "HBB 2min NESR estimate #1 derived from variance during HBB view (ch2)",
+   "has_qc": true
+  },
+  "qc_ch2_hbb_nen1": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: HBB 2min NESR estimate #1 derived from variance during HBB view (ch2)",
+   "has_qc": false
+  },
+  "ch2_hbb_nen2": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "HBB 2min NESR estimate #2 derived from sequential HBB views (ch2)",
+   "has_qc": true
+  },
+  "qc_ch2_hbb_nen2": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: HBB 2min NESR estimate #2 derived from sequential HBB views (ch2)",
+   "has_qc": false
+  },
+  "ch2_offset_re": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "float32",
+   "units": "mw/(m^2 sr cm^-1)",
+   "long_name": "Ch 2 calibration offset, real component",
+   "has_qc": true
+  },
+  "qc_ch2_offset_re": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ch 2 calibration offset, real component",
+   "has_qc": false
+  },
+  "ch2_offset_im": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "float32",
+   "units": "mw/(m^2 sr cm^-1)",
+   "long_name": "Ch 2 calibration offset, imaginary component",
+   "has_qc": true
+  },
+  "qc_ch2_offset_im": {
+   "dims": [
+    "time",
+    "wnum2"
+   ],
+   "shape": [
+    3626,
+    103
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ch 2 calibration offset, imaginary component",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3626
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  },
+  "wnum1": {
+   "dims": [
+    "wnum1"
+   ],
+   "shape": [
+    85
+   ],
+   "dtype": "float64",
+   "units": "cm^-1",
+   "long_name": "Wave number for channel 1 in reciprocal centimeters",
+   "has_qc": false
+  },
+  "wnum2": {
+   "dims": [
+    "wnum2"
+   ],
+   "shape": [
+    103
+   ],
+   "dtype": "float64",
+   "units": "cm^-1",
+   "long_name": "Wave number for channel 2 in reciprocal centimeters",
+   "has_qc": false
+  }
+ }
+}

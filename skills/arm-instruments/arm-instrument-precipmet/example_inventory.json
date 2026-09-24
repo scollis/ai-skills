@@ -1,0 +1,414 @@
+{
+ "instrument": "precipmet",
+ "datastream": "sgpprecipmetI9.b1",
+ "filename": "sgpprecipmetI9.b1.20230926.000100.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 32,
+ "dims": {
+  "time": 1416,
+  "bound": 2
+ },
+ "n_qc_vars": 11,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2023-09-26T00:01:00",
+  "2023-09-26T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "precipmet_ingest -s sgp -f I9",
+  "process_version": "ingest-precipmet-1.1-0.el7",
+  "dod_version": "precipmet-b1-1.1",
+  "input_source": "/data/collection/sgp/sgpprecipmetI9.00/precipmet.20230926000000.dat",
+  "site_id": "sgp",
+  "facility_id": "I9",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Billings, Oklahoma",
+  "datastream": "sgpprecipmetI9.b1",
+  "doi": "10.5439/1353192"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1416,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "temp_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature mean",
+   "has_qc": true
+  },
+  "qc_temp_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature mean",
+   "has_qc": false
+  },
+  "temp_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature standard deviation",
+   "has_qc": false
+  },
+  "rh_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity mean",
+   "has_qc": true
+  },
+  "qc_rh_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity mean",
+   "has_qc": false
+  },
+  "rh_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity standard deviation",
+   "has_qc": false
+  },
+  "atmos_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Atmospheric pressure",
+   "has_qc": true
+  },
+  "qc_atmos_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Atmospheric pressure",
+   "has_qc": false
+  },
+  "wspd_arith_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed arithmetic mean",
+   "has_qc": true
+  },
+  "qc_wspd_arith_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind speed arithmetic mean",
+   "has_qc": false
+  },
+  "wspd_vec_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed vector mean",
+   "has_qc": true
+  },
+  "qc_wspd_vec_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind speed vector mean",
+   "has_qc": false
+  },
+  "wdir_vec_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction vector mean",
+   "has_qc": true
+  },
+  "qc_wdir_vec_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind direction vector mean",
+   "has_qc": false
+  },
+  "wdir_vec_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction vector mean standard deviation",
+   "has_qc": false
+  },
+  "wxt_precip_rate_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "WXT mean precipitation rate",
+   "has_qc": true
+  },
+  "qc_wxt_precip_rate_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: WXT mean precipitation rate",
+   "has_qc": false
+  },
+  "wxt_cumul_precip": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "WXT cumulative precipitation",
+   "has_qc": true
+  },
+  "qc_wxt_cumul_precip": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: WXT cumulative precipitation",
+   "has_qc": false
+  },
+  "tbrg_precip_total": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "TBRG precipitation total",
+   "has_qc": true
+  },
+  "qc_tbrg_precip_total": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: TBRG precipitation total",
+   "has_qc": false
+  },
+  "tbrg_precip_total_corr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "TBRG precipitation total, corrected",
+   "has_qc": false
+  },
+  "logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Logger voltage",
+   "has_qc": true
+  },
+  "qc_logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Logger voltage",
+   "has_qc": false
+  },
+  "logger_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Logger temperature",
+   "has_qc": true
+  },
+  "qc_logger_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Logger temperature",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1416
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,159 @@
+{
+ "instrument": "cpc",
+ "datastream": "sgpaoscpcC1.b1",
+ "filename": "sgpaoscpcC1.b1.20170926.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 11,
+ "dims": {
+  "time": 1440,
+  "bound": 2
+ },
+ "n_qc_vars": 1,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2017-09-26T00:00:00",
+  "2017-09-26T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "aosdilutioncorr -s sgp -f C1",
+  "process_version": "ingest-aosdilutioncorr-1.7-0.el6",
+  "dod_version": "aoscpc-b1-1.7",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "data_level": "b1",
+  "datastream": "sgpaoscpcC1.b1",
+  "sampling_interval": "1 second",
+  "averaging_interval": "1 minute",
+  "doi": "10.5439/1227962"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Particle concentration",
+   "has_qc": true
+  },
+  "qc_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Particle concentration",
+   "has_qc": false
+  },
+  "f2_flags": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "CPC-specific flags",
+   "has_qc": false
+  },
+  "cpc_flow": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "CPC flow rate",
+   "has_qc": false
+  },
+  "dilution_correction_factor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Dilution correction factor",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

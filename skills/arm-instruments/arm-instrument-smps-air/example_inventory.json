@@ -1,0 +1,208 @@
+{
+ "instrument": "smps-air",
+ "datastream": "coraafsmpsF1.b1",
+ "filename": "coraafsmpsF1.b1.20181205.000000.txt.tar",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 19,
+ "dims": {
+  "rows": 193
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": null,
+ "time_span": null,
+ "global_attrs": {},
+ "variables": {
+  "Scan_start_time": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Scan_end_time": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "N": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "QA_Flag": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_15_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_18_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_22_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_27_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_32_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_39_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_47_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_57_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_69_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_83_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_100_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_122_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_147_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_178_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "Dp_215_nm": {
+   "dims": [
+    "rows"
+   ],
+   "shape": [],
+   "dtype": "",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  }
+ },
+ "read_note": "this datastream serves a gzipped tar containing one CSV (aaf.smps.g1.cacti.20181205.b1.txt), not netCDF; columns recorded instead of netCDF variables"
+}

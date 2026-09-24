@@ -1,0 +1,395 @@
+{
+ "instrument": "uhsas-air",
+ "datastream": "sgpaafuhsasF1.b1",
+ "filename": "sgpaafuhsasF1.b1.20160921.164642.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 28,
+ "dims": {
+  "time": 8260,
+  "diameter_optical": 99,
+  "bound": 2
+ },
+ "n_qc_vars": 8,
+ "time_resolution_s": 0.0,
+ "time_span": [
+  "2016-09-21T16:46:42",
+  "2016-09-21T19:04:42"
+ ],
+ "global_attrs": {
+  "command_line": "aafuhsascorr -s sgp -f F1",
+  "process_version": "ingest-aafuhsascorr-1.0-0.el9",
+  "dod_version": "aafuhsas-b1-1.0",
+  "site_id": "sgp",
+  "facility_id": "F1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Gulfstream 159 (\"G1\") Aircraft",
+  "datastream": "sgpaafuhsasF1.b1",
+  "sampling_interval": "1 second",
+  "doi": "10.5439/2589080"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "diameter_optical_bounds": {
+   "dims": [
+    "diameter_optical",
+    "bound"
+   ],
+   "shape": [
+    99,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Optical diameter bin boundaries",
+   "has_qc": false
+  },
+  "diameter_optical_lower_bound": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Lower particle size limit for each bin",
+   "has_qc": false
+  },
+  "diameter_optical_upper_bound": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Upper particle size limit for each bin",
+   "has_qc": false
+  },
+  "dlogDp": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Relative width of bins",
+   "has_qc": false
+  },
+  "size_distribution": {
+   "dims": [
+    "time",
+    "diameter_optical"
+   ],
+   "shape": [
+    8260,
+    99
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Particle size distribution in dNdlogDp",
+   "has_qc": true
+  },
+  "qc_size_distribution": {
+   "dims": [
+    "time",
+    "diameter_optical"
+   ],
+   "shape": [
+    8260,
+    99
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Particle size distribution in dNdlogDp",
+   "has_qc": false
+  },
+  "total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total number concentration",
+   "has_qc": true
+  },
+  "qc_total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration",
+   "has_qc": false
+  },
+  "sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Sample flow rate",
+   "has_qc": true
+  },
+  "qc_sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample flow rate",
+   "has_qc": false
+  },
+  "sheath_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Sheath flow rate",
+   "has_qc": true
+  },
+  "qc_sheath_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sheath flow rate",
+   "has_qc": false
+  },
+  "sample_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Sample pressure",
+   "has_qc": false
+  },
+  "unit_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Unit temperature",
+   "has_qc": false
+  },
+  "laser_reference_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Laser reference voltage",
+   "has_qc": true
+  },
+  "qc_laser_reference_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Laser reference voltage",
+   "has_qc": false
+  },
+  "scattering_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Scatter signal",
+   "has_qc": false
+  },
+  "current_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Current",
+   "has_qc": false
+  },
+  "temperature_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Raw temperature signal",
+   "has_qc": false
+  },
+  "differential_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Differential_voltage, see instrument manual",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    8260
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "diameter_optical": {
+   "dims": [
+    "diameter_optical"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Midpoint of geometric mean optical diameter",
+   "has_qc": false
+  }
+ }
+}

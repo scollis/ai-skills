@@ -1,0 +1,652 @@
+{
+ "instrument": "tsi",
+ "datastream": "sgptsiskycoverC1.b1",
+ "filename": "sgptsiskycoverC1.b1.20250818.000000.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 52,
+ "dims": {
+  "time": 1599
+ },
+ "n_qc_vars": 24,
+ "time_resolution_s": 30.0,
+ "time_span": [
+  "2025-08-18T00:00:00",
+  "2025-08-18T23:59:30"
+ ],
+ "global_attrs": {
+  "command_line": "tsi_ingest -s sgp -f C1 --max-runtime 0",
+  "process_version": "ingest-tsi-12.8-7.el9",
+  "dod_version": "tsiskycover-b1-3.2",
+  "site_id": "sgp",
+  "facility_id": "C1: Lamont, Oklahoma",
+  "data_level": "b1",
+  "input_source": "/data/collection/sgp/sgptsiC1.00/20250818000000.dat",
+  "sampling_interval": "30 seconds",
+  "averaging_interval": "None",
+  "serial_number": "106",
+  "datastream": "sgptsiskycoverC1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Time offset from midnight",
+   "has_qc": false
+  },
+  "percent_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Percent opaque cloud",
+   "has_qc": true
+  },
+  "qc_percent_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Percent opaque cloud",
+   "has_qc": false
+  },
+  "percent_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Percent thin cloud",
+   "has_qc": true
+  },
+  "qc_percent_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Percent thin cloud",
+   "has_qc": false
+  },
+  "sunny": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int16",
+   "units": "unitless",
+   "long_name": "Sunshine meter",
+   "has_qc": true
+  },
+  "qc_sunny": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sunshine meter",
+   "has_qc": false
+  },
+  "sun_strength": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Relative 'strength' of direct sun",
+   "has_qc": true
+  },
+  "qc_sun_strength": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative 'strength' of direct sun",
+   "has_qc": false
+  },
+  "solar_altitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Sun altitude above horizon",
+   "has_qc": true
+  },
+  "qc_solar_altitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sun altitude above horizon",
+   "has_qc": false
+  },
+  "solar_azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Solar azimuth angle",
+   "has_qc": true
+  },
+  "qc_solar_azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Solar azimuth angle",
+   "has_qc": false
+  },
+  "region_zenith_count_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number thin in zenith circle",
+   "has_qc": true
+  },
+  "qc_region_zenith_count_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number thin in zenith circle",
+   "has_qc": false
+  },
+  "region_zenith_count_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number opaque in zenith circle",
+   "has_qc": true
+  },
+  "qc_region_zenith_count_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number opaque in zenith circle",
+   "has_qc": false
+  },
+  "region_zenith_count": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number total in zenith circle",
+   "has_qc": true
+  },
+  "qc_region_zenith_count": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number total in zenith circle",
+   "has_qc": false
+  },
+  "region_sun_count_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number thin in sun circle",
+   "has_qc": true
+  },
+  "qc_region_sun_count_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number thin in sun circle",
+   "has_qc": false
+  },
+  "region_sun_count_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number opaque in sun circle",
+   "has_qc": true
+  },
+  "qc_region_sun_count_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number opaque in sun circle",
+   "has_qc": false
+  },
+  "region_sun_count": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number total in sun circle",
+   "has_qc": true
+  },
+  "qc_region_sun_count": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number total in sun circle",
+   "has_qc": false
+  },
+  "region_horizon_count_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number thin in horizon area",
+   "has_qc": true
+  },
+  "qc_region_horizon_count_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number thin in horizon area",
+   "has_qc": false
+  },
+  "region_horizon_count_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number opaque in horizon area",
+   "has_qc": true
+  },
+  "qc_region_horizon_count_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number opaque in horizon area",
+   "has_qc": false
+  },
+  "region_horizon_count": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number total in horizon area",
+   "has_qc": true
+  },
+  "qc_region_horizon_count": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number total in horizon area",
+   "has_qc": false
+  },
+  "count_sub_proczen": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number total between horizon and processed circle",
+   "has_qc": true
+  },
+  "qc_count_sub_proczen": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number total between horizon and processed circle",
+   "has_qc": false
+  },
+  "count_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float64",
+   "units": "pixels",
+   "long_name": "Pixel count: number total opaque",
+   "has_qc": true
+  },
+  "qc_count_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number total opaque",
+   "has_qc": false
+  },
+  "count_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float64",
+   "units": "pixels",
+   "long_name": "Pixel count: number total thin",
+   "has_qc": true
+  },
+  "qc_count_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number total thin",
+   "has_qc": false
+  },
+  "count_box": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number in box, outside mirror area",
+   "has_qc": true
+  },
+  "qc_count_box": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number in box, outside mirror area",
+   "has_qc": false
+  },
+  "count_sky": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number total in processed circle",
+   "has_qc": true
+  },
+  "qc_count_sky": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number total in processed circle",
+   "has_qc": false
+  },
+  "count_unknown": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number total indeterminate",
+   "has_qc": true
+  },
+  "qc_count_unknown": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number total indeterminate",
+   "has_qc": false
+  },
+  "count_mask": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number in camera and sun strip mask",
+   "has_qc": true
+  },
+  "qc_count_mask": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number in camera and sun strip mask",
+   "has_qc": false
+  },
+  "count_sub_horz": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "float32",
+   "units": "pixels",
+   "long_name": "Pixel count: number below horizon in image",
+   "has_qc": true
+  },
+  "qc_count_sub_horz": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pixel count: number below horizon in image",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1599
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  }
+ }
+}

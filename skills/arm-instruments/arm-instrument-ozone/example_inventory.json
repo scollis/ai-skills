@@ -1,0 +1,580 @@
+{
+ "instrument": "ozone",
+ "datastream": "enaaoso3C1.b1",
+ "filename": "enaaoso3C1.b1.20260827.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 46,
+ "dims": {
+  "time": 86377
+ },
+ "n_qc_vars": 1,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-08-27T00:00:00",
+  "2026-08-27T23:59:59"
+ ],
+ "global_attrs": {
+  "command_line": "aoso3corr -s ena -f C1 --max-runtime 86400",
+  "process_version": "ingest-aoso3corr-2.3-0.el9",
+  "dod_version": "aoso3-b1-3.1",
+  "site_id": "ena",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Eastern North Atlantic (ENA), Graciosa Island, Azores",
+  "datastream": "enaaoso3C1.b1",
+  "serial_number": "0926137505/WD59233",
+  "sampling_interval": "1 second",
+  "doi": "10.5439/1346692"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "o3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "ppb",
+   "long_name": "Ozone concentration at STP",
+   "has_qc": true
+  },
+  "qc_o3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ozone concentration at STP",
+   "has_qc": false
+  },
+  "time_of_last_state_change": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time of last state change",
+   "has_qc": false
+  },
+  "o3_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Ozone pressure",
+   "has_qc": false
+  },
+  "o3_bench_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Bench temperature",
+   "has_qc": false
+  },
+  "o3_lamp_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Ozone lamp temperature",
+   "has_qc": false
+  },
+  "flow_a": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Flow in cell A",
+   "has_qc": false
+  },
+  "flow_b": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Flow in cell B",
+   "has_qc": false
+  },
+  "noise_a": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Electric noise in cell A",
+   "has_qc": false
+  },
+  "noise_b": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Electric noise in cell B",
+   "has_qc": false
+  },
+  "averaging_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Instrument averaging time",
+   "has_qc": false
+  },
+  "intensity_a": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Intensity in cell A",
+   "has_qc": false
+  },
+  "intensity_b": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Intensity in cell B",
+   "has_qc": false
+  },
+  "lamp_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Lamp temperature",
+   "has_qc": false
+  },
+  "lamp_voltage_bench": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Lamp bench voltage",
+   "has_qc": false
+  },
+  "lamp_voltage_ozonizer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Lamp voltage ozonizer",
+   "has_qc": false
+  },
+  "lamp_level": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Lamp level",
+   "has_qc": false
+  },
+  "range": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "ppbv",
+   "long_name": "Instrument range setting",
+   "has_qc": false
+  },
+  "o3_coefficient": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Instrument ozone coefficient",
+   "has_qc": false
+  },
+  "o3_background": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "ppb",
+   "long_name": "Ozone background",
+   "has_qc": false
+  },
+  "calibration_level_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Calibration ratio level 1",
+   "has_qc": false
+  },
+  "calibration_level_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Calibration ratio level 2",
+   "has_qc": false
+  },
+  "calibration_level_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Calibration ratio level 3",
+   "has_qc": false
+  },
+  "calibration_level_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Calibration ratio level 4",
+   "has_qc": false
+  },
+  "calibration_level_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Calibration ratio level 5",
+   "has_qc": false
+  },
+  "pressure_compensation_state": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Pressure compensation state",
+   "has_qc": false
+  },
+  "temperature_compensation_state": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Temperature compensation state",
+   "has_qc": false
+  },
+  "o3_lamp_state": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Ozone lamp state",
+   "has_qc": false
+  },
+  "gas_state": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Gas state",
+   "has_qc": false
+  },
+  "diagnostic_voltage_mb_24": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Diagnostic +24 volts at motherboard",
+   "has_qc": false
+  },
+  "diagnostic_voltage_mb_15": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Diagnostic +15 volts at motherboard",
+   "has_qc": false
+  },
+  "diagnostic_voltage_mb_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Diagnostic +5 volts at motherboard",
+   "has_qc": false
+  },
+  "diagnostic_voltage_mb_3p3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Diagnostic +3.3 volts at motherboard",
+   "has_qc": false
+  },
+  "diagnostic_voltage_mb_minus_3p3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Diagnostic -3.3 volts at motherboard",
+   "has_qc": false
+  },
+  "diagnostic_voltage_mib_24": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Diagnostic +24 volts at measurement interface board",
+   "has_qc": false
+  },
+  "diagnostic_voltage_mib_15": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Diagnostic +15 volts at measurement interface board",
+   "has_qc": false
+  },
+  "diagnostic_voltage_mib_minus_15": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Diagnostic -15 volts at measurement interface board",
+   "has_qc": false
+  },
+  "diagnostic_voltage_mib_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Diagnostic +5 volts at measurement interface board",
+   "has_qc": false
+  },
+  "diagnostic_voltage_mib_3p3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Diagnostic +3.3 volts at measurement interface board",
+   "has_qc": false
+  },
+  "o3_flags": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "object",
+   "units": "1",
+   "long_name": "Ozone flag string",
+   "has_qc": false
+  },
+  "o3_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "float32",
+   "units": "ppb",
+   "long_name": "Offset used in O3 correction",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86377
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

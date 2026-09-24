@@ -1,0 +1,315 @@
+{
+ "instrument": "irsi",
+ "datastream": "sgpirsivisC1.b1",
+ "filename": "sgpirsivisC1.b1.20230926.000104.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 24,
+ "dims": {
+  "time": 444
+ },
+ "n_qc_vars": 9,
+ "time_resolution_s": 68.0,
+ "time_span": [
+  "2023-09-26T00:01:04",
+  "2023-09-26T23:59:21"
+ ],
+ "global_attrs": {
+  "command_line": "irsi_ingest -s sgp -f C1",
+  "process_version": "ingest-irsi-3.1-0.el7",
+  "dod_version": "irsivis-b1-3.0",
+  "input_source": "/data/collection/sgp/sgpirsiC1.00/2023-09-26T00-00-58_vis_RB_Ratio.fits",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpirsivisC1.b1",
+  "doi": "10.5439/1364340"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "camera_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Camera temperature",
+   "has_qc": true
+  },
+  "qc_camera_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Camera temperature",
+   "has_qc": false
+  },
+  "exposure_duration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "float32",
+   "units": "us",
+   "long_name": "Exposure duration",
+   "has_qc": false
+  },
+  "sky_cover_opaque_narrow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Opaque sky cover for narrow field of view",
+   "has_qc": true
+  },
+  "qc_sky_cover_opaque_narrow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Opaque sky cover for narrow field of view",
+   "has_qc": false
+  },
+  "sky_cover_thin_narrow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Thin sky cover narrow field of view",
+   "has_qc": true
+  },
+  "qc_sky_cover_thin_narrow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Thin sky cover narrow field of view",
+   "has_qc": false
+  },
+  "sky_cover_opaque_wide": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Opaque sky cover for wide field of view",
+   "has_qc": true
+  },
+  "qc_sky_cover_opaque_wide": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Opaque sky cover for wide field of view",
+   "has_qc": false
+  },
+  "sky_cover_thin_wide": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Thin sky cover for wide field of view",
+   "has_qc": true
+  },
+  "qc_sky_cover_thin_wide": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Thin sky cover for wide field of view",
+   "has_qc": false
+  },
+  "sky_cover_total_wide": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Total sky cover for wide field of view",
+   "has_qc": true
+  },
+  "qc_sky_cover_total_wide": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total sky cover for wide field of view",
+   "has_qc": false
+  },
+  "sky_cover_total_narrow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Total sky cover for narrow field of view",
+   "has_qc": true
+  },
+  "qc_sky_cover_total_narrow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total sky cover for narrow field of view",
+   "has_qc": false
+  },
+  "altitude_sun": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Calculated altitude for the sun",
+   "has_qc": true
+  },
+  "qc_altitude_sun": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calculated altitude for the sun",
+   "has_qc": false
+  },
+  "azimuth_sun": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Calculated azimuth for the sun",
+   "has_qc": true
+  },
+  "qc_azimuth_sun": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calculated azimuth for the sun",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    444
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

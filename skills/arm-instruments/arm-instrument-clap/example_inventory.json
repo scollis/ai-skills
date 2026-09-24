@@ -1,0 +1,220 @@
+{
+ "instrument": "clap",
+ "datastream": "pvcaosclap3wM1.c1",
+ "filename": "pvcaosclap3wM1.c1.20130621.000000.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 16,
+ "dims": {
+  "time": 1440
+ },
+ "n_qc_vars": 3,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2013-06-21T00:00:00",
+  "2013-06-21T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "aosmqc_ingest -s pvc -f M1 -n aosmqc -R -D",
+  "process_version": "ingest-aosmqc-1.2-0.el6",
+  "dod_version": "aosclap3w-c1-1.3",
+  "site_id": "pvc",
+  "facility_id": "M1: Cape Cod, Massachusetts",
+  "data_level": "c1",
+  "input_source": "/data/collection/pvc/pvcaosM1.01/pvcclap3wM1.00.20130621.000000.edit.asc",
+  "sampling_interval": "1 second",
+  "averaging_interval": "not averaged",
+  "serial_number": "not available",
+  "datastream": "pvcaosclap3wM1.c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "Ba_B_CLAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal blue wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_B_CLAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal blue wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "Ba_G_CLAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal green wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_G_CLAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal green wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "Ba_R_CLAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal red wavelength at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_R_CLAP3W_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, nominal red wavelength at dry or reference RH",
+   "has_qc": false
+  },
+  "transmittance_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "AOS Ba_B_CLAP3W_1 transmittance, blue channel",
+   "has_qc": false
+  },
+  "transmittance_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "AOS Ba_G_CLAP3W_1 transmittance, green channel",
+   "has_qc": false
+  },
+  "transmittance_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "AOS Ba_R_CLAP3W_1 transmittance, red channel",
+   "has_qc": false
+  },
+  "sample_length": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "AOS Ba_B_CLAP3W_1 (NOAA) sample length, needed to calculate Beers Law",
+   "has_qc": false
+  },
+  "impactor_setting": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Impactor setting in terms of aerodynamic diameter cut off",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

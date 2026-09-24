@@ -1,0 +1,535 @@
+{
+ "instrument": "nephelometer-air",
+ "datastream": "nsaaafneph10sF1.b1",
+ "filename": "nsaaafneph10sF1.b1.20150930.180955.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 41,
+ "dims": {
+  "time": 2107,
+  "bound": 2
+ },
+ "n_qc_vars": 19,
+ "time_resolution_s": 10.0,
+ "time_span": [
+  "2015-09-30T18:09:55",
+  "2015-10-01T00:00:55"
+ ],
+ "global_attrs": {
+  "command_line": "aafneph10s -s nsa -f F1 -RD",
+  "process_version": "ingest-aafneph10s-1.0-0.el7",
+  "dod_version": "aafneph10s-b1-1.0",
+  "site_id": "nsa",
+  "facility_id": "F1",
+  "data_level": "b1",
+  "location_description": "North Slope of Alaska (NSA), Gulfstream 159 (\"G1\") Aircraft",
+  "datastream": "nsaaafneph10sF1.b1",
+  "averaging_interval": "10 s",
+  "sampling_interval": "1 second",
+  "doi": "10.5439/1494908"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    2107,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "Bs_B_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol total light scattering coefficient, nominal blue wavelength",
+   "has_qc": true
+  },
+  "qc_Bs_B_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol total light scattering coefficient, nominal blue wavelength",
+   "has_qc": false
+  },
+  "Bs_G_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol total light scattering coefficient, nominal green wavelength",
+   "has_qc": true
+  },
+  "qc_Bs_G_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol total light scattering coefficient, nominal green wavelength",
+   "has_qc": false
+  },
+  "Bs_R_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol total light scattering coefficient, nominal red wavelength",
+   "has_qc": true
+  },
+  "qc_Bs_R_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol total light scattering coefficient, nominal red wavelength",
+   "has_qc": false
+  },
+  "Bbs_B_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol back-hemispheric light scattering coefficient, nominal blue wavelength",
+   "has_qc": true
+  },
+  "qc_Bbs_B_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol back-hemispheric light scattering coefficient, nominal blue wavelength",
+   "has_qc": false
+  },
+  "Bbs_G_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol back-hemispheric light scattering coefficient, nominal green wavelength",
+   "has_qc": true
+  },
+  "qc_Bbs_G_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol back-hemispheric light scattering coefficient, nominal green wavelength",
+   "has_qc": false
+  },
+  "Bbs_R_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol back-hemispheric light scattering coefficient, nominal red wavelength",
+   "has_qc": true
+  },
+  "qc_Bbs_R_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol back-hemispheric light scattering coefficient, nominal red wavelength",
+   "has_qc": false
+  },
+  "Bs_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, nominal blue wavelength",
+   "has_qc": true
+  },
+  "qc_Bs_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, nominal blue wavelength",
+   "has_qc": false
+  },
+  "Bs_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, nominal green wavelength",
+   "has_qc": true
+  },
+  "qc_Bs_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, nominal green wavelength",
+   "has_qc": false
+  },
+  "Bs_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, nominal red wavelength",
+   "has_qc": true
+  },
+  "qc_Bs_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total light scattering coefficient, nominal red wavelength",
+   "has_qc": false
+  },
+  "Bbs_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, nominal blue wavelength",
+   "has_qc": true
+  },
+  "qc_Bbs_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, nominal blue wavelength",
+   "has_qc": false
+  },
+  "Bbs_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, nominal green wavelength",
+   "has_qc": true
+  },
+  "qc_Bbs_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, nominal green wavelength",
+   "has_qc": false
+  },
+  "Bbs_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol back-hemispheric light scattering coefficient, nominal red wavelength",
+   "has_qc": true
+  },
+  "qc_Bbs_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol back-hemispheric light scattering coefficient, nominal red wavelength",
+   "has_qc": false
+  },
+  "P_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure inside nephelometer",
+   "has_qc": true
+  },
+  "qc_P_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pressure inside nephelometer",
+   "has_qc": false
+  },
+  "T_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Sample temperature inside nephelometer",
+   "has_qc": true
+  },
+  "qc_T_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sample temperature inside nephelometer",
+   "has_qc": false
+  },
+  "T_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature at nephelometer inlet",
+   "has_qc": true
+  },
+  "qc_T_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature at nephelometer inlet",
+   "has_qc": false
+  },
+  "RH_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity inside nephelometer",
+   "has_qc": true
+  },
+  "qc_RH_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity inside nephelometer",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2107
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}
