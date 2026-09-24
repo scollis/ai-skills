@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-ozone
-description: ARM Ozone Monitor (ozone) - handbook-derived instrument reference: measurement principle, reported quantities (Ozone), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (enaaoso3C1.b1) and the variable inventory of a real file. Use when working with ozone data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Other. Triggers - ozone, Ozone Monitor, enaaoso3C1.b1, Ozone, Other, Thermo Fisher Scientific Inc., Model 49i (i-series), DQPR, NIST, NYS DEC, o.d..
+description: ARM Ozone Monitor (ozone) - handbook-derived instrument reference. Measurement principle, reported quantities (Ozone), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (enaaoso3C1.b1) and the variable inventory of a real file. Use when working with ozone data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Other. Triggers - ozone, Ozone Monitor, enaaoso3C1.b1, Ozone, Other, Thermo Fisher Scientific Inc., Model 49i (i-series), DQPR, NIST, NYS DEC, o.d..
 ---
 
 # OZONE - Ozone Monitor

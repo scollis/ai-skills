@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-gvr
-description: ARM G-band (183 GHz) Vapor Radiometer (gvr) - handbook-derived instrument reference: measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (nsagvrC1.c1) and the variable inventory of a real file. Use when working with gvr data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Radiometric. Triggers - gvr, G-band (183 GHz) Vapor Radiometer, nsagvrC1.c1, Radiometric, ProSensing, Inc. (Amherst, Uncertainty, NEDT, IMMS.
+description: ARM G-band (183 GHz) Vapor Radiometer (gvr) - handbook-derived instrument reference. Measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (nsagvrC1.c1) and the variable inventory of a real file. Use when working with gvr data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Radiometric. Triggers - gvr, G-band (183 GHz) Vapor Radiometer, nsagvrC1.c1, Radiometric, ProSensing, Inc. (Amherst, Uncertainty, NEDT, IMMS.
 ---
 
 # GVR - G-band (183 GHz) Vapor Radiometer

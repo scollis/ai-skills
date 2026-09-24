@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-so2
-description: ARM Sulfur Dioxide Monitor (so2) - handbook-derived instrument reference: measurement principle, reported quantities (Sulfur dioxide), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (bnfaosso2M1.b1) and the variable inventory of a real file. Use when working with so2 data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Other. Triggers - so2, Sulfur Dioxide Monitor, bnfaosso2M1.b1, Sulfur dioxide, Other, referred to elsewhere as TEI Model 49i / Model 43i, DQPR/DQR, MAOS.
+description: ARM Sulfur Dioxide Monitor (so2) - handbook-derived instrument reference. Measurement principle, reported quantities (Sulfur dioxide), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (bnfaosso2M1.b1) and the variable inventory of a real file. Use when working with so2 data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Other. Triggers - so2, Sulfur Dioxide Monitor, bnfaosso2M1.b1, Sulfur dioxide, Other, referred to elsewhere as TEI Model 49i / Model 43i, DQPR/DQR, MAOS.
 ---
 
 # SO2 - Sulfur Dioxide Monitor

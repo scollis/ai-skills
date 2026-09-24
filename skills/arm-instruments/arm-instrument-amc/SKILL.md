@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-amc
-description: ARM Ameriflux Measurement Component (amc) - handbook-derived instrument reference: measurement principle, reported quantities (Soil volumetric water content, Soil temperature, Soil bulk electrical conductivity), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (nsaamcC1.b1) and the variable inventory of a real file. Use when working with amc data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Radiometric; Surface/Subsurface Properties. Triggers - amc, Ameriflux Measurement Component, nsaamcC1.b1, Soil volumetric water content, Soil temperature, Soil bulk electrical conductivity, Radiometric, Surface/Subsurface Properties, Campbell Scientific CS650L (NSA VWC/soil temp sensors), Campbell Scientific CS655 (OLI, LBNL.
+description: ARM Ameriflux Measurement Component (amc) - handbook-derived instrument reference. Measurement principle, reported quantities (Soil volumetric water content, Soil temperature, Soil bulk electrical conductivity), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (nsaamcC1.b1) and the variable inventory of a real file. Use when working with amc data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Radiometric; Surface/Subsurface Properties. Triggers - amc, Ameriflux Measurement Component, nsaamcC1.b1, Soil volumetric water content, Soil temperature, Soil bulk electrical conductivity, Radiometric, Surface/Subsurface Properties, Campbell Scientific CS650L (NSA VWC/soil temp sensors), Campbell Scientific CS655 (OLI, LBNL.
 ---
 
 # AMC - Ameriflux Measurement Component
@@ -110,7 +110,7 @@ Verified example: **`nsaamcC1.b1`**, file `nsaamcC1.b1.20241119.000000.nc`
 | `period_1` | us | time | yes | Average signal oscillation period sensor 1 |
 
 
-_136 more variables; the full inventory is in `example_inventory.json` beside this file._
+_136 more variables. The full inventory is `example_inventory.json` in this skill's directory in the ai-skills repo; at 75 KB it exceeds the registry's per-file limit, so it does not ship with the published skill._
 
 ## Getting the data
 

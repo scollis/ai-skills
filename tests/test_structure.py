@@ -83,6 +83,33 @@ def test_frontmatter_valid(skill):
         f"{skill.name}: description contains angle-bracket text"
 
 
+@pytest.mark.parametrize("skill", SKILLS, ids=NAMES)
+def test_frontmatter_is_valid_yaml(skill):
+    """The registry parses frontmatter as YAML; `frontmatter()` above parses it with a
+    regex and does not care. That gap let 128 skills through with an unquoted ': ' in
+    their description - YAML reads it as a nested mapping, and every publish was refused
+    until the descriptions were reworded.
+    """
+    yaml = pytest.importorskip("yaml")
+    text = (skill / "SKILL.md").read_text()
+    m = re.match(r"---\n(.*?)\n---\n", text, re.S)
+    assert m, f"{skill.name}: no frontmatter block"
+    try:
+        meta = yaml.safe_load(m.group(1))
+    except yaml.YAMLError as e:
+        pytest.fail(f"{skill.name}: frontmatter is not valid YAML - {e}\n"
+                    f"  a value containing ': ' must be quoted or reworded")
+    assert isinstance(meta, dict), \
+        f"{skill.name}: frontmatter parsed as {type(meta).__name__}, not a mapping"
+    assert meta.get("name") == skill.name, \
+        f"{skill.name}: YAML name is {meta.get('name')!r}"
+    assert isinstance(meta.get("description"), str), \
+        f"{skill.name}: description did not parse as a string"
+    # the registry refuses a publish above this; the regex parser above does not notice
+    assert len(meta["description"]) <= 1024, \
+        f"{skill.name}: description is {len(meta['description'])} characters, registry caps it at 1024"
+
+
 @pytest.mark.parametrize("name,path", sidecars(),
                          ids=[n for n, _ in sidecars()])
 def test_sidecar_gate(name, path):

@@ -149,10 +149,13 @@ def arm_handbook_candidates(code):
     """The two URL patterns ARM files instrument handbooks under."""
     row = arm_instrument(code)
     urls = [ARM_HANDBOOK_DIR + code + "_handbook.pdf"]
-    if row and row.get("pdf"):
-        urls.append(row["pdf"])
-    if row and row.get("handbook"):
-        urls.append(row["handbook"])
+    for key in ("pdf", "handbook"):
+        val = (row or {}).get(key)
+        if not val:
+            continue
+        # the catalog copy published with this skill stores bare PDF filenames to fit the
+        # registry's per-file limit; the repo copy stores full URLs. Accept either.
+        urls.append(val if val.startswith("http") else ARM_HANDBOOK_DIR + val)
     seen = []
     for u in urls:
         u = u.replace("http://", "https://").replace("https://arm.gov", "https://www.arm.gov")
@@ -225,6 +228,15 @@ def arm_instruments_for_measurement(measurement, timeout=90):
 
 
 def arm_skill_for(code):
-    """Name of the per-instrument skill for this code, if this repo ships one."""
+    """Name of the per-instrument skill for this code, or None.
+
+    Reads the catalog's `skill` column rather than looking for a sibling directory:
+    in the repo the instrument skills are nested under this one, but the registry
+    stores every skill as its own flat directory, so a filesystem check answers
+    None for skills that do exist.
+    """
+    row = arm_instrument(code)
+    if row and row.get("skill"):
+        return row["skill"]
     d = skill_dir() / ("arm-instrument-" + code.lower())
     return d.name if (d / "SKILL.md").exists() else None

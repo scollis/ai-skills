@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-co
-description: ARM Carbon Monoxide Mixing Ratio System (co) - handbook-derived instrument reference: measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpcoC1.b1) and the variable inventory of a real file. Use when working with co data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Atmospheric Carbon. Triggers - co, Carbon Monoxide Mixing Ratio System, sgpcoC1.b1, Atmospheric Carbon, Thermo Electron Corporation, ESRL, LBNL, NOAA, TE48C.
+description: ARM Carbon Monoxide Mixing Ratio System (co) - handbook-derived instrument reference. Measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpcoC1.b1) and the variable inventory of a real file. Use when working with co data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Atmospheric Carbon. Triggers - co, Carbon Monoxide Mixing Ratio System, sgpcoC1.b1, Atmospheric Carbon, Thermo Electron Corporation, ESRL, LBNL, NOAA, TE48C.
 ---
 
 # CO - Carbon Monoxide Mixing Ratio System

@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-tap
-description: ARM Tricolor Absorption Photometer (tap) - handbook-derived instrument reference: measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpaostapE13.b1) and the variable inventory of a real file. Use when working with tap data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Aerosols. Triggers - tap, Tricolor Absorption Photometer, sgpaostapE13.b1, Aerosols, AOS07, PSAP, CAPS, Neph, Dry.
+description: ARM Tricolor Absorption Photometer (tap) - handbook-derived instrument reference. Measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpaostapE13.b1) and the variable inventory of a real file. Use when working with tap data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Aerosols. Triggers - tap, Tricolor Absorption Photometer, sgpaostapE13.b1, Aerosols, AOS07, PSAP, CAPS, Neph, Dry.
 ---
 
 # TAP - Tricolor Absorption Photometer

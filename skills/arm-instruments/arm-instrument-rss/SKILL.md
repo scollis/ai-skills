@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-rss
-description: ARM Rotating Shadowband Spectroradiometer (rss) - handbook-derived instrument reference: measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgprssC1.b1) and the variable inventory of a real file. Use when working with rss data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Radiometric. Triggers - rss, Rotating Shadowband Spectroradiometer, sgprssC1.b1, Radiometric, Yankee Environmental Systems (RSS105), ASRC, FWHM, MFRS, NIST.
+description: ARM Rotating Shadowband Spectroradiometer (rss) - handbook-derived instrument reference. Measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgprssC1.b1) and the variable inventory of a real file. Use when working with rss data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Radiometric. Triggers - rss, Rotating Shadowband Spectroradiometer, sgprssC1.b1, Radiometric, Yankee Environmental Systems (RSS105), ASRC, FWHM, MFRS, NIST.
 ---
 
 # RSS - Rotating Shadowband Spectroradiometer

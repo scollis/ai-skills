@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-sws
-description: ARM Shortwave Spectroradiometer (sws) - handbook-derived instrument reference: measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpswsC1.b1) and the variable inventory of a real file. Use when working with sws data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Radiometric. Triggers - sws, Shortwave Spectroradiometer, sgpswsC1.b1, Radiometric, Hamamatsu Si 256-element linear diode array, MMS 1 NIR, NIR-PGS 2.2.
+description: ARM Shortwave Spectroradiometer (sws) - handbook-derived instrument reference. Measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpswsC1.b1) and the variable inventory of a real file. Use when working with sws data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Radiometric. Triggers - sws, Shortwave Spectroradiometer, sgpswsC1.b1, Radiometric, Hamamatsu Si 256-element linear diode array, MMS 1 NIR, NIR-PGS 2.2.
 ---
 
 # SWS - Shortwave Spectroradiometer

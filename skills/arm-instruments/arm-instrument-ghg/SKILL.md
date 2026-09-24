@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-ghg
-description: ARM Greenhouse Gas Monitor (ghg) - handbook-derived instrument reference: measurement principle, reported quantities (CO2, CH4), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (oliaosghgcoeffM1.b1) and the variable inventory of a real file. Use when working with ghg data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Atmospheric Carbon. Triggers - ghg, Greenhouse Gas Monitor, oliaosghgcoeffM1.b1, CO2, CH4, Atmospheric Carbon, AOSGHG, CRDS, NOAA, RMSE.
+description: ARM Greenhouse Gas Monitor (ghg) - handbook-derived instrument reference. Measurement principle, reported quantities (CO2, CH4), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (oliaosghgcoeffM1.b1) and the variable inventory of a real file. Use when working with ghg data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Atmospheric Carbon. Triggers - ghg, Greenhouse Gas Monitor, oliaosghgcoeffM1.b1, CO2, CH4, Atmospheric Carbon, AOSGHG, CRDS, NOAA, RMSE.
 ---
 
 # GHG - Greenhouse Gas Monitor

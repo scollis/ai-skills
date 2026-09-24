@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-mwrhf
-description: ARM Microwave Radiometer - High Frequency (mwrhf) - handbook-derived instrument reference: measurement principle, reported quantities (temp - ambient temperature, pressure), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpmwrhfC1.b1) and the variable inventory of a real file. Use when working with mwrhf data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Radiometric. Triggers - mwrhf, Microwave Radiometer - High Frequency, sgpmwrhfC1.b1, Radiometric, Radiometer Physics, GmbH, Uncertainty, TndI, Tndmed.
+description: ARM Microwave Radiometer - High Frequency (mwrhf) - handbook-derived instrument reference. Measurement principle, reported quantities (temp - ambient temperature, pressure), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpmwrhfC1.b1) and the variable inventory of a real file. Use when working with mwrhf data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Radiometric. Triggers - mwrhf, Microwave Radiometer - High Frequency, sgpmwrhfC1.b1, Radiometric, Radiometer Physics, GmbH, Uncertainty, TndI, Tndmed.
 ---
 
 # MWRHF - Microwave Radiometer - High Frequency

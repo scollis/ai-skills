@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-mfr
-description: ARM Multifilter Radiometer (mfr) - handbook-derived instrument reference: measurement principle, reported quantities (Irradiance), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpmfr7nch25mC1.b1) and the variable inventory of a real file. Use when working with mfr data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Radiometric. Triggers - mfr, Multifilter Radiometer, sgpmfr7nch25mC1.b1, Irradiance, Radiometric, Yankee Environmental Systems, Inc. MFRSR head (used as MFR), ESRL, IMMS, MFRSR, NIMFR.
+description: ARM Multifilter Radiometer (mfr) - handbook-derived instrument reference. Measurement principle, reported quantities (Irradiance), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpmfr7nch25mC1.b1) and the variable inventory of a real file. Use when working with mfr data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Radiometric. Triggers - mfr, Multifilter Radiometer, sgpmfr7nch25mC1.b1, Irradiance, Radiometric, Yankee Environmental Systems, Inc. MFRSR head (used as MFR), ESRL, IMMS, MFRSR, NIMFR.
 ---
 
 # MFR - Multifilter Radiometer

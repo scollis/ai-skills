@@ -52,6 +52,29 @@ def _md_table(headers, rows):
     return "\n".join(out) + "\n"
 
 
+def trim_description(val, limit=1000):
+    """The registry caps `description` at 1024 characters and refuses the publish above it.
+    Drop triggers from the end first, then reported quantities - both are lists whose tail
+    is the least discriminating part."""
+    if len(val) <= limit:
+        return val
+    head, sep, trig = val.rpartition("Triggers - ")
+    trigs = [t.strip() for t in trig.rstrip(".").split(", ") if t.strip()]
+    while trigs and len(head + sep + ", ".join(trigs) + ".") > limit:
+        trigs.pop()
+    out = head + sep + ", ".join(trigs) + "."
+    if len(out) <= limit:
+        return out
+    m = re.search(r"reported quantities \(([^)]*)\)", out)
+    if m:
+        qs = [q.strip() for q in m.group(1).split(", ") if q.strip()]
+        while qs and len(out) > limit:
+            qs.pop()
+            out = out[:m.start(1)] + ", ".join(qs) + out[m.end(1):]
+            m = re.search(r"reported quantities \(([^)]*)\)", out)
+    return out[:limit].rsplit(" ", 1)[0] + "."
+
+
 def description(code, name, facts, cat, ex_ds, extra_triggers=(), verified=True):
     """Frontmatter description: what it is, what the skill carries, trigger words.
     No angle brackets - the skill registry reads the field as markup."""
@@ -76,14 +99,17 @@ def description(code, name, facts, cat, ex_ds, extra_triggers=(), verified=True)
                       f"of a real file. " if verified else
                       "No data file could be verified for this instrument, and the skill says so in "
                       "place of a variable inventory. ")
-    d = (f"ARM {name} ({code}) - handbook-derived instrument reference: measurement principle, "
+    d = (f"ARM {name} ({code}) - handbook-derived instrument reference. Measurement principle, "
          f"reported quantities ({quantities}), specifications, calibration, embedded QC coverage, "
          f"and the known artifacts and failure modes documented by the instrument mentor. "
          + example_clause
          + f"Use when working with {code} data, interpreting its variables or QC flags, judging "
          f"whether an artifact is instrumental, or choosing a datastream for this measurement. "
-         f"Category: {cat}. Triggers - " + ", ".join(trig) + ".")
-    return _clean(d)
+         f"Category - {cat}. Triggers - " + ", ".join(trig) + ".")
+    # ': ' in an unquoted YAML scalar makes the frontmatter a nested mapping and the
+    # registry refuses to publish it. The repo's regex frontmatter parser does not
+    # notice, so the guard belongs here, at the point the value is built.
+    return trim_description(_clean(d).replace(": ", " - "))
 
 
 def credit_block(facts, handbook_url, code):

@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-aos
-description: ARM Aerosol Observing System (aos) - handbook-derived instrument reference: measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpnoaaaosavgC1.b1) and the variable inventory of a real file. Use when working with aos data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Aerosols. Triggers - aos, Aerosol Observing System, sgpnoaaaosavgC1.b1, Aerosols.
+description: ARM Aerosol Observing System (aos) - handbook-derived instrument reference. Measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (sgpnoaaaosavgC1.b1) and the variable inventory of a real file. Use when working with aos data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Aerosols. Triggers - aos, Aerosol Observing System, sgpnoaaaosavgC1.b1, Aerosols.
 ---
 
 # AOS - Aerosol Observing System

@@ -1,6 +1,6 @@
 ---
 name: arm-instrument-clap
-description: ARM Continuous Light Absorption Photometer (clap) - handbook-derived instrument reference: measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (pvcaosclap3wM1.c1) and the variable inventory of a real file. Use when working with clap data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category: Aerosols. Triggers - clap, Continuous Light Absorption Photometer, pvcaosclap3wM1.c1, Aerosols.
+description: ARM Continuous Light Absorption Photometer (clap) - handbook-derived instrument reference. Measurement principle, reported quantities (), specifications, calibration, embedded QC coverage, and the known artifacts and failure modes documented by the instrument mentor. Includes a verified ARM Live example (pvcaosclap3wM1.c1) and the variable inventory of a real file. Use when working with clap data, interpreting its variables or QC flags, judging whether an artifact is instrumental, or choosing a datastream for this measurement. Category - Aerosols. Triggers - clap, Continuous Light Absorption Photometer, pvcaosclap3wM1.c1, Aerosols.
 ---
 
 # CLAP - Continuous Light Absorption Photometer

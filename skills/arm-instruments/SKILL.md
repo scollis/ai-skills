@@ -249,15 +249,20 @@ ships without either an author list or an explicit statement that the cover name
 | `arm-instrument-nav` | Navigational Location and Attitude | DOE/SC-ARM-TR-236 | `mosnavM1.a1` | 10 |
 | `arm-instrument-s-table` | Stabilized Platform | DOE/SC-ARM-TR-166 | `marrphtiltM1.a1` | 12 |
 
-`catalog.csv` holds all 594 ARM instrument classes - not just the 128 with a
-skill - so the routing helpers work for every instrument, with columns for the handbook
-URL, authors, report number, the verified example and the datastream inventory.
+`catalog.csv` carries the instrument classes the routing helpers need, with columns for
+the handbook, authors, report number, the verified example and the datastream inventory -
+so they work for instruments without a skill, not just the 128 with one. The copy
+published with this skill holds the 279 classes that are ARM-observed or have a
+handbook, with `pdf` as a bare filename, because the registry caps a file at 65,536
+characters; the ai-skills repo carries all 594 classes with full URLs.
+`arm_handbook_url()` accepts either form, and `arm_catalog(live=True)` re-reads ARM's
+index when you need a class the shipped copy omits.
 
 Each instrument skill carries: measurement principle in the handbook's own terms, reported
 quantities with ranges and uncertainties, the specification table, sampling, calibration
 and maintenance, the embedded-QC coverage measured on a real file, the variable inventory
 of that file, and **the known artifacts and failure modes the mentor wrote down** -
-1519 of them across the tranche, which is
+1526 of them across the tranche, which is
 the section that earns the skill, because it is the part no variable name tells you.
 
 ## Where the handbooks are
