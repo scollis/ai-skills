@@ -1,0 +1,1328 @@
+{
+ "vap": "varanal3d",
+ "datastream": "sgp180varanal3drucC1.c1",
+ "filename": "sgp180varanal3drucC1.c1.20110422.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 74,
+ "dims": {
+  "time": 368,
+  "lev": 38,
+  "lat": 9,
+  "lon": 10,
+  "lon_stag": 11,
+  "lat_stag": 10
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 10800.0,
+ "time_span": [
+  "2011-04-22T00:00:00",
+  "2011-06-06T21:00:00"
+ ],
+ "global_attrs": {
+  "command_line": "output_3DCVA_inonefile.m",
+  "datastream": "NULL",
+  "dod_version": "1.1",
+  "process_version": "1.1",
+  "data_level": "c1",
+  "doi": "10.5439/1491785",
+  "site_id": "SGP",
+  "facility_id": "NULL"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    368
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "u": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "U-wind at grid center",
+   "has_qc": false
+  },
+  "v": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "V-wind at grid center",
+   "has_qc": false
+  },
+  "q": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg/kg",
+   "long_name": "water vapor mixing ratio at grid center",
+   "has_qc": false
+  },
+  "s": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "dry static energy/Cpd (T+g*z/Cpd) at grid center",
+   "has_qc": false
+  },
+  "z": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "gpm",
+   "long_name": "geopotential height",
+   "has_qc": false
+  },
+  "u_xstag": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon_stag"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    11
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "U-wind at W-E boundary",
+   "has_qc": false
+  },
+  "q_xstag": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon_stag"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    11
+   ],
+   "dtype": "float32",
+   "units": "kg/kg",
+   "long_name": "water vapor mixing ratio at W-E boundary",
+   "has_qc": false
+  },
+  "s_xstag": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon_stag"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    11
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "dry static energy/Cpd (T+g*z/Cpd) at W-E boundary",
+   "has_qc": false
+  },
+  "v_ystag": {
+   "dims": [
+    "time",
+    "lev",
+    "lat_stag",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    10,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "V-wind at N-S boundary",
+   "has_qc": false
+  },
+  "q_ystag": {
+   "dims": [
+    "time",
+    "lev",
+    "lat_stag",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    10,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg/kg",
+   "long_name": "water vapor mixing ratio at N-S boundary",
+   "has_qc": false
+  },
+  "s_ystag": {
+   "dims": [
+    "time",
+    "lev",
+    "lat_stag",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    10,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "dry static energy/Cpd (T+g*z/Cpd) at N-S boundary",
+   "has_qc": false
+  },
+  "div": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "1/s",
+   "long_name": "Divergence of wind",
+   "has_qc": false
+  },
+  "m_domega_dp": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "1/s",
+   "long_name": "Negative domega/dp",
+   "has_qc": false
+  },
+  "omega": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "Pa/s",
+   "long_name": "Pressure vertical velocity",
+   "has_qc": false
+  },
+  "dq_dt": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg/kg/s",
+   "long_name": "Time change of moisture",
+   "has_qc": false
+  },
+  "h_advq": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg/kg/s",
+   "long_name": "horizontal advection of q",
+   "has_qc": false
+  },
+  "v_advq": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg/kg/s",
+   "long_name": "vertical advection of q",
+   "has_qc": false
+  },
+  "Q2": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K/s",
+   "long_name": "Apparent moisture sink (/cpd) from Yanai et al., (1973)",
+   "has_qc": false
+  },
+  "wq": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "Pa*K/s",
+   "long_name": "vertical pressure velocity multiplied by moisture (*L/cpd)",
+   "has_qc": false
+  },
+  "ds_dt": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K/s",
+   "long_name": "time tendency of dry static energy (/cpd)",
+   "has_qc": false
+  },
+  "h_advs": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K/s",
+   "long_name": "horizontal advection of s (/cpd)",
+   "has_qc": false
+  },
+  "v_advs": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K/s",
+   "long_name": "vertical advection of s (/cpd)",
+   "has_qc": false
+  },
+  "Q1": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K/s",
+   "long_name": "Apparent heat source (/cpd) from Yanai et al., (1973)",
+   "has_qc": false
+  },
+  "ws": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "Pa*K/s",
+   "long_name": "vertical pressure velocity multiplied by dry static energy (/cpd)",
+   "has_qc": false
+  },
+  "T": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Temperature at grid center",
+   "has_qc": false
+  },
+  "dT_dt": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K/s",
+   "long_name": "time tendency of temperature",
+   "has_qc": false
+  },
+  "h_advT": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K/s",
+   "long_name": "horizontal advection of T",
+   "has_qc": false
+  },
+  "v_advT": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "K/s",
+   "long_name": "vertical advection of T",
+   "has_qc": false
+  },
+  "RH": {
+   "dims": [
+    "time",
+    "lev",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    38,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "relative humidity",
+   "has_qc": false
+  },
+  "zs": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "surface geopotential height",
+   "has_qc": false
+  },
+  "lh": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downward surface latent heat",
+   "has_qc": false
+  },
+  "sh": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downward surface sensible heat",
+   "has_qc": false
+  },
+  "ps": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "surface pressure",
+   "has_qc": false
+  },
+  "Ts": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "surface temperature",
+   "has_qc": false
+  },
+  "rhs": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "surface relative humidity",
+   "has_qc": false
+  },
+  "us": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "surface U wind",
+   "has_qc": false
+  },
+  "vs": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "surface V wind",
+   "has_qc": false
+  },
+  "srflwdn": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "surface downward longwave flux",
+   "has_qc": false
+  },
+  "srflwup": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "surface upward longwave flux",
+   "has_qc": false
+  },
+  "srfswdn": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "surface downward shortwave flux",
+   "has_qc": false
+  },
+  "srfswup": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "surface upward shortwave flux",
+   "has_qc": false
+  },
+  "liq": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "liquid water path",
+   "has_qc": false
+  },
+  "vap": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "column precipitable water",
+   "has_qc": false
+  },
+  "lwt": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "TOA net longwave flux",
+   "has_qc": false
+  },
+  "swt": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "TOA net shortwave flux",
+   "has_qc": false
+  },
+  "lwc": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "TOA clearsky longwave flux",
+   "has_qc": false
+  },
+  "swc": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "TOA clearsky shortwave flux",
+   "has_qc": false
+  },
+  "ins": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "TOA insolation",
+   "has_qc": false
+  },
+  "clddz": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "cloud depth",
+   "has_qc": false
+  },
+  "cldtz": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "cloud top height",
+   "has_qc": false
+  },
+  "cldhgh": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "high cloud amount",
+   "has_qc": false
+  },
+  "cldmid": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "middle cloud amount",
+   "has_qc": false
+  },
+  "cldlow": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "low cloud amount",
+   "has_qc": false
+  },
+  "cldtot": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "total cloud amount",
+   "has_qc": false
+  },
+  "rsd_mass": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg/s/m^2",
+   "long_name": "residual of mass",
+   "has_qc": false
+  },
+  "m_Dps_dt": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg/s/m^2",
+   "long_name": "Negative time difference of Ps",
+   "has_qc": false
+  },
+  "m_sdivuv": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg/s/m^2",
+   "long_name": "Negative column divergence of wind",
+   "has_qc": false
+  },
+  "rsd_water": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg*K/s/m^2",
+   "long_name": "residual of water vapor",
+   "has_qc": false
+  },
+  "m_dsr_dt": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg*K/s/m^2",
+   "long_name": "Negative time difference of vapor",
+   "has_qc": false
+  },
+  "m_sdivuvr": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg*K/s/m^2",
+   "long_name": "Negative column divergence of water*wind",
+   "has_qc": false
+  },
+  "precip": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Surface precipitation",
+   "has_qc": false
+  },
+  "evapor": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Surface evaporation",
+   "has_qc": false
+  },
+  "m_dsrldt": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg*K/s/m^2",
+   "long_name": "Negative time difference of cloud water",
+   "has_qc": false
+  },
+  "rsd_heat": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg*K/s/m^2",
+   "long_name": "redisual of heat",
+   "has_qc": false
+  },
+  "m_dsh_dt": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg*K/s/m^2",
+   "long_name": "Negative time difference of heat",
+   "has_qc": false
+  },
+  "m_sdivuvh": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg*K/s/m^2",
+   "long_name": "Negative column divergence of heat*wind",
+   "has_qc": false
+  },
+  "radiation": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg*K/s/m^2",
+   "long_name": "column radiative heating",
+   "has_qc": false
+  },
+  "Lprecip": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg*K/s/m^2",
+   "long_name": "latent heat by precipitation",
+   "has_qc": false
+  },
+  "shf": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "kg*K/s/m^2",
+   "long_name": "surface sensible heat (plus cloud water latent heat)",
+   "has_qc": false
+  },
+  "KB": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "bottom level index",
+   "has_qc": false
+  },
+  "KT": {
+   "dims": [
+    "time",
+    "lat",
+    "lon"
+   ],
+   "shape": [
+    368,
+    9,
+    10
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "tropopause level index",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    368
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "lon_stag": {
+   "dims": [
+    "lon_stag"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float64",
+   "units": "degrees_east",
+   "long_name": "longitude at W-E boundary",
+   "has_qc": false
+  },
+  "lat_stag": {
+   "dims": [
+    "lat_stag"
+   ],
+   "shape": [
+    10
+   ],
+   "dtype": "float64",
+   "units": "degrees_north",
+   "long_name": "latitude at N-S boundary",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "lon"
+   ],
+   "shape": [
+    10
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "lat"
+   ],
+   "shape": [
+    9
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lev": {
+   "dims": [
+    "lev"
+   ],
+   "shape": [
+    38
+   ],
+   "dtype": "float64",
+   "units": "millibar",
+   "long_name": "levels",
+   "has_qc": false
+  }
+ }
+}

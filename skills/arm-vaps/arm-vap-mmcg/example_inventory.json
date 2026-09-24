@@ -1,0 +1,742 @@
+{
+ "vap": "mmcg",
+ "datastream": "sgpxsaprmmcgI5.c1",
+ "filename": "sgpxsaprmmcgI5.c1.20190331.190008.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 43,
+ "dims": {
+  "time": 1,
+  "nradar": 1,
+  "z": 31,
+  "y": 101,
+  "x": 101
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": null,
+ "time_span": [
+  "2019-03-31T19:00:08",
+  "2019-03-31T19:00:08"
+ ],
+ "global_attrs": {
+  "command_line": "/home/zsherman/anaconda3/envs/cmac_env/lib/python3.6/site-packages/distributed/cli/dask_worker.pytcp://10.23.216.82:42222--nthreads1--nprocs8--memory-limit16.00GB--namedask-worker--701416----death-tim",
+  "process_version": "EVAL-0.5",
+  "dod_version": "v1.0",
+  "site_id": "SGP",
+  "facility_id": "I5:Garber, OK",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Garber, Oklahoma",
+  "datastream": "sgpxsaprmmcgI5.c1",
+  "doi": ""
+ },
+ "variables": {
+  "origin_latitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Latitude at grid origin",
+   "has_qc": false
+  },
+  "origin_longitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Longitude at grid origin",
+   "has_qc": false
+  },
+  "origin_altitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude at grid origin",
+   "has_qc": false
+  },
+  "projection": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "ProjectionCoordinateSystem": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "radar_latitude": {
+   "dims": [
+    "nradar"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Latitude of radars used to make the grid.",
+   "has_qc": false
+  },
+  "radar_longitude": {
+   "dims": [
+    "nradar"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Longitude of radars used to make the grid.",
+   "has_qc": false
+  },
+  "radar_altitude": {
+   "dims": [
+    "nradar"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude of radars used to make the grid.",
+   "has_qc": false
+  },
+  "radar_time": {
+   "dims": [
+    "nradar"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time in seconds of the volume start for each radar",
+   "has_qc": false
+  },
+  "radar_name": {
+   "dims": [
+    "nradar"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S5",
+   "units": null,
+   "long_name": "Name of radar used to make the grid",
+   "has_qc": false
+  },
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North Latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East Longitude",
+   "has_qc": false
+  },
+  "ground_clutter": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Ground clutter flag",
+   "has_qc": false
+  },
+  "mean_doppler_velocity": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean Doppler velocity",
+   "has_qc": false
+  },
+  "corrected_specific_diff_phase": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "degree/km",
+   "long_name": "Corrected specific differential phase (KDP)",
+   "has_qc": false
+  },
+  "unfolded_differential_phase": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Unfolded differential phase (PhiDP)",
+   "has_qc": false
+  },
+  "corrected_differential_reflectivity": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Corrected differential reflectivity",
+   "has_qc": false
+  },
+  "total_power": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Total power",
+   "has_qc": false
+  },
+  "spectral_width": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Spectrum width",
+   "has_qc": false
+  },
+  "path_integrated_attenuation": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Path integrated attenuation",
+   "has_qc": false
+  },
+  "radar_echo_classification": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Radar echo classification",
+   "has_qc": false
+  },
+  "corrected_reflectivity": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Corrected reflectivity",
+   "has_qc": false
+  },
+  "SNR": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal to noise ratio",
+   "has_qc": false
+  },
+  "gate_id": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Classification of dominant scatterer",
+   "has_qc": false
+  },
+  "reflectivity": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Equivalent reflectivity factor",
+   "has_qc": false
+  },
+  "differential_reflectivity": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Differential reflectivity (ZDR)",
+   "has_qc": false
+  },
+  "normalized_coherent_power": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized coherent power",
+   "has_qc": false
+  },
+  "cross_correlation_ratio_hv": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cross correlation ratio (RhoHV)",
+   "has_qc": false
+  },
+  "corrected_velocity": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Corrected mean doppler velocity",
+   "has_qc": false
+  },
+  "specific_attenuation": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "dB/km",
+   "long_name": "Specific attenuation",
+   "has_qc": false
+  },
+  "velocity_texture": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean doppler velocity texture",
+   "has_qc": false
+  },
+  "filtered_corrected_differential_phase": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Filtered differential phase (PhiDP)",
+   "has_qc": false
+  },
+  "filtered_corrected_specific_diff_phase": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "degree/km",
+   "long_name": "Filtered specific differential phase (KDP)",
+   "has_qc": false
+  },
+  "specific_differential_attenuation": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "dB/km",
+   "long_name": "Specific differential attenuation",
+   "has_qc": false
+  },
+  "differential_phase": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Differential phase (PhiDP)",
+   "has_qc": false
+  },
+  "rain_rate_A": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "rainfall_rate",
+   "has_qc": false
+  },
+  "path_integrated_differential_attenuation": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Path integrated differential attenuation",
+   "has_qc": false
+  },
+  "specific_differential_phase": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "degree/km",
+   "long_name": "Specific differential phase (KDP)",
+   "has_qc": false
+  },
+  "corrected_differential_phase": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Corrected differential phase (PhiDP)",
+   "has_qc": false
+  },
+  "ROI": {
+   "dims": [
+    "time",
+    "z",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    31,
+    101,
+    101
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Radius of influence for mapping",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "x": {
+   "dims": [
+    "x"
+   ],
+   "shape": [
+    101
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "X distance on the projection plane from the origin",
+   "has_qc": false
+  },
+  "y": {
+   "dims": [
+    "y"
+   ],
+   "shape": [
+    101
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Y distance on the projection plane from the origin",
+   "has_qc": false
+  },
+  "z": {
+   "dims": [
+    "z"
+   ],
+   "shape": [
+    31
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Z distance on the projection plane from the origin",
+   "has_qc": false
+  }
+ }
+}

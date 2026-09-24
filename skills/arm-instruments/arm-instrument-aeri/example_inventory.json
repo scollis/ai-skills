@@ -1,0 +1,1186 @@
+{
+ "instrument": "aeri",
+ "datastream": "sgpaerisummaryC1.b1",
+ "filename": "sgpaerisummaryC1.b1.20260921.000405.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 79,
+ "dims": {
+  "time": 3847,
+  "wnumsum1": 71,
+  "wnumsum2": 56,
+  "wnumsum3": 58,
+  "wnumsum4": 48,
+  "wnumsum5": 71,
+  "wnumsum6": 56,
+  "wnumsum7": 71,
+  "wnumsum8": 56,
+  "wnumsum9": 71,
+  "wnumsum10": 56,
+  "wnumsum11": 50,
+  "wnumsum12": 48,
+  "wnumsum13": 50,
+  "wnumsum14": 48
+ },
+ "n_qc_vars": 1,
+ "time_resolution_s": 16.0,
+ "time_span": [
+  "2026-09-21T00:04:05",
+  "2026-09-21T23:53:28"
+ ],
+ "global_attrs": {
+  "command_line": "aeri_ingest -n aeri -s sgp -f C1 --max-runtime 86400",
+  "process_version": "ingest-aeri-12.2-4.el9",
+  "dod_version": "aerisummary-b1-2.2",
+  "site_id": "sgp",
+  "facility_id": "C1: Lamont, Oklahoma",
+  "data_level": "b1",
+  "input_source": "/data/collection/sgp/sgpaeriC1.00/260921F2.CSV",
+  "averaging_interval": "Use sceneViewDuration",
+  "sampling_interval": "about 16 seconds",
+  "serial_number": "108",
+  "datastream": "sgpaerisummaryC1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Time offset from midnight",
+   "has_qc": false
+  },
+  "Time_UTC_hours": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "hours",
+   "long_name": "Time in decimal format at center of AERI sky observation period",
+   "has_qc": false
+  },
+  "timeHHMMSS": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "hhmmss",
+   "long_name": "Time in hhmmss format at center of AERI sky observation period",
+   "has_qc": false
+  },
+  "dateYYMMDD": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "yymmdd",
+   "long_name": "Observation date",
+   "has_qc": false
+  },
+  "JulianDay": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "days",
+   "long_name": "Julian day including day and fraction of day",
+   "has_qc": false
+  },
+  "AERIunitNumber": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "AERI instrument unit serial number",
+   "has_qc": false
+  },
+  "instrumentUnitNumber": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Character string containing instrument name",
+   "has_qc": false
+  },
+  "Latitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Observation latitude",
+   "has_qc": false
+  },
+  "Longitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Observation longitude",
+   "has_qc": false
+  },
+  "Altitude": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Observation altitude",
+   "has_qc": false
+  },
+  "systemReleaseNumber": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Version number of operational software",
+   "has_qc": false
+  },
+  "sceneViewDuration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Duration of scene view",
+   "has_qc": false
+  },
+  "outsideAirTemp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ambient air temperature at hatch opening",
+   "has_qc": false
+  },
+  "rainSensorIntensity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Rain sensor analog output",
+   "has_qc": false
+  },
+  "atmosphericRelativeHumidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity measured near Blackbodies. Use with air temperature near BBs only.",
+   "has_qc": false
+  },
+  "atmosphericPressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Observation atmospheric pressure in AERI electronics",
+   "has_qc": false
+  },
+  "maxSampleStdDev": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Maximum standard deviation in thermistor channels 0 through 7",
+   "has_qc": false
+  },
+  "sceneMirrorAngle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Scene mirror view angle in non-negative degrees, measured clockwise looking into interferometer window.",
+   "has_qc": false
+  },
+  "hatchOpen": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "int16",
+   "units": "unitless",
+   "long_name": "Hatch open flag",
+   "has_qc": false
+  },
+  "ABBmaxTempDiff": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Maximum temperature difference between ABB thermistors",
+   "has_qc": false
+  },
+  "HBBmaxTempDiff": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Maximum temperature difference between HBB thermistors",
+   "has_qc": false
+  },
+  "frontEndFanAirTempDiff": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Front end fan air temperature difference",
+   "has_qc": false
+  },
+  "sceneMirPosEncoderDrift": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "steps",
+   "long_name": "Scene mirror encoder position drift",
+   "has_qc": false
+  },
+  "channelNumber": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "AERI instrument data channel number",
+   "has_qc": false
+  },
+  "calibrationAmbientTemp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ambient temperature used in calibration",
+   "has_qc": false
+  },
+  "calibrationCBBtemp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Cold blackbody temperature used in calibration",
+   "has_qc": false
+  },
+  "calibrationHBBtemp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Hot blackbody temperature used in calibration",
+   "has_qc": false
+  },
+  "calibratedSceneID": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Calibrated scene type identification",
+   "has_qc": false
+  },
+  "sceneMirPosEncoderMaxDrift": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "steps",
+   "long_name": "Scene mirror position encoder maximum drift",
+   "has_qc": false
+  },
+  "surfaceLayerRadiance675_680": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Longwave radiance average (675-680 cm^-1) surface air",
+   "has_qc": false
+  },
+  "elevatedLayerRadiance700_705": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Longwave radiance average (700_705 cm^-1) elevated air",
+   "has_qc": false
+  },
+  "longwaveWindowRadiance985_990": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Longwave window radiance average (985_990 cm^-1)",
+   "has_qc": false
+  },
+  "surfaceLayerRadiance2295_2300": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Shortwave radiance average (2295_2300 cm^-1) surface air",
+   "has_qc": false
+  },
+  "elevatedLayerRadiance2282_2287": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Shortwave radiance average (2282_2287 cm^-1) elevated air",
+   "has_qc": false
+  },
+  "shortwaveWindowRadiance2510_2515": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Shortwave window radiance average (2510_2515 cm^-1)",
+   "has_qc": false
+  },
+  "surfaceLayerAirTemp675_680": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Longwave surface air brightness temperature from radiance average (675_680 cm^-1)",
+   "has_qc": false
+  },
+  "elevatedLayerAirTemp700_705": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Longwave elevated air brightness temperature from radiance average (700_705 cm^-1)",
+   "has_qc": false
+  },
+  "longwaveWindowAirTemp985_990": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Longwave window brightness temperature from radiance average (985_990 cm^-1)",
+   "has_qc": false
+  },
+  "surfaceLayerAirTemp2295_2300": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Shortwave surface air brightness temperature from radiance average (2295_2300 cm^-1)",
+   "has_qc": false
+  },
+  "elevatedLayerAirTemp2282_2287": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Shortwave elevated air brightness temperature from radiance average (2282_2287 cm^-1)",
+   "has_qc": false
+  },
+  "shortwaveWindowAirTemp2510_2515": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Shortwave window brightness temperature from radiance average (2510_2515 cm^-1)",
+   "has_qc": false
+  },
+  "skyViewStdDevRadiance675_680": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (675_680 cm^-1)",
+   "has_qc": false
+  },
+  "skyViewStdDevRadiance700_705": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (700_705 cm^-1)",
+   "has_qc": false
+  },
+  "skyViewStdDevRadiance985_990": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (985_990 cm^-1)",
+   "has_qc": false
+  },
+  "skyViewStdDevRadiance2295_2300": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (2295_2300 cm^-1)",
+   "has_qc": false
+  },
+  "skyViewStdDevRadiance2282_2287": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (2282_2287 cm^-1)",
+   "has_qc": false
+  },
+  "skyViewStdDevRadiance2510_2515": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Radiance standard deviation during sky view averaged over (2510_2515 cm^-1)",
+   "has_qc": false
+  },
+  "HBBstable": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Logical flag indicating whether HBB temperature is stable (true) or not stable (false). Determined using HBBtempDrift and HBBtempDriftLimit.",
+   "has_qc": false
+  },
+  "SWskyNENacceptable": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Logical flag indicating whether shortwave channel noise equivalent radiance is acceptable in sky view (true/false). Determined using SWskyNEN and SWskyNENlimit.",
+   "has_qc": false
+  },
+  "LWskyNENacceptable": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Logical flag indicating whether longwave channel noise equivalent radiance is acceptable in sky view (true/false).  Determined using LWskyNEN and LWskyNENlimit.",
+   "has_qc": false
+  },
+  "dataAvailable": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "int16",
+   "units": "unitless",
+   "long_name": "Logical flag indicating whether any data is available at current time (true/false)",
+   "has_qc": false
+  },
+  "HBBtempDrift": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "The maximum excursion of hot-blackbody temperature over 5 consecutive scenes, centered on the sky view",
+   "has_qc": false
+  },
+  "LWskyNEN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "The noise equivalent radiance observed in the longwave channel during a sky view at 1000 cm^-1",
+   "has_qc": false
+  },
+  "SWskyNEN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "The noise equivalent radiance observed in the shortwave channel during a sky view at 2500 cm^-1",
+   "has_qc": false
+  },
+  "LW_HBB_NEN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Longwave HBB noise-equivalent radiance",
+   "has_qc": false
+  },
+  "SW_HBB_NEN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "Shortwave HBB noise-equivalent radiance",
+   "has_qc": false
+  },
+  "SWresponsivity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "counts/[mW/(m^2 sr cm^-1)]",
+   "long_name": "Characteristic value representing overall shortwave channel responsivity",
+   "has_qc": false
+  },
+  "LWresponsivity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "counts/[mW/(m^2 sr cm^-1)]",
+   "long_name": "Characteristic value representing overall longwave channel responsivity",
+   "has_qc": false
+  },
+  "ResponsivitySpectralAveragesCh1": {
+   "dims": [
+    "time",
+    "wnumsum1"
+   ],
+   "shape": [
+    3847,
+    71
+   ],
+   "dtype": "float32",
+   "units": "counts/[mW/(m^2 sr cm^-1)]",
+   "long_name": "AERI LW responsivity spectral averages (ch1)",
+   "has_qc": false
+  },
+  "ResponsivitySpectralAveragesCh2": {
+   "dims": [
+    "time",
+    "wnumsum2"
+   ],
+   "shape": [
+    3847,
+    56
+   ],
+   "dtype": "float32",
+   "units": "counts/[mW/(m^2 sr cm^-1)]",
+   "long_name": "AERI SW responsivity spectral averages (ch2)",
+   "has_qc": false
+  },
+  "SkyUniformityCh1": {
+   "dims": [
+    "time",
+    "wnumsum3"
+   ],
+   "shape": [
+    3847,
+    58
+   ],
+   "dtype": "float32",
+   "units": "(mW/(m^2 sr cm^-1))^2",
+   "long_name": "AERI LW scene variability spectral averages (ch1)",
+   "has_qc": false
+  },
+  "SkyUniformityCh2": {
+   "dims": [
+    "time",
+    "wnumsum4"
+   ],
+   "shape": [
+    3847,
+    48
+   ],
+   "dtype": "float32",
+   "units": "(mW/(m^2 sr cm^-1))^2",
+   "long_name": "AERI SW scene variability spectral averages (ch2)",
+   "has_qc": false
+  },
+  "SkyNENCh1": {
+   "dims": [
+    "time",
+    "wnumsum5"
+   ],
+   "shape": [
+    3847,
+    71
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "AERI LW scene NESR spectral averages (ch1)",
+   "has_qc": false
+  },
+  "SkyNENCh2": {
+   "dims": [
+    "time",
+    "wnumsum6"
+   ],
+   "shape": [
+    3847,
+    56
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "AERI SW scene NESR spectral averages (ch2)",
+   "has_qc": false
+  },
+  "HBB2minNENestimateNo1Ch1": {
+   "dims": [
+    "time",
+    "wnumsum7"
+   ],
+   "shape": [
+    3847,
+    71
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "AERI LW HBB 2min NESR estimate #1 derived from variance during HBB view (ch1)",
+   "has_qc": false
+  },
+  "HBB2minNENestimateNo1Ch2": {
+   "dims": [
+    "time",
+    "wnumsum8"
+   ],
+   "shape": [
+    3847,
+    56
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "AERI SW HBB 2min NESR estimate #1 derived from variance during HBB view (ch2)",
+   "has_qc": false
+  },
+  "HBB2minNENestimateNo2Ch1": {
+   "dims": [
+    "time",
+    "wnumsum9"
+   ],
+   "shape": [
+    3847,
+    71
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "AERI LW HBB 2min NESR estimate #2 derived from sequential HBB views (ch1)",
+   "has_qc": false
+  },
+  "HBB2minNENestimateNo2Ch2": {
+   "dims": [
+    "time",
+    "wnumsum10"
+   ],
+   "shape": [
+    3847,
+    56
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "AERI SW HBB 2min NESR estimate #2 derived from sequential HBB views (ch2)",
+   "has_qc": false
+  },
+  "SkyRadianceSpectralAveragesCh1": {
+   "dims": [
+    "time",
+    "wnumsum11"
+   ],
+   "shape": [
+    3847,
+    50
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "AERI LW Scene radiance spectral averages (ch1)",
+   "has_qc": false
+  },
+  "SkyRadianceSpectralAveragesCh2": {
+   "dims": [
+    "time",
+    "wnumsum12"
+   ],
+   "shape": [
+    3847,
+    48
+   ],
+   "dtype": "float32",
+   "units": "mW/(m^2 sr cm^-1)",
+   "long_name": "AERI SW scene radiance spectral averages (ch2)",
+   "has_qc": false
+  },
+  "SkyBrightnessTempSpectralAveragesCh1": {
+   "dims": [
+    "time",
+    "wnumsum13"
+   ],
+   "shape": [
+    3847,
+    50
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "AERI LW scene brightness temp spectral averages (ch1)",
+   "has_qc": false
+  },
+  "SkyBrightnessTempSpectralAveragesCh2": {
+   "dims": [
+    "time",
+    "wnumsum14"
+   ],
+   "shape": [
+    3847,
+    48
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "AERI SW scene brightness temp spectral averages (ch2)",
+   "has_qc": false
+  },
+  "missingDataFlag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Logical flag indicating that a data record is missing (true/false)",
+   "has_qc": false
+  },
+  "sunSensorIntensity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Sun sensor intensity",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3847
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  },
+  "wnumsum1": {
+   "dims": [
+    "wnumsum1"
+   ],
+   "shape": [
+    71
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for LW responsivity spectral averages",
+   "has_qc": false
+  },
+  "wnumsum2": {
+   "dims": [
+    "wnumsum2"
+   ],
+   "shape": [
+    56
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for SW responsivity spectral averages",
+   "has_qc": false
+  },
+  "wnumsum3": {
+   "dims": [
+    "wnumsum3"
+   ],
+   "shape": [
+    58
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for LW scene variability spectral averages (ch1)",
+   "has_qc": false
+  },
+  "wnumsum4": {
+   "dims": [
+    "wnumsum4"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for SW scene variability spectral averages (ch2)",
+   "has_qc": false
+  },
+  "wnumsum5": {
+   "dims": [
+    "wnumsum5"
+   ],
+   "shape": [
+    71
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for LW scene NESR spectral averages (ch1)",
+   "has_qc": false
+  },
+  "wnumsum6": {
+   "dims": [
+    "wnumsum6"
+   ],
+   "shape": [
+    56
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for SW scene NESR spectral averages (ch2)",
+   "has_qc": false
+  },
+  "wnumsum7": {
+   "dims": [
+    "wnumsum7"
+   ],
+   "shape": [
+    71
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for LW HBB 2min NESR estimate #1 (ch1)",
+   "has_qc": false
+  },
+  "wnumsum8": {
+   "dims": [
+    "wnumsum8"
+   ],
+   "shape": [
+    56
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for SW HBB 2min NESR estimate #1 (ch2)",
+   "has_qc": false
+  },
+  "wnumsum9": {
+   "dims": [
+    "wnumsum9"
+   ],
+   "shape": [
+    71
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for LW HBB 2min NESR estimate #2 (ch1)",
+   "has_qc": false
+  },
+  "wnumsum10": {
+   "dims": [
+    "wnumsum10"
+   ],
+   "shape": [
+    56
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for SW HBB 2min NESR estimate #2 (ch2)",
+   "has_qc": false
+  },
+  "wnumsum11": {
+   "dims": [
+    "wnumsum11"
+   ],
+   "shape": [
+    50
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged Wave number for LW scene radiance spectral averages (ch1)",
+   "has_qc": false
+  },
+  "wnumsum12": {
+   "dims": [
+    "wnumsum12"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for SW scene radiance spectral averages (ch2)",
+   "has_qc": false
+  },
+  "wnumsum13": {
+   "dims": [
+    "wnumsum13"
+   ],
+   "shape": [
+    50
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for LW scene brightness temp spectral averages (ch1)",
+   "has_qc": false
+  },
+  "wnumsum14": {
+   "dims": [
+    "wnumsum14"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "cm^-1",
+   "long_name": "Averaged wave number for SW scene brightness temp spectral averages (ch2)",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,180 @@
+{
+ "vap": "cogs",
+ "datastream": "sgpcogsN1.c1",
+ "filename": "sgpcogsN1.c1.20191027.190800.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 9,
+ "dims": {
+  "time": 136,
+  "z": 120,
+  "x": 121,
+  "y": 121,
+  "nfiles": 136
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 20.0,
+ "time_span": [
+  "2019-10-27T19:08:00",
+  "2019-10-27T20:07:00"
+ ],
+ "global_attrs": {
+  "command_line": "pccp -n cogs -D 2 -s sgp -f N1 -b 20191027 -e 20191028 --asynchronous --log-id 20191027.1713575-0026 --disable-email --max-runtime 0",
+  "process_version": "vap-pccp-1.6-0.el7",
+  "dod_version": "cogs-c1-1.2",
+  "site_id": "sgp",
+  "facility_id": "N1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Supplementary Facility",
+  "datastream": "sgpcogsN1.c1",
+  "doi": "10.5439/1877293"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    136
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "cloud_status": {
+   "dims": [
+    "time",
+    "z",
+    "x",
+    "y"
+   ],
+   "shape": [
+    136,
+    120,
+    121,
+    121
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Cloud Status",
+   "has_qc": false
+  },
+  "cldfrac": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    136
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Vertically projected cloudfraction",
+   "has_qc": false
+  },
+  "cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    136
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Cloud Base Height",
+   "has_qc": false
+  },
+  "input_images": {
+   "dims": [
+    "nfiles"
+   ],
+   "shape": [
+    136
+   ],
+   "dtype": "|S35",
+   "units": "1",
+   "long_name": "Names of input pccpa.c1 input images processed.",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    136
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "z": {
+   "dims": [
+    "z"
+   ],
+   "shape": [
+    120
+   ],
+   "dtype": "int32",
+   "units": "m",
+   "long_name": "Z grid representing height above the ground",
+   "has_qc": false
+  },
+  "x": {
+   "dims": [
+    "x"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "int32",
+   "units": "m",
+   "long_name": "X grid representing distance to East",
+   "has_qc": false
+  },
+  "y": {
+   "dims": [
+    "y"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "int32",
+   "units": "m",
+   "long_name": "Y grid representing distance to North",
+   "has_qc": false
+  }
+ }
+}

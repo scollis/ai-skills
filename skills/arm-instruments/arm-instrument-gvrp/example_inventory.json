@@ -1,0 +1,274 @@
+{
+ "instrument": "gvrp",
+ "datastream": "nsagvrpC1.b1",
+ "filename": "nsagvrpC1.b1.20260711.000524.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 19,
+ "dims": {
+  "time": 3106,
+  "frequency": 15
+ },
+ "n_qc_vars": 7,
+ "time_resolution_s": 25.0,
+ "time_span": [
+  "2026-07-11T00:05:24",
+  "2026-07-11T23:56:13"
+ ],
+ "global_attrs": {
+  "command_line": "gvrp_ingest -s nsa -f C1 --max-runtime 86400",
+  "process_version": "ingest-gvrp-2.6-0.el9",
+  "ingest_software": "ingest-gvrp-2.6-0.el9",
+  "dod_version": "gvrp-b1-1.3",
+  "site_id": "nsa",
+  "facility_id": "C1: Barrow, Alaska",
+  "data_level": "b1",
+  "input_source": "/data/collection/nsa/nsagvrpC1.00/2026-07-11_00-04-04_lv1.csv",
+  "sampling_interval": "22 seconds",
+  "averaging_interval": "None",
+  "serial_number": "MP183A 002",
+  "datastream": "nsagvrpC1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Time offset from midnight",
+   "has_qc": false
+  },
+  "blackBodyTemperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Internal blackbody reference temperature",
+   "has_qc": true
+  },
+  "qc_blackBodyTemperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Internal blackbody reference temperature",
+   "has_qc": false
+  },
+  "brightnessTemperature": {
+   "dims": [
+    "time",
+    "frequency"
+   ],
+   "shape": [
+    3106,
+    15
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Microwave brightness temperature",
+   "has_qc": true
+  },
+  "qc_brightnessTemperature": {
+   "dims": [
+    "time",
+    "frequency"
+   ],
+   "shape": [
+    3106,
+    15
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Microwave brightness temperature",
+   "has_qc": false
+  },
+  "elevation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Elevation angle",
+   "has_qc": false
+  },
+  "surfacePressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Ambient surface pressure",
+   "has_qc": true
+  },
+  "qc_surfacePressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ambient surface pressure",
+   "has_qc": false
+  },
+  "surfaceRainFlag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "float64",
+   "units": "None",
+   "long_name": "Rain flag",
+   "has_qc": true
+  },
+  "qc_surfaceRainFlag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Rain flag",
+   "has_qc": false
+  },
+  "surfaceRelativeHumidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Ambient surface relative humidity",
+   "has_qc": true
+  },
+  "qc_surfaceRelativeHumidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ambient surface relative humidity",
+   "has_qc": false
+  },
+  "surfaceTemperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ambient surface absolute temperature",
+   "has_qc": true
+  },
+  "qc_surfaceTemperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ambient surface absolute temperature",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    3106
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  },
+  "frequency": {
+   "dims": [
+    "frequency"
+   ],
+   "shape": [
+    15
+   ],
+   "dtype": "float32",
+   "units": "GHz",
+   "long_name": "Frequency",
+   "has_qc": false
+  }
+ }
+}

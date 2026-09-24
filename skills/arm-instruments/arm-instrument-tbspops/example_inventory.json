@@ -1,0 +1,442 @@
+{
+ "instrument": "tbspops",
+ "datastream": "sgptbspopsC1.b1",
+ "filename": "sgptbspopsC1.b1.20241111.170300.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 29,
+ "dims": {
+  "time": 13321,
+  "num_pops": 1
+ },
+ "n_qc_vars": 5,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2024-11-11T17:03:00",
+  "2024-11-11T20:45:00"
+ ],
+ "global_attrs": {
+  "command_line": "tbspops_ingest -s sgp -f C1",
+  "process_version": "ingest-tbspops-1.3-0.el7",
+  "dod_version": "tbspops-b1-2.0",
+  "input_source": "/data/collection/sgp/sgptbspopsC1.01/sgp.tbs.pops306.20241111.170300.txt",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgptbspopsC1.b1",
+  "doi": "10.5439/1504073"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13321
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "imet_temperature": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature from iMet sensor",
+   "has_qc": true
+  },
+  "qc_imet_temperature": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature from iMet sensor",
+   "has_qc": false
+  },
+  "imet_pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure from iMet sensor",
+   "has_qc": true
+  },
+  "qc_imet_pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Pressure from iMet sensor",
+   "has_qc": false
+  },
+  "relative_humidity": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity from iMet sensor",
+   "has_qc": true
+  },
+  "qc_relative_humidity": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Relative humidity from iMet sensor",
+   "has_qc": false
+  },
+  "gps_pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "GPS pressure from iMet sensor",
+   "has_qc": true
+  },
+  "qc_gps_pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: GPS pressure from iMet sensor",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature from POPS sensor",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure from POPS sensor",
+   "has_qc": false
+  },
+  "total_concentration": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total number concentration from POPS including anything less than 135 nm",
+   "has_qc": true
+  },
+  "qc_total_concentration": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration from POPS including anything less than 135 nm",
+   "has_qc": false
+  },
+  "dn_135_150": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 135 nm to 150 nm",
+   "has_qc": false
+  },
+  "dn_150_170": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 150 nm to 170 nm",
+   "has_qc": false
+  },
+  "dn_170_195": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 170 nm to 195 nm",
+   "has_qc": false
+  },
+  "dn_195_220": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 195 nm to 220 nm",
+   "has_qc": false
+  },
+  "dn_220_260": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 220 nm to 260 nm",
+   "has_qc": false
+  },
+  "dn_260_335": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 260 nm to 335 nm",
+   "has_qc": false
+  },
+  "dn_335_510": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 335 nm to 510 nm",
+   "has_qc": false
+  },
+  "dn_510_705": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 510 nm to 705 nm",
+   "has_qc": false
+  },
+  "dn_705_1380": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 705 nm to 1380 nm",
+   "has_qc": false
+  },
+  "dn_1380_1760": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 1380 nm to 1760 nm",
+   "has_qc": false
+  },
+  "dn_1760_2550": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 1760 nm to 2550 nm",
+   "has_qc": false
+  },
+  "dn_2550_3615": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration between 2550 nm to 3615 nm",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from iMet sensor",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from iMet sensor",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time",
+    "num_pops"
+   ],
+   "shape": [
+    13321,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from iMet sensor",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    13321
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

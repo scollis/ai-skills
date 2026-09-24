@@ -1,0 +1,328 @@
+{
+ "instrument": "mwrhf",
+ "datastream": "sgpmwrhfC1.b1",
+ "filename": "sgpmwrhfC1.b1.20131123.000000.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 25,
+ "dims": {
+  "time": 56876
+ },
+ "n_qc_vars": 10,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2013-11-23T00:00:00",
+  "2013-11-23T23:59:57"
+ ],
+ "global_attrs": {
+  "command_line": "mwrhf_ingest -s sgp -f C1",
+  "process_version": "ingest-mwrhf-3.1-0.el5",
+  "dod_version": "mwrhf-b1-2.1",
+  "site_id": "sgp",
+  "facility_id": "C1: Lamont, Oklahoma",
+  "data_level": "b1",
+  "input_source": "/data/collection/sgp/sgpmwrhfC1.00/13112300.LV0.NC",
+  "sampling_interval": "2 seconds",
+  "averaging_interval": "not averaged",
+  "serial_number": " R-DPR-07/007",
+  "datastream": "sgpmwrhfC1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Time offset from midnight",
+   "has_qc": false
+  },
+  "tbsky90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Sky brightness temperature (90 GHz)",
+   "has_qc": true
+  },
+  "qc_tbsky90": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sky brightness temperature (90 GHz)",
+   "has_qc": false
+  },
+  "tbsky150": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Sky brightness temperature (150 GHz)",
+   "has_qc": true
+  },
+  "qc_tbsky150": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Sky brightness temperature (150 GHz)",
+   "has_qc": false
+  },
+  "tnd90med": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "90 GHz median noise diode temperature from tip curves",
+   "has_qc": true
+  },
+  "qc_tnd90med": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 90 GHz median noise diode temperature from tip curves",
+   "has_qc": false
+  },
+  "tnd150med": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "150 GHz median noise diode temperature from tip curves",
+   "has_qc": true
+  },
+  "qc_tnd150med": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 150 GHz median noise diode temperature from tip curves",
+   "has_qc": false
+  },
+  "tnd90i": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "90 GHz last instantaneous noise diode temperature from tip curves",
+   "has_qc": true
+  },
+  "qc_tnd90i": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 90 GHz last instantaneous noise diode temperature from tip curves",
+   "has_qc": false
+  },
+  "tnd150i": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "150 GHz last instantaneous noise diode temperature from tip curves",
+   "has_qc": true
+  },
+  "qc_tnd150i": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: 150 GHz last instantaneous noise diode temperature from tip curves",
+   "has_qc": false
+  },
+  "surface_rain_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "float64",
+   "units": "None",
+   "long_name": "Rain flag",
+   "has_qc": false
+  },
+  "surface_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Ambient surface pressure",
+   "has_qc": true
+  },
+  "qc_surface_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ambient surface pressure",
+   "has_qc": false
+  },
+  "surface_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Ambient surface temperature",
+   "has_qc": true
+  },
+  "qc_surface_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ambient surface temperature",
+   "has_qc": false
+  },
+  "surface_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Ambient surface relative humidity",
+   "has_qc": true
+  },
+  "qc_surface_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ambient surface relative humidity",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    56876
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  }
+ }
+}

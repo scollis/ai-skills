@@ -1,0 +1,1249 @@
+{
+ "vap": "mergedaerosol",
+ "datastream": "epcmergedaerosolM1.c1",
+ "filename": "epcmergedaerosolM1.c1.20240211.003000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 99,
+ "dims": {
+  "time": 24,
+  "bound": 2,
+  "mergedsmpsaps_diameter_mobility": 212,
+  "ccnsmpskappa_setpoint": 7
+ },
+ "n_qc_vars": 46,
+ "time_resolution_s": 3600.0,
+ "time_span": [
+  "2024-02-11T00:30:00",
+  "2024-02-11T23:30:00"
+ ],
+ "global_attrs": {
+  "command_line": "mergedaerosol -s epc -f M1 -b 20230215 -e 20240215",
+  "process_version": "vap-mergedaerosol-1.0-0.el9",
+  "dod_version": "mergedaerosol-c1-1.0",
+  "site_id": "epc",
+  "facility_id": "M1",
+  "data_level": "c1",
+  "location_description": "Eastern Pacific Cloud Aerosol Precipitation Experiment (EPCAPE), Scripps Pier, La Jolla, CA",
+  "datastream": "epcmergedaerosolM1.c1",
+  "doi": "10.5439/2568164"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "acsm_total_organics_CDCE": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Mass concentration of total organics corrected for the CDCE, ambient aerosol in air",
+   "has_qc": true
+  },
+  "qc_acsm_total_organics_CDCE": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mass concentration of total organics corrected for the CDCE, ambient aerosol in air",
+   "has_qc": false
+  },
+  "acsm_sulfate_CDCE": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Mass concentration of sulfate corrected for the CDCE, ambient aerosol in air",
+   "has_qc": true
+  },
+  "qc_acsm_sulfate_CDCE": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mass concentration of sulfate corrected for the CDCE, ambient aerosol in air",
+   "has_qc": false
+  },
+  "acsm_ammonium_CDCE": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Mass concentration of ammonium corrected for the CDCE, ambient aerosol in air",
+   "has_qc": true
+  },
+  "qc_acsm_ammonium_CDCE": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mass concentration of ammonium corrected for the CDCE, ambient aerosol in air",
+   "has_qc": false
+  },
+  "acsm_nitrate_CDCE": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Mass concentration of nitrate corrected for the CDCE, ambient aerosol in air",
+   "has_qc": true
+  },
+  "qc_acsm_nitrate_CDCE": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mass concentration of nitrate corrected for the CDCE, ambient aerosol in air",
+   "has_qc": false
+  },
+  "acsm_chloride_CDCE": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Mass concentration of chloride corrected for the CDCE, ambient aerosol in air",
+   "has_qc": true
+  },
+  "qc_acsm_chloride_CDCE": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mass concentration of chloride corrected for the CDCE, ambient aerosol in air",
+   "has_qc": false
+  },
+  "acsm_vol_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "um^3/cm^3",
+   "long_name": "ACSM volume concentration",
+   "has_qc": true
+  },
+  "qc_acsm_vol_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: ACSM volume concentration",
+   "has_qc": false
+  },
+  "co_dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Carbon monoxide (CO) mixing ratio corrected for water vapor concentration and calculated with nominal sensitivity correction",
+   "has_qc": true
+  },
+  "qc_co_dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Carbon monoxide (CO) mixing ratio corrected for water vapor concentration and calculated with nominal sensitivity correction",
+   "has_qc": false
+  },
+  "n2o_dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "ppmv",
+   "long_name": "Nitrous oxide (N2O) mixing ratio corrected for water vapor concentration and calculated with nominal sensitivity correction",
+   "has_qc": true
+  },
+  "qc_n2o_dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Nitrous oxide (N2O) mixing ratio corrected for water vapor concentration and calculated with nominal sensitivity correction",
+   "has_qc": false
+  },
+  "o3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "ppb",
+   "long_name": "Ozone concentration at STP",
+   "has_qc": true
+  },
+  "qc_o3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ozone concentration at STP",
+   "has_qc": false
+  },
+  "so2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "ppbv",
+   "long_name": "Sulfur dioxide (SO2) mixing ratio",
+   "has_qc": true
+  },
+  "qc_so2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sulfur dioxide (SO2) mixing ratio",
+   "has_qc": false
+  },
+  "N_CCN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Mean number concentration of activated condensation nuclei",
+   "has_qc": true
+  },
+  "qc_N_CCN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean number concentration of activated condensation nuclei",
+   "has_qc": false
+  },
+  "ccn_supersaturation_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Mean calculated supersaturation values for a fixed supersaturation set point.",
+   "has_qc": true
+  },
+  "qc_ccn_supersaturation_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean calculated supersaturation values for a fixed supersaturation set point.",
+   "has_qc": false
+  },
+  "ccn_aerosol_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol particle number concentration",
+   "has_qc": true
+  },
+  "qc_ccn_aerosol_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol particle number concentration",
+   "has_qc": false
+  },
+  "ccnsmps_kappa": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Hygroscopicity parameter kappa",
+   "has_qc": true
+  },
+  "qc_ccnsmps_kappa": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Hygroscopicity parameter kappa",
+   "has_qc": false
+  },
+  "ccnsmpskappa_critical_diameter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Critical diameter",
+   "has_qc": true
+  },
+  "qc_ccnsmpskappa_critical_diameter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Critical diameter",
+   "has_qc": false
+  },
+  "cpcf_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "CPC fine particle concentration",
+   "has_qc": true
+  },
+  "qc_cpcf_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CPC fine particle concentration",
+   "has_qc": false
+  },
+  "cpcu_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "CPC ultrafine particle concentration",
+   "has_qc": true
+  },
+  "qc_cpcu_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CPC ultrafine particle concentration",
+   "has_qc": false
+  },
+  "mergedsmpsaps_diameter_mobility_bounds": {
+   "dims": [
+    "mergedsmpsaps_diameter_mobility",
+    "bound"
+   ],
+   "shape": [
+    212,
+    2
+   ],
+   "dtype": "float64",
+   "units": null,
+   "long_name": "Diameter_mobility_merged cell bounds",
+   "has_qc": false
+  },
+  "mergedsmpsaps_dN_dlogDp": {
+   "dims": [
+    "time",
+    "mergedsmpsaps_diameter_mobility"
+   ],
+   "shape": [
+    24,
+    212
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number size distribution, merged",
+   "has_qc": true
+  },
+  "qc_mergedsmpsaps_dN_dlogDp": {
+   "dims": [
+    "time",
+    "mergedsmpsaps_diameter_mobility"
+   ],
+   "shape": [
+    24,
+    212
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number size distribution, merged",
+   "has_qc": false
+  },
+  "mergedsmpsaps_total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total aerosol number concentration, merged",
+   "has_qc": true
+  },
+  "qc_mergedsmpsaps_total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total aerosol number concentration, merged",
+   "has_qc": false
+  },
+  "mergedsmpsaps_total_SA_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "nm^2/cm^3",
+   "long_name": "Total aerosol surface area, merged",
+   "has_qc": true
+  },
+  "qc_mergedsmpsaps_total_SA_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total aerosol surface area, merged",
+   "has_qc": false
+  },
+  "mergedsmpsaps_total_V_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "nm^3/cm^3",
+   "long_name": "Total aerosol volume, merged",
+   "has_qc": true
+  },
+  "qc_mergedsmpsaps_total_V_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total aerosol volume, merged",
+   "has_qc": false
+  },
+  "aoppsap_Bs_B_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, 1 micron impactor, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_aoppsap_Bs_B_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol total light scattering coefficient, 1 micron impactor, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "aoppsap_Bs_G_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, 1 micron impactor, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_aoppsap_Bs_G_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol total light scattering coefficient, 1 micron impactor, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "aoppsap_Bs_R_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, 1 micron impactor, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_aoppsap_Bs_R_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol total light scattering coefficient, 1 micron impactor, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "aoppsap_Ba_B_Virkkula_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal blue channel, 1 micron impactor, corrected per Virkkula 2010",
+   "has_qc": true
+  },
+  "qc_aoppsap_Ba_B_Virkkula_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol light absorption coefficient, nominal blue channel, 1 micron impactor, corrected per Virkkula 2010",
+   "has_qc": false
+  },
+  "aoppsap_Ba_G_Virkkula_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal green channel, 1 micron impactor, corrected per Virkkula 2010",
+   "has_qc": true
+  },
+  "qc_aoppsap_Ba_G_Virkkula_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol light absorption coefficient, nominal green channel, 1 micron impactor, corrected per Virkkula 2010",
+   "has_qc": false
+  },
+  "aoppsap_Ba_R_Virkkula_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal red channel, 1 micron impactor, corrected per Virkkula 2010",
+   "has_qc": true
+  },
+  "qc_aoppsap_Ba_R_Virkkula_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol light absorption coefficient, nominal red channel, 1 micron impactor, corrected per Virkkula 2010",
+   "has_qc": false
+  },
+  "aoppsap_ssa_B_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Single scattering albedo at measured blue absorption wavelength, 1 micron impactor",
+   "has_qc": true
+  },
+  "qc_aoppsap_ssa_B_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Single scattering albedo at measured blue absorption wavelength, 1 micron impactor",
+   "has_qc": false
+  },
+  "aoppsap_ssa_G_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Single scattering albedo at measured green absorption wavelength, 1 micron impactor",
+   "has_qc": true
+  },
+  "qc_aoppsap_ssa_G_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Single scattering albedo at measured green absorption wavelength, 1 micron impactor",
+   "has_qc": false
+  },
+  "aoppsap_ssa_R_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Single scattering albedo at measured red absorption wavelength, 1 micron impactor",
+   "has_qc": true
+  },
+  "qc_aoppsap_ssa_R_1um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Single scattering albedo at measured red absorption wavelength, 1 micron impactor",
+   "has_qc": false
+  },
+  "aoppsap_Bs_B_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, 10 micron impactor, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_aoppsap_Bs_B_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol total light scattering coefficient, 10 micron impactor, truncation corrected, nominal blue wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "aoppsap_Bs_G_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, 10 micron impactor, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_aoppsap_Bs_G_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol total light scattering coefficient, 10 micron impactor, truncation corrected, nominal green wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "aoppsap_Bs_R_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol total light scattering coefficient, 10 micron impactor, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": true
+  },
+  "qc_aoppsap_Bs_R_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol total light scattering coefficient, 10 micron impactor, truncation corrected, nominal red wavelength adjusted to measured absorption wavelength",
+   "has_qc": false
+  },
+  "aoppsap_Ba_B_Virkkula_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal blue channel, 10 micron impactor, corrected per Virkkula 2010",
+   "has_qc": true
+  },
+  "qc_aoppsap_Ba_B_Virkkula_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol light absorption coefficient, nominal blue channel, 10 micron impactor, corrected per Virkkula 2010",
+   "has_qc": false
+  },
+  "aoppsap_Ba_G_Virkkula_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal green channel, 10 micron impactor, corrected per Virkkula 2010",
+   "has_qc": true
+  },
+  "qc_aoppsap_Ba_G_Virkkula_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol light absorption coefficient, nominal green channel, 10 micron impactor, corrected per Virkkula 2010",
+   "has_qc": false
+  },
+  "aoppsap_Ba_R_Virkkula_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal red channel, 10 micron impactor, corrected per Virkkula 2010",
+   "has_qc": true
+  },
+  "qc_aoppsap_Ba_R_Virkkula_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol light absorption coefficient, nominal red channel, 10 micron impactor, corrected per Virkkula 2010",
+   "has_qc": false
+  },
+  "aoppsap_ssa_B_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Single scattering albedo at measured blue absorption wavelength, 10 micron impactor",
+   "has_qc": true
+  },
+  "qc_aoppsap_ssa_B_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Single scattering albedo at measured blue absorption wavelength, 10 micron impactor",
+   "has_qc": false
+  },
+  "aoppsap_ssa_G_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Single scattering albedo at measured green absorption wavelength, 10 micron impactor",
+   "has_qc": true
+  },
+  "qc_aoppsap_ssa_G_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Single scattering albedo at measured green absorption wavelength, 10 micron impactor",
+   "has_qc": false
+  },
+  "aoppsap_ssa_R_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Single scattering albedo at measured red absorption wavelength, 10 micron impactor",
+   "has_qc": true
+  },
+  "qc_aoppsap_ssa_R_10um": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Single scattering albedo at measured red absorption wavelength, 10 micron impactor",
+   "has_qc": false
+  },
+  "mfrsraod_angstrom_exponent": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Angstrom exponent",
+   "has_qc": true
+  },
+  "qc_mfrsraod_angstrom_exponent": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Angstrom exponent",
+   "has_qc": false
+  },
+  "mfrsraod_aerosol_optical_depth_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 1",
+   "has_qc": true
+  },
+  "qc_mfrsraod_aerosol_optical_depth_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 1",
+   "has_qc": false
+  },
+  "mfrsraod_aerosol_optical_depth_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 2",
+   "has_qc": true
+  },
+  "qc_mfrsraod_aerosol_optical_depth_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 2",
+   "has_qc": false
+  },
+  "mfrsraod_aerosol_optical_depth_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 3",
+   "has_qc": true
+  },
+  "qc_mfrsraod_aerosol_optical_depth_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 3",
+   "has_qc": false
+  },
+  "mfrsraod_aerosol_optical_depth_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 4",
+   "has_qc": true
+  },
+  "qc_mfrsraod_aerosol_optical_depth_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 4",
+   "has_qc": false
+  },
+  "mfrsraod_aerosol_optical_depth_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 5",
+   "has_qc": true
+  },
+  "qc_mfrsraod_aerosol_optical_depth_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 5",
+   "has_qc": false
+  },
+  "mfrsraod_aerosol_optical_depth_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 7",
+   "has_qc": true
+  },
+  "qc_mfrsraod_aerosol_optical_depth_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 7",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "ccnsmpskappa_setpoint": {
+   "dims": [
+    "ccnsmpskappa_setpoint"
+   ],
+   "shape": [
+    7
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Supersaturation set point values",
+   "has_qc": false
+  },
+  "mergedsmpsaps_diameter_mobility": {
+   "dims": [
+    "mergedsmpsaps_diameter_mobility"
+   ],
+   "shape": [
+    212
+   ],
+   "dtype": "float64",
+   "units": "nm",
+   "long_name": "Merged midpoint of geometric mean mobility diameter",
+   "has_qc": false
+  }
+ }
+}

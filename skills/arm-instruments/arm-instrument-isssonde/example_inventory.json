@@ -1,0 +1,371 @@
+{
+ "instrument": "isssonde",
+ "datastream": "nsaisssonde10sC1.b1",
+ "filename": "nsaisssonde10sC1.b1.20020510.230348.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 28,
+ "dims": {
+  "time": 720
+ },
+ "n_qc_vars": 6,
+ "time_resolution_s": 10.0,
+ "time_span": [
+  "2002-05-10T23:03:48",
+  "2002-05-11T01:04:13"
+ ],
+ "global_attrs": {
+  "ingest_software": " isssonde_ingest.c,v 2.1 2007/02/27 07:24:48 ermold process-ingest-isssonde_ingest-8.0-0 $",
+  "input_source": "nsaisssonde10sC1.00.20020510.230348.raw.X5102304.BRW",
+  "site_id": "nsa",
+  "facility_id": "C1: Barrow, Alaska",
+  "serial_number": "145266414",
+  "datastream": "nsaisssonde10sC1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Results of quality checks on sample time",
+   "has_qc": false
+  },
+  "pres": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure",
+   "has_qc": true
+  },
+  "qc_pres": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pressure",
+   "has_qc": false
+  },
+  "tdry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Dry Bulb Temperature",
+   "has_qc": true
+  },
+  "qc_tdry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Dry Bulb Temperature",
+   "has_qc": false
+  },
+  "dp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Dewpoint Temperature",
+   "has_qc": true
+  },
+  "qc_dp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Dewpoint Temperature",
+   "has_qc": false
+  },
+  "wspd": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind Speed",
+   "has_qc": false
+  },
+  "deg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "deg",
+   "long_name": "Wind Direction",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative Humidity",
+   "has_qc": true
+  },
+  "qc_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative Humidity",
+   "has_qc": false
+  },
+  "u_wind": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Eastward Wind Component",
+   "has_qc": false
+  },
+  "v_wind": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Northward Wind Component",
+   "has_qc": false
+  },
+  "asc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Ascent Rate",
+   "has_qc": true
+  },
+  "qc_asc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Ascent Rate",
+   "has_qc": false
+  },
+  "rng": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Range from launch point",
+   "has_qc": false
+  },
+  "ang": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "deg",
+   "long_name": "Azimuth Angle; degrees to sonde from launch point",
+   "has_qc": false
+  },
+  "pres_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure, Standard Deviation",
+   "has_qc": false
+  },
+  "tdry_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Dry Bulb Temperature, Standard Deviation",
+   "has_qc": false
+  },
+  "rh_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative Humidity, Standard Deviation",
+   "has_qc": false
+  },
+  "u_wind_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Eastward Wind Component, Standard Deviation",
+   "has_qc": false
+  },
+  "v_wind_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Northward Wind Component, Standard Deviation",
+   "has_qc": false
+  },
+  "wspd_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind Speed, Standard Deviation",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "north latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "east longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "float32",
+   "units": "meters above Mean Sea Level",
+   "long_name": "altitude",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    720
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  }
+ }
+}

@@ -1,0 +1,205 @@
+{
+ "instrument": "dl",
+ "datastream": "sgpdlppiC1.b1",
+ "filename": "sgpdlppiC1.b1.20260919.120017.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 13,
+ "dims": {
+  "time": 60,
+  "range": 400
+ },
+ "n_qc_vars": 1,
+ "time_resolution_s": 4.0,
+ "time_span": [
+  "2026-09-19T12:00:17",
+  "2026-09-19T12:04:18"
+ ],
+ "global_attrs": {
+  "command_line": "dl_ingest -s sgp -f C1 --max-runtime 86400",
+  "process_version": "ingest-dl-2.33-0.el9",
+  "dod_version": "dlppi-b1-1.3",
+  "input_source": "/data/collection/sgp/sgpdlC1.00/User5_280_20260919_120012.hpl",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpdlppiC1.b1",
+  "serial_number": "0910-280",
+  "doi": "10.5439/1963410"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    60
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    60
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Azimuth relative to true north",
+   "has_qc": false
+  },
+  "elevation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    60
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Beam elevation",
+   "has_qc": false
+  },
+  "radial_velocity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    60,
+    400
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Radial velocity",
+   "has_qc": true
+  },
+  "qc_radial_velocity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    60,
+    400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Radial velocity",
+   "has_qc": false
+  },
+  "intensity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    60,
+    400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Intensity (signal to noise ratio + 1)",
+   "has_qc": false
+  },
+  "attenuated_backscatter": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    60,
+    400
+   ],
+   "dtype": "float32",
+   "units": "1/(m sr)",
+   "long_name": "Attenuated backscatter",
+   "has_qc": false
+  },
+  "pitch": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    60
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Platform pitch angle",
+   "has_qc": false
+  },
+  "roll": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    60
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Platform roll angle",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    60
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "range": {
+   "dims": [
+    "range"
+   ],
+   "shape": [
+    400
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Distance from Lidar to center of range gate",
+   "has_qc": false
+  }
+ }
+}

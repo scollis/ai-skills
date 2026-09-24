@@ -1,0 +1,741 @@
+{
+ "instrument": "met",
+ "datastream": "nsametC1.b1",
+ "filename": "nsametC1.b1.20260922.000000.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 59,
+ "dims": {
+  "time": 1440,
+  "bound": 2
+ },
+ "n_qc_vars": 23,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2026-09-22T00:00:00",
+  "2026-09-22T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "met_ingest -s nsa -f C1 --max-runtime 86400",
+  "process_version": "ingest-met-4.59-0.el9",
+  "dod_version": "met-b1-6.4",
+  "input_source": "/data/collection/nsa/nsametC1.00/METData.20260922000000.dat",
+  "site_id": "nsa",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "North Slope of Alaska (NSA), Barrow, Alaska",
+  "datastream": "nsametC1.b1",
+  "serial_number": "N/A",
+  "sampling_interval": "variable, see instrument handbook",
+  "averaging_interval": "60 seconds",
+  "doi": "10.5439/1786358"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "atmos_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Atmospheric pressure",
+   "has_qc": true
+  },
+  "qc_atmos_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Atmospheric pressure",
+   "has_qc": false
+  },
+  "temp_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature mean",
+   "has_qc": true
+  },
+  "qc_temp_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature mean",
+   "has_qc": false
+  },
+  "temp_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature standard deviation",
+   "has_qc": false
+  },
+  "rh_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity mean",
+   "has_qc": true
+  },
+  "qc_rh_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Relative humidity mean",
+   "has_qc": false
+  },
+  "rh_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity standard deviation",
+   "has_qc": false
+  },
+  "vapor_pressure_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Vapor pressure mean, calculated",
+   "has_qc": true
+  },
+  "qc_vapor_pressure_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Vapor pressure mean, calculated",
+   "has_qc": false
+  },
+  "vapor_pressure_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Vapor pressure standard deviation",
+   "has_qc": false
+  },
+  "wspd_arith_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed arithmetic mean",
+   "has_qc": true
+  },
+  "qc_wspd_arith_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind speed arithmetic mean",
+   "has_qc": false
+  },
+  "wspd_vec_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed vector mean",
+   "has_qc": true
+  },
+  "qc_wspd_vec_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind speed vector mean",
+   "has_qc": false
+  },
+  "wdir_vec_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction vector mean",
+   "has_qc": true
+  },
+  "qc_wdir_vec_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind direction vector mean",
+   "has_qc": false
+  },
+  "wdir_vec_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction vector mean standard deviation",
+   "has_qc": false
+  },
+  "pwd_err_code": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "PWD alarm",
+   "has_qc": false
+  },
+  "pwd_mean_vis_1min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "PWD 1 minute mean visibility",
+   "has_qc": true
+  },
+  "qc_pwd_mean_vis_1min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: PWD 1 minute mean visibility",
+   "has_qc": false
+  },
+  "pwd_mean_vis_10min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "PWD 10 minute mean visibility",
+   "has_qc": true
+  },
+  "qc_pwd_mean_vis_10min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: PWD 10 minute mean visibility",
+   "has_qc": false
+  },
+  "pwd_pw_code_inst": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "PWD instantaneous present weather code",
+   "has_qc": true
+  },
+  "qc_pwd_pw_code_inst": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: PWD instantaneous present weather code",
+   "has_qc": false
+  },
+  "pwd_pw_code_15min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "PWD 15 minute present weather code",
+   "has_qc": true
+  },
+  "qc_pwd_pw_code_15min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: PWD 15 minute present weather code",
+   "has_qc": false
+  },
+  "pwd_pw_code_1hr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "PWD 1 hour present weather code",
+   "has_qc": true
+  },
+  "qc_pwd_pw_code_1hr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: PWD 1 hour present weather code",
+   "has_qc": false
+  },
+  "pwd_precip_rate_mean_1min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "PWD 1 minute mean precipitation rate",
+   "has_qc": true
+  },
+  "qc_pwd_precip_rate_mean_1min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: PWD 1 minute mean precipitation rate",
+   "has_qc": false
+  },
+  "pwd_cumul_rain": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "PWD cumulative liquid precipitation",
+   "has_qc": true
+  },
+  "qc_pwd_cumul_rain": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: PWD cumulative liquid precipitation",
+   "has_qc": false
+  },
+  "pwd_cumul_snow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "PWD cumulative snow",
+   "has_qc": true
+  },
+  "qc_pwd_cumul_snow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: PWD cumulative snow",
+   "has_qc": false
+  },
+  "cmh_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "CMH temperature",
+   "has_qc": true
+  },
+  "qc_cmh_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CMH temperature",
+   "has_qc": false
+  },
+  "cmh_dew_point": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "CMH dew point",
+   "has_qc": true
+  },
+  "qc_cmh_dew_point": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CMH dew point",
+   "has_qc": false
+  },
+  "cmh_sat_vapor_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "CMH saturation vapor pressure, calculated",
+   "has_qc": true
+  },
+  "qc_cmh_sat_vapor_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CMH saturation vapor pressure, calculated",
+   "has_qc": false
+  },
+  "cmh_vapor_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "CMH vapor pressure, calculated",
+   "has_qc": true
+  },
+  "qc_cmh_vapor_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CMH vapor pressure, calculated",
+   "has_qc": false
+  },
+  "cmh_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "CMH relative humidity, calculated",
+   "has_qc": true
+  },
+  "qc_cmh_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CMH relative humidity, calculated",
+   "has_qc": false
+  },
+  "dew_point_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Dew point mean, calculated",
+   "has_qc": true
+  },
+  "qc_dew_point_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Dew point mean, calculated",
+   "has_qc": false
+  },
+  "dew_point_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Dew point standard deviation",
+   "has_qc": false
+  },
+  "trh_err_code": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Temperature and relative humidity sensor error code",
+   "has_qc": false
+  },
+  "logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Logger voltage",
+   "has_qc": true
+  },
+  "qc_logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Logger voltage",
+   "has_qc": false
+  },
+  "logger_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Logger temperature",
+   "has_qc": true
+  },
+  "qc_logger_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Logger temperature",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

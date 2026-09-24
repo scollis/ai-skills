@@ -13,9 +13,37 @@ import re
 import pytest
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SKILLS = sorted(p for p in (ROOT / "skills").iterdir() if p.is_dir())
+
+
+def discover(root):
+    """Every skill directory under skills/, at any depth.
+
+    A skill is a directory holding a SKILL.md. Tranches may nest one level - the
+    ARM instrument skills live in skills/arm-instruments/arm-instrument-<code>/,
+    with skills/arm-instruments/ itself the index skill - so a flat iterdir()
+    would both miss them and treat the tranche directory as a broken skill.
+    """
+    return sorted((p for p in root.rglob("*") if p.is_dir() and (p / "SKILL.md").exists()),
+                  key=lambda p: str(p))
+
+
+SKILLS = discover(ROOT / "skills")
 NAMES = [p.name for p in SKILLS]
 DEAD_BUCKET = "noaa-nexrad-level2"
+
+
+def test_no_skill_dir_without_skill_md():
+    """A directory under skills/ is either a skill or a tranche of skills."""
+    orphans = []
+    for p in (ROOT / "skills").rglob("*"):
+        if not p.is_dir() or p.name == "__pycache__":
+            continue
+        if (p / "SKILL.md").exists():
+            continue
+        if any(c.is_dir() and (c / "SKILL.md").exists() for c in p.iterdir()):
+            continue
+        orphans.append(str(p.relative_to(ROOT)))
+    assert not orphans, f"directories under skills/ that are neither: {orphans}"
 
 
 def sidecars():
@@ -53,6 +81,33 @@ def test_frontmatter_valid(skill):
     # the registry rejects anything it reads as markup
     assert not re.search(r"<[^>]+>", desc), \
         f"{skill.name}: description contains angle-bracket text"
+
+
+@pytest.mark.parametrize("skill", SKILLS, ids=NAMES)
+def test_frontmatter_is_valid_yaml(skill):
+    """The registry parses frontmatter as YAML; `frontmatter()` above parses it with a
+    regex and does not care. That gap let 128 skills through with an unquoted ': ' in
+    their description - YAML reads it as a nested mapping, and every publish was refused
+    until the descriptions were reworded.
+    """
+    yaml = pytest.importorskip("yaml")
+    text = (skill / "SKILL.md").read_text()
+    m = re.match(r"---\n(.*?)\n---\n", text, re.S)
+    assert m, f"{skill.name}: no frontmatter block"
+    try:
+        meta = yaml.safe_load(m.group(1))
+    except yaml.YAMLError as e:
+        pytest.fail(f"{skill.name}: frontmatter is not valid YAML - {e}\n"
+                    f"  a value containing ': ' must be quoted or reworded")
+    assert isinstance(meta, dict), \
+        f"{skill.name}: frontmatter parsed as {type(meta).__name__}, not a mapping"
+    assert meta.get("name") == skill.name, \
+        f"{skill.name}: YAML name is {meta.get('name')!r}"
+    assert isinstance(meta.get("description"), str), \
+        f"{skill.name}: description did not parse as a string"
+    # the registry refuses a publish above this; the regex parser above does not notice
+    assert len(meta["description"]) <= 1024, \
+        f"{skill.name}: description is {len(meta['description'])} characters, registry caps it at 1024"
 
 
 @pytest.mark.parametrize("name,path", sidecars(),

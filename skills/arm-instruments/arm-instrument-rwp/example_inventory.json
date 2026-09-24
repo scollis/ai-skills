@@ -1,0 +1,313 @@
+{
+ "instrument": "rwp",
+ "datastream": "sgp915rwppreciploC1.b1",
+ "filename": "sgp915rwppreciploC1.b1.20190817.043113.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 27,
+ "dims": {
+  "time": 2832,
+  "gate": 150
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 6.0,
+ "time_span": [
+  "2019-08-17T04:31:13",
+  "2019-08-17T19:34:30"
+ ],
+ "global_attrs": {
+  "command_line": "rwpprecipcal -n 915rwpprecipcal -D 1 -R -s sgp -f C1 -b 20190817 -e 20190818 --asynchronous --log-id 20190817.4447635-0228 --disable-email --max-runtime 0",
+  "process_version": "rwpprecipcal-1.1.1",
+  "dod_version": "915rwppreciplo-b1-1.0",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgp915rwppreciploC1.b1",
+  "doi": "10.5439/1988261"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2832
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "r_calib_radar_constant": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Calibration constant relative to reference of 0 dB",
+   "has_qc": false
+  },
+  "num_time_domain_integrations": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of integrated time domain samples",
+   "has_qc": false
+  },
+  "num_frequency_domain_integrations": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of integrated frequency domain spectra.",
+   "has_qc": false
+  },
+  "num_fft_points": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of FFT points in frequency domain spectra",
+   "has_qc": false
+  },
+  "interpulse_period": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "second",
+   "long_name": "Interpulse Period, time between transmitted pulses",
+   "has_qc": false
+  },
+  "operating_frequency_MHz": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "MHz",
+   "long_name": "Radar operating frequency",
+   "has_qc": false
+  },
+  "nyquist_velocity": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Unambiguous radial velocity, also known as Nyquist velocity",
+   "has_qc": false
+  },
+  "pulse_width": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "second",
+   "long_name": "Duration of transmitted pulse",
+   "has_qc": false
+  },
+  "range_resolution": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Range resolution",
+   "has_qc": false
+  },
+  "num_code_bits": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of phase bits in transmitted coded pulse",
+   "has_qc": false
+  },
+  "reference_noise_power": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Reference noise power used in calibration",
+   "has_qc": false
+  },
+  "beam_azimuth_angle": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Beam azimuth angle from North",
+   "has_qc": false
+  },
+  "beam_elevation_angle": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Beam elevation angle from horizontal",
+   "has_qc": false
+  },
+  "range_along_beam": {
+   "dims": [
+    "gate"
+   ],
+   "shape": [
+    150
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Range in the radial direction from the radar to center of the range gate",
+   "has_qc": false
+  },
+  "height_above_radar": {
+   "dims": [
+    "gate"
+   ],
+   "shape": [
+    150
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above the radar without regard to horizontal displacement",
+   "has_qc": false
+  },
+  "signal_to_noise_ratio": {
+   "dims": [
+    "time",
+    "gate"
+   ],
+   "shape": [
+    2832,
+    150
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Doppler velocity power spectrum signal-to-noise ratio with mean noise adjustment, also known as 0th moment",
+   "has_qc": false
+  },
+  "reflectivity_factor": {
+   "dims": [
+    "time",
+    "gate"
+   ],
+   "shape": [
+    2832,
+    150
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Radar reflectivity factor",
+   "has_qc": false
+  },
+  "radial_velocity": {
+   "dims": [
+    "time",
+    "gate"
+   ],
+   "shape": [
+    2832,
+    150
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Doppler velocity power spectrum mean radial velocity, also known as 1st moment, positive values approaching the radar",
+   "has_qc": false
+  },
+  "spectrum_width": {
+   "dims": [
+    "time",
+    "gate"
+   ],
+   "shape": [
+    2832,
+    150
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Doppler velocity power spectrum width, defined as 2*sqrt(spectrum variance)",
+   "has_qc": false
+  },
+  "spectrum_skewness": {
+   "dims": [
+    "time",
+    "gate"
+   ],
+   "shape": [
+    2832,
+    150
+   ],
+   "dtype": "float32",
+   "units": "(m/s)^3",
+   "long_name": "Doppler velocity power spectrum skewness, also known as 3rd moment, positive values approaching the radar",
+   "has_qc": false
+  },
+  "spectrum_kurtosis": {
+   "dims": [
+    "time",
+    "gate"
+   ],
+   "shape": [
+    2832,
+    150
+   ],
+   "dtype": "float32",
+   "units": "(m/s)^4",
+   "long_name": "Doppler velocity power spectrum kurtosis, also known as 4th moment, positive values approaching the radar",
+   "has_qc": false
+  },
+  "spectrum_mean_noise_level": {
+   "dims": [
+    "time",
+    "gate"
+   ],
+   "shape": [
+    2832,
+    150
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Doppler velocity power spectrum mean noise level determined from Hildebrand & Sekhon (1974) method",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2832
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

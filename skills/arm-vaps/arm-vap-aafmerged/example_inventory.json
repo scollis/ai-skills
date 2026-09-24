@@ -1,0 +1,2493 @@
+{
+ "vap": "aafmerged",
+ "datastream": "sgpaafmergedF1.c1",
+ "filename": "sgpaafmergedF1.c1.20160920.202755.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 193,
+ "dims": {
+  "time": 5104,
+  "aaf2dsh_optical_diameter": 61,
+  "bound": 2,
+  "aaf2dsv_optical_diameter": 61,
+  "cdp_optical_diameter": 21,
+  "fims_geometric_diameter": 30,
+  "hvps_optical_diameter": 37,
+  "aerosolsd_geometric_diameter": 55,
+  "pcasp_optical_diameter": 30,
+  "uhsas_bin_number": 99
+ },
+ "n_qc_vars": 76,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2016-09-20T20:27:55",
+  "2016-09-20T21:52:58"
+ ],
+ "global_attrs": {
+  "command_line": "aafmerged -s sgp -f F1 -b 20160425 -e 20160923 -D 2 -R",
+  "process_version": "aafmerged-1.1.0",
+  "dod_version": "aafmerged-c1-1.7",
+  "site_id": "sgp",
+  "facility_id": "F1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Gulfstream 159 (\"G1\") Aircraft",
+  "datastream": "sgpaafmergedF1.c1",
+  "doi": "10.5439/1999133"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "aaf2dsh_optical_diameter_bounds": {
+   "dims": [
+    "aaf2dsh_optical_diameter",
+    "bound"
+   ],
+   "shape": [
+    61,
+    2
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Optical diameter bounds from two-dimensional stereo probe sh",
+   "has_qc": false
+  },
+  "aaf2dsv_optical_diameter_bounds": {
+   "dims": [
+    "aaf2dsv_optical_diameter",
+    "bound"
+   ],
+   "shape": [
+    61,
+    2
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Optical diameter bounds from two-dimensional stereo probe sv",
+   "has_qc": false
+  },
+  "cdp_optical_diameter_bounds": {
+   "dims": [
+    "cdp_optical_diameter",
+    "bound"
+   ],
+   "shape": [
+    21,
+    2
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Optical diameter bounds from fast-cloud droplet probe",
+   "has_qc": false
+  },
+  "fims_geometric_diameter_bounds": {
+   "dims": [
+    "fims_geometric_diameter",
+    "bound"
+   ],
+   "shape": [
+    30,
+    2
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Geometric diameter bounds from fast integrating mobility spectrometer",
+   "has_qc": false
+  },
+  "hvps_optical_diameter_bounds": {
+   "dims": [
+    "hvps_optical_diameter",
+    "bound"
+   ],
+   "shape": [
+    37,
+    2
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Optical diameter bounds from high volume precipitation spectrometer",
+   "has_qc": false
+  },
+  "aerosolsd_geometric_diameter_bounds": {
+   "dims": [
+    "aerosolsd_geometric_diameter",
+    "bound"
+   ],
+   "shape": [
+    55,
+    2
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Geometric diameter bounds from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "pcasp_optical_diameter_bounds": {
+   "dims": [
+    "pcasp_optical_diameter",
+    "bound"
+   ],
+   "shape": [
+    30,
+    2
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Optical diameter bounds from passive cavity aerosol spectrometer",
+   "has_qc": false
+  },
+  "twodsh_number_concentration": {
+   "dims": [
+    "time",
+    "aaf2dsh_optical_diameter"
+   ],
+   "shape": [
+    5104,
+    61
+   ],
+   "dtype": "float32",
+   "units": "count/L/um",
+   "long_name": "Number concentration from two-dimensional stereo probe sh",
+   "has_qc": true
+  },
+  "qc_twodsh_number_concentration": {
+   "dims": [
+    "time",
+    "aaf2dsh_optical_diameter"
+   ],
+   "shape": [
+    5104,
+    61
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number concentration from two-dimensional stereo probe sh",
+   "has_qc": false
+  },
+  "twodsh_total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "count/L",
+   "long_name": "Total number concentration from two-dimensional stereo probe sh",
+   "has_qc": true
+  },
+  "qc_twodsh_total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration from two-dimensional stereo probe sh",
+   "has_qc": false
+  },
+  "twodsv_number_concentration": {
+   "dims": [
+    "time",
+    "aaf2dsv_optical_diameter"
+   ],
+   "shape": [
+    5104,
+    61
+   ],
+   "dtype": "float32",
+   "units": "count/L/um",
+   "long_name": "Number concentration from two-dimensional stereo probe sv",
+   "has_qc": true
+  },
+  "qc_twodsv_number_concentration": {
+   "dims": [
+    "time",
+    "aaf2dsv_optical_diameter"
+   ],
+   "shape": [
+    5104,
+    61
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number concentration from two-dimensional stereo probe sv",
+   "has_qc": false
+  },
+  "twodsv_total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "count/L",
+   "long_name": "Total number concentration from two-dimensional stereo probe sv",
+   "has_qc": true
+  },
+  "qc_twodsv_total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration from two-dimensional stereo probe sv",
+   "has_qc": false
+  },
+  "ams_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_Chl": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Chloride mass concentration from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_Chl": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Chloride mass concentration from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_Chl_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Chloride mass concentration error from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_Chl_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Chloride mass concentration error from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_CVI_enhancement_factor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "CVI enhancement factor from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_CVI_enhancement_factor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CVI enhancement factor from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Flag from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Flag from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_NH4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Ammonium mass concentration from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_NH4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ammonium mass concentration from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_NH4_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Ammonium mass concentration error from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_NH4_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ammonium mass concentration error from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_NO3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Nitrate mass concentration from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_NO3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Nitrate mass concentration from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_NO3_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Nitrate mass concentration error from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_NO3_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Nitrate mass concentration error from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_Org": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Organic mass concentration from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_Org": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Organic mass concentration from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_Org_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Organic mass concentration error from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_Org_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Organic mass concentration error from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_SO4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Sulfate mass concentration from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_SO4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sulfate mass concentration from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ams_SO4_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ug/m^3",
+   "long_name": "Sulfate mass concentration error from time-of-flight aerosol mass spectrometer",
+   "has_qc": true
+  },
+  "qc_ams_SO4_err": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sulfate mass concentration error from time-of-flight aerosol mass spectrometer",
+   "has_qc": false
+  },
+  "ccna_N_CCN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number concentration of CCN from cloud condensation nuclei counter a",
+   "has_qc": true
+  },
+  "qc_ccna_N_CCN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number concentration of CCN from cloud condensation nuclei counter a",
+   "has_qc": false
+  },
+  "ccna_P_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Sample pressure of CCN from cloud condensation nuclei counter a",
+   "has_qc": true
+  },
+  "qc_ccna_P_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample pressure of CCN from cloud condensation nuclei counter a",
+   "has_qc": false
+  },
+  "ccna_supersaturation_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Sample supersaturation calculated via Lance/Rose method from cloud condensation nuclei counter a",
+   "has_qc": true
+  },
+  "qc_ccna_supersaturation_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample supersaturation calculated via Lance/Rose method from cloud condensation nuclei counter a",
+   "has_qc": false
+  },
+  "ccna_temp_unstable": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Logical value, indicating whether the instrument has reached thermal gradient stabilization and is within 0.4 degrees C of the set point from cloud condensation nuclei counter a",
+   "has_qc": true
+  },
+  "qc_ccna_temp_unstable": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Logical value, indicating whether the instrument has reached thermal gradient stabilization and is within 0.4 degrees C of the set point from cloud condensation nuclei counter a",
+   "has_qc": false
+  },
+  "ccna_T_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature read of sample air at entrance to instrument from cloud condensation nuclei counter a",
+   "has_qc": true
+  },
+  "qc_ccna_T_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature read of sample air at entrance to instrument from cloud condensation nuclei counter a",
+   "has_qc": false
+  },
+  "ccna_T_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature read of sample air entering the column from cloud condensation nuclei counter a",
+   "has_qc": true
+  },
+  "qc_ccna_T_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature read of sample air entering the column from cloud condensation nuclei counter a",
+   "has_qc": false
+  },
+  "ccnb_N_CCN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number concentration of CCN from cloud condensation nuclei counter b",
+   "has_qc": true
+  },
+  "qc_ccnb_N_CCN": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number concentration of CCN from cloud condensation nuclei counter b",
+   "has_qc": false
+  },
+  "ccnb_P_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Sample pressure from cloud condensation nuclei counter b",
+   "has_qc": true
+  },
+  "qc_ccnb_P_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample pressure from cloud condensation nuclei counter b",
+   "has_qc": false
+  },
+  "ccnb_supersaturation_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Sample supersaturation calculated via Lance/Rose method from cloud condensation nuclei counter b",
+   "has_qc": true
+  },
+  "qc_ccnb_supersaturation_calculated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample supersaturation calculated via Lance/Rose method from cloud condensation nuclei counter b",
+   "has_qc": false
+  },
+  "ccnb_temp_unstable": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Logical value, indicating whether the instrument has reached thermal gradient stabilization and is within 0.4 degrees C of the set point from cloud condensation nuclei counter b",
+   "has_qc": true
+  },
+  "qc_ccnb_temp_unstable": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Logical value, indicating whether the instrument has reached thermal gradient stabilization and is within 0.4 degrees C of the set point from cloud condensation nuclei counter b",
+   "has_qc": false
+  },
+  "ccnb_T_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature read of sample air at entrance to instrument from cloud condensation nuclei counter b",
+   "has_qc": true
+  },
+  "qc_ccnb_T_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature read of sample air at entrance to instrument from cloud condensation nuclei counter b",
+   "has_qc": false
+  },
+  "ccnb_T_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature read of sample air entering the column from cloud condensation nuclei counter b",
+   "has_qc": true
+  },
+  "qc_ccnb_T_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature read of sample air entering the column from cloud condensation nuclei counter b",
+   "has_qc": false
+  },
+  "fcdp_number_concentration": {
+   "dims": [
+    "time",
+    "cdp_optical_diameter"
+   ],
+   "shape": [
+    5104,
+    21
+   ],
+   "dtype": "float32",
+   "units": "count/L/um",
+   "long_name": "Number concentration from fast-cloud droplet probe",
+   "has_qc": true
+  },
+  "qc_fcdp_number_concentration": {
+   "dims": [
+    "time",
+    "cdp_optical_diameter"
+   ],
+   "shape": [
+    5104,
+    21
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number concentration from fast-cloud droplet probe",
+   "has_qc": false
+  },
+  "fcdp_total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "count/L",
+   "long_name": "Total number concentration from fast-cloud droplet probe",
+   "has_qc": true
+  },
+  "qc_fcdp_total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration from fast-cloud droplet probe",
+   "has_qc": false
+  },
+  "cpcfcvi_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Particle concentration from condensation particle counter via cvi inlet",
+   "has_qc": true
+  },
+  "qc_cpcfcvi_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Particle concentration from condensation particle counter via cvi inlet",
+   "has_qc": false
+  },
+  "cpcfiso_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Particle concentration from condensation particle counter via isokinetic inlet",
+   "has_qc": true
+  },
+  "qc_cpcfiso_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Particle concentration from condensation particle counter via isokinetic inlet",
+   "has_qc": false
+  },
+  "cpcu_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Concentration from ultrafine condensation particle counter",
+   "has_qc": true
+  },
+  "qc_cpcu_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Concentration from ultrafine condensation particle counter",
+   "has_qc": false
+  },
+  "fims_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from fast integrating mobility spectrometer",
+   "has_qc": true
+  },
+  "qc_fims_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level from fast integrating mobility spectrometer",
+   "has_qc": false
+  },
+  "fims_heated_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Flag indicating if the data is heated or unheated from fast integrating mobility spectrometer",
+   "has_qc": true
+  },
+  "qc_fims_heated_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Flag indicating if the data is heated or unheated from fast integrating mobility spectrometer",
+   "has_qc": false
+  },
+  "fims_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from fast integrating mobility spectrometer",
+   "has_qc": true
+  },
+  "qc_fims_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude from fast integrating mobility spectrometer",
+   "has_qc": false
+  },
+  "fims_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from fast integrating mobility spectrometer",
+   "has_qc": true
+  },
+  "qc_fims_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude from fast integrating mobility spectrometer",
+   "has_qc": false
+  },
+  "fims_number_concentration": {
+   "dims": [
+    "time",
+    "fims_geometric_diameter"
+   ],
+   "shape": [
+    5104,
+    30
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number concentration from fast integrating mobility spectrometer",
+   "has_qc": true
+  },
+  "qc_fims_number_concentration": {
+   "dims": [
+    "time",
+    "fims_geometric_diameter"
+   ],
+   "shape": [
+    5104,
+    30
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number concentration from fast integrating mobility spectrometer",
+   "has_qc": false
+  },
+  "fims_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Ambient pressure from fast integrating mobility spectrometer",
+   "has_qc": true
+  },
+  "qc_fims_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ambient pressure from fast integrating mobility spectrometer",
+   "has_qc": false
+  },
+  "fims_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Ambient temperature from fast integrating mobility spectrometer",
+   "has_qc": true
+  },
+  "qc_fims_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ambient temperature from fast integrating mobility spectrometer",
+   "has_qc": false
+  },
+  "hvps_number_concentration": {
+   "dims": [
+    "time",
+    "hvps_optical_diameter"
+   ],
+   "shape": [
+    5104,
+    37
+   ],
+   "dtype": "float32",
+   "units": "count/L/um",
+   "long_name": "Number concentration from high volume precipitation spectrometer",
+   "has_qc": true
+  },
+  "qc_hvps_number_concentration": {
+   "dims": [
+    "time",
+    "hvps_optical_diameter"
+   ],
+   "shape": [
+    5104,
+    37
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number concentration from high volume precipitation spectrometer",
+   "has_qc": false
+  },
+  "hvps_total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "count/L",
+   "long_name": "Total number concentration from high volume precipitation spectrometer",
+   "has_qc": true
+  },
+  "qc_hvps_total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration from high volume precipitation spectrometer",
+   "has_qc": false
+  },
+  "inletcvi_cvi_cut_size": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "CVI cut size from counterflow virtual impactor inlet",
+   "has_qc": true
+  },
+  "qc_inletcvi_cvi_cut_size": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CVI cut size from counterflow virtual impactor inlet",
+   "has_qc": false
+  },
+  "inletcvi_enhancement_factor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "CVI enhancement factor from counterflow virtual impactor inlet",
+   "has_qc": true
+  },
+  "qc_inletcvi_enhancement_factor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CVI enhancement factor from counterflow virtual impactor inlet",
+   "has_qc": false
+  },
+  "inletcvi_inlet_dilution_factor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Inlet dilution factor for under-kinetic mode from counterflow virtual impactor inlet",
+   "has_qc": true
+  },
+  "qc_inletcvi_inlet_dilution_factor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Inlet dilution factor for under-kinetic mode from counterflow virtual impactor inlet",
+   "has_qc": false
+  },
+  "inletcvi_inlet_selector": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Inlet selector valve position from counterflow virtual impactor inlet",
+   "has_qc": true
+  },
+  "qc_inletcvi_inlet_selector": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Inlet selector valve position from counterflow virtual impactor inlet",
+   "has_qc": false
+  },
+  "inletisok_cabin_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Cabin temperature from facility isokinetic inlet",
+   "has_qc": true
+  },
+  "qc_inletisok_cabin_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cabin temperature from facility isokinetic inlet",
+   "has_qc": false
+  },
+  "inletisok_pressure_isok_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure at isokinetic inlet manifold from facility isokinetic inlet",
+   "has_qc": true
+  },
+  "qc_inletisok_pressure_isok_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Pressure at isokinetic inlet manifold from facility isokinetic inlet",
+   "has_qc": false
+  },
+  "inletisok_relative_humidity_isok_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity at isokinetic inlet manifold from facility isokinetic inlet",
+   "has_qc": true
+  },
+  "qc_inletisok_relative_humidity_isok_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Relative humidity at isokinetic inlet manifold from facility isokinetic inlet",
+   "has_qc": false
+  },
+  "inletisok_temperature_isok_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature at isokinetic inlet manifold from facility isokinetic inlet",
+   "has_qc": true
+  },
+  "qc_inletisok_temperature_isok_inlet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature at isokinetic inlet manifold from facility isokinetic inlet",
+   "has_qc": false
+  },
+  "aerosolsd_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from merged aerosol size distribution",
+   "has_qc": true
+  },
+  "qc_aerosolsd_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "aerosolsd_cas_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "CAS flag from merged aerosol size distribution",
+   "has_qc": true
+  },
+  "qc_aerosolsd_cas_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CAS flag from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "aerosolsd_cloud_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Cloud flag from merged aerosol size distribution",
+   "has_qc": true
+  },
+  "qc_aerosolsd_cloud_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud flag from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "aerosolsd_cvi_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "CVI flag from merged aerosol size distribution",
+   "has_qc": true
+  },
+  "qc_aerosolsd_cvi_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: CVI flag from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "aerosolsd_fcdp_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "FCDP flag from merged aerosol size distribution",
+   "has_qc": true
+  },
+  "qc_aerosolsd_fcdp_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: FCDP flag from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "aerosolsd_fims_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "FIMS flag from merged aerosol size distribution",
+   "has_qc": true
+  },
+  "qc_aerosolsd_fims_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: FIMS flag from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "aerosolsd_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from merged aerosol size distribution",
+   "has_qc": true
+  },
+  "qc_aerosolsd_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "aerosolsd_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from merged aerosol size distribution",
+   "has_qc": true
+  },
+  "qc_aerosolsd_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "aerosolsd_number_concentration": {
+   "dims": [
+    "time",
+    "aerosolsd_geometric_diameter"
+   ],
+   "shape": [
+    5104,
+    55
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number concentration from merged aerosol size distribution",
+   "has_qc": true
+  },
+  "qc_aerosolsd_number_concentration": {
+   "dims": [
+    "time",
+    "aerosolsd_geometric_diameter"
+   ],
+   "shape": [
+    5104,
+    55
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number concentration from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "aerosolsd_pcasp_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "PCASP flag from merged aerosol size distribution",
+   "has_qc": true
+  },
+  "qc_aerosolsd_pcasp_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: PCASP flag from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "pcasp_sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "(cm^3)/s",
+   "long_name": "Sample flow rate from passive cavity aerosol spectrometer",
+   "has_qc": true
+  },
+  "qc_pcasp_sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample flow rate from passive cavity aerosol spectrometer",
+   "has_qc": false
+  },
+  "pcasp_sheath_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "(cm^3)/s",
+   "long_name": "Sheath flow read from passive cavity aerosol spectrometer",
+   "has_qc": true
+  },
+  "qc_pcasp_sheath_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sheath flow read from passive cavity aerosol spectrometer",
+   "has_qc": false
+  },
+  "pcasp_size_distribution": {
+   "dims": [
+    "time",
+    "pcasp_optical_diameter"
+   ],
+   "shape": [
+    5104,
+    30
+   ],
+   "dtype": "float64",
+   "units": "count/s",
+   "long_name": "Particle size distribution from passive cavity aerosol spectrometer",
+   "has_qc": true
+  },
+  "qc_pcasp_size_distribution": {
+   "dims": [
+    "time",
+    "pcasp_optical_diameter"
+   ],
+   "shape": [
+    5104,
+    30
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Particle size distribution from passive cavity aerosol spectrometer",
+   "has_qc": false
+  },
+  "o3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ppb",
+   "long_name": "Ozone concentration at STP",
+   "has_qc": true
+  },
+  "qc_o3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ozone concentration at STP",
+   "has_qc": false
+  },
+  "uhsas_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "cc/min",
+   "long_name": "Flow measurement from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": true
+  },
+  "qc_uhsas_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Flow measurement from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": false
+  },
+  "uhsas_sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "cc/min",
+   "long_name": "Sample flow rate from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": true
+  },
+  "qc_uhsas_sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample flow rate from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": false
+  },
+  "uhsas_sample_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Sample pressure from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": true
+  },
+  "qc_uhsas_sample_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample pressure from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": false
+  },
+  "uhsas_sheath_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "cc/min",
+   "long_name": "Sheath flow rate from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": true
+  },
+  "qc_uhsas_sheath_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sheath flow rate from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": false
+  },
+  "uhsas_lower_size_limit": {
+   "dims": [
+    "uhsas_bin_number"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Lower particle size limit for each bin from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": true
+  },
+  "qc_uhsas_lower_size_limit": {
+   "dims": [
+    "uhsas_bin_number"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Lower particle size limit for each bin from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": false
+  },
+  "uhsas_upper_size_limit": {
+   "dims": [
+    "uhsas_bin_number"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Upper particle size limit for each bin",
+   "has_qc": true
+  },
+  "qc_uhsas_upper_size_limit": {
+   "dims": [
+    "uhsas_bin_number"
+   ],
+   "shape": [
+    99
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upper particle size limit for each bin",
+   "has_qc": false
+  },
+  "uhsas_size_distribution": {
+   "dims": [
+    "time",
+    "uhsas_bin_number"
+   ],
+   "shape": [
+    5104,
+    99
+   ],
+   "dtype": "float64",
+   "units": "count",
+   "long_name": "Particle size distribution, bounded by lower_size_limit and upper_size_limit from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": true
+  },
+  "qc_uhsas_size_distribution": {
+   "dims": [
+    "time",
+    "uhsas_bin_number"
+   ],
+   "shape": [
+    5104,
+    99
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Particle size distribution, bounded by lower_size_limit and upper_size_limit from ultra-high sensitivity aerosol spectrometer",
+   "has_qc": false
+  },
+  "so2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "ppbv",
+   "long_name": "Sulfur dioxide (SO2) mixing ratio calculated with nominal sensitivity correction",
+   "has_qc": true
+  },
+  "qc_so2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sulfur dioxide (SO2) mixing ratio calculated with nominal sensitivity correction",
+   "has_qc": false
+  },
+  "ambient_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of ambient air",
+   "has_qc": false
+  },
+  "angle_of_attack": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Direction of wind relative to aircraft pitch",
+   "has_qc": false
+  },
+  "cabin_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Cabin pressure",
+   "has_qc": false
+  },
+  "cabin_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Cabin temperature",
+   "has_qc": false
+  },
+  "dewpoint_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Dewpoint temperature",
+   "has_qc": false
+  },
+  "dynamic_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Dynamic pressure",
+   "has_qc": false
+  },
+  "ground_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Platform speed over the ground",
+   "has_qc": false
+  },
+  "indicated_airspeed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Platform airspeed calculated based on the TAS and static temperature measured by Aimms-20",
+   "has_qc": false
+  },
+  "leg_number": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of flight leg aircraft is on",
+   "has_qc": false
+  },
+  "pitch": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Pitch angle of platform",
+   "has_qc": false
+  },
+  "potential_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Potential temperature calculated from ambient temperature and pressure",
+   "has_qc": false
+  },
+  "press_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude calculated from US standard atmospheric tables",
+   "has_qc": false
+  },
+  "qc_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check flag",
+   "has_qc": false
+  },
+  "radar_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude calculated using GPS altitude and position with the Digital Terrain Elevation Data sets from NGA",
+   "has_qc": false
+  },
+  "relative_humidity_ice": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity relative to ice",
+   "has_qc": false
+  },
+  "relative_humidity_water": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity relative to water",
+   "has_qc": false
+  },
+  "roll": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Roll angle of platform",
+   "has_qc": false
+  },
+  "side_slip": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Direction of wind relative to true heading",
+   "has_qc": false
+  },
+  "solar_zenith_ground": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Solar zenith",
+   "has_qc": false
+  },
+  "static_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Static pressure",
+   "has_qc": false
+  },
+  "sun_azimuth_aircraft": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Sun azimuth at aircraft",
+   "has_qc": false
+  },
+  "sun_azimuth_ground": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Sun azimuth at ground level",
+   "has_qc": false
+  },
+  "sun_elev_aircraft": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Sun elevation at aircraft",
+   "has_qc": false
+  },
+  "total_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Total temperature",
+   "has_qc": false
+  },
+  "true_airspeed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Platform airspeed through the air",
+   "has_qc": false
+  },
+  "true_heading": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Platform direction with respect to true north",
+   "has_qc": false
+  },
+  "vertical_velocity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Platform vertical velocity defined in the body frame",
+   "has_qc": false
+  },
+  "vert_wind_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Vertical wind speed",
+   "has_qc": false
+  },
+  "wgs_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above the ellipsoid based on WGS-84",
+   "has_qc": false
+  },
+  "wind_direction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction",
+   "has_qc": false
+  },
+  "wind_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    5104
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "aaf2dsh_optical_diameter": {
+   "dims": [
+    "aaf2dsh_optical_diameter"
+   ],
+   "shape": [
+    61
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Optical diameter from two-dimensional stereo probe sh",
+   "has_qc": false
+  },
+  "aaf2dsv_optical_diameter": {
+   "dims": [
+    "aaf2dsv_optical_diameter"
+   ],
+   "shape": [
+    61
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Optical diameter from two-dimensional stereo probe sv",
+   "has_qc": false
+  },
+  "cdp_optical_diameter": {
+   "dims": [
+    "cdp_optical_diameter"
+   ],
+   "shape": [
+    21
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Optical diameter from fast-cloud droplet probe",
+   "has_qc": false
+  },
+  "fims_geometric_diameter": {
+   "dims": [
+    "fims_geometric_diameter"
+   ],
+   "shape": [
+    30
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Geometric diameter from fast integrating mobility spectrometer",
+   "has_qc": false
+  },
+  "hvps_optical_diameter": {
+   "dims": [
+    "hvps_optical_diameter"
+   ],
+   "shape": [
+    37
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Optical diameter from high volume precipitation spectrometer",
+   "has_qc": false
+  },
+  "aerosolsd_geometric_diameter": {
+   "dims": [
+    "aerosolsd_geometric_diameter"
+   ],
+   "shape": [
+    55
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Geometric diameter from merged aerosol size distribution",
+   "has_qc": false
+  },
+  "pcasp_optical_diameter": {
+   "dims": [
+    "pcasp_optical_diameter"
+   ],
+   "shape": [
+    30
+   ],
+   "dtype": "float32",
+   "units": "um",
+   "long_name": "Optical diameter from passive cavity aerosol spectrometer",
+   "has_qc": false
+  }
+ }
+}

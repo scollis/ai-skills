@@ -1,0 +1,625 @@
+{
+ "instrument": "hsrl",
+ "datastream": "sgphsrlscanC1.a1",
+ "filename": "sgphsrlscanC1.a1.20260913.010003.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 40,
+ "dims": {
+  "time": 16,
+  "bound": 2,
+  "cal_time": 1,
+  "calibration_altitude": 678,
+  "geo_bin_range": 4000,
+  "scan_angle": 44,
+  "scan_range": 987
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 4800.0,
+ "time_span": [
+  "2026-09-13T01:00:03",
+  "2026-09-13T23:20:02"
+ ],
+ "global_attrs": {
+  "command_line": "hsrl_ingest -s sgp -f C1 --max-runtime 86400",
+  "process_version": "hsrl-6.3.0",
+  "dod_version": "hsrlscan-a1-1.3",
+  "input_source": "/data/collection/sgp/sgphsrlC1.00/nshsrl_20260914T000000_scanning_data__June11.nc",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "a1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgphsrlscanC1.a1",
+  "doi": "10.5439/2281582"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    16
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    16,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "sonde_time": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time of temperature profiles",
+   "has_qc": false
+  },
+  "sonde_longitude": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Longitude of temperature profiles",
+   "has_qc": false
+  },
+  "sonde_latitude": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Latitude of temperature profiles",
+   "has_qc": false
+  },
+  "top_alt_sounding": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Sounding maximum altitude",
+   "has_qc": false
+  },
+  "temperature_profile": {
+   "dims": [
+    "cal_time",
+    "calibration_altitude"
+   ],
+   "shape": [
+    1,
+    678
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Raob temperature profile",
+   "has_qc": false
+  },
+  "pressure_profile": {
+   "dims": [
+    "cal_time",
+    "calibration_altitude"
+   ],
+   "shape": [
+    1,
+    678
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Raob pressure profile",
+   "has_qc": false
+  },
+  "dewpoint_profile": {
+   "dims": [
+    "cal_time",
+    "calibration_altitude"
+   ],
+   "shape": [
+    1,
+    678
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Raob dewpoint temperature profile",
+   "has_qc": false
+  },
+  "windspeed_profile": {
+   "dims": [
+    "cal_time",
+    "calibration_altitude"
+   ],
+   "shape": [
+    1,
+    678
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Raob wind speed profile",
+   "has_qc": false
+  },
+  "winddir_profile": {
+   "dims": [
+    "cal_time",
+    "calibration_altitude"
+   ],
+   "shape": [
+    1,
+    678
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Raob wind direction profile",
+   "has_qc": false
+  },
+  "raob_station": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S32",
+   "units": "1",
+   "long_name": "Radiosonde station ID",
+   "has_qc": false
+  },
+  "lidar_calibration_Cmc": {
+   "dims": [
+    "cal_time",
+    "calibration_altitude"
+   ],
+   "shape": [
+    1,
+    678
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Molecular in combined calibration",
+   "has_qc": false
+  },
+  "lidar_calibration_Cmm": {
+   "dims": [
+    "cal_time",
+    "calibration_altitude"
+   ],
+   "shape": [
+    1,
+    678
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Molecular in molecular calibration",
+   "has_qc": false
+  },
+  "lidar_calibration_Cam": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol in molecular calibration",
+   "has_qc": false
+  },
+  "lidar_calibration_Cmc_wfov": {
+   "dims": [
+    "cal_time",
+    "calibration_altitude"
+   ],
+   "shape": [
+    1,
+    678
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Molecular in combined calibration for wide-field-of-view",
+   "has_qc": false
+  },
+  "lidar_calibration_Cmm_wfov": {
+   "dims": [
+    "cal_time",
+    "calibration_altitude"
+   ],
+   "shape": [
+    1,
+    678
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Molecular in molecular calibration for wide-field-of-view",
+   "has_qc": false
+  },
+  "lidar_calibration_Cam_wfov": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol in molecular calibration for wide-field-of-view",
+   "has_qc": false
+  },
+  "beta_m": {
+   "dims": [
+    "cal_time",
+    "calibration_altitude"
+   ],
+   "shape": [
+    1,
+    678
+   ],
+   "dtype": "float32",
+   "units": "1/m",
+   "long_name": "Raob molecular scattering cross section per unit volume",
+   "has_qc": false
+  },
+  "combined_gain": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Combined gain factor",
+   "has_qc": false
+  },
+  "combined_merge_threshold": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Combined merge threshold",
+   "has_qc": false
+  },
+  "polarization_cross_talk": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Polarization cross talk",
+   "has_qc": false
+  },
+  "wfov_to_combined_gain_ratio": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Wide-field-of-view to combined gain",
+   "has_qc": false
+  },
+  "combined_to_cross_pol_gain_ratio": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Combined to cross polarization gain",
+   "has_qc": false
+  },
+  "molecular_to_wfov_gain_ratio": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Molecular to wide-field-of-view gain",
+   "has_qc": false
+  },
+  "geo_cor": {
+   "dims": [
+    "cal_time",
+    "geo_bin_range"
+   ],
+   "shape": [
+    1,
+    4000
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Overlap correction",
+   "has_qc": false
+  },
+  "ground_distance": {
+   "dims": [
+    "time",
+    "scan_angle",
+    "scan_range"
+   ],
+   "shape": [
+    16,
+    44,
+    987
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Distance from instrument along ground, projected into polar",
+   "has_qc": false
+  },
+  "altitude": {
+   "dims": [
+    "time",
+    "scan_angle",
+    "scan_range"
+   ],
+   "shape": [
+    16,
+    44,
+    987
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above sea level, projected into polar",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "time",
+    "scan_angle",
+    "scan_range"
+   ],
+   "shape": [
+    16,
+    44,
+    987
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above instrument, projected into polar",
+   "has_qc": false
+  },
+  "beta_a_backscatter": {
+   "dims": [
+    "time",
+    "scan_angle",
+    "scan_range"
+   ],
+   "shape": [
+    16,
+    44,
+    987
+   ],
+   "dtype": "float32",
+   "units": "1/(m sr)",
+   "long_name": "Particulate backscatter cross section per unit volume",
+   "has_qc": false
+  },
+  "linear_depol": {
+   "dims": [
+    "time",
+    "scan_angle",
+    "scan_range"
+   ],
+   "shape": [
+    16,
+    44,
+    987
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Linear depolarization ratio for particulate",
+   "has_qc": false
+  },
+  "linear_depol_1064": {
+   "dims": [
+    "time",
+    "scan_angle",
+    "scan_range"
+   ],
+   "shape": [
+    16,
+    44,
+    987
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "1064nm total linear depolarization ratio",
+   "has_qc": false
+  },
+  "raw_color_ratio": {
+   "dims": [
+    "time",
+    "scan_angle",
+    "scan_range"
+   ],
+   "shape": [
+    16,
+    44,
+    987
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Raw color ratio",
+   "has_qc": false
+  },
+  "color_ratio": {
+   "dims": [
+    "time",
+    "scan_angle",
+    "scan_range"
+   ],
+   "shape": [
+    16,
+    44,
+    987
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Color ratio",
+   "has_qc": false
+  },
+  "beta_a_1064_backscatter": {
+   "dims": [
+    "time",
+    "scan_angle",
+    "scan_range"
+   ],
+   "shape": [
+    16,
+    44,
+    987
+   ],
+   "dtype": "float32",
+   "units": "1/(m sr)",
+   "long_name": "Particulate 1064nm backscatter cross section per unit volume",
+   "has_qc": false
+  },
+  "profile_mask": {
+   "dims": [
+    "time",
+    "scan_angle",
+    "scan_range"
+   ],
+   "shape": [
+    16,
+    44,
+    987
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Mask for qc data",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    16
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "cal_time": {
+   "dims": [
+    "cal_time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time of calibration change",
+   "has_qc": false
+  },
+  "calibration_altitude": {
+   "dims": [
+    "calibration_altitude"
+   ],
+   "shape": [
+    678
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above sea level for calibration",
+   "has_qc": false
+  },
+  "scan_angle": {
+   "dims": [
+    "scan_angle"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Angle of telescope from zenith",
+   "has_qc": false
+  },
+  "scan_range": {
+   "dims": [
+    "scan_range"
+   ],
+   "shape": [
+    987
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Range from instrument along optical path",
+   "has_qc": false
+  }
+ }
+}

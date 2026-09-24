@@ -1,0 +1,312 @@
+{
+ "instrument": "tbsmet",
+ "datastream": "sgptbsimetxq2C1.b1",
+ "filename": "sgptbsimetxq2C1.b1.20241110.143517.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 20,
+ "dims": {
+  "time": 1194,
+  "num_xq2": 1
+ },
+ "n_qc_vars": 8,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2024-11-10T14:35:17",
+  "2024-11-10T14:55:10"
+ ],
+ "global_attrs": {
+  "command_line": "tbsimetxq2_ingest -s sgp -f C1",
+  "process_version": "ingest-tbsimetxq2-1.3-0.el7",
+  "dod_version": "tbsimetxq2-b1-1.0",
+  "input_source": "/data/collection/sgp/sgptbsimetxq2C1.00/20241110-000000-00078231_0_1.csv",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgptbsimetxq2C1.b1",
+  "doi": "10.5439/1483632"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1194
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "xq2_file_name": {
+   "dims": [
+    "num_xq2"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "iMet XQ2 file names",
+   "has_qc": false
+  },
+  "serial_number": {
+   "dims": [
+    "num_xq2"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Serial number of XQ2 sensors",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Air pressure",
+   "has_qc": true
+  },
+  "qc_pressure": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Air pressure",
+   "has_qc": false
+  },
+  "air_temperature": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature corrected for solar radiation",
+   "has_qc": true
+  },
+  "qc_air_temperature": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Air temperature corrected for solar radiation",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity",
+   "has_qc": true
+  },
+  "qc_rh": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity",
+   "has_qc": false
+  },
+  "rh_sensor_temperature": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of humidity sensor",
+   "has_qc": true
+  },
+  "qc_rh_sensor_temperature": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature of humidity sensor",
+   "has_qc": false
+  },
+  "sat_count": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Satellite count",
+   "has_qc": true
+  },
+  "qc_sat_count": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Satellite count",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Latitude in decimal degrees from XQ2 sensor",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Latitude in decimal degrees from XQ2 sensor",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "Longitude in decimal degrees from XQ2 sensor",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Longitude in decimal degrees from XQ2 sensor",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from XQ2 sensor",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time",
+    "num_xq2"
+   ],
+   "shape": [
+    1194,
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Altitude above mean sea level from XQ2 sensor",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1194
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,205 @@
+{
+ "vap": "pccp",
+ "datastream": "sgppccpE45.c1",
+ "filename": "sgppccpE45.c1.20201228.152540.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 14,
+ "dims": {
+  "time": 9,
+  "camera_a_col": 2592,
+  "camera_a_row": 1944,
+  "nfiles": 1439
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 20.0,
+ "time_span": [
+  "2020-12-28T15:25:40",
+  "2020-12-28T18:24:20"
+ ],
+ "global_attrs": {
+  "command_line": "pccpag -s sgp -f E45 -b 20201201 -e 20210101 -D 2 -R",
+  "process_version": "vap-pccpag-1.4-0.el7",
+  "dod_version": "pccp-c1-1.0",
+  "site_id": "sgp",
+  "facility_id": "E45",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Billings",
+  "datastream": "sgppccpE45.c1",
+  "doi": "10.5439/1531325"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    9
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "x_relative": {
+   "dims": [
+    "time",
+    "camera_a_col",
+    "camera_a_row"
+   ],
+   "shape": [
+    9,
+    2592,
+    1944
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "East relative distance to base_lon dimensioned by pixels in camera_a image",
+   "has_qc": false
+  },
+  "y_relative": {
+   "dims": [
+    "time",
+    "camera_a_col",
+    "camera_a_row"
+   ],
+   "shape": [
+    9,
+    2592,
+    1944
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "North relative distance to base_lat dimensioned by pixels in camera_a image",
+   "has_qc": false
+  },
+  "z_relative": {
+   "dims": [
+    "time",
+    "camera_a_col",
+    "camera_a_row"
+   ],
+   "shape": [
+    9,
+    2592,
+    1944
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Height relative distance to base_alt dimensioned by pixels in camera_a image",
+   "has_qc": false
+  },
+  "camera_b_col": {
+   "dims": [
+    "time",
+    "camera_a_col",
+    "camera_a_row"
+   ],
+   "shape": [
+    9,
+    2592,
+    1944
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "References camera_b x axis to camera_a pixel axes",
+   "has_qc": false
+  },
+  "camera_b_row": {
+   "dims": [
+    "time",
+    "camera_a_col",
+    "camera_a_row"
+   ],
+   "shape": [
+    9,
+    2592,
+    1944
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "References camera_b y axis to camera_a pixel axes",
+   "has_qc": false
+  },
+  "base_lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude of the base coordinate",
+   "has_qc": false
+  },
+  "base_lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude of the base coordinate",
+   "has_qc": false
+  },
+  "base_alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude of the base coordinate above mean sea level",
+   "has_qc": false
+  },
+  "input_images": {
+   "dims": [
+    "nfiles"
+   ],
+   "shape": [
+    1439
+   ],
+   "dtype": "|S40",
+   "units": "1",
+   "long_name": "Names of input stereocamera input images processed.",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    9
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

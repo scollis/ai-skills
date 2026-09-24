@@ -1,0 +1,345 @@
+{
+ "instrument": "gndrad",
+ "datastream": "sgpgndrad25m60sC1.b1",
+ "filename": "sgpgndrad25m60sC1.b1.20260919.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 26,
+ "dims": {
+  "time": 1440,
+  "bound": 2
+ },
+ "n_qc_vars": 8,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2026-09-19T00:00:00",
+  "2026-09-19T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "gndrad_ingest -n gndrad25m -s sgp -f C1 --max-runtime 86400",
+  "process_version": "ingest-gndrad-1.4-0.el9",
+  "dod_version": "gndrad25m60s-b1-2.0",
+  "input_source": "/data/collection/sgp/sgpgndrad25mC1.00/GNDRAD25M_C1_Table213.20260919000000.dat",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpgndrad25m60sC1.b1",
+  "serial_number": "PIR-UIR: 30680\nSR20-US: 22805\n",
+  "sampling_interval": "1 second",
+  "averaging_interval": "60 seconds",
+  "doi": "10.5439/1650668"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "up_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling Longwave Hemispheric Irradiance, Pyrgeometer",
+   "has_qc": true
+  },
+  "qc_up_long_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling Longwave Hemispheric Irradiance, Pyrgeometer",
+   "has_qc": false
+  },
+  "up_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling Shortwave Hemispheric Irradiance, Pyranometer",
+   "has_qc": true
+  },
+  "qc_up_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling Shortwave Hemispheric Irradiance, Pyranometer",
+   "has_qc": false
+  },
+  "up_long_hemisp_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling Longwave Hemispheric Irradiance, Pyrgeometer, Standard Deviation",
+   "has_qc": false
+  },
+  "up_short_hemisp_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling Shortwave Hemispheric Irradiance, Pyranometer, Standard Deviation",
+   "has_qc": false
+  },
+  "up_long_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling Longwave Hemispheric Irradiance, Pyrgeometer, Maxima",
+   "has_qc": true
+  },
+  "qc_up_long_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling Longwave Hemispheric Irradiance, Pyrgeometer, Maxima",
+   "has_qc": false
+  },
+  "up_short_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling Shortwave Hemispheric Irradiance, Pyranometer, Maxima",
+   "has_qc": true
+  },
+  "qc_up_short_hemisp_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling Shortwave Hemispheric Irradiance, Pyranometer, Maxima",
+   "has_qc": false
+  },
+  "up_long_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling Longwave Hemispheric Irradiance, Pyrgeometer, Minima",
+   "has_qc": true
+  },
+  "qc_up_long_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling Longwave Hemispheric Irradiance, Pyrgeometer, Minima",
+   "has_qc": false
+  },
+  "up_short_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling Shortwave Hemispheric Irradiance, Pyranometer, Minima",
+   "has_qc": true
+  },
+  "qc_up_short_hemisp_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling Shortwave Hemispheric Irradiance, Pyranometer, Minima",
+   "has_qc": false
+  },
+  "up_long_hemisp_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "rpm",
+   "long_name": "Ventilation tachometer for Upwelling Longwave Hemispheric Irradiance, Pyrgeometer",
+   "has_qc": true
+  },
+  "qc_up_long_hemisp_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ventilation tachometer for Upwelling Longwave Hemispheric Irradiance, Pyrgeometer",
+   "has_qc": false
+  },
+  "up_short_hemisp_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "rpm",
+   "long_name": "Ventilation tachometer for Upwelling Shortwave Hemispheric Irradiance, Pyranometer",
+   "has_qc": true
+  },
+  "qc_up_short_hemisp_vent_tachometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ventilation tachometer for Upwelling Shortwave Hemispheric Irradiance, Pyranometer",
+   "has_qc": false
+  },
+  "logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Logger voltage",
+   "has_qc": false
+  },
+  "logger_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Logger temperature",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

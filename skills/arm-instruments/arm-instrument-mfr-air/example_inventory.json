@@ -1,0 +1,665 @@
+{
+ "instrument": "mfr-air",
+ "datastream": "sgpmfraafF2.b1",
+ "filename": "sgpmfraafF2.b1.20160905.142406.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 59,
+ "dims": {
+  "time": 14471
+ },
+ "n_qc_vars": 11,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2016-09-05T14:24:06",
+  "2016-09-05T18:25:37"
+ ],
+ "global_attrs": {
+  "command_line": "mfraaf_ingest -s sgp -f F2 -D",
+  "process_version": "ingest-mfraaf-1.4-0.el6",
+  "dod_version": "mfraaf-b1-2.3",
+  "site_id": "sgp",
+  "facility_id": "F2",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Cessna 206 Aircraft",
+  "input_source": "/data/collection/sgp/sgpmfraafF2.00/sgpmfraafF2.00.20170126.220500.raw.CR1000_Ces_Table15520160905.dat",
+  "serial_number": "N/A",
+  "sampling_interval": "1 second",
+  "averaging_interval": "None",
+  "datastream": "sgpmfraafF2.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "up_hemisp_broadband": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "counts",
+   "long_name": "Upwelling broadband hemispheric irradiance via aircraft",
+   "has_qc": true
+  },
+  "qc_up_hemisp_broadband": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling broadband hemispheric irradiance via aircraft",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Upwelling narrowband hemispheric irradiance, filter 1, via aircraft",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling narrowband hemispheric irradiance, filter 1, via aircraft",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Upwelling narrowband hemispheric irradiance, filter 2, via aircraft",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling narrowband hemispheric irradiance, filter 2, via aircraft",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Upwelling narrowband hemispheric irradiance, filter 3, via aircraft",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling narrowband hemispheric irradiance, filter 3, via aircraft",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Upwelling narrowband hemispheric irradiance, filter 4, via aircraft",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling narrowband hemispheric irradiance, filter 4, via aircraft",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Upwelling narrowband hemispheric irradiance, filter 5, via aircraft",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling narrowband hemispheric irradiance, filter 5, via aircraft",
+   "has_qc": false
+  },
+  "up_hemisp_narrowband_filter6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "W/m^2-nm",
+   "long_name": "Upwelling narrowband hemispheric irradiance, filter 6, via aircraft",
+   "has_qc": true
+  },
+  "qc_up_hemisp_narrowband_filter6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Upwelling narrowband hemispheric irradiance, filter 6, via aircraft",
+   "has_qc": false
+  },
+  "head_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Detector temperature",
+   "has_qc": true
+  },
+  "qc_head_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Detector temperature",
+   "has_qc": false
+  },
+  "head_temp2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Second detector temperature",
+   "has_qc": true
+  },
+  "qc_head_temp2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Second detector temperature",
+   "has_qc": false
+  },
+  "temp_logger": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Logger temperature",
+   "has_qc": true
+  },
+  "qc_temp_logger": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Logger temperature",
+   "has_qc": false
+  },
+  "logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Data logger supply voltage",
+   "has_qc": true
+  },
+  "qc_logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Data logger supply voltage",
+   "has_qc": false
+  },
+  "gps_date_utc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Time as recorded by GPS, date in ddmmyy form.",
+   "has_qc": false
+  },
+  "gps_time_utc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Time as recorded by GPS, time in the form hhmmss.",
+   "has_qc": false
+  },
+  "ground_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Speed over ground",
+   "has_qc": false
+  },
+  "course_true": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "True course over ground",
+   "has_qc": false
+  },
+  "fix_quality": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "GPS signal quality indicator",
+   "has_qc": false
+  },
+  "number_satellites": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Number of satellites in use",
+   "has_qc": false
+  },
+  "magnetic_variation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Magnetic direction correction (+ for east, - for west)",
+   "has_qc": false
+  },
+  "gps_ready": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Number of valid sentences that must be received before clock adjustment.",
+   "has_qc": false
+  },
+  "max_time_adjust": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Maximum time adjustment that has occurred since the data logger program started",
+   "has_qc": false
+  },
+  "number_clock_changes": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Number of times the clock has been changed since the program started",
+   "has_qc": false
+  },
+  "time_skew": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "ms",
+   "long_name": "Time to complete GPS and 7 channel measurements",
+   "has_qc": false
+  },
+  "offset_broadband": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from upwelling hemispheric broadband data",
+   "has_qc": false
+  },
+  "offset_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from upwelling hemispheric filter1 data",
+   "has_qc": false
+  },
+  "offset_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from upwelling hemispheric filter2 data",
+   "has_qc": false
+  },
+  "offset_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from upwelling hemispheric filter3 data",
+   "has_qc": false
+  },
+  "offset_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from upwelling hemispheric filter4 data",
+   "has_qc": false
+  },
+  "offset_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from upwelling hemispheric filter5 data",
+   "has_qc": false
+  },
+  "offset_filter6": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from upwelling hemispheric filter6 data",
+   "has_qc": false
+  },
+  "diffuse_correction_broadband": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction of broadband diffuse, assuming Rayleigh sky at 45 degree zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction of filter1 diffuse, assuming Rayleigh sky at 45 degree zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction of filter2 diffuse, assuming Rayleigh sky at 45 degree zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction of filter3 diffuse, assuming Rayleigh sky at 45 degre zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction of filter4 diffuse, assuming Rayleigh sky at 45 degree zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction of filter5 diffuse, assuming Rayleigh sky at 45 degree zenith angle",
+   "has_qc": false
+  },
+  "diffuse_correction_filter6": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction of filter6 diffuse, assuming Rayleigh sky at 45 degree zenith angle",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_broadband": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/(W/m^2)",
+   "long_name": "Nominal calibration factor, applied to broadband data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/W/(m^2 nm)",
+   "long_name": "Nominal calibration factor, applied to filter1 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/W/(m^2 nm)",
+   "long_name": "Nominal calibration factor, applied to filter2 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/W/(m^2 nm)",
+   "long_name": "Nominal calibration factor, applied to filter3 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/W/(m^2 nm)",
+   "long_name": "Nominal calibration factor, applied to filter4 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/W/(m^2 nm)",
+   "long_name": "Nominal calibration factor, applied to filter5 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter6": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/W/(m^2 nm)",
+   "long_name": "Nominal calibration factor, applied to filter6 data",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    14471
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

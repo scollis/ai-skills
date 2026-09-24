@@ -1,0 +1,400 @@
+{
+ "vap": "pblht",
+ "datastream": "sgppblhtsonde1mcfarlC1.c1",
+ "filename": "sgppblhtsonde1mcfarlC1.c1.20260917.185609.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 33,
+ "dims": {
+  "time": 4957,
+  "height_ss": 190,
+  "layer": 5
+ },
+ "n_qc_vars": 5,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-09-17T18:56:09",
+  "2026-09-17T20:18:44"
+ ],
+ "global_attrs": {
+  "command_line": "pblhtsonde -s sgp -f C1 -b 20260917 -e 20260918 --max-runtime 86400",
+  "process_version": "pblhtsonde-2.1.0",
+  "dod_version": "pblhtsonde1mcfarl-c1-2.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgppblhtsonde1mcfarlC1.c1",
+  "doi": "10.5439/1991783"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4957
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "atm_pres": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4957
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Atmospheric pressure",
+   "has_qc": false
+  },
+  "air_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4957
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Dry bulb ambient air temperature",
+   "has_qc": false
+  },
+  "wspd": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4957
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4957
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity",
+   "has_qc": false
+  },
+  "pbl_height_heffter": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Planetary boundary layer height above mean sea level calculated using the Heffter (1980) method",
+   "has_qc": true
+  },
+  "qc_pbl_height_heffter": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Planetary boundary layer height above mean sea level calculated using the Heffter (1980) method",
+   "has_qc": false
+  },
+  "pbl_regime_type_liu_liang": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Planetary boundary layer regime type determined by Liu and Liang (2010) method",
+   "has_qc": true
+  },
+  "qc_pbl_regime_type_liu_liang": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Planetary boundary layer regime type determined by Liu and Liang (2010) method",
+   "has_qc": false
+  },
+  "pbl_height_liu_liang": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Planetary boundary layer height above mean sea level calculated by Liu and Liang (2010) method",
+   "has_qc": true
+  },
+  "qc_pbl_height_liu_liang": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Planetary boundary layer height above mean sea level calculated by Liu and Liang (2010) method",
+   "has_qc": false
+  },
+  "pbl_height_bulk_richardson_pt25": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Planetary boundary layer height above mean sea level calculated from bulk Richardson number using critical threshold of 0.25",
+   "has_qc": true
+  },
+  "qc_pbl_height_bulk_richardson_pt25": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Planetary boundary layer height above mean sea level calculated from bulk Richardson number using critical threshold of 0.25",
+   "has_qc": false
+  },
+  "pbl_height_bulk_richardson_pt5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Planetary boundary layer height above mean sea level calculated from bulk Richardson number using critical threshold of 0.5",
+   "has_qc": true
+  },
+  "qc_pbl_height_bulk_richardson_pt5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Planetary boundary layer height above mean sea level calculated from bulk Richardson number using critical threshold of 0.5",
+   "has_qc": false
+  },
+  "pressure_gridded": {
+   "dims": [
+    "height_ss"
+   ],
+   "shape": [
+    190
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Pressure grid for 5 mb subsampling",
+   "has_qc": false
+  },
+  "lapserate_theta_ss": {
+   "dims": [
+    "height_ss"
+   ],
+   "shape": [
+    190
+   ],
+   "dtype": "float32",
+   "units": "K/m",
+   "long_name": "Potential temperature lapse rate subsampled at 5 mb resolution",
+   "has_qc": false
+  },
+  "lapserate_theta_smoothed": {
+   "dims": [
+    "height_ss"
+   ],
+   "shape": [
+    190
+   ],
+   "dtype": "float32",
+   "units": "K/m",
+   "long_name": "Potential temperature lapse rate subsampled at 5 mb resolution and then smoothed over 15 mb via 3 point moving average",
+   "has_qc": false
+  },
+  "atm_pres_ss": {
+   "dims": [
+    "height_ss"
+   ],
+   "shape": [
+    190
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Sonde-measured pressure closest to the bottom of the 5 mb subsampling interval",
+   "has_qc": false
+  },
+  "theta_ss": {
+   "dims": [
+    "height_ss"
+   ],
+   "shape": [
+    190
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Potential temperature subsampled at 5 mb resolution",
+   "has_qc": false
+  },
+  "wspd_ss": {
+   "dims": [
+    "height_ss"
+   ],
+   "shape": [
+    190
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed subsampled at 5 mb resolution",
+   "has_qc": false
+  },
+  "richardson_number": {
+   "dims": [
+    "height_ss"
+   ],
+   "shape": [
+    190
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Bulk Richardson number",
+   "has_qc": false
+  },
+  "virtual_theta_ss": {
+   "dims": [
+    "height_ss"
+   ],
+   "shape": [
+    190
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Virtual potential temperature",
+   "has_qc": false
+  },
+  "bottom_inversion": {
+   "dims": [
+    "layer"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above mean sea level at bottom of inversion layer from Heffter (1980) method",
+   "has_qc": false
+  },
+  "top_inversion": {
+   "dims": [
+    "layer"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above mean sea level at top of inversion layer from Heffter (1980) method",
+   "has_qc": false
+  },
+  "lapserate_max": {
+   "dims": [
+    "layer"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "float32",
+   "units": "K/m",
+   "long_name": "Maximum lapse rate in inversion layer from Heffter (1980) method",
+   "has_qc": false
+  },
+  "delta_theta_max": {
+   "dims": [
+    "layer"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "The maximum difference in potential temperature across inversion layers from Heffter (1980) method",
+   "has_qc": false
+  },
+  "level_1_liu_liang": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Level 1 height above mean sea level calculated by the Liu and Liang (2010) method",
+   "has_qc": false
+  },
+  "level_2_liu_liang": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Level 2 height above mean sea level calculated by the Liu and Liang (2010) method",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4957
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height_ss": {
+   "dims": [
+    "height_ss"
+   ],
+   "shape": [
+    190
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above mean sea level subsampled at 5 mb resolution",
+   "has_qc": false
+  },
+  "layer": {
+   "dims": [
+    "layer"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Inversion layer number for Heffter (1980) method",
+   "has_qc": false
+  }
+ }
+}

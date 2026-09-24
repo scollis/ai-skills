@@ -1,0 +1,874 @@
+{
+ "instrument": "sebs",
+ "datastream": "enasebsC1.b1",
+ "filename": "enasebsC1.b1.20260919.000000.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 70,
+ "dims": {
+  "time": 48,
+  "bound": 2
+ },
+ "n_qc_vars": 32,
+ "time_resolution_s": 1800.0,
+ "time_span": [
+  "2026-09-19T00:00:00",
+  "2026-09-19T23:30:00"
+ ],
+ "global_attrs": {
+  "command_line": "sebs_ingest -s ena -f C1 --max-runtime 86400",
+  "process_version": "ingest-sebs-1.10-0.el9",
+  "dod_version": "sebs-b1-1.6",
+  "input_source": "/data/collection/ena/enasebsC1.00/SEBS_Table30.20260919000000.dat",
+  "site_id": "ena",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Eastern North Atlantic (ENA), Graciosa Island, Azores",
+  "datastream": "enasebsC1.b1",
+  "serial_number": "N/A",
+  "sampling_interval": "5 seconds",
+  "averaging_interval": "30 minutes",
+  "doi": "10.5439/1984921",
+  "ingest_software": "ingest-sebs-1.10-0.el9"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    48,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "down_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling shortwave hemispheric irradiance",
+   "has_qc": true
+  },
+  "qc_down_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Downwelling shortwave hemispheric irradiance",
+   "has_qc": false
+  },
+  "up_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling shortwave hemispheric irradiance",
+   "has_qc": true
+  },
+  "qc_up_short_hemisp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling shortwave hemispheric irradiance",
+   "has_qc": false
+  },
+  "down_long": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Sky longwave irradiance",
+   "has_qc": true
+  },
+  "qc_down_long": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sky longwave irradiance",
+   "has_qc": false
+  },
+  "up_long": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Surface longwave irradiance",
+   "has_qc": true
+  },
+  "qc_up_long": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface longwave irradiance",
+   "has_qc": false
+  },
+  "surface_soil_heat_flux_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Surface soil heat flux 1",
+   "has_qc": true
+  },
+  "qc_surface_soil_heat_flux_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface soil heat flux 1",
+   "has_qc": false
+  },
+  "surface_soil_heat_flux_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Surface soil heat flux 2",
+   "has_qc": true
+  },
+  "qc_surface_soil_heat_flux_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface soil heat flux 2",
+   "has_qc": false
+  },
+  "surface_soil_heat_flux_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Surface soil heat flux 3",
+   "has_qc": true
+  },
+  "qc_surface_soil_heat_flux_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface soil heat flux 3",
+   "has_qc": false
+  },
+  "soil_moisture_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Soil moisture 1, volumetric",
+   "has_qc": true
+  },
+  "qc_soil_moisture_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil moisture 1, volumetric",
+   "has_qc": false
+  },
+  "soil_moisture_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Soil moisture 2, volumetric",
+   "has_qc": true
+  },
+  "qc_soil_moisture_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil moisture 2, volumetric",
+   "has_qc": false
+  },
+  "soil_moisture_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Soil moisture 3, volumetric",
+   "has_qc": true
+  },
+  "qc_soil_moisture_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil moisture 3, volumetric",
+   "has_qc": false
+  },
+  "soil_temp_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Soil temperature 1",
+   "has_qc": true
+  },
+  "qc_soil_temp_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil temperature 1",
+   "has_qc": false
+  },
+  "soil_temp_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Soil temperature 2",
+   "has_qc": true
+  },
+  "qc_soil_temp_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil temperature 2",
+   "has_qc": false
+  },
+  "soil_temp_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Soil temperature 3",
+   "has_qc": true
+  },
+  "qc_soil_temp_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil temperature 3",
+   "has_qc": false
+  },
+  "soil_heat_flow_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Soil heat flow 1",
+   "has_qc": true
+  },
+  "qc_soil_heat_flow_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil heat flow 1",
+   "has_qc": false
+  },
+  "soil_heat_flow_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Soil heat flow 2",
+   "has_qc": true
+  },
+  "qc_soil_heat_flow_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil heat flow 2",
+   "has_qc": false
+  },
+  "soil_heat_flow_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Soil heat flow 3",
+   "has_qc": true
+  },
+  "qc_soil_heat_flow_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil heat flow 3",
+   "has_qc": false
+  },
+  "corr_soil_heat_flow_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Soil heat flow 1, corrected for soil moisture",
+   "has_qc": true
+  },
+  "qc_corr_soil_heat_flow_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil heat flow 1, corrected for soil moisture",
+   "has_qc": false
+  },
+  "corr_soil_heat_flow_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Soil heat flow 2, corrected for soil moisture",
+   "has_qc": true
+  },
+  "qc_corr_soil_heat_flow_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil heat flow 2, corrected for soil moisture",
+   "has_qc": false
+  },
+  "corr_soil_heat_flow_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Soil heat flow 3, corrected for soil moisture",
+   "has_qc": true
+  },
+  "qc_corr_soil_heat_flow_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil heat flow 3, corrected for soil moisture",
+   "has_qc": false
+  },
+  "soil_heat_capacity_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "MJ/m^3/degC",
+   "long_name": "Soil heat capacity 1",
+   "has_qc": true
+  },
+  "qc_soil_heat_capacity_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil heat capacity 1",
+   "has_qc": false
+  },
+  "soil_heat_capacity_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "MJ/m^3/degC",
+   "long_name": "Soil heat capacity 2",
+   "has_qc": true
+  },
+  "qc_soil_heat_capacity_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil heat capacity 2",
+   "has_qc": false
+  },
+  "soil_heat_capacity_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "MJ/m^3/degC",
+   "long_name": "Soil heat capacity 3",
+   "has_qc": true
+  },
+  "qc_soil_heat_capacity_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Soil heat capacity 3",
+   "has_qc": false
+  },
+  "energy_storage_change_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Change in energy storage 1, 0-5 cm soil layer",
+   "has_qc": true
+  },
+  "qc_energy_storage_change_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Change in energy storage 1, 0-5 cm soil layer",
+   "has_qc": false
+  },
+  "energy_storage_change_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Change in energy storage 2, 0-5 cm soil layer",
+   "has_qc": true
+  },
+  "qc_energy_storage_change_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Change in energy storage 2, 0-5 cm soil layer",
+   "has_qc": false
+  },
+  "energy_storage_change_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Change in energy storage 3, 0-5 cm soil layer",
+   "has_qc": true
+  },
+  "qc_energy_storage_change_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Change in energy storage 3, 0-5 cm soil layer",
+   "has_qc": false
+  },
+  "albedo": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Albedo",
+   "has_qc": true
+  },
+  "qc_albedo": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Albedo",
+   "has_qc": false
+  },
+  "net_radiation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Net radiation",
+   "has_qc": true
+  },
+  "qc_net_radiation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Net radiation",
+   "has_qc": false
+  },
+  "surface_soil_heat_flux_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Surface soil heat flux, average of fluxes 1-3",
+   "has_qc": true
+  },
+  "qc_surface_soil_heat_flux_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface soil heat flux, average of fluxes 1-3",
+   "has_qc": false
+  },
+  "surface_energy_balance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Surface energy balance",
+   "has_qc": true
+  },
+  "qc_surface_energy_balance": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface energy balance",
+   "has_qc": false
+  },
+  "wetness": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Wetness, rain detector",
+   "has_qc": true
+  },
+  "qc_wetness": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wetness, rain detector",
+   "has_qc": false
+  },
+  "temp_net_radiometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Net radiometer temperature",
+   "has_qc": true
+  },
+  "qc_temp_net_radiometer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Net radiometer temperature",
+   "has_qc": false
+  },
+  "battery_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Battery voltage",
+   "has_qc": true
+  },
+  "qc_battery_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Battery voltage",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

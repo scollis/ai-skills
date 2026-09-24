@@ -1,0 +1,530 @@
+{
+ "vap": "vdisquants",
+ "datastream": "sgpvdisquantsC1.c1",
+ "filename": "sgpvdisquantsC1.c1.20260921.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 42,
+ "dims": {
+  "time": 1440
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2026-09-21T00:00:00",
+  "2026-09-21T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "vdisquants -s sgp -f C1 -b 20260921 -e 20260922 --max-runtime 86400",
+  "process_version": "vdisquants-2.0.1",
+  "dod_version": "vdisquants-c1-1.2",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpvdisquantsC1.c1",
+  "doi": "10.5439/1592683"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "rain_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm/hour",
+   "long_name": "Instantaneous Rainfall Rate of Water Flux",
+   "has_qc": false
+  },
+  "reflectivity_factor_sband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Estimated Horizontal Radar Reflectivity from Drop Size Distribution S-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "reflectivity_factor_cband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Estimated Horizontal Radar Reflectivity from Drop Size Distribution C-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "reflectivity_factor_xband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Estimated Horizontal Radar Reflectivity from Drop Size Distribution X-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "reflectivity_factor_kaband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Estimated Horizontal Radar Reflectivity from Drop Size Distribution Ka-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "reflectivity_factor_wband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Estimated Horizontal Radar Reflectivity from Drop Size Distribution W-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "differential_reflectivity_sband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Estimated Differential Radar Reflectivity (H, V) from Drop Size Distribution S-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "differential_reflectivity_cband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Estimated Differential Radar Reflectivity (H, V) from Drop Size Distribution C-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "differential_reflectivity_xband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Estimated Differential Radar Reflectivity (H, V) from Drop Size Distribution X-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "differential_reflectivity_kaband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Estimated Differential Radar Reflectivity (H, V) from Drop Size Distribution Ka-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_differential_phase_sband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "deg/km",
+   "long_name": "Specific Differential Phase from Drop Size Distribution S-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_differential_phase_cband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "deg/km",
+   "long_name": "Specific Differential Phase from Drop Size Distribution C-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_differential_phase_xband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "deg/km",
+   "long_name": "Specific Differential Phase from Drop Size Distribution X-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_differential_phase_kaband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "deg/km",
+   "long_name": "Specific Differential Phase from Drop Size Distribution Ka-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_attenuation_sband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB/km",
+   "long_name": "Specific Attenuation S-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_attenuation_cband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB/km",
+   "long_name": "Specific Attenuation C-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_attenuation_xband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB/km",
+   "long_name": "Specific Attenuation X-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_attenuation_kaband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB/km",
+   "long_name": "Specific Attenuation Ka-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "gammapsd_slope": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/mm",
+   "long_name": "GammaPSD Slope",
+   "has_qc": false
+  },
+  "gammapsd_shape": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Shape Parameter of Modeled Drop Size Distribution",
+   "has_qc": false
+  },
+  "num_concen": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/(m^3 mm)",
+   "long_name": "Intercept Parameter of Modeled Drop Size Distribution",
+   "has_qc": false
+  },
+  "norm_num_concen": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/(m^3 mm)",
+   "long_name": "Normalized Intercept Parameter of a Normalized Gaussian Distribution",
+   "has_qc": false
+  },
+  "med_diameter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Median Drop Diameter",
+   "has_qc": false
+  },
+  "mass_weighted_mean_diameter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Mean Drop Diameter",
+   "has_qc": false
+  },
+  "lwc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "g/m^3",
+   "long_name": "Liquid Water Content",
+   "has_qc": false
+  },
+  "total_droplet_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/m^3",
+   "long_name": "Total Droplet Concentration",
+   "has_qc": false
+  },
+  "exppsd_slope": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "1/mm",
+   "long_name": "Distribution Slope Parameter",
+   "has_qc": false
+  },
+  "mean_doppler_vel_sband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean Doppler Velocity S-band when temperature is 20C",
+   "has_qc": false
+  },
+  "mean_doppler_vel_cband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean Doppler Velocity C-band when temperature is 20C",
+   "has_qc": false
+  },
+  "mean_doppler_vel_xband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean Doppler Velocity X-band when temperature is 20C",
+   "has_qc": false
+  },
+  "mean_doppler_vel_kaband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean Doppler Velocity Ka-band when temperature is 20C",
+   "has_qc": false
+  },
+  "mean_doppler_vel_wband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean Doppler Velocity W-band when temperature is 20C",
+   "has_qc": false
+  },
+  "bringi_conv_stra_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Bringi Convective Stratiform Flag",
+   "has_qc": false
+  },
+  "specific_differential_attenuation_sband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB/km",
+   "long_name": "Specific Differential Attenuation S-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_differential_attenuation_cband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB/km",
+   "long_name": "Specific Differential Attenuation C-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_differential_attenuation_kaband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB/km",
+   "long_name": "Specific Differential Attenuation Ka-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "specific_differential_attenuation_xband20c": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "dB/km",
+   "long_name": "Specific Differential Attenuation X-Band when temperature is 20 degree C",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

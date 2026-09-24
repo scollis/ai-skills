@@ -1,0 +1,516 @@
+{
+ "instrument": "pops-air",
+ "datastream": "bnfaafpopsU2.b1",
+ "filename": "bnfaafpopsU2.b1.20260911.144213.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 38,
+ "dims": {
+  "time": 7838,
+  "optical_diameter": 100,
+  "bound": 2
+ },
+ "n_qc_vars": 5,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-09-11T14:42:13",
+  "2026-09-11T16:52:50"
+ ],
+ "global_attrs": {
+  "command_line": "aafpopscorr -s bnf -f U2 --max-runtime 86400",
+  "process_version": "ingest-aafpopscorr-1.0-0.el9",
+  "dod_version": "aafpops-b1-1.1",
+  "site_id": "bnf",
+  "facility_id": "U2",
+  "data_level": "b1",
+  "location_description": "Southeast U.S. in Bankhead National Forest (BNF), ArcticShark Unmanned Aerial System",
+  "datastream": "bnfaafpopsU2.b1",
+  "doi": "10.5439/2322345"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "optical_diameter_bounds": {
+   "dims": [
+    "optical_diameter",
+    "bound"
+   ],
+   "shape": [
+    100,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "size_distribution": {
+   "dims": [
+    "time",
+    "optical_diameter"
+   ],
+   "shape": [
+    7838,
+    100
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Particle size distribution in dN",
+   "has_qc": true
+  },
+  "qc_size_distribution": {
+   "dims": [
+    "time",
+    "optical_diameter"
+   ],
+   "shape": [
+    7838,
+    100
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Particle size distribution in dN",
+   "has_qc": false
+  },
+  "total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total number concentration",
+   "has_qc": true
+  },
+  "qc_total_number_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total number concentration",
+   "has_qc": false
+  },
+  "sample_flow_rate_smoothed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "cm^3/s",
+   "long_name": "Smoothed sample flow rate",
+   "has_qc": false
+  },
+  "total_count_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1/s",
+   "long_name": "Total number of particles per second including outside the size range",
+   "has_qc": false
+  },
+  "sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "cm^3/s",
+   "long_name": "POPS sample flow rate measured through the entrant tubing",
+   "has_qc": false
+  },
+  "raw_bin_counts": {
+   "dims": [
+    "time",
+    "optical_diameter"
+   ],
+   "shape": [
+    7838,
+    100
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Raw counts in each bin",
+   "has_qc": false
+  },
+  "baseline": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Measured signal in optical cavity in absence of light",
+   "has_qc": false
+  },
+  "baseline_threshold": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Threshold above baseline for values to be counted as valid particles",
+   "has_qc": false
+  },
+  "baseline_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Standard deviation of noise on baseline signal",
+   "has_qc": false
+  },
+  "baseline_threshold_multiplier": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Threshold multiplier * std",
+   "has_qc": false
+  },
+  "baseline_start_value": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Starting value of baseline",
+   "has_qc": false
+  },
+  "atm_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Ambient atmospheric pressure",
+   "has_qc": false
+  },
+  "temp_board": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of POPS electronics board",
+   "has_qc": false
+  },
+  "pump_hours": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "hour",
+   "long_name": "Pump life-time hours",
+   "has_qc": false
+  },
+  "pump_feedback": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Pump feedback control voltage",
+   "has_qc": false
+  },
+  "flow_setting": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Voltage of flow set point",
+   "has_qc": false
+  },
+  "laser_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of laser diode",
+   "has_qc": false
+  },
+  "laser_monitor": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Output laser power",
+   "has_qc": false
+  },
+  "laser_current": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "mA",
+   "long_name": "Laser diode current",
+   "has_qc": false
+  },
+  "laser_feedback": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "mV",
+   "long_name": "Feedback on laser diode circuit",
+   "has_qc": false
+  },
+  "battery_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Input power supply voltage",
+   "has_qc": false
+  },
+  "aerosol_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Aerosol temperature",
+   "has_qc": false
+  },
+  "min_peak_points": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Minimum points to be counted as a valid peak",
+   "has_qc": false
+  },
+  "max_peak_points": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Maximum points to be counted as a valid peak",
+   "has_qc": false
+  },
+  "raw_points": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of raw points to output for randomized background analysis",
+   "has_qc": false
+  },
+  "log_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Log10 of minimum bin size in nm",
+   "has_qc": false
+  },
+  "log_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Log10 of maximum bin size in nm",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7838
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "optical_diameter": {
+   "dims": [
+    "optical_diameter"
+   ],
+   "shape": [
+    100
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Optical diameter",
+   "has_qc": false
+  }
+ }
+}

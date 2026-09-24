@@ -1,0 +1,686 @@
+{
+ "instrument": "htdma",
+ "datastream": "enaaoshtdmaC1.b1",
+ "filename": "enaaoshtdmaC1.b1.20230521.000413.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 53,
+ "dims": {
+  "time": 231,
+  "bound": 2,
+  "bin": 60
+ },
+ "n_qc_vars": 13,
+ "time_resolution_s": 374.0,
+ "time_span": [
+  "2023-05-21T00:04:13",
+  "2023-05-21T23:57:38"
+ ],
+ "global_attrs": {
+  "command_line": "aoshtdmacorr -s ena -f C1",
+  "process_version": "ingest-aoshtdmacorr-1.0-0.el7",
+  "dod_version": "aoshtdma-b1-1.0",
+  "site_id": "ena",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Eastern North Atlantic (ENA), Graciosa Island, Azores",
+  "datastream": "enaaoshtdmaC1.b1",
+  "doi": "10.5439/1776643"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    231,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "bin_center": {
+   "dims": [
+    "time",
+    "bin"
+   ],
+   "shape": [
+    231,
+    60
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Bin center value",
+   "has_qc": false
+  },
+  "bin_bounds": {
+   "dims": [
+    "time",
+    "bin",
+    "bound"
+   ],
+   "shape": [
+    231,
+    60,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Bin cell bounds",
+   "has_qc": false
+  },
+  "dry_diameter_setting": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float64",
+   "units": "nm",
+   "long_name": "Dry aerosol diameter size instrument setting",
+   "has_qc": true
+  },
+  "qc_dry_diameter_setting": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Dry aerosol diameter size instrument setting",
+   "has_qc": false
+  },
+  "dry_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Dry sample pressure",
+   "has_qc": true
+  },
+  "qc_dry_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Dry sample pressure",
+   "has_qc": false
+  },
+  "dry_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Dry sample temperature",
+   "has_qc": true
+  },
+  "qc_dry_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Dry sample temperature",
+   "has_qc": false
+  },
+  "dry_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Dry aerosol particle relative humidity",
+   "has_qc": true
+  },
+  "qc_dry_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Dry aerosol particle relative humidity",
+   "has_qc": false
+  },
+  "scan_min_diameter_setting": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Minimum aerosol particle diameter instrument setting",
+   "has_qc": false
+  },
+  "scan_max_diameter_setting": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Maximum aerosol particle diameter instrument setting",
+   "has_qc": false
+  },
+  "scan_time_setting": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float64",
+   "units": "s",
+   "long_name": "Humidified DMA scanning time instrument setting",
+   "has_qc": false
+  },
+  "num_bins": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of distribution bins",
+   "has_qc": false
+  },
+  "humid_sheath_flow_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Average sheath flow in DMA2 (HSEMS) during humid scan",
+   "has_qc": true
+  },
+  "qc_humid_sheath_flow_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average sheath flow in DMA2 (HSEMS) during humid scan",
+   "has_qc": false
+  },
+  "humid_sheath_flow_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Standard deviation of the sheath flow in DMA2 (HSEMS) during humid scan",
+   "has_qc": false
+  },
+  "excess_flow_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Average excess sheath flow in DMA2 (HSEMS) during humid scan",
+   "has_qc": true
+  },
+  "qc_excess_flow_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average excess sheath flow in DMA2 (HSEMS) during humid scan",
+   "has_qc": false
+  },
+  "excess_flow_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Standard deviation of the excess sheath flow in DMA2 (HSEMS) during humid scan",
+   "has_qc": false
+  },
+  "upstream_sheath_flow_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Average sheath flow in DMA1 (SEMS) during humid scan",
+   "has_qc": true
+  },
+  "qc_upstream_sheath_flow_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average sheath flow in DMA1 (SEMS) during humid scan",
+   "has_qc": false
+  },
+  "upstream_sheath_flow_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Standard deviation of the sheath flow in DMA1 (SEMS) during humid scan",
+   "has_qc": false
+  },
+  "upstream_excess_flow_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Average excess sheath flow in DMA1 (SEMS) during humid scan",
+   "has_qc": true
+  },
+  "qc_upstream_excess_flow_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average excess sheath flow in DMA1 (SEMS) during humid scan",
+   "has_qc": false
+  },
+  "upstream_excess_flow_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Standard deviation of the excess sheath flow in DMA1 (SEMS) during humid scan",
+   "has_qc": false
+  },
+  "dma_rh_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Average relative humidity in DMA2 (HSEMS) during humid scan",
+   "has_qc": true
+  },
+  "qc_dma_rh_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average relative humidity in DMA2 (HSEMS) during humid scan",
+   "has_qc": false
+  },
+  "dma_rh_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Standard deviation of the relative humidity in DMA2 (HSEMS) during humid scan",
+   "has_qc": false
+  },
+  "hd_rh_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Average relative humidity in the humidifier during humid scan",
+   "has_qc": true
+  },
+  "qc_hd_rh_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average relative humidity in the humidifier during humid scan",
+   "has_qc": false
+  },
+  "hd_rh_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Standard deviation of the relative humidity in the humidifier during humid scan",
+   "has_qc": false
+  },
+  "pressure_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Average sample pressure in DMA2 (HSEMS) during humid scan",
+   "has_qc": true
+  },
+  "qc_pressure_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average sample pressure in DMA2 (HSEMS) during humid scan",
+   "has_qc": false
+  },
+  "pressure_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Standard deviation of the sample pressure in DMA2 (HSEMS) during humid scan",
+   "has_qc": false
+  },
+  "temperature_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average sample temperature in DMA2 (HSEMS) during humid scan",
+   "has_qc": true
+  },
+  "qc_temperature_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average sample temperature in DMA2 (HSEMS) during humid scan",
+   "has_qc": false
+  },
+  "temperature_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Standard deviation of the sample temperature in DMA2 (HSEMS) during humid scan",
+   "has_qc": false
+  },
+  "cpc_b_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Average particle concentration measured by external MCPC during humid scan",
+   "has_qc": false
+  },
+  "cpc_b_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Standard deviation of the particle concentration measured by external MCPC during humid scan",
+   "has_qc": false
+  },
+  "total_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total scan concentration over all bins",
+   "has_qc": true
+  },
+  "qc_total_concentration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total scan concentration over all bins",
+   "has_qc": false
+  },
+  "aerosol_concentration": {
+   "dims": [
+    "time",
+    "bin"
+   ],
+   "shape": [
+    231,
+    60
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Concentration of aerosol",
+   "has_qc": false
+  },
+  "growth_factor": {
+   "dims": [
+    "time",
+    "bin"
+   ],
+   "shape": [
+    231,
+    60
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Hygroscopic growth factor",
+   "has_qc": false
+  },
+  "growth_factor_bounds": {
+   "dims": [
+    "time",
+    "bin",
+    "bound"
+   ],
+   "shape": [
+    231,
+    60,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Hygroscopic growth factor cell bounds",
+   "has_qc": false
+  },
+  "kappa": {
+   "dims": [
+    "time",
+    "bin"
+   ],
+   "shape": [
+    231,
+    60
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Hygroscopicity parameter kappa",
+   "has_qc": false
+  },
+  "kappa_bounds": {
+   "dims": [
+    "time",
+    "bin",
+    "bound"
+   ],
+   "shape": [
+    231,
+    60,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Hygroscopicity parameter kappa cell bounds",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    231
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

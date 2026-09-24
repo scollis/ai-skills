@@ -1,0 +1,557 @@
+{
+ "instrument": "kazr",
+ "datastream": "sgpkazrcfrmdqcC1.b1",
+ "filename": "sgpkazrcfrmdqcC1.b1.20251229.000010.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 40,
+ "dims": {
+  "time": 977,
+  "range": 657,
+  "sweep": 1,
+  "r_calib": 1,
+  "frequency": 1
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 3.0,
+ "time_span": [
+  "2025-12-29T00:00:10",
+  "2025-12-29T01:00:16"
+ ],
+ "global_attrs": {
+  "command_line": "kazrcfrqc_ingest -D 2 -s sgp -f C1 -R -n kazrcfrmdqc --asynchronous --disable-email -b 20251229.000009 -e 20251229.000019",
+  "process_version": "ingest-kazrcfrqc-1.1-0.dev30.dirty.el8",
+  "dod_version": "kazrcfrmdqc-b1-1.4",
+  "input_source": "/data/collection/sgp/sgpkazrC1.00/KAZR_MOMENTS_20251229-000015.dat",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpkazrcfrmdqcC1.b1",
+  "doi": "10.5439/1615486"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "censor_mask": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Censor Mask",
+   "has_qc": false
+  },
+  "classification_mask": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Non-meteorological echo classification",
+   "has_qc": false
+  },
+  "linear_depolarization_ratio": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Linear depolarization ratio, channel unspecified",
+   "has_qc": false
+  },
+  "mean_doppler_velocity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Radial mean Doppler velocity, positive for motion away from the instrument",
+   "has_qc": false
+  },
+  "mean_doppler_velocity_crosspolar_v": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Doppler velocity, crosspolar for vertical channel",
+   "has_qc": false
+  },
+  "reflectivity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Equivalent reflectivity factor",
+   "has_qc": false
+  },
+  "reflectivity_crosspolar_v": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Equivalent reflectivity factor, crosspolar for vertical channel",
+   "has_qc": false
+  },
+  "signal_to_noise_ratio_copolar_h": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal-to-noise ratio, horizontal channel",
+   "has_qc": false
+  },
+  "signal_to_noise_ratio_crosspolar_v": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal-to-noise ratio, Cross-polar for vertical channel",
+   "has_qc": false
+  },
+  "spectral_width": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Spectral width",
+   "has_qc": false
+  },
+  "spectral_width_crosspolar_v": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    977,
+    657
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Spectral Width, Crosspolar for Vertical Channel",
+   "has_qc": false
+  },
+  "fixed_angle": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Ray target fixed angle",
+   "has_qc": false
+  },
+  "n_samples": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of Samples used to compute moments",
+   "has_qc": false
+  },
+  "noise_figure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Receiver noise figure estimated from noise source using y-factor method",
+   "has_qc": false
+  },
+  "nyquist_velocity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Unambiguous doppler velocity",
+   "has_qc": false
+  },
+  "prt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Pulse repetition time",
+   "has_qc": false
+  },
+  "pulse_width": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Transmitter pulse width",
+   "has_qc": false
+  },
+  "r_calib_radar_constant_copol": {
+   "dims": [
+    "r_calib"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Calibrated radar constant copolar",
+   "has_qc": false
+  },
+  "r_calib_radar_constant_crosspol": {
+   "dims": [
+    "r_calib"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Calibrated radar constant crosspolar",
+   "has_qc": false
+  },
+  "r_calib_two_way_radome_loss_h": {
+   "dims": [
+    "r_calib"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Radar calibration two way radome loss horizontal channel",
+   "has_qc": false
+  },
+  "radar_beam_width_h": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Half power radar beam width horizontal channel",
+   "has_qc": false
+  },
+  "radar_beam_width_v": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Half power radar beam width vertical channel",
+   "has_qc": false
+  },
+  "radar_measured_sky_noise_h": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "dBm",
+   "long_name": "Measured sky noise, horizontal channel",
+   "has_qc": false
+  },
+  "radar_measured_sky_noise_v": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "dBm",
+   "long_name": "Measured sky noise, vertical channel",
+   "has_qc": false
+  },
+  "radar_measured_transmit_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "dBm",
+   "long_name": "Radar measured transmit peak power",
+   "has_qc": false
+  },
+  "receiver_gain_copol": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Receiver gain copol",
+   "has_qc": false
+  },
+  "sweep_end_ray_index": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Index of last ray in sweep",
+   "has_qc": false
+  },
+  "sweep_mode": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "|S22",
+   "units": "1",
+   "long_name": "Scan mode for sweep",
+   "has_qc": false
+  },
+  "sweep_number": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Sweep index number 0 based",
+   "has_qc": false
+  },
+  "sweep_start_ray_index": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Index of first ray in sweep",
+   "has_qc": false
+  },
+  "unambiguous_range": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Unambiguous Range",
+   "has_qc": false
+  },
+  "latitude": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Latitude",
+   "has_qc": false
+  },
+  "longitude": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "Longitude",
+   "has_qc": false
+  },
+  "altitude": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude",
+   "has_qc": false
+  },
+  "altitude_agl": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above ground level",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "frequency": {
+   "dims": [
+    "frequency"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Transmit center frequency",
+   "has_qc": false
+  },
+  "range": {
+   "dims": [
+    "range"
+   ],
+   "shape": [
+    657
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Range to measurement volume",
+   "has_qc": false
+  },
+  "azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Azimuth angle from true north",
+   "has_qc": false
+  },
+  "elevation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    977
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Elevation angle from horizontal plane",
+   "has_qc": false
+  }
+ }
+}

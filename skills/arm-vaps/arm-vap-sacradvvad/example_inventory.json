@@ -1,0 +1,208 @@
+{
+ "vap": "sacradvvad",
+ "datastream": "sgpkasacradvvadC1.c1",
+ "filename": "sgpkasacradvvadC1.c1.20120828.002308.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 13,
+ "dims": {
+  "time": 37,
+  "bound": 2,
+  "height": 299
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 2548.5,
+ "time_span": [
+  "2012-08-28T00:23:08",
+  "2012-08-28T23:49:23"
+ ],
+ "global_attrs": {
+  "command_line": "sacradvvad -s sgp -f C1 -b 20120828 -n sacradvvad --asynchronous",
+  "process_version": "vap-sacradvvad-5.1-0.el6",
+  "dod_version": "kasacradvvad-c1-1.0",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpkasacradvvadC1.c1",
+  "doi": "10.5439/1275483"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    37
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    37,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "height_bounds": {
+   "dims": [
+    "height",
+    "bound"
+   ],
+   "shape": [
+    299,
+    2
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height cell bounds",
+   "has_qc": false
+  },
+  "nyquist_velocity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    37
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Unambiguous Doppler velocity",
+   "has_qc": false
+  },
+  "radar_beam_width_h": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    37
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Radar beam width, horizontal channel",
+   "has_qc": false
+  },
+  "horizontal_wind_magnitude_at_cloud_level": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    37,
+    299
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Horizontal wind magnitude at cloud level",
+   "has_qc": false
+  },
+  "horizontal_wind_direction_at_cloud_level": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    37,
+    299
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Horizontal wind from direction at cloud level",
+   "has_qc": false
+  },
+  "vad_fit_rmsd": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    37,
+    299
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "VAD fit RMSD",
+   "has_qc": false
+  },
+  "number_az_angles": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    37,
+    299
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of azimuth angles",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    37
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "time in seconds since volume start",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    299
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above ground level",
+   "has_qc": false
+  }
+ }
+}

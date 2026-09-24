@@ -1,0 +1,483 @@
+{
+ "instrument": "tap-air",
+ "datastream": "bnfaafstapU2.b1",
+ "filename": "bnfaafstapU2.b1.20260911.144750.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 40,
+ "dims": {
+  "time": 7477
+ },
+ "n_qc_vars": 5,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-09-11T14:47:50",
+  "2026-09-11T16:52:26"
+ ],
+ "global_attrs": {
+  "command_line": "aafstapcorr -s bnf -f U2 --max-runtime 86400",
+  "process_version": "ingest-aafstapcorr-1.0-1.el9",
+  "dod_version": "aafstap-b1-1.0",
+  "site_id": "bnf",
+  "facility_id": "U2",
+  "data_level": "b1",
+  "location_description": "Southeast U.S. in Bankhead National Forest (BNF), ArcticShark Unmanned Aerial System",
+  "datastream": "bnfaafstapU2.b1",
+  "serial_number": "3",
+  "doi": "10.5439/1838697"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "Ba_R": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal red wavelength at reference RH",
+   "has_qc": false
+  },
+  "Ba_G": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal green wavelength at reference RH",
+   "has_qc": false
+  },
+  "Ba_B": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, nominal blue wavelength at reference RH",
+   "has_qc": false
+  },
+  "Ba_calculation_interval": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Time interval used by the instrument to calculate the nominal aerosol light absorption coefficients",
+   "has_qc": false
+  },
+  "red_intensity_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Raw intensity, red minus dark, sample",
+   "has_qc": false
+  },
+  "red_intensity_reference": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Raw intensity, red minus dark, reference",
+   "has_qc": false
+  },
+  "green_intensity_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Raw intensity, green minus dark, sample",
+   "has_qc": false
+  },
+  "green_intensity_reference": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Raw intensity, green minus dark, reference",
+   "has_qc": false
+  },
+  "blue_intensity_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Raw intensity, blue minus dark, sample",
+   "has_qc": false
+  },
+  "blue_intensity_reference": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Raw intensity, blue minus dark, reference",
+   "has_qc": false
+  },
+  "dark_intensity_sample": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Raw intensity, LEDs off (dark), sample",
+   "has_qc": false
+  },
+  "dark_intensity_reference": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Raw intensity, LEDs off (dark), reference",
+   "has_qc": false
+  },
+  "sample_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Sample flow rate, volumetric",
+   "has_qc": true
+  },
+  "qc_sample_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sample flow rate, volumetric",
+   "has_qc": false
+  },
+  "flow_setpoint": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Flow setpoint",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Ambient sample flow temperature",
+   "has_qc": true
+  },
+  "qc_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ambient sample flow temperature",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Ambient sample flow pressure",
+   "has_qc": false
+  },
+  "filter_size_area": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mm^2",
+   "long_name": "Filter size area",
+   "has_qc": false
+  },
+  "filter_state": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Filter state",
+   "has_qc": false
+  },
+  "initial_red_intensity_sample": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Initial intensity reading through white filter, red minus dark, sample",
+   "has_qc": false
+  },
+  "initial_red_intensity_reference": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Initial intensity reading through white filter, red minus dark, reference",
+   "has_qc": false
+  },
+  "initial_green_intensity_sample": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Initial intensity reading through white filter, green minus dark, sample",
+   "has_qc": false
+  },
+  "initial_green_intensity_reference": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Initial intensity reading through white filter, green minus dark, reference",
+   "has_qc": false
+  },
+  "initial_blue_intensity_sample": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Initial intensity reading through white filter, blue minus dark, sample",
+   "has_qc": false
+  },
+  "initial_blue_intensity_reference": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Initial intensity reading through white filter, blue minus dark, reference",
+   "has_qc": false
+  },
+  "initial_dark_intensity_sample": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Initial intensity reading through white filter, LEDs off (dark), sample",
+   "has_qc": false
+  },
+  "initial_dark_intensity_reference": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Initial intensity reading through white filter, LEDs off (dark), reference",
+   "has_qc": false
+  },
+  "power_supply": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Power supply voltage",
+   "has_qc": false
+  },
+  "pump_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Pump power, duty cycle",
+   "has_qc": false
+  },
+  "stap_state": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "int8",
+   "units": "1",
+   "long_name": "STAP on/off state (STAP control)",
+   "has_qc": false
+  },
+  "stap_errors": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Bit-packed error codes",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    7477
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

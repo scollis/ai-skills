@@ -1,0 +1,593 @@
+{
+ "instrument": "smps",
+ "datastream": "enaaossmpsC1.b1",
+ "filename": "enaaossmpsC1.b1.20260922.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 50,
+ "dims": {
+  "time": 288,
+  "bound": 2,
+  "diameter_mobility": 192
+ },
+ "n_qc_vars": 4,
+ "time_resolution_s": 300.0,
+ "time_span": [
+  "2026-09-22T00:00:00",
+  "2026-09-22T23:55:00"
+ ],
+ "global_attrs": {
+  "command_line": "aossmpscorr -s ena -f C1 --max-runtime 86400",
+  "process_version": "ingest-aossmpscorr-1.4-0.el9",
+  "dod_version": "aossmps-b1-2.1",
+  "site_id": "ena",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Eastern North Atlantic (ENA), Graciosa Island, Azores",
+  "datastream": "enaaossmpsC1.b1",
+  "sampling_interval": "5 minutes",
+  "doi": "10.5439/1476898"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    288,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "diameter_mobility_bounds": {
+   "dims": [
+    "diameter_mobility",
+    "bound"
+   ],
+   "shape": [
+    192,
+    2
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Mobility diameter bin boundaries",
+   "has_qc": false
+  },
+  "lower_size": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Lower size limit",
+   "has_qc": false
+  },
+  "dN_dlogDp": {
+   "dims": [
+    "time",
+    "diameter_mobility"
+   ],
+   "shape": [
+    288,
+    192
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number size distribution, electrical mobility diameter",
+   "has_qc": true
+  },
+  "qc_dN_dlogDp": {
+   "dims": [
+    "time",
+    "diameter_mobility"
+   ],
+   "shape": [
+    288,
+    192
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Number size distribution, electrical mobility diameter",
+   "has_qc": false
+  },
+  "total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total number concentration from integrated size distribution, SMPS",
+   "has_qc": true
+  },
+  "qc_total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total number concentration from integrated size distribution, SMPS",
+   "has_qc": false
+  },
+  "total_SA_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float64",
+   "units": "nm^2/cm^3",
+   "long_name": "Total surface area concentration from integrated size distribution, SMPS",
+   "has_qc": true
+  },
+  "qc_total_SA_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total surface area concentration from integrated size distribution, SMPS",
+   "has_qc": false
+  },
+  "dD_to_dSA": {
+   "dims": [
+    "diameter_mobility"
+   ],
+   "shape": [
+    192
+   ],
+   "dtype": "float64",
+   "units": "nm^2",
+   "long_name": "Surface area of one particle",
+   "has_qc": false
+  },
+  "total_V_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float64",
+   "units": "nm^3/cm^3",
+   "long_name": "Total volume concentration from integrated size distribution, SMPS",
+   "has_qc": true
+  },
+  "qc_total_V_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total volume concentration from integrated size distribution, SMPS",
+   "has_qc": false
+  },
+  "dD_to_dV": {
+   "dims": [
+    "diameter_mobility"
+   ],
+   "shape": [
+    192
+   ],
+   "dtype": "float64",
+   "units": "nm^3",
+   "long_name": "Volume of one particle",
+   "has_qc": false
+  },
+  "aerosol_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Aerosol flow rate set point",
+   "has_qc": false
+  },
+  "bypass_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Bypass flow rate set point",
+   "has_qc": false
+  },
+  "sheath_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Sheath flow rate set point",
+   "has_qc": false
+  },
+  "delay_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Time required for aerosol to flow from classifier exit to detector in CPC",
+   "has_qc": false
+  },
+  "geometric_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Mean diameter of size distribution using a geometric average",
+   "has_qc": false
+  },
+  "geometric_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Geometric standard deviation of lognormal function",
+   "has_qc": false
+  },
+  "mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Number mean diameter of size distribution",
+   "has_qc": false
+  },
+  "median": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Number median diameter of size distribution",
+   "has_qc": false
+  },
+  "mode": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Number mode diameter of size distribution",
+   "has_qc": false
+  },
+  "sample_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Sample temperature",
+   "has_qc": false
+  },
+  "sample_relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Sample relative humidity",
+   "has_qc": false
+  },
+  "sample_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Sample pressure",
+   "has_qc": false
+  },
+  "mean_free_path": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Mean free path",
+   "has_qc": false
+  },
+  "gas_viscosity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "Pa*s",
+   "long_name": "Gas viscosity",
+   "has_qc": false
+  },
+  "reference_gas_temperature": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Reference gas temperature",
+   "has_qc": false
+  },
+  "reference_gas_pressure": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Reference gas pressure",
+   "has_qc": false
+  },
+  "reference_mean_free_path": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Reference mean free path",
+   "has_qc": false
+  },
+  "reference_gas_viscosity": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "Pa*s",
+   "long_name": "Reference gas viscosity",
+   "has_qc": false
+  },
+  "sutherland_constant": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Sutherland constant",
+   "has_qc": false
+  },
+  "diffusion_correction": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Diffusion correction",
+   "has_qc": false
+  },
+  "multiple_charge_correction": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Multiple charge correction",
+   "has_qc": false
+  },
+  "nanoparticle_agglomerate_mobility_analysis": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Nanoparticle agglomerate mobility analysis",
+   "has_qc": false
+  },
+  "status_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Scan status flag",
+   "has_qc": false
+  },
+  "d50": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "50 percent cut-point diameter of the impactor",
+   "has_qc": false
+  },
+  "low_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Low voltage reading",
+   "has_qc": false
+  },
+  "high_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "High voltage reading",
+   "has_qc": false
+  },
+  "hv_polarity": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "HV polarity",
+   "has_qc": false
+  },
+  "tube_diameter": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Tube diameter",
+   "has_qc": false
+  },
+  "tube_length": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Tube length",
+   "has_qc": false
+  },
+  "DMA_inner_radius": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Inner radius of DMA",
+   "has_qc": false
+  },
+  "DMA_outer_radius": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Outer radius of DMA",
+   "has_qc": false
+  },
+  "DMA_characteristic_length": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Characteristic length of DMA",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    288
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "diameter_mobility": {
+   "dims": [
+    "diameter_mobility"
+   ],
+   "shape": [
+    192
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Midpoint of geometric mean mobility diameter",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,796 @@
+{
+ "vap": "arealavealb",
+ "datastream": "sgparealavealbC1.c1",
+ "filename": "sgparealavealbC1.c1.20220625.060000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 58,
+ "dims": {
+  "time": 4320,
+  "bound": 2,
+  "layer": 10,
+  "height": 596,
+  "filter": 5
+ },
+ "n_qc_vars": 25,
+ "time_resolution_s": 20.0,
+ "time_span": [
+  "2022-06-25T06:00:00",
+  "2022-06-26T05:59:40"
+ ],
+ "global_attrs": {
+  "command_line": "arealavealb -n arealavealb_sgp -s sgp -f C1 -b 20210104 -e 20220701 -R",
+  "process_version": "not_specified",
+  "dod_version": "arealavealb-c1-1.5",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgparealavealbC1.c1",
+  "doi": "10.5439/1209102"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    4320,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "cosine_solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine Solar Zenith Angle",
+   "has_qc": true
+  },
+  "qc_cosine_solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cosine Solar Zenith Angle",
+   "has_qc": false
+  },
+  "cloudfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Estimated Average Fractional Sky Cover over the Hemispheric Dome (cf)",
+   "has_qc": true
+  },
+  "qc_cloudfraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated Average Fractional Sky Cover over the Hemispheric Dome (cf)",
+   "has_qc": false
+  },
+  "lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Total liquid water along LOS path, it could come from either MWR or the MFRSR with an assumed effective radius",
+   "has_qc": true
+  },
+  "qc_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total liquid water along LOS path, it could come from either MWR or the MFRSR with an assumed effective radius",
+   "has_qc": false
+  },
+  "ir_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "IR Brightness Temperature",
+   "has_qc": true
+  },
+  "qc_ir_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: IR Brightness Temperature",
+   "has_qc": false
+  },
+  "total_transmittance_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total transmittance of Narrowband Hemispheric Irradiance, Filter 1",
+   "has_qc": true
+  },
+  "qc_total_transmittance_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total transmittance of Narrowband Hemispheric Irradiance, Filter 1",
+   "has_qc": false
+  },
+  "total_transmittance_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total transmittance of Narrowband Hemispheric Irradiance, Filter 2",
+   "has_qc": true
+  },
+  "qc_total_transmittance_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total transmittance of Narrowband Hemispheric Irradiance, Filter 2",
+   "has_qc": false
+  },
+  "total_transmittance_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total transmittance of Narrowband Hemispheric Irradiance, Filter 3",
+   "has_qc": true
+  },
+  "qc_total_transmittance_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total transmittance of Narrowband Hemispheric Irradiance, Filter 3",
+   "has_qc": false
+  },
+  "total_transmittance_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total transmittance of Narrowband Hemispheric Irradiance, Filter 4",
+   "has_qc": true
+  },
+  "qc_total_transmittance_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total transmittance of Narrowband Hemispheric Irradiance, Filter 4",
+   "has_qc": false
+  },
+  "total_transmittance_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total transmittance of Narrowband Hemispheric Irradiance, Filter 5",
+   "has_qc": true
+  },
+  "qc_total_transmittance_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total transmittance of Narrowband Hemispheric Irradiance, Filter 5",
+   "has_qc": false
+  },
+  "optical_depth_average": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Five-Minute Running Average of Cloud Optical Depth",
+   "has_qc": true
+  },
+  "qc_optical_depth_average": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Five-Minute Running Average of Cloud Optical Depth",
+   "has_qc": false
+  },
+  "cloudtype": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    4320,
+    10
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Cloud type",
+   "has_qc": true
+  },
+  "qc_cloudtype": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    4320,
+    10
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud type",
+   "has_qc": false
+  },
+  "cloud_layer_base_height": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    4320,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Cloud base height (AGL)",
+   "has_qc": true
+  },
+  "qc_cloud_layer_base_height": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    4320,
+    10
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud base height (AGL)",
+   "has_qc": false
+  },
+  "cloud_layer_top_height": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    4320,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Top height (AGL) of hydrometeor layers, based on combined radar and micropulse lidar observations",
+   "has_qc": true
+  },
+  "qc_cloud_layer_top_height": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    4320,
+    10
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Top height (AGL) of hydrometeor layers, based on combined radar and micropulse lidar observations",
+   "has_qc": false
+  },
+  "cloud_base_best_estimate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Cloud base best estimate, based on ceilometer and micropulse lidar",
+   "has_qc": true
+  },
+  "qc_cloud_base_best_estimate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud base best estimate, based on ceilometer and micropulse lidar",
+   "has_qc": false
+  },
+  "reflectivity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    596
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Best estimate reflectivity from ARSCL product",
+   "has_qc": true
+  },
+  "qc_reflectivity": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Best estimate reflectivity from ARSCL product",
+   "has_qc": false
+  },
+  "precipitation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "mm/min",
+   "long_name": "Mean precipitation rate",
+   "has_qc": true
+  },
+  "qc_precipitation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean precipitation rate",
+   "has_qc": false
+  },
+  "percent_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Percent opaque cloud",
+   "has_qc": true
+  },
+  "qc_percent_opaque": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Percent opaque cloud",
+   "has_qc": false
+  },
+  "percent_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Percent thin cloud",
+   "has_qc": true
+  },
+  "qc_percent_thin": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Percent thin cloud",
+   "has_qc": false
+  },
+  "surface_albedo415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Surface albedo at 415nm",
+   "has_qc": true
+  },
+  "qc_surface_albedo415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface albedo at 415nm",
+   "has_qc": false
+  },
+  "source_surface_albedo415": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable: Surface albedo at 415nm",
+   "has_qc": false
+  },
+  "cloud_optical_depth": {
+   "dims": [
+    "time",
+    "filter"
+   ],
+   "shape": [
+    4320,
+    5
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cloud Optical Depth",
+   "has_qc": true
+  },
+  "qc_cloud_optical_depth": {
+   "dims": [
+    "time",
+    "filter"
+   ],
+   "shape": [
+    4320,
+    5
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud Optical Depth",
+   "has_qc": false
+  },
+  "areal_ave_surface_albedo": {
+   "dims": [
+    "time",
+    "filter"
+   ],
+   "shape": [
+    4320,
+    5
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Areal average surface albedo",
+   "has_qc": true
+  },
+  "qc_areal_ave_surface_albedo": {
+   "dims": [
+    "time",
+    "filter"
+   ],
+   "shape": [
+    4320,
+    5
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Areal average surface albedo",
+   "has_qc": false
+  },
+  "areal_daily_ave_surface_albedo": {
+   "dims": [
+    "filter"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Areal daily average surface albedo",
+   "has_qc": true
+  },
+  "qc_areal_daily_ave_surface_albedo": {
+   "dims": [
+    "filter"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Areal daily average surface albedo",
+   "has_qc": false
+  },
+  "areal_daily_ave_surface_albedo_nsamples": {
+   "dims": [
+    "filter"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of samples available to determine areal_daily_ave_surface_albedo",
+   "has_qc": false
+  },
+  "screened_areal_daily_ave_surface_albedo": {
+   "dims": [
+    "filter"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Screened areal daily average surface albedo",
+   "has_qc": true
+  },
+  "qc_screened_areal_daily_ave_surface_albedo": {
+   "dims": [
+    "filter"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Screened areal daily average surface albedo",
+   "has_qc": false
+  },
+  "screened_areal_ave_surface_albedo": {
+   "dims": [
+    "time",
+    "filter"
+   ],
+   "shape": [
+    4320,
+    5
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Screened areal average surface albedo",
+   "has_qc": true
+  },
+  "qc_screened_areal_ave_surface_albedo": {
+   "dims": [
+    "time",
+    "filter"
+   ],
+   "shape": [
+    4320,
+    5
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Screened areal average surface albedo",
+   "has_qc": false
+  },
+  "normalized_transmittance": {
+   "dims": [
+    "time",
+    "filter"
+   ],
+   "shape": [
+    4320,
+    5
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized transmittance",
+   "has_qc": true
+  },
+  "qc_normalized_transmittance": {
+   "dims": [
+    "time",
+    "filter"
+   ],
+   "shape": [
+    4320,
+    5
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized transmittance",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "filter": {
+   "dims": [
+    "filter"
+   ],
+   "shape": [
+    5
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Wavelength of each of the 5 filters measured by the MFR radiometers",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    596
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above ground level",
+   "has_qc": false
+  },
+  "layer": {
+   "dims": [
+    "layer"
+   ],
+   "shape": [
+    10
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Cloud layer number",
+   "has_qc": false
+  }
+ }
+}

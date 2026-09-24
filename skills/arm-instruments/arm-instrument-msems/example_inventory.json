@@ -1,0 +1,427 @@
+{
+ "instrument": "msems",
+ "datastream": "bnfminiaosmsemsM1.a1",
+ "filename": "bnfminiaosmsemsM1.a1.20260629.000002.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 31,
+ "dims": {
+  "time": 1350,
+  "bound": 2,
+  "bin": 60
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 64.0,
+ "time_span": [
+  "2026-06-29T00:00:02",
+  "2026-06-29T23:59:10"
+ ],
+ "global_attrs": {
+  "command_line": "miniaosmsems_ingest -s bnf -f M1 --max-runtime 86400",
+  "process_version": "ingest-miniaosmsems-1.1-0.el9",
+  "dod_version": "miniaosmsems-a1-1.1",
+  "input_source": "/data/collection/bnf/bnfminiaosmsemsM1.00/mSEMS_124_260629_000000_SCAN.txt",
+  "site_id": "bnf",
+  "facility_id": "M1",
+  "data_level": "a1",
+  "location_description": "Southeast U.S. in Bankhead National Forest (BNF), Bankhead National Forest, Alabama",
+  "datastream": "bnfminiaosmsemsM1.a1",
+  "doi": "10.5439/3006854"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1350,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "diameter_mobility_bounds": {
+   "dims": [
+    "time",
+    "bin",
+    "bound"
+   ],
+   "shape": [
+    1350,
+    60,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": null,
+   "has_qc": false
+  },
+  "dlogDp": {
+   "dims": [
+    "time",
+    "bin"
+   ],
+   "shape": [
+    1350,
+    60
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Relative width of bins",
+   "has_qc": false
+  },
+  "dN_dlogDp": {
+   "dims": [
+    "time",
+    "bin"
+   ],
+   "shape": [
+    1350,
+    60
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number size distribution, electrical mobility diameter",
+   "has_qc": false
+  },
+  "total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total number concentration from integrated size distribution",
+   "has_qc": false
+  },
+  "scan_direction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Aerosol sizing scan direction",
+   "has_qc": false
+  },
+  "actual_max_diameter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float64",
+   "units": "nm",
+   "long_name": "Maximum diameter for each scan",
+   "has_qc": false
+  },
+  "max_scan_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Maximum scan voltage",
+   "has_qc": false
+  },
+  "min_scan_voltage": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Minimum scan voltage",
+   "has_qc": false
+  },
+  "sheath_flow_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Average sheath flow rate",
+   "has_qc": false
+  },
+  "sheath_flow_stdev": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Standard deviation of sheath flow rate",
+   "has_qc": false
+  },
+  "mcpc_sample_flow_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Average aerosol sample flow rate for MCPC",
+   "has_qc": false
+  },
+  "mcpc_sample_flow_stdev": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Standard deviation of aerosol sample flow rate for MCPC",
+   "has_qc": false
+  },
+  "sample_pressure_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Average aerosol sample pressure",
+   "has_qc": false
+  },
+  "sample_pressure_stdev": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Standard deviation of aerosol sample pressure",
+   "has_qc": false
+  },
+  "sample_temperature_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average sample temperature",
+   "has_qc": false
+  },
+  "sample_temperature_stdev": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Standard deviation of sample temperature",
+   "has_qc": false
+  },
+  "sheath_relative_humidity_avg": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Average relative humidity of the sheath flow air",
+   "has_qc": false
+  },
+  "sheath_relative_humidity_stdev": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Standard deviation of the relative humidity of the sheath flow air",
+   "has_qc": false
+  },
+  "raw_bin_counts": {
+   "dims": [
+    "time",
+    "bin"
+   ],
+   "shape": [
+    1350,
+    60
+   ],
+   "dtype": "float64",
+   "units": "count",
+   "long_name": "Raw counts in each size bin",
+   "has_qc": false
+  },
+  "msems_errors": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Error codes for mSEMS operation",
+   "has_qc": false
+  },
+  "mcpc_sample_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Latest reading of the instant sample flow rate",
+   "has_qc": false
+  },
+  "mcpc_saturator_flow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Latest reading of the saturator flow rate",
+   "has_qc": false
+  },
+  "mcpc_condenser_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Latest reading of the condenser temperature",
+   "has_qc": false
+  },
+  "mcpc_saturator_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Latest reading of the saturator temperature",
+   "has_qc": false
+  },
+  "mcpc_errors": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Error codes for MCPC operation",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1350
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "diameter_mobility": {
+   "dims": [
+    "time",
+    "bin"
+   ],
+   "shape": [
+    1350,
+    60
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Midpoint of geometric mean mobility diameter",
+   "has_qc": false
+  }
+ }
+}

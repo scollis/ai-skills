@@ -1,0 +1,233 @@
+{
+ "instrument": "aosmet",
+ "datastream": "enaaosmetC1.a1",
+ "filename": "enaaosmetC1.a1.20260919.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 17,
+ "dims": {
+  "time": 86400
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-09-19T00:00:00",
+  "2026-09-19T23:59:59"
+ ],
+ "global_attrs": {
+  "command_line": "aosmet_ingest -s ena -f C1 --max-runtime 86400",
+  "process_version": "ingest-aosmet-1.2-0.el9",
+  "dod_version": "aosmet-a1-3.0",
+  "input_source": "/data/collection/ena/enaaosmetC1.00/enaaoss1.met.01s.00.20260919.000000.raw.tsv",
+  "site_id": "ena",
+  "facility_id": "C1",
+  "data_level": "a1",
+  "location_description": "Eastern North Atlantic (ENA), Graciosa Island, Azores",
+  "datastream": "enaaosmetC1.a1",
+  "serial_number": "L1130115/WD",
+  "sampling_interval": "1 second",
+  "doi": "10.5439/1325987"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "rh_ambient": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Ambient air relative humidity",
+   "has_qc": false
+  },
+  "temperature_ambient": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Ambient air temperature",
+   "has_qc": false
+  },
+  "pressure_ambient": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Ambient pressure",
+   "has_qc": false
+  },
+  "wind_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed",
+   "has_qc": false
+  },
+  "wind_direction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Wind direction, relative to true North",
+   "has_qc": false
+  },
+  "rain_amount": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "mm/s",
+   "long_name": "Rain amount",
+   "has_qc": false
+  },
+  "rain_duration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Rain duration",
+   "has_qc": false
+  },
+  "rain_intensity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Rain intensity",
+   "has_qc": false
+  },
+  "heater_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Heater temperature",
+   "has_qc": false
+  },
+  "heater_volts": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Heater voltage",
+   "has_qc": false
+  },
+  "supply_volts": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Supply voltage",
+   "has_qc": false
+  },
+  "ref_volts": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Reference voltage",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

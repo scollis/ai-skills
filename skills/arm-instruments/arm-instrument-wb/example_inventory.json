@@ -1,0 +1,293 @@
+{
+ "instrument": "wb",
+ "datastream": "sgpwbpluvio2C1.a1",
+ "filename": "sgpwbpluvio2C1.a1.20260919.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 22,
+ "dims": {
+  "time": 1440
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2026-09-19T00:00:00",
+  "2026-09-19T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "wbpluvio2_ingest -s sgp -f C1 --max-runtime 86400",
+  "process_version": "ingest-wbpluvio2-1.1-0.el9",
+  "dod_version": "wbpluvio2-a1-1.0",
+  "input_source": "/data/collection/sgp/sgpwbpluvio2C1.00/DL2.wbpluvio2-20260919000000.dat",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "a1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpwbpluvio2C1.a1",
+  "serial_number": "398906",
+  "sampling_interval": "1 minute",
+  "doi": "10.5439/1338194"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "intensity_rt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Heavy precipitation alarm",
+   "has_qc": false
+  },
+  "accum_rtnrt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Accumulated amounts of precipitation over the sampling interval exceeding a threshold of 0.05mm or the accumulated amount of fine precipitation observed over the last hour",
+   "has_qc": false
+  },
+  "accum_nrt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Accumulated precipitation over the sampling interval filtered and delayed by 5 minute",
+   "has_qc": false
+  },
+  "accum_total_nrt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Sum of accum_nrt values since the last device start",
+   "has_qc": false
+  },
+  "bucket_rt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "The currently measured, unfiltered bucket contents since last reset",
+   "has_qc": false
+  },
+  "bucket_nrt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "The currently measured, filtered bucket contents since last reset",
+   "has_qc": false
+  },
+  "load_cell_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of load cell",
+   "has_qc": false
+  },
+  "heater_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Heater status",
+   "has_qc": false
+  },
+  "pluvio_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Pluvio status",
+   "has_qc": false
+  },
+  "elec_unit_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of electronics unit",
+   "has_qc": false
+  },
+  "supply_volts": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Supply voltage",
+   "has_qc": false
+  },
+  "orifice_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of orifice rim",
+   "has_qc": false
+  },
+  "maintenance_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float64",
+   "units": "count",
+   "long_name": "Bucket is being emptied or serviced",
+   "has_qc": false
+  },
+  "reset_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Bucket emptied",
+   "has_qc": false
+  },
+  "volt_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Minimum supply voltage of logger",
+   "has_qc": false
+  },
+  "ptemp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Panel temperature average",
+   "has_qc": false
+  },
+  "intensity_rtnrt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Rain intensity based upon accum_rtnrt",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

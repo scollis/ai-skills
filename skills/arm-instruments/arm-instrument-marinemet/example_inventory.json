@@ -1,0 +1,890 @@
+{
+ "instrument": "marinemet",
+ "datastream": "magmarinemet1sM1.b1",
+ "filename": "magmarinemet1sM1.b1.20131006.000000.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 72,
+ "dims": {
+  "time": 86400
+ },
+ "n_qc_vars": 34,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2013-10-06T00:00:00",
+  "2013-10-06T23:59:59"
+ ],
+ "global_attrs": {
+  "command_line": "marinemet_ingest -s mag -f M1 -R",
+  "process_version": "ingest-marinemet-1.6-0.el6",
+  "dod_version": "marinemet1s-b1-1.3",
+  "data_level": "b1",
+  "site_id": "mag",
+  "facility_id": "M1: Cargo ship Horizon Spirit",
+  "input_source": "/data/home/gervais/prod/jobs/1153/collection/mag/magmarinemetM1.00/nav_raw_13100601.txt",
+  "serial_number": "N/A",
+  "datastream": "magmarinemet1sM1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Time offset from midnight",
+   "has_qc": false
+  },
+  "wspd_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "volt",
+   "long_name": "Wind speed measured by the wind monitor mounted at the peak of the ship mast",
+   "has_qc": true
+  },
+  "qc_wspd_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind speed measured by the wind monitor mounted at the peak of the ship mast",
+   "has_qc": false
+  },
+  "wdir_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "volt",
+   "long_name": "Wind direction measured by the wind monitor mounted at the peak of the ship mast",
+   "has_qc": true
+  },
+  "qc_wdir_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind direction measured by the wind monitor mounted at the peak of the ship mast",
+   "has_qc": false
+  },
+  "air_temp_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "volt",
+   "long_name": "Air temperature from the T/RH sensor in a forced ventilator (Young 43502) mounted on the met boom",
+   "has_qc": true
+  },
+  "qc_air_temp_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Air temperature from the T/RH sensor in a forced ventilator (Young 43502) mounted on the met boom",
+   "has_qc": false
+  },
+  "rh_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "volt",
+   "long_name": "Relative humidity from the T/RH sensor in a forced ventilator (Young 43502) mounted on the met boom",
+   "has_qc": true
+  },
+  "qc_rh_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity from the T/RH sensor in a forced ventilator (Young 43502) mounted on the met boom",
+   "has_qc": false
+  },
+  "siphon_rain_gauge_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "volt",
+   "long_name": "Siphon rain gauge, measures total rain fall up to 50 mm then the siphon empties the tubing; mounted on the radar platform",
+   "has_qc": true
+  },
+  "qc_siphon_rain_gauge_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Siphon rain gauge, measures total rain fall up to 50 mm then the siphon empties the tubing; mounted on the radar platform",
+   "has_qc": false
+  },
+  "tachometer_voltage_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "volt",
+   "long_name": "Tachometer from the aspirator, indicates aspirator fan is operating",
+   "has_qc": true
+  },
+  "qc_tachometer_voltage_adc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Tachometer from the aspirator, indicates aspirator fan is operating",
+   "has_qc": false
+  },
+  "wspd_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed from the instrument mounted on the port side of the met boom",
+   "has_qc": true
+  },
+  "qc_wspd_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind speed from the instrument mounted on the port side of the met boom",
+   "has_qc": false
+  },
+  "wdir_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Apparent wind direction from the instrument mounted on the port side of the met boom",
+   "has_qc": true
+  },
+  "qc_wdir_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Apparent wind direction from the instrument mounted on the port side of the met boom",
+   "has_qc": false
+  },
+  "air_temp_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature from passive shield of the instrument mounted on the port side of the met boom",
+   "has_qc": true
+  },
+  "qc_air_temp_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Air temperature from passive shield of the instrument mounted on the port side of the met boom",
+   "has_qc": false
+  },
+  "rh_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity from passive shield of the instrument mounted on the port side of the met boom",
+   "has_qc": true
+  },
+  "qc_rh_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity from passive shield of the instrument mounted on the port side of the met boom",
+   "has_qc": false
+  },
+  "bar_pressure_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Barometric pressure from the instrument mounted on the port side of the met boom",
+   "has_qc": true
+  },
+  "qc_bar_pressure_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Barometric pressure from the instrument mounted on the port side of the met boom",
+   "has_qc": false
+  },
+  "rain_intensity_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Rain intensity from the instrument mounted on the port side of the met boom",
+   "has_qc": true
+  },
+  "qc_rain_intensity_wx1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Rain intensity from the instrument mounted on the port side of the met boom",
+   "has_qc": false
+  },
+  "wspd_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed from the instrument mounted on the starboard side of the met boom",
+   "has_qc": true
+  },
+  "qc_wspd_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind speed from the instrument mounted on the starboard side of the met boom",
+   "has_qc": false
+  },
+  "wdir_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Relative wind direction from the instrument mounted on the starboard side of the met boom",
+   "has_qc": true
+  },
+  "qc_wdir_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative wind direction from the instrument mounted on the starboard side of the met boom",
+   "has_qc": false
+  },
+  "air_temp_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature from passive shield of the instrument mounted on the starboard side of the met boom",
+   "has_qc": true
+  },
+  "qc_air_temp_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Air temperature from passive shield of the instrument mounted on the starboard side of the met boom",
+   "has_qc": false
+  },
+  "rh_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity from passive shield of the instrument mounted on the starboard side of the met boom",
+   "has_qc": true
+  },
+  "qc_rh_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity from passive shield of the instrument mounted on the starboard side of the met boom",
+   "has_qc": false
+  },
+  "bar_pressure_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Barometric pressure from the instrument mounted on the starboard side of the met boom",
+   "has_qc": true
+  },
+  "qc_bar_pressure_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Barometric pressure from the instrument mounted on the starboard side of the met boom",
+   "has_qc": false
+  },
+  "rain_intensity_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Rain intensity from the instrument mounted on the starboard side of the met boom",
+   "has_qc": true
+  },
+  "qc_rain_intensity_wx2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Rain intensity from the instrument mounted on the starboard side of the met boom",
+   "has_qc": false
+  },
+  "rain_intensity_org": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Rain intensity from the OSI ORG instrument mounted on the met boom",
+   "has_qc": true
+  },
+  "qc_rain_intensity_org": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Rain intensity from the OSI ORG instrument mounted on the met boom",
+   "has_qc": false
+  },
+  "pitch_tcm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Pitch (bow up) from the TCM sensor mounted in the MET DAQ enclosure",
+   "has_qc": true
+  },
+  "qc_pitch_tcm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pitch (bow up) from the TCM sensor mounted in the MET DAQ enclosure",
+   "has_qc": false
+  },
+  "roll_tcm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Roll (port up) from the TCM sensor mounted in the MET DAQ enclosure",
+   "has_qc": true
+  },
+  "qc_roll_tcm": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Roll (port up) from the TCM sensor mounted in the MET DAQ enclosure",
+   "has_qc": false
+  },
+  "lat_gps": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from the GPS receiver",
+   "has_qc": true
+  },
+  "qc_lat_gps": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: North latitude from the GPS receiver",
+   "has_qc": false
+  },
+  "lon_gps": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from the GPS receiver",
+   "has_qc": true
+  },
+  "qc_lon_gps": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: East longitude from the GPS receiver",
+   "has_qc": false
+  },
+  "sog_gps": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "kts",
+   "long_name": "Speed over ground from the GPS receiver",
+   "has_qc": true
+  },
+  "qc_sog_gps": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Speed over ground from the GPS receiver",
+   "has_qc": false
+  },
+  "cog_gps": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degTrue",
+   "long_name": "Course over ground (True) from the GPS receiver",
+   "has_qc": true
+  },
+  "qc_cog_gps": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Course over ground (True) from the GPS receiver",
+   "has_qc": false
+  },
+  "var_gps": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Local magnetic variation from the GPS receiver",
+   "has_qc": true
+  },
+  "qc_var_gps": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Local magnetic variation from the GPS receiver",
+   "has_qc": false
+  },
+  "lat_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude, float point, positive is north hemisphere, from the NAV system",
+   "has_qc": true
+  },
+  "qc_lat_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: North latitude, float point, positive is north hemisphere, from the NAV system",
+   "has_qc": false
+  },
+  "lon_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude, float point, positive for E longitude, from the NAV system",
+   "has_qc": true
+  },
+  "qc_lon_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: East longitude, float point, positive for E longitude, from the NAV system",
+   "has_qc": false
+  },
+  "sog_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "kts",
+   "long_name": "Speed over ground from the NAV system",
+   "has_qc": true
+  },
+  "qc_sog_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Speed over ground from the NAV system",
+   "has_qc": false
+  },
+  "cog_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degTrue",
+   "long_name": "Course over ground (True) from the NAV system",
+   "has_qc": true
+  },
+  "qc_cog_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Course over ground (True) from the NAV system",
+   "has_qc": false
+  },
+  "pitch_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Pitch (bow up) from the NAV system",
+   "has_qc": true
+  },
+  "qc_pitch_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pitch (bow up) from the NAV system",
+   "has_qc": false
+  },
+  "roll_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Roll (port up) from the NAV system",
+   "has_qc": true
+  },
+  "qc_roll_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Roll (port up) from the NAV system",
+   "has_qc": false
+  },
+  "hdg_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Heading of the ship bow from the NAV system",
+   "has_qc": true
+  },
+  "qc_hdg_nav": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Heading of the ship bow from the NAV system",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  }
+ }
+}

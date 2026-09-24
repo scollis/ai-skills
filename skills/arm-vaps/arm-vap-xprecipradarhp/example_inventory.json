@@ -1,0 +1,204 @@
+{
+ "vap": "xprecipradarhp",
+ "datastream": "gucxprecipradarhpS2.c1",
+ "filename": "gucxprecipradarhpS2.c1.20230613.083408.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 9,
+ "dims": {
+  "time": 1,
+  "y": 160,
+  "x": 160
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": null,
+ "time_span": [
+  "2023-06-13T08:34:08",
+  "2023-06-13T08:34:08"
+ ],
+ "global_attrs": {
+  "command_line": "/ccsopen/home/braut/projects/xprecipradarhp_vap_proc/sail_hp_src/run_hp_dask.py 2023 06 --season summer --data_dir /gpfs/wolf2/arm/atm124/world-shared/gucxprecipradarcmacS2.c1/ppi/202306 --output_dir ",
+  "process_version": "HP-v1.0",
+  "dod_version": "xprecipradarhp-c1-1.3",
+  "site_id": "guc",
+  "facility_id": "S2",
+  "data_level": "c1",
+  "location_description": "Gunnison, Colorado",
+  "datastream": "gucxprecipradarhpS2.c1",
+  "doi": "10.5439/2530631"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "corrected_reflectivity": {
+   "dims": [
+    "time",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    160,
+    160
+   ],
+   "dtype": "float64",
+   "units": "dBZ",
+   "long_name": "Corrected equivalent_reflectivity_factor",
+   "has_qc": false
+  },
+  "hp_fhc": {
+   "dims": [
+    "time",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    160,
+    160
+   ],
+   "dtype": "int64",
+   "units": "1",
+   "long_name": "Near surface hydrometeor phase using fuzzy-logic method",
+   "has_qc": false
+  },
+  "hp_ssc": {
+   "dims": [
+    "time",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    160,
+    160
+   ],
+   "dtype": "int64",
+   "units": "1",
+   "long_name": "Near surface hydrometeor phase using semi-supervised method",
+   "has_qc": false
+  },
+  "lowest_height": {
+   "dims": [
+    "time",
+    "y",
+    "x"
+   ],
+   "shape": [
+    1,
+    160,
+    160
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Height of the lowest radar gate",
+   "has_qc": false
+  },
+  "radar_lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_north",
+   "long_name": "Latitude of location of the radar",
+   "has_qc": false
+  },
+  "radar_lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_east",
+   "long_name": "Longitude of location of the radar",
+   "has_qc": false
+  },
+  "radar_alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude of location of the radar",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "y": {
+   "dims": [
+    "y"
+   ],
+   "shape": [
+    160
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Y distance on the projection plane from the origin",
+   "has_qc": false
+  },
+  "x": {
+   "dims": [
+    "x"
+   ],
+   "shape": [
+    160
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "X distance on the projection plane from the origin",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "y",
+    "x"
+   ],
+   "shape": [
+    160,
+    160
+   ],
+   "dtype": "float64",
+   "units": "degree_north",
+   "long_name": "North latitude at each grid point",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "y",
+    "x"
+   ],
+   "shape": [
+    160,
+    160
+   ],
+   "dtype": "float64",
+   "units": "degree_east",
+   "long_name": "East longitude at each grid point",
+   "has_qc": false
+  }
+ }
+}

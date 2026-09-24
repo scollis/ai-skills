@@ -1,0 +1,342 @@
+{
+ "instrument": "par",
+ "datastream": "bnfparS14.b1",
+ "filename": "bnfparS14.b1.20260919.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 26,
+ "dims": {
+  "time": 1440,
+  "bound": 2
+ },
+ "n_qc_vars": 9,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2026-09-19T00:00:00",
+  "2026-09-19T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "par_ingest -s bnf -f S14 --max-runtime 86400",
+  "process_version": "ingest-par-1.0-0.el9",
+  "dod_version": "par-b1-1.1",
+  "input_source": "/data/collection/bnf/bnfparS14.00/PAR.20260919000000.dat",
+  "site_id": "bnf",
+  "facility_id": "S14",
+  "data_level": "b1",
+  "location_description": "Southeast U.S. in Bankhead National Forest (BNF), Bankhead National Forest, Alabama",
+  "datastream": "bnfparS14.b1",
+  "doi": "10.5439/2204125"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "batt_volt_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Minimum battery voltage",
+   "has_qc": true
+  },
+  "qc_batt_volt_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Minimum battery voltage",
+   "has_qc": false
+  },
+  "panel_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Average logger panel temperature",
+   "has_qc": false
+  },
+  "panel_temp_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Standard deviation of logger panel temperature",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Average logger enclosure relative humidity",
+   "has_qc": true
+  },
+  "qc_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average logger enclosure relative humidity",
+   "has_qc": false
+  },
+  "rh_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Standard deviation of logger enclosure relative humidity",
+   "has_qc": true
+  },
+  "qc_rh_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation of logger enclosure relative humidity",
+   "has_qc": false
+  },
+  "par_1_dwell": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "umol/m^2/s",
+   "long_name": "Average downwelling radiation for sensor 1",
+   "has_qc": true
+  },
+  "qc_par_1_dwell": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average downwelling radiation for sensor 1",
+   "has_qc": false
+  },
+  "par_1_dwell_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "umol/m^2/s",
+   "long_name": "Standard deviation of downwelling radiation for sensor 1",
+   "has_qc": true
+  },
+  "qc_par_1_dwell_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation of downwelling radiation for sensor 1",
+   "has_qc": false
+  },
+  "par_2_uwell": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "umol/m^2/s",
+   "long_name": "Average upwelling radiation for sensor 2",
+   "has_qc": true
+  },
+  "qc_par_2_uwell": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average upwelling radiation for sensor 2",
+   "has_qc": false
+  },
+  "par_2_uwell_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "umol/m^2/s",
+   "long_name": "Standard deviation of upwelling radiation for sensor 2",
+   "has_qc": true
+  },
+  "qc_par_2_uwell_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation of upwelling radiation for sensor 2",
+   "has_qc": false
+  },
+  "par_3_uwell": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "umol/m^2/s",
+   "long_name": "Average upwelling radiation for sensor 3",
+   "has_qc": true
+  },
+  "qc_par_3_uwell": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Average upwelling radiation for sensor 3",
+   "has_qc": false
+  },
+  "par_3_uwell_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "umol/m^2/s",
+   "long_name": "Standard deviation of upwelling radiation for sensor 3",
+   "has_qc": true
+  },
+  "qc_par_3_uwell_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Standard deviation of upwelling radiation for sensor 3",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

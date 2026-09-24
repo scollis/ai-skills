@@ -1,0 +1,156 @@
+{
+ "vap": "csaprct",
+ "datastream": "houcsapr2cfrqctobacmaskS2.c1",
+ "filename": "houcsapr2cfrqctobacmaskS2.c1.20220918.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 8,
+ "dims": {
+  "time": 318,
+  "projection_y_coordinate": 401,
+  "projection_x_coordinate": 401
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 125.0,
+ "time_span": [
+  "2022-09-18T00:00:32",
+  "2022-09-18T23:59:13"
+ ],
+ "global_attrs": {
+  "command_line": "python /data/home/sgupta/Tracer_CSAPR2_create_houcsapr2cfrqctobacmask.py",
+  "process_version": "N/A",
+  "dod_version": "csapr2cfrqctobacmask.c1-1.0",
+  "site_id": "hou",
+  "facility_id": "S2",
+  "data_level": "c1",
+  "location_description": "hou",
+  "datastream": "csapr2cfrqctobacmaskS2.c1",
+  "doi": "10.5439/2584777"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    318
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "latitude": {
+   "dims": [
+    "projection_y_coordinate",
+    "projection_x_coordinate"
+   ],
+   "shape": [
+    401,
+    401
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Latitude coordinates",
+   "has_qc": false
+  },
+  "longitude": {
+   "dims": [
+    "projection_y_coordinate",
+    "projection_x_coordinate"
+   ],
+   "shape": [
+    401,
+    401
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Longitude coordinates",
+   "has_qc": false
+  },
+  "segmentation_mask": {
+   "dims": [
+    "time",
+    "projection_y_coordinate",
+    "projection_x_coordinate"
+   ],
+   "shape": [
+    318,
+    401,
+    401
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Segmentation mask using feature number",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    318
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "projection_y_coordinate": {
+   "dims": [
+    "projection_y_coordinate"
+   ],
+   "shape": [
+    401
+   ],
+   "dtype": "float32",
+   "units": "kilometer",
+   "long_name": "Y location of the feature in projection coordinates",
+   "has_qc": false
+  },
+  "projection_x_coordinate": {
+   "dims": [
+    "projection_x_coordinate"
+   ],
+   "shape": [
+    401
+   ],
+   "dtype": "float32",
+   "units": "kilometer",
+   "long_name": "X location of the feature in projection coordinates",
+   "has_qc": false
+  }
+ }
+}

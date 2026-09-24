@@ -1,0 +1,155 @@
+{
+ "instrument": "saprvad",
+ "datastream": "sgpxsaprvadI6.c1",
+ "filename": "sgpxsaprvadI6.c1.20190223.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 9,
+ "dims": {
+  "time": 91,
+  "height": 101
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 600.0,
+ "time_span": [
+  "2019-02-23T00:00:04",
+  "2019-02-23T17:30:04"
+ ],
+ "global_attrs": {
+  "command_line": "/home/jhemedinger/anaconda3/envs/precip_env/lib/python3.6/site-packages/distributed/cli/dask_worker.pytcp://10.23.216.82:35728--nthreads1--nprocs12--memory-limit10.67GB--namedask-worker--647805----dea",
+  "process_version": "EVAl-0.5",
+  "dod_version": "v1.0",
+  "site_id": "SGP",
+  "facility_id": "I6:Deer Creek, OK",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Deer Creek, Oklahoma",
+  "datastream": "sgpxsaprvadI6.c1",
+  "doi": "105439/190987"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    91
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "u_wind": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    91,
+    101
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Eastward wind component",
+   "has_qc": false
+  },
+  "v_wind": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    91,
+    101
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Northward wind component",
+   "has_qc": false
+  },
+  "speed": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    91,
+    101
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Horizontal wind speed",
+   "has_qc": false
+  },
+  "direction": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    91,
+    101
+   ],
+   "dtype": "float64",
+   "units": "degree",
+   "long_name": "Horizontal wind direction",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    91
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    101
+   ],
+   "dtype": "float64",
+   "units": "meter",
+   "long_name": "Height above ground",
+   "has_qc": false
+  }
+ }
+}

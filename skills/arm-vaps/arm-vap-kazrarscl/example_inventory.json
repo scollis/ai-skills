@@ -1,0 +1,163 @@
+{
+ "vap": "kazrarscl",
+ "datastream": "sgparsclkazrbnd1kolliasC1.c1",
+ "filename": "sgparsclkazrbnd1kolliasC1.c1.20140312.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 10,
+ "dims": {
+  "time": 21600,
+  "layer": 10
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 4.0,
+ "time_span": [
+  "2014-03-12T00:00:00",
+  "2014-03-12T23:59:56"
+ ],
+ "global_attrs": {
+  "command_line": "idl -R -n kazrarscl -s sgp -f C1 -b 20140312 --asynchronous",
+  "process_version": "vap-kazrarscl-0.5-0.el6",
+  "dod_version": "arsclkazrbnd1kollias-c1-1.2",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgparsclkazrbnd1kolliasC1.c1",
+  "doi": "10.5439/1228769"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "radar_first_top": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "KAZR top height of lowest significant detection layer, before clutter removal",
+   "has_qc": false
+  },
+  "cloud_base_best_estimate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Cloud base best estimate, based on ceilometer and micropulse lidar",
+   "has_qc": false
+  },
+  "cloud_layer_base_height": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    21600,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Base height of hydrometeor layers for up to 10 layers, based on combined radar and micropulse lidar observations",
+   "has_qc": false
+  },
+  "cloud_layer_top_height": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    21600,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Top height of hydrometeor layers for up to 10 layers, based on combined radar and micropulse lidar observations",
+   "has_qc": false
+  },
+  "instrument_availability_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "int16",
+   "units": "unitless",
+   "long_name": "Flag indicating which instruments have data available",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21600
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "layer": {
+   "dims": [
+    "layer"
+   ],
+   "shape": [
+    10
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Cloud layer number",
+   "has_qc": false
+  }
+ }
+}

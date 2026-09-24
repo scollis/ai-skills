@@ -1,0 +1,372 @@
+{
+ "vap": "oacomp",
+ "datastream": "sgpoacomp1zhangC1.c1",
+ "filename": "sgpoacomp1zhangC1.c1.20120321.002128.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 28,
+ "dims": {
+  "time": 44,
+  "amus": 121
+ },
+ "n_qc_vars": 6,
+ "time_resolution_s": 1910.0,
+ "time_span": [
+  "2012-03-21T00:21:28",
+  "2012-03-21T23:32:16"
+ ],
+ "global_attrs": {
+  "command_line": "oacomp_vap -D -R -s sgp -f C1 -d 20120321",
+  "process_version": "$",
+  "dod_version": "oacomp1zhang-c1-0.9",
+  "site_id": "sgp",
+  "facility_id": "C1: Lamont, Oklahoma",
+  "data_level": "c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_series_MOOOA": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "time series for more oxidized oxygenated organic aerosol component",
+   "has_qc": true
+  },
+  "qc_time_series_MOOOA": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "QC field for time_series_MOOOA",
+   "has_qc": false
+  },
+  "mass_spectrum_MOOOA": {
+   "dims": [
+    "amus"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "mass spectra for more oxidized oxygenated organic aerosol component",
+   "has_qc": true
+  },
+  "qc_mass_spectrum_MOOOA": {
+   "dims": [
+    "amus"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "QC field for mass_spectrum_MOOOA",
+   "has_qc": false
+  },
+  "time_series_LOOOA": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "time series for less oxidized oxygenated organic aerosol component",
+   "has_qc": true
+  },
+  "qc_time_series_LOOOA": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "QC field for time_series_LOOOA",
+   "has_qc": false
+  },
+  "mass_spectrum_LOOOA": {
+   "dims": [
+    "amus"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "mass spectra for less oxidized oxygenated organic aerosol component",
+   "has_qc": true
+  },
+  "qc_mass_spectrum_LOOOA": {
+   "dims": [
+    "amus"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "QC field for mass_spectrum_LOOOA",
+   "has_qc": false
+  },
+  "time_series_BBOA": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "time series for biomass burning organic aerosol component",
+   "has_qc": true
+  },
+  "qc_time_series_BBOA": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "QC field for time_series_BBOA",
+   "has_qc": false
+  },
+  "mass_spectrum_BBOA": {
+   "dims": [
+    "amus"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "mass spectra for biomass organic aerosol component, unnormalized",
+   "has_qc": true
+  },
+  "qc_mass_spectrum_BBOA": {
+   "dims": [
+    "amus"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "QC field for mass_spectrum_BBOA",
+   "has_qc": false
+  },
+  "time_series_MOOOA_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "standard deviation of time series for more oxidized oxygenated organic aerosol component",
+   "has_qc": false
+  },
+  "mass_spectrum_MOOOA_std": {
+   "dims": [
+    "amus"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "standard deviation of mass spectra for more oxidized oxygenated organic aerosol component",
+   "has_qc": false
+  },
+  "time_series_LOOOA_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "standard deviation of time series for less oxidized oxygenated organic aerosol component",
+   "has_qc": false
+  },
+  "mass_spectrum_LOOOA_std": {
+   "dims": [
+    "amus"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "standard deviation of mass spectra for less oxidized oxygenated organic aerosol component",
+   "has_qc": false
+  },
+  "time_series_BBOA_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "standard deviation of time series for biomass burning organic aerosol component",
+   "has_qc": false
+  },
+  "mass_spectrum_BBOA_std": {
+   "dims": [
+    "amus"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "standard deviation of mass spectra for biomass organic aerosol component, unnormalized",
+   "has_qc": false
+  },
+  "total_organics": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "Mass concentration of total organics, ambient aerosol in air",
+   "has_qc": false
+  },
+  "ammonium": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "Mass concentration of ammonium, ambient aerosol in air",
+   "has_qc": false
+  },
+  "sulfate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "Mass concentration of sulfate, ambient aerosol in air",
+   "has_qc": false
+  },
+  "nitrate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "Mass concentration of nitrate, ambient aerosol in air",
+   "has_qc": false
+  },
+  "chloride": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "float32",
+   "units": "ug/m3",
+   "long_name": "Mass concentration of chloride, ambient aerosol in air",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    44
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "amus": {
+   "dims": [
+    "amus"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "int32",
+   "units": "amus",
+   "long_name": "Mass to charge ratios of ion fragments",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,1782 @@
+{
+ "instrument": "ecor",
+ "datastream": "enaecorsfC1.b1",
+ "filename": "enaecorsfC1.b1.20260922.000000.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 146,
+ "dims": {
+  "time": 48,
+  "bound": 2
+ },
+ "n_qc_vars": 31,
+ "time_resolution_s": 1800.0,
+ "time_span": [
+  "2026-09-22T00:00:00",
+  "2026-09-22T23:30:00"
+ ],
+ "global_attrs": {
+  "command_line": "ecorsf_ingest -s ena -f C1 --max-runtime 86400",
+  "process_version": "ingest-ecorsf-2.2-0.el9",
+  "dod_version": "ecorsf-b1-1.6",
+  "input_source": "/data/collection/ena/enaecorsfC1.00/2026-09-21T233000_smart3-00678.zip",
+  "site_id": "ena",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Eastern North Atlantic (ENA), Graciosa Island, Azores",
+  "datastream": "enaecorsfC1.b1",
+  "doi": "10.5439/1494128"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    48,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "day_of_year": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "day",
+   "long_name": "Day of Year",
+   "has_qc": false
+  },
+  "file_records": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of file records",
+   "has_qc": false
+  },
+  "used_records": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of file records used",
+   "has_qc": false
+  },
+  "chopper_LI_7500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of flagged records when chopper temperature in not near setpoint",
+   "has_qc": false
+  },
+  "detector_LI_7500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of flagged records when detector temperature in not near setpoint",
+   "has_qc": false
+  },
+  "momentum_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "kg/(m s^2)",
+   "long_name": "Corrected momentum flux",
+   "has_qc": true
+  },
+  "qc_momentum_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Corrected momentum flux",
+   "has_qc": false
+  },
+  "flag_momentum_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "EddyPro quality flag for momentum_flux",
+   "has_qc": false
+  },
+  "sensible_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Corrected sensible heat flux",
+   "has_qc": true
+  },
+  "qc_sensible_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Corrected sensible heat flux",
+   "has_qc": false
+  },
+  "flag_sensible_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "EddyPro quality flag for sensible_heat_flux",
+   "has_qc": false
+  },
+  "latent_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Corrected latent heat flux",
+   "has_qc": true
+  },
+  "qc_latent_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Corrected latent heat flux",
+   "has_qc": false
+  },
+  "flag_latent_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "EddyPro quality flag for latent_flux",
+   "has_qc": false
+  },
+  "co2_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "umol/(m^2 s)",
+   "long_name": "Corrected co2 flux",
+   "has_qc": true
+  },
+  "qc_co2_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Corrected co2 flux",
+   "has_qc": false
+  },
+  "flag_co2_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "EddyPro quality flag for co2_flux",
+   "has_qc": false
+  },
+  "h2o_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mmol/(m^2 s)",
+   "long_name": "Corrected h2o flux",
+   "has_qc": true
+  },
+  "qc_h2o_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Corrected h2o flux",
+   "has_qc": false
+  },
+  "flag_h2o_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "EddyPro quality flag for h2o_flux",
+   "has_qc": false
+  },
+  "ch4_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "nmol/(m^2 s)",
+   "long_name": "Corrected ch4 flux",
+   "has_qc": true
+  },
+  "qc_ch4_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Corrected ch4 flux",
+   "has_qc": false
+  },
+  "flag_ch4_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "EddyPro quality flag for ch4_flux",
+   "has_qc": false
+  },
+  "co2_molar_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mmol/m^3",
+   "long_name": "Measured molar density of co2",
+   "has_qc": true
+  },
+  "qc_co2_molar_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Measured molar density of co2",
+   "has_qc": false
+  },
+  "co2_molar_fraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "umol/mol",
+   "long_name": "Measured molar fraction of co2",
+   "has_qc": false
+  },
+  "co2_mixing_ratio": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "umol/mol",
+   "long_name": "Measured mixing ratio of co2",
+   "has_qc": false
+  },
+  "co2_timelag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Time lag used to synchronize co2 time series",
+   "has_qc": false
+  },
+  "flag_co2_timelag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag whether the reported co2 time lag is the default(1) or calculated(0)",
+   "has_qc": false
+  },
+  "h2o_molar_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mmol/m^3",
+   "long_name": "Measured molar density of h2o",
+   "has_qc": true
+  },
+  "qc_h2o_molar_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Measured molar density of h2o",
+   "has_qc": false
+  },
+  "h2o_mole_fraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mmol/mol",
+   "long_name": "Measured molar fraction of h2o",
+   "has_qc": false
+  },
+  "h2o_mixing_ratio": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mmol/mol",
+   "long_name": "Measured mixing ratio of h2o",
+   "has_qc": false
+  },
+  "h2o_timelag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Time lag used to synchronize h2o time series",
+   "has_qc": false
+  },
+  "flag_h2o_timelag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag whether the reported h2o time lag is the default(1) or calculated(0)",
+   "has_qc": false
+  },
+  "ch4_molar_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "nmol/m^3",
+   "long_name": "Measured molar density of ch4",
+   "has_qc": true
+  },
+  "qc_ch4_molar_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Measured molar density of ch4",
+   "has_qc": false
+  },
+  "ch4_mole_fraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "nmol/mol",
+   "long_name": "Measured molar fraction of ch4",
+   "has_qc": false
+  },
+  "ch4_mixing_ratio": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "nmol/mol",
+   "long_name": "Measured mixing ratio of ch4",
+   "has_qc": false
+  },
+  "ch4_timelag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Time lag used to synchronize ch4 time series",
+   "has_qc": false
+  },
+  "flag_ch4_timelag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag whether the reported ch4 time lag is the default(1) or calculated(0)",
+   "has_qc": false
+  },
+  "sonic_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Mean temperature of ambient air measured by the anemometer, ts",
+   "has_qc": true
+  },
+  "qc_sonic_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean temperature of ambient air measured by the anemometer, ts",
+   "has_qc": false
+  },
+  "air_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Mean temperature of ambient air, calculated from high frequency air temperature readings",
+   "has_qc": true
+  },
+  "qc_air_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean temperature of ambient air, calculated from high frequency air temperature readings",
+   "has_qc": false
+  },
+  "air_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Mean pressure of ambient air, calculated from high frequency air pressure readings",
+   "has_qc": true
+  },
+  "qc_air_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean pressure of ambient air, calculated from high frequency air pressure readings",
+   "has_qc": false
+  },
+  "air_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "kg/m^3",
+   "long_name": "Density of ambient air",
+   "has_qc": true
+  },
+  "qc_air_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Density of ambient air",
+   "has_qc": false
+  },
+  "air_heat_capacity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "J/(kg K)",
+   "long_name": "Specific heat at constant pressure of ambient air",
+   "has_qc": true
+  },
+  "qc_air_heat_capacity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Specific heat at constant pressure of ambient air",
+   "has_qc": false
+  },
+  "air_molar_volume": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^3/mol",
+   "long_name": "Molar volume of ambient air",
+   "has_qc": false
+  },
+  "evapotranspiration_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Evapotranspiration flux",
+   "has_qc": false
+  },
+  "water_vapor_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "kg/m^3",
+   "long_name": "Ambient mass density of water vapor",
+   "has_qc": false
+  },
+  "water_vapor_partial_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Ambient water vapor partial pressure",
+   "has_qc": false
+  },
+  "water_vapor_partial_pressure_saturated": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Ambient water vapor partial pressure at saturation",
+   "has_qc": false
+  },
+  "specific_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "kg/kg",
+   "long_name": "Ambient specific humidity on a mass basis",
+   "has_qc": false
+  },
+  "relative_humidity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Ambient relative humidity",
+   "has_qc": false
+  },
+  "water_vapor_pressure_deficit": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Ambient water vapor pressure deficit",
+   "has_qc": false
+  },
+  "dew_point_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Ambient dew point temperature",
+   "has_qc": false
+  },
+  "wind_u_component": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind component along the u anemometer axis",
+   "has_qc": true
+  },
+  "qc_wind_u_component": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind component along the u anemometer axis",
+   "has_qc": false
+  },
+  "wind_v_component": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind component along the v anemometer axis",
+   "has_qc": true
+  },
+  "qc_wind_v_component": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind component along the v anemometer axis",
+   "has_qc": false
+  },
+  "wind_w_component": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind component along the w anemometer axis",
+   "has_qc": true
+  },
+  "qc_wind_w_component": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Wind component along the w anemometer axis",
+   "has_qc": false
+  },
+  "rotated_mean_u": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Rotated u wind component (mean wind speed)",
+   "has_qc": false
+  },
+  "rotated_mean_v": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Rotated v wind component (should be zero)",
+   "has_qc": false
+  },
+  "rotated_mean_w": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Rotated w wind component (should be zero)",
+   "has_qc": false
+  },
+  "mean_wind": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean wind speed",
+   "has_qc": true
+  },
+  "qc_mean_wind": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean wind speed",
+   "has_qc": false
+  },
+  "maximum_instantaneous_wind_speed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Maximum instantaneous wind speed",
+   "has_qc": false
+  },
+  "wind_direction_from_north": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Direction from which the wind blows, with respect to Geographic north",
+   "has_qc": true
+  },
+  "qc_wind_direction_from_north": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Direction from which the wind blows, with respect to Geographic north",
+   "has_qc": false
+  },
+  "first_rotation_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "First rotation angle",
+   "has_qc": false
+  },
+  "second_rotation_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Second rotation angle",
+   "has_qc": false
+  },
+  "friction_velocity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Friction velocity",
+   "has_qc": true
+  },
+  "qc_friction_velocity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Friction velocity",
+   "has_qc": false
+  },
+  "turbulent_kinetic_energy": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Turbulent kinetic energy",
+   "has_qc": false
+  },
+  "Monin_Obukhov_length": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Monin_Obukhov length",
+   "has_qc": false
+  },
+  "Monin_Obukhov_stability_parameter": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Monin_Obukhov stability parameter",
+   "has_qc": false
+  },
+  "Bowen_ratio": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Sensible heat flux to latent heat flux ratio",
+   "has_qc": false
+  },
+  "scaling_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Scaling temperature",
+   "has_qc": false
+  },
+  "uncorrected_momentum_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "kg/(m s^2)",
+   "long_name": "Uncorrected momentum flux",
+   "has_qc": false
+  },
+  "spectral_correction_momentum_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Spectral correction factor for momentum flux",
+   "has_qc": false
+  },
+  "uncorrected_sensible_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Uncorrected sensible heat flux",
+   "has_qc": true
+  },
+  "qc_uncorrected_sensible_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Uncorrected sensible heat flux",
+   "has_qc": false
+  },
+  "spectral_correction_sensible_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Spectral correction factor for sensible heat flux",
+   "has_qc": false
+  },
+  "uncorrected_latent_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Uncorrected latent heat flux",
+   "has_qc": true
+  },
+  "qc_uncorrected_latent_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Uncorrected latent heat flux",
+   "has_qc": false
+  },
+  "spectral_correction_latent_heat_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Spectral correction factor for latent heat flux",
+   "has_qc": false
+  },
+  "uncorrected_co2_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "umol/(m^2 s)",
+   "long_name": "Uncorrected co2 flux",
+   "has_qc": true
+  },
+  "qc_uncorrected_co2_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Uncorrected co2 flux",
+   "has_qc": false
+  },
+  "spectral_correction_co2_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Spectral correction factor for co2 flux",
+   "has_qc": false
+  },
+  "uncorrected_h2o_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mmol/(m^2 s)",
+   "long_name": "Uncorrected h2o flux",
+   "has_qc": false
+  },
+  "spectral_correction_h2o_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Spectral correction factor for h2o flux",
+   "has_qc": false
+  },
+  "uncorrected_ch4_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "nmol/(m^2 s)",
+   "long_name": "Uncorrected ch4 flux",
+   "has_qc": true
+  },
+  "qc_uncorrected_ch4_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Uncorrected ch4 flux",
+   "has_qc": false
+  },
+  "spectral_correction_ch4_flux": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Spectral correction factor for ch4 flux",
+   "has_qc": false
+  },
+  "hard_flags_spike_test": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Hard flags for spike test",
+   "has_qc": false
+  },
+  "hard_flags_resolution": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Hard flags for amplitude resolution",
+   "has_qc": false
+  },
+  "hard_flags_drop_out_test": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Hard flags for drop_out test",
+   "has_qc": false
+  },
+  "hard_flags_absolute_limits": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Hard flags for absolute limits",
+   "has_qc": false
+  },
+  "hard_flags_skewness_kurtosis": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Hard flags for skewness and kurtosis test",
+   "has_qc": false
+  },
+  "soft_flags_skewness_kurtosis": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Soft flags for skewness and kurtosis test",
+   "has_qc": false
+  },
+  "hard_flags_discontinuities_test": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Hard flags for discontinuities test",
+   "has_qc": false
+  },
+  "soft_flags_discontinuities_test": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Soft flags for discontinuities test",
+   "has_qc": false
+  },
+  "hard_flags_time_lag_test": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Hard flags for time lag test",
+   "has_qc": false
+  },
+  "soft_flags_time_lag_test": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Soft flags for time lag test",
+   "has_qc": false
+  },
+  "hard_flags_attack_angle_test": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Hard flags for attack angle test",
+   "has_qc": false
+  },
+  "hard_flags_non_steady_wind": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Hard flags for non steady horizontal wind test",
+   "has_qc": false
+  },
+  "number_spikes_u": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of spikes detected and eliminated for u",
+   "has_qc": false
+  },
+  "number_spikes_v": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of spikes detected and eliminated for v",
+   "has_qc": false
+  },
+  "number_spikes_w": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of spikes detected and eliminated for w",
+   "has_qc": false
+  },
+  "number_spikes_ts": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of spikes detected and eliminated for ts",
+   "has_qc": false
+  },
+  "number_spikes_co2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of spikes detected and eliminated for co2",
+   "has_qc": false
+  },
+  "number_spikes_h2o": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of spikes detected and eliminated for h2o",
+   "has_qc": false
+  },
+  "number_spikes_ch4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of spikes detected and eliminated for ch4",
+   "has_qc": false
+  },
+  "phase_lock_flag_LI_7500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of flagged records when optical filter wheel is not rotating at the correct rate",
+   "has_qc": false
+  },
+  "sync_flag_LI_7500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of flagged records when sync flag is not set to 1 (normal)",
+   "has_qc": false
+  },
+  "mean_value_LI_7500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Mean value LI_7500",
+   "has_qc": false
+  },
+  "variance_u": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of u",
+   "has_qc": true
+  },
+  "qc_variance_u": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Variance of u",
+   "has_qc": false
+  },
+  "variance_v": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of v",
+   "has_qc": true
+  },
+  "qc_variance_v": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Variance of v",
+   "has_qc": false
+  },
+  "variance_w": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Variance of w",
+   "has_qc": true
+  },
+  "qc_variance_w": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Variance of w",
+   "has_qc": false
+  },
+  "variance_ts": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "K^2",
+   "long_name": "Variance of ts",
+   "has_qc": true
+  },
+  "qc_variance_ts": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Variance of ts",
+   "has_qc": false
+  },
+  "variance_co2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mmol^2/m^6",
+   "long_name": "Variance of co2",
+   "has_qc": true
+  },
+  "qc_variance_co2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Variance of co2",
+   "has_qc": false
+  },
+  "variance_h2o": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mmol^2/m^6",
+   "long_name": "Variance of h2o",
+   "has_qc": true
+  },
+  "qc_variance_h2o": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Variance of h2o",
+   "has_qc": false
+  },
+  "variance_ch4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "nmol^2/m^6",
+   "long_name": "Variance of ch4",
+   "has_qc": true
+  },
+  "qc_variance_ch4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Variance of ch4",
+   "has_qc": false
+  },
+  "covariance_w_ts_cov": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "(m K)/s",
+   "long_name": "Covariance between w and ts",
+   "has_qc": false
+  },
+  "covariance_w_co2_cov": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mmol/(m^2 s)",
+   "long_name": "Covariance between w and co2",
+   "has_qc": false
+  },
+  "covariance_w_h2o_cov": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "mmol/(m^2 s)",
+   "long_name": "Covariance between w and h2o",
+   "has_qc": false
+  },
+  "covariance_w_ch4_cov": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "nmol/(m^2 s)",
+   "long_name": "Covariance between w and ch4",
+   "has_qc": false
+  },
+  "co2_signal_strength_7500_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Mean co2 signal strength",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    48
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

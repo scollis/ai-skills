@@ -1,0 +1,435 @@
+{
+ "instrument": "psap-air",
+ "datastream": "enaaafpsap1sF1.b1",
+ "filename": "enaaafpsap1sF1.b1.20180218.122850.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 33,
+ "dims": {
+  "time": 15167,
+  "bound": 2
+ },
+ "n_qc_vars": 14,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2018-02-18T12:28:50",
+  "2018-02-18T16:41:36"
+ ],
+ "global_attrs": {
+  "command_line": "aafpsap10s -s ena -f F1 -R",
+  "process_version": "ingest-aafpsap10s-1.1-0.el7",
+  "dod_version": "aafpsap1s-b1-1.0",
+  "site_id": "ena",
+  "facility_id": "F1",
+  "data_level": "b1",
+  "location_description": "Eastern North Atlantic (ENA), Gulfstream 159 (\"G1\") Aircraft",
+  "datastream": "enaaafpsap1sF1.b1",
+  "sampling_interval": "1 second",
+  "averaging_interval": "10 second rolling average for transmittances",
+  "doi": "10.5439/1494909"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    15167,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "filter_unstable": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Filter state",
+   "has_qc": false
+  },
+  "sample_volume": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "L",
+   "long_name": "Volume of air through each filter",
+   "has_qc": true
+  },
+  "qc_sample_volume": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Volume of air through each filter",
+   "has_qc": false
+  },
+  "transmittance_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Transmittance, blue channel",
+   "has_qc": true
+  },
+  "qc_transmittance_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Transmittance, blue channel",
+   "has_qc": false
+  },
+  "transmittance_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Transmittance, green channel",
+   "has_qc": true
+  },
+  "qc_transmittance_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Transmittance, green channel",
+   "has_qc": false
+  },
+  "transmittance_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Transmittance, red channel",
+   "has_qc": true
+  },
+  "qc_transmittance_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Transmittance, red channel",
+   "has_qc": false
+  },
+  "Ba_B_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol light absorption coefficient, blue channel at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_B_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol light absorption coefficient, blue channel at dry or reference RH",
+   "has_qc": false
+  },
+  "Ba_G_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol light absorption coefficient, green channel at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_G_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol light absorption coefficient, green channel at dry or reference RH",
+   "has_qc": false
+  },
+  "Ba_R_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Uncorrected aerosol light absorption coefficient, red channel at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_R_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Uncorrected aerosol light absorption coefficient, red channel at dry or reference RH",
+   "has_qc": false
+  },
+  "Ba_B_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, blue channel at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_B_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, blue channel at dry or reference RH",
+   "has_qc": false
+  },
+  "Ba_G_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, green channel at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_G_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, green channel at dry or reference RH",
+   "has_qc": false
+  },
+  "Ba_R_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "1/Mm",
+   "long_name": "Aerosol light absorption coefficient, red channel at dry or reference RH",
+   "has_qc": true
+  },
+  "qc_Ba_R_Weiss": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol light absorption coefficient, red channel at dry or reference RH",
+   "has_qc": false
+  },
+  "sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float32",
+   "units": "L/min",
+   "long_name": "Mass flow",
+   "has_qc": true
+  },
+  "qc_sample_flow_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mass flow",
+   "has_qc": false
+  },
+  "spot_size_area": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "mm^2",
+   "long_name": "Spot size area",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    15167
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,675 @@
+{
+ "instrument": "mmcr",
+ "datastream": "sgpmmcrmomC1.b1",
+ "filename": "sgpmmcrmomC1.b1.20110101.000011.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 45,
+ "dims": {
+  "time": 62816,
+  "mode": 10,
+  "hourly": 24,
+  "heights": 167
+ },
+ "n_qc_vars": 1,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2011-01-01T00:00:11",
+  "2011-01-01T23:59:59"
+ ],
+ "global_attrs": {
+  "ingest_software": " mmcrmom_ingest.c,v 1.16 2007/12/04 14:10:09 koontz ingest-mmcrmom-8.6-0 $",
+  "input_source": "/data/collection/sgp/sgpmmcrmomC1.00/20110010000MMCRMom.nc",
+  "site_id": "sgp",
+  "facility_id": "C1: Lamont, Oklahoma",
+  "serial_number": "N/A",
+  "datastream": "sgpmmcrmomC1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    62816
+   ],
+   "dtype": "int32",
+   "units": "seconds since 1970-1-1 0:00:00 0:00",
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    62816
+   ],
+   "dtype": "float64",
+   "units": "seconds since 2011-01-01 00:00:11 0:00",
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    62816
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Results of quality checks on sample time",
+   "has_qc": false
+  },
+  "ModeDescription": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "object",
+   "units": "unitless",
+   "long_name": "radar mode char identifier",
+   "has_qc": false
+  },
+  "RxCalTimeStamp": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float64",
+   "units": "s",
+   "long_name": "Receiver Cal Time Stamp",
+   "has_qc": false
+  },
+  "RxGain": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Receiver Gain",
+   "has_qc": false
+  },
+  "SkyNoiseLevel": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Receiver Sky Noise",
+   "has_qc": false
+  },
+  "Rx290KLevel": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Receiver 290K Level",
+   "has_qc": false
+  },
+  "CalCheckLevel": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Receiver Cal Check Level",
+   "has_qc": false
+  },
+  "CalCheckTime": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float64",
+   "units": "s",
+   "long_name": "Receiver Cal Check Time Stamp",
+   "has_qc": false
+  },
+  "RadarConstant": {
+   "dims": [
+    "time",
+    "hourly",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    24,
+    10
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Radar Constant",
+   "has_qc": false
+  },
+  "MinimumDetectableReflectivity": {
+   "dims": [
+    "time",
+    "hourly",
+    "mode",
+    "heights"
+   ],
+   "shape": [
+    62816,
+    24,
+    10,
+    167
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Minimum detectable reflectivity",
+   "has_qc": false
+  },
+  "InterPulsePeriod": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float64",
+   "units": "ns",
+   "long_name": "Inter-Pulse Period",
+   "has_qc": false
+  },
+  "PulseWidth": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float64",
+   "units": "ns",
+   "long_name": "Pulse Width",
+   "has_qc": false
+  },
+  "StartGateDelay": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float64",
+   "units": "ns",
+   "long_name": "Delay to First Range Gate",
+   "has_qc": false
+  },
+  "GateSpacing": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float64",
+   "units": "ns",
+   "long_name": "Gate Spacing",
+   "has_qc": false
+  },
+  "NumCoherentIntegrations": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float64",
+   "units": "count",
+   "long_name": "Number of Coherent Integrations",
+   "has_qc": false
+  },
+  "NumSpectralAverages": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of Spectral Averages",
+   "has_qc": false
+  },
+  "NumFFT": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of Points in FFT",
+   "has_qc": false
+  },
+  "NumHeights": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of Range Gates",
+   "has_qc": false
+  },
+  "NumCodeBits": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of Code Bits",
+   "has_qc": false
+  },
+  "NumReceivers": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Number of Receiver",
+   "has_qc": false
+  },
+  "ReceiverMode": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Receiver Mode",
+   "has_qc": false
+  },
+  "ReceiverNumber": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Current Receiver Number",
+   "has_qc": false
+  },
+  "NyquistVelocity": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Nyquist Velocity",
+   "has_qc": false
+  },
+  "DCFilterONOFF": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "DC Filtering ON-OFF Status",
+   "has_qc": false
+  },
+  "WindowingONOFF": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Windowing ON-OFF Status",
+   "has_qc": false
+  },
+  "ClutterHeight": {
+   "dims": [
+    "time",
+    "mode"
+   ],
+   "shape": [
+    62816,
+    10
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Max. height of clutter removal",
+   "has_qc": false
+  },
+  "ModeNum": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    62816
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Operating Set for this Record",
+   "has_qc": false
+  },
+  "DataQualityStatus": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    62816
+   ],
+   "dtype": "float64",
+   "units": "code",
+   "long_name": "Data Quality Status",
+   "has_qc": false
+  },
+  "MeanDopplerVelocity": {
+   "dims": [
+    "time",
+    "heights"
+   ],
+   "shape": [
+    62816,
+    167
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Mean Doppler Velocity",
+   "has_qc": false
+  },
+  "SignalToNoiseRatio": {
+   "dims": [
+    "time",
+    "heights"
+   ],
+   "shape": [
+    62816,
+    167
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal to Noise Ratio",
+   "has_qc": false
+  },
+  "Power": {
+   "dims": [
+    "time",
+    "heights"
+   ],
+   "shape": [
+    62816,
+    167
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Power (uncalibrated)",
+   "has_qc": false
+  },
+  "SpectralWidth": {
+   "dims": [
+    "time",
+    "heights"
+   ],
+   "shape": [
+    62816,
+    167
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Spectral Width",
+   "has_qc": false
+  },
+  "NoiseLevel": {
+   "dims": [
+    "time",
+    "heights"
+   ],
+   "shape": [
+    62816,
+    167
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Mean Noise Level",
+   "has_qc": false
+  },
+  "Reflectivity": {
+   "dims": [
+    "time",
+    "heights"
+   ],
+   "shape": [
+    62816,
+    167
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Reflectivity",
+   "has_qc": false
+  },
+  "RangeCorrectedPower": {
+   "dims": [
+    "time",
+    "heights"
+   ],
+   "shape": [
+    62816,
+    167
+   ],
+   "dtype": "float32",
+   "units": "dBm",
+   "long_name": "Range Corrected Calibrated Power",
+   "has_qc": false
+  },
+  "CircularDepolarizationRatio": {
+   "dims": [
+    "time",
+    "heights"
+   ],
+   "shape": [
+    62816,
+    167
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Circular Depolarization Ratio",
+   "has_qc": false
+  },
+  "AvgNoiseLevel": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    62816
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Average Noise Level (S/N<0)",
+   "has_qc": false
+  },
+  "TimeAvg": {
+   "dims": [
+    "time",
+    "hourly"
+   ],
+   "shape": [
+    62816,
+    24
+   ],
+   "dtype": "float64",
+   "units": "seconds since January 1, 1970",
+   "long_name": "Time associated with hourly averaged values",
+   "has_qc": false
+  },
+  "PeakTransmittedPowerAvg": {
+   "dims": [
+    "time",
+    "hourly"
+   ],
+   "shape": [
+    62816,
+    24
+   ],
+   "dtype": "float32",
+   "units": "dBm",
+   "long_name": "Peak transmitted power, averaged over the course of the hour",
+   "has_qc": false
+  },
+  "TWTStatusCode": {
+   "dims": [
+    "time",
+    "hourly"
+   ],
+   "shape": [
+    62816,
+    24
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Traveling Wave Tube Status Code, see MMCR Instrument Manual for details",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    62816
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "north latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    62816
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "east longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    62816
+   ],
+   "dtype": "float32",
+   "units": "meters above Mean Sea Level",
+   "long_name": "altitude",
+   "has_qc": false
+  },
+  "heights": {
+   "dims": [
+    "mode",
+    "heights"
+   ],
+   "shape": [
+    10,
+    167
+   ],
+   "dtype": "float32",
+   "units": "m MSL",
+   "long_name": "Range Heights (center of radar sample volume)",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    62816
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  }
+ },
+ "read_note": "use_base_time=True with combine=\"nested\" (a non-indexed coordinate blocks combine_by_coords)"
+}

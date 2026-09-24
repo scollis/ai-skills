@@ -1,0 +1,491 @@
+{
+ "vap": "aeriprof",
+ "datastream": "sgpaeriprof3feltzC1.c1",
+ "filename": "sgpaeriprof3feltzC1.c1.20250625.001039.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 34,
+ "dims": {
+  "time": 94,
+  "height": 58,
+  "CPL": 60
+ },
+ "n_qc_vars": 14,
+ "time_resolution_s": 917.0,
+ "time_span": [
+  "2025-06-25T00:10:39",
+  "2025-06-25T23:51:00"
+ ],
+ "global_attrs": {
+  "process_version": "Exp",
+  "command_line": "aeriprof3feltz_interp -R -b 20250625 -I aeri -i 20250625AP.cdf -s sgp -f C1 -n aeriprof3feltz_interp",
+  "dod_version": "aeriprof3feltz-c1-2.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpaeriprof3feltzC1.c1",
+  "data_level": "c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    94
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "pressure": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    94,
+    58
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Interpolated atmospheric pressure",
+   "has_qc": true
+  },
+  "qc_pressure": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    94,
+    58
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Interpolated atmospheric pressure",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    94,
+    58
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Interpolated ambient temperature",
+   "has_qc": true
+  },
+  "qc_temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    94,
+    58
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Interpolated ambient temperature",
+   "has_qc": false
+  },
+  "dewpointTemperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    94,
+    58
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Interpolated dewpoint temperature",
+   "has_qc": true
+  },
+  "qc_dewpointTemperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    94,
+    58
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Interpolated dewpoint temperature",
+   "has_qc": false
+  },
+  "waterVaporMixingRatio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    94,
+    58
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Interpolated water vapor mixing ratio",
+   "has_qc": true
+  },
+  "qc_waterVaporMixingRatio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    94,
+    58
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Interpolated water vapor mixing ratio",
+   "has_qc": false
+  },
+  "CPL_pressure": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "CPL retrieval of atmospheric pressure",
+   "has_qc": true
+  },
+  "qc_CPL_pressure": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: CPL retrieval of atmospheric pressure",
+   "has_qc": false
+  },
+  "CPL_ambientTemp": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "CPL retrieval of ambient temperature",
+   "has_qc": true
+  },
+  "qc_CPL_ambientTemp": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: CPL retrieval of ambient temperature",
+   "has_qc": false
+  },
+  "CPL_dewpointTemp": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "CPL retrieval of dewpoint temperature",
+   "has_qc": true
+  },
+  "qc_CPL_dewpointTemp": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: CPL retrieval of dewpoint temperature",
+   "has_qc": false
+  },
+  "CPL_waterVaporMixingRatio": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "CPL retrieval of water vapor mixing ratio",
+   "has_qc": true
+  },
+  "qc_CPL_waterVaporMixingRatio": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: CPL retrieval of water vapor mixing ratio",
+   "has_qc": false
+  },
+  "CPL_height": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "float32",
+   "units": "meters above ground level",
+   "long_name": "CPL height array for the profile",
+   "has_qc": true
+  },
+  "qc_CPL_height": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: CPL height array for the profile",
+   "has_qc": false
+  },
+  "profile_source_flag": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Profile source flag",
+   "has_qc": true
+  },
+  "qc_profile_source_flag": {
+   "dims": [
+    "time",
+    "CPL"
+   ],
+   "shape": [
+    94,
+    60
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Profile source flag",
+   "has_qc": false
+  },
+  "totalPrecipitableWater": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    94
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Total precipitable water vapor, from microwave radiometer",
+   "has_qc": true
+  },
+  "qc_totalPrecipitableWater": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    94
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Total precipitable water vapor, from microwave radiometer",
+   "has_qc": false
+  },
+  "cloudBaseHeight": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    94
+   ],
+   "dtype": "float32",
+   "units": "meters above ground level",
+   "long_name": "Cloud base height",
+   "has_qc": true
+  },
+  "qc_cloudBaseHeight": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    94
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Cloud base height",
+   "has_qc": false
+  },
+  "auxDataFlagsNow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    94
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Auxiliary inputs used for this retrieval",
+   "has_qc": true
+  },
+  "qc_auxDataFlagsNow": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    94
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Auxiliary inputs used for this retrieval",
+   "has_qc": false
+  },
+  "aqc_retrievalRejectionFlag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    94
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Retrieval rejection flag",
+   "has_qc": false
+  },
+  "auxDataFlagsToday": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Auxiliary inputs used today",
+   "has_qc": true
+  },
+  "qc_auxDataFlagsToday": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Auxiliary inputs used today",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    94
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    58
+   ],
+   "dtype": "float32",
+   "units": "meters above ground level",
+   "long_name": "Height array for the profile",
+   "has_qc": false
+  },
+  "CPL": {
+   "dims": [
+    "CPL"
+   ],
+   "shape": [
+    60
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Constant pressure level",
+   "has_qc": false
+  }
+ }
+}

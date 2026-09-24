@@ -1,0 +1,517 @@
+{
+ "vap": "mwrretv2",
+ "datastream": "sgpmwrret2turnC1.c1",
+ "filename": "sgpmwrret2turnC1.c1.20250328.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 39,
+ "dims": {
+  "time": 67032,
+  "freq": 3
+ },
+ "n_qc_vars": 2,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2025-03-28T00:00:00",
+  "2025-03-28T23:59:59"
+ ],
+ "global_attrs": {
+  "command_line": "idl -R -n mwrret2turn --steps 1 --conf_file_range 20241101.20250501 -D 2 -R -N --filter-overlaps -s sgp -f C1 -b 20250328 -e 20250329 --asynchronous --log-id 20250328.3035371-0117 --disable-email --ma",
+  "process_version": "vap-mwrret2turn-1.35-0.dev7.dirty.el9",
+  "dod_version": "mwrret2turn-c1-2.17",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpmwrret2turnC1.c1",
+  "doi": "10.5439/1566156"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "phys_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Physically-retrieved precipitable water vapor",
+   "has_qc": true
+  },
+  "qc_phys_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Physically-retrieved precipitable water vapor",
+   "has_qc": false
+  },
+  "phys_pwv_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Uncertainty (1-sigma) in physically-retrieved precipitable water vapor",
+   "has_qc": false
+  },
+  "phys_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Physically-retrieved liquid water path",
+   "has_qc": true
+  },
+  "qc_phys_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Physically-retrieved liquid water path",
+   "has_qc": false
+  },
+  "phys_lwp_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Uncertainty (1-sigma) in physically retrieved liquid water path",
+   "has_qc": false
+  },
+  "phys_pwv_lwp_error_correlation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Correlation between uncertainties in physically-retrieved PWV and LWP",
+   "has_qc": false
+  },
+  "phys_qc_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Quality control flag indicating if the physical retrieval should be used",
+   "has_qc": false
+  },
+  "cbh_used": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Cloud base height used in the retrieval",
+   "has_qc": false
+  },
+  "cth_used": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Cloud top height used in the retrieval",
+   "has_qc": false
+  },
+  "cbh_detected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Cloud base height detected by ceilometer/radar",
+   "has_qc": false
+  },
+  "cth_detected": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Cloud top height detected by ceilometer/radar",
+   "has_qc": false
+  },
+  "detection_status": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Detection status from ceil",
+   "has_qc": false
+  },
+  "cloud_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Estimated cloud temperature (from \"used\" fields)",
+   "has_qc": false
+  },
+  "num_iteration": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Number of iterations performed by the retrieval",
+   "has_qc": false
+  },
+  "converged": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag indicating if the retrieval converged",
+   "has_qc": false
+  },
+  "rms": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Root mean square difference between observed and computed (from final iteration) brightness temperature",
+   "has_qc": false
+  },
+  "tbsky_obs": {
+   "dims": [
+    "time",
+    "freq"
+   ],
+   "shape": [
+    67032,
+    3
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Instantaneous observed brightness temperature",
+   "has_qc": false
+  },
+  "tbsky_calc": {
+   "dims": [
+    "time",
+    "freq"
+   ],
+   "shape": [
+    67032,
+    3
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Calculated brightness temperature from final iteration",
+   "has_qc": false
+  },
+  "tbsky_calc_cs": {
+   "dims": [
+    "time",
+    "freq"
+   ],
+   "shape": [
+    67032,
+    3
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Clear-sky calculated brightness temperature",
+   "has_qc": false
+  },
+  "clearsky_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag to indicate if the sky is apparently clear",
+   "has_qc": false
+  },
+  "ptu_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Flag indicating if this is the true PTU profile",
+   "has_qc": false
+  },
+  "ptu_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Precipitable water vapor from the temporally interpolated PTU data stream",
+   "has_qc": false
+  },
+  "tbsky_obs_mean": {
+   "dims": [
+    "time",
+    "freq"
+   ],
+   "shape": [
+    67032,
+    3
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Mean observed brightness temperature",
+   "has_qc": false
+  },
+  "tbsky_obs_std": {
+   "dims": [
+    "time",
+    "freq"
+   ],
+   "shape": [
+    67032,
+    3
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Standard deviation of the observed brightness temperature",
+   "has_qc": false
+  },
+  "elevation_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Angle of Elevation",
+   "has_qc": false
+  },
+  "stat_pwv": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Statistically-retrieved precipitable water vapor",
+   "has_qc": false
+  },
+  "stat_pwv_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "Estimated 1-sigma uncertainty in statistically-retrieved pwv",
+   "has_qc": false
+  },
+  "stat_lwp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Statistically-retrieved liquid water path",
+   "has_qc": false
+  },
+  "stat_lwp_uncertainty": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "Estimated 1-sigma uncertainty in statistically-retrieved lwp",
+   "has_qc": false
+  },
+  "rain_intensity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "mm/s",
+   "long_name": "Rain intensity",
+   "has_qc": false
+  },
+  "surface_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Surface temperature",
+   "has_qc": false
+  },
+  "observation_static_offset": {
+   "dims": [
+    "freq"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "The static (time-independent) offset applied to the observed brightness temperature",
+   "has_qc": false
+  },
+  "assumed_frequency_noise_level": {
+   "dims": [
+    "freq"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Assumed radiometric random noise level for each frequency",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    67032
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "freq": {
+   "dims": [
+    "freq"
+   ],
+   "shape": [
+    3
+   ],
+   "dtype": "float32",
+   "units": "GHz",
+   "long_name": "Frequency",
+   "has_qc": false
+  }
+ }
+}

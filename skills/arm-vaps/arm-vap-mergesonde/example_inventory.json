@@ -1,0 +1,509 @@
+{
+ "vap": "mergesonde",
+ "datastream": "sgpmergesonde1maceC1.c1",
+ "filename": "sgpmergesonde1maceC1.c1.20150626.000000.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 35,
+ "dims": {
+  "time": 1440,
+  "height": 266
+ },
+ "n_qc_vars": 14,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2015-06-26T00:00:00",
+  "2015-06-26T23:59:00"
+ ],
+ "global_attrs": {
+  "process_version": "$State: vap-mergesondemace-8.0-0.sol5_10$",
+  "command_line": "mergesondemace -d 20150626 -f sgpC1 -a 0",
+  "site_id": "sgp",
+  "facility_id": "C1: Lamont, Oklahoma",
+  "datastream": "sgpmergesonde1maceC1.c1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Time offset from midnight",
+   "has_qc": false
+  },
+  "precip": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "mm",
+   "long_name": "Precipitation",
+   "has_qc": true
+  },
+  "qc_precip": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Precipitation",
+   "has_qc": false
+  },
+  "temp": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Temperature",
+   "has_qc": true
+  },
+  "qc_temp": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity",
+   "has_qc": true
+  },
+  "qc_rh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity",
+   "has_qc": false
+  },
+  "vap_pres": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Vapor pressure",
+   "has_qc": true
+  },
+  "qc_vap_pres": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Vapor pressure",
+   "has_qc": false
+  },
+  "bar_pres": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Barometric pressure",
+   "has_qc": true
+  },
+  "qc_bar_pres": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Barometric pressure",
+   "has_qc": false
+  },
+  "wspd": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Wind speed",
+   "has_qc": true
+  },
+  "qc_wspd": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind speed",
+   "has_qc": false
+  },
+  "wdir": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "deg",
+   "long_name": "Wind direction",
+   "has_qc": true
+  },
+  "qc_wdir": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Wind direction",
+   "has_qc": false
+  },
+  "u_wind": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Eastward wind component",
+   "has_qc": true
+  },
+  "qc_u_wind": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Eastward wind component",
+   "has_qc": false
+  },
+  "v_wind": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Northward wind component",
+   "has_qc": true
+  },
+  "qc_v_wind": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Northward wind component",
+   "has_qc": false
+  },
+  "dp": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "C",
+   "long_name": "Dewpoint temperature",
+   "has_qc": true
+  },
+  "qc_dp": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Dewpoint temperature",
+   "has_qc": false
+  },
+  "potential_temp": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Potential temperature",
+   "has_qc": true
+  },
+  "qc_potential_temp": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Potential temperature",
+   "has_qc": false
+  },
+  "sh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "g/g",
+   "long_name": "Specific humidity",
+   "has_qc": true
+  },
+  "qc_sh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Specific humidity",
+   "has_qc": false
+  },
+  "rh_scaled": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity scaled using MWR",
+   "has_qc": true
+  },
+  "qc_rh_scaled": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Relative humidity scaled using MWR",
+   "has_qc": false
+  },
+  "sonde_fraction": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "fraction",
+   "long_name": "Sonde contribution to the new data point",
+   "has_qc": false
+  },
+  "sonde_fraction_rh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "fraction",
+   "long_name": "Sonde contribution to the new rh",
+   "has_qc": false
+  },
+  "vapor_source": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    1440,
+    266
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Source of the MWR Data used to Produce Scaled RH Field",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    266
+   ],
+   "dtype": "float32",
+   "units": "km above MSL",
+   "long_name": "Height",
+   "has_qc": false
+  }
+ }
+}

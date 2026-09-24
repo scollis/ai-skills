@@ -1,0 +1,479 @@
+{
+ "vap": "ndrop",
+ "datastream": "sgpndropmfrsrC1.c1",
+ "filename": "sgpndropmfrsrC1.c1.20260504.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 36,
+ "dims": {
+  "time": 4320,
+  "height": 332
+ },
+ "n_qc_vars": 13,
+ "time_resolution_s": 20.0,
+ "time_span": [
+  "2026-05-04T00:00:00",
+  "2026-05-04T23:59:40"
+ ],
+ "global_attrs": {
+  "command_line": "ndrop_mfrsr -s sgp -f C1 -b 20260504 -e 20260505 --max-runtime 86400",
+  "process_version": "vap-ndrop_mfrsr-1.1-1.el9",
+  "dod_version": "ndropmfrsr-c1-1.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpndropmfrsrC1.c1",
+  "doi": "10.5439/1131339"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "optical_depth_instantaneous": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cloud optical depth instantaneous",
+   "has_qc": true
+  },
+  "qc_optical_depth_instantaneous": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Cloud optical depth instantaneous",
+   "has_qc": false
+  },
+  "bar_pres": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    332
+   ],
+   "dtype": "float32",
+   "units": "Pa",
+   "long_name": "Barometric pressure",
+   "has_qc": true
+  },
+  "qc_bar_pres": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    332
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Barometric pressure",
+   "has_qc": false
+  },
+  "temp": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    332
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Temperature",
+   "has_qc": true
+  },
+  "qc_temp": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    332
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature",
+   "has_qc": false
+  },
+  "lwp_meas": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "kg m-2",
+   "long_name": "Measured liquid water path",
+   "has_qc": true
+  },
+  "qc_lwp_meas": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Measured liquid water path",
+   "has_qc": false
+  },
+  "cloud_base_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude of cloud base used in retrieval",
+   "has_qc": true
+  },
+  "qc_cloud_base_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude of cloud base used in retrieval",
+   "has_qc": false
+  },
+  "cloud_top_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude of cloud top used in retrieval",
+   "has_qc": true
+  },
+  "qc_cloud_top_height": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude of cloud top used in retrieval",
+   "has_qc": false
+  },
+  "cloud_thickness": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Cloud thickness",
+   "has_qc": false
+  },
+  "cloud_base_type": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Type of cloud at cloud base",
+   "has_qc": false
+  },
+  "cloud_base_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Temperature of cloud base used in retrieval",
+   "has_qc": true
+  },
+  "qc_cloud_base_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Temperature of cloud base used in retrieval",
+   "has_qc": false
+  },
+  "cloud_base_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "Pa",
+   "long_name": "Air pressure of cloud base used in retrieval",
+   "has_qc": true
+  },
+  "qc_cloud_base_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Air pressure of cloud base used in retrieval",
+   "has_qc": false
+  },
+  "source_cloud_base": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Source for variable:cloud_base_height",
+   "has_qc": false
+  },
+  "beta": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Adiabaticity parameter",
+   "has_qc": true
+  },
+  "qc_beta": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Adiabaticity parameter",
+   "has_qc": false
+  },
+  "drop_number_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "m-3",
+   "long_name": "Calculated droplet number concentration",
+   "has_qc": true
+  },
+  "qc_drop_number_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calculated droplet number concentration",
+   "has_qc": false
+  },
+  "drop_number_conc_toterror": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "m-3",
+   "long_name": "Total error on calculated droplet number concentration",
+   "has_qc": true
+  },
+  "qc_drop_number_conc_toterror": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total error on calculated droplet number concentration",
+   "has_qc": false
+  },
+  "condensation_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "kg m-4",
+   "long_name": "Condensation rate",
+   "has_qc": false
+  },
+  "drop_number_conc_adiabatic": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "m-3",
+   "long_name": "Droplet number concentration calculated assuming adiabatic cloud layer",
+   "has_qc": true
+  },
+  "qc_drop_number_conc_adiabatic": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Droplet number concentration calculated assuming adiabatic cloud layer",
+   "has_qc": false
+  },
+  "lwp_adiabatic": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "kg m-2",
+   "long_name": "Calculated adiabatic liquid water path",
+   "has_qc": true
+  },
+  "qc_lwp_adiabatic": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Calculated adiabatic liquid water path",
+   "has_qc": false
+  },
+  "saturated_water_vapor_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "Pa",
+   "long_name": "Saturated water vapor pressure",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    332
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above mean sea level",
+   "has_qc": false
+  }
+ }
+}

@@ -1,0 +1,516 @@
+{
+ "vap": "dlmc",
+ "datastream": "mosdlmcusrM1.c1",
+ "filename": "mosdlmcusrM1.c1.20200917.042722.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 40,
+ "dims": {
+  "time": 112,
+  "range": 320
+ },
+ "n_qc_vars": 12,
+ "time_resolution_s": 3.0,
+ "time_span": [
+  "2020-09-17T04:27:22",
+  "2020-09-17T04:33:28"
+ ],
+ "global_attrs": {
+  "command_line": "dlmc -n dlmc_usr -s mos -f M1 -b 20191011 -e 20200921",
+  "process_version": "vap-dlmc-1.0-0.el7",
+  "dod_version": "dlmcusr-c1-1.0",
+  "site_id": "mos",
+  "facility_id": "M1",
+  "data_level": "c1",
+  "location_description": "Multidisciplinary drifting Observatory for the Study of Arctic Climate (MOSAiC)  , Research Vessel PolarStern",
+  "datastream": "mosdlmcusrM1.c1",
+  "serial_number": "0319-160",
+  "doi": "10.5439/1824204"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Beam azimuth relative to true north",
+   "has_qc": true
+  },
+  "qc_azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Beam azimuth relative to true north",
+   "has_qc": false
+  },
+  "elevation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Beam elevation angle measured from the horizon",
+   "has_qc": true
+  },
+  "qc_elevation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Beam elevation angle measured from the horizon",
+   "has_qc": false
+  },
+  "radial_velocity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    112,
+    320
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Radial air velocity corrected for platform motion",
+   "has_qc": true
+  },
+  "qc_radial_velocity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    112,
+    320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Radial air velocity corrected for platform motion",
+   "has_qc": false
+  },
+  "intensity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    112,
+    320
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Intensity (signal to noise ratio + 1)",
+   "has_qc": false
+  },
+  "attenuated_backscatter": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    112,
+    320
+   ],
+   "dtype": "float32",
+   "units": "1/(m sr)",
+   "long_name": "Attenuated backscatter",
+   "has_qc": false
+  },
+  "lidar_velocity_west": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "West-ward component of the lidar's velocity",
+   "has_qc": false
+  },
+  "lidar_velocity_north": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "North-ward component of the lidar's velocity",
+   "has_qc": false
+  },
+  "lidar_velocity_z": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Z-component (aligned with gravity) of the lidar's velocity",
+   "has_qc": false
+  },
+  "lidar_velocity_radial": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Along-beam component of the lidar's velocity",
+   "has_qc": false
+  },
+  "nav_roll": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Platform roll angle from the NAV",
+   "has_qc": true
+  },
+  "qc_nav_roll": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Platform roll angle from the NAV",
+   "has_qc": false
+  },
+  "nav_pitch": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Platform pitch angle from the NAV",
+   "has_qc": true
+  },
+  "qc_nav_pitch": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Platform pitch angle from the NAV",
+   "has_qc": false
+  },
+  "nav_yaw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Platform yaw angle from the NAV",
+   "has_qc": true
+  },
+  "qc_nav_yaw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Platform yaw angle from the NAV",
+   "has_qc": false
+  },
+  "nav_roll_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree/s",
+   "long_name": "Platform roll rate from the NAV",
+   "has_qc": true
+  },
+  "qc_nav_roll_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Platform roll rate from the NAV",
+   "has_qc": false
+  },
+  "nav_pitch_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree/s",
+   "long_name": "Platform pitch rate from the NAV",
+   "has_qc": true
+  },
+  "qc_nav_pitch_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Platform pitch rate from the NAV",
+   "has_qc": false
+  },
+  "nav_yaw_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree/s",
+   "long_name": "Platform yaw rate from the NAV",
+   "has_qc": true
+  },
+  "qc_nav_yaw_rate": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Platform yaw rate from the NAV",
+   "has_qc": false
+  },
+  "lidar_nav_displacement_bow": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Bow-ward component of the lidar-nav displacement vector",
+   "has_qc": false
+  },
+  "lidar_nav_displacement_port": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Port-ward component of the lidar-nav displacement vector",
+   "has_qc": false
+  },
+  "lidar_nav_displacement_up": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Up-ward (normal to ship deck) component of the lidar-nav displacement vector",
+   "has_qc": false
+  },
+  "lidar_nav_roll_offset": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "The lidar-nav roll angle offset",
+   "has_qc": false
+  },
+  "lidar_nav_pitch_offset": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "The lidar-nav pitch angle offset",
+   "has_qc": false
+  },
+  "lidar_nav_yaw_offset": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "The lidar-nav yaw angle offset",
+   "has_qc": false
+  },
+  "lidar_roll": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Platform roll angle from the lidar's low quality tilt sensor",
+   "has_qc": false
+  },
+  "lidar_pitch": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Platform pitch angle from the lidar's low quality tilt sensor",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": true
+  },
+  "qc_lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": true
+  },
+  "qc_lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": true
+  },
+  "qc_alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    112
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "range": {
+   "dims": [
+    "range"
+   ],
+   "shape": [
+    320
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Distance from Lidar to center of range gate",
+   "has_qc": false
+  }
+ }
+}

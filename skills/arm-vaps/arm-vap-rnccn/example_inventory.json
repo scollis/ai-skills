@@ -1,0 +1,641 @@
+{
+ "vap": "rnccn",
+ "datastream": "sgprnccnprof1kulkarniC1.c1",
+ "filename": "sgprnccnprof1kulkarniC1.c1.20231014.000500.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 44,
+ "dims": {
+  "time": 144,
+  "bound": 2,
+  "height": 299,
+  "supersaturation_setpoint": 6
+ },
+ "n_qc_vars": 7,
+ "time_resolution_s": 600.0,
+ "time_span": [
+  "2023-10-14T00:05:00",
+  "2023-10-14T23:55:00"
+ ],
+ "global_attrs": {
+  "command_line": "rnccnprof -s sgp -f C1 -b 20230201 -e 20231101 -D 2 -R",
+  "process_version": "vap-rnccnprof-0.0-0.dev0.dirty.el7",
+  "dod_version": "rnccnprof1kulkarni-c1-1.3",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgprnccnprof1kulkarniC1.c1",
+  "doi": "10.5439/1813858"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    144,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "height_bounds": {
+   "dims": [
+    "height",
+    "bound"
+   ],
+   "shape": [
+    299,
+    2
+   ],
+   "dtype": "float32",
+   "units": null,
+   "long_name": "Height cell bounds",
+   "has_qc": false
+  },
+  "depolarization_ratio": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol linear depolarization ratio",
+   "has_qc": false
+  },
+  "lidar_ratio_be": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "sr",
+   "long_name": "Best-estimate of the lidar ratio",
+   "has_qc": false
+  },
+  "extinction_be_uncertainty_random": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Random uncertainty in extinction_be",
+   "has_qc": false
+  },
+  "extinction_be_uncertainty_systematic": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Maximum systematic uncertainty in extinction_be",
+   "has_qc": false
+  },
+  "extinction_be": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Best-estimate of the particulate extinction coefficient",
+   "has_qc": false
+  },
+  "feature_mask": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Feature mask",
+   "has_qc": false
+  },
+  "temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Calibrated temperature from the rotational Raman channels",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity observed by the Raman lidar",
+   "has_qc": false
+  },
+  "mr_merged": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "High and Low merged water vapor mixing ratio",
+   "has_qc": false
+  },
+  "pres_sonde": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "mb",
+   "long_name": "Pressure from radiosondes",
+   "has_qc": false
+  },
+  "mr_sonde": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "g/kg",
+   "long_name": "Water vapor mixing ratio from radiosondes",
+   "has_qc": false
+  },
+  "ext_dry_mean": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "km-1",
+   "long_name": "RH corrected extinction",
+   "has_qc": false
+  },
+  "lcl": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Lifting condensation level",
+   "has_qc": false
+  },
+  "ccn_1": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "Retrieved number concentration of CCN at supersaturation step 1",
+   "has_qc": true
+  },
+  "qc_ccn_1": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved number concentration of CCN at supersaturation step 1",
+   "has_qc": false
+  },
+  "ccn_2": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "Retrieved number concentration of CCN at supersaturation step 2",
+   "has_qc": true
+  },
+  "qc_ccn_2": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved number concentration of CCN at supersaturation step 2",
+   "has_qc": false
+  },
+  "ccn_3": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "Retrieved number concentration of CCN at supersaturation step 3",
+   "has_qc": true
+  },
+  "qc_ccn_3": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved number concentration of CCN at supersaturation step 3",
+   "has_qc": false
+  },
+  "ccn_4": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "Retrieved number concentration of CCN at supersaturation step 4",
+   "has_qc": true
+  },
+  "qc_ccn_4": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved number concentration of CCN at supersaturation step 4",
+   "has_qc": false
+  },
+  "ccn_5": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "Retrieved number concentration of CCN at supersaturation step 5",
+   "has_qc": true
+  },
+  "qc_ccn_5": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved number concentration of CCN at supersaturation step 5",
+   "has_qc": false
+  },
+  "ccn_6": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "Retrieved number concentration of CCN at supersaturation step 6",
+   "has_qc": true
+  },
+  "qc_ccn_6": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved number concentration of CCN at supersaturation step 6",
+   "has_qc": false
+  },
+  "ccn_7": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "Retrieved number concentration of CCN at supersaturation step 7",
+   "has_qc": true
+  },
+  "qc_ccn_7": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Retrieved number concentration of CCN at supersaturation step 7",
+   "has_qc": false
+  },
+  "potential_temperature": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Potential temperature",
+   "has_qc": false
+  },
+  "N_CCN_1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "AOS surface number concentration of CCN at supersaturation step 1",
+   "has_qc": false
+  },
+  "N_CCN_2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "AOS surface number concentration of CCN at supersaturation step 2",
+   "has_qc": false
+  },
+  "N_CCN_3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "AOS surface number concentration of CCN at supersaturation step 3",
+   "has_qc": false
+  },
+  "N_CCN_4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "AOS surface number concentration of CCN at supersaturation step 4",
+   "has_qc": false
+  },
+  "N_CCN_5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "AOS surface number concentration of CCN at supersaturation step 5",
+   "has_qc": false
+  },
+  "N_CCN_6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "AOS surface number concentration of CCN at supersaturation step 6",
+   "has_qc": false
+  },
+  "N_CCN_7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "cm-3",
+   "long_name": "AOS surface number concentration of CCN at supersaturation step 7",
+   "has_qc": false
+  },
+  "cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Cloud base height",
+   "has_qc": false
+  },
+  "calculated_frh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    299
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Calculated f(RH) using equation f(RH) = C1(1-RH)^gamma, where C1 = (1 \u2013 RH_0)^gamma and RH_0 = 40%",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    299
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height above ground level",
+   "has_qc": false
+  },
+  "supersaturation_setpoint": {
+   "dims": [
+    "supersaturation_setpoint"
+   ],
+   "shape": [
+    6
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Supersaturation set point",
+   "has_qc": false
+  }
+ }
+}

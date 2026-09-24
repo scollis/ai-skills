@@ -1,0 +1,3883 @@
+{
+ "vap": "armtraj-air",
+ "datastream": "sgparmtrajtbsC1.c1",
+ "filename": "sgparmtrajtbsC1.c1.20241111.130000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 261,
+ "dims": {
+  "time": 11,
+  "trajectory_time": 121,
+  "vert_layer": 11,
+  "time_tbs": 45876,
+  "trajectory_type": 1
+ },
+ "n_qc_vars": 17,
+ "time_resolution_s": 3600.0,
+ "time_span": [
+  "2024-11-11T13:00:00",
+  "2024-11-11T23:00:00"
+ ],
+ "global_attrs": {
+  "command_line": "armtraj -n armtrajtbs -s sgp -f C1 -b 20241111 -e 20241112 -R --max-runtime 86400",
+  "process_version": "armtraj-1.10.14",
+  "dod_version": "armtrajtbs-c1-2.0",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "datastream": "sgparmtrajtbsC1.c1",
+  "doi": "10.5439/2530722"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "seconds since 1970-1-1 0:00:00 0:00",
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float64",
+   "units": "seconds since 2024-11-11 00:00:00 0:00",
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "date": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "seconds since 1970-01-01 00:00:00 0:00",
+   "long_name": "Trajectory date per trajectory type and time step",
+   "has_qc": false
+  },
+  "latitude": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Airmass latitude",
+   "has_qc": false
+  },
+  "longitude": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Airmass longitude",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Airmass height above ground level",
+   "has_qc": false
+  },
+  "pres": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "hPa",
+   "long_name": "Airmass pressure",
+   "has_qc": false
+  },
+  "theta": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass potential temperature",
+   "has_qc": false
+  },
+  "temp": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degC",
+   "long_name": "Airmass temperature",
+   "has_qc": false
+  },
+  "pblh": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Planetary boundary layer height in airmass column",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Airmass relative humidity",
+   "has_qc": false
+  },
+  "surf_altitude": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface altitude above mean sea level in airmass column",
+   "has_qc": false
+  },
+  "qv": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "g/kg",
+   "long_name": "Airmass specific humidity",
+   "has_qc": false
+  },
+  "rhi": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Airmass relative humidity with respect to ice",
+   "has_qc": false
+  },
+  "theta_e": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass equivalent potential temperature (excluding condensate from the calculation)",
+   "has_qc": false
+  },
+  "theta_v": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass virtual potential temperature",
+   "has_qc": false
+  },
+  "altitude": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Airmass altitude above mean sea level",
+   "has_qc": false
+  },
+  "wvert": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Mean hourly airmass ascent rate",
+   "has_qc": true
+  },
+  "qc_wvert": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean hourly airmass ascent rate",
+   "has_qc": false
+  },
+  "height_to_pblh_ratio": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Airmass height-to-PBLH ratio",
+   "has_qc": false
+  },
+  "latitude_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Surface (at initialization) airmass latitude",
+   "has_qc": false
+  },
+  "longitude_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Surface (at initialization) airmass longitude",
+   "has_qc": false
+  },
+  "height_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) airmass height above ground level",
+   "has_qc": false
+  },
+  "pres_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "hPa",
+   "long_name": "Surface (at initialization) airmass pressure",
+   "has_qc": false
+  },
+  "theta_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass potential temperature",
+   "has_qc": false
+  },
+  "temp_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degC",
+   "long_name": "Surface (at initialization) airmass temperature",
+   "has_qc": false
+  },
+  "pblh_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) planetary boundary layer height in airmass column",
+   "has_qc": false
+  },
+  "rh_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Surface (at initialization) airmass relative humidity",
+   "has_qc": false
+  },
+  "surf_altitude_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) surface altitude above mean sea level in airmass column",
+   "has_qc": false
+  },
+  "qv_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "g/kg",
+   "long_name": "Surface (at initialization) airmass specific humidity",
+   "has_qc": false
+  },
+  "rhi_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Surface (at initialization) airmass relative humidity with respect to ice",
+   "has_qc": false
+  },
+  "theta_e_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass equivalent potential temperature (excluding condensate from the calculation)",
+   "has_qc": false
+  },
+  "theta_v_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass virtual potential temperature",
+   "has_qc": false
+  },
+  "altitude_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) airmass altitude above mean sea level",
+   "has_qc": false
+  },
+  "wvert_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Surface (at initialization) mean hourly airmass ascent rate",
+   "has_qc": true
+  },
+  "qc_wvert_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface (at initialization) mean hourly airmass ascent rate",
+   "has_qc": false
+  },
+  "height_to_pblh_ratio_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Surface (at initialization) airmass height-to-PBLH ratio",
+   "has_qc": false
+  },
+  "latitude_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Airmass latitude ensemble mean",
+   "has_qc": false
+  },
+  "latitude_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Airmass latitude ensemble std",
+   "has_qc": false
+  },
+  "latitude_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Airmass latitude ensemble min",
+   "has_qc": false
+  },
+  "latitude_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Airmass latitude ensemble max",
+   "has_qc": false
+  },
+  "longitude_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Airmass longitude ensemble mean",
+   "has_qc": false
+  },
+  "longitude_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Airmass longitude ensemble std",
+   "has_qc": false
+  },
+  "longitude_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Airmass longitude ensemble min",
+   "has_qc": false
+  },
+  "longitude_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Airmass longitude ensemble max",
+   "has_qc": false
+  },
+  "height_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Airmass height above ground level ensemble mean",
+   "has_qc": false
+  },
+  "height_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Airmass height above ground level ensemble std",
+   "has_qc": false
+  },
+  "height_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Airmass height above ground level ensemble min",
+   "has_qc": false
+  },
+  "height_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Airmass height above ground level ensemble max",
+   "has_qc": false
+  },
+  "pres_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "hPa",
+   "long_name": "Airmass pressure ensemble mean",
+   "has_qc": false
+  },
+  "pres_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "hPa",
+   "long_name": "Airmass pressure ensemble std",
+   "has_qc": false
+  },
+  "pres_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "hPa",
+   "long_name": "Airmass pressure ensemble min",
+   "has_qc": false
+  },
+  "pres_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "hPa",
+   "long_name": "Airmass pressure ensemble max",
+   "has_qc": false
+  },
+  "theta_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass potential temperature ensemble mean",
+   "has_qc": false
+  },
+  "theta_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass potential temperature ensemble std",
+   "has_qc": false
+  },
+  "theta_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass potential temperature ensemble min",
+   "has_qc": false
+  },
+  "theta_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass potential temperature ensemble max",
+   "has_qc": false
+  },
+  "temp_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degC",
+   "long_name": "Airmass temperature ensemble mean",
+   "has_qc": false
+  },
+  "temp_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degC",
+   "long_name": "Airmass temperature ensemble std",
+   "has_qc": false
+  },
+  "temp_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degC",
+   "long_name": "Airmass temperature ensemble min",
+   "has_qc": false
+  },
+  "temp_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "degC",
+   "long_name": "Airmass temperature ensemble max",
+   "has_qc": false
+  },
+  "pblh_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Planetary boundary layer height in airmass column ensemble mean",
+   "has_qc": false
+  },
+  "pblh_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Planetary boundary layer height in airmass column ensemble std",
+   "has_qc": false
+  },
+  "pblh_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Planetary boundary layer height in airmass column ensemble min",
+   "has_qc": false
+  },
+  "pblh_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Planetary boundary layer height in airmass column ensemble max",
+   "has_qc": false
+  },
+  "rh_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Airmass relative humidity ensemble mean",
+   "has_qc": false
+  },
+  "rh_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Airmass relative humidity ensemble std",
+   "has_qc": false
+  },
+  "rh_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Airmass relative humidity ensemble min",
+   "has_qc": false
+  },
+  "rh_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Airmass relative humidity ensemble max",
+   "has_qc": false
+  },
+  "surf_altitude_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface altitude above mean sea level in airmass column ensemble mean",
+   "has_qc": false
+  },
+  "surf_altitude_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface altitude above mean sea level in airmass column ensemble std",
+   "has_qc": false
+  },
+  "surf_altitude_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface altitude above mean sea level in airmass column ensemble min",
+   "has_qc": false
+  },
+  "surf_altitude_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface altitude above mean sea level in airmass column ensemble max",
+   "has_qc": false
+  },
+  "qv_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "g/kg",
+   "long_name": "Airmass specific humidity ensemble mean",
+   "has_qc": false
+  },
+  "qv_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "g/kg",
+   "long_name": "Airmass specific humidity ensemble std",
+   "has_qc": false
+  },
+  "qv_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "g/kg",
+   "long_name": "Airmass specific humidity ensemble min",
+   "has_qc": false
+  },
+  "qv_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "g/kg",
+   "long_name": "Airmass specific humidity ensemble max",
+   "has_qc": false
+  },
+  "rhi_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Airmass relative humidity with respect to ice ensemble mean",
+   "has_qc": false
+  },
+  "rhi_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Airmass relative humidity with respect to ice ensemble std",
+   "has_qc": false
+  },
+  "rhi_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Airmass relative humidity with respect to ice ensemble min",
+   "has_qc": false
+  },
+  "rhi_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Airmass relative humidity with respect to ice ensemble max",
+   "has_qc": false
+  },
+  "theta_e_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass equivalent potential temperature (excluding condensate from the calculation) ensemble mean",
+   "has_qc": false
+  },
+  "theta_e_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass equivalent potential temperature (excluding condensate from the calculation) ensemble std",
+   "has_qc": false
+  },
+  "theta_e_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass equivalent potential temperature (excluding condensate from the calculation) ensemble min",
+   "has_qc": false
+  },
+  "theta_e_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass equivalent potential temperature (excluding condensate from the calculation) ensemble max",
+   "has_qc": false
+  },
+  "theta_v_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass virtual potential temperature ensemble mean",
+   "has_qc": false
+  },
+  "theta_v_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass virtual potential temperature ensemble std",
+   "has_qc": false
+  },
+  "theta_v_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass virtual potential temperature ensemble min",
+   "has_qc": false
+  },
+  "theta_v_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Airmass virtual potential temperature ensemble max",
+   "has_qc": false
+  },
+  "altitude_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Airmass altitude above mean sea level ensemble mean",
+   "has_qc": false
+  },
+  "altitude_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Airmass altitude above mean sea level ensemble std",
+   "has_qc": false
+  },
+  "altitude_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Airmass altitude above mean sea level ensemble min",
+   "has_qc": false
+  },
+  "altitude_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Airmass altitude above mean sea level ensemble max",
+   "has_qc": false
+  },
+  "wvert_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Mean hourly airmass ascent rate ensemble mean",
+   "has_qc": true
+  },
+  "qc_wvert_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean hourly airmass ascent rate ensemble mean",
+   "has_qc": false
+  },
+  "wvert_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Mean hourly airmass ascent rate ensemble std",
+   "has_qc": true
+  },
+  "qc_wvert_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean hourly airmass ascent rate ensemble std",
+   "has_qc": false
+  },
+  "wvert_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Mean hourly airmass ascent rate ensemble min",
+   "has_qc": true
+  },
+  "qc_wvert_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean hourly airmass ascent rate ensemble min",
+   "has_qc": false
+  },
+  "wvert_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Mean hourly airmass ascent rate ensemble max",
+   "has_qc": true
+  },
+  "qc_wvert_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Mean hourly airmass ascent rate ensemble max",
+   "has_qc": false
+  },
+  "height_to_pblh_ratio_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Airmass height-to-PBLH ratio ensemble mean",
+   "has_qc": false
+  },
+  "height_to_pblh_ratio_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Airmass height-to-PBLH ratio ensemble std",
+   "has_qc": false
+  },
+  "height_to_pblh_ratio_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Airmass height-to-PBLH ratio ensemble min",
+   "has_qc": false
+  },
+  "height_to_pblh_ratio_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Airmass height-to-PBLH ratio ensemble max",
+   "has_qc": false
+  },
+  "latitude_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Surface (at initialization) airmass latitude ensemble mean",
+   "has_qc": false
+  },
+  "latitude_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Surface (at initialization) airmass latitude ensemble std",
+   "has_qc": false
+  },
+  "latitude_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Surface (at initialization) airmass latitude ensemble min",
+   "has_qc": false
+  },
+  "latitude_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Surface (at initialization) airmass latitude ensemble max",
+   "has_qc": false
+  },
+  "longitude_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Surface (at initialization) airmass longitude ensemble mean",
+   "has_qc": false
+  },
+  "longitude_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Surface (at initialization) airmass longitude ensemble std",
+   "has_qc": false
+  },
+  "longitude_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Surface (at initialization) airmass longitude ensemble min",
+   "has_qc": false
+  },
+  "longitude_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Surface (at initialization) airmass longitude ensemble max",
+   "has_qc": false
+  },
+  "height_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) airmass height above ground level ensemble mean",
+   "has_qc": false
+  },
+  "height_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) airmass height above ground level ensemble std",
+   "has_qc": false
+  },
+  "height_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) airmass height above ground level ensemble min",
+   "has_qc": false
+  },
+  "height_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) airmass height above ground level ensemble max",
+   "has_qc": false
+  },
+  "pres_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "hPa",
+   "long_name": "Surface (at initialization) airmass pressure ensemble mean",
+   "has_qc": false
+  },
+  "pres_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "hPa",
+   "long_name": "Surface (at initialization) airmass pressure ensemble std",
+   "has_qc": false
+  },
+  "pres_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "hPa",
+   "long_name": "Surface (at initialization) airmass pressure ensemble min",
+   "has_qc": false
+  },
+  "pres_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "hPa",
+   "long_name": "Surface (at initialization) airmass pressure ensemble max",
+   "has_qc": false
+  },
+  "theta_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass potential temperature ensemble mean",
+   "has_qc": false
+  },
+  "theta_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass potential temperature ensemble std",
+   "has_qc": false
+  },
+  "theta_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass potential temperature ensemble min",
+   "has_qc": false
+  },
+  "theta_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass potential temperature ensemble max",
+   "has_qc": false
+  },
+  "temp_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degC",
+   "long_name": "Surface (at initialization) airmass temperature ensemble mean",
+   "has_qc": false
+  },
+  "temp_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degC",
+   "long_name": "Surface (at initialization) airmass temperature ensemble std",
+   "has_qc": false
+  },
+  "temp_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degC",
+   "long_name": "Surface (at initialization) airmass temperature ensemble min",
+   "has_qc": false
+  },
+  "temp_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "degC",
+   "long_name": "Surface (at initialization) airmass temperature ensemble max",
+   "has_qc": false
+  },
+  "pblh_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) planetary boundary layer height in airmass column ensemble mean",
+   "has_qc": false
+  },
+  "pblh_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) planetary boundary layer height in airmass column ensemble std",
+   "has_qc": false
+  },
+  "pblh_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) planetary boundary layer height in airmass column ensemble min",
+   "has_qc": false
+  },
+  "pblh_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) planetary boundary layer height in airmass column ensemble max",
+   "has_qc": false
+  },
+  "rh_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Surface (at initialization) airmass relative humidity ensemble mean",
+   "has_qc": false
+  },
+  "rh_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Surface (at initialization) airmass relative humidity ensemble std",
+   "has_qc": false
+  },
+  "rh_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Surface (at initialization) airmass relative humidity ensemble min",
+   "has_qc": false
+  },
+  "rh_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Surface (at initialization) airmass relative humidity ensemble max",
+   "has_qc": false
+  },
+  "surf_altitude_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) surface altitude above mean sea level in airmass column ensemble mean",
+   "has_qc": false
+  },
+  "surf_altitude_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) surface altitude above mean sea level in airmass column ensemble std",
+   "has_qc": false
+  },
+  "surf_altitude_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) surface altitude above mean sea level in airmass column ensemble min",
+   "has_qc": false
+  },
+  "surf_altitude_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) surface altitude above mean sea level in airmass column ensemble max",
+   "has_qc": false
+  },
+  "qv_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "g/kg",
+   "long_name": "Surface (at initialization) airmass specific humidity ensemble mean",
+   "has_qc": false
+  },
+  "qv_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "g/kg",
+   "long_name": "Surface (at initialization) airmass specific humidity ensemble std",
+   "has_qc": false
+  },
+  "qv_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "g/kg",
+   "long_name": "Surface (at initialization) airmass specific humidity ensemble min",
+   "has_qc": false
+  },
+  "qv_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "g/kg",
+   "long_name": "Surface (at initialization) airmass specific humidity ensemble max",
+   "has_qc": false
+  },
+  "rhi_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Surface (at initialization) airmass relative humidity with respect to ice ensemble mean",
+   "has_qc": false
+  },
+  "rhi_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Surface (at initialization) airmass relative humidity with respect to ice ensemble std",
+   "has_qc": false
+  },
+  "rhi_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Surface (at initialization) airmass relative humidity with respect to ice ensemble min",
+   "has_qc": false
+  },
+  "rhi_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "%",
+   "long_name": "Surface (at initialization) airmass relative humidity with respect to ice ensemble max",
+   "has_qc": false
+  },
+  "theta_e_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass equivalent potential temperature (excluding condensate from the calculation) ensemble mean",
+   "has_qc": false
+  },
+  "theta_e_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass equivalent potential temperature (excluding condensate from the calculation) ensemble std",
+   "has_qc": false
+  },
+  "theta_e_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass equivalent potential temperature (excluding condensate from the calculation) ensemble min",
+   "has_qc": false
+  },
+  "theta_e_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass equivalent potential temperature (excluding condensate from the calculation) ensemble max",
+   "has_qc": false
+  },
+  "theta_v_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass virtual potential temperature ensemble mean",
+   "has_qc": false
+  },
+  "theta_v_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass virtual potential temperature ensemble std",
+   "has_qc": false
+  },
+  "theta_v_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass virtual potential temperature ensemble min",
+   "has_qc": false
+  },
+  "theta_v_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "K",
+   "long_name": "Surface (at initialization) airmass virtual potential temperature ensemble max",
+   "has_qc": false
+  },
+  "altitude_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) airmass altitude above mean sea level ensemble mean",
+   "has_qc": false
+  },
+  "altitude_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) airmass altitude above mean sea level ensemble std",
+   "has_qc": false
+  },
+  "altitude_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) airmass altitude above mean sea level ensemble min",
+   "has_qc": false
+  },
+  "altitude_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Surface (at initialization) airmass altitude above mean sea level ensemble max",
+   "has_qc": false
+  },
+  "wvert_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Surface (at initialization) mean hourly airmass ascent rate ensemble mean",
+   "has_qc": true
+  },
+  "qc_wvert_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface (at initialization) mean hourly airmass ascent rate ensemble mean",
+   "has_qc": false
+  },
+  "wvert_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Surface (at initialization) mean hourly airmass ascent rate ensemble std",
+   "has_qc": true
+  },
+  "qc_wvert_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface (at initialization) mean hourly airmass ascent rate ensemble std",
+   "has_qc": false
+  },
+  "wvert_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Surface (at initialization) mean hourly airmass ascent rate ensemble min",
+   "has_qc": true
+  },
+  "qc_wvert_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface (at initialization) mean hourly airmass ascent rate ensemble min",
+   "has_qc": false
+  },
+  "wvert_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Surface (at initialization) mean hourly airmass ascent rate ensemble max",
+   "has_qc": true
+  },
+  "qc_wvert_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Surface (at initialization) mean hourly airmass ascent rate ensemble max",
+   "has_qc": false
+  },
+  "height_to_pblh_ratio_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Surface (at initialization) airmass height-to-PBLH ratio ensemble mean",
+   "has_qc": false
+  },
+  "height_to_pblh_ratio_sfc_ens_std": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Surface (at initialization) airmass height-to-PBLH ratio ensemble std",
+   "has_qc": false
+  },
+  "height_to_pblh_ratio_sfc_ens_min": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Surface (at initialization) airmass height-to-PBLH ratio ensemble min",
+   "has_qc": false
+  },
+  "height_to_pblh_ratio_sfc_ens_max": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Surface (at initialization) airmass height-to-PBLH ratio ensemble max",
+   "has_qc": false
+  },
+  "sgs_orography_angle": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "radian",
+   "long_name": "Terrain orientation in the horizontal plane (from a bird's-eye view) relative to an eastwards axis in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km",
+   "has_qc": false
+  },
+  "sgs_orography_angle_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "radian",
+   "long_name": "Terrain orientation in the horizontal plane (from a bird's-eye view) relative to an eastwards axis in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km (along ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_angle_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "radian",
+   "long_name": "Terrain orientation in the horizontal plane (from a bird's-eye view) relative to an eastwards axis in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km (along surface trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_angle_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "radian",
+   "long_name": "Terrain orientation in the horizontal plane (from a bird's-eye view) relative to an eastwards axis in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km (along surface ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_anisotropy": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Terrain distortion from a circle in the horizontal plane (from a bird's-eye view) in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km",
+   "has_qc": false
+  },
+  "sgs_orography_anisotropy_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Terrain distortion from a circle in the horizontal plane (from a bird's-eye view) in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km (along ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_anisotropy_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Terrain distortion from a circle in the horizontal plane (from a bird's-eye view) in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km (along surface trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_anisotropy_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Terrain distortion from a circle in the horizontal plane (from a bird's-eye view) in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km (along surface ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_std": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Standard deviation of orography within a grid box in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km",
+   "has_qc": false
+  },
+  "sgs_orography_std_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Standard deviation of orography within a grid box in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km (along ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_std_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Standard deviation of orography within a grid box in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km (along surface trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_std_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Standard deviation of orography within a grid box in airmass column; calculated using a minimum orographic feature horizontal scale of 5 km (along surface ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_slope": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Slope of orography within a grid box in airmass column (e.g., 0 = flat, 0.5 = 45 degree slope, 1.0 = 90 degree slope); calculated using a minimum orographic feature horizontal scale of 5 km",
+   "has_qc": false
+  },
+  "sgs_orography_slope_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Slope of orography within a grid box in airmass column (e.g., 0 = flat, 0.5 = 45 degree slope, 1.0 = 90 degree slope); calculated using a minimum orographic feature horizontal scale of 5 km (along ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_slope_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Slope of orography within a grid box in airmass column (e.g., 0 = flat, 0.5 = 45 degree slope, 1.0 = 90 degree slope); calculated using a minimum orographic feature horizontal scale of 5 km (along surface trajectory)",
+   "has_qc": false
+  },
+  "sgs_orography_slope_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Slope of orography within a grid box in airmass column (e.g., 0 = flat, 0.5 = 45 degree slope, 1.0 = 90 degree slope); calculated using a minimum orographic feature horizontal scale of 5 km (along surface ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "land_sea_mask": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Land-sea mask in airmass column",
+   "has_qc": false
+  },
+  "land_sea_mask_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Land-sea mask in airmass column along ensemble mean trajectory",
+   "has_qc": false
+  },
+  "land_sea_mask_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Land-sea mask in airmass column along surface trajectory",
+   "has_qc": false
+  },
+  "land_sea_mask_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Land-sea mask in airmass column along surface ensemble mean trajectory",
+   "has_qc": false
+  },
+  "high_vegetation_type": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "High vegetation type in airmass column",
+   "has_qc": false
+  },
+  "high_vegetation_type_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "High vegetation type in airmass column along ensemble mean trajectory",
+   "has_qc": false
+  },
+  "high_vegetation_type_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "High vegetation type in airmass column along surface trajectory",
+   "has_qc": false
+  },
+  "high_vegetation_type_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "High vegetation type in airmass column along surface ensemble mean trajectory",
+   "has_qc": false
+  },
+  "low_vegetation_type": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Low vegetation type in airmass column",
+   "has_qc": false
+  },
+  "low_vegetation_type_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Low vegetation type in airmass column along ensemble mean trajectory",
+   "has_qc": false
+  },
+  "low_vegetation_type_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Low vegetation type in airmass column along surface trajectory",
+   "has_qc": false
+  },
+  "low_vegetation_type_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Low vegetation type in airmass column along surface ensemble mean trajectory",
+   "has_qc": false
+  },
+  "high_vegetation_cover": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "High vegetation cover fraction in airmass column",
+   "has_qc": false
+  },
+  "high_vegetation_cover_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "High vegetation cover fraction in airmass column (along ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "high_vegetation_cover_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "High vegetation cover fraction in airmass column (along surface trajectory)",
+   "has_qc": false
+  },
+  "high_vegetation_cover_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "High vegetation cover fraction in airmass column (along surface ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "low_vegetation_cover": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Low vegetation cover fraction in airmass column",
+   "has_qc": false
+  },
+  "low_vegetation_cover_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Low vegetation cover fraction in airmass column (along ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "low_vegetation_cover_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Low vegetation cover fraction in airmass column (along surface trajectory)",
+   "has_qc": false
+  },
+  "low_vegetation_cover_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Low vegetation cover fraction in airmass column (along surface ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "soil_type": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Soil type in airmass column",
+   "has_qc": false
+  },
+  "soil_type_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Soil type in airmass column along ensemble mean trajectory",
+   "has_qc": false
+  },
+  "soil_type_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Soil type in airmass column along surface trajectory",
+   "has_qc": false
+  },
+  "soil_type_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Soil type in airmass column along surface ensemble mean trajectory",
+   "has_qc": false
+  },
+  "sea_ice_cover": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Sea-ice cover fraction (based on daily means) in airmass column",
+   "has_qc": true
+  },
+  "qc_sea_ice_cover": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sea-ice cover fraction (based on daily means) in airmass column",
+   "has_qc": false
+  },
+  "sea_ice_cover_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Sea-ice cover fraction (based on daily means) in airmass column (along ensemble mean trajectory)",
+   "has_qc": true
+  },
+  "qc_sea_ice_cover_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sea-ice cover fraction (based on daily means) in airmass column (along ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "sea_ice_cover_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Sea-ice cover fraction (based on daily means) in airmass column (along surface trajectory)",
+   "has_qc": true
+  },
+  "qc_sea_ice_cover_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sea-ice cover fraction (based on daily means) in airmass column (along surface trajectory)",
+   "has_qc": false
+  },
+  "sea_ice_cover_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Sea-ice cover fraction (based on daily means) in airmass column (along surface ensemble mean trajectory)",
+   "has_qc": true
+  },
+  "qc_sea_ice_cover_sfc_ens_mean": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sea-ice cover fraction (based on daily means) in airmass column (along surface ensemble mean trajectory)",
+   "has_qc": false
+  },
+  "pres_mean_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Air pressure, 1-hour mean (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "pres_std_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Air pressure, 1-hour std (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "pres_min_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Air pressure, 1-hour min (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "pres_max_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "hPa",
+   "long_name": "Air pressure, 1-hour max (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "temp_mean_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature corrected for solar radiation, 1-hour mean (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "temp_std_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature corrected for solar radiation, 1-hour std (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "temp_min_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature corrected for solar radiation, 1-hour min (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "temp_max_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Air temperature corrected for solar radiation, 1-hour max (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "rh_mean_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity, 1-hour mean (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "rh_std_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity, 1-hour std (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "rh_min_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity, 1-hour min (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "rh_max_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity, 1-hour max (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "lat_mean_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Latitude in decimal degrees from GPS, 1-hour mean (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "lat_std_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Latitude in decimal degrees from GPS, 1-hour std (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "lat_min_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Latitude in decimal degrees from GPS, 1-hour min (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "lat_max_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Latitude in decimal degrees from GPS, 1-hour max (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "lon_mean_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "Longitude in decimal degrees from GPS, 1-hour mean (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "lon_std_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "Longitude in decimal degrees from GPS, 1-hour std (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "lon_min_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "Longitude in decimal degrees from GPS, 1-hour min (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "lon_max_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "Longitude in decimal degrees from GPS, 1-hour max (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "alt_mean_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from GPS, 1-hour mean (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "alt_std_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from GPS, 1-hour std (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "alt_min_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from GPS, 1-hour min (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "alt_max_tbsimet": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from GPS, 1-hour max (averaging window starting at the corresponding timestamp)",
+   "has_qc": false
+  },
+  "tbsimet_01_alt_percentile": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "TBS 1st percentile altitude during 1-hour window (used in initialization)",
+   "has_qc": false
+  },
+  "tbsimet_99_alt_percentile": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "TBS 99th percentile altitude during 1-hour window (used in initialization)",
+   "has_qc": false
+  },
+  "lowest_tbs_alt_below_era5_sfc_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "TBS minimum altitude lower than interpolated ERA5 sfc altitude during 1-hour window (setting surface altitude as lowest HYSPLIT run altitude)",
+   "has_qc": false
+  },
+  "effective_tbs_ens_dx": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float64",
+   "units": "km",
+   "long_name": "Effective dx used in TBS trajectory ensemble (max[3.75, \u03c3], where \u03c3 is the facility longitude standard deviation (translated to kilometers) during the 1-hour window used in initialization)",
+   "has_qc": false
+  },
+  "effective_tbs_ens_dy": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float64",
+   "units": "km",
+   "long_name": "Effective dy used in TBS trajectory ensemble (max[3.75, \u03c3], where \u03c3 is the facility latitude standard deviation (translated to kilometers) during the 1-hour window used in initialization)",
+   "has_qc": false
+  },
+  "lat_tbsimet": {
+   "dims": [
+    "time_tbs"
+   ],
+   "shape": [
+    45876
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "(TBS) Latitude in decimal degrees from GPS",
+   "has_qc": true
+  },
+  "qc_lat_tbsimet": {
+   "dims": [
+    "time_tbs"
+   ],
+   "shape": [
+    45876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: (TBS) Latitude in decimal degrees from GPS",
+   "has_qc": false
+  },
+  "lon_tbsimet": {
+   "dims": [
+    "time_tbs"
+   ],
+   "shape": [
+    45876
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "(TBS) Longitude in decimal degrees from GPS",
+   "has_qc": true
+  },
+  "qc_lon_tbsimet": {
+   "dims": [
+    "time_tbs"
+   ],
+   "shape": [
+    45876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: (TBS) Longitude in decimal degrees from GPS",
+   "has_qc": false
+  },
+  "alt_tbsimet": {
+   "dims": [
+    "time_tbs"
+   ],
+   "shape": [
+    45876
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "(TBS) Altitude above mean sea level from GPS",
+   "has_qc": true
+  },
+  "qc_alt_tbsimet": {
+   "dims": [
+    "time_tbs"
+   ],
+   "shape": [
+    45876
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: (TBS) Altitude above mean sea level from GPS",
+   "has_qc": false
+  },
+  "hysplit_calculation_issue_flag": {
+   "dims": [
+    "time",
+    "trajectory_time",
+    "vert_layer"
+   ],
+   "shape": [
+    11,
+    121,
+    11
+   ],
+   "dtype": "float64",
+   "units": "count",
+   "long_name": "HYSPLIT calculation issue resulting in NaN samples. Values are the number of ensemble members with NaN samples",
+   "has_qc": false
+  },
+  "hysplit_calculation_issue_flag_sfc": {
+   "dims": [
+    "time",
+    "trajectory_time"
+   ],
+   "shape": [
+    11,
+    121
+   ],
+   "dtype": "float64",
+   "units": "count",
+   "long_name": "Surface (at initialization) hysplit calculation issue resulting in nan samples. values are the number of ensemble members with nan samples",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "trajectory_time": {
+   "dims": [
+    "trajectory_time"
+   ],
+   "shape": [
+    121
+   ],
+   "dtype": "int32",
+   "units": "h",
+   "long_name": "Trajectory offset from start time (0 h)",
+   "has_qc": false
+  },
+  "trajectory_type": {
+   "dims": [
+    "trajectory_type"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Trajectory type",
+   "has_qc": false
+  },
+  "time_tbs": {
+   "dims": [
+    "time_tbs"
+   ],
+   "shape": [
+    45876
+   ],
+   "dtype": "int32",
+   "units": "(TBS) Seconds since 2024-11-11 00:00:00 0:00",
+   "long_name": "Tbs time offset from midnight",
+   "has_qc": false
+  },
+  "vert_layer": {
+   "dims": [
+    "vert_layer"
+   ],
+   "shape": [
+    11
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Vertical layer index (bottom-up)",
+   "has_qc": false
+  }
+ },
+ "read_note": "use_base_time=True (time units not CF-decodable)"
+}

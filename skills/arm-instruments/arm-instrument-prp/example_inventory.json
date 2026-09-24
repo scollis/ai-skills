@@ -1,0 +1,236 @@
+{
+ "instrument": "prp",
+ "datastream": "acxprptcmM1.b1",
+ "filename": "acxprptcmM1.b1.20150208.000000.cdf",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 17,
+ "dims": {
+  "time": 1440,
+  "bound": 2
+ },
+ "n_qc_vars": 2,
+ "time_resolution_s": 60.0,
+ "time_span": [
+  "2015-02-08T00:00:00",
+  "2015-02-08T23:59:00"
+ ],
+ "global_attrs": {
+  "command_line": "prp_ingest -s acx -f M1 -n prptcm -R -D",
+  "process_version": "ingest-prp-1.12-0.el6",
+  "dod_version": "prptcm-b1-1.1",
+  "input_source": "/data/collection/acx/acxprptcmM1.00/tcm_avg_2015020800.txt",
+  "site_id": "acx",
+  "location_description": "ARM Cloud Aerosol Precipitation Experiment (ACAPEX), Research Vessel Ron Brown",
+  "facility_id": "M1",
+  "data_level": "b1",
+  "sampling_interval": "1 second",
+  "averaging_interval": "1 minute",
+  "serial_number": "N/A",
+  "datastream": "acxprptcmM1.b1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    1440,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "compass_heading": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Flux-gate compass heading, errors from ship magnetism",
+   "has_qc": false
+  },
+  "pitch": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Pitch angle",
+   "has_qc": true
+  },
+  "qc_pitch": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Pitch angle",
+   "has_qc": false
+  },
+  "pitch_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Pitch angle, standard deviation",
+   "has_qc": false
+  },
+  "roll": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Roll angle",
+   "has_qc": true
+  },
+  "qc_roll": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Roll angle",
+   "has_qc": false
+  },
+  "roll_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Roll angle, standard deviation",
+   "has_qc": false
+  },
+  "xmag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "microTorr",
+   "long_name": "Magnetometer field, x component, +/- 80 microTorr",
+   "has_qc": false
+  },
+  "ymag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "microTorr",
+   "long_name": "Magnetometer field, y component, +/- 80 microTorr",
+   "has_qc": false
+  },
+  "zmag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "microTorr",
+   "long_name": "Magnetometer field, z component, +/- 80 microTorr",
+   "has_qc": false
+  },
+  "circuit_board_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Circuit (interior) temperature",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1440
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

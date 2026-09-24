@@ -1,0 +1,935 @@
+{
+ "vap": "thermocldphase",
+ "datastream": "sgpthermocldphaseC1.c1",
+ "filename": "sgpthermocldphaseC1.c1.20140312.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 65,
+ "dims": {
+  "time": 2880,
+  "bound": 2,
+  "layer": 10,
+  "height": 596
+ },
+ "n_qc_vars": 26,
+ "time_resolution_s": 30.0,
+ "time_span": [
+  "2014-03-12T00:00:00",
+  "2014-03-12T23:59:30"
+ ],
+ "global_attrs": {
+  "command_line": "thermocldphase -n thermocldphase_c1 -s sgp -f C1 -b 20140312 -e 20140313 --asynchronous --log-id 20140312.12491012-0008 --disable-email --max-runtime 0",
+  "process_version": "thermocldphase-1.2.0",
+  "dod_version": "thermocldphase-c1-4.3",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpthermocldphaseC1.c1",
+  "doi": "10.5439/1871014"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    2880,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "cloud_layer_heights": {
+   "dims": [
+    "time",
+    "layer",
+    "bound"
+   ],
+   "shape": [
+    2880,
+    10,
+    2
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Base and top heights of hydrometeor layers for up to 10 layers, based on combined radar and micropulse lidar observations",
+   "has_qc": false
+  },
+  "cloud_mask": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Cloud Mask",
+   "has_qc": false
+  },
+  "cloud_phase_mplgr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Thermodynamic Cloud Phase (MPL Gradient)",
+   "has_qc": true
+  },
+  "qc_cloud_phase_mplgr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Thermodynamic Cloud Phase (MPL Gradient)",
+   "has_qc": false
+  },
+  "cloud_phase_layer_mplgr": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    2880,
+    10
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Thermodynamic Cloud Phase Layer (MPL Gradient)",
+   "has_qc": false
+  },
+  "cloud_phase_hsrl": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Thermodynamic Cloud Phase (HSRL)",
+   "has_qc": true
+  },
+  "qc_cloud_phase_hsrl": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Thermodynamic Cloud Phase (HSRL)",
+   "has_qc": false
+  },
+  "cloud_phase_layer_hsrl": {
+   "dims": [
+    "time",
+    "layer"
+   ],
+   "shape": [
+    2880,
+    10
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Thermodynamic Cloud Phase Layer (HSRL)",
+   "has_qc": false
+  },
+  "mpl_b": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "MPL Total Attenuated Backscatter",
+   "has_qc": true
+  },
+  "qc_mpl_b": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: MPL Total Attenuated Backscatter",
+   "has_qc": false
+  },
+  "mpl_b_gradient": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "MPL Gradient of Log of Backscatter",
+   "has_qc": false
+  },
+  "mpl_b_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "MPL Signal to Noise Ratio of Backscatter",
+   "has_qc": true
+  },
+  "qc_mpl_b_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: MPL Signal to Noise Ratio of Backscatter",
+   "has_qc": false
+  },
+  "mpl_ldr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "MPL Linear Depolarization Ratio",
+   "has_qc": true
+  },
+  "qc_mpl_ldr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: MPL Linear Depolarization Ratio",
+   "has_qc": false
+  },
+  "mpl_ldr_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "MPL Signal to Noise Ratio of Linear Depolarization Ratio",
+   "has_qc": true
+  },
+  "qc_mpl_ldr_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: MPL Signal to Noise Ratio of Linear Depolarization Ratio",
+   "has_qc": false
+  },
+  "mpl_overlap_correction": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    596
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "MPL Overlap Correction",
+   "has_qc": true
+  },
+  "qc_mpl_overlap_correction": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: MPL Overlap Correction",
+   "has_qc": false
+  },
+  "mpl_background_signal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float32",
+   "units": "count/us",
+   "long_name": "MPL Background Signal",
+   "has_qc": true
+  },
+  "qc_mpl_background_signal": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: MPL Background Signal",
+   "has_qc": false
+  },
+  "hsrl_b": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "1/(m sr)",
+   "long_name": "HSRL Particulate Backscatter Cross Section Per Unit Volume",
+   "has_qc": true
+  },
+  "qc_hsrl_b": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: HSRL Particulate Backscatter Cross Section Per Unit Volume",
+   "has_qc": false
+  },
+  "hsrl_b_gradient": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "HSRL Gradient of Log of Particulate Backscatter Cross Section Per Unit Volume",
+   "has_qc": false
+  },
+  "hsrl_b_smooth": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "1/(m sr)",
+   "long_name": "HSRL Particulate Backscatter Cross Section Per Unit Volume, Smoothed",
+   "has_qc": false
+  },
+  "hsrl_atten_beta_r_backscatter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "1/(m sr)",
+   "long_name": "HSRL Attenuated Molecular Return",
+   "has_qc": true
+  },
+  "qc_hsrl_atten_beta_r_backscatter": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: HSRL Attenuated Molecular Return",
+   "has_qc": false
+  },
+  "hsrl_depol": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "HSRL Circular Depolarization Ratio for Particulate",
+   "has_qc": true
+  },
+  "qc_hsrl_depol": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: HSRL Circular Depolarization Ratio for Particulate",
+   "has_qc": false
+  },
+  "hsrl_beta_a": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "1/m",
+   "long_name": "HSRL Particulate Extinction Cross Section Per Unit Volume",
+   "has_qc": true
+  },
+  "qc_hsrl_beta_a": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: HSRL Particulate Extinction Cross Section Per Unit Volume",
+   "has_qc": false
+  },
+  "radar_cloud_source_flag": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int16",
+   "units": "1",
+   "long_name": "Instrument source flag for cloud (hydrometeor) detections",
+   "has_qc": true
+  },
+  "qc_radar_cloud_source_flag": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Instrument source flag for cloud (hydrometeor) detections",
+   "has_qc": false
+  },
+  "radar_ldr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Radar Linear Depolarization Ratio",
+   "has_qc": true
+  },
+  "qc_radar_ldr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Radar Linear Depolarization Ratio",
+   "has_qc": false
+  },
+  "radar_mdv": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Radar Mean Doppler Velocity",
+   "has_qc": true
+  },
+  "qc_radar_mdv": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Radar Mean Doppler Velocity",
+   "has_qc": false
+  },
+  "radar_ze": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Radar Best-Estimate Reflectivity",
+   "has_qc": true
+  },
+  "qc_radar_ze": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Radar Best-Estimate Reflectivity",
+   "has_qc": false
+  },
+  "radar_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Radar Signal-to-Noise Ratio",
+   "has_qc": true
+  },
+  "qc_radar_snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Radar Signal-to-Noise Ratio",
+   "has_qc": false
+  },
+  "radar_w": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Radar Spectral Width",
+   "has_qc": true
+  },
+  "qc_radar_w": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Radar Spectral Width",
+   "has_qc": false
+  },
+  "radar_precip_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Radar Precipitation Mean",
+   "has_qc": true
+  },
+  "qc_radar_precip_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Radar Precipitation Mean",
+   "has_qc": false
+  },
+  "sonde_temp": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Sonde Temperature",
+   "has_qc": true
+  },
+  "qc_sonde_temp": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sonde Temperature",
+   "has_qc": false
+  },
+  "sonde_bar_pres": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Sonde Barometric Pressure",
+   "has_qc": true
+  },
+  "qc_sonde_bar_pres": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sonde Barometric Pressure",
+   "has_qc": false
+  },
+  "sonde_rh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Sonde Relative Humidity",
+   "has_qc": true
+  },
+  "qc_sonde_rh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sonde Relative Humidity",
+   "has_qc": false
+  },
+  "sonde_wdir": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Sonde Wind Direction",
+   "has_qc": true
+  },
+  "qc_sonde_wdir": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sonde Wind Direction",
+   "has_qc": false
+  },
+  "sonde_wspd": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "float32",
+   "units": "m s-1",
+   "long_name": "Sonde Wind Speed",
+   "has_qc": true
+  },
+  "qc_sonde_wspd": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    2880,
+    596
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Sonde Wind Speed",
+   "has_qc": false
+  },
+  "mwr_lwp_be": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float32",
+   "units": "g/m^2",
+   "long_name": "MWR Best-Estimate Liquid Water Path",
+   "has_qc": true
+  },
+  "qc_mwr_lwp_be": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: MWR Best-Estimate Liquid Water Path",
+   "has_qc": false
+  },
+  "mwr_pwv_be": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "float32",
+   "units": "cm",
+   "long_name": "MWR Best-Estimate Precipitable Water Vapor",
+   "has_qc": true
+  },
+  "qc_mwr_pwv_be": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: MWR Best-Estimate Precipitable Water Vapor",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2880
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    596
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height above ground level",
+   "has_qc": false
+  },
+  "layer": {
+   "dims": [
+    "layer"
+   ],
+   "shape": [
+    10
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Cloud layer number",
+   "has_qc": false
+  }
+ }
+}

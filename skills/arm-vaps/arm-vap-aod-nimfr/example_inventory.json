@@ -1,0 +1,1824 @@
+{
+ "vap": "aod-nimfr",
+ "datastream": "sgpnimfr7nchaod1michC1.c1",
+ "filename": "sgpnimfr7nchaod1michC1.c1.20260919.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 160,
+ "dims": {
+  "time": 86400,
+  "wavelength": 750,
+  "Io_interquartile_time": 62,
+  "Io_wavelength": 6,
+  "Io_gauss_time": 61
+ },
+ "n_qc_vars": 53,
+ "time_resolution_s": 1.0,
+ "time_span": [
+  "2026-09-19T00:00:00",
+  "2026-09-19T23:59:59"
+ ],
+ "global_attrs": {
+  "command_line": "mfraod -n mfraod_nimfr7nch -s sgp -f C1 -b 20260919 -e 20260920 --max-runtime 86400",
+  "process_version": "vap-mfraod-2.17-0.el9",
+  "dod_version": "nimfr7nchaod1mich-c1-1.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpnimfr7nchaod1michC1.c1",
+  "serial_number": "Refer to logger_id and head_id",
+  "sampling_interval": "1 second",
+  "doi": "10.5439/1879865"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter1_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Direct normal narrowband irradiance, filter 1, raw data as read",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter2_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Direct normal narrowband irradiance, filter 2, raw data as read",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter3_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Direct normal narrowband irradiance, filter 3, raw data as read",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter4_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Direct normal narrowband irradiance, filter 4, raw data as read",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter5_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Direct normal narrowband irradiance, filter 5, raw data as read",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter6_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Direct normal narrowband irradiance, filter 6, raw data as read",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter7_raw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Direct normal narrowband irradiance, filter 7, raw data as read",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct normal irradiance, filter 1",
+   "has_qc": true
+  },
+  "qc_direct_normal_narrowband_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct normal irradiance, filter 1",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct normal irradiance, filter 2",
+   "has_qc": true
+  },
+  "qc_direct_normal_narrowband_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct normal irradiance, filter 2",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct normal irradiance, filter 3",
+   "has_qc": true
+  },
+  "qc_direct_normal_narrowband_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct normal irradiance, filter 3",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct normal irradiance, filter 4",
+   "has_qc": true
+  },
+  "qc_direct_normal_narrowband_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct normal irradiance, filter 4",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct normal irradiance, filter 5",
+   "has_qc": true
+  },
+  "qc_direct_normal_narrowband_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct normal irradiance, filter 5",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct normal irradiance, filter 6",
+   "has_qc": true
+  },
+  "qc_direct_normal_narrowband_filter6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct normal irradiance, filter 6",
+   "has_qc": false
+  },
+  "direct_normal_narrowband_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct normal irradiance, filter 7",
+   "has_qc": true
+  },
+  "qc_direct_normal_narrowband_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct normal irradiance, filter 7",
+   "has_qc": false
+  },
+  "direct_horizontal_narrowband_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct horizontal irradiance, filter 1",
+   "has_qc": true
+  },
+  "qc_direct_horizontal_narrowband_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct horizontal irradiance, filter 1",
+   "has_qc": false
+  },
+  "direct_horizontal_narrowband_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct horizontal irradiance, filter 2",
+   "has_qc": true
+  },
+  "qc_direct_horizontal_narrowband_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct horizontal irradiance, filter 2",
+   "has_qc": false
+  },
+  "direct_horizontal_narrowband_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct horizontal irradiance, filter 3",
+   "has_qc": true
+  },
+  "qc_direct_horizontal_narrowband_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct horizontal irradiance, filter 3",
+   "has_qc": false
+  },
+  "direct_horizontal_narrowband_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct horizontal irradiance, filter 4",
+   "has_qc": true
+  },
+  "qc_direct_horizontal_narrowband_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct horizontal irradiance, filter 4",
+   "has_qc": false
+  },
+  "direct_horizontal_narrowband_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct horizontal irradiance, filter 5",
+   "has_qc": true
+  },
+  "qc_direct_horizontal_narrowband_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct horizontal irradiance, filter 5",
+   "has_qc": false
+  },
+  "direct_horizontal_narrowband_filter6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct horizontal irradiance, filter 6",
+   "has_qc": true
+  },
+  "qc_direct_horizontal_narrowband_filter6": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct horizontal irradiance, filter 6",
+   "has_qc": false
+  },
+  "direct_horizontal_narrowband_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Narrowband direct horizontal irradiance, filter 7",
+   "has_qc": true
+  },
+  "qc_direct_horizontal_narrowband_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Narrowband direct horizontal irradiance, filter 7",
+   "has_qc": false
+  },
+  "head_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Detector temperature",
+   "has_qc": true
+  },
+  "qc_head_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Detector temperature",
+   "has_qc": false
+  },
+  "logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "V",
+   "long_name": "Data logger supply voltage",
+   "has_qc": true
+  },
+  "qc_logger_volt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Data logger supply voltage",
+   "has_qc": false
+  },
+  "tube_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Tube temperature",
+   "has_qc": true
+  },
+  "qc_tube_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Tube temperature",
+   "has_qc": false
+  },
+  "head_temp2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Second detector temperature",
+   "has_qc": true
+  },
+  "qc_head_temp2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Second detector temperature",
+   "has_qc": false
+  },
+  "solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Apparent solar zenith angle",
+   "has_qc": false
+  },
+  "cosine_solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine of apparent solar zenith angle",
+   "has_qc": false
+  },
+  "elevation_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Elevation angle",
+   "has_qc": false
+  },
+  "airmass": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Airmass",
+   "has_qc": true
+  },
+  "qc_airmass": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Airmass",
+   "has_qc": false
+  },
+  "azimuth_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Azimuth angle",
+   "has_qc": false
+  },
+  "wavelength_filter1": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter 1, wavelength value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_wavelength_filter1": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 1, wavelength value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter1": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter 1, measured transmittance value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_normalized_transmittance_filter1": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 1, measured transmittance value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "wavelength_filter2": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter 2, wavelength value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_wavelength_filter2": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 2, wavelength value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter2": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter 2, measured transmittance value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_normalized_transmittance_filter2": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 2, measured transmittance value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "wavelength_filter3": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter 3, wavelength value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_wavelength_filter3": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 3, wavelength value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter3": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter 3, measured transmittance value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_normalized_transmittance_filter3": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 3, measured transmittance value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "wavelength_filter4": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter 4, wavelength value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_wavelength_filter4": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 4, wavelength value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter4": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter 4, measured transmittance value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_normalized_transmittance_filter4": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 4, measured transmittance value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "wavelength_filter5": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter 5, wavelength value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_wavelength_filter5": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 5, wavelength value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter5": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter 5, measured transmittance value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_normalized_transmittance_filter5": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 5, measured transmittance value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "wavelength_filter6": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter 6, wavelength value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_wavelength_filter6": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 6, wavelength value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter6": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter 6, measured transmittance value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_normalized_transmittance_filter6": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 6, measured transmittance value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "wavelength_filter7": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Normalized filter function data, filter 7, wavelength value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_wavelength_filter7": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 7, wavelength value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "normalized_transmittance_filter7": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized filter function data, filter 7, measured transmittance value obtained during bench calibrations",
+   "has_qc": true
+  },
+  "qc_normalized_transmittance_filter7": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Normalized filter function data, filter 7, measured transmittance value obtained during bench calibrations",
+   "has_qc": false
+  },
+  "TOA_irradiance": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "W/(m^2 nm)",
+   "long_name": "Top of atmosphere direct normal solar irradiance",
+   "has_qc": false
+  },
+  "offset_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from direct normal filter1 data",
+   "has_qc": false
+  },
+  "offset_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from direct normal filter2 data",
+   "has_qc": false
+  },
+  "offset_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from direct normal filter3 data",
+   "has_qc": false
+  },
+  "offset_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from direct normal filter4 data",
+   "has_qc": false
+  },
+  "offset_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from direct normal filter5 data",
+   "has_qc": false
+  },
+  "offset_filter6": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from direct normal filter6 data",
+   "has_qc": false
+  },
+  "offset_filter7": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Offset subtracted from direct normal filter7 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor, applied to filter1 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor, applied to filter2 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor, applied to filter3 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor, applied to filter4 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor, applied to filter5 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter6": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor, applied to filter6 data",
+   "has_qc": false
+  },
+  "nominal_calibration_factor_filter7": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count/(W/(m^2 nm))",
+   "long_name": "Nominal calibration factor, applied to filter7 data",
+   "has_qc": false
+  },
+  "total_optical_depth_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total optical depth direct narrowband filter 1",
+   "has_qc": true
+  },
+  "qc_total_optical_depth_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total optical depth direct narrowband filter 1",
+   "has_qc": false
+  },
+  "total_optical_depth_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total optical depth direct narrowband filter 2",
+   "has_qc": true
+  },
+  "qc_total_optical_depth_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total optical depth direct narrowband filter 2",
+   "has_qc": false
+  },
+  "total_optical_depth_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total optical depth direct narrowband filter 3",
+   "has_qc": true
+  },
+  "qc_total_optical_depth_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total optical depth direct narrowband filter 3",
+   "has_qc": false
+  },
+  "total_optical_depth_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total optical depth direct narrowband filter 4",
+   "has_qc": true
+  },
+  "qc_total_optical_depth_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total optical depth direct narrowband filter 4",
+   "has_qc": false
+  },
+  "total_optical_depth_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total optical depth direct narrowband filter 5",
+   "has_qc": true
+  },
+  "qc_total_optical_depth_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total optical depth direct narrowband filter 5",
+   "has_qc": false
+  },
+  "total_optical_depth_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Total optical depth direct narrowband filter 7",
+   "has_qc": true
+  },
+  "qc_total_optical_depth_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total optical depth direct narrowband filter 7",
+   "has_qc": false
+  },
+  "angstrom_exponent": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Angstrom exponent",
+   "has_qc": true
+  },
+  "qc_angstrom_exponent": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Angstrom exponent",
+   "has_qc": false
+  },
+  "aerosol_optical_depth_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 1",
+   "has_qc": true
+  },
+  "qc_aerosol_optical_depth_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 1",
+   "has_qc": false
+  },
+  "aerosol_optical_depth_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 2",
+   "has_qc": true
+  },
+  "qc_aerosol_optical_depth_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 2",
+   "has_qc": false
+  },
+  "aerosol_optical_depth_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 3",
+   "has_qc": true
+  },
+  "qc_aerosol_optical_depth_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 3",
+   "has_qc": false
+  },
+  "aerosol_optical_depth_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 4",
+   "has_qc": true
+  },
+  "qc_aerosol_optical_depth_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 4",
+   "has_qc": false
+  },
+  "aerosol_optical_depth_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 5",
+   "has_qc": true
+  },
+  "qc_aerosol_optical_depth_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 5",
+   "has_qc": false
+  },
+  "aerosol_optical_depth_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Aerosol optical depth filter 7",
+   "has_qc": true
+  },
+  "qc_aerosol_optical_depth_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol optical depth filter 7",
+   "has_qc": false
+  },
+  "variability_flag": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Flag determined using cloud screen algorithm",
+   "has_qc": false
+  },
+  "surface_pressure": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Surface pressure",
+   "has_qc": false
+  },
+  "Io_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 1",
+   "has_qc": true
+  },
+  "qc_Io_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 1",
+   "has_qc": false
+  },
+  "Io_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 2",
+   "has_qc": true
+  },
+  "qc_Io_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 2",
+   "has_qc": false
+  },
+  "Io_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 3",
+   "has_qc": true
+  },
+  "qc_Io_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 3",
+   "has_qc": false
+  },
+  "Io_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 4",
+   "has_qc": true
+  },
+  "qc_Io_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 4",
+   "has_qc": false
+  },
+  "Io_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 5",
+   "has_qc": true
+  },
+  "qc_Io_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 5",
+   "has_qc": false
+  },
+  "Io_filter7": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 7",
+   "has_qc": true
+  },
+  "qc_Io_filter7": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: TOA direct normal irradiance corrected for earth-sun distance from robustly filtered Langley regressions for filter 7",
+   "has_qc": false
+  },
+  "Ozone_column_amount": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "DU",
+   "long_name": "Ozone column amount from satellite",
+   "has_qc": true
+  },
+  "qc_Ozone_column_amount": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Ozone column amount from satellite",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 1",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 2",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 3",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 4",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 5",
+   "has_qc": false
+  },
+  "Rayleigh_optical_depth_filter7": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Rayleigh optical depth adjusted for surface pressure for filter 7",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter1": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone absorption coefficient, filter 1",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter2": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone absorption coefficient, filter 2",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter3": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone absorption coefficient, filter 3",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter4": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone absorption coefficient, filter 4",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter5": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone absorption coefficient, filter 5",
+   "has_qc": false
+  },
+  "Ozone_optical_depth_filter7": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Ozone optical depth, computed from ozone absorption coefficient, filter 7",
+   "has_qc": false
+  },
+  "sun_to_earth_distance": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "astronomical_unit",
+   "long_name": "Sun to earth distance",
+   "has_qc": false
+  },
+  "direct_normal_transmittance_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Line-of-sight atmospheric transmittance, filter 1",
+   "has_qc": false
+  },
+  "direct_normal_transmittance_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Line-of-sight atmospheric transmittance, filter 2",
+   "has_qc": false
+  },
+  "direct_normal_transmittance_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Line-of-sight atmospheric transmittance, filter 3",
+   "has_qc": false
+  },
+  "direct_normal_transmittance_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Line-of-sight atmospheric transmittance, filter 4",
+   "has_qc": false
+  },
+  "direct_normal_transmittance_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Line-of-sight atmospheric transmittance, filter 5",
+   "has_qc": false
+  },
+  "direct_normal_transmittance_filter7": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Line-of-sight atmospheric transmittance, filter 7",
+   "has_qc": false
+  },
+  "Io_interquartile_values": {
+   "dims": [
+    "Io_interquartile_time",
+    "Io_wavelength"
+   ],
+   "shape": [
+    62,
+    6
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Interquartile Io values",
+   "has_qc": false
+  },
+  "Io_gauss_values": {
+   "dims": [
+    "Io_gauss_time",
+    "Io_wavelength"
+   ],
+   "shape": [
+    61,
+    6
+   ],
+   "dtype": "float32",
+   "units": "count",
+   "long_name": "Io values after gaussian filter",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    86400
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "wavelength": {
+   "dims": [
+    "wavelength"
+   ],
+   "shape": [
+    750
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Top of atmosphere spectrum wavelengths",
+   "has_qc": false
+  },
+  "Io_interquartile_time": {
+   "dims": [
+    "Io_interquartile_time"
+   ],
+   "shape": [
+    62
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time for interquartile Io sample times",
+   "has_qc": false
+  },
+  "Io_gauss_time": {
+   "dims": [
+    "Io_gauss_time"
+   ],
+   "shape": [
+    61
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time for Ios after gaussian filter",
+   "has_qc": false
+  }
+ }
+}

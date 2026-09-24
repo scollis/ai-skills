@@ -1,0 +1,1681 @@
+{
+ "vap": "aerosolbe",
+ "datastream": "sgpaerosolbe1turnC1.c1",
+ "filename": "sgpaerosolbe1turnC1.c1.20210401.000000.cdf",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 129,
+ "dims": {
+  "time": 4320,
+  "height": 177,
+  "height_rl": 192,
+  "parameter": 2
+ },
+ "n_qc_vars": 25,
+ "time_resolution_s": 600.0,
+ "time_span": [
+  "2021-04-01T00:00:00",
+  "2021-04-30T23:50:00"
+ ],
+ "global_attrs": {
+  "command_line": "aerosolbe1turn -n aerosolbe -b 20210401 -s sgp -f C1 -R",
+  "process_version": "Exp",
+  "dod_version": "aerosolbe1turn-c1-1.2",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpaerosolbe1turnC1.c1",
+  "averaging_interval": "10 minutes"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "qc_time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Time offset from midnight",
+   "has_qc": false
+  },
+  "be_aod_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Best estimate aerosol optical depth at 500 nm",
+   "has_qc": true
+  },
+  "qc_be_aod_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Best estimate aerosol optical depth at 500 nm",
+   "has_qc": false
+  },
+  "source_be_aod_500": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source of best-estimate AOD at 500 nm",
+   "has_qc": false
+  },
+  "be_aod_355": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Best estimate aerosol optical depth at 355nm",
+   "has_qc": true
+  },
+  "qc_be_aod_355": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Best estimate aerosol optical depth at 355nm",
+   "has_qc": false
+  },
+  "source_be_aod_355": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source of best estimate AOD at 355 nm",
+   "has_qc": false
+  },
+  "be_angstrom_exponent": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Best estimate Angstrom exponent",
+   "has_qc": true
+  },
+  "qc_be_angstrom_exponent": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Best estimate Angstrom exponent",
+   "has_qc": false
+  },
+  "source_be_angstrom_exponent": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "source of best estimate Angstrom exponent",
+   "has_qc": false
+  },
+  "extinction_profile": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol extinction profile at 500 nm",
+   "has_qc": false
+  },
+  "single_scattering_albedo_red": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol single scattering albedo profile, red wavelength, 1um size cut",
+   "has_qc": false
+  },
+  "single_scattering_albedo_green": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol single scattering albedo profile, green wavelength, 1um size cut",
+   "has_qc": false
+  },
+  "single_scattering_albedo_blue": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol single scattering albedo profile, blue wavelength, 1um size cut",
+   "has_qc": false
+  },
+  "asymmetry_parameter_red": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol asymmetry parameter profile, red wavelength, 1um size cut",
+   "has_qc": false
+  },
+  "asymmetry_parameter_green": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol asymmetry parameter profile, green wavelength, 1um size cut",
+   "has_qc": false
+  },
+  "asymmetry_parameter_blue": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Aerosol asymmetry parameter profile, blue wavelength, 1um size cut",
+   "has_qc": false
+  },
+  "bsf_R_Dry_1um": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Hemispheric backscatter fraction, red wavelength, 1 um size cut",
+   "has_qc": false
+  },
+  "bsf_G_Dry_1um": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Hemispheric backscatter fraction, green wavelength, 1 um size cut",
+   "has_qc": false
+  },
+  "bsf_B_Dry_1um": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Hemispheric backscatter fraction, blue wavelength, 1 um size cut",
+   "has_qc": false
+  },
+  "total_scatter_coefficient_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol total scattering coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_total_scatter_coefficient_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total scattering coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "source_total_scatter_coefficient_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for: Aerosol total scattering coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "total_scatter_coefficient_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol total scatter coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_total_scatter_coefficient_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total scatter coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "source_total_scatter_coefficient_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for: Aerosol total scatter coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "total_scatter_coefficient_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol total scatter coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_total_scatter_coefficient_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol total scatter coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "source_total_scatter_coefficient_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for: Aerosol total scatter coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "backscatter_coefficient_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol backscatter coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_backscatter_coefficient_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol backscatter coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "source_backscatter_coefficient_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for: Aerosol backscatter coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "backscatter_coefficient_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol backscatter coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_backscatter_coefficient_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol backscatter coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "source_backscatter_coefficient_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for: Aerosol backscatter coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "backscatter_coefficient_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol backscatter coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_backscatter_coefficient_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol backscatter coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "source_backscatter_coefficient_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for: Aerosol backscatter coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "absorption_coefficient_mean_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol absorption coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_absorption_coefficient_mean_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol absorption coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "source_absorption_coefficient_mean_red": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for: Aerosol absorption coefficient, red wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "absorption_coefficient_mean_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol absorption coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_absorption_coefficient_mean_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol absorption coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "source_absorption_coefficient_mean_green": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for: Aerosol absorption coefficient, green wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "absorption_coefficient_mean_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol absorption coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": true
+  },
+  "qc_absorption_coefficient_mean_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Aerosol absorption coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "source_absorption_coefficient_mean_blue": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for: Aerosol absorption coefficient, blue wavelength, low RH, 1 um size cut",
+   "has_qc": false
+  },
+  "rh": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity profile from sonde",
+   "has_qc": false
+  },
+  "source_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source of RH",
+   "has_qc": false
+  },
+  "mean_aod_nimfr_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth at 415 nm from NIMFR",
+   "has_qc": true
+  },
+  "qc_mean_aod_nimfr_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean aerosol optical depth at 415 nm from NIMFR",
+   "has_qc": false
+  },
+  "sdev_aod_nimfr_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Standard deviation of aerosol optical depth at 415 nm from NIMFR",
+   "has_qc": false
+  },
+  "mean_aod_nimfr_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth at 500 nm from NIMFR",
+   "has_qc": true
+  },
+  "qc_mean_aod_nimfr_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean aerosol optical depth at 500 nm from NIMFR",
+   "has_qc": false
+  },
+  "sdev_aod_nimfr_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Standard deviation of aerosol optical depth at 500 nm from NIMFR",
+   "has_qc": false
+  },
+  "mean_aod_nimfr_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth at 615 nm from NIMFR",
+   "has_qc": true
+  },
+  "qc_mean_aod_nimfr_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean aerosol optical depth at 615 nm from NIMFR",
+   "has_qc": false
+  },
+  "sdev_aod_nimfr_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Standard deviation of aerosol optical depth at 615 nm from NIMFR",
+   "has_qc": false
+  },
+  "mean_aod_nimfr_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth at 673 nm from NIMFR",
+   "has_qc": true
+  },
+  "qc_mean_aod_nimfr_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean aerosol optical depth at 673 nm from NIMFR",
+   "has_qc": false
+  },
+  "sdev_aod_nimfr_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Standard deviation of aerosol optical depth at 673 nm from NIMFR",
+   "has_qc": false
+  },
+  "mean_aod_nimfr_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth at 870 nm from NIMFR",
+   "has_qc": true
+  },
+  "qc_mean_aod_nimfr_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean aerosol optical depth at 870 nm from NIMFR",
+   "has_qc": false
+  },
+  "sdev_aod_nimfr_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Standard deviation of aerosol optical depth at 870 nm from NIMFR",
+   "has_qc": false
+  },
+  "mean_angstrom_exponent_nimfr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean angstrom exponent from NIMFR observations, wavelengths used by mfrod1barnmich VAP are 500nm and 870nm",
+   "has_qc": true
+  },
+  "qc_mean_angstrom_exponent_nimfr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean angstrom exponent from NIMFR observations, wavelengths used by mfrod1barnmich VAP are 500nm and 870nm",
+   "has_qc": false
+  },
+  "interpolated_angstrom_exponent_nimfr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Interpolated angstrom exponent from NIMFR observations",
+   "has_qc": false
+  },
+  "mean_aod_mfrsr_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth at 415 nm from MFRSR",
+   "has_qc": true
+  },
+  "qc_mean_aod_mfrsr_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean aerosol optical depth at 415 nm from MFRSR",
+   "has_qc": false
+  },
+  "sdev_aod_mfrsr_filter1": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Standard deviation of aerosol optical depth at 415 nm from MFRSR",
+   "has_qc": false
+  },
+  "mean_aod_mfrsr_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth at 500 nm from MFRSR",
+   "has_qc": true
+  },
+  "qc_mean_aod_mfrsr_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean aerosol optical depth at 500 nm from MFRSR",
+   "has_qc": false
+  },
+  "sdev_aod_mfrsr_filter2": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Standard deviation of aerosol optical depth at 500 nm from MFRSR",
+   "has_qc": false
+  },
+  "mean_aod_mfrsr_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth at 615 nm from MFRSR",
+   "has_qc": true
+  },
+  "qc_mean_aod_mfrsr_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean aerosol optical depth at 615 nm from MFRSR",
+   "has_qc": false
+  },
+  "sdev_aod_mfrsr_filter3": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Standard deviation of aerosol optical depth at 615 nm from MFRSR",
+   "has_qc": false
+  },
+  "mean_aod_mfrsr_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth at 673 nm from MFRSR",
+   "has_qc": true
+  },
+  "qc_mean_aod_mfrsr_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean aerosol optical depth at 673 nm from MFRSR",
+   "has_qc": false
+  },
+  "sdev_aod_mfrsr_filter4": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Standard deviation of aerosol optical depth at 673 nm from MFRSR",
+   "has_qc": false
+  },
+  "mean_aod_mfrsr_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth at 870 nm from MFRSR",
+   "has_qc": true
+  },
+  "qc_mean_aod_mfrsr_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean aerosol optical depth at 870 nm from MFRSR",
+   "has_qc": false
+  },
+  "sdev_aod_mfrsr_filter5": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Standard deviation of aerosol optical depth at 870 nm from MFRSR",
+   "has_qc": false
+  },
+  "mean_angstrom_exponent_mfrsr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean angstrom exponent from MFRSR observations, wavelengths used by mfrod1barnmich VAP are 500nm and 870nm",
+   "has_qc": true
+  },
+  "qc_mean_angstrom_exponent_mfrsr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Mean angstrom exponent from MFRSR observations, wavelengths used by mfrod1barnmich VAP are 500nm and 870nm",
+   "has_qc": false
+  },
+  "interpolated_angstrom_exponent_mfrsr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Interpolated angstrom exponent from MFRSR observations",
+   "has_qc": false
+  },
+  "mean_aod_rl": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth from Raman lidar at 355 nm",
+   "has_qc": false
+  },
+  "rh_rl": {
+   "dims": [
+    "time",
+    "height_rl"
+   ],
+   "shape": [
+    4320,
+    192
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity profile from Raman lidar",
+   "has_qc": false
+  },
+  "angstrom_exponent_rl": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent derived from Raman lidar (if available) and contents of angstrom_exponent_mfr",
+   "has_qc": false
+  },
+  "angstrom_exponent_mfr": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent derived from NIMFR (first choice) and MFRSR (second choice)",
+   "has_qc": false
+  },
+  "angstrom_exponent_rl_filled": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent derived from Raman lidar and angstrom_exponent_mfr field; gaps of more than 1 day are interpolated",
+   "has_qc": false
+  },
+  "angstrom_exponent_AIP": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Angstrom exponent computed from 10-minute averages of total scattering coefficients",
+   "has_qc": false
+  },
+  "GrnTscat_humidified": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Humidified total scatter coefficient at 500 nm for 1 um size cut",
+   "has_qc": false
+  },
+  "GrnBscat_humidified": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Humidified backscatter coefficient at 500 nm for 1 um size cut",
+   "has_qc": false
+  },
+  "BluTscat_humidified": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Humidified total scatter coefficient at 450 nm for 1 um size cut",
+   "has_qc": false
+  },
+  "BluBscat_humidified": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Humidified backscatter coefficient at 450 nm for 1 um size cut",
+   "has_qc": false
+  },
+  "RedTscat_humidified": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Humidified total scatter coefficient at 700 nm for 1 um size cut",
+   "has_qc": false
+  },
+  "RedBscat_humidified": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Humidified backscatter coefficient at 700 nm for 1 um size cut",
+   "has_qc": false
+  },
+  "rh_mean_surf_boundary": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean of relative humidity from sonde from surface to boundary level",
+   "has_qc": false
+  },
+  "predicted_aod": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Predicted Aerosol Optical Depth using linear regression",
+   "has_qc": false
+  },
+  "boundary_layer": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Boundary layer mixing height",
+   "has_qc": false
+  },
+  "mean_aod_aos": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Mean aerosol optical depth derived from extinction profile.",
+   "has_qc": false
+  },
+  "extinction_profile_scaled": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Scaled Aerosol extinction profile at 500 nm",
+   "has_qc": false
+  },
+  "extinction_profile_aos": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol extinction profile at 500 nm",
+   "has_qc": false
+  },
+  "extinction_profile_clim": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "1/km",
+   "long_name": "Aerosol extinction profile at 500 nm",
+   "has_qc": false
+  },
+  "solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "degrees",
+   "long_name": "Solar zenith angle",
+   "has_qc": false
+  },
+  "fRH_Bs_G_1um_2p": {
+   "dims": [
+    "time",
+    "parameter"
+   ],
+   "shape": [
+    4320,
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Coefficients for 2 parameter fit of Bs_G_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "source_fRH_Bs_G_1um_2p": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for coefficients for 2 parameter fit of Bs_G_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "fRH_Bs_B_1um_2p": {
+   "dims": [
+    "time",
+    "parameter"
+   ],
+   "shape": [
+    4320,
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Coefficients for 2 parameter fit of Bs_B_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "source_fRH_Bs_B_1um_2p": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for coefficients for 2 parameter fit of Bs_B_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "fRH_Bs_R_1um_2p": {
+   "dims": [
+    "time",
+    "parameter"
+   ],
+   "shape": [
+    4320,
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Coefficients for 2 parameter fit of Bs_R_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "source_fRH_Bs_R_1um_2p": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for coefficients for 2 parameter fit of Bs_R_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "fRH_Bbs_G_1um_2p": {
+   "dims": [
+    "time",
+    "parameter"
+   ],
+   "shape": [
+    4320,
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Coefficients for 2 parameter fit of Bbs_G_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "source_fRH_Bbs_G_1um_2p": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for coefficients for 2 parameter fit of Bbs_G_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "fRH_Bbs_B_1um_2p": {
+   "dims": [
+    "time",
+    "parameter"
+   ],
+   "shape": [
+    4320,
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Coefficients for 2 parameter fit of Bbs_B_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "source_fRH_Bbs_B_1um_2p": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for coefficients for 2 parameter fit of Bbs_B_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "fRH_Bbs_R_1um_2p": {
+   "dims": [
+    "time",
+    "parameter"
+   ],
+   "shape": [
+    4320,
+    2
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Coefficients for 2 parameter fit of Bbs_R_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "source_fRH_Bbs_R_1um_2p": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Source for coefficients for 2 parameter fit of Bbs_R_1um hygroscopic growth as a function of RH",
+   "has_qc": false
+  },
+  "RH_NephVol_Dry": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Relative humidity inside dry nephelometer",
+   "has_qc": false
+  },
+  "ratio_Bs_R_1um": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Computed ratio of Bs_R_1um at rh% and RH_NephVol_Dry",
+   "has_qc": false
+  },
+  "ratio_Bs_G_1um": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Computed ratio of Bs_G_1um at rh% and RH_NephVol_Dry",
+   "has_qc": false
+  },
+  "ratio_Bs_B_1um": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Computed ratio of Bs_B_1um at rh% and RH_NephVol_Dry",
+   "has_qc": false
+  },
+  "ratio_Bbs_R_1um": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Computed ratio of Bbs_R_1um at rh% and RH_NephVol_Dry",
+   "has_qc": false
+  },
+  "ratio_Bbs_G_1um": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Computed ratio of Bbs_G_1um at rh% and RH_NephVol_Dry",
+   "has_qc": false
+  },
+  "ratio_Bbs_B_1um": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    4320,
+    177
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Computed ratio of Bbs_B_1um at rh% and RH_NephVol_Dry",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    4320
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": true
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    177
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "Height above ground level from aerosolbe1turn_parameter file",
+   "has_qc": false
+  },
+  "height_rl": {
+   "dims": [
+    "height_rl"
+   ],
+   "shape": [
+    192
+   ],
+   "dtype": "float32",
+   "units": "km",
+   "long_name": "height above ground level from Raman lidar",
+   "has_qc": false
+  },
+  "parameter": {
+   "dims": [
+    "parameter"
+   ],
+   "shape": [
+    2
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Parameter dimension for f(RH) two parameter fits",
+   "has_qc": false
+  }
+ }
+}

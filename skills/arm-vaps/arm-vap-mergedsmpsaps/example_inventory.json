@@ -1,0 +1,466 @@
+{
+ "vap": "mergedsmpsaps",
+ "datastream": "enamergedsmpsapsC1.c1",
+ "filename": "enamergedsmpsapsC1.c1.20260920.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 32,
+ "dims": {
+  "time": 24,
+  "bound": 2,
+  "merged_diameter_mobility": 212,
+  "diameter_aerodynamic": 51,
+  "diameter_mobility": 192
+ },
+ "n_qc_vars": 5,
+ "time_resolution_s": 3600.0,
+ "time_span": [
+  "2026-09-20T00:00:00",
+  "2026-09-20T23:00:00"
+ ],
+ "global_attrs": {
+  "command_line": "mergedsmpsaps -s ena -f C1 -b 20260920 -e 20260921 --max-runtime 86400",
+  "process_version": "mergedsmpsaps-0.4.1",
+  "dod_version": "mergedsmpsaps-c1-1.3",
+  "site_id": "ena",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Eastern North Atlantic (ENA), Graciosa Island, Azores",
+  "datastream": "enamergedsmpsapsC1.c1",
+  "doi": "10.5439/1871375"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    24,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "merged_diameter_mobility_bounds": {
+   "dims": [
+    "merged_diameter_mobility",
+    "bound"
+   ],
+   "shape": [
+    212,
+    2
+   ],
+   "dtype": "float64",
+   "units": "nm",
+   "long_name": "Diameter_mobility_merged cell bounds",
+   "has_qc": false
+  },
+  "diameter_aerodynamic_bounds": {
+   "dims": [
+    "diameter_aerodynamic",
+    "bound"
+   ],
+   "shape": [
+    51,
+    2
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Aerodynamic diameter bin boundaries",
+   "has_qc": false
+  },
+  "diameter_mobility_bounds": {
+   "dims": [
+    "diameter_mobility",
+    "bound"
+   ],
+   "shape": [
+    192,
+    2
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Mobility diameter bin boundaries",
+   "has_qc": false
+  },
+  "effective_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "g/cm^3",
+   "long_name": "Aerosol particle effective density",
+   "has_qc": true
+  },
+  "qc_effective_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Aerosol particle effective density",
+   "has_qc": false
+  },
+  "effective_density_solution_strength": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Strength of effective density solution",
+   "has_qc": false
+  },
+  "merged_dN_dlogDp": {
+   "dims": [
+    "time",
+    "merged_diameter_mobility"
+   ],
+   "shape": [
+    24,
+    212
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number size distribution, merged",
+   "has_qc": true
+  },
+  "qc_merged_dN_dlogDp": {
+   "dims": [
+    "time",
+    "merged_diameter_mobility"
+   ],
+   "shape": [
+    24,
+    212
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Number size distribution, merged",
+   "has_qc": false
+  },
+  "merged_total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Total aerosol number concentration, merged",
+   "has_qc": true
+  },
+  "qc_merged_total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total aerosol number concentration, merged",
+   "has_qc": false
+  },
+  "merged_total_SA_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "nm^2/cm^3",
+   "long_name": "Total aerosol surface area, merged",
+   "has_qc": true
+  },
+  "qc_merged_total_SA_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total aerosol surface area, merged",
+   "has_qc": false
+  },
+  "merged_total_V_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "nm^3/cm^3",
+   "long_name": "Total aerosol volume, merged",
+   "has_qc": true
+  },
+  "qc_merged_total_V_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Total aerosol volume, merged",
+   "has_qc": false
+  },
+  "aps_total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration from integrated size distribution, APS",
+   "has_qc": false
+  },
+  "smps_total_N_conc": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Aerosol number concentration from integrated size distribution, SMPS",
+   "has_qc": false
+  },
+  "aps_dN_dlogDp": {
+   "dims": [
+    "time",
+    "diameter_aerodynamic"
+   ],
+   "shape": [
+    24,
+    51
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number size distribution, aerodynamic diameter",
+   "has_qc": false
+  },
+  "smps_dN_dlogDp": {
+   "dims": [
+    "time",
+    "diameter_mobility"
+   ],
+   "shape": [
+    24,
+    192
+   ],
+   "dtype": "float32",
+   "units": "1/cm^3",
+   "long_name": "Number size distribution, electrical mobility diameter",
+   "has_qc": false
+  },
+  "resid_DA_num": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Dual Annealing Number Solution Residual",
+   "has_qc": false
+  },
+  "resid_DA_vol": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Dual Annealing Volume Solution Residual",
+   "has_qc": false
+  },
+  "resid_DE_num": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Differential Evolution Number Solution Residual",
+   "has_qc": false
+  },
+  "resid_DE_vol": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Differential Evolution Volume Solution Residual",
+   "has_qc": false
+  },
+  "DA_num_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "g/cm^3",
+   "long_name": "Dual Annealing Number Solution Effective Density",
+   "has_qc": false
+  },
+  "DA_vol_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "g/cm^3",
+   "long_name": "Dual Annealing Volume Solution Effective Density",
+   "has_qc": false
+  },
+  "DE_num_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "g/cm^3",
+   "long_name": "Differential Evolution Number Solution Effective Density",
+   "has_qc": false
+  },
+  "DE_vol_density": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "float32",
+   "units": "g/cm^3",
+   "long_name": "Differential Evolution Volume Solution Effective Density",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    24
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "merged_diameter_mobility": {
+   "dims": [
+    "merged_diameter_mobility"
+   ],
+   "shape": [
+    212
+   ],
+   "dtype": "float64",
+   "units": "nm",
+   "long_name": "Merged midpoint of geometric mean mobility diameter",
+   "has_qc": false
+  },
+  "diameter_aerodynamic": {
+   "dims": [
+    "diameter_aerodynamic"
+   ],
+   "shape": [
+    51
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Midpoint of geometric mean aerodynamic diameter",
+   "has_qc": false
+  },
+  "diameter_mobility": {
+   "dims": [
+    "diameter_mobility"
+   ],
+   "shape": [
+    192
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Midpoint of geometric mean mobility diameter",
+   "has_qc": false
+  }
+ }
+}

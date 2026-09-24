@@ -1,0 +1,158 @@
+{
+ "vap": "shallowcumulus",
+ "datastream": "sgpshcusummaryC1.c1",
+ "filename": "sgpshcusummaryC1.c1.20250801.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 10,
+ "dims": {
+  "time": 21,
+  "bound": 2,
+  "event": 4
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 86400.0,
+ "time_span": [
+  "2025-08-01T00:00:00",
+  "2025-08-21T00:00:00"
+ ],
+ "global_attrs": {
+  "command_line": "shallowcumulus -s sgp -f C1 -b 20250601 -e 20250822 -R --max-runtime 86400",
+  "process_version": "shallowcumulus-1.6.2",
+  "dod_version": "shcusummary-c1-1.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpshcusummaryC1.c1",
+  "doi": "10.5439/1392581"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    21,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "shallowcumulus_event": {
+   "dims": [
+    "time",
+    "event"
+   ],
+   "shape": [
+    21,
+    4
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Shallow cumulus event detected",
+   "has_qc": false
+  },
+  "shallowcumulus_event_tests": {
+   "dims": [
+    "time",
+    "event"
+   ],
+   "shape": [
+    21,
+    4
+   ],
+   "dtype": "int32",
+   "units": "unitless",
+   "long_name": "Shallow cumulus event tests",
+   "has_qc": false
+  },
+  "start_hour": {
+   "dims": [
+    "time",
+    "event"
+   ],
+   "shape": [
+    21,
+    4
+   ],
+   "dtype": "float64",
+   "units": "hour",
+   "long_name": "Starting hour when event is detected",
+   "has_qc": false
+  },
+  "end_hour": {
+   "dims": [
+    "time",
+    "event"
+   ],
+   "shape": [
+    21,
+    4
+   ],
+   "dtype": "float64",
+   "units": "hour",
+   "long_name": "Ending hour when event is detected",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    21
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

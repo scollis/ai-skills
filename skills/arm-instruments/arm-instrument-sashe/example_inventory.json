@@ -1,0 +1,777 @@
+{
+ "instrument": "sashe",
+ "datastream": "sgpsashevisC1.b1",
+ "filename": "sgpsashevisC1.b1.20240531.000012.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 60,
+ "dims": {
+  "time": 1537,
+  "test_incident_angle": 101,
+  "wavelength_vis": 2048
+ },
+ "n_qc_vars": 22,
+ "time_resolution_s": 26.0,
+ "time_span": [
+  "2024-05-31T00:00:12",
+  "2024-05-31T23:59:57"
+ ],
+ "global_attrs": {
+  "command_line": "sashe_ingest -s sgp -f C1",
+  "process_version": "ingest-sashe-1.12-0.el7",
+  "dod_version": "sashevis-b1-1.4",
+  "input_source": "/data/collection/sgp/sgpsasheC1.00/SASHe_SAz_OffZe_vis_1s.20240530_233541.csv",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpsashevisC1.b1",
+  "serial_number": "1010108U1"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "airmass": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Airmass",
+   "has_qc": true
+  },
+  "qc_airmass": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Airmass",
+   "has_qc": false
+  },
+  "atmos_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "kPa",
+   "long_name": "Atmospheric pressure",
+   "has_qc": true
+  },
+  "qc_atmos_pressure": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Atmospheric pressure",
+   "has_qc": false
+  },
+  "mio_temperature_mems": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of multi-IO box from MEMS sensor",
+   "has_qc": true
+  },
+  "qc_mio_temperature_mems": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature of multi-IO box from MEMS sensor",
+   "has_qc": false
+  },
+  "mio_temperature_trh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degF",
+   "long_name": "Temperature of MIO box from TRH sensor",
+   "has_qc": true
+  },
+  "qc_mio_temperature_trh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature of MIO box from TRH sensor",
+   "has_qc": false
+  },
+  "mio_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "MIO relative humidity from TRH sensor",
+   "has_qc": true
+  },
+  "qc_mio_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: MIO relative humidity from TRH sensor",
+   "has_qc": false
+  },
+  "collector_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Collector internal temperature from TRH sensor",
+   "has_qc": true
+  },
+  "qc_collector_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Collector internal temperature from TRH sensor",
+   "has_qc": false
+  },
+  "collector_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Collector internal relative humidity from TRH sensor",
+   "has_qc": true
+  },
+  "qc_collector_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Collector internal relative humidity from TRH sensor",
+   "has_qc": false
+  },
+  "collector_dewpoint": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Collector internal dew point",
+   "has_qc": true
+  },
+  "qc_collector_dewpoint": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Collector internal dew point",
+   "has_qc": false
+  },
+  "chiller_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Spectrometer chiller internal temperature",
+   "has_qc": true
+  },
+  "qc_chiller_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Spectrometer chiller internal temperature",
+   "has_qc": false
+  },
+  "chiller_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "%",
+   "long_name": "Spectrometer chiller internal RH",
+   "has_qc": true
+  },
+  "qc_chiller_rh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Spectrometer chiller internal RH",
+   "has_qc": false
+  },
+  "chiller_dewpoint": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Spectrometer chiller internal dew point",
+   "has_qc": true
+  },
+  "qc_chiller_dewpoint": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Spectrometer chiller internal dew point",
+   "has_qc": false
+  },
+  "collector_x_tilt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Collector tilt along band axis",
+   "has_qc": true
+  },
+  "qc_collector_x_tilt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Collector tilt along band axis",
+   "has_qc": false
+  },
+  "collector_y_tilt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Collector tilt perpendicular to band axis",
+   "has_qc": true
+  },
+  "qc_collector_y_tilt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Collector tilt perpendicular to band axis",
+   "has_qc": false
+  },
+  "collector_x_tilt_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Standard deviation of collector tilt measured along band axis.",
+   "has_qc": true
+  },
+  "qc_collector_x_tilt_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Standard deviation of collector tilt measured along band axis.",
+   "has_qc": false
+  },
+  "collector_y_tilt_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Standard deviation of collector tilt measured perpendicular to band axis.",
+   "has_qc": true
+  },
+  "qc_collector_y_tilt_std": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Standard deviation of collector tilt measured perpendicular to band axis.",
+   "has_qc": false
+  },
+  "band_azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Band axis orientation with respect to north",
+   "has_qc": true
+  },
+  "qc_band_azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Band axis orientation with respect to north",
+   "has_qc": false
+  },
+  "solar_azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Solar azimuth angle relative to north",
+   "has_qc": true
+  },
+  "qc_solar_azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Solar azimuth angle relative to north",
+   "has_qc": false
+  },
+  "solar_zenith": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Solar zenith angle relative to vertical zenith.",
+   "has_qc": true
+  },
+  "qc_solar_zenith": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Solar zenith angle relative to vertical zenith.",
+   "has_qc": false
+  },
+  "cosine_solar_zenith_angle": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine of apparent solar zenith angle",
+   "has_qc": false
+  },
+  "cosine_test_incident_angle": {
+   "dims": [
+    "test_incident_angle"
+   ],
+   "shape": [
+    101
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine of angle of incidence during cosine bench test",
+   "has_qc": false
+  },
+  "cosine_correction_hisun": {
+   "dims": [
+    "test_incident_angle"
+   ],
+   "shape": [
+    101
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction for high sun angles",
+   "has_qc": false
+  },
+  "cosine_correction_lowsun": {
+   "dims": [
+    "test_incident_angle"
+   ],
+   "shape": [
+    101
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction for low sun angles",
+   "has_qc": false
+  },
+  "cosine_correction_computed": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction applied to direct_horizontal component",
+   "has_qc": false
+  },
+  "diffuse_correction": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "unitless",
+   "long_name": "Cosine correction of diffuse component  assuming isotropic sky",
+   "has_qc": false
+  },
+  "bench_temperature_vis": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of Si CCD optical bench",
+   "has_qc": true
+  },
+  "qc_bench_temperature_vis": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature of Si CCD optical bench",
+   "has_qc": false
+  },
+  "ad_temperature_vis": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Temperature of Si CCD AD board",
+   "has_qc": true
+  },
+  "qc_ad_temperature_vis": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Temperature of Si CCD AD board",
+   "has_qc": false
+  },
+  "integration_time_vis": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float32",
+   "units": "ms",
+   "long_name": "Integration time of individual scans from Si CCD spectrometer",
+   "has_qc": true
+  },
+  "qc_integration_time_vis": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Integration time of individual scans from Si CCD spectrometer",
+   "has_qc": false
+  },
+  "number_of_scans_vis": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "float64",
+   "units": "unitless",
+   "long_name": "Number of spectrometer scans averaged for Si CCD spectra",
+   "has_qc": true
+  },
+  "qc_number_of_scans_vis": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on field: Number of spectrometer scans averaged for Si CCD spectra",
+   "has_qc": false
+  },
+  "direct_horizontal_vis": {
+   "dims": [
+    "time",
+    "wavelength_vis"
+   ],
+   "shape": [
+    1537,
+    2048
+   ],
+   "dtype": "float32",
+   "units": "W/m^2/nm",
+   "long_name": "Direct horizontal solar irradiance from Si CCD spectrometer",
+   "has_qc": false
+  },
+  "diffuse_hemisp_vis": {
+   "dims": [
+    "time",
+    "wavelength_vis"
+   ],
+   "shape": [
+    1537,
+    2048
+   ],
+   "dtype": "float32",
+   "units": "W/m^2/nm",
+   "long_name": "Diffuse hemispheric irradiance component, Si CCD spectrometer",
+   "has_qc": false
+  },
+  "direct_normal_vis": {
+   "dims": [
+    "time",
+    "wavelength_vis"
+   ],
+   "shape": [
+    1537,
+    2048
+   ],
+   "dtype": "float32",
+   "units": "W/m^2/nm",
+   "long_name": "Direct normal solar irradiance, Si CCD spectrometer",
+   "has_qc": false
+  },
+  "total_hemisp_vis": {
+   "dims": [
+    "time",
+    "wavelength_vis"
+   ],
+   "shape": [
+    1537,
+    2048
+   ],
+   "dtype": "float32",
+   "units": "W/m^2/nm",
+   "long_name": "Total hemispheric irradiance component, Si CCD spectrometer",
+   "has_qc": false
+  },
+  "responsivity_vis": {
+   "dims": [
+    "wavelength_vis"
+   ],
+   "shape": [
+    2048
+   ],
+   "dtype": "float32",
+   "units": "(count/ms)/(W/m^2/nm)",
+   "long_name": "responsivity of Si CCD spectrometer",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    1537
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "wavelength_vis": {
+   "dims": [
+    "wavelength_vis"
+   ],
+   "shape": [
+    2048
+   ],
+   "dtype": "float32",
+   "units": "nm",
+   "long_name": "Wavelength of VIS spectrometer pixels",
+   "has_qc": false
+  },
+  "test_incident_angle": {
+   "dims": [
+    "test_incident_angle"
+   ],
+   "shape": [
+    101
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Angle of incidence during cosine bench test",
+   "has_qc": false
+  }
+ }
+}

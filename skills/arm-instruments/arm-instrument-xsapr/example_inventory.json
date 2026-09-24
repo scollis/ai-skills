@@ -1,0 +1,587 @@
+{
+ "instrument": "xsapr",
+ "datastream": "nsaxsaprcfrqcC1.b1",
+ "filename": "nsaxsaprcfrqcC1.b1.20260109.110010.nc",
+ "verified": "2026-09-23",
+ "act_version": "2.3.4",
+ "n_vars": 41,
+ "dims": {
+  "time": 2592,
+  "range": 401,
+  "sweep": 4,
+  "r_calib": 1,
+  "frequency": 1
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 0.0,
+ "time_span": [
+  "2026-01-09T11:00:10",
+  "2026-01-09T11:04:33"
+ ],
+ "global_attrs": {
+  "command_line": "saprcfrqc_ingest -D 2 -s nsa -f C1 -R -n xsaprcfrqc --asynchronous --disable-email -b 20260109.110009 -e 20260109.110019",
+  "process_version": "ingest-saprcfrqc-0.0-0.dev0.dirty.el8",
+  "dod_version": "xsaprcfrqc-b1-1.1",
+  "input_source": "/data/collection/nsa/nsaxsaprC1.00/BRW260109110009.RAWVPWV",
+  "site_id": "nsa",
+  "facility_id": "C1",
+  "data_level": "b1",
+  "location_description": "North Slope of Alaska (NSA), Barrow, Alaska",
+  "datastream": "nsaxsaprcfrqcC1.b1",
+  "doi": "10.5439/3013114"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2592
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "attenuation_corrected_differential_reflectivity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Rainfall attenuation-corrected differential reflectivity",
+   "has_qc": false
+  },
+  "attenuation_corrected_reflectivity_h": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Rainfall attenuation-corrected reflectivity, horizontal channel",
+   "has_qc": false
+  },
+  "censor_mask": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Censor Mask",
+   "has_qc": false
+  },
+  "cross_correlation_ratio_hv": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cross-polar correlation ratio",
+   "has_qc": false
+  },
+  "differential_phase": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Differential propagation phase shift",
+   "has_qc": false
+  },
+  "differential_reflectivity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Differential reflectivity",
+   "has_qc": false
+  },
+  "mean_doppler_velocity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Radial mean Doppler velocity, positive for motion away from the instrument",
+   "has_qc": false
+  },
+  "normalized_coherent_power": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Normalized coherent power, also known as SQI",
+   "has_qc": false
+  },
+  "radar_echo_classification": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Radar echo classification",
+   "has_qc": false
+  },
+  "reflectivity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Equivalent reflectivity factor",
+   "has_qc": false
+  },
+  "reflectivity_enhanced": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Equivalent reflectivity factor enhanced",
+   "has_qc": false
+  },
+  "reflectivity_v": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Equivalent reflectivity factor, vertical channel",
+   "has_qc": false
+  },
+  "signal_to_noise_ratio": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Signal-to-noise ratio, horizontal channel",
+   "has_qc": false
+  },
+  "specific_differential_phase": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "degree/km",
+   "long_name": "Specific differential phase (KDP)",
+   "has_qc": false
+  },
+  "spectral_width": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Spectral width",
+   "has_qc": false
+  },
+  "total_power": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Total power",
+   "has_qc": false
+  },
+  "total_power_enhanced": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Total power enhanced",
+   "has_qc": false
+  },
+  "total_power_v": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    2592,
+    401
+   ],
+   "dtype": "float32",
+   "units": "dBZ",
+   "long_name": "Total power, vertical channel",
+   "has_qc": false
+  },
+  "fixed_angle": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    4
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Ray target fixed angle",
+   "has_qc": false
+  },
+  "n_samples": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2592
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of samples used to compute moments",
+   "has_qc": false
+  },
+  "nyquist_velocity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2592
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Unambiguous doppler velocity",
+   "has_qc": false
+  },
+  "prt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2592
+   ],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Pulse repetition time",
+   "has_qc": false
+  },
+  "prt_mode": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    4
+   ],
+   "dtype": "|S22",
+   "units": "1",
+   "long_name": "Transmit pulse mode",
+   "has_qc": false
+  },
+  "r_calib_radar_constant_h": {
+   "dims": [
+    "r_calib"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Calibrated radar constant horizontal channel",
+   "has_qc": false
+  },
+  "r_calib_radar_constant_v": {
+   "dims": [
+    "r_calib"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "dB",
+   "long_name": "Calibrated radar constant vertical channel",
+   "has_qc": false
+  },
+  "radar_measured_transmit_power": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2592
+   ],
+   "dtype": "float32",
+   "units": "dBm",
+   "long_name": "Radar measured transmit peak power",
+   "has_qc": false
+  },
+  "radar_receiver_bandwidth": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Radar receiver bandwidth",
+   "has_qc": false
+  },
+  "sweep_start_ray_index": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    4
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Index of first ray in sweep",
+   "has_qc": false
+  },
+  "sweep_end_ray_index": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    4
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Index of last ray in sweep",
+   "has_qc": false
+  },
+  "sweep_mode": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    4
+   ],
+   "dtype": "|S22",
+   "units": "1",
+   "long_name": "Scan mode for sweep",
+   "has_qc": false
+  },
+  "sweep_number": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    4
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Sweep index number 0 based",
+   "has_qc": false
+  },
+  "unambiguous_range": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2592
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Unambiguous range",
+   "has_qc": false
+  },
+  "volume_number": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Data volume index number",
+   "has_qc": false
+  },
+  "latitude": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "Latitude",
+   "has_qc": false
+  },
+  "longitude": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "Longitude",
+   "has_qc": false
+  },
+  "altitude": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2592
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "range": {
+   "dims": [
+    "range"
+   ],
+   "shape": [
+    401
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Range to measurement volume",
+   "has_qc": false
+  },
+  "frequency": {
+   "dims": [
+    "frequency"
+   ],
+   "shape": [
+    1
+   ],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Transmit center frequency",
+   "has_qc": false
+  },
+  "azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2592
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Azimuth angle from true north",
+   "has_qc": false
+  },
+  "elevation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    2592
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Elevation angle from horizontal plane",
+   "has_qc": false
+  }
+ }
+}

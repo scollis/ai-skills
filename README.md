@@ -74,6 +74,94 @@ carries two profiles: what the ADC's published files actually satisfy, and the
 literal reading of §6.7.1. A released file is not a safe compliance template,
 which is the sort of thing you only learn by measuring.
 
+### ARM instrumentation
+
+Every instrument ARM deploys gets a handbook written by its instrument mentor. This tranche
+turns those handbooks into loadable skills — **128 instruments**, nested under one
+directory:
+
+| skill | what it does |
+|---|---|
+| [`arm-instruments`](skills/arm-instruments/) | The index and access layer: ARM's data-source catalog API (the only complete enumeration — `arm.gov/capabilities/instruments` is a JS shell and there is no sitemap), the two URL patterns handbooks are filed under, and helpers resolving an instrument code to its handbook, datastreams and verified example. Ships `catalog.csv`, all 594 ARM instrument classes |
+| `arm-instrument-<code>` × 128 | One per instrument: measurement principle, reported quantities with ranges and uncertainties, specifications, calibration, embedded-QC coverage, the variable inventory of a real file, and the known artifacts and failure modes the mentor documented — 1519 of them across the tranche |
+
+Coverage by category: Aerosols 36, Cloud Properties 29, Radiometric 29, Airborne 25,
+Surface Meteorology 17, Atmospheric Profiling 11, Surface/Subsurface 8, Atmospheric Carbon
+8, Other 5, Ocean 2.
+
+**Credit.** These are derived references; the instrument knowledge in them belongs to the
+ARM instrument mentors who wrote the handbooks. 100 mentors are credited across the
+tranche, each in the Credit section of the skills derived from their handbook, with the DOE
+report number and a link. 5 handbooks are facility-issued with no individual author on
+the cover and say so. `test_credits_the_handbook_authors` fails the build if a skill drops
+its attribution, and `catalog.csv` carries an `authors` column so the credit survives
+outside the prose.
+
+Each skill is grounded in two places at once and says which claim came from where: the
+handbook (page-cited, `hb p. 17`) and an example file actually pulled from ARM Live and
+opened with ACT. The rule is that **the handbook is design intent and the file is current
+truth** — where they disagree, the skill says so instead of picking one.
+`test_structure_arm_instruments.py` enforces the agreement that can be checked offline: a
+variable named in the prose must exist in the shipped `example_inventory.json`, the
+handbook URL must match the catalog record, a `hb p. N` citation must be inside the
+handbook's page count, and the variable and QC counts in the table must equal the
+inventory's. `test_live_arm_instruments.py` re-checks the three external facts on a
+schedule — the catalog API still answers, the PDF is still there, ARM Live still serves the
+example.
+
+Two honesty constraints came out of building it. 6 of the 128 skills could not be
+verified against a file — aircraft video averaging 8.7 GB per file, MPEG products,
+datastreams that exist only at level `a0` which ARM Live will not serve, files ARM Live
+lists but will not transfer — and those ship with the reason in place of a data section
+rather than an inventory they could not measure. And one handbook can cover several
+instrument classes (29 of these skills share a document; DOE/SC-ARM/TR-113 covers
+`kasacr`, `wsacr` and `xsacr` jointly), so those carry a scope note saying which numbers
+are family-level. `tap` is the sharpest case: ARM links it to the SGP Aerosol Observing
+System handbook, which mentions TAP only in passing, and its skill says so.
+
+The artifacts section is the reason these are worth shipping. A variable name tells you
+what a number is; only the mentor tells you that rain, fog or dew on the ECOR gas
+analyser's optical window corrupts latent heat flux (hb p. 17), or that the MFRSR's 940 nm
+water-vapour channel cannot be Langley-calibrated the way the other six are (hb p. 19).
+
+`tools/arm_instrument_build/` holds the pipeline that produced them, so the next instrument
+is a re-run rather than a rewrite.
+
+### ARM value-added products
+
+ARM does not only publish instrument data. It publishes **value-added products** - retrievals
+and quality-controlled composites computed from instrument datastreams, each documented in its
+own technical report. This tranche is 80 of them, built with the same pipeline and the same
+grounding rule as the instrument skills:
+
+| skill | what it does |
+|---|---|
+| [`arm-vaps`](skills/arm-vaps/) | The index: coverage by category, the honesty markers explained, and how to route between a product and its input instrument |
+| `arm-vap-<code>` × 80 | One per product: the retrieval algorithm, declared input instruments, reported quantities, retrieval settings, embedded-QC coverage measured on a real file, the variable inventory, and the documented conditions where the retrieval is invalid or biased — 1029 of them across the tranche |
+
+ARSCL, KAZR-ARSCL, MWRRET, QCRAD, MICROBASE, LASSO, VARANAL, RADFLUXANAL, PBLHT, the AOD
+products, the Raman and Doppler lidar profile products, the CMAC radar products. 151 developers
+and mentors are credited from the report covers, in a Credit section that cites the technical
+report rather than the skill.
+
+The rule these carry that the instrument skills do not: **a VAP inherits every limitation of
+its inputs.** Each skill names its declared input classes and links to `arm-instrument-<code>`
+for them, because when a retrieved value looks wrong the input instrument and its DQRs are the
+first place to look, not the algorithm.
+
+Three honesty markers appear in these files, each enforced by a test. **Scope of this report**
+where a report covers a sibling product — `arscl` and `kazrarscl` share a 2001 MMCR-era
+document that predates the KAZR implementation entirely, and four other pairs share one report.
+**Extraction coverage** where the report is longer than the extractor's 110,000-character
+window — LASSO is 171 pages of which 60 were read, ARMTRAJ 176 of which about a quarter — so
+those skills mark their lists as lower bounds rather than inventories. And **no example
+verified** for the 6 products that could not be opened: two served only at level `a0`, two
+serving 0.8–2.4 GB files, one truncated tar, one HDF error on two separate files.
+
+One product was rejected rather than published on the wrong document: `aod`, whose linked report
+turned out to document the SAS-He AOD product rather than the MFRSR/NIMFR one it serves.
+`arm-vap-aod-mfrsr` and `arm-vap-aod-nimfr` carry the right report.
+
 ### Scattering forward models
 
 | skill | what it does |

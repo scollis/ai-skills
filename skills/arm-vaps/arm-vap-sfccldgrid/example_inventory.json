@@ -1,0 +1,860 @@
+{
+ "vap": "sfccldgrid",
+ "datastream": "sgpsfccldgrid2longstationN1.c1",
+ "filename": "sgpsfccldgrid2longstationN1.c1.20200529.060000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 62,
+ "dims": {
+  "time": 96,
+  "bound": 2,
+  "station": 19
+ },
+ "n_qc_vars": 18,
+ "time_resolution_s": 900.0,
+ "time_span": [
+  "2020-05-29T06:00:00",
+  "2020-05-30T05:45:00"
+ ],
+ "global_attrs": {
+  "command_line": "sfccldgrid2long_station -s sgp -f N1 -b 20171001 -e 20200601 -D 4 -R --max-runtime 0",
+  "process_version": "vap-sfccldgrid2long_station-1.4-0.el7",
+  "dod_version": "sfccldgrid2longstation-c1-1.1",
+  "site_id": "sgp",
+  "facility_id": "N1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Supplementary Facility",
+  "datastream": "sgpsfccldgrid2longstationN1.c1",
+  "doi": "10.5439/1393587"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    96,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "station_name": {
+   "dims": [
+    "station"
+   ],
+   "shape": [
+    19
+   ],
+   "dtype": "|S7",
+   "units": "1",
+   "long_name": "Station names",
+   "has_qc": false
+  },
+  "swdn": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Broadband downwelling shortwave irradiance from sum or global pyranometer",
+   "has_qc": true
+  },
+  "qc_swdn": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Broadband downwelling shortwave irradiance from sum or global pyranometer",
+   "has_qc": false
+  },
+  "num_sites_swdn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Broadband downwelling shortwave irradiance from sum or global pyranometer",
+   "has_qc": false
+  },
+  "cswdn": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky broadband downwelling shortwave irradiance",
+   "has_qc": true
+  },
+  "qc_cswdn": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated clear-sky broadband downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "num_sites_cswdn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Estimated clear-sky broadband downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "lwdn": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Downwelling longwave irradiance from pyrgeometer",
+   "has_qc": true
+  },
+  "qc_lwdn": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Downwelling longwave irradiance from pyrgeometer",
+   "has_qc": false
+  },
+  "num_sites_lwdn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Downwelling longwave irradiance from pyrgeometer",
+   "has_qc": false
+  },
+  "clwdn": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky downwelling longwave irradiance",
+   "has_qc": true
+  },
+  "qc_clwdn": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated clear-sky downwelling longwave irradiance",
+   "has_qc": false
+  },
+  "num_sites_clwdn": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Estimated clear-sky downwelling longwave irradiance",
+   "has_qc": false
+  },
+  "swup": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling shortwave irradiance from pyranometer",
+   "has_qc": true
+  },
+  "qc_swup": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling shortwave irradiance from pyranometer",
+   "has_qc": false
+  },
+  "num_sites_swup": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Upwelling shortwave irradiance from pyranometer",
+   "has_qc": false
+  },
+  "cswup": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky upwelling shortwave irradiance",
+   "has_qc": true
+  },
+  "qc_cswup": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated clear-sky upwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "num_sites_cswup": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Estimated clear-sky upwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "lwup": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Upwelling longwave irradiance from pyrgeometer",
+   "has_qc": true
+  },
+  "qc_lwup": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Upwelling longwave irradiance from pyrgeometer",
+   "has_qc": false
+  },
+  "num_sites_lwup": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Upwelling longwave irradiance from pyrgeometer",
+   "has_qc": false
+  },
+  "clwup": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky upwelling longwave irradiance",
+   "has_qc": true
+  },
+  "qc_clwup": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated clear-sky upwelling longwave irradiance",
+   "has_qc": false
+  },
+  "num_sites_clwup": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Estimated clear-sky upwelling longwave irradiance",
+   "has_qc": false
+  },
+  "swdif": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Measured broadband diffuse downwelling shortwave irradiance",
+   "has_qc": true
+  },
+  "qc_swdif": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Measured broadband diffuse downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "num_sites_swdif": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Measured broadband diffuse downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "cswdif": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky diffuse downwelling shortwave irradiance",
+   "has_qc": true
+  },
+  "qc_cswdif": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated clear-sky diffuse downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "num_sites_cswdif": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Estimated clear-sky diffuse downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "swdir": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Measured direct downwelling shortwave irradiance",
+   "has_qc": true
+  },
+  "qc_swdir": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Measured direct downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "num_sites_swdir": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Measured direct downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "cswdir": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "W/m^2",
+   "long_name": "Estimated clear-sky direct downwelling shortwave irradiance",
+   "has_qc": true
+  },
+  "qc_cswdir": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated clear-sky direct downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "num_sites_cswdir": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Estimated clear-sky direct downwelling shortwave irradiance",
+   "has_qc": false
+  },
+  "clearsky_status": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Clear-sky status",
+   "has_qc": true
+  },
+  "qc_clearsky_status": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Clear-sky status",
+   "has_qc": false
+  },
+  "num_sites_clearsky": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Clear-sky status",
+   "has_qc": false
+  },
+  "cflw": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Estimated effective longwave fractional sky cover",
+   "has_qc": true
+  },
+  "qc_cflw": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated effective longwave fractional sky cover",
+   "has_qc": false
+  },
+  "num_sites_cflw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Estimated effective longwave fractional sky cover",
+   "has_qc": false
+  },
+  "cfsw": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Estimated shortwave fractional sky cover",
+   "has_qc": true
+  },
+  "qc_cfsw": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated shortwave fractional sky cover",
+   "has_qc": false
+  },
+  "num_sites_cfsw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Estimated shortwave fractional sky cover",
+   "has_qc": false
+  },
+  "visible_cloud_optical_depth": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Estimated effective visible cloud optical depth",
+   "has_qc": true
+  },
+  "qc_visible_cloud_optical_depth": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated effective visible cloud optical depth",
+   "has_qc": false
+  },
+  "num_sites_visible_cloud_optical_depth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Estimated effective visible cloud optical depth",
+   "has_qc": false
+  },
+  "trans": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Shortwave cloud transmissivity",
+   "has_qc": true
+  },
+  "qc_trans": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Shortwave cloud transmissivity",
+   "has_qc": false
+  },
+  "num_sites_trans": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Shortwave cloud transmissivity",
+   "has_qc": false
+  },
+  "cloud_radiating_temperature": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Estimated effective cloud radiating temperature",
+   "has_qc": true
+  },
+  "qc_cloud_radiating_temperature": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Quality check results on variable: Estimated effective cloud radiating temperature",
+   "has_qc": false
+  },
+  "num_sites_cloud_radiating_temperature": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Number of Facilities with Estimated effective cloud radiating temperature",
+   "has_qc": false
+  },
+  "cosine_zenith": {
+   "dims": [
+    "time",
+    "station"
+   ],
+   "shape": [
+    96,
+    19
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cosine of solar zenith angle",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [
+    "station"
+   ],
+   "shape": [
+    19
+   ],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [
+    "station"
+   ],
+   "shape": [
+    19
+   ],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [
+    "station"
+   ],
+   "shape": [
+    19
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    96
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  }
+ }
+}

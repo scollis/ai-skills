@@ -1,0 +1,679 @@
+{
+ "vap": "dlprof-wstats",
+ "datastream": "sgpdlprofwstats4newsC1.c1",
+ "filename": "sgpdlprofwstats4newsC1.c1.20251215.000000.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 57,
+ "dims": {
+  "time": 144,
+  "bound": 2,
+  "height": 133
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 600.0,
+ "time_span": [
+  "2025-12-15T00:00:00",
+  "2025-12-15T23:50:00"
+ ],
+ "global_attrs": {
+  "command_line": "idl -R -n dlprof_wstats -s sgp -f C1 -b 20251215 -e 20251217 --max-runtime 86400",
+  "process_version": "vap-dlprof_wstats-1.9-2.el9",
+  "dod_version": "dlprofwstats4news-c1-1.1",
+  "site_id": "sgp",
+  "facility_id": "C1",
+  "data_level": "c1",
+  "location_description": "Southern Great Plains (SGP), Lamont, Oklahoma",
+  "datastream": "sgpdlprofwstats4newsC1.c1",
+  "serial_number": "0910-280",
+  "doi": "10.5439/1178583"
+ },
+ "variables": {
+  "base_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Base time in Epoch",
+   "has_qc": false
+  },
+  "time_offset": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from base_time",
+   "has_qc": false
+  },
+  "time_bounds": {
+   "dims": [
+    "time",
+    "bound"
+   ],
+   "shape": [
+    144,
+    2
+   ],
+   "dtype": "object",
+   "units": null,
+   "long_name": "Time cell bounds",
+   "has_qc": false
+  },
+  "snr": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    133
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Median signal-to-noise ratio",
+   "has_qc": false
+  },
+  "snr_25": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    133
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Signal-to-noise ratio 25th percentile",
+   "has_qc": false
+  },
+  "snr_75": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    133
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Signal-to-noise ratio 75th percentile",
+   "has_qc": false
+  },
+  "w": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    133
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Median vertical velocity",
+   "has_qc": false
+  },
+  "w_25": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    133
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Vertical velocity 25th percentile",
+   "has_qc": false
+  },
+  "w_75": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    133
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Vertical velocity 75th percentile",
+   "has_qc": false
+  },
+  "noise": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    133
+   ],
+   "dtype": "float32",
+   "units": "m^2 s^-2",
+   "long_name": "Variance of random noise in vertical velocity",
+   "has_qc": false
+  },
+  "w_variance": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    133
+   ],
+   "dtype": "float32",
+   "units": "m^2 s^-2",
+   "long_name": "Noise-corrected vertical velocity variance",
+   "has_qc": false
+  },
+  "w_skewness": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    133
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Vertical velocity skewness using signal-to-noise ratio threshold",
+   "has_qc": false
+  },
+  "w_kurtosis": {
+   "dims": [
+    "time",
+    "height"
+   ],
+   "shape": [
+    144,
+    133
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Vertical velocity kurtosis using signal-to-noise ratio threshold",
+   "has_qc": false
+  },
+  "dl_cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Median cloud base height from Doppler lidar",
+   "has_qc": false
+  },
+  "dl_cbh_25": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Cloud base height 25th percentile from Doppler lidar",
+   "has_qc": false
+  },
+  "dl_cbh_75": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Cloud base height 75th percentile from Doppler lidar",
+   "has_qc": false
+  },
+  "dl_cbh_zmax": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Maximum detection height for dl_cbh",
+   "has_qc": false
+  },
+  "dl_cloud_frequency": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Fraction of time that a cloud is detected during averaging period from Doppler lidar",
+   "has_qc": false
+  },
+  "cbw": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Median cloud base vertical velocity from Doppler lidar",
+   "has_qc": false
+  },
+  "cbw_25": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Cloud base vertical velocity 25th percentile from Doppler lidar",
+   "has_qc": false
+  },
+  "cbw_75": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Cloud base vertical velocity 75th percentile from Doppler lidar",
+   "has_qc": false
+  },
+  "cbw_up_fraction": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Cloud base vertical velocity updraft fraction from Doppler lidar",
+   "has_qc": false
+  },
+  "nshots": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of laser shots averaged per beam from Doppler lidar",
+   "has_qc": false
+  },
+  "ngate_samples": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Number of raw digitizer samples per range gate from Doppler lidar",
+   "has_qc": false
+  },
+  "averaging_time": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "s",
+   "long_name": "Averaging time interval",
+   "has_qc": false
+  },
+  "snr_threshold": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Minimum signal-to-noise ratio used in skewness and kurtosis calculation from Doppler lidar",
+   "has_qc": false
+  },
+  "sample_frequency": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "Hz",
+   "long_name": "Doppler lidar digitizer sample rate",
+   "has_qc": false
+  },
+  "wavelength": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Doppler lidar wavelength",
+   "has_qc": false
+  },
+  "ceil_cbh": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Median cloud base height from ceilometer",
+   "has_qc": false
+  },
+  "ceil_cbh_25": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Cloud base height 25th percentile from ceilometer",
+   "has_qc": false
+  },
+  "ceil_cbh_75": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Cloud base height 75th percentile from ceilometer",
+   "has_qc": false
+  },
+  "ceil_cbh_zmax": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Maximum detection height for ceil_cbh",
+   "has_qc": false
+  },
+  "ceil_cloud_frequency": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Fraction of time that a cloud is detected during averaging period from ceilometer",
+   "has_qc": false
+  },
+  "ceil_lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from ceilometer",
+   "has_qc": false
+  },
+  "ceil_lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from ceilometer",
+   "has_qc": false
+  },
+  "ceil_alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from ceilometer",
+   "has_qc": false
+  },
+  "ecor_temp": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "K",
+   "long_name": "Temperature from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_h2o": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "mmol/m^3",
+   "long_name": "Water vapor density from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_tke": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Turbulence kinetic energy from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_ustar": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m/s",
+   "long_name": "Friction velocity from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_w_var": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "m^2/s^2",
+   "long_name": "Vertical velocity variance from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_w_skew": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Vertical velocity skewness from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_w_kurt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "1",
+   "long_name": "Vertical velocity kurtosis from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_wt": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "K m/s",
+   "long_name": "Wt covariance from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_wq": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "mmol/(s m^2)",
+   "long_name": "Wq covariance from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from eddy correlation system",
+   "has_qc": false
+  },
+  "ecor_alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from eddy correlation system",
+   "has_qc": false
+  },
+  "met_spr_mean": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Mean surface precipitation rate from MET",
+   "has_qc": false
+  },
+  "met_spr_min": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Minimum surface precipitation rate from MET",
+   "has_qc": false
+  },
+  "met_spr_max": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "float32",
+   "units": "mm/hr",
+   "long_name": "Maximum surface precipitation rate from MET",
+   "has_qc": false
+  },
+  "met_lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude from MET",
+   "has_qc": false
+  },
+  "met_lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude from MET",
+   "has_qc": false
+  },
+  "met_alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level from MET",
+   "has_qc": false
+  },
+  "lat": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_N",
+   "long_name": "North latitude",
+   "has_qc": false
+  },
+  "lon": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "degree_E",
+   "long_name": "East longitude",
+   "has_qc": false
+  },
+  "alt": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Altitude above mean sea level",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    144
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time offset from midnight",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "height"
+   ],
+   "shape": [
+    133
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height above ground level to mid-point of range gate",
+   "has_qc": false
+  }
+ }
+}

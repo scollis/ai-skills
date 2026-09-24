@@ -1,0 +1,670 @@
+{
+ "vap": "xprecipcmac",
+ "datastream": "gucxprecipradarcmacppiS2.c1",
+ "filename": "gucxprecipradarcmacppiS2.c1.20230613.083408.nc",
+ "verified": "2026-09-24",
+ "act_version": "2.3.4",
+ "n_vars": 46,
+ "dims": {
+  "time": 9232,
+  "range": 668,
+  "sweep": 8
+ },
+ "n_qc_vars": 0,
+ "time_resolution_s": 0.0,
+ "time_span": [
+  "2023-06-13T08:34:08",
+  "2023-06-13T08:38:23"
+ ],
+ "global_attrs": {
+  "site_id": "guc",
+  "facility_id": "S2",
+  "process_version": "CMAC",
+  "dod_version": "xprecipradarcmacppi-c1-2.0",
+  "data_level": "c1",
+  "datastream": "gucxprecipradarcmacppiS2.c1",
+  "location_description": "Gunnison, Colorado",
+  "doi": "10.5439/1883164",
+  "command_line": " cmac_sail.py 202306"
+ },
+ "variables": {
+  "DBZ": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "dBZ",
+   "long_name": "Equaivalent_radar_reflectiivity_factor",
+   "has_qc": false
+  },
+  "VEL": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Radial Doppler Velocity, Positive for Motion Away from Instrument",
+   "has_qc": false
+  },
+  "WIDTH": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Spectral Width",
+   "has_qc": false
+  },
+  "ZDR": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "dB",
+   "long_name": "Differential Reflectivity",
+   "has_qc": false
+  },
+  "PHIDP": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "degree",
+   "long_name": "Differential Phase",
+   "has_qc": false
+  },
+  "RHOHV": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Cross-Polar Correlation Ratio",
+   "has_qc": false
+  },
+  "NCP": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Normalized Coherent Power, also known as SQI",
+   "has_qc": false
+  },
+  "DBZhv": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "dBZ",
+   "long_name": "Equivalent Reflectivity Factor HV",
+   "has_qc": false
+  },
+  "cbb_flag": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "1",
+   "long_name": "Cumulative Beam Block Fraction Flag",
+   "has_qc": false
+  },
+  "sounding_temperature": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float32",
+   "units": "degC",
+   "long_name": "Interpolated profile",
+   "has_qc": false
+  },
+  "height": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height of radar beam",
+   "has_qc": false
+  },
+  "signal_to_noise_ratio": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "dB",
+   "long_name": "Signal to Noise Ratio",
+   "has_qc": false
+  },
+  "velocity_texture": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Mean dopper velocity",
+   "has_qc": false
+  },
+  "gate_id": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "int64",
+   "units": "1",
+   "long_name": "Classification of dominant scatterer",
+   "has_qc": false
+  },
+  "simulated_velocity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Simulated mean doppler velocity",
+   "has_qc": false
+  },
+  "corrected_velocity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Corrected mean doppler velocity",
+   "has_qc": false
+  },
+  "unfolded_differential_phase": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "degree",
+   "long_name": "Unfolded differential propagation phase shift",
+   "has_qc": false
+  },
+  "corrected_differential_phase": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "degree",
+   "long_name": "Corrected differential propagation phase shift",
+   "has_qc": false
+  },
+  "filtered_corrected_differential_phase": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "degree",
+   "long_name": "Filtered Corrected Differential Phase",
+   "has_qc": false
+  },
+  "corrected_specific_diff_phase": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "degrees/km",
+   "long_name": "Specific differential phase (KDP)",
+   "has_qc": false
+  },
+  "filtered_corrected_specific_diff_phase": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "degrees/km",
+   "long_name": "Filtered Corrected Specific differential phase (KDP)",
+   "has_qc": false
+  },
+  "corrected_differential_reflectivity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "dB",
+   "long_name": "Corrected differential reflectivity",
+   "has_qc": false
+  },
+  "corrected_reflectivity": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "dBZ",
+   "long_name": "Corrected reflectivity",
+   "has_qc": false
+  },
+  "height_over_iso0": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float32",
+   "units": "m",
+   "long_name": "Height of radar beam over freezing level",
+   "has_qc": false
+  },
+  "specific_attenuation": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "dB/km",
+   "long_name": "Specific attenuation",
+   "has_qc": false
+  },
+  "path_integrated_attenuation": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "dB",
+   "long_name": "Path Integrated Attenuation",
+   "has_qc": false
+  },
+  "specific_differential_attenuation": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "dB/km",
+   "long_name": "Specific Differential Attenuation",
+   "has_qc": false
+  },
+  "path_integrated_differential_attenuation": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "dB",
+   "long_name": "Path Integrated Differential Attenuation",
+   "has_qc": false
+  },
+  "rain_rate_A": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "mm/hr",
+   "long_name": "Rainfall Rate from Specific Attenuation",
+   "has_qc": false
+  },
+  "snow_rate_ws2012": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "mm/h",
+   "long_name": "Snowfall rate from Z using Wolf and Snider (2012)",
+   "has_qc": false
+  },
+  "snow_rate_ws88diw": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "mm/h",
+   "long_name": "Snowfall rate from Z using WSR 88D High Plains",
+   "has_qc": false
+  },
+  "snow_rate_m2009_1": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "mm/h",
+   "long_name": "Snowfall rate from Z using Matrosov et al.(2009) Braham(1990) 1",
+   "has_qc": false
+  },
+  "snow_rate_m2009_2": {
+   "dims": [
+    "time",
+    "range"
+   ],
+   "shape": [
+    9232,
+    668
+   ],
+   "dtype": "float64",
+   "units": "mm/h",
+   "long_name": "Snowfall rate from Z using Matrosov et al.(2009) Braham(1990) 2",
+   "has_qc": false
+  },
+  "sweep_number": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    8
+   ],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Sweep index number 0 based",
+   "has_qc": false
+  },
+  "fixed_angle": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    8
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Ray Target Fixed Angle",
+   "has_qc": false
+  },
+  "sweep_start_ray_index": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    8
+   ],
+   "dtype": "int64",
+   "units": "1",
+   "long_name": "Index of First Ray in Sweep",
+   "has_qc": false
+  },
+  "sweep_end_ray_index": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    8
+   ],
+   "dtype": "int64",
+   "units": "1",
+   "long_name": "Index of End Ray in Sweep",
+   "has_qc": false
+  },
+  "sweep_mode": {
+   "dims": [
+    "sweep"
+   ],
+   "shape": [
+    8
+   ],
+   "dtype": "|S192",
+   "units": "1",
+   "long_name": "Scan Mode of Sweep",
+   "has_qc": false
+  },
+  "nyquist_velocity": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    9232
+   ],
+   "dtype": "float64",
+   "units": "m/s",
+   "long_name": "Nyquist velocity",
+   "has_qc": false
+  },
+  "latitude": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_N",
+   "long_name": "Latitude",
+   "has_qc": false
+  },
+  "longitude": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "degree_E",
+   "long_name": "Longitude",
+   "has_qc": false
+  },
+  "altitude": {
+   "dims": [],
+   "shape": [],
+   "dtype": "float64",
+   "units": "m",
+   "long_name": "Altitude",
+   "has_qc": false
+  },
+  "time_coverage_start": {
+   "dims": [],
+   "shape": [],
+   "dtype": "|S192",
+   "units": "1",
+   "long_name": "UTC time of first ray in the file",
+   "has_qc": false
+  },
+  "time_coverage_end": {
+   "dims": [],
+   "shape": [],
+   "dtype": "|S192",
+   "units": "1",
+   "long_name": "UTC time of last ray in the file",
+   "has_qc": false
+  },
+  "time_reference": {
+   "dims": [],
+   "shape": [],
+   "dtype": "|S192",
+   "units": "1",
+   "long_name": "UTC time reference",
+   "has_qc": false
+  },
+  "volume_number": {
+   "dims": [],
+   "shape": [],
+   "dtype": "int32",
+   "units": "1",
+   "long_name": "Volume number",
+   "has_qc": false
+  },
+  "time": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    9232
+   ],
+   "dtype": "datetime64[ns]",
+   "units": null,
+   "long_name": "Time in Seconds from Volume Start",
+   "has_qc": false
+  },
+  "range": {
+   "dims": [
+    "range"
+   ],
+   "shape": [
+    668
+   ],
+   "dtype": "float32",
+   "units": "meter",
+   "long_name": "Range to measurement volume",
+   "has_qc": false
+  },
+  "azimuth": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    9232
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Azimuth Angle from True North",
+   "has_qc": false
+  },
+  "elevation": {
+   "dims": [
+    "time"
+   ],
+   "shape": [
+    9232
+   ],
+   "dtype": "float32",
+   "units": "degree",
+   "long_name": "Elevation angle from horizontal plane",
+   "has_qc": false
+  }
+ }
+}
