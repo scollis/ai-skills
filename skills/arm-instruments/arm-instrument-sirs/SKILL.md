@@ -149,18 +149,36 @@ _14 more variables; the full inventory is in `example_inventory.json` beside thi
 ARM Live needs `ARMUSER` / `ARMTOKEN` credentials; see the `act-arm-live` skill for the
 service, datastream naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("sgpsirsC1.b1", "2020-05-23", "2020-05-23")
-ds = armlive_open("sgpsirsC1.b1", "2020-05-23", "2020-05-23", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "sgpsirsC1.b1",
+                             "start": "2020-05-23", "end": "2020-05-23", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./sgpsirsC1.b1/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "sgpsirsC1.b1", "2020-05-23", "2020-05-23")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("sgpsirsC1.b1", "2020-05-23", "2020-05-23"))   # cite what you pulled
 ```
 
 This datastream carries 74 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
-ds = armlive_open("sgpsirsC1.b1", start, end,
-                  keep_variables=["down_long_hemisp1_vent_tachometer", "down_long_hemisp2_shaded", "down_long_hemisp2_shaded_max", "qc_down_long_hemisp1_vent_tachometer", "qc_down_long_hemisp2_shaded", "qc_down_long_hemisp2_shaded_max"])
+files = act.discovery.download_arm_data(user, token, "sgpsirsC1.b1", start, end)
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["down_long_hemisp1_vent_tachometer", "down_long_hemisp2_shaded", "down_long_hemisp2_shaded_max", "qc_down_long_hemisp1_vent_tachometer", "qc_down_long_hemisp2_shaded", "qc_down_long_hemisp2_shaded_max"],
+                                cleanup_qc=True)
 ```
 
 ## Quality control in this datastream
@@ -168,14 +186,23 @@ ds = armlive_open("sgpsirsC1.b1", start, end,
 25 `qc_` companion variables cover 25 of the
 74 data variables. Assessments present in the example file: `Bad`, `Indeterminate`.
 
-`cleanup_qc=True` on read is what makes these usable; then screen with the `act-qc`
-helpers. Remember that ARM uses two assessment vocabularies - `Bad`/`Indeterminate`
+`cleanup_qc=True` on read is what makes these usable - it rewrites ARM's flag
+attributes into the form `qcfilter` expects. Remember that ARM uses two assessment vocabularies - `Bad`/`Indeterminate`
 from the automated tests, `Incorrect`/`Suspect` after DQR normalisation - and that
 filtering on only one of them silently keeps known-bad points.
 
 ```python
-act_qc_table(ds)                       # what each bit would remove, per variable
-act_qc_apply(ds, variables=[...])      # NaN-fill using all four assessment names
+# What each test would remove, one variable at a time
+print(ds["qc_up_long_hemisp"].attrs["flag_meanings"])
+mask = ds.qcfilter.get_masked_data("up_long_hemisp", rm_assessments=["Bad", "Indeterminate"],
+                                  return_mask_only=True)
+print(int(mask.sum()), "of", mask.size, "points flagged")
+
+# NaN-fill in place. ARM b1 files use Bad/Indeterminate, VAPs often use
+# Incorrect/Suspect - pass every name you might meet.
+ds.qcfilter.datafilter(variables=["up_long_hemisp", "down_long_hemisp_shaded", "down_long_hemisp2_shaded"],
+                       rm_assessments=["Bad", "Indeterminate", "Incorrect", "Suspect"],
+                       del_qc_var=False)
 ```
 
 Measured on the example file (sgpsirsC1.b1.20200523.000000.cdf), the tests that fired:

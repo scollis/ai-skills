@@ -135,10 +135,27 @@ Verified example: **`bnfminiaosmsemsM1.a1`**, file `bnfminiaosmsemsM1.a1.2026062
 ARM Live needs `ARMUSER` / `ARMTOKEN` credentials; see the `act-arm-live` skill for the
 service, datastream naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("bnfminiaosmsemsM1.a1", "2026-06-29", "2026-06-29")
-ds = armlive_open("bnfminiaosmsemsM1.a1", "2026-06-29", "2026-06-29", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "bnfminiaosmsemsM1.a1",
+                             "start": "2026-06-29", "end": "2026-06-29", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./bnfminiaosmsemsM1.a1/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "bnfminiaosmsemsM1.a1", "2026-06-29", "2026-06-29")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("bnfminiaosmsemsM1.a1", "2026-06-29", "2026-06-29"))   # cite what you pulled
 ```
 
 ## Quality control in this datastream

@@ -135,18 +135,36 @@ _37 more variables; the full inventory is in `example_inventory.json` beside thi
 ARM Live needs `ARMUSER` / `ARMTOKEN` credentials; see the `act-arm-live` skill for the
 service, datastream naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("sgpmfr7nch25mC1.b1", "2026-09-20", "2026-09-20")
-ds = armlive_open("sgpmfr7nch25mC1.b1", "2026-09-20", "2026-09-20", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "sgpmfr7nch25mC1.b1",
+                             "start": "2026-09-20", "end": "2026-09-20", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./sgpmfr7nch25mC1.b1/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "sgpmfr7nch25mC1.b1", "2026-09-20", "2026-09-20")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("sgpmfr7nch25mC1.b1", "2026-09-20", "2026-09-20"))   # cite what you pulled
 ```
 
 This datastream carries 81 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
-ds = armlive_open("sgpmfr7nch25mC1.b1", start, end,
-                  keep_variables=["head_temp", "head_temp2", "logger_temperature", "qc_head_temp", "qc_head_temp2", "qc_logger_temperature"])
+files = act.discovery.download_arm_data(user, token, "sgpmfr7nch25mC1.b1", start, end)
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["head_temp", "head_temp2", "logger_temperature", "qc_head_temp", "qc_head_temp2", "qc_logger_temperature"],
+                                cleanup_qc=True)
 ```
 
 ## Quality control in this datastream
@@ -154,14 +172,23 @@ ds = armlive_open("sgpmfr7nch25mC1.b1", start, end,
 11 `qc_` companion variables cover 11 of the
 81 data variables. Assessments present in the example file: `Bad`.
 
-`cleanup_qc=True` on read is what makes these usable; then screen with the `act-qc`
-helpers. Remember that ARM uses two assessment vocabularies - `Bad`/`Indeterminate`
+`cleanup_qc=True` on read is what makes these usable - it rewrites ARM's flag
+attributes into the form `qcfilter` expects. Remember that ARM uses two assessment vocabularies - `Bad`/`Indeterminate`
 from the automated tests, `Incorrect`/`Suspect` after DQR normalisation - and that
 filtering on only one of them silently keeps known-bad points.
 
 ```python
-act_qc_table(ds)                       # what each bit would remove, per variable
-act_qc_apply(ds, variables=[...])      # NaN-fill using all four assessment names
+# What each test would remove, one variable at a time
+print(ds["qc_up_hemisp_narrowband_filter1"].attrs["flag_meanings"])
+mask = ds.qcfilter.get_masked_data("up_hemisp_narrowband_filter1", rm_assessments=["Bad", "Indeterminate"],
+                                  return_mask_only=True)
+print(int(mask.sum()), "of", mask.size, "points flagged")
+
+# NaN-fill in place. ARM b1 files use Bad/Indeterminate, VAPs often use
+# Incorrect/Suspect - pass every name you might meet.
+ds.qcfilter.datafilter(variables=["up_hemisp_narrowband_filter1", "up_hemisp_narrowband_filter2", "up_hemisp_narrowband_filter3"],
+                       rm_assessments=["Bad", "Indeterminate", "Incorrect", "Suspect"],
+                       del_qc_var=False)
 ```
 
 On the example file no test fired on any variable, so the flag machinery is

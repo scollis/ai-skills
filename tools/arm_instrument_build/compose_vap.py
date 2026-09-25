@@ -8,6 +8,7 @@ intent, the file is what the archive currently serves.
 
 Reuses the helpers in compose.py so the two templates cannot drift apart.
 """
+import sections
 import datetime as dt
 
 from compose import _clean, _cite, _md_table, no_example_block, trim_description
@@ -232,22 +233,16 @@ def compose_vap(code, facts, row, inv, qc, example, report_url, n_pages, inputs=
     A("naming and the server-side subset endpoint.")
     A("")
     day = example.get("date") or str(row.get("ex_end") or "")[:10] or "YYYY-MM-DD"
-    A("```python")
-    A("import act")
-    A(f'files = armlive_list_files("{ex_ds}", "{day}", "{day}")')
-    A(f'ds = armlive_open("{ex_ds}", "{day}", "{day}", cleanup_qc=True)')
-    A("```")
+    A(sections.HELPER_NOTE)
+    A(sections.fetch_block(ex_ds, day))
     A("")
     if inv.get("n_vars", 0) > 40:
         keep = [v for v, _ in prim[:3]]
         A(f"This product carries {inv.get('n_vars')} variables. Over any window longer than a day,")
         A("read only what you need, and ask for the QC companion at the same time:")
         A("")
-        A("```python")
-        A(f'ds = armlive_open("{ex_ds}", start, end,')
-        A("                  keep_variables=" + repr(keep + [f"qc_{v}" for v in keep
-                                                             if va.get(v, {}).get("has_qc")]) + ")")
-        A("```")
+        A(sections.keep_variables_block(ex_ds, keep + [f"qc_{v}" for v in keep
+                                                       if va.get(v, {}).get("has_qc")]))
         A("")
 
     A("## Quality control in this product")
@@ -255,7 +250,8 @@ def compose_vap(code, facts, row, inv, qc, example, report_url, n_pages, inputs=
     nq = qc.get("n_qc_vars", 0)
     if no_example_reason:
         A("Not measured - no file was opened, so this skill cannot say which `qc_` variables this")
-        A("product carries. Confirm with `act_qc_variables(ds)` once you have a file, and read")
+        A("product carries. Confirm with")
+        A('`[v for v in ds.data_vars if v.startswith(\'qc_\')]` once you have a')
         A("`act-qc` for the assessment-vocabulary trap before filtering.")
         A("")
     elif nq:
@@ -267,10 +263,10 @@ def compose_vap(code, facts, row, inv, qc, example, report_url, n_pages, inputs=
         A("mean the algorithm refused to converge, or that an input was missing, rather than that")
         A("the sensor misbehaved. Read `flag_meanings` before interpreting a filtered series.")
         A("")
-        A("```python")
-        A("act_qc_table(ds)                       # what each bit would remove, per variable")
-        A("act_qc_apply(ds, variables=[...])      # NaN-fill using all four assessment names")
-        A("```")
+        _cov = [v for v in (qc.get("qc_covered") or []) if v in va] or \
+               [v for v in va if not v.startswith("qc_") and f"qc_{v}" in va]
+        A(sections.qc_filter_block(_cov[0], _cov[:3]) if _cov
+          else sections.single_qc_variable_block(next(v for v in va if v.startswith("qc_"))))
         A("")
         top = [r for r in (qc.get("flagged_top") or []) if isinstance(r, dict) and "error" not in r]
         if top:

@@ -162,18 +162,36 @@ _4 more variables; the full inventory is in `example_inventory.json` beside this
 ARM Live needs `ARMUSER` / `ARMTOKEN`; see `act-arm-live` for the service, datastream
 naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("sgpsurfspecalb7nch1mlawerC1.c1", "2026-07-29", "2026-07-29")
-ds = armlive_open("sgpsurfspecalb7nch1mlawerC1.c1", "2026-07-29", "2026-07-29", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "sgpsurfspecalb7nch1mlawerC1.c1",
+                             "start": "2026-07-29", "end": "2026-07-29", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./sgpsurfspecalb7nch1mlawerC1.c1/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "sgpsurfspecalb7nch1mlawerC1.c1", "2026-07-29", "2026-07-29")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("sgpsurfspecalb7nch1mlawerC1.c1", "2026-07-29", "2026-07-29"))   # cite what you pulled
 ```
 
 This product carries 65 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
-ds = armlive_open("sgpsurfspecalb7nch1mlawerC1.c1", start, end,
-                  keep_variables=['be_hemisp_narrowband_mfrsr', 'be_surface_albedo_mfr_narrowband_10m', 'be_surface_albedo_mfr_narrowband_25m', 'qc_be_hemisp_narrowband_mfrsr', 'qc_be_surface_albedo_mfr_narrowband_10m', 'qc_be_surface_albedo_mfr_narrowband_25m'])
+files = act.discovery.download_arm_data(user, token, "sgpsurfspecalb7nch1mlawerC1.c1", start, end)
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=['be_hemisp_narrowband_mfrsr', 'be_surface_albedo_mfr_narrowband_10m', 'be_surface_albedo_mfr_narrowband_25m', 'qc_be_hemisp_narrowband_mfrsr', 'qc_be_surface_albedo_mfr_narrowband_10m', 'qc_be_surface_albedo_mfr_narrowband_25m'],
+                                cleanup_qc=True)
 ```
 
 ## Quality control in this product
@@ -186,8 +204,17 @@ mean the algorithm refused to converge, or that an input was missing, rather tha
 the sensor misbehaved. Read `flag_meanings` before interpreting a filtered series.
 
 ```python
-act_qc_table(ds)                       # what each bit would remove, per variable
-act_qc_apply(ds, variables=[...])      # NaN-fill using all four assessment names
+# What each test would remove, one variable at a time
+print(ds["qc_hemisp_narrowband_mfrsrC1"].attrs["flag_meanings"])
+mask = ds.qcfilter.get_masked_data("hemisp_narrowband_mfrsrC1", rm_assessments=["Bad", "Indeterminate"],
+                                  return_mask_only=True)
+print(int(mask.sum()), "of", mask.size, "points flagged")
+
+# NaN-fill in place. ARM b1 files use Bad/Indeterminate, VAPs often use
+# Incorrect/Suspect - pass every name you might meet.
+ds.qcfilter.datafilter(variables=["hemisp_narrowband_mfrsrC1", "diffuse_hemisp_narrowband_mfrsrC1", "direct_normal_narrowband_mfrsrC1"],
+                       rm_assessments=["Bad", "Indeterminate", "Incorrect", "Suspect"],
+                       del_qc_var=False)
 ```
 
 Measured on the example file (sgpsurfspecalb7nch1mlawerC1.c1.20260729.060000.nc), the tests that fired:

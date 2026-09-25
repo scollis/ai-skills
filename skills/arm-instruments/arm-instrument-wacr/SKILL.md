@@ -89,7 +89,13 @@ handbook facts above as the only verified content here, and check the variable n
 yourself against a file before writing code against them:
 
 ```python
-files = armlive_list_files("sgpwacrC1.b1", start, end)
+import os, requests
+
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f'{os.environ["ARMUSER"]}:{os.environ["ARMTOKEN"]}',
+                             "ds": "sgpwacrC1.b1", "start": start, "end": end,
+                             "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])
 ```
 
 ## Getting the data
@@ -97,17 +103,34 @@ files = armlive_list_files("sgpwacrC1.b1", start, end)
 ARM Live needs `ARMUSER` / `ARMTOKEN` credentials; see the `act-arm-live` skill for the
 service, datastream naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("sgpwacrC1.b1", "2008-09-23", "2008-09-23")
-ds = armlive_open("sgpwacrC1.b1", "2008-09-23", "2008-09-23", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "sgpwacrC1.b1",
+                             "start": "2008-09-23", "end": "2008-09-23", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./sgpwacrC1.b1/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "sgpwacrC1.b1", "2008-09-23", "2008-09-23")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("sgpwacrC1.b1", "2008-09-23", "2008-09-23"))   # cite what you pulled
 ```
 
 ## Quality control in this datastream
 
 Not measured - no file was opened, so this skill cannot say which `qc_` variables
 this datastream carries or which tests fire. ARM b1-level files usually ship a
-`qc_` companion for most measurements; confirm with `act_qc_variables(ds)` once you
+`qc_` companion for most measurements; confirm with `[v for v in ds.data_vars if v.startswith("qc_")]` once you
 have a file, and read `act-qc` for the assessment-vocabulary trap before filtering.
 
 Either way, check the DQRs before trusting a period - they carry the mentor's knowledge
