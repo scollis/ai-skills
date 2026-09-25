@@ -222,10 +222,13 @@ def single_qc_variable_block(qc_variable):
 def state_flag_qc_block(primary):
     """Some products encode QC as a state flag, not a bitmask - `datafilter` cannot use it.
 
-    Found by execution: `sphotcod`'s `qc_cloud_optical_depth` carries `flag_values`
-    ("0, 1, 2, 3, 255") and `flag_assessments`, but `flag_masks` is None. ACT's
-    `qcfilter.datafilter` indexes flag_masks unconditionally and raises
-    `TypeError: 'NoneType' object is not subscriptable`. `get_masked_data` handles the
+    Found by execution, in `sphotcod`: its one QC companion is `qc_modis_white_sky_albedo`
+    (there is no `qc_cloud_optical_depth` in the file at all - an earlier version of this
+    docstring named that variable, which the run disproved). It carries `flag_values`
+    "0, 1, 2, 3, 255" and `flag_assessments`
+    ['Acceptable', 'Acceptable', 'Acceptable', 'Acceptable', 'Bad'], with `flag_masks`
+    None. ACT's `qcfilter.datafilter` indexes flag_masks unconditionally and raises
+    `TypeError: 'NoneType' object is not subscriptable`; `get_masked_data` handles the
     same variable correctly, so screen with that.
     """
     return (
