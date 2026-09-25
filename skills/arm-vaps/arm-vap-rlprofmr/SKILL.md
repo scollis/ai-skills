@@ -158,10 +158,27 @@ _6 more variables; the full inventory is in `example_inventory.json` beside this
 ARM Live needs `ARMUSER` / `ARMTOKEN`; see `act-arm-live` for the service, datastream
 naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("sgp10rlprofmr1turnC1.c1", "2004-01-03", "2004-01-03")
-ds = armlive_open("sgp10rlprofmr1turnC1.c1", "2004-01-03", "2004-01-03", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "sgp10rlprofmr1turnC1.c1",
+                             "start": "2004-01-03", "end": "2004-01-03", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./sgp10rlprofmr1turnC1.c1/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "sgp10rlprofmr1turnC1.c1", "2004-01-03", "2004-01-03")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("sgp10rlprofmr1turnC1.c1", "2004-01-03", "2004-01-03"))   # cite what you pulled
 ```
 
 ## Quality control in this product
@@ -174,8 +191,11 @@ mean the algorithm refused to converge, or that an input was missing, rather tha
 the sensor misbehaved. Read `flag_meanings` before interpreting a filtered series.
 
 ```python
-act_qc_table(ds)                       # what each bit would remove, per variable
-act_qc_apply(ds, variables=[...])      # NaN-fill using all four assessment names
+# This file carries one QC variable, `qc_flag`, not a per-variable `qc_<name>`
+# companion - so the qcfilter methods that key off that naming have nothing to
+# match. Read it directly and work out the encoding from its own attributes.
+print(ds["qc_flag"].attrs)
+print(ds["qc_flag"].to_series().value_counts().head())
 ```
 
 On the example file no test fired, so the machinery is present but unexercised

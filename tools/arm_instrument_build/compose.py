@@ -4,6 +4,7 @@ Every claim written here comes from one of three checkable sources, and the file
 which: the handbook PDF (page-cited), ARM's data-source catalog, or the example netCDF
 file that was actually opened. Nothing is written from general knowledge.
 """
+import sections
 import datetime as dt
 import json
 import re
@@ -172,9 +173,7 @@ def no_example_block(code, cat_row, reason):
         "handbook facts above as the only verified content here, and check the variable names",
         "yourself against a file before writing code against them:",
         "",
-        "```python",
-        f'files = armlive_list_files("{cat_row.get("ex_datastream") or "<datastream>"}", start, end)',
-        "```",
+        sections.size_probe_block(cat_row.get("ex_datastream") or "<datastream>"),
         "",
     ]
 
@@ -337,23 +336,17 @@ def compose(code, facts, cat_row, inv, qc, example, handbook_url, n_pages,
     A("ARM Live needs `ARMUSER` / `ARMTOKEN` credentials; see the `act-arm-live` skill for the")
     A("service, datastream naming and the server-side subset endpoint.")
     A("")
-    A("```python")
-    A("import act")
+    A(sections.HELPER_NOTE)
     day = example.get("date") or str(cat_row.get("ex_end") or "")[:10] or "YYYY-MM-DD"
-    A(f'files = armlive_list_files("{ex_ds}", "{day}", "{day}")')
-    A(f'ds = armlive_open("{ex_ds}", "{day}", "{day}", cleanup_qc=True)')
-    A("```")
+    A(sections.fetch_block(ex_ds, day))
     A("")
     if inv.get("n_vars", 0) > 40:
         keep = [v for v, _ in prim[:3]]
         A(f"This datastream carries {inv.get('n_vars')} variables. On any window longer than a day,")
         A("read only what you need - and ask for the QC companion at the same time:")
         A("")
-        A("```python")
-        A(f'ds = armlive_open("{ex_ds}", start, end,')
-        A("                  keep_variables=" + json.dumps(keep + [f"qc_{v}" for v in keep
-                                                                   if va.get(v, {}).get("has_qc")]) + ")")
-        A("```")
+        A(sections.keep_variables_block(ex_ds, keep + [f"qc_{v}" for v in keep
+                                                       if va.get(v, {}).get("has_qc")]))
         A("")
     if is_radar:
         A("### Reading it as a radar object")
@@ -394,7 +387,8 @@ def compose(code, facts, cat_row, inv, qc, example, handbook_url, n_pages,
     if no_example_reason:
         A("Not measured - no file was opened, so this skill cannot say which `qc_` variables")
         A("this datastream carries or which tests fire. ARM b1-level files usually ship a")
-        A("`qc_` companion for most measurements; confirm with `act_qc_variables(ds)` once you")
+        A("`qc_` companion for most measurements; confirm with")
+        A('`[v for v in ds.data_vars if v.startswith(\'qc_\')]` once you')
         A("have a file, and read `act-qc` for the assessment-vocabulary trap before filtering.")
         A("")
     elif nq:
@@ -402,15 +396,15 @@ def compose(code, facts, cat_row, inv, qc, example, handbook_url, n_pages,
         A(f"{inv.get('n_vars')} data variables. Assessments present in the example file: "
           + ", ".join(f"`{a}`" for a in qc.get("assessments") or []) + ".")
         A("")
-        A("`cleanup_qc=True` on read is what makes these usable; then screen with the `act-qc`")
-        A("helpers. Remember that ARM uses two assessment vocabularies - `Bad`/`Indeterminate`")
+        A("`cleanup_qc=True` on read is what makes these usable; it rewrites ARM's flag")
+        A("attributes into the form `qcfilter` expects. Remember that ARM uses two vocabularies - `Bad`/`Indeterminate`")
         A("from the automated tests, `Incorrect`/`Suspect` after DQR normalisation - and that")
         A("filtering on only one of them silently keeps known-bad points.")
         A("")
-        A("```python")
-        A("act_qc_table(ds)                       # what each bit would remove, per variable")
-        A("act_qc_apply(ds, variables=[...])      # NaN-fill using all four assessment names")
-        A("```")
+        _cov = [v for v in (qc.get("qc_covered") or []) if v in va] or \
+               [v for v in va if not v.startswith("qc_") and f"qc_{v}" in va]
+        A(sections.qc_filter_block(_cov[0], _cov[:3]) if _cov
+          else sections.single_qc_variable_block(next(v for v in va if v.startswith("qc_"))))
         A("")
         top = [r for r in (qc.get("flagged_top") or []) if isinstance(r, dict) and "error" not in r]
         if top:

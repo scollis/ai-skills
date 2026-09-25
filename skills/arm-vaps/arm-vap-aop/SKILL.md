@@ -155,18 +155,36 @@ _39 more variables; the full inventory is in `example_inventory.json` beside thi
 ARM Live needs `ARMUSER` / `ARMTOKEN`; see `act-arm-live` for the service, datastream
 naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("sgpaoppsap1flynn1mC1.c1", "2017-09-26", "2017-09-26")
-ds = armlive_open("sgpaoppsap1flynn1mC1.c1", "2017-09-26", "2017-09-26", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "sgpaoppsap1flynn1mC1.c1",
+                             "start": "2017-09-26", "end": "2017-09-26", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./sgpaoppsap1flynn1mC1.c1/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "sgpaoppsap1flynn1mC1.c1", "2017-09-26", "2017-09-26")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("sgpaoppsap1flynn1mC1.c1", "2017-09-26", "2017-09-26"))   # cite what you pulled
 ```
 
 This product carries 132 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
-ds = armlive_open("sgpaoppsap1flynn1mC1.c1", start, end,
-                  keep_variables=['AAE_BG', 'AAE_BR', 'AAE_GR', 'qc_AAE_BG', 'qc_AAE_BR', 'qc_AAE_GR'])
+files = act.discovery.download_arm_data(user, token, "sgpaoppsap1flynn1mC1.c1", start, end)
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=['AAE_BG', 'AAE_BR', 'AAE_GR', 'qc_AAE_BG', 'qc_AAE_BR', 'qc_AAE_GR'],
+                                cleanup_qc=True)
 ```
 
 ## Quality control in this product
@@ -179,8 +197,17 @@ mean the algorithm refused to converge, or that an input was missing, rather tha
 the sensor misbehaved. Read `flag_meanings` before interpreting a filtered series.
 
 ```python
-act_qc_table(ds)                       # what each bit would remove, per variable
-act_qc_apply(ds, variables=[...])      # NaN-fill using all four assessment names
+# What each test would remove, one variable at a time
+print(ds["qc_Bs_B"].attrs["flag_meanings"])
+mask = ds.qcfilter.get_masked_data("Bs_B", rm_assessments=["Bad", "Indeterminate"],
+                                  return_mask_only=True)
+print(int(mask.sum()), "of", mask.size, "points flagged")
+
+# NaN-fill in place. ARM b1 files use Bad/Indeterminate, VAPs often use
+# Incorrect/Suspect - pass every name you might meet.
+ds.qcfilter.datafilter(variables=["Bs_B", "Bs_G", "Bs_R"],
+                       rm_assessments=["Bad", "Indeterminate", "Incorrect", "Suspect"],
+                       del_qc_var=False)
 ```
 
 Measured on the example file (sgpaoppsap1flynn1mC1.c1.20170926.000030.nc), the tests that fired:

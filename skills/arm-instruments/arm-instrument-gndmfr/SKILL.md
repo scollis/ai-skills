@@ -96,10 +96,27 @@ Verified example: **`shbgndmfrC1.b1`**, file `shbgndmfrC1.b1.19980927.000000.cdf
 ARM Live needs `ARMUSER` / `ARMTOKEN` credentials; see the `act-arm-live` skill for the
 service, datastream naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("shbgndmfrC1.b1", "1998-09-27", "1998-09-27")
-ds = armlive_open("shbgndmfrC1.b1", "1998-09-27", "1998-09-27", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "shbgndmfrC1.b1",
+                             "start": "1998-09-27", "end": "1998-09-27", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./shbgndmfrC1.b1/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "shbgndmfrC1.b1", "1998-09-27", "1998-09-27")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("shbgndmfrC1.b1", "1998-09-27", "1998-09-27"))   # cite what you pulled
 ```
 
 ## Quality control in this datastream
@@ -107,14 +124,17 @@ ds = armlive_open("shbgndmfrC1.b1", "1998-09-27", "1998-09-27", cleanup_qc=True)
 1 `qc_` companion variables cover 0 of the
 13 data variables. Assessments present in the example file: .
 
-`cleanup_qc=True` on read is what makes these usable; then screen with the `act-qc`
-helpers. Remember that ARM uses two assessment vocabularies - `Bad`/`Indeterminate`
+`cleanup_qc=True` on read normalises what QC there is; `qc_info` is not a per-variable
+companion, so `qcfilter`'s variable-keyed methods do not apply here. Remember that ARM uses two assessment vocabularies - `Bad`/`Indeterminate`
 from the automated tests, `Incorrect`/`Suspect` after DQR normalisation - and that
 filtering on only one of them silently keeps known-bad points.
 
 ```python
-act_qc_table(ds)                       # what each bit would remove, per variable
-act_qc_apply(ds, variables=[...])      # NaN-fill using all four assessment names
+# This file carries one QC variable, `qc_info`, not a per-variable `qc_<name>`
+# companion - so the qcfilter methods that key off that naming have nothing to
+# match. Read it directly and work out the encoding from its own attributes.
+print(ds["qc_info"].attrs)
+print(ds["qc_info"].to_series().value_counts().head())
 ```
 
 On the example file no test fired on any variable, so the flag machinery is

@@ -110,7 +110,13 @@ handbook facts above as the only verified content here, and check the variable n
 yourself against a file before writing code against them:
 
 ```python
-files = armlive_list_files("sgprlC1.a0", start, end)
+import os, requests
+
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f'{os.environ["ARMUSER"]}:{os.environ["ARMTOKEN"]}',
+                             "ds": "sgprlC1.a0", "start": start, "end": end,
+                             "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])
 ```
 
 ## Getting the data
@@ -118,10 +124,27 @@ files = armlive_list_files("sgprlC1.a0", start, end)
 ARM Live needs `ARMUSER` / `ARMTOKEN` credentials; see the `act-arm-live` skill for the
 service, datastream naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("sgprlC1.a0", "2026-09-22", "2026-09-22")
-ds = armlive_open("sgprlC1.a0", "2026-09-22", "2026-09-22", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "sgprlC1.a0",
+                             "start": "2026-09-22", "end": "2026-09-22", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./sgprlC1.a0/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "sgprlC1.a0", "2026-09-22", "2026-09-22")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("sgprlC1.a0", "2026-09-22", "2026-09-22"))   # cite what you pulled
 ```
 
 Lidar profile products are time-height; `act-plotting`'s `TimeSeriesDisplay` with
@@ -132,7 +155,7 @@ coordinate is the usual view.
 
 Not measured - no file was opened, so this skill cannot say which `qc_` variables
 this datastream carries or which tests fire. ARM b1-level files usually ship a
-`qc_` companion for most measurements; confirm with `act_qc_variables(ds)` once you
+`qc_` companion for most measurements; confirm with `[v for v in ds.data_vars if v.startswith("qc_")]` once you
 have a file, and read `act-qc` for the assessment-vocabulary trap before filtering.
 
 Either way, check the DQRs before trusting a period - they carry the mentor's knowledge

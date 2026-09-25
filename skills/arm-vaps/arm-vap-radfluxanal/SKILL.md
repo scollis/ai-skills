@@ -155,18 +155,36 @@ _7 more variables; the full inventory is in `example_inventory.json` beside this
 ARM Live needs `ARMUSER` / `ARMTOKEN`; see `act-arm-live` for the service, datastream
 naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("sgpradfluxbrs1longC1.c1", "2025-08-19", "2025-08-19")
-ds = armlive_open("sgpradfluxbrs1longC1.c1", "2025-08-19", "2025-08-19", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "sgpradfluxbrs1longC1.c1",
+                             "start": "2025-08-19", "end": "2025-08-19", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./sgpradfluxbrs1longC1.c1/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "sgpradfluxbrs1longC1.c1", "2025-08-19", "2025-08-19")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("sgpradfluxbrs1longC1.c1", "2025-08-19", "2025-08-19"))   # cite what you pulled
 ```
 
 This product carries 54 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
-ds = armlive_open("sgpradfluxbrs1longC1.c1", start, end,
-                  keep_variables=['air_temperature', 'diffuse_downwelling_shortwave', 'direct_downwelling_shortwave', 'qc_air_temperature', 'qc_diffuse_downwelling_shortwave', 'qc_direct_downwelling_shortwave'])
+files = act.discovery.download_arm_data(user, token, "sgpradfluxbrs1longC1.c1", start, end)
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=['air_temperature', 'diffuse_downwelling_shortwave', 'direct_downwelling_shortwave', 'qc_air_temperature', 'qc_diffuse_downwelling_shortwave', 'qc_direct_downwelling_shortwave'],
+                                cleanup_qc=True)
 ```
 
 ## Quality control in this product
@@ -179,8 +197,17 @@ mean the algorithm refused to converge, or that an input was missing, rather tha
 the sensor misbehaved. Read `flag_meanings` before interpreting a filtered series.
 
 ```python
-act_qc_table(ds)                       # what each bit would remove, per variable
-act_qc_apply(ds, variables=[...])      # NaN-fill using all four assessment names
+# What each test would remove, one variable at a time
+print(ds["qc_downwelling_shortwave"].attrs["flag_meanings"])
+mask = ds.qcfilter.get_masked_data("downwelling_shortwave", rm_assessments=["Bad", "Indeterminate"],
+                                  return_mask_only=True)
+print(int(mask.sum()), "of", mask.size, "points flagged")
+
+# NaN-fill in place. ARM b1 files use Bad/Indeterminate, VAPs often use
+# Incorrect/Suspect - pass every name you might meet.
+ds.qcfilter.datafilter(variables=["downwelling_shortwave", "downwelling_longwave", "upwelling_shortwave"],
+                       rm_assessments=["Bad", "Indeterminate", "Incorrect", "Suspect"],
+                       del_qc_var=False)
 ```
 
 Measured on the example file (sgpradfluxbrs1longC1.c1.20250819.060000.nc), the tests that fired:

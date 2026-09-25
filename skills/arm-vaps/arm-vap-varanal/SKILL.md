@@ -150,18 +150,36 @@ _29 more variables; the full inventory is in `example_inventory.json` beside thi
 ARM Live needs `ARMUSER` / `ARMTOKEN`; see `act-arm-live` for the service, datastream
 naming and the server-side subset endpoint.
 
+The `act-arm-live` and `act-qc` skills wrap these calls in shorter helpers
+(`armlive_open`, `armlive_list_files`, `act_qc_table`, `act_qc_apply`). Those are helpers
+those skills define, **not** ACT functions - nothing below uses them, so every block here
+runs against a bare `act-atmos` install.
+
 ```python
-import act
-files = armlive_list_files("sgp60varanarapC1.c1", "2019-08-01", "2019-08-01")
-ds = armlive_open("sgp60varanarapC1.c1", "2019-08-01", "2019-08-01", cleanup_qc=True)
+import os, requests, act
+
+user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+
+# ACT has no list-only call, so size the request against ARM Live's query endpoint
+# before transferring anything.
+avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                     params={"user": f"{user}:{token}", "ds": "sgp60varanarapC1.c1",
+                             "start": "2019-08-01", "end": "2019-08-01", "wt": "json"}).json()
+print(avail["num_found"], avail["total_size"])            # files, bytes
+
+# Downloads into ./sgp60varanarapC1.c1/ unless you pass output=
+files = act.discovery.download_arm_data(user, token, "sgp60varanarapC1.c1", "2019-08-01", "2019-08-01")
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+print(act.discovery.get_arm_doi("sgp60varanarapC1.c1", "2019-08-01", "2019-08-01"))   # cite what you pulled
 ```
 
 This product carries 62 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
-ds = armlive_open("sgp60varanarapC1.c1", start, end,
-                  keep_variables=['LH', 'LH_col', 'LWP'])
+files = act.discovery.download_arm_data(user, token, "sgp60varanarapC1.c1", start, end)
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=['LH', 'LH_col', 'LWP'],
+                                cleanup_qc=True)
 ```
 
 ## Quality control in this product
