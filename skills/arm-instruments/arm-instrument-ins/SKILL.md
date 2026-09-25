@@ -135,8 +135,25 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpinpC1.a1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpinpC1.a1", "2025-02-03", "2025-02-03")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpinpC1.a1", "2025-02-03", "2025-02-03"))   # cite what you pulled
+```
+### First look
+
+Discrete samples rather than a continuous record, so markers.
+
+```python
+import matplotlib.pyplot as plt
+
+# Discrete samples, not a continuous record - a line plot of one or a few points
+# is meaningless (and ACT's TimeSeriesDisplay raises IndexError on a length-1
+# series), so plot the samples as markers.
+fig, ax = plt.subplots(figsize=(9, 3.5))
+ax.plot(ds["time"], ds["total_volume"], marker="o", linestyle="none")
+ax.set_ylabel("total_volume")
+fig.autofmt_xdate()
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
 ```
 
 ## Quality control in this datastream
@@ -151,7 +168,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpinpC1.a1", "20200820", "20260923")
+try:
+    act.qc.print_dqr("sgpinpC1.a1", "20200820", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: A QA/QC flow diagram governs protocols for INP measurement (Figure 5): quality assurance ensures requirements are fulfilled for ARM management and end users, while quality control maintains requirements via inspection and testing against pre-specified performance characteristics. QC includes monitoring in-line pressure and flow rate during filter collection, use of DI water and H2O2/catalase blanks in every INS run, thermocouple calibration/averaging, checking camera images against automated freezing detection on every run, use of binomial 95% confidence intervals (Agresti and Coull 1998) for...

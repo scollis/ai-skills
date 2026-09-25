@@ -156,9 +156,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpnimfr7nchlangplotC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpnimfr7nchlangplotC1.c1", "2026-09-18", "2026-09-18")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpnimfr7nchlangplotC1.c1", "2026-09-18", "2026-09-18"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("barnard_lnI_filter1")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -170,7 +185,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpnimfr7nchlangplotC1.c1", "19971016", "20260923")
+try:
+    act.qc.print_dqr("sgpnimfr7nchlangplotC1.c1", "19971016", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Near real-time data plots accessible via ARM Data Quality Health and Status (DQ HandS) plot browser. Data quality health and status results, including techniques used by ARM's data quality analysts, instrument mentors, and site scientists to monitor and diagnose data quality, are available at http://dq.arm.gov/. Instrument Mentor Monthly Summary provides additional monitoring info.

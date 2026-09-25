@@ -157,9 +157,23 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgp50rwpwindC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgp50rwpwindC1.b1", "2001-03-28", "2001-03-28")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgp50rwpwindC1.b1", "2001-03-28", "2001-03-28"))   # cite what you pulled
 ```
+### First look
+
+A gridded or multi-dimensional product, so one axis is fixed to plot it.
+
+```python
+import matplotlib.pyplot as plt
+
+# This field is 3-D ('time', 'range_gate', 'power'), so a first look has to fix an axis.
+fig, ax = plt.subplots(figsize=(8, 4))
+ds["dir"].isel(power=0).plot(ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 72 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
@@ -190,7 +204,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgp50rwpwindC1.b1", "19970519", "20260923")
+try:
+    act.qc.print_dqr("sgp50rwpwindC1.b1", "19970519", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: No flags are applied during ingest of consensus-averaged '.a2' winds and virtual temperatures. A parallel '.b2' data stream has data flags applied based on relative values of temperatures or wind components, comparing neighboring values in space (height) and time (sequential profiles, forward and backward) against predefined limits in the netCDF metadata; flags are 1 or 0. QC frequency is daily; QC delay is instantaneous/daily; QC type includes min/max flags, graphical plots, and comparisons. Additional QC includes daily comparison with BBSS radiosonde data (mean, standard deviation, max,...

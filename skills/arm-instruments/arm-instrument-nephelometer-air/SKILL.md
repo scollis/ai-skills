@@ -145,16 +145,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./nsaaafneph10sF1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "nsaaafneph10sF1.b1", "2015-09-30", "2015-09-30")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("nsaaafneph10sF1.b1", "2015-09-30", "2015-09-30"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("Bs_B_raw", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 41 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "nsaaafneph10sF1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["Bbs_B", "Bbs_B_raw", "Bbs_G", "qc_Bbs_B", "qc_Bbs_B_raw", "qc_Bbs_G"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["Bs_B_raw", "Bs_G_raw", "Bs_R_raw", "qc_Bs_B_raw", "qc_Bs_G_raw", "qc_Bs_R_raw"],
                                 cleanup_qc=True)
 ```
 
@@ -170,7 +185,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_Bs_B_raw"].attrs["flag_meanings"])
+print(ds["qc_Bs_B_raw"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("Bs_B_raw", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -201,7 +216,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("nsaaafneph10sF1.b1", "20130626", "20260923")
+try:
+    act.qc.print_dqr("nsaaafneph10sF1.b1", "20130626", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality evaluation involves automatic flagging of data based on criteria developed by instrument mentors, plus automatic generation of plots in collaboration with the ARM Data Quality Office. Automatic checks include monitoring the "mode" variable to determine operating mode (normal, zeroing) and flagging data accordingly, and ensuring RH levels inside the nephelometer are maintained below 40%. Plots are available via the ARM Facility Data Quality Diagnostic Plot Browser.

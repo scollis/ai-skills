@@ -160,9 +160,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpqcflux1longC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpqcflux1longC1.c1", "2026-09-20", "2026-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpqcflux1longC1.c1", "2026-09-20", "2026-09-20"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("down_short_hemisp")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -173,7 +188,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpqcflux1longC1.c1", "19950519", "20260924")
+try:
+    act.qc.print_dqr("sgpqcflux1longC1.c1", "19950519", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The VAP applies automatic data QC by comparing redundant co-located instrument measurements against empirically derived agreement criteria (Section 5, Table 2) and assigns a QC flag to each best-estimate value. For direct normal SW, diffuse SW, and downwelling LW (three-instrument fields): Flag=2 (Average of E13 and C1), Flag=1 (Average of BRS and C1), Flag=0 (Average of BRS and E13), Flag=-1 (BRS only), Flag=-2 (E13 only), Flag=-3 (C1 only), Flag=4 (Not enough info), Flag=-4 (All instruments down). For upwelling SW and LW (two-instrument fields): Flag=0 (Average of E13 and C1), Flag=1 (E13...

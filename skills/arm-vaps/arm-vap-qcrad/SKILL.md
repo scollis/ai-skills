@@ -171,16 +171,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpqcradbrs1longC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpqcradbrs1longC1.c1", "2026-08-27", "2026-08-27")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpqcradbrs1longC1.c1", "2026-08-27", "2026-08-27"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("BestEstimate_down_short_hemisp", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 70 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpqcradbrs1longC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['BestEstimate_down_short_hemisp', 'LWdnTc', 'LWdnTd', 'qc_BestEstimate_down_short_hemisp', 'qc_LWdnTc', 'qc_LWdnTd'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["BestEstimate_down_short_hemisp", "down_short_hemisp", "down_short_diffuse_hemisp", "qc_BestEstimate_down_short_hemisp", "qc_down_short_hemisp", "qc_down_short_diffuse_hemisp"],
                                 cleanup_qc=True)
 ```
 
@@ -195,7 +210,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_BestEstimate_down_short_hemisp"].attrs["flag_meanings"])
+print(ds["qc_BestEstimate_down_short_hemisp"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("BestEstimate_down_short_hemisp", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -223,7 +238,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpqcradbrs1longC1.c1", "19930901", "20260924")
+try:
+    act.qc.print_dqr("sgpqcradbrs1longC1.c1", "19930901", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: QC flag of 0 indicates data passed all tests ('good'). Odd QC flag values generally indicate a measurement below the corresponding minimum limit; even values indicate above the maximum limit. A flag of -1 means the test could not be performed (e.g., due to missing input), not that data are bad. Testing is applied hierarchically from largest (BSRN Physically Possible, flags 5-6) to smallest (1st level configurable, flags 1-2) limits; data failing 2nd-level or PP limits (flags 3-6) have their value set to -9999.0 ('bad'), while 1st-level failures (flags 1-2) retain the data value but flag it as...

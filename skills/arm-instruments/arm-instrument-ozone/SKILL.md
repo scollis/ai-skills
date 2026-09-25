@@ -158,16 +158,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./enaaoso3C1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "enaaoso3C1.b1", "2026-08-27", "2026-08-27")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("enaaoso3C1.b1", "2026-08-27", "2026-08-27"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("o3", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 46 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "enaaoso3C1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["o3", "averaging_time", "calibration_level_1", "qc_o3"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["o3", "qc_o3"],
                                 cleanup_qc=True)
 ```
 
@@ -183,7 +198,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_o3"].attrs["flag_meanings"])
+print(ds["qc_o3"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("o3", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -214,7 +229,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("enaaoso3C1.b1", "20101004", "20260923")
+try:
+    act.qc.print_dqr("enaaoso3C1.b1", "20101004", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Three levels of data quality: (1) automatic flagging during zero/span state changes (first 105 s after zero, first 30 s after each span level eliminated; centroid = ~30-s average); (2) inspection of 2X daily zeros and span checks via monthly time series, typically showing less than 1-2% relative standard deviation and minimal drift (less than 2%), values greater indicating need for recalibration at NYS DEC (no ARM capability to deliver calibration source to remote field sites); (3) visual inspection of output data stream to identify instrument/inlet failure periods and short 4-s instrumental...

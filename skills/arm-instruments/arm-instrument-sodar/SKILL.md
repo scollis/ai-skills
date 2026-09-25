@@ -137,9 +137,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./anxsodarM1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "anxsodarM1.b1", "2020-05-29", "2020-05-29")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("anxsodarM1.b1", "2020-05-29", "2020-05-29"))   # cite what you pulled
 ```
+### First look
+
+A 2-D field over time, so pcolormesh rather than a line.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4.5))
+disp.plot("wind_speed")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -151,7 +166,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("anxsodarM1.b1", "19970401", "20260923")
+try:
+    act.qc.print_dqr("anxsodarM1.b1", "19970401", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: No flags are applied during data ingest of the averaged winds; however, data are examined regularly by the instrument mentor for quality assurance via daily inspection of vertical time sections of hourly averaged wind and temperature over a 24-hour period. QC frequency is daily; QC delay is instantaneous/daily; QC type includes min/max flags, graphical plots, and intercomparisons; inputs are raw data; outputs are summary reports. The Data Quality Office website provides DQ Explorer, DQ Plot Browser, and NCVweb tools for inspecting and assessing data quality. Data Quality Reports document...

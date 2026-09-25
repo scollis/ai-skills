@@ -168,16 +168,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpsirsC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpsirsC1.b1", "2020-05-23", "2020-05-23")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpsirsC1.b1", "2020-05-23", "2020-05-23"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("up_long_hemisp", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 74 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpsirsC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["down_long_hemisp1_vent_tachometer", "down_long_hemisp2_shaded", "down_long_hemisp2_shaded_max", "qc_down_long_hemisp1_vent_tachometer", "qc_down_long_hemisp2_shaded", "qc_down_long_hemisp2_shaded_max"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["up_long_hemisp", "down_long_hemisp_shaded", "down_long_hemisp2_shaded", "qc_up_long_hemisp", "qc_down_long_hemisp_shaded", "qc_down_long_hemisp2_shaded"],
                                 cleanup_qc=True)
 ```
 
@@ -193,7 +208,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_up_long_hemisp"].attrs["flag_meanings"])
+print(ds["qc_up_long_hemisp"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("up_long_hemisp", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -224,7 +239,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpsirsC1.b1", "19970304", "20260923")
+try:
+    act.qc.print_dqr("sgpsirsC1.b1", "19970304", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Until early 2012, each 1-minute irradiance value was assigned a two-digit SERI QC data quality flag (00-99) based on automated K-space (Kt, Kn, Kd) consistency tests (one-, two-, and three-component tests against Gompertz boundaries and physical limits), described in Appendix A (DQMS-3). After the 2012 Linux port, this was replaced with a simplified max/min/delta QC flag system. Users are directed to the QCRAD Value-Added Product (VAP) for best quality-controlled estimates of short- and longwave radiation across SIRS, SKYRAD, GNDRAD, and BRS; QCRAD flags indicate pass/fail and reason. Data...

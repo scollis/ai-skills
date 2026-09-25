@@ -128,9 +128,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaafdewpointF1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaafdewpointF1.b1", "2016-09-20", "2016-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaafdewpointF1.b1", "2016-09-20", "2016-09-20"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("dewpoint_temperature", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -144,7 +159,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_dewpoint_temperature"].attrs["flag_meanings"])
+print(ds["qc_dewpoint_temperature"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("dewpoint_temperature", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -163,7 +178,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaafdewpointF1.b1", "20160425", "20260923")
+try:
+    act.qc.print_dqr("sgpaafdewpointF1.b1", "20160425", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data is quality controlled (QCd) by the mentor after an IOP-based field deployment before submission to the ARM Data Center. The dataset is compared to and validated by auxiliary measurements (relative and specific humidity, vapor mixing ratio, water vapor density, vapor pressure, dewpoint) taken by the AIMMS probe onboard the aircraft. Generally during level flight, reported changes in dew/frost points should be accurate; however, responses under icing conditions, sudden transitions from low to high dewpoints, and aircraft descent into warm, moist air should be analyzed closely. Data quality...

@@ -169,9 +169,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgp60varanarapC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgp60varanarapC1.c1", "2019-08-01", "2019-08-01")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgp60varanarapC1.c1", "2019-08-01", "2019-08-01"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("prec_srf")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 62 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
@@ -191,7 +206,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgp60varanarapC1.c1", "19970402", "20260924")
+try:
+    act.qc.print_dqr("sgp60varanarapC1.c1", "19970402", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Step 2 of the workflow (preprocess) includes major quality control of input data, averaging within the domain, filling missing measurements, interpolating to a consistent observation time step, and visual checking; the visual-check step was re-coded from interactive to offline iterative mode. Output large-scale forcing data go through a visual check and SCM/CRM test cycle with user feedback; if a problem is found the process loops back to preprocessing, otherwise the product is finalized ('Everything good').

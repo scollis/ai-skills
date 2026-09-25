@@ -153,16 +153,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./nsamwrpC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "nsamwrpC1.b1", "2023-09-26", "2023-09-26")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("nsamwrpC1.b1", "2023-09-26", "2023-09-26"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("surfacePressure", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 45 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "nsamwrpC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["blackbodyTemperature", "brightnessTemperature", "infraredTemperature", "qc_blackbodyTemperature", "qc_brightnessTemperature", "qc_infraredTemperature"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["surfacePressure", "surfaceTemperature", "surfaceRelativeHumidity", "qc_surfacePressure", "qc_surfaceTemperature", "qc_surfaceRelativeHumidity"],
                                 cleanup_qc=True)
 ```
 
@@ -178,7 +193,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_surfacePressure"].attrs["flag_meanings"])
+print(ds["qc_surfacePressure"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("surfacePressure", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -209,7 +224,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("nsamwrpC1.b1", "20040219", "20260923")
+try:
+    act.qc.print_dqr("nsamwrpC1.b1", "20040219", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality flags are named qc_'fieldname' (e.g., qc_temperature) with possible values: 0 (within specified range), 1 (missing value), 2 (less than specified minimum), 4 (greater than specified maximum), 8 (failed valid delta check). Table 5 provides min/max thresholds for brightnessTemperature, temperature, waterVaporDensity, surface_temperature, surface_pressure, surface_relative_humidity, surfaceWaterVaporDensity, totalPrecipitableWater, and liquidWaterPath. A daily quality check is available via the DQ Explorer system (http://dq.arm.gov/). The instrument mentor submits a monthly IMMS...

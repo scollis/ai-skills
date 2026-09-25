@@ -141,9 +141,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaafcoF1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaafcoF1.c1", "2016-09-20", "2016-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaafcoF1.c1", "2016-09-20", "2016-09-20"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("h2o")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -155,7 +170,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaafcoF1.c1", "20130701", "20260924")
+try:
+    act.qc.print_dqr("sgpaafcoF1.c1", "20130701", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality is evaluated by inspecting Quality Control (qc) flags and variables in the processed datastream, achieved in two stages: raw a0 files are processed to intermediate a1 daily files (time-stamped 5-Hz data, not yet corrected for offset/drift; truncated lines from system hiccups are purged); a1 files are then processed to calculate CO mixing ratios and associated qc flags by averaging concentrations for each channel (sampled, zero, span air), correcting for instrument offset, finding calibration data to correct for drifts, and writing output in netCDF format. Almost every variable...

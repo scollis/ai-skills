@@ -117,18 +117,12 @@ runs against a bare `act-atmos` install.
 import os, requests, act
 
 user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+files = act.discovery.download_arm_data(user, token, "bnfstereocambmovieS10.a1", start, end)
 
-# ACT has no list-only call, so size the request against ARM Live's query endpoint
-# before transferring anything.
-avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
-                     params={"user": f"{user}:{token}", "ds": "bnfstereocambmovieS10.a1",
-                             "start": "2026-09-03", "end": "2026-09-03", "wt": "json"}).json()
-print(avail["num_found"], avail["total_size"])            # files, bytes
-
-# Downloads into ./bnfstereocambmovieS10.a1/ unless you pass output=
-files = act.discovery.download_arm_data(user, token, "bnfstereocambmovieS10.a1", "2026-09-03", "2026-09-03")
-ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
-print(act.discovery.get_arm_doi("bnfstereocambmovieS10.a1", "2026-09-03", "2026-09-03"))   # cite what you pulled
+# These files are an MPEG program stream (magic 00 00 01 ba), not netCDF - `read_arm_netcdf` fails with
+# "did not find a match in any of xarray's currently installed IO backends".
+# Decode frames with an MPEG reader (ffmpeg/imageio); xarray has no backend for video.
+print(os.path.getsize(files[0]) / 1e6, "MB of video")
 ```
 
 ## Quality control in this datastream
@@ -142,7 +136,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("bnfstereocambmovieS10.a1", "20140102", "20260923")
+try:
+    act.qc.print_dqr("bnfstereocambmovieS10.a1", "20140102", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: The image data quality is judged subjectively by the sharpness of images and metadata information collected with the images. Environmental factors such as rain, sun (when in FoV), or insufficient daylight may temporarily impact data quality during the day depending on season. Rain drops on the camera screen may distort images; heavy rain or fog may cause complete loss of visibility; dust or debris accumulation on the camera enclosure screen may also affect image quality. Movies and system monitoring plots can be accessed via DQ-Plotbrowser.

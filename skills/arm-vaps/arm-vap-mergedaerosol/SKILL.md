@@ -163,16 +163,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./epcmergedaerosolM1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "epcmergedaerosolM1.c1", "2024-02-11", "2024-02-11")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("epcmergedaerosolM1.c1", "2024-02-11", "2024-02-11"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("acsm_total_organics_CDCE", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 99 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "epcmergedaerosolM1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['N_CCN', 'acsm_ammonium_CDCE', 'acsm_chloride_CDCE', 'qc_N_CCN', 'qc_acsm_ammonium_CDCE', 'qc_acsm_chloride_CDCE'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["acsm_total_organics_CDCE", "acsm_sulfate_CDCE", "acsm_ammonium_CDCE", "qc_acsm_total_organics_CDCE", "qc_acsm_sulfate_CDCE", "qc_acsm_ammonium_CDCE"],
                                 cleanup_qc=True)
 ```
 
@@ -187,7 +202,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_acsm_total_organics_CDCE"].attrs["flag_meanings"])
+print(ds["qc_acsm_total_organics_CDCE"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("acsm_total_organics_CDCE", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -215,7 +230,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("epcmergedaerosolM1.c1", "20161114", "20260924")
+try:
+    act.qc.print_dqr("epcmergedaerosolM1.c1", "20161114", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: QA/QC variables in the input data are evaluated and simplified into three reporting options: good, indeterminate, and bad. For c1 processing, the VAP searches for applicable DQRs and applies them prior to averaging: data flagged 'suspect' are included in averages but output flagged indeterminate; data flagged 'incorrect' are excluded from averaging (with missing/indeterminate flags applied based on the fraction excluded, using the same 50%/75% thresholds as for generic bad/missing data). The c0 version does not include DQR checks; the c1 version does.

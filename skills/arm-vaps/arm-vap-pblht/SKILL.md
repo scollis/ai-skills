@@ -170,8 +170,23 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgppblhtsonde1mcfarlC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgppblhtsonde1mcfarlC1.c1", "2026-09-17", "2026-09-17")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgppblhtsonde1mcfarlC1.c1", "2026-09-17", "2026-09-17"))   # cite what you pulled
+```
+### First look
+
+Plotted through xarray: the field's layout defeats ACT's 2-D path.
+
+```python
+import matplotlib.pyplot as plt
+
+# Plotted through xarray rather than ACT: this field is not time-major, or its
+# second dimension has a non-numeric coordinate, either of which sends ACT's
+# 2-D path into a dtype error.
+fig, ax = plt.subplots(figsize=(10, 4))
+ds["air_temp"].plot(x="time", ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
 ```
 
 ## Quality control in this product
@@ -185,7 +200,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_pbl_height_heffter"].attrs["flag_meanings"])
+print(ds["qc_pbl_height_heffter"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("pbl_height_heffter", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -210,7 +225,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgppblhtsonde1mcfarlC1.c1", "20010401", "20260924")
+try:
+    act.qc.print_dqr("sgppblhtsonde1mcfarlC1.c1", "20010401", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Radiosonde pre-processing performs whole-sonde QC checks (data count, altitude, pressure, temperature jump/extremes, missing pressure) that reject an entire sonde if failed, producing no PBL estimates. Passing sondes still have individual point-level QC against valid min/max criteria, with failing values set missing and qc flags set (no interpolation/fill). Near-surface (less than 50 m AGL) wind speeds greater than 33.5 m/s are treated as missing. Output PBL heights carry per-method qc flags (qc_pbl_height_heffter, qc_pbl_height_liu_liang, qc_pbl_height_bulk_richardson_pt25/pt5,...

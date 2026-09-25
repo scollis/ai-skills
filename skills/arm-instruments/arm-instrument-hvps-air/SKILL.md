@@ -120,6 +120,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaafhvpsF1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaafhvpsF1.c1", "2016-09-20", "2016-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaafhvpsF1.c1", "2016-09-20", "2016-09-20"))   # cite what you pulled
 ```
@@ -134,7 +135,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaafhvpsF1.c1", "20140225", "20260923")
+try:
+    act.qc.print_dqr("sgpaafhvpsF1.c1", "20140225", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Good data quality is ensured by comparison with other measurements. During sections of the flight known not to contain clouds or precipitation, the HVPS should also not record any images. Number concentrations and sizes should be comparable to other cloud probe measurements, and deviations should be investigated. Plots are generated using the ARM Data Quality Diagnostic Plot Browser (https://dq.arm.gov/dq-plotbrowser/).

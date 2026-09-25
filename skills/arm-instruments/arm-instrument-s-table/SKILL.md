@@ -127,9 +127,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./marrphtiltM1.a1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "marrphtiltM1.a1", "2018-03-21", "2018-03-21")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("marrphtiltM1.a1", "2018-03-21", "2018-03-21"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("roll")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -141,7 +156,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("marrphtiltM1.a1", "20121001", "20260923")
+try:
+    act.qc.print_dqr("marrphtiltM1.a1", "20121001", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Performance evaluated via mean and standard deviation of ship vs. table roll, pitch, and resultant tilt, plus ratio of table-to-ship values; probability distributions (1D and 2D) and cumulative probability distributions of tilt used to assess how close to level the table remains (greater than 90% within 0.1°, greater than 99% within 0.5° in moderate MAGIC campaign conditions). Statistics tabulated by cruise number and direction (Table 2) including roll, roll std, roll ratio, pitch, pitch std, pitch ratio.

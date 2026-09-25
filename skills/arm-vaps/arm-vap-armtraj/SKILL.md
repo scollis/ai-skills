@@ -195,16 +195,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgparmtrajpblC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgparmtrajpblC1.c1", "2026-09-10", "2026-09-10")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgparmtrajpblC1.c1", "2026-09-10", "2026-09-10"))   # cite what you pulled
 ```
+### First look
+
+A 2-D field over time, so pcolormesh rather than a line.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4.5))
+disp.plot("pres_ft")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 231 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgparmtrajpblC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['sea_ice_cover', 'sea_ice_cover_ens_mean', 'sea_ice_cover_ft', 'qc_sea_ice_cover', 'qc_sea_ice_cover_ens_mean', 'qc_sea_ice_cover_ft'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["wvert", "wvert_ft", "wvert_ens_mean", "qc_wvert", "qc_wvert_ft", "qc_wvert_ens_mean"],
                                 cleanup_qc=True)
 ```
 
@@ -219,7 +234,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_wvert"].attrs["flag_meanings"])
+print(ds["qc_wvert"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("wvert", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -247,7 +262,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgparmtrajpblC1.c1", "20131001", "20260924")
+try:
+    act.qc.print_dqr("sgparmtrajpblC1.c1", "20131001", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: ARMTRAJ reports the mean and standard deviation of all airmass coordinate and thermodynamic variables and most surface attribute variables; the ensemble standard deviation can be treated as a measure of trajectory estimated uncertainty. Users are advised to filter ARMTRAJ-ISOBAR trajectories affected by dynamical forcing (e.g., using land_sea_mask to identify trajectories over open water) since the isobaric quasi-horizontal assumption is critical to validity.

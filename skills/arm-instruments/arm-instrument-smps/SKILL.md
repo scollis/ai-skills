@@ -176,9 +176,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./enaaossmpsC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "enaaossmpsC1.b1", "2026-09-22", "2026-09-22")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("enaaossmpsC1.b1", "2026-09-22", "2026-09-22"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("aerosol_flow")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 50 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
@@ -201,7 +216,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_dN_dlogDp"].attrs["flag_meanings"])
+print(ds["qc_dN_dlogDp"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("dN_dlogDp", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -227,7 +242,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("enaaossmpsC1.b1", "20120627", "20260923")
+try:
+    act.qc.print_dqr("enaaossmpsC1.b1", "20120627", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality is evaluated at two levels. First, automated flagging by the Data Quality Office based on mentor-supplied thresholds, e.g., Sample Pressure 97-102 kPa, calibrated impactor flow 1.0±0.05 lpm, Status Flag (0=normal, 1=failed measurement due to CPC or classifier faults), Sheath Flow RH maximum 20%, and Sample RH less than 40% (maintained via Nafion dryer). CPC firmware also generates its own flags per manufacturer's manual. Second, automated diagnostic plots (via ARM's Data Quality Diagnostic Plot Browser) show housekeeping variable time series and comparisons/closure with...

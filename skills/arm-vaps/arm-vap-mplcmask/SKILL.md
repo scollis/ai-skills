@@ -171,9 +171,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgp30smplcmask1zwangC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgp30smplcmask1zwangC1.c1", "2026-09-20", "2026-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgp30smplcmask1zwangC1.c1", "2026-09-20", "2026-09-20"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("cloud_base")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -186,7 +201,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_linear_depol_ratio"].attrs["flag_meanings"])
+print(ds["qc_linear_depol_ratio"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("linear_depol_ratio", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -211,7 +226,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgp30smplcmask1zwangC1.c1", "19980522", "20260924")
+try:
+    act.qc.print_dqr("sgp30smplcmask1zwangC1.c1", "19980522", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Quality checks are applied to five variables (linear depolarization ratio, cloud_mask, linear depolarization signal-to-noise ratio, backscatter, backscatter signal-to-noise ratio); each has a corresponding qc_ variable in the output. NaNs arising from division by zero (since raw MPL signal can be legitimately zero) are set to missing with appropriate QC bits set. Beam-blocked periods, invalid backscatter, and bad lidar times identified by mentor/translator are flagged with missing values and QC bits. cloud_top_attenuation_flag is set when the backscatter SNR is below 1.0 between cloud top and...

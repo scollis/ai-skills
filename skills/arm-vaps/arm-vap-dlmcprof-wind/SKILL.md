@@ -149,9 +149,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./mosdlmcprofwindnewsM1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "mosdlmcprofwindnewsM1.c1", "2020-09-17", "2020-09-17")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("mosdlmcprofwindnewsM1.c1", "2020-09-17", "2020-09-17"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("nbeams")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -162,7 +177,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("mosdlmcprofwindnewsM1.c1", "20191011", "20260924")
+try:
+    act.qc.print_dqr("mosdlmcprofwindnewsM1.c1", "20191011", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Primary output variables contain missing values where SNR is below the processing threshold (~0.008). Users can apply additional QC by filtering wind estimates with large fit residuals and/or small linear correlation coefficients, by QC based on relative wind speed uncertainty (wspd_error/wspd), and/or by applying a higher SNR threshold than used in the original processing.

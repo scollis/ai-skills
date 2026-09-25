@@ -139,9 +139,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpdlppiC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpdlppiC1.b1", "2026-09-19", "2026-09-19")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpdlppiC1.b1", "2026-09-19", "2026-09-19"))   # cite what you pulled
 ```
+### First look
+
+A 2-D field over time, so pcolormesh rather than a line.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4.5))
+disp.plot("radial_velocity", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 Lidar profile products are time-height; `act-plotting`'s `TimeSeriesDisplay` with
 `plot_time_height_xsection_from_1d_data` or a direct `pcolormesh` on the range
@@ -159,7 +174,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_radial_velocity"].attrs["flag_meanings"])
+print(ds["qc_radial_velocity"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("radial_velocity", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -178,7 +193,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpdlppiC1.b1", "20101021", "20260923")
+try:
+    act.qc.print_dqr("sgpdlppiC1.b1", "20101021", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data availability is characterized as the percentage of valid samples exceeding an SNR threshold of 0.008 below a given altitude (Table 24). Quicklook plots are viewable via ARM Data Quality Office's dq-plotbrowser web tool and an instrument-mentor-maintained site. Analysts are advised to apply a minimum SNR threshold (0.01 or 0.008) to filter poor-quality velocity data, and potentially an upper threshold to remove fog/cloud/hard-target contamination. Velocity precision and noise can be assessed via autocovariance analysis of staring (fpt) data using linear or model-based extrapolation...

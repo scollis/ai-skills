@@ -140,9 +140,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpmicrobasepiavgC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpmicrobasepiavgC1.c1", "2010-12-27", "2010-12-27")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpmicrobasepiavgC1.c1", "2010-12-27", "2010-12-27"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("MWR_Missing_Percentage")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -153,7 +168,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpmicrobasepiavgC1.c1", "19961108", "20260924")
+try:
+    act.qc.print_dqr("sgpmicrobasepiavgC1.c1", "19961108", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: MICROBASE QC uses a combination statistical-technical method to set min/max allowable value flags per variable (Table 6), transfers/adapts QC flags from antecedent VAPs (e.g., MWRRET qc_stat2_lwp becomes aqc_stat2_lwp, ARSCL qc_ReflectivityClutterFlag feeds retrieval_flag), and reports per-variable bit-packed QC flags (qc_liquid_water_content, qc_ice_water_content, qc_liquid_effective_radius, qc_ice_effective_radius) with bits for out-of-detection-range radar signal, possible clutter, out-of-min/max-range values, bad/questionable MWR LWP input, precipitation indication, and bad/missing radar...

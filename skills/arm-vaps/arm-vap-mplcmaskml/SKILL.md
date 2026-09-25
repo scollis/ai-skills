@@ -163,9 +163,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpmplcmaskmlC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpmplcmaskmlC1.c1", "2026-09-20", "2026-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpmplcmaskmlC1.c1", "2026-09-20", "2026-09-20"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("cloud_base")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -178,7 +193,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_backscatter"].attrs["flag_meanings"])
+print(ds["qc_backscatter"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("backscatter", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -205,7 +220,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpmplcmaskmlC1.c1", "20100710", "20260924")
+try:
+    act.qc.print_dqr("sgpmplcmaskmlC1.c1", "20100710", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Model performance is assessed via precision (percentage of predicted clouds that are actual clouds), recall (percentage of actual clouds predicted as clouds), and F1-score (harmonic mean of precision and recall), computed against hand-labeled ground-truth hold-out data (66 quarter days) and an independent March 2015 SGP data set (27 days/108 quarter-days), as well as an OLI arctic transfer-learning evaluation (14 days/56 quarter-days). The output variable cloud_mask_confidence provides a per-pixel model confidence rating (0 to 1) for the cloud prediction.

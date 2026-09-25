@@ -157,16 +157,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaafccn2colbF1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaafccn2colbF1.b1", "2016-09-21", "2016-09-21")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaafccn2colbF1.b1", "2016-09-21", "2016-09-21"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("reported_temperature_gradient")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 42 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpaafccn2colbF1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["N_CCN", "N_CCN_dN", "P_sample", "qc_N_CCN"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["N_CCN", "lat", "lon", "qc_N_CCN", "qc_lat", "qc_lon"],
                                 cleanup_qc=True)
 ```
 
@@ -182,7 +197,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_N_CCN"].attrs["flag_meanings"])
+print(ds["qc_N_CCN"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("N_CCN", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -213,7 +228,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaafccn2colbF1.b1", "20130710", "20260923")
+try:
+    act.qc.print_dqr("sgpaafccn2colbF1.b1", "20130710", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality evaluation involves automatic flagging of data based on criteria developed by instrument mentors and automatic generation of plots in collaboration with the ARM Data Quality Office. Automatic checks include verifying sheath/sample flow rate ratio is between 9.5 and 10.5, and that the OPC first-stage voltage monitor reading is below 0.5 V. Automatically generated plots include aerosol particle size distribution vs time, total number concentration of humidified particles vs time, sample flow rate, and laser current/reference voltage, each used to flag potential instrument issues as...

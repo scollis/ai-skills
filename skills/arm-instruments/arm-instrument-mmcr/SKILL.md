@@ -168,17 +168,37 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpmmcrmomC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpmmcrmomC1.b1", "2011-01-01", "2011-01-01")
-ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
+
+# this datastream's time units are not CF-decodable and its files need an explicit
+# concat dimension, so read base_time and concatenate along time
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True, use_base_time=True, combine='nested', concat_dim='time')
 print(act.discovery.get_arm_doi("sgpmmcrmomC1.b1", "2011-01-01", "2011-01-01"))   # cite what you pulled
 ```
+### First look
+
+A 2-D field over time, so pcolormesh rather than a line.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4.5))
+disp.plot("NyquistVelocity")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 45 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpmmcrmomC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["time", "AvgNoiseLevel", "CalCheckLevel", "qc_time"],
-                                cleanup_qc=True)
+# base_time and time_offset stay in the keep list because use_base_time reads
+# them - drop them and the read fails with KeyError: 'base_time'.
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["base_time", "time_offset", "MinimumDetectableReflectivity", "RadarConstant", "CircularDepolarizationRatio"],
+                                cleanup_qc=True, use_base_time=True, combine='nested', concat_dim='time')
 ```
 
 ### Reading it as a radar object
@@ -202,17 +222,13 @@ from the automated tests, `Incorrect`/`Suspect` after DQR normalisation - and th
 filtering on only one of them silently keeps known-bad points.
 
 ```python
-# What each test would remove, one variable at a time
-print(ds["qc_time"].attrs["flag_meanings"])
-mask = ds.qcfilter.get_masked_data("time", rm_assessments=["Bad", "Indeterminate"],
-                                  return_mask_only=True)
-print(int(mask.sum()), "of", mask.size, "points flagged")
-
-# NaN-fill in place. ARM b1 files use Bad/Indeterminate, VAPs often use
-# Incorrect/Suspect - pass every name you might meet.
-ds.qcfilter.datafilter(variables=["time"],
-                       rm_assessments=["Bad", "Indeterminate", "Incorrect", "Suspect"],
-                       del_qc_var=False)
+# The only `qc_` companion in this file is `qc_time`, which describes the time base,
+# not a measurement - so there is no per-variable QC to filter here. Re-read the
+# full file: the narrowing example above dropped it.
+full = act.io.arm.read_arm_netcdf(files, cleanup_qc=True, use_base_time=True,
+                                 combine='nested', concat_dim='time')
+print(full["qc_time"].attrs.get("flag_meanings", "no flag_meanings"))
+print(full["qc_time"].to_series().value_counts().head())
 ```
 
 On the example file no test fired on any variable, so the flag machinery is
@@ -222,7 +238,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpmmcrmomC1.b1", "19961107", "20260923")
+try:
+    act.qc.print_dqr("sgpmmcrmomC1.b1", "19961107", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: DataQualityStatus (mmcrmom stream) flags per time value whether Reflectivity and RangeCorrectedCalibratedPower exist and how they were calibrated (1=no values, 2=abbreviated calibration, 4=default radar constant, 8=TWT fault/possible lost data). qc_time flags sample-time interval anomalies (1=expected, 2=duplicate, 4=greater than expected, 8=less than expected). TWTStatusCode reports hourly percentage of acceptable TWT peak power and retry counts. Data reviews by the Instrument Mentor are done weekly; DQ HandS (Data Quality Health and Status), DQ HandS Plot Browser, and NCVweb are DQO tools...

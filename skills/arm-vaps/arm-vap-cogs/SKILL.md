@@ -138,9 +138,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpcogsN1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpcogsN1.c1", "2019-10-27", "2019-10-27")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpcogsN1.c1", "2019-10-27", "2019-10-27"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("cldfrac")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -151,7 +166,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpcogsN1.c1", "20170901", "20260924")
+try:
+    act.qc.print_dqr("sgpcogsN1.c1", "20170901", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The PCCP algorithm applies a 3D filtering post-processing step to remove false positives from feature matching, though it does not completely eliminate them at all times (e.g., under hazy clear-sky conditions near sunrise/sunset with sun in FOV). The COGS algorithm performs cross-validation by back-projecting PCCP points from each camera pair onto the other four camera planes and only accepting back-projections that hit a cloudy pixel as true positives, in order to eliminate false positives; missing cloud point detection and rematching/validation steps then attempt to recover genuinely...

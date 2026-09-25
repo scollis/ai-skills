@@ -151,16 +151,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./magassistsummaryM1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "magassistsummaryM1.b1", "2012-12-07", "2012-12-07")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("magassistsummaryM1.b1", "2012-12-07", "2012-12-07"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("ch1_surface_layer_radiance", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 96 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "magassistsummaryM1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["ch1_elevated_layer_bt", "ch1_elevated_layer_radiance", "ch1_elevated_layer_radiance_std", "qc_ch1_elevated_layer_bt", "qc_ch1_elevated_layer_radiance", "qc_ch1_elevated_layer_radiance_std"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["ch1_surface_layer_radiance", "ch1_elevated_layer_radiance", "ch1_window_radiance", "qc_ch1_surface_layer_radiance", "qc_ch1_elevated_layer_radiance", "qc_ch1_window_radiance"],
                                 cleanup_qc=True)
 ```
 
@@ -176,7 +191,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_ch1_surface_layer_radiance"].attrs["flag_meanings"])
+print(ds["qc_ch1_surface_layer_radiance"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("ch1_surface_layer_radiance", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -207,7 +222,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("magassistsummaryM1.b1", "20121207", "20260923")
+try:
+    act.qc.print_dqr("magassistsummaryM1.b1", "20121207", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Diagnostic variables reside in .SUM files; if flagged red, data quality is usually compromised (Hatch Open, Detector Temp, LW/SW HBB NEN, LW/SW Responsivity, Rain Intensity). Additional diagnostic/maintenance flags relate mostly to temperature and humidity problems in the enclosure and components, with some indicating impending critical component failure or need for routine maintenance. Data quality flags related to ambient/hot blackbody temperature or electronic instability during calibration are also tracked; slight deviations don't affect quality but larger deviations increase noise. Data...

@@ -85,6 +85,10 @@ print(avail["num_found"], avail["total_size"])
 
 ## Getting the data
 
+A single file of this datastream is about 9 GB of video, so the block below
+was not run end to end - the transfer was cut off deliberately. Size the request first
+and expect to stream rather than hold a day in memory.
+
 ARM Live needs `ARMUSER` / `ARMTOKEN` credentials; see the `act-arm-live` skill for the
 service, datastream naming and the server-side subset endpoint.
 
@@ -107,6 +111,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./coraafcammovieF1.a1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "coraafcammovieF1.a1", "2018-12-08", "2018-12-08")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("coraafcammovieF1.a1", "2018-12-08", "2018-12-08"))   # cite what you pulled
 ```
@@ -122,7 +127,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("coraafcammovieF1.a1", "20181104", "20260923")
+try:
+    act.qc.print_dqr("coraafcammovieF1.a1", "20181104", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality is reported through ARM's Data Quality Reports, documenting missing or bad data. The download link also contains a read-me file that contains a table of data quality. There is no calibration database for this instrument, and data plots are not created for this instrument.

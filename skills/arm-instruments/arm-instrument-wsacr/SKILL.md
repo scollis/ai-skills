@@ -180,6 +180,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./anxwsacrcfrqcM1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "anxwsacrcfrqcM1.b1", "2020-05-29", "2020-05-29")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("anxwsacrcfrqcM1.b1", "2020-05-29", "2020-05-29"))   # cite what you pulled
 ```
@@ -210,6 +211,20 @@ For the `Radar` object, field naming, sweep anatomy, gate filtering and plotting
 profilers have one sweep and no split cuts, so the scan-strategy machinery in those
 skills is mostly inapplicable - the time-height view is the useful one.
 
+### First look
+
+The verified sweep is an RHI - fixed azimuth, elevation varying - so range-height it is.
+
+```python
+import matplotlib.pyplot as plt
+
+# A fixed-azimuth elevation sweep: range-height, not a plan view.
+disp = pyart.graph.RadarDisplay(radar)
+fig, ax = plt.subplots(figsize=(8, 4))
+disp.plot_rhi("reflectivity", sweep=0, ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 ## Quality control in this datastream
 
 This datastream ships **no `qc_` companion variables**, so `act-qc`'s filter methods
@@ -222,7 +237,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("anxwsacrcfrqcM1.b1", "20110406", "20260923")
+try:
+    act.qc.print_dqr("anxwsacrcfrqcM1.b1", "20110406", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: The qc_time variable contains bit-packed QC flags for time regularity (zero delta-time, delta-time below 0.01 s lower limit, or above 30 s upper limit), with all bits unset indicating good data and set bits given "Indeterminate" assessment. The Data Quality Office (DQO) website provides DQ Explorer, DQ Plot Browser, and NCVweb tools for inspecting SACR data quality; plots of reflectivity, Doppler radial velocity, and spectral width serve as indicators of whether the system is operational. Instrument mentors perform routine data reviews (daily Monday-Friday) plus reviews triggered by site...

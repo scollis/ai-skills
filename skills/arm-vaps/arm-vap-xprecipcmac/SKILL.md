@@ -174,9 +174,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./gucxprecipradarcmacppiS2.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "gucxprecipradarcmacppiS2.c1", "2023-06-13", "2023-06-13")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("gucxprecipradarcmacppiS2.c1", "2023-06-13", "2023-06-13"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("nyquist_velocity")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 46 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
@@ -198,7 +213,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("gucxprecipradarcmacppiS2.c1", "20211102", "20260924")
+try:
+    act.qc.print_dqr("gucxprecipradarcmacppiS2.c1", "20211102", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Gate-ID (scatterer classification: multi_trip, rain, snow, no_scatter, melting, clutter, terrain_blockage) is computed pre-correction using fuzzy logic membership functions (Table 1) on texture of radial velocity, rho_HV, NCP, sounding temperature, height, and SNR, and is used to build Py-ART Gatefilter objects controlling which correction algorithms run on which gates. The gate_id variable has flag_values 0-6 with flag_meanings multi_trip, rain, snow, no_scatter, melting, clutter, terrain_blockage. Global attribute "known_issues" states: "False phidp jumps in insect regions. Still uses old...

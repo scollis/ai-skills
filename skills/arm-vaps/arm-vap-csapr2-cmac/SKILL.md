@@ -177,9 +177,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./houcsapr2cmacS2.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "houcsapr2cmacS2.c1", "2022-09-28", "2022-09-28")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("houcsapr2cmacS2.c1", "2022-09-28", "2022-09-28"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("nyquist_velocity")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 75 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
@@ -201,7 +216,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("houcsapr2cmacS2.c1", "20181012", "20260924")
+try:
+    act.qc.print_dqr("houcsapr2cmacS2.c1", "20181012", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: CMAC output includes a censor_mask (flag_masks/flag_meanings covering horizontal/vertical SNR below noise threshold, ccor below threshold, SQI below thresholds, sigpow below threshold, unfiltered rhoHV below threshold, and censored_by_clutter_micro_suppression) and a classification_mask (second_trip, third_trip, interference, clutter, sunspoke flags), plus a gate_id field (flag_values 0-6: multi_trip, rain, snow, no_scatter, melting, clutter, terrain_blockage) used to determine where corrections are applied. Rain rate (rain_rate_A) is set to 0.0 where normalized coherent power less than  0.4...

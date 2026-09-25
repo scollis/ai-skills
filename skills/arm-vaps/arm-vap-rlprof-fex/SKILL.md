@@ -168,9 +168,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgprlproffexext1thorC1.c0/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgprlproffexext1thorC1.c0", "2026-09-20", "2026-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgprlproffexext1thorC1.c0", "2026-09-20", "2026-09-20"))   # cite what you pulled
 ```
+### First look
+
+A 2-D field over time, so pcolormesh rather than a line.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4.5))
+disp.plot("particulate_backscatter_e_n2")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -181,7 +196,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgprlproffexext1thorC1.c0", "20150225", "20260924")
+try:
+    act.qc.print_dqr("sgprlproffexext1thorC1.c0", "20150225", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Estimates of random and systematic uncertainty are provided for all primary variables in rlproffex1thor.c0. Random uncertainties are derived from random noise in raw lidar signals (background noise from solar radiation, detector dark current, thermal noise, and shot noise) via standard error-propagation. Systematic uncertainties stem from errors in calibration constants, overlap corrections, and other configuration-file constants. detection_confidence_score_total and detection_confidence_score_random (0 to 1, with -1 for fully attenuated beam) indicate confidence that a bin is feature vs....

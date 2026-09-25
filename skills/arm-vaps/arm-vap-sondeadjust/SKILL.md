@@ -159,8 +159,27 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpsondeadjustC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpsondeadjustC1.c1", "2012-08-29", "2012-08-29")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpsondeadjustC1.c1", "2012-08-29", "2012-08-29"))   # cite what you pulled
+```
+### First look
+
+A sounding: the profile, not a time series.
+
+```python
+import matplotlib.pyplot as plt
+
+# A skew-T is the conventional view, but ACT's SkewTDisplay goes through MetPy,
+# which raises InvalidSoundingError when the profile contains any pressure
+# reversal - and raw ARM soundings routinely do. Filter to monotonic pressure
+# first if you want the skew-T; this plain profile always runs.
+fig, ax = plt.subplots(figsize=(4.5, 6))
+ax.plot(ds["tdry"], ds["pres"], label="tdry")
+ax.plot(ds["dp"], ds["pres"], label="dp")
+ax.invert_yaxis()
+ax.set_xlabel("degC"); ax.set_ylabel("pres"); ax.legend()
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
 ```
 
 ## Quality control in this product
@@ -174,7 +193,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_pres"].attrs["flag_meanings"])
+print(ds["qc_pres"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("pres", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -193,7 +212,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpsondeadjustC1.c1", "19970828", "20260924")
+try:
+    act.qc.print_dqr("sgpsondeadjustC1.c1", "19970828", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Quality control flags copied from the original radiosonde datastream apply unchanged to fields such as pres, tdry, dp, wspd, deg, rh, u_wind, v_wind, and asc. The new value-added fields (rh_smooth, rh_biased, rh_adjust, rh_scaled) have newly created QC variables that are currently copied directly from the RH QC field of the original radiosonde data, per Data Quality office requirements; more detailed QC information will be assigned to these new fields as data move from the Evaluation area to the general area of the ARM Data Archive. QC variables are bit-packed: zero means good data. Bit 1 =...

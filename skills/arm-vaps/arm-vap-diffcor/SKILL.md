@@ -173,16 +173,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpbrs1duttC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpbrs1duttC1.c1", "2001-01-19", "2001-01-19")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpbrs1duttC1.c1", "2001-01-19", "2001-01-19"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("down_short_hemisp_sum")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 68 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpbrs1duttC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['dsdh_detector_corrected', 'dsdh_full_corrected', 'air_temperature', 'qc_dsdh_detector_corrected', 'qc_dsdh_full_corrected'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["dsdh_full_corrected", "dsdh_detector_corrected", "qc_dsdh_full_corrected", "qc_dsdh_detector_corrected"],
                                 cleanup_qc=True)
 ```
 
@@ -197,7 +212,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_dsdh_full_corrected"].attrs["flag_meanings"])
+print(ds["qc_dsdh_full_corrected"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("dsdh_full_corrected", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -216,7 +231,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpbrs1duttC1.c1", "19930901", "20260924")
+try:
+    act.qc.print_dqr("sgpbrs1duttC1.c1", "19930901", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The VAP applies a tiered QC flag system (Table 1: GOOD/MISSING/BAD/QUESTIONABLE, bitwise flags 0-16384) separately for Detector-only and Full corrected diffuse SW, covering: missing shortwave diffuse; PIR original-vs-calculated mismatch (greater than 2.0 Wm-2); case-dome temperature relationship violations; IR brightness vs ambient air temperature violations; corrected value vs Rayleigh limit comparison; corrected-minus-uncorrected magnitude check (greater than 30 Wm-2); PIR case temperature running standard deviation noise test; and PIR detector flux range check. 'Bad' data have corrected...

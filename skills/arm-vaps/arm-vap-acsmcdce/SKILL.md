@@ -168,16 +168,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpacsmcdceC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpacsmcdceC1.c1", "2016-12-22", "2016-12-22")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpacsmcdceC1.c1", "2016-12-22", "2016-12-22"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("total_organics", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 53 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpacsmcdceC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['CDCE', 'acsm_vol_conc', 'acsm_vol_conc_CDCE', 'qc_CDCE', 'qc_acsm_vol_conc', 'qc_acsm_vol_conc_CDCE'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["total_organics", "ammonium", "sulfate", "qc_total_organics", "qc_ammonium", "qc_sulfate"],
                                 cleanup_qc=True)
 ```
 
@@ -192,7 +207,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_total_organics"].attrs["flag_meanings"])
+print(ds["qc_total_organics"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("total_organics", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -220,7 +235,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpacsmcdceC1.c1", "20101118", "20260924")
+try:
+    act.qc.print_dqr("sgpacsmcdceC1.c1", "20101118", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: QA/QC tests trigger qc_CDCE bits: bit 1 for negative NH4meas/NH4pred, bit 2 for negative ANMF, bit 3 for ANMFgreater than 1, and bit 4 for NH4pred below the instrument LOD of 0.2 ug/m3. The handbook states these QC bits do not necessarily indicate the CDCE calculation is wrong and instead indicate caution should be used. Additional per-species QC variables (qc_ammonium_cdce, qc_chloride_cdce, qc_nitrate_cdce, qc_sulfate_cdce, qc_total_organics_cdce, qc_acsm_vol_conc_cdce) combine bits for qc_CDCE indeterminate assessment and the corresponding b-1 species QC (bad or indeterminate assessment)....

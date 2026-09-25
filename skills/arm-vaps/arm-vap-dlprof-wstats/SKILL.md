@@ -177,9 +177,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpdlprofwstats4newsC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpdlprofwstats4newsC1.c1", "2025-12-15", "2025-12-15")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpdlprofwstats4newsC1.c1", "2025-12-15", "2025-12-15"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("dl_cbh")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 57 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
@@ -199,7 +214,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpdlprofwstats4newsC1.c1", "20101022", "20260924")
+try:
+    act.qc.print_dqr("sgpdlprofwstats4newsC1.c1", "20101022", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The DLPROF-WSTATS VAP itself does not fully quality-control the variance, w, and noise fields; users must filter data using the included noise and median SNR fields. Typical thresholds are SNRless than 0.008 and/or noisegreater than 1 ms-1, which are effective at removing most poor-quality measurements. The skewness and kurtosis fields already have missing values applied wherever SNR is below the prescribed threshold (default 0.008, saved in the VAP as snr_threshold), but users can raise this threshold for further QC. Ancillary ECOR and MET data are included to help assess lidar-derived...

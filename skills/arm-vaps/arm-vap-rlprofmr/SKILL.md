@@ -177,9 +177,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgp10rlprofmr1turnC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgp10rlprofmr1turnC1.c1", "2004-01-03", "2004-01-03")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgp10rlprofmr1turnC1.c1", "2004-01-03", "2004-01-03"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("liq_mwr")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -205,7 +220,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgp10rlprofmr1turnC1.c1", "19980301", "20260924")
+try:
+    act.qc.print_dqr("sgp10rlprofmr1turnC1.c1", "19980301", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: MR and TEMP algorithms perform no quality control on the final output; it is the end user's responsibility to perform QC using provided uncertainty estimates. Recommended QC: reject WVMR samples where mr_merged_err/mr_merged greater than  0.25 (25%); reject temperature samples where temperature_err/temperature greater than  0.05 (5%). These thresholds are user-adjustable ('relative_uncertainty_threshold') based on need. Example day (21 Aug 2017, SGP) shows QC removes noisiest data, reducing valid WVMR height from ~8km at night to ~4km in daytime.

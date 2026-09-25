@@ -146,16 +146,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgptsiskycoverC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgptsiskycoverC1.b1", "2025-08-18", "2025-08-18")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgptsiskycoverC1.b1", "2025-08-18", "2025-08-18"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("percent_opaque", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 52 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgptsiskycoverC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["count_box", "count_mask", "count_opaque", "qc_count_box", "qc_count_mask", "qc_count_opaque"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["percent_opaque", "percent_thin", "sunny", "qc_percent_opaque", "qc_percent_thin", "qc_sunny"],
                                 cleanup_qc=True)
 ```
 
@@ -171,7 +186,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_percent_opaque"].attrs["flag_meanings"])
+print(ds["qc_percent_opaque"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("percent_opaque", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -202,7 +217,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgptsiskycoverC1.b1", "20000701", "20260923")
+try:
+    act.qc.print_dqr("sgptsiskycoverC1.b1", "20000701", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Most fields have a corresponding, sample-by-sample automated quality-check field in the b1 level datastreams named qc_less than fieldnamegreater than  (e.g., qc_percent.opaque). Flag values 0-15 indicate combinations of passed checks, missing data, below-minimum, above-maximum, and delta (sample-to-sample change) check failures, per Table 4. Minimum/maximum thresholds for each field are defined in Table 5. Sky cover retrievals are also monitored via visual inspection comparing sky images to cloud decision images; non-optimal periods are reprocessed and updated files sent to the ARM Archive....

@@ -162,9 +162,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpmwrret2turnC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpmwrret2turnC1.c1", "2025-03-28", "2025-03-28")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpmwrret2turnC1.c1", "2025-03-28", "2025-03-28"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("phys_pwv", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -177,7 +192,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_phys_pwv"].attrs["flag_meanings"])
+print(ds["qc_phys_pwv"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("phys_pwv", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -196,7 +211,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpmwrret2turnC1.c1", "20111001", "20260924")
+try:
+    act.qc.print_dqr("sgpmwrret2turnC1.c1", "20111001", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: All quality flags associated with input fields are propagated to the output. A QC flag is set for each retrieved variable (PWV, LWP) to indicate whether the retrieval is good or bad. QC tests include identification of unrealistic retrievals (PWV less than  0), number of iterations of retrievals, and standard deviations of outputs. A 'converged' variable indicates whether the physical-iterative retrieval converged; 'num_iteration' stores the number of iterations performed. Flags indicating clear-sky and precipitating periods are also included in the output, along with root-mean-square...

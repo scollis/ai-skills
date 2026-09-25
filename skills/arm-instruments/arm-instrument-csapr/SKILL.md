@@ -172,6 +172,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./corcsapr2cfrzppiqcM1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "corcsapr2cfrzppiqcM1.b1", "2019-02-27", "2019-02-27")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("corcsapr2cfrzppiqcM1.b1", "2019-02-27", "2019-02-27"))   # cite what you pulled
 ```
@@ -202,6 +203,22 @@ For the `Radar` object, field naming, sweep anatomy, gate filtering and plotting
 profilers have one sweep and no split cuts, so the scan-strategy machinery in those
 skills is mostly inapplicable - the time-height view is the useful one.
 
+### First look
+
+The verified sweep points at zenith, so neither a plan view nor a time-height applies.
+
+```python
+import matplotlib.pyplot as plt
+
+# An azimuth sweep at 90 deg elevation (a birdbath scan, used for ZDR
+# calibration). Every ray points at zenith, so a plan view is meaningless -
+# one ray is a vertical profile, and the spread across rays is the signal.
+disp = pyart.graph.RadarDisplay(radar)
+fig, ax = plt.subplots(figsize=(6, 4))
+disp.plot_ray("reflectivity", 0, ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 ## Quality control in this datastream
 
 This datastream ships **no `qc_` companion variables**, so `act-qc`'s filter methods
@@ -214,7 +231,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("corcsapr2cfrzppiqcM1.b1", "20110325", "20260923")
+try:
+    act.qc.print_dqr("corcsapr2cfrzppiqcM1.b1", "20110325", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: The Data Quality Office website provides DQ Explorer, DQ Plot Browser, and NCVweb tools for inspecting and assessing (X-SAPR/C-SAPR) data quality. Plots of reflectivity, Doppler radial velocity, and dual-polarization variables provide a good indicator of whether the system is operational. Instrument mentors review C-SAPR data via routine review (usually daily Monday-Friday), upon request by Site Operations, the site scientist team, an ARM data translator, or a data user, and when notified automatically by built-in test email messages. Data Assessments by Site Scientist/Data Quality Office: To...

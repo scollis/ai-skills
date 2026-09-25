@@ -155,9 +155,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaerich2nf1turnC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaerich2nf1turnC1.c1", "2026-09-16", "2026-09-16")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaerich2nf1turnC1.c1", "2026-09-16", "2026-09-16"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("outsideAirTemp")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -168,7 +183,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpaerich2nf1turnC1.c1", "20050323", "20260924")
+try:
+    act.qc.print_dqr("sgpaerich2nf1turnC1.c1", "20050323", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The VAP applies quality control to input radiance spectra before PCA because bad spectra can significantly skew PCA results and make the noise-filtered data suboptimal. Two bad-data criteria are used: (1) mean observed radiance at 900 cm-1 outside -5 to 170 mW/(m2 ster cm-1), and (2) LWskyNEN exceeding 7 mW/(m2 ster cm-1) (nominal data) or 25 mW/(m2 ster cm-1) (RS data). Flagged bad samples are removed from the dataset prior to noise filtering. The output file's qc_time field is recalculated because time samples are synchronized among the three input files, and its attributes were rewritten...

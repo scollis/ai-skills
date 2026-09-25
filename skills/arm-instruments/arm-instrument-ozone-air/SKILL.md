@@ -143,9 +143,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaafo3F1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaafo3F1.c1", "2016-09-20", "2016-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaafo3F1.c1", "2016-09-20", "2016-09-20"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("o3")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -157,7 +172,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaafo3F1.c1", "20130630", "20260923")
+try:
+    act.qc.print_dqr("sgpaafo3F1.c1", "20130630", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Automatic flagging of data occurs when the instrument changes states during zero and span checks: first 105 seconds after zero actuation and first 30 seconds after each span level are excluded; centroid of each state is an average of ~30 seconds once stable. Second level of QC is inspection of 2x daily zero/span checks, typically showing less than 1-2% relative standard deviation and less than 2% drift; larger values indicate need for recalibration at NYS DEC. Third level is visual inspection of the output data stream for periods of instrument/inlet failure, which are flagged; failures are...

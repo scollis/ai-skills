@@ -185,16 +185,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaerosolbe1turnC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaerosolbe1turnC1.c1", "2021-04-01", "2021-04-01")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaerosolbe1turnC1.c1", "2021-04-01", "2021-04-01"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("be_aod_500", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 129 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpaerosolbe1turnC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['absorption_coefficient_mean_blue', 'absorption_coefficient_mean_green', 'absorption_coefficient_mean_red', 'qc_absorption_coefficient_mean_blue', 'qc_absorption_coefficient_mean_green', 'qc_absorption_coefficient_mean_red'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["be_aod_500", "be_aod_355", "be_angstrom_exponent", "qc_be_aod_500", "qc_be_aod_355", "qc_be_angstrom_exponent"],
                                 cleanup_qc=True)
 ```
 
@@ -209,7 +224,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_be_aod_500"].attrs["flag_meanings"])
+print(ds["qc_be_aod_500"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("be_aod_500", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -237,7 +252,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpaerosolbe1turnC1.c1", "20010101", "20260924")
+try:
+    act.qc.print_dqr("sgpaerosolbe1turnC1.c1", "20010101", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Each input datastream undergoes quality checks before combination: (1) NIMFR/MFRSR AOD data pass a rolling-window (90 samples before/after) tolerance test on standard deviation (threshold 0.05), with flagged bad data replaced by missing value -9999.0; (2) cloud screening via Angström exponent thresholds (below 0.5 or above 4.0 flags all filter AODs as missing); (3) dry Angström exponent from aip1ogren screened to be within 0-3, else set to missing; (4) mergesonde profiles discarded if not reaching 7 km, and SONDE RH values below zero set to a minimum of 50%; (5) MET RH values above 99.0 set...

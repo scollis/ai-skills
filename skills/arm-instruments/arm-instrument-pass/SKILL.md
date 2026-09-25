@@ -169,9 +169,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaospass3wC1.a1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaospass3wC1.a1", "2015-09-28", "2015-09-28")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaospass3wC1.a1", "2015-09-28", "2015-09-28"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("acoustic_pressure")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -185,7 +200,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaospass3wC1.a1", "20090219", "20260923")
+try:
+    act.qc.print_dqr("sgpaospass3wC1.a1", "20090219", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Housekeeping channels are provided for QC purposes: P0_dB (peak acoustic pressure during acoustic calibration, should remain stable if microphone sensitivity is constant); Phase_deg (should be near zero with strong absorption signal, random -180 to 180 with no signal); AverageBackgroundSubtractedBabs_1/Mm and BscaBackGnd_1/Mm (background stability, should stay relatively constant during stable conditions, dramatic changes indicate a problem); NoiseEqBabs_1/Mm (uncertainty estimate for Babs, useful instrument-response metric); ADrange_v (amplification factor, should be ~200 and definitely...

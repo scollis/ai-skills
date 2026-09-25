@@ -166,8 +166,25 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpmfrsr7nchcalC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpmfrsr7nchcalC1.c1", "2026-09-20", "2026-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpmfrsr7nchcalC1.c1", "2026-09-20", "2026-09-20"))   # cite what you pulled
+```
+### First look
+
+Discrete samples rather than a continuous record, so markers.
+
+```python
+import matplotlib.pyplot as plt
+
+# Discrete samples, not a continuous record - a line plot of one or a few points
+# is meaningless (and ACT's TimeSeriesDisplay raises IndexError on a length-1
+# series), so plot the samples as markers.
+fig, ax = plt.subplots(figsize=(9, 3.5))
+ax.plot(ds["time"], ds["Io_filter1"], marker="o", linestyle="none")
+ax.set_ylabel("Io_filter1")
+fig.autofmt_xdate()
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
 ```
 
 ## Quality control in this product
@@ -181,7 +198,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_Io_filter1"].attrs["flag_meanings"])
+print(ds["qc_Io_filter1"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("Io_filter1", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -204,7 +221,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpmfrsr7nchcalC1.c1", "19970109", "20260924")
+try:
+    act.qc.print_dqr("sgpmfrsr7nchcalC1.c1", "19970109", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: A 'variability_flag' field is near zero during times of relatively stable optical depth (sliding-window algorithm checked temporal stability); it is set to one (1) when optical depths vary widely from one sample to the next, which may indicate cloud presence. Most measured variables are accompanied by QC flags/bits based on criteria such as being far outside physically plausible limits; a non-zero QC bit indicates a possible data problem, and users are advised to carefully examine QC values and underlying causes.

@@ -199,17 +199,36 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgparmtrajtbsC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgparmtrajtbsC1.c1", "2024-11-11", "2024-11-11")
-ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
+
+# this product's time units are not CF-decodable, so read base_time instead
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True, use_base_time=True)
 print(act.discovery.get_arm_doi("sgparmtrajtbsC1.c1", "2024-11-11", "2024-11-11"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("pres_mean_tbsimet")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 261 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgparmtrajtbsC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['alt_tbsimet', 'lat_tbsimet', 'lon_tbsimet', 'qc_alt_tbsimet', 'qc_lat_tbsimet', 'qc_lon_tbsimet'],
-                                cleanup_qc=True)
+# base_time and time_offset stay in the keep list because use_base_time reads
+# them - drop them and the read fails with KeyError: 'base_time'.
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["base_time", "time_offset", "wvert", "wvert_sfc", "wvert_ens_mean", "qc_wvert", "qc_wvert_sfc", "qc_wvert_ens_mean"],
+                                cleanup_qc=True, use_base_time=True)
 ```
 
 ## Quality control in this product
@@ -223,7 +242,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_wvert"].attrs["flag_meanings"])
+print(ds["qc_wvert"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("wvert", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -251,7 +270,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgparmtrajtbsC1.c1", "20131001", "20260924")
+try:
+    act.qc.print_dqr("sgparmtrajtbsC1.c1", "20131001", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 ## Documented failure modes

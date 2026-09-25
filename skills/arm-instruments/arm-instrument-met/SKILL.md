@@ -186,16 +186,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./nsametC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "nsametC1.b1", "2026-09-22", "2026-09-22")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("nsametC1.b1", "2026-09-22", "2026-09-22"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("atmos_pressure", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 59 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "nsametC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["atmos_pressure", "cmh_dew_point", "cmh_rh", "qc_atmos_pressure", "qc_cmh_dew_point", "qc_cmh_rh"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["atmos_pressure", "temp_mean", "rh_mean", "qc_atmos_pressure", "qc_temp_mean", "qc_rh_mean"],
                                 cleanup_qc=True)
 ```
 
@@ -211,7 +226,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_atmos_pressure"].attrs["flag_meanings"])
+print(ds["qc_atmos_pressure"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("atmos_pressure", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -240,7 +255,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("nsametC1.b1", "19930629", "20260923")
+try:
+    act.qc.print_dqr("nsametC1.b1", "19930629", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data Quality Reports (DQRs) are provided with MET data downloads for specified times/variables where data quality may have been compromised (e.g., instrument problems, power outages, calibration issues, known environmental events). These events are not necessarily flagged by automated QC variables, so DQRs should be reviewed before using data; suggestions for use are often included and discretion can be used on how to proceed. PWD communication-interruption values (serial number reported as rain rate) are flagged by QC and should be removed from study. Raw and corrected tipping bucket rain...

@@ -131,9 +131,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaafpcaspF1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaafpcaspF1.b1", "2016-09-20", "2016-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaafpcaspF1.b1", "2016-09-20", "2016-09-20"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("total_area_concentration", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -147,7 +162,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_size_distribution"].attrs["flag_meanings"])
+print(ds["qc_size_distribution"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("size_distribution", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -166,7 +181,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaafpcaspF1.b1", "20130624", "20260923")
+try:
+    act.qc.print_dqr("sgpaafpcaspF1.b1", "20130624", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: There are no current data quality reports at this time. Good data quality is ensured by comparison with other measurements: total number concentration from PCASP should not be greater than that measured by the in-cabin condensation particle counter 3772 and the in-cabin ultra-high-sensitivity aerosol spectrometer. Measurements should not be used when aircraft is 'in cloud' due to hydrometeor shattering; use the cloud flag in the met-air/IWG data set or WCM-2000 liquid water content greater than 0.1 g/m3 as an in-cloud indicator. Instrument is regularly calibrated in the field and laser power...

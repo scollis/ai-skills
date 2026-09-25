@@ -154,9 +154,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgp915rwppreciploC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgp915rwppreciploC1.b1", "2019-08-17", "2019-08-17")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgp915rwppreciploC1.b1", "2019-08-17", "2019-08-17"))   # cite what you pulled
 ```
+### First look
+
+A 2-D field over time, so pcolormesh rather than a line.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4.5))
+disp.plot("reflectivity_factor")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ### Reading it as a radar object
 
@@ -178,7 +193,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgp915rwppreciploC1.b1", "19961230", "20260923")
+try:
+    act.qc.print_dqr("sgp915rwppreciploC1.b1", "19961230", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: No flags are applied during data ingest of consensus-averaged winds and virtual temperatures. DQO creates monthly files identifying locations (temporally/spatially) where data should be eliminated via brute-force multi-pass comparison with neighboring points (above, below, before, after); this eliminates most questionable data, but some situations (precipitation, birds, 60-Hz noise) defy objective analysis and require monthly subjective review by the instrument mentor. Historically (procedure used to be in place) a parallel '.a2' flag datastream was produced with flags based on differences...

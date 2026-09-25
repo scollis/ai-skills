@@ -159,6 +159,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./kcgmwacrcfrqcM1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "kcgmwacrcfrqcM1.b1", "2025-04-27", "2025-04-27")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("kcgmwacrcfrqcM1.b1", "2025-04-27", "2025-04-27"))   # cite what you pulled
 ```
@@ -189,6 +190,22 @@ For the `Radar` object, field naming, sweep anatomy, gate filtering and plotting
 profilers have one sweep and no split cuts, so the scan-strategy machinery in those
 skills is mostly inapplicable - the time-height view is the useful one.
 
+### First look
+
+The verified sweep points at zenith, so neither a plan view nor a time-height applies.
+
+```python
+import matplotlib.pyplot as plt
+
+# An azimuth sweep at 90 deg elevation (a birdbath scan, used for ZDR
+# calibration). Every ray points at zenith, so a plan view is meaningless -
+# one ray is a vertical profile, and the spread across rays is the signal.
+disp = pyart.graph.RadarDisplay(radar)
+fig, ax = plt.subplots(figsize=(6, 4))
+disp.plot_ray("reflectivity", 0, ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 ## Quality control in this datastream
 
 This datastream ships **no `qc_` companion variables**, so `act-qc`'s filter methods
@@ -201,7 +218,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("kcgmwacrcfrqcM1.b1", "20121101", "20260924")
+try:
+    act.qc.print_dqr("kcgmwacrcfrqcM1.b1", "20121101", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: There are three data quality flags in the wacr data stream: qc_time (checks sample time regularity: 1=within expected interval, 2=duplicate/zero delta, 4=greater than expected, 8=less than expected), qc_Reflectivity (0=within valid range, 1=missing, 2=less than valid minimum, 4=greater than valid maximum, 8=failed valid delta check relative to previous value), and qc_MeanDopplerVelocity (same coding as qc_Reflectivity). Data Quality Office website has DQ HandS, DQ HandS Plot Browser, and NCVweb tools for inspecting WACR data quality. Plots of reflectivity, Doppler radial velocity, and Doppler...
