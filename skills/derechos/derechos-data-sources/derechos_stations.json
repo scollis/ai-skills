@@ -1,0 +1,193 @@
+{
+ "_provenance": "Coordinates for S1/M1 and all ISUSM entries come from the live IEM geojson/network/ISUSM.geojson endpoint (verified 2026-09-01). ICN codes and names were scraped live from warm.isws.illinois.edu/warm/climnet/stnmetadata.asp on the same date. ICN lat/lon are NOT included: they are not machine-readable on the public station pages and were not invented. Radar coordinates were read from the KDVN Level II volume header. Ranges/azimuths computed with pyproj Geod(ellps='WGS84'). ATMOS coordinates come from the AmeriFlux site registry (SITE_ID US-AMS, verified 2026-09-28); the CHICAGO entry is a city centroid and is NOT a tower location.",
+ "domain": {
+  "bbox": [
+   -94.2,
+   40.7,
+   -87.4,
+   42.6
+  ],
+  "note": "lon_min,lat_min,lon_max,lat_max. Ames IA (west) to Chicago IL (east) land-use gradient."
+ },
+ "sites": {
+  "S1": {
+   "name": "Muscatine Island Research Farm (MIRF), Iowa State University",
+   "lat": 41.356,
+   "lon": -91.136,
+   "coord_source": "IEM ISUSM station FRUI4",
+   "kdvn_range_km": 54.4,
+   "kdvn_range_mi": 33.8,
+   "kdvn_azimuth_deg": 238.7,
+   "isusm": "FRUI4",
+   "nearest_asos": "MUT"
+  },
+  "M1": {
+   "name": "South East Research Farm (SERF), Iowa State University",
+   "lat": 41.1933,
+   "lon": -91.4839,
+   "coord_source": "IEM ISUSM station CRFI4",
+   "kdvn_range_km": 88.7,
+   "kdvn_range_mi": 55.1,
+   "kdvn_azimuth_deg": 238.7,
+   "isusm": "CRFI4",
+   "nearest_asos": "OOA"
+  },
+  "NIU": {
+   "name": "Northern Illinois University, DeKalb IL (Argonne Deployable Mast)",
+   "lat": 41.9339,
+   "lon": -88.7679,
+   "coord_source": "campus centroid, approximate",
+   "icn": "DEK",
+   "nearest_asos": "DKB",
+   "klot_range_km": 67.6
+  },
+  "ATMOS": {
+   "name": "Argonne Testbed for Multiscale Observational Science (ATMOS), Argonne National Laboratory campus, Lemont IL",
+   "lat": 41.7018,
+   "lon": -87.9963,
+   "elev_m": 232.0,
+   "coord_source": "AmeriFlux site registry, SITE_ID US-AMS (amfcdn.lbl.gov/api/v1/site_display/AmeriFlux, verified 2026-09-28)",
+   "ameriflux": "US-AMS",
+   "klot_range_km": 13.1,
+   "klot_azimuth_deg": 34.2,
+   "kdvn_range_km": 215.5,
+   "kdvn_azimuth_deg": 86.5,
+   "nearest_asos": "LOT",
+   "note": "Only 13 km from KLOT, so it sits deep inside that radar's good-coverage annulus - useful as a ground-truth anchor for radar work, but at that range a constant-altitude product above ~4 km is in the cone of silence. Distinct from the CHICAGO entry below, which is a city centroid ~35 km NE."
+  },
+  "NACHUSA": {
+   "name": "Nachusa Grasslands (named candidate redeployable host)",
+   "lat": 41.858,
+   "lon": -89.652,
+   "coord_source": "DERECHOS white paper",
+   "klot_range_km": 133.4,
+   "kdvn_range_km": 82.0
+  },
+  "CHICAGO": {
+   "name": "Chicago region centroid (CROCUS Chicago Micronet footprint; NOT the ATMOS tower - see the ATMOS entry above)",
+   "lat": 41.8781,
+   "lon": -87.6298,
+   "coord_source": "city centroid, approximate",
+   "nearest_asos": "ORD"
+  }
+ },
+ "radars": {
+  "KDVN": {
+   "name": "Davenport IA WSR-88D",
+   "lat": 41.6117,
+   "lon": -90.5808,
+   "note": "S1 and M1 both lie on azimuth 238.7 deg from here, at 54.4 and 88.7 km. NWS DVN launches the 00Z/12Z soundings."
+  },
+  "KLOT": {
+   "name": "Chicago/Romeoville IL WSR-88D",
+   "lat": 41.6044,
+   "lon": -88.0847,
+   "note": "Chicago end of the domain."
+  }
+ },
+ "isusm_in_domain": {
+  "FRUI4": [
+   41.356,
+   -91.136,
+   "Fruitland - Muscatine Island ISU-RDF (= DERECHOS S1)"
+  ],
+  "CRFI4": [
+   41.1933,
+   -91.4839,
+   "Crawfordsville - Southeast ISU-RDF (= DERECHOS M1)"
+  ],
+  "WMNI4": [
+   41.4754,
+   -91.8668,
+   "Wellman"
+  ],
+  "CIRI4": [
+   41.9114,
+   -91.618,
+   "Cedar Rapids"
+  ],
+  "BOOI4": [
+   42.0209,
+   -93.7743,
+   "Ames - AEA ISU-RDF"
+  ],
+  "AEEI4": [
+   42.1067,
+   -93.5848,
+   "Ames - Horticulture ISU-RDF"
+  ],
+  "AMFI4": [
+   42.0621,
+   -93.6984,
+   "Ames - Finch Farm"
+  ],
+  "AHDI4": [
+   42.0628,
+   -93.6188,
+   "Ames - Hinds Farm"
+  ],
+  "AKCI4": [
+   41.9968,
+   -93.7031,
+   "Ames - Kitchen Farm"
+  ],
+  "AHTI4": [
+   42.1081,
+   -93.586,
+   "Ames - Horticulture (Vineyard)"
+  ],
+  "OSTI4": [
+   41.3158,
+   -92.6485,
+   "Oskaloosa - Tassel Ridge (Vineyard)"
+  ],
+  "GREI4": [
+   41.2801,
+   -94.4492,
+   "Greenfield - Neely Kinyon ISU-RDF"
+  ],
+  "BNKI4": [
+   42.5175,
+   -90.9142,
+   "Bankston - Park Farm Winery (Vineyard)"
+  ],
+  "TPOI4": [
+   42.3852,
+   -91.6771,
+   "Masonville - Timeless Prairie Orchard"
+  ]
+ },
+ "icn_sites": {
+  "FRM": "Belleville",
+  "BBC": "Big Bend",
+  "BVL": "Bondville",
+  "BRW": "Brownstown",
+  "SIU": "Carbondale",
+  "CMI": "Champaign",
+  "CHR": "Charleston",
+  "DEK": "DeKalb",
+  "DXS": "Dixon Springs",
+  "FAI": "Fairfield",
+  "FRE": "Freeport",
+  "SFM": "Kilbourne",
+  "MON": "Monmouth",
+  "OLN": "Olney",
+  "ICC": "Peoria",
+  "ORR": "Perry",
+  "RND": "Rend Lake",
+  "SNI": "Snicarte",
+  "STC": "St. Charles",
+  "LLC": "Springfield",
+  "STE": "Stelle"
+ },
+ "icn_domain_subset": [
+  "DEK",
+  "STC",
+  "FRE",
+  "MON"
+ ],
+ "soil_sensor_health_2024": {
+  "CRFI4": "all three VWC depths (12/24/50 in) valid, 37-52 pct, 366/366 days",
+  "FRUI4": "soil12vwc 2.6-8.3 pct (sandy, plausible); soil24vwc pinned at 1.00 on 97 pct of days; soil50vwc pinned at 1.00 on 100 pct of days -> DEEP SENSORS DEAD at DERECHOS S1"
+ }
+}
