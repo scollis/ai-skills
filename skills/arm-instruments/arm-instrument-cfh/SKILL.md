@@ -155,16 +155,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpcfhC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpcfhC1.b1", "2019-12-18", "2019-12-18")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpcfhC1.b1", "2019-12-18", "2019-12-18"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("pressure", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 47 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpcfhC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["cfh_battery_voltage", "cfh_frost_point_temperature", "data_frame_number", "qc_cfh_battery_voltage", "qc_cfh_frost_point_temperature", "qc_data_frame_number"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["data_frame_number", "pressure", "temperature", "qc_data_frame_number", "qc_pressure", "qc_temperature"],
                                 cleanup_qc=True)
 ```
 
@@ -180,7 +195,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_data_frame_number"].attrs["flag_meanings"])
+print(ds["qc_data_frame_number"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("data_frame_number", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -211,7 +226,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpcfhC1.b1", "20140911", "20260923")
+try:
+    act.qc.print_dqr("sgpcfhC1.b1", "20140911", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data Quality Reports (DQRs) flag data as "questionable," "unreliable," or "missing," accessible via the ARM Data Quality Explorer or indicated with a color bar on the ARM Data Discovery browser. Faulty frostpoint data are mostly caused by mirror contamination. The Strato software's flight data file (FLT.DAT) contains a data quality flag 'FI': a value of 1 indicates usable CFH frostpoint data, while 0 indicates unreliable data.

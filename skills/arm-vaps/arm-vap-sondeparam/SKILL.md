@@ -150,9 +150,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpsondeparamC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpsondeparamC1.c1", "2026-09-17", "2026-09-17")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpsondeparamC1.c1", "2026-09-17", "2026-09-17"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("elr_3")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -165,7 +180,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpsondeparamC1.c1", "20010401", "20260924")
+try:
+    act.qc.print_dqr("sgpsondeparamC1.c1", "20010401", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The output variable 'data_quality' is a flag composed of [sfc_delta_dp, sfc_delta_tdry, bad_dp, bad_tdry, bad_pres, bad_rh, bad_deg, bad_u_wind, bad_v_wind], with threshold values defined by Filter 1 and Filter 2 in Appendix A. These are sanity checks added by the VAP developers because ARM's Data Quality Office QC checks are not currently implemented for these issues. Appendix B further notes that some non-convective cases (e.g., low-level negative lapse rates, elr3 less than  0) are allowable VAP failures outside the intended convective assumptions.

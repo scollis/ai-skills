@@ -131,18 +131,12 @@ runs against a bare `act-atmos` install.
 import os, requests, act
 
 user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+files = act.discovery.download_arm_data(user, token, "sgp02wsipartradmpgC1.b1", start, end)
 
-# ACT has no list-only call, so size the request against ARM Live's query endpoint
-# before transferring anything.
-avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
-                     params={"user": f"{user}:{token}", "ds": "sgp02wsipartradmpgC1.b1",
-                             "start": "2003-10-20", "end": "2003-10-20", "wt": "json"}).json()
-print(avail["num_found"], avail["total_size"])            # files, bytes
-
-# Downloads into ./sgp02wsipartradmpgC1.b1/ unless you pass output=
-files = act.discovery.download_arm_data(user, token, "sgp02wsipartradmpgC1.b1", "2003-10-20", "2003-10-20")
-ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
-print(act.discovery.get_arm_doi("sgp02wsipartradmpgC1.b1", "2003-10-20", "2003-10-20"))   # cite what you pulled
+# These files are an MPEG video sequence (magic 00 00 01 b3), not netCDF - `read_arm_netcdf` fails with
+# "did not find a match in any of xarray's currently installed IO backends".
+# Decode frames with an MPEG reader (ffmpeg/imageio); xarray has no backend for video.
+print(os.path.getsize(files[0]) / 1e6, "MB of video")
 ```
 
 ## Quality control in this datastream
@@ -156,7 +150,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgp02wsipartradmpgC1.b1", "19950920", "20260923")
+try:
+    act.qc.print_dqr("sgp02wsipartradmpgC1.b1", "19950920", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: QC frequency is limited; QC delay N/A; QC type N/A; inputs are WSI images; outputs not specified; reference N/A. Data quality control beyond visual inspection of images is very limited at present. Comparison of cloud retrievals with Belfort laser ceilometer (BLC), Marine Physical Laboratory (MPL), or VCEIL data would require considerable effort. A contract with Mission Research Corporation is being set up to produce night and thin cloud retrieval algorithms, and instrument mentor Tim Tooman is trying to develop a calibrated radiance retrieval. Data Quality Health and Status (DQ HandS) and...

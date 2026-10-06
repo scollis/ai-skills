@@ -156,9 +156,26 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpcoC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpcoC1.b1", "2011-12-28", "2011-12-28")
-ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
+
+# this datastream's time units are not CF-decodable, so read base_time instead
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True, use_base_time=True)
 print(act.discovery.get_arm_doi("sgpcoC1.b1", "2011-12-28", "2011-12-28"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("int_temp", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -172,7 +189,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_co"].attrs["flag_meanings"])
+print(ds["qc_co"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("co", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -191,7 +208,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpcoC1.b1", "20050601", "20260923")
+try:
+    act.qc.print_dqr("sgpcoC1.b1", "20050601", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality is evaluated via QC flags in two processing stages: raw a0 files (with truncated lines purged) are processed to a1 files (time-stamped, uncorrected 5-second/5-Hz data), then a1 files are processed to calculate CO mixing ratios and associated qc flags, involving averaging concentrations for sampled/zero/span air channels, correcting for instrument offset, finding calibration data and correcting for drifts, and writing netCDF output. Almost every variable 'x' has a corresponding qc flag 'qc_x'. qc flag values: 0 = value not suspect, 1 = value in a range that might point toward a...

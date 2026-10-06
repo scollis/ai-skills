@@ -184,16 +184,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./enaecorsfC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "enaecorsfC1.b1", "2026-09-22", "2026-09-22")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("enaecorsfC1.b1", "2026-09-22", "2026-09-22"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("chopper_LI_7500")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 146 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "enaecorsfC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["air_density", "air_heat_capacity", "air_pressure", "qc_air_density", "qc_air_heat_capacity", "qc_air_pressure"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["momentum_flux", "sensible_heat_flux", "latent_flux", "qc_momentum_flux", "qc_sensible_heat_flux", "qc_latent_flux"],
                                 cleanup_qc=True)
 ```
 
@@ -209,7 +224,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_momentum_flux"].attrs["flag_meanings"])
+print(ds["qc_momentum_flux"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("momentum_flux", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -240,7 +255,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("enaecorsfC1.b1", "19950602", "20260923")
+try:
+    act.qc.print_dqr("enaecorsfC1.b1", "19950602", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: The data ingest process adds QC flags and generates daily b1-level NetCDF files. Basic data quality flags use bit values: 0x0 = within range, 0x1 = missing_value, 0x2 = less than valid_min, 0x4 = greater than valid_max, 0x8 = failed valid_delta check. Upgraded SGP systems (Oct 2019) include additional flags for steady state/well-developed turbulence assumptions, spike count/removal, amplitude resolution, drop-outs, absolute limits, and skewness/kurtosis thresholds. Instrument mentor performs daily-to-weekly visual QC with 1-3 day delay, comparing plots against adjacent ECOR/EBBR, SEBS, and...

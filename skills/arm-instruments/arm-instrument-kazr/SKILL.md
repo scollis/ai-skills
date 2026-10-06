@@ -169,6 +169,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpkazrcfrmdqcC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpkazrcfrmdqcC1.b1", "2025-12-29", "2025-12-29")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpkazrcfrmdqcC1.b1", "2025-12-29", "2025-12-29"))   # cite what you pulled
 ```
@@ -190,6 +191,20 @@ For the `Radar` object, field naming, sweep anatomy, gate filtering and plotting
 profilers have one sweep and no split cuts, so the scan-strategy machinery in those
 skills is mostly inapplicable - the time-height view is the useful one.
 
+### First look
+
+Vertically pointing: one sweep, so time-height is the right first look.
+
+```python
+import matplotlib.pyplot as plt
+
+# Vertically pointing: one sweep, so the time-height view is the useful one.
+disp = pyart.graph.RadarDisplay(radar)
+fig, ax = plt.subplots(figsize=(11, 4))
+disp.plot_vpt("reflectivity", ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 ## Quality control in this datastream
 
 This datastream ships **no `qc_` companion variables**, so `act-qc`'s filter methods
@@ -202,7 +217,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpkazrcfrmdqcC1.b1", "20110106", "20260923")
+try:
+    act.qc.print_dqr("sgpkazrcfrmdqcC1.b1", "20110106", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: The handbook directs users to the ARM Data Quality Reports for the latest known issues. Data quality is monitored via DQ Explorer, DQ Plot Browser, and NCVweb tools linked from the Data Quality Office website. Plots of reflectivity, Doppler radial velocity, and Doppler spectral width provide a good indicator of whether the system is operational. A separate health-and-status netCDF file (coincident with moments/spectra files) contains lock alarms, temperatures, humidities, power supply voltages, TWTA status, fault flags, and calibration/noise/gain values, updated approximately hourly....

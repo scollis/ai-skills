@@ -146,8 +146,22 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpsphotcod2chiuC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpsphotcod2chiuC1.c1", "2019-12-27", "2019-12-27")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpsphotcod2chiuC1.c1", "2019-12-27", "2019-12-27"))   # cite what you pulled
+```
+### First look
+
+A few values per time step, so one line each.
+
+```python
+import matplotlib.pyplot as plt
+
+# `cloud_optical_depth` carries a few values per time step along `gain`, so one line each
+# reads better than a pcolormesh with no meaningful vertical coordinate.
+fig, ax = plt.subplots(figsize=(10, 4))
+ds["cloud_optical_depth"].plot.line(x="time", ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
 ```
 
 ## Quality control in this product
@@ -160,17 +174,15 @@ mean the algorithm refused to converge, or that an input was missing, rather tha
 the sensor misbehaved. Read `flag_meanings` before interpreting a filtered series.
 
 ```python
-# What each test would remove, one variable at a time
-print(ds["qc_modis_white_sky_albedo"].attrs["flag_meanings"])
-mask = ds.qcfilter.get_masked_data("modis_white_sky_albedo", rm_assessments=["Bad", "Indeterminate"],
+# `qc_modis_white_sky_albedo` is a state flag - flag_values with flag_assessments, no flag_masks.
+# ACT's datafilter assumes a bitmask and raises TypeError on this encoding, so the
+# mask path is the one to use here.
+print(ds["qc_modis_white_sky_albedo"].attrs.get("flag_values"),
+      ds["qc_modis_white_sky_albedo"].attrs.get("flag_assessments"))
+mask = ds.qcfilter.get_masked_data("modis_white_sky_albedo", rm_assessments=["Bad", "Incorrect"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
-
-# NaN-fill in place. ARM b1 files use Bad/Indeterminate, VAPs often use
-# Incorrect/Suspect - pass every name you might meet.
-ds.qcfilter.datafilter(variables=["modis_white_sky_albedo"],
-                       rm_assessments=["Bad", "Indeterminate", "Incorrect", "Suspect"],
-                       del_qc_var=False)
+clean = ds["modis_white_sky_albedo"].where(~mask)
 ```
 
 On the example file no test fired, so the machinery is present but unexercised
@@ -180,7 +192,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpsphotcod2chiuC1.c1", "20140101", "20260924")
+try:
+    act.qc.print_dqr("sgpsphotcod2chiuC1.c1", "20140101", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Retrieval quality is captured via output variables number_of_solutions (count of viable solutions used) and retrieval_flag (quality check results), plus ancillary quality variable aqc_modis_white_sky_albedo for the MODIS albedo input and MODIS BRDF_Albedo_Band_Quality/Mandatory_Quality bands per band. Reported cloud_optical_depth_std, liquid_water_path_std, and effective_radius_std give the standard deviation from the 40-repetition perturbation ensemble as instantaneous retrieval uncertainty. Validation (Sookdar et al. 2025) reports correlation and bias statistics against MFRSR, MICROBASE,...

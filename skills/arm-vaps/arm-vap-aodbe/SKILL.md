@@ -142,16 +142,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaodbe5chC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaodbe5chC1.c1", "2024-12-04", "2024-12-04")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaodbe5chC1.c1", "2024-12-04", "2024-12-04"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("aod_cimel_380")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 108 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpaodbe5chC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['aod_be_mean_415', 'aod_be_mean_500', 'aod_be_mean_615', 'qc_aod_be_mean_415', 'qc_aod_be_mean_500', 'qc_aod_be_mean_615'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["aod_mfrsr_415", "aod_mfrsr_500", "aod_mfrsr_615", "qc_aod_mfrsr_415", "qc_aod_mfrsr_500", "qc_aod_mfrsr_615"],
                                 cleanup_qc=True)
 ```
 
@@ -166,7 +181,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_aod_mfrsr_415"].attrs["flag_meanings"])
+print(ds["qc_aod_mfrsr_415"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("aod_mfrsr_415", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -194,7 +209,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpaodbe5chC1.c1", "19970116", "20260924")
+try:
+    act.qc.print_dqr("sgpaodbe5chC1.c1", "19970116", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: AODs from ARM-supported instruments (MFRSR C1, MFRSR E13, NIMFR) incorporate automated QC tests; only data flagged 'good' (QC value of zero) are used in generating the combined AOD. CSPHOT data used are 'quality-assured' (Level 2.0) from AERONET Version 3, which has improved cloud screening compared to its predecessor. During 1-min averaging, samples are excluded if they have a non-zero QC value or an AOD value less than 0 or greater than 1. The VAP also computes daily linear regression statistics (R2, slope, mean bias, N) for six pairs of the four input AODs, and a StDv (standard deviation)...

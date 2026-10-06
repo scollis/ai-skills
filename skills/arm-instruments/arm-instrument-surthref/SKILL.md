@@ -170,16 +170,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpsurthrefC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpsurthrefC1.b1", "2014-09-12", "2014-09-12")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpsurthrefC1.b1", "2014-09-12", "2014-09-12"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("temp_v1_mean", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 93 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpsurthrefC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["count", "rh_r1_max", "rh_r1_mean", "qc_count", "qc_rh_r1_max", "qc_rh_r1_mean"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["temp_v1_mean", "temp_v2_mean", "temp_v3_mean", "qc_temp_v1_mean", "qc_temp_v2_mean", "qc_temp_v3_mean"],
                                 cleanup_qc=True)
 ```
 
@@ -195,7 +210,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_temp_v1_mean"].attrs["flag_meanings"])
+print(ds["qc_temp_v1_mean"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("temp_v1_mean", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -214,7 +229,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpsurthrefC1.b1", "20050728", "20260923")
+try:
+    act.qc.print_dqr("sgpsurthrefC1.b1", "20050728", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality is tracked via Data Quality Health and Status (DQ HandS) and NCVweb. No routine data reviews by the instrument mentor are documented (listed as "None"). The ARM Data Quality Office uses the Data Quality Assessment (DQA) system to inform Site Operators, Site Scientists, and Instrument Team members of instrument and data flow problems and general data quality observations; routine assessment reports are performed on the most recently collected data and used with the Data Quality Problem reports tool to track resolution (forms at http://www.db.arm.gov/). Each primary variable has an...

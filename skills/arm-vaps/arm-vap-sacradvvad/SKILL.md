@@ -130,9 +130,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpkasacradvvadC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpkasacradvvadC1.c1", "2012-08-28", "2012-08-28")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpkasacradvvadC1.c1", "2012-08-28", "2012-08-28"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("nyquist_velocity")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -143,7 +158,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpkasacradvvadC1.c1", "20120801", "20260924")
+try:
+    act.qc.print_dqr("sgpkasacradvvadC1.c1", "20120801", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Select velocity dealiasing and associated retrieval quality control measures to ensure accurate VAD estimates are only available within the 'c1' product streams (processed from calibrated kasacrcorhsrhi*.c1 input). The 'c0' versions, based on uncorrected SACR data, are available on an expedited timetable but may reflect additional noisiness and velocity aliasing in faster wind speeds. The output field vad_fit_rmsd provides a measure of the goodness of the VAD sinusoidal fit, and number_az_angles indicates how many azimuth points contributed to each retrieval.

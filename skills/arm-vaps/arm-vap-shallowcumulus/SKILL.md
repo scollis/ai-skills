@@ -149,9 +149,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpshcusummaryC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpshcusummaryC1.c1", "2025-08-01", "2025-08-01")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpshcusummaryC1.c1", "2025-08-01", "2025-08-01"))   # cite what you pulled
 ```
+### First look
+
+A 2-D field over time, so pcolormesh rather than a line.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4.5))
+disp.plot("shallowcumulus_event")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -162,7 +177,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpshcusummaryC1.c1", "20000701", "20260924")
+try:
+    act.qc.print_dqr("sgpshcusummaryC1.c1", "20000701", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: If no event is identified within a given hour, the shcu_test_criteria field (bit-packed, 9 flags) records which test/criteria failed or whether required input data was unavailable, at the daily file level. At the monthly level, shallowcumulus_events_test provides bit-packed flags for why a potential event was or was not detected (event detected with overlying cirrus, no low clouds found, short duration of low clouds, no input found). Quicklook plots color-code up to four potential daily events and flag them 0 (low clouds only), 1 (low clouds with cirrus), 3 (duration requirement not met), 4...

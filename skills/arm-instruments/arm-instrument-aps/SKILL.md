@@ -165,9 +165,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./enaaosapsC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "enaaosapsC1.b1", "2026-09-19", "2026-09-19")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("enaaosapsC1.b1", "2026-09-19", "2026-09-19"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("total_N_conc", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -181,7 +196,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_dN_dlogDp"].attrs["flag_meanings"])
+print(ds["qc_dN_dlogDp"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("dN_dlogDp", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -200,7 +215,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("enaaosapsC1.b1", "20160401", "20260923")
+try:
+    act.qc.print_dqr("enaaosapsC1.b1", "20160401", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: The b1 processor (aosapscorr) produces a bit-packed qc_ companion variable for each reported quantity (e.g., qc_dN_dlogDp, qc_total_N_conc), following ARM's standard convention: zero means the sample passed every applied test, non-zero means one or more test bits are set, mapped to Indeterminate or Bad assessments. Data Quality Reports (DQRs) issued by the ARM Data Quality Office are a separate, higher-level assessment applied to both a0 and b1 datastreams at time of retrieval, flagging periods identified as suspect or incorrect. Guidance: screen qc_flags to exclude samples flagged Bad, treat...

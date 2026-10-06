@@ -177,9 +177,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaerioe1turnC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaerioe1turnC1.c1", "2023-06-11", "2023-06-11")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaerioe1turnC1.c1", "2023-06-11", "2023-06-11"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("lwp")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 58 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
@@ -201,7 +216,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpaerioe1turnC1.c1", "20160101", "20260924")
+try:
+    act.qc.print_dqr("sgpaerioe1turnC1.c1", "20160101", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: There is an overall qc_flag field but its logic is still under development and should not be used at this time. Instead, use converged_flag (valid when greater than 0 and less than 9) to determine usable retrievals. Two RMS fields, rmsr (AERI+MWR radiance residual) and rmsa (full observation vector residual), compare observations to the forward calculation using final retrieved fields; generally only samples with rmsr less than  5 should be used, though values above this threshold may still contain useful information. Uncertainty (sigma_X) fields are provided per scientific variable from the...

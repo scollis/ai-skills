@@ -152,9 +152,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./bnfaosso2M1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "bnfaosso2M1.b1", "2026-09-08", "2026-09-08")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("bnfaosso2M1.b1", "2026-09-08", "2026-09-08"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("internal_temp")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -168,7 +183,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_so2"].attrs["flag_meanings"])
+print(ds["qc_so2"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("so2", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -196,7 +211,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("bnfaosso2M1.b1", "20120624", "20260923")
+try:
+    act.qc.print_dqr("bnfaosso2M1.b1", "20120624", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality has three levels: (1) automatic flagging during zero/span state changes - first 50 s after zero actuation and first 270 s after span check eliminated, valid ambient samples not taken until 250 s after a state change, with 'centroid' of each state taken as average of the valid period once stable level achieved; (2) inspection of 2x daily zero/span checks - time series typically shows less than 3-5% relative standard deviation and minimal drift (less than 3-5%), values greater indicate need for recalibration; (3) visual inspection of the output data stream for periods of...

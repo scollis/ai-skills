@@ -138,18 +138,13 @@ runs against a bare `act-atmos` install.
 import os, requests, act
 
 user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+files = act.discovery.download_arm_data(user, token, "coraafsmpsF1.b1", start, end)
 
-# ACT has no list-only call, so size the request against ARM Live's query endpoint
-# before transferring anything.
-avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
-                     params={"user": f"{user}:{token}", "ds": "coraafsmpsF1.b1",
-                             "start": "2018-12-05", "end": "2018-12-05", "wt": "json"}).json()
-print(avail["num_found"], avail["total_size"])            # files, bytes
-
-# Downloads into ./coraafsmpsF1.b1/ unless you pass output=
-files = act.discovery.download_arm_data(user, token, "coraafsmpsF1.b1", "2018-12-05", "2018-12-05")
-ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
-print(act.discovery.get_arm_doi("coraafsmpsF1.b1", "2018-12-05", "2018-12-05"))   # cite what you pulled
+# These files are gzip-compressed text (magic 1f 8b), not netCDF - `read_arm_netcdf` fails with
+# "did not find a match in any of xarray's currently installed IO backends".
+import gzip
+with gzip.open(files[0], "rt") as fh:
+    print(fh.readline())   # inspect the header, then parse with pandas
 ```
 
 ## Quality control in this datastream
@@ -162,7 +157,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("coraafsmpsF1.b1", "20181104", "20260923")
+try:
+    act.qc.print_dqr("coraafsmpsF1.b1", "20181104", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality of SMPS measurements is generally high due to high-resolution particle size distribution information, but calibration, particle charging efficiency, and particle shape assumptions can introduce uncertainties. A data quality report will be filed when the spherical particle shape assumption is expected to be invalid.

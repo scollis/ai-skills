@@ -175,16 +175,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgprlccnprof1ghanC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgprlccnprof1ghanC1.c1", "2014-06-24", "2014-06-24")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgprlccnprof1ghanC1.c1", "2014-06-24", "2014-06-24"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("cbh")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 62 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgprlccnprof1ghanC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['CCN_ss_calc', 'CCN_ss_set', 'N_CCN_1', 'qc_CCN_ss_calc', 'qc_CCN_ss_set', 'qc_N_CCN_1'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["rh_mean", "ext_mean", "water_vapor_mixing_ratio_mean", "qc_rh_mean", "qc_ext_mean", "qc_water_vapor_mixing_ratio_mean"],
                                 cleanup_qc=True)
 ```
 
@@ -199,7 +214,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_rh_mean"].attrs["flag_meanings"])
+print(ds["qc_rh_mean"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("rh_mean", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -227,7 +242,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgprlccnprof1ghanC1.c1", "20060915", "20260924")
+try:
+    act.qc.print_dqr("sgprlccnprof1ghanC1.c1", "20060915", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Quality control flags are applied at multiple stages: on the input extinction, temperature, water vapor, and RH profiles (based on gridding, interpolation, extrapolation, valid_min/max, and missing-data bits); on the averaged (hourly) extinction, RH, temperature, and pressure fields (including a std-dev threshold bit for extinction); on the f(RH) fit parameters (multiple bad/indeterminate bits related to RH range coverage, r-square, sample count, and ratio validity); on the dry extinction and CCN profile outputs (bad/indeterminate bits tied to input QC and valid-range violations); and on the...

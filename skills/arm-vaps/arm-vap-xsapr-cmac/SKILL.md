@@ -144,6 +144,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./nsaxsaprcmacppiC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "nsaxsaprcmacppiC1.c1", "2020-09-24", "2020-09-24")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("nsaxsaprcmacppiC1.c1", "2020-09-24", "2020-09-24"))   # cite what you pulled
 ```
@@ -159,7 +160,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("nsaxsaprcmacppiC1.c1", "20170731", "20260924")
+try:
+    act.qc.print_dqr("nsaxsaprcmacppiC1.c1", "20170731", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Gate ID (scatterer classification: rain, melting layer, ice/snow, second trip, terrain blockage, no significant scatterer, clutter) is computed on pre-corrected data using fuzzy-logic membership functions (Table 1) on texture, rhoHV, NCP, temperature, height, and SNR, and is used to build a Py-ART Gatefilter that conditionally gates which correction/retrieval algorithms are applied at each range gate. A ground_clutter flag (0=No Clutter,1=Clutter) is also provided. The output file's global 'comment' attribute states the data is 'highly experimental and initial data' with 'many known and...

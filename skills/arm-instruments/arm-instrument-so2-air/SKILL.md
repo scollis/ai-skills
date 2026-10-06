@@ -130,9 +130,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./oscaafso2F1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "oscaafso2F1.c1", "2013-10-20", "2013-10-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("oscaafso2F1.c1", "2013-10-20", "2013-10-20"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("so2")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -144,7 +159,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("oscaafso2F1.c1", "20130630", "20260923")
+try:
+    act.qc.print_dqr("oscaafso2F1.c1", "20130630", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: First level of QC is automatic flagging of data during instrument state changes for zero/span checks (first 50 s after zero, first 270 s after span check eliminated; valid ambient samples not taken until 250 s after state change; centroid = average of valid period). Second level is inspection of 2x daily zero and span checks over the month; typical relative standard deviation less than 3-5% and drift less than 3-5%; larger values indicate need for recalibration with zero air. Third level is visual inspection of output data stream by Mentor to identify and flag periods of instrument or inlet...

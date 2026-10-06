@@ -181,17 +181,22 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./bnfcsapr2radclssS3.c2/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "bnfcsapr2radclssS3.c2", "2025-06-19", "2025-06-19")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("bnfcsapr2radclssS3.c2", "2025-06-19", "2025-06-19"))   # cite what you pulled
 ```
+### First look
 
-This product carries 65 variables. Over any window longer than a day,
-read only what you need, and ask for the QC companion at the same time:
+A few values per time step, so one line each.
 
 ```python
-files = act.discovery.download_arm_data(user, token, "bnfcsapr2radclssS3.c2", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['accum_nrt', 'accum_rtnrt', 'atmos_pressure'],
-                                cleanup_qc=True)
+import matplotlib.pyplot as plt
+
+# `accum_nrt` carries a few values per time step along `station`, so one line each
+# reads better than a pcolormesh with no meaningful vertical coordinate.
+fig, ax = plt.subplots(figsize=(10, 4))
+ds["accum_nrt"].plot.line(x="time", ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
 ```
 
 ## Quality control in this product
@@ -203,7 +208,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("bnfcsapr2radclssS3.c2", "20211102", "20260924")
+try:
+    act.qc.print_dqr("bnfcsapr2radclssS3.c2", "20211102", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: In situ sensors are downloaded, opened, and quality controlled using ACT modules before being resampled to five-minute intervals and linearly interpolated to the radar column timestamps for collocation.

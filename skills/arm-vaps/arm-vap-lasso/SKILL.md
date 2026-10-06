@@ -162,6 +162,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgplassohighfreqobsC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgplassohighfreqobsC1.c1", "2026-09-24", "2026-09-24")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgplassohighfreqobsC1.c1", "2026-09-24", "2026-09-24"))   # cite what you pulled
 ```
@@ -177,7 +178,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgplassohighfreqobsC1.c1", "19891231", "20260924")
+try:
+    act.qc.print_dqr("sgplassohighfreqobsC1.c1", "19891231", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The complete_flag field (0=all data available, 1=incomplete) and observation_data_availability_comments field in the sgplassostat file (renamed sgplassoscore in v1 2019) flag whether all input data needed to calculate skill scores was available for a given simulation, with comments providing additional detail (e.g., Raman lidar outages). LWP retrievals (MWRRet, AERIoe) are noted to have passed only preliminary QC, with more rigorous QC still needed. Ancillary QC variables (e.g., qc_aerioe_lwp, qc_mwrret_lwp, qc_temperature, qc_water_vapor_mixing_ratio, qc_relative_humidity, qc_pressure)...

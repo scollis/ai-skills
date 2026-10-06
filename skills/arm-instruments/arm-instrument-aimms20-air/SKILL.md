@@ -153,9 +153,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./bnfaafnavaims100hzU2.a1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "bnfaafnavaims100hzU2.a1", "2026-09-11", "2026-09-11")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("bnfaafnavaims100hzU2.a1", "2026-09-11", "2026-09-11"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("velocity_north")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -167,7 +182,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("bnfaafnavaims100hzU2.a1", "20230306", "20260923")
+try:
+    act.qc.print_dqr("bnfaafnavaims100hzU2.a1", "20230306", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Measurements of position, winds, temperature, and RH are validated with redundant measurements from other instrumentation on board. Data quality can be reviewed via the ARM Data Quality Plot Browser (wind speed and static pressure time series). A merged data set containing navigational and meteorological data at 1 Hz is available as the ARM value-added product NAVMET-AIR (Navigation and Meteorological Data from Multiple Sensors on Airborne Platform).

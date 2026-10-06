@@ -175,17 +175,25 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpghgisoflaskC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpghgisoflaskC1.b1", "2024-09-01", "2024-09-01")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpghgisoflaskC1.b1", "2024-09-01", "2024-09-01"))   # cite what you pulled
 ```
+### First look
 
-This datastream carries 97 variables. On any window longer than a day,
-read only what you need - and ask for the QC companion at the same time:
+Discrete samples rather than a continuous record, so markers.
 
 ```python
-files = act.discovery.download_arm_data(user, token, "sgpghgisoflaskC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["C2Br2F4", "C2Cl4", "C2H2", "qc_C2Br2F4", "qc_C2Cl4", "qc_C2H2"],
-                                cleanup_qc=True)
+import matplotlib.pyplot as plt
+
+# Discrete samples, not a continuous record - a line plot of one or a few points
+# is meaningless (and ACT's TimeSeriesDisplay raises IndexError on a length-1
+# series), so plot the samples as markers.
+fig, ax = plt.subplots(figsize=(9, 3.5))
+ax.plot(ds["time"], ds["CBrClF2"], marker="o", linestyle="none")
+ax.set_ylabel("CBrClF2")
+fig.autofmt_xdate()
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
 ```
 
 ## Quality control in this datastream
@@ -200,7 +208,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_CO2"].attrs["flag_meanings"])
+print(ds["qc_CO2"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("CO2", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -231,7 +239,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpghgisoflaskC1.b1", "20020402", "20260923")
+try:
+    act.qc.print_dqr("sgpghgisoflaskC1.b1", "20020402", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: A 3-column quality control flag is used: column 1 is a REJECTION flag (alphanumeric other than a period indicates a sample with obvious problems, should not be interpreted); column 2 is a SELECTION flag (alphanumeric other than a period indicates a sample likely valid but not meeting selection criteria for a particular investigation); column 3 is an INFORMATION flag (alphanumeric other than a period provides additional information; a 'P' indicates preliminary, not yet examined by the PI, removed once quality determined). Samples are collected in pairs (surface, and aircraft prior to 2006);...

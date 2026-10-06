@@ -143,9 +143,23 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./bnfcsapr2squireS3.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "bnfcsapr2squireS3.c1", "2025-06-19", "2025-06-19")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("bnfcsapr2squireS3.c1", "2025-06-19", "2025-06-19"))   # cite what you pulled
 ```
+### First look
+
+A gridded or multi-dimensional product, so one axis is fixed to plot it.
+
+```python
+import matplotlib.pyplot as plt
+
+# This field is 3-D ('time', 'y', 'x'), so a first look has to fix an axis.
+fig, ax = plt.subplots(figsize=(8, 4))
+ds["corrected_reflectivity"].isel(x=0).plot(ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -156,7 +170,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("bnfcsapr2squireS3.c1", "20211201", "20260924")
+try:
+    act.qc.print_dqr("bnfcsapr2squireS3.c1", "20211201", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Global attribute 'comment' states the data are highly experimental/initial with many known and unknown issues and instructs users not to use the data before contacting the responsible Translator (scollis@anl.gov). Global attribute 'known_issues' lists: false phidp jumps in insect regions, continued use of old Giangrande code, and issues with some snow below the melting layer. rain_rate_A is explicitly set to 0.0 where normalized coherent power less than  0.4 or rhohv less than  0.8.

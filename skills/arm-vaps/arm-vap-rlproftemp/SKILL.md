@@ -146,9 +146,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgprlproftemp2news10mC1.c0/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgprlproftemp2news10mC1.c0", "2026-09-18", "2026-09-18")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgprlproftemp2news10mC1.c0", "2026-09-18", "2026-09-18"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("cbh")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -159,7 +174,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgprlproftemp2news10mC1.c0", "20090101", "20260924")
+try:
+    act.qc.print_dqr("sgprlproftemp2news10mC1.c0", "20090101", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The MR and TEMP algorithms perform no quality control on the final output; it is the end user's responsibility to QC the data using the provided uncertainty estimates. Recommended QC is to reject samples where the relative uncertainty exceeds a threshold: temperature_error/temperature greater than  0.05 (5%) for TEMP, and mr_merged_err/mr_merged greater than  0.25 (25%) for MR. This threshold can be adjusted based on user needs. Figures 10 and 12 illustrate the effect of this filtering, showing that valid measurement height decreases during daytime for WVMR but is much less affected for...

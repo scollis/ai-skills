@@ -119,6 +119,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaaffcdpF1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaaffcdpF1.c1", "2016-09-20", "2016-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaaffcdpF1.c1", "2016-09-20", "2016-09-20"))   # cite what you pulled
 ```
@@ -133,7 +134,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaaffcdpF1.c1", "20140222", "20260923")
+try:
+    act.qc.print_dqr("sgpaaffcdpF1.c1", "20140222", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Good data quality is ensured by comparison with other measurements. During sections of the flight known not to contain clouds, the FCDP should also not record data. Number concentrations and sizes should be comparable to other cloud probe measurements, and deviations should be investigated. Data plots are generated using the ARM Data Quality Diagnostic Plot Browser (https://dq.arm.gov/dq-plotbrowser/).

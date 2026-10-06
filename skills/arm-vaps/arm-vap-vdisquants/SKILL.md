@@ -158,9 +158,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpvdisquantsC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpvdisquantsC1.c1", "2026-09-21", "2026-09-21")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpvdisquantsC1.c1", "2026-09-21", "2026-09-21"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("rain_rate")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 42 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
@@ -182,7 +197,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpvdisquantsC1.c1", "20110228", "20260924")
+try:
+    act.qc.print_dqr("sgpvdisquantsC1.c1", "20110228", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Quality control processing is based on Tokay et al. (2013, 2014) techniques that restrict DSD observations to drops falling within 50% of terminal fall speed for that drop size, using a Lhermitte (2002) fall speed approximation, removing spurious measurements caused by bouncing raindrops, insects, or other contamination. The 1-minute aggregation window reduces outlier effects and data noisiness; the total number of drops over that window is reported and can be used for additional filtering.

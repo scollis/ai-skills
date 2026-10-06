@@ -134,16 +134,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaostapE13.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaostapE13.b1", "2018-04-14", "2018-04-14")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaostapE13.b1", "2018-04-14", "2018-04-14"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("case_temperature")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 42 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpaostapE13.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["impactor_state", "transmittance_blue", "transmittance_green", "qc_impactor_state", "qc_transmittance_blue", "qc_transmittance_green"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["transmittance_blue", "transmittance_green", "transmittance_red", "qc_transmittance_blue", "qc_transmittance_green", "qc_transmittance_red"],
                                 cleanup_qc=True)
 ```
 
@@ -159,7 +174,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_transmittance_blue"].attrs["flag_meanings"])
+print(ds["qc_transmittance_blue"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("transmittance_blue", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -190,7 +205,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaostapE13.b1", "20160321", "20260923")
+try:
+    act.qc.print_dqr("sgpaostapE13.b1", "20160321", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: The handbook describes sample line integrity checks as a QC process: remove the sample line from the stack, cap the stack end with a HEPA filter, and confirm each connected instrument reads zero; further investigation is required if not. Every connection on the sample line is treated as a potential single point of failure. A future goal is to automate this using a zero-air purge system (as used during MOSAIC) that fills the AOS sampling system with particle-free air. Housekeeping data (temperatures, pressures, voltages, flows) are continuously logged and displayed via a virtual...

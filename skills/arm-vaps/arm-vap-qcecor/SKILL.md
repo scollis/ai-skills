@@ -143,9 +143,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./ena30qcecorC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "ena30qcecorC1.c1", "2024-09-07", "2024-09-07")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("ena30qcecorC1.c1", "2024-09-07", "2024-09-07"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("corrected_sensible_heat_flux", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -158,7 +173,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_corrected_sensible_heat_flux"].attrs["flag_meanings"])
+print(ds["qc_corrected_sensible_heat_flux"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("corrected_sensible_heat_flux", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -185,7 +200,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("ena30qcecorC1.c1", "20030909", "20260924")
+try:
+    act.qc.print_dqr("ena30qcecorC1.c1", "20030909", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Two QC flags are set for each corrected surface turbulent flux: qc_flag = 0 (good data), qc_flag = 1 (bad data, value set to missing). Data are flagged bad if they were identified as bad in the original ECOR data or failed any of the LLNL QC checks (data range check, outlier/standard-deviation check, temporal variability moving-window check). The qc_corrected_* variables use integer flag_method with flag_1_description "Value not available or failed one or more quality control tests, value set to missing_value" and flag_1_assessment "Bad". The qc_uncorrected_* variables use bit-packed flags...

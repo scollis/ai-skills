@@ -168,16 +168,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpmwr3cC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpmwr3cC1.b1", "2026-09-19", "2026-09-19")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpmwr3cC1.b1", "2026-09-19", "2026-09-19"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("lwp")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 92 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpmwr3cC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["ambient_target_sensor_1_temperature", "ambient_target_sensor_2_temperature", "azimuth", "qc_ambient_target_sensor_1_temperature", "qc_ambient_target_sensor_2_temperature", "qc_azimuth"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["azimuth", "elevation", "tbsky23", "qc_azimuth", "qc_elevation", "qc_tbsky23"],
                                 cleanup_qc=True)
 ```
 
@@ -193,7 +208,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_azimuth"].attrs["flag_meanings"])
+print(ds["qc_azimuth"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("azimuth", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -224,7 +239,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpmwr3cC1.b1", "20110111", "20260923")
+try:
+    act.qc.print_dqr("sgpmwr3cC1.b1", "20110111", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality flags are named qc_'fieldname' (e.g., qc_tbsky90) with possible values 0 (within specified range), 1 (missing value), 2 (below specified minimum), 4 (above specified maximum), 8 (failed valid delta check), with min/max thresholds listed per field in Table 5. The instrument mentor performs monthly checks (IMMS) including: brightness temperature time series should be smooth with low noise; brightness temperatures should be greater than 2.75 K and less than ~330 K; external temperature should agree with tower measurements within +/- 2 K; external pressure within +/- 5 KPa; external...

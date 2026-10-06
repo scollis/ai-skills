@@ -1,6 +1,15 @@
 ---
 name: arm-vap-cldtype
 description: ARM Cloud Type Classification (cldtype) - value-added product reference from its technical report. The retrieval algorithm, reported quantities (Cloud type, Cloud base best estimate, Cloud layer top height, Cloud layer base height, Precipitation, Reflectivity), retrieval settings, input dependencies, embedded QC coverage, and the documented failure modes and conditions where the retrieval is invalid or biased. Includes a verified ARM Live example (sgpcldtypeC1.c1) and the variable inventory of a real file. Use when working with cldtype data, deciding whether this product or its input instrument answers a question, interpreting its variables, or judging whether a feature is a retrieval artifact. Category - Cloud Properties. Triggers - cldtype, Cloud Type Classification, sgpcldtypeC1.c1, Cloud type, Cloud base best estimate, Cloud layer top height, Cloud layer base height, Precipitation, Cloud Properties.
+metadata:
+  authored_via: "claude-science"
+  published_by: "agent"
+  published_at: "2026-09-25T22:07:20.671Z"
+  authored_by: "agent"
+  authored_at: "2026-09-24T19:31:21.862Z"
+  authoring_session: "5d6c05c9-2460-47b8-95e4-cc485a9f461a"
+  last_modified_by: "agent"
+  last_modified_at: "2026-09-25T22:07:20.669Z"
 ---
 
 # CLDTYPE - Cloud Type Classification
@@ -153,9 +162,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpcldtypeC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpcldtypeC1.c1", "2026-06-27", "2026-06-27")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpcldtypeC1.c1", "2026-06-27", "2026-06-27"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("cloud_base_best_estimate")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -168,7 +192,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_cloudtype"].attrs["flag_meanings"])
+print(ds["qc_cloudtype"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("cloudtype", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -196,7 +220,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpcldtypeC1.c1", "19961108", "20260924")
+try:
+    act.qc.print_dqr("sgpcldtypeC1.c1", "19961108", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The qc_cloudtype, qc_cloud_layer_top_height, qc_cloud_layer_base_height, and qc_precipitation fields contain bit-packed integer QC values where each bit represents a specific QC test; non-zero bits indicate the QC condition described for that bit, and a value of 0 (no bits set) indicates the data passed all QC tests. Bit assessments are labeled either "Bad" or "Indeterminate" depending on severity (e.g., cloud layer cannot be determined = Bad; MMCR/MPL/precipitation data unavailable = Indeterminate; precipitation exceeding threshold = Bad). The qc fields contain information about what input...

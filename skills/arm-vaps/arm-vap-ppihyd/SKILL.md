@@ -105,6 +105,9 @@ print(avail["num_found"], avail["total_size"])
 
 ## Getting the data
 
+A single file of this product is about 1.7 GB, so the block below was not run
+end to end - the transfer was cut off deliberately. Size the request first.
+
 ARM Live needs `ARMUSER` / `ARMTOKEN`; see `act-arm-live` for the service, datastream
 naming and the server-side subset endpoint.
 
@@ -127,6 +130,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./anxkasacrppihydmaskM1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "anxkasacrppihydmaskM1.c1", "2020-05-31", "2020-05-31")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("anxkasacrppihydmaskM1.c1", "2020-05-31", "2020-05-31"))   # cite what you pulled
 ```
@@ -142,7 +146,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("anxkasacrppihydmaskM1.c1", "20191201", "20260924")
+try:
+    act.qc.print_dqr("anxkasacrppihydmaskM1.c1", "20191201", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: PPIHYD reports several per-feature QC flags: a dealiasing flag (V_D_dealiased_flag/V_D_dealiased) indicating a dealiasing routine was applied; a radar FOV edge flag (edge_flag) for hydrometeor fields extending beyond the radar FOV; a large artifact fraction flag (artifact_frac_flag) for hydrometeor fields with a significant fraction of narrow-beam-blockage artifact pixels (threshold 0.10); and a second-trip flag (second_trip_flag, 1=suspect, 2=likely if not removed) denoting second-trip echo suspicion. Second-trip 'likely' features are removed from the final output dataset. Complete variable...

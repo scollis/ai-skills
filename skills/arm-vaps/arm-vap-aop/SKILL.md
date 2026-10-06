@@ -174,16 +174,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaoppsap1flynn1mC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaoppsap1flynn1mC1.c1", "2017-09-26", "2017-09-26")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaoppsap1flynn1mC1.c1", "2017-09-26", "2017-09-26"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("Bs_B", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 132 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpaoppsap1flynn1mC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['AAE_BG', 'AAE_BR', 'AAE_GR', 'qc_AAE_BG', 'qc_AAE_BR', 'qc_AAE_GR'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["Bs_B", "Bs_G", "Bs_R", "qc_Bs_B", "qc_Bs_G", "qc_Bs_R"],
                                 cleanup_qc=True)
 ```
 
@@ -198,7 +213,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_Bs_B"].attrs["flag_meanings"])
+print(ds["qc_Bs_B"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("Bs_B", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -226,7 +241,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpaoppsap1flynn1mC1.c1", "20110121", "20260924")
+try:
+    act.qc.print_dqr("sgpaoppsap1flynn1mC1.c1", "20110121", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The AOP datastream applies automated quality checks (QC) for each primary field and many auxiliary fields, captured in bit-mapped/bit-packed integer "qc" fields named after the field of interest. Each bit represents a true/false quality test; ARM convention is that a "true"/1 value represents a failure condition, so a qc value of 0 means "good" data. Quality tests can characterize data as "bad" or "indeterminate" (suspect); test definitions and assessments are stored as NetCDF metadata attributes "bit_N_description" and "bit_N_assessment" under each qc field. Example:...

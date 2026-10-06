@@ -161,9 +161,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpdlprofwind4newsC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpdlprofwind4newsC1.c1", "2026-08-26", "2026-08-26")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpdlprofwind4newsC1.c1", "2026-08-26", "2026-08-26"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("nbeams")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -174,7 +189,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpdlprofwind4newsC1.c1", "20101102", "20260924")
+try:
+    act.qc.print_dqr("sgpdlprofwind4newsC1.c1", "20101102", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The configuration file contains an SNR threshold (about 0.008) used to reject poor-quality radial velocity data before computing wind profiles. Primary output variables contain missing values where SNR is below threshold. The output also includes fit residual and linear correlation coefficient fields so users can apply additional QC by filtering out estimates with large residuals or small correlation coefficients, and the mean_snr field allows users to apply a higher SNR threshold than used in original processing. MET station variables (wind speed/direction, precipitation rate) are included...

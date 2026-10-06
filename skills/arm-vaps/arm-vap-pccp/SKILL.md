@@ -148,9 +148,23 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgppccpE45.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgppccpE45.c1", "2020-12-28", "2020-12-28")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgppccpE45.c1", "2020-12-28", "2020-12-28"))   # cite what you pulled
 ```
+### First look
+
+A gridded or multi-dimensional product, so one axis is fixed to plot it.
+
+```python
+import matplotlib.pyplot as plt
+
+# This field is 3-D ('time', 'camera_a_col', 'camera_a_row'), so a first look has to fix an axis.
+fig, ax = plt.subplots(figsize=(8, 4))
+ds["camera_b_col"].isel(camera_a_row=0).plot(ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -161,7 +175,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgppccpE45.c1", "20170901", "20260924")
+try:
+    act.qc.print_dqr("sgppccpE45.c1", "20170901", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Post-processing 3D filtering is applied to PCCP data to remove false positives from feature matching, though the handbook notes it does not completely eliminate false detections at all times (e.g., under hazy clear-sky conditions with low sun angle). COGS VAP applies a cross-validation step (back-projecting PCCP from each camera pair onto the other four camera planes) specifically to eliminate false positives by incorporating information from other cameras, followed by missing cloud point detection and a rematching/validation step (requiring a cloudy-pixel hit plus agreement between reference...

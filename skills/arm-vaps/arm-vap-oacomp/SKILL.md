@@ -154,9 +154,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpoacomp1zhangC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpoacomp1zhangC1.c1", "2012-03-21", "2012-03-21")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpoacomp1zhangC1.c1", "2012-03-21", "2012-03-21"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("total_organics")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -169,7 +184,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_time_series_MOOOA"].attrs["flag_meanings"])
+print(ds["qc_time_series_MOOOA"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("time_series_MOOOA", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -197,7 +212,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpoacomp1zhangC1.c1", "20110108", "20260924")
+try:
+    act.qc.print_dqr("sgpoacomp1zhangC1.c1", "20110108", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Flags are assigned to each data point to indicate data quality. 'Bad' flags: Bit1 OACOMP could not be performed (missing data), Bit2 value below valid_min (0.0), Bit3 value above valid_max (300.0), Bit4 three or fewer valid PMF runs used. 'Indeterminate' flags (data probably usable but caveated): Bit5 fewer than 15 valid PMF runs used, Bit6 a PMF had a factor with AMU44 mass_spec fraction greater than 0.3 (unphysical), Bit7 a PMF had AMU43/AMU44 ratio less than 0.01 or greater than 10, Bit8 ratio of summed time-series factors to total_organics greater than 1.4 or less than 0.7 (when...

@@ -187,6 +187,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./enakasacrvpthrcC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "enakasacrvpthrcC1.b1", "2017-07-28", "2017-07-28")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("enakasacrvpthrcC1.b1", "2017-07-28", "2017-07-28"))   # cite what you pulled
 ```
@@ -217,6 +218,20 @@ For the `Radar` object, field naming, sweep anatomy, gate filtering and plotting
 profilers have one sweep and no split cuts, so the scan-strategy machinery in those
 skills is mostly inapplicable - the time-height view is the useful one.
 
+### First look
+
+Vertically pointing: one sweep, so time-height is the right first look.
+
+```python
+import matplotlib.pyplot as plt
+
+# Vertically pointing: one sweep, so the time-height view is the useful one.
+disp = pyart.graph.RadarDisplay(radar)
+fig, ax = plt.subplots(figsize=(11, 4))
+disp.plot_vpt("reflectivity", ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 ## Quality control in this datastream
 
 This datastream ships **no `qc_` companion variables**, so `act-qc`'s filter methods
@@ -229,7 +244,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("enakasacrvpthrcC1.b1", "20110403", "20260923")
+try:
+    act.qc.print_dqr("enakasacrvpthrcC1.b1", "20110403", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data Quality Office (DQO) website provides DQ Explorer, DQ Plot Browser, and NCVweb tools for inspecting SACR data quality. Plots of reflectivity, Doppler radial velocity, and Doppler spectral width are used as indicators of whether the system is operational. Instrument mentors perform routine review (usually daily Mon-Fri) plus ad hoc reviews triggered by site operations, site scientist team, ARM data translator, data user requests, or automatic built-in-test (BIT) email notifications. Data files include a bit-packed qc_time field flagging anomalous sample timing (zero delta, below 0.01 s...
