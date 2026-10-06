@@ -149,9 +149,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./enamergedsmpsapsC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "enamergedsmpsapsC1.c1", "2026-09-20", "2026-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("enamergedsmpsapsC1.c1", "2026-09-20", "2026-09-20"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("effective_density", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -164,7 +179,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_effective_density"].attrs["flag_meanings"])
+print(ds["qc_effective_density"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("effective_density", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -183,7 +198,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("enamergedsmpsapsC1.c1", "20161115", "20260924")
+try:
+    act.qc.print_dqr("enamergedsmpsapsC1.c1", "20161115", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The VAP applies bit-packed QA/QC flags (qc_effective_density, qc_merged_dN_dlogDp, qc_merged_total_N_conc, qc_merged_total_SA_conc, qc_merged_total_V_conc). Checks include: (1) bad quality input smps_dN_dlogDp, (2) bad quality input aps_dN_dlogDp, (3) effective density below 1.4 g/cm3 or merged_total_N_conc exceeding sum of component concentrations, (4) effective density above 3.0 g/cm3 or effective_density failing limit QC. Data flagged bad are not to be used; check 3 failures are flagged indeterminate rather than bad. A solution_strength variable (0-3) tracks confidence in the effective...

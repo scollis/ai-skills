@@ -121,6 +121,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpkazrcormdC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpkazrcormdC1.c1", "2019-12-20", "2019-12-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpkazrcormdC1.c1", "2019-12-20", "2019-12-20"))   # cite what you pulled
 ```
@@ -136,7 +137,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpkazrcormdC1.c1", "20110118", "20260924")
+try:
+    act.qc.print_dqr("sgpkazrcormdC1.c1", "20110118", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Output datastreams include multiple quality control fields alongside corrected moments: qc_reflectivity_copol/xpol, qc_mean_doppler_velocity_copol/xpol, qc_spectral_width_copol/xpol (KAZRCOR), and qc_reflectivity, qc_mean_doppler_velocity, qc_mean_doppler_velocity_crosspolar_v, qc_spectral_width, qc_spectral_width_crosspolar_v, qc_gaseous_attenuation_correction, qc_temp, qc_rh, qc_bar_pres (KAZRCFRCOR). A mean_doppler_velocity_dealias_flag (and copol/xpol/crosspolar_v variants) indicates time-height points where dealiasing was performed. A significant_detection_mask flags significant radar...

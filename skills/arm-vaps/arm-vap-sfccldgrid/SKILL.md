@@ -171,16 +171,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpsfccldgrid2longstationN1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpsfccldgrid2longstationN1.c1", "2020-05-29", "2020-05-29")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpsfccldgrid2longstationN1.c1", "2020-05-29", "2020-05-29"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("num_sites_swdn")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 62 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpsfccldgrid2longstationN1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['cflw', 'cfsw', 'clearsky_status', 'qc_cflw', 'qc_cfsw', 'qc_clearsky_status'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["swdn", "cswdn", "lwdn", "qc_swdn", "qc_cswdn", "qc_lwdn"],
                                 cleanup_qc=True)
 ```
 
@@ -195,7 +210,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_swdn"].attrs["flag_meanings"])
+print(ds["qc_swdn"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("swdn", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -223,7 +238,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpsfccldgrid2longstationN1.c1", "19970101", "20260924")
+try:
+    act.qc.print_dqr("sgpsfccldgrid2longstationN1.c1", "19970101", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Input data pass through QCRAD VAP quality control testing (Long and Shi 2006, 2008) before being used in RADFLUXANAL and then SFCCLDGRID2. SFCCLDGRID2 applies additional QA including maximum/minimum limits (cloud fraction between 0 and 1.1) and sets SW variables (cloud fraction SW, transmissivity, direct, diffuse, SW down, SW up) to missing when sun angle is low (cosz greater than  80) in both station and gridded products. An "edge qc" test flags grid cells near domain edges with missing/bad facility data as suspect, applied independently to each of the four quadrants by working inward from...

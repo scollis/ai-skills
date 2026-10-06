@@ -1,0 +1,898 @@
+{
+ "campaign": "DERECHOS - Dynamics of Evapotranspiration, Radiative Exchange, and Convection in High-impact Organized Storms",
+ "source": "DERECHOS AMF2 White Paper (shareable draft), Collis et al.",
+ "provenance": "Markers (SQ/site/priority) parsed from the PDF text layer; prose fields reassembled verbatim from the same text layer. Vision extraction of the marker grid was rejected as unreliable.",
+ "priority_key": {
+  "3": "Critical/core capability required to address primary hypotheses.",
+  "2": "Important capability that substantially strengthens interpretation or process closure.",
+  "1": "Nice-to-have or add-on capability that expands science scope but is not essential."
+ },
+ "site_key": {
+  "M1": {
+   "name": "South East Research Farm (SERF), Iowa State University",
+   "role": "Main ARM Mobile Facility site",
+   "what": "Full site plus AOS",
+   "why": "Along the same WSR-88D radial as S1. Very different crop (corn) and soils to S1. Synoptically similar but expect different microclimate.",
+   "notes": "33 miles southwest of Davenport, IA"
+  },
+  "S1": {
+   "name": "Muscatine Island Research Farm (MIRF), Iowa State University",
+   "role": "Supplemental ARM site",
+   "what": "Met, soil properties, AERI, DL, MWR",
+   "why": "Good distance from KDVN radar. Sandy soils, fruits, near derecho hot spot.",
+   "notes": "51 miles southwest of Davenport, on the same KDVN radial as M1 (33 miles) - implying ~18 mi / 29 km between M1 and S1; the abstract states 35 km. Table 1's deployment site key names it \"Southwest Research Farm\" while the abstract and section 3.1 name it \"South East Research Farm (SERF)\"."
+  },
+  "R1": {
+   "name": "ARM redeployable profiling modules",
+   "role": "Redeployable, within 150 km of M1",
+   "what": "ARM redeployable profiling modules",
+   "why": "Measure pre-convective environment during multiple stages of storm development and different land use / land coverage types.",
+   "notes": "Candidate hosts: IL Climate Network, future Illinois 3D mesonet, Iowa Environmental Mesonet sites, Nachusa Grasslands (41.858N, 89.652W)"
+  },
+  "NIU": {
+   "name": "Northern Illinois University",
+   "role": "Guest instrument cluster (Argonne-owned assets on the Argonne Deployable Mast)",
+   "what": "DL, ECOR, soils, MRR and more (Table 3)",
+   "why": "Fixed site close to the urban-rural gradient; surrounded by farmland.",
+   "notes": "Duplicates ARM deployable pod capability except AERI and MWR3C"
+  },
+  "CHICAGO": {
+   "name": "Chicago region",
+   "role": "ATMOS (Argonne) and Chicago Micronet",
+   "what": "Soil moisture, fluxes, disdrometers, enhanced met, profiling (Table 4)",
+   "why": "Downstream of M1/S1 covering suburbs and downtown core; storms encountering the urban-rural gradient.",
+   "notes": "Micronet stewardship expected at Villa Park, Downers Grove, Shedd Aquarium, ATMOS; 10 m flux towers at ATMOS and downtown Chicago (with UIC), both AmeriFlux-registered. ATMOS itself is at 41.7018N, 87.9963W, 232 m (AmeriFlux SITE_ID US-AMS), 13.1 km from KLOT - the white paper gives no coordinate for it. Do not use a Chicago city centroid as the ATMOS location; the tower is ~35 km southwest of downtown, on the Argonne campus at Lemont."
+  },
+  "MOBILE": {
+   "name": "NIU and UIUC mobile sounding teams",
+   "role": "Mobile",
+   "what": "Radiosondes and windsondes",
+   "why": "Thermodynamic and wind profiles in the pre-storm environment, outflow/cold pool and post storm.",
+   "notes": "Argonne Sparv windsonde system + 10 sondes; UIUC has two iMet sounding systems"
+  }
+ },
+ "hypotheses": {
+  "H1": "Managed land-surface heterogeneity and rural-urban gradients in the Midwest modulate convective organization. Heterogeneity in land surface and rural-urban gradients produce boundary-layer circulations and mesoscale convergence zones that increase convective initiation frequency and promote the transition from isolated convection to organized systems such as QLCSs and derechos.",
+  "H2": "Bidirectional coupling between soil moisture and convective systems in the Midwest sets a critical limit on S2A predictability. Storm systems replenish soil moisture, while moisture fluxes from soils and vegetated surfaces through evapotranspiration are in turn required to sustain these systems. This cyclical drying and replenishment of the soil column operates on S2A timescales, placing it squarely within the window where improved process representation could yield meaningful gains in predictive capability.",
+  "H3": "Land-surface heterogeneity and aerosol effects control freezing rain severity across the Midwest. Spatial heterogeneity in snow cover, soil freeze state, surface albedo, surface roughness and soil temperature modulate near-surface thermal structure and turbulence during winter storms, while aerosol-mediated suppression of ice formation increases supercooled liquid water content, collectively impacting probability and severity of freezing rain across the Midwest.",
+  "H4": "Vegetation, crop type, and aerosol impact boundary layer turbulence, clouds and extreme convective storms during warm season. Spatiotemporal variability in soil moisture, crop phenology, irrigation, and urbanization modulate boundary-layer thermodynamics and mesoscale circulations during summer, while variations in aerosol loading alter mixed-phase cloud microphysics and cold-pool evolution, collectively shaping the likelihood, duration, and intensity of Midwest mesoscale convective systems and derechos."
+ },
+ "science_questions": {
+  "SQ1": {
+   "theme": "Land surface and storm evolution",
+   "hypotheses": [
+    "H1",
+    "H2"
+   ],
+   "topics": [
+    "ST1",
+    "ST2",
+    "ST5"
+   ],
+   "text": "How do the land-atmosphere interactions, including the influences of soil moisture and vegetation heterogeneity and evapotranspiration, vary with the convective lifecycle stages? At what depth is moisture available as a source of ET, and how much is this influenced by crop type (e.g. soy vs. corn) and crop management (e.g. irrigation, tillage, tile drainage)? How does rainfall partition between runoff into rivers (vital for energy generation and data center supply) and soil column recharge? How do slower land surface processes and soil moisture interact with multiscale atmospheric processes to influence predictability on weeks to years? What are the predictability limits for the coupled dry-soil/hot boundary layer (BL) regime that drives summertime electricity demand spikes?"
+  },
+  "SQ2": {
+   "theme": "Land surface and storm evolution",
+   "hypotheses": [
+    "H3",
+    "H4"
+   ],
+   "topics": [
+    "ST3",
+    "ST4"
+   ],
+   "text": "How does the heterogeneity of land use and land management influence Planetary boundary layer (PBL) stability, shallow cloud formation, and upscale growth of impactful storm systems that produce hazards to energy systems such as winds and hail? What role do frozen soils and snow insulation play in controlling surface sensible and latent heat fluxes during freezing-rain events?"
+  },
+  "SQ3": {
+   "theme": "Land surface and storm evolution",
+   "hypotheses": [
+    "H3",
+    "H4"
+   ],
+   "topics": [
+    "ST2",
+    "ST4",
+    "ST5"
+   ],
+   "text": "What thermodynamic profiles favor transitions between snow, sleet, and freezing rain? Do landcover, crops, albedo and other surface properties play a role?"
+  },
+  "SQ4": {
+   "theme": "Aerosol, cloud and storm properties",
+   "hypotheses": [
+    "H1",
+    "H4"
+   ],
+   "topics": [
+    "ST3",
+    "ST4"
+   ],
+   "text": "What is the role of aerosols from managed Midwestern ecosystems (biogenic SOAs, pollen, soil dust, and agricultural-burning particles) in modulating CCN and INP populations, convective microphysics, precipitation efficiency, and storm life cycle relative to forest-rich regions, and how well does E3SM represent these processes?"
+  },
+  "SQ5": {
+   "theme": "Aerosol, cloud and storm properties",
+   "hypotheses": [
+    "H1",
+    "H4"
+   ],
+   "topics": [
+    "ST1",
+    "ST3",
+    "ST4"
+   ],
+   "text": "What is the role of regional light-absorbing aerosols such as agricultural dust and smoke in modulating pre-storm BL thermodynamics, the capping inversion, mixing layer depth, and the shallow-to-deep convective transition over the Midwest, and how well does E3SM represent these aerosol-radiative-thermodynamic processes?"
+  },
+  "SQ6": {
+   "theme": "Energy specific",
+   "hypotheses": [
+    "H1",
+    "H3"
+   ],
+   "topics": [
+    "ST2",
+    "ST3"
+   ],
+   "text": "What environments and resultant storm properties produce damaging wake lows and rear-inflow jets? How do these winds vary with height? Can E3SM accurately capture the vertical structure of wind extremes relevant to hazards affecting tall transmission lines and 10 meter distribution lines? Can improved representation of snow cover, soil freeze state, and aerosol-cloud interactions enhance prediction of freezing-rain-induced power outages and infrastructure failure risk?"
+  },
+  "SQ7": {
+   "theme": "Energy specific",
+   "hypotheses": [
+    "H2",
+    "H4"
+   ],
+   "topics": [
+    "ST2",
+    "ST3"
+   ],
+   "text": "How do nocturnal low-level jets interact with Midwestern surface heterogeneity to enhance low-level moisture convergence and trigger overnight organized convection? What atmospheric and land-surface preconditions distinguish nighttime convective events that disproportionately impact energy infrastructure? Can improved representation of land-atmosphere and aerosol-cloud coupling significantly improve subseasonal prediction of convective hazards relevant to grid reliability?"
+  }
+ },
+ "specific_topics": {
+  "ST1": "Water availability for energy",
+  "ST2": "Midwest storms and their impact on energy",
+  "ST3": "Convective lifecycles",
+  "ST4": "Microphysical phase and energy impacts",
+  "ST5": "Impacts of complex land surface and implications for water"
+ },
+ "table1_caption": "Science traceability matrix for the proposed ARM Mobile Facility deployment to the Midwest for DERECHOS.",
+ "table1": [
+  {
+   "instrument": "AOS+ suite",
+   "measurement": "Aerosol number, size, CCN, and trace gases composition, optical properties",
+   "sqs": [
+    4,
+    5,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 3,
+   "leverage": "Core aerosol measurement framework enabling aerosol–cloud–radiation closure and linking managed-land emissions to atmospheric processes.",
+   "section": "A. Aerosol, Gas, and Chemistry Measurements"
+  },
+  {
+   "instrument": "CPCu",
+   "measurement": "Ultrafine condensation particle counter (3–3,000 nm; cut size 3–3.5 nm)",
+   "sqs": [
+    4,
+    5,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Captures ultrafine aerosol populations and new particle formation events associated with agricultural emissions and post-precipitation aerosol regeneratioon processes.",
+   "section": "A. Aerosol, Gas, and Chemistry Measurements"
+  },
+  {
+   "instrument": "CPCF",
+   "measurement": "Fine condensation particle counter (10–3,000 nm total number concentration)",
+   "sqs": [
+    4,
+    5,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Constrains fine aerosol number concentrations relevant to CCN availability, aerosol loading, and convective aerosol interactions across seasonal and synoptic regimes.",
+   "section": "A. Aerosol, Gas, and Chemistry Measurements"
+  },
+  {
+   "instrument": "SMPS / APS / UHSAS",
+   "measurement": "Aerosol number size distributions from ultrafine to coarse modes",
+   "sqs": [
+    4,
+    5,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 3,
+   "leverage": "Defines aerosol size distributions from ultrafine to coarse modes governing CCN activation, aerosol growth, dust contributions, and aerosol removal by convection.",
+   "section": "A. Aerosol, Gas, and Chemistry Measurements"
+  },
+  {
+   "instrument": "CCN200",
+   "measurement": "CCN concentrations",
+   "sqs": [
+    4,
+    5,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 3,
+   "leverage": "Links aerosol populations to cloud droplet activation efficiency, cloud microphysics, and precipitation formation processes.",
+   "section": "A. Aerosol, Gas, and Chemistry Measurements"
+  },
+  {
+   "instrument": "Nephelometer / PSAP",
+   "measurement": "Aerosol scattering and absorption coefficients",
+   "sqs": [
+    2,
+    4,
+    5,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Constrains aerosol scattering and absorption properties relevant to aerosol radiative forcing, boundary-layer heating, and aerosol modulation of convective initiation.",
+   "section": "A. Aerosol, Gas, and Chemistry Measurements"
+  },
+  {
+   "instrument": "Impactor",
+   "measurement": "Size-segregated aerosol mass and chemical composition",
+   "sqs": [
+    4,
+    5,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 3,
+   "leverage": "Size-segregated aerosol composition for distinguishing agricultural dust, pollen, biological aerosol particles, smoke, and transported anthropogenic aerosol contributions.",
+   "section": "A. Aerosol, Gas, and Chemistry Measurements"
+  },
+  {
+   "instrument": "CO-Analyzer",
+   "measurement": "Carbon monoxide mixing ratio",
+   "sqs": [
+    2,
+    4,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Tracer for separating local agricultural emissions from transported anthropogenic pollution and smoke influences affecting aerosol and convective environments.",
+   "section": "A. Aerosol, Gas, and Chemistry Measurements"
+  },
+  {
+   "instrument": "O3",
+   "measurement": "Ozone mixing ratio and photochemical tracer",
+   "sqs": [
+    2,
+    4,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Tracks photochemical evolution, boundary-layer mixing, regional transport processes influencing aerosol production, convective environments, and land–atmosphere interactions.",
+   "section": "A. Aerosol, Gas, and Chemistry Measurements"
+  },
+  {
+   "instrument": "AERI",
+   "measurement": "Temperature and humidity profiling",
+   "sqs": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7
+   ],
+   "sites": [
+    "M1",
+    "R1"
+   ],
+   "priority": 3,
+   "leverage": "Constrains thermodynamic structure, boundary-layer growth, entrainment, moisture evolution, and pre-convective environments controlling convective initiation, nocturnal convection, and land–atmosphere coupling.",
+   "section": "B. Thermodynamic, Radiative, and Column Measurements"
+  },
+  {
+   "instrument": "MWR3C",
+   "measurement": "Precipitable water vapor, liquid water path, column moisture",
+   "sqs": [
+    1,
+    2,
+    5,
+    6,
+    7
+   ],
+   "sites": [
+    "M1",
+    "R1"
+   ],
+   "priority": 3,
+   "leverage": "Provides column moisture, liquid water path, and precipitable water vapor constraints essential for convective initiation, moisture convergence, and storm-environment evolution.",
+   "section": "B. Thermodynamic, Radiative, and Column Measurements"
+  },
+  {
+   "instrument": "MFR",
+   "measurement": "Spectral irradiance (multi-channel radiometer)",
+   "sqs": [
+    1,
+    2,
+    3,
+    4,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Constrains spectral radiative fluxes and aerosol radiative impacts supporting surface-energy-budget closure and aerosol-radiation interactions.",
+   "section": "B. Thermodynamic, Radiative, and Column Measurements"
+  },
+  {
+   "instrument": "MFRSR",
+   "measurement": "Spectral irradiance and aerosol optical depth",
+   "sqs": [
+    2,
+    4,
+    5,
+    6
+   ],
+   "sites": [
+    "M1",
+    "S1"
+   ],
+   "priority": 2,
+   "leverage": "Provides aerosol optical depth and spectral irradiance observations supporting aerosol-radiation closure and aerosol variability across managed-land gradients.",
+   "section": "B. Thermodynamic, Radiative, and Column Measurements"
+  },
+  {
+   "instrument": "SIRS",
+   "measurement": "Downwelling/upwelling shortwave/longwave radiation",
+   "sqs": [
+    1,
+    2,
+    3
+   ],
+   "sites": [
+    "M1",
+    "S1"
+   ],
+   "priority": 3,
+   "leverage": "Measures surface radiation budget, cloud-radiation feedbacks, albedo, and winter surface-energy controls affecting land–atmosphere coupling and predictability.",
+   "section": "B. Thermodynamic, Radiative, and Column Measurements"
+  },
+  {
+   "instrument": "CSPHOT",
+   "measurement": "Aerosol optical depth and cloud optical properties",
+   "sqs": [
+    4,
+    5,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Provides column aerosol optical depth and cloud optical properties supporting aerosol characterization and aerosol-radiation-cloud interactions.",
+   "section": "B. Thermodynamic, Radiative, and Column Measurements"
+  },
+  {
+   "instrument": "ASI",
+   "measurement": "All-sky cloud imagery and cloud fraction",
+   "sqs": [
+    2,
+    6,
+    7
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Documents cloud fraction, shallow cloud development, and convective evolution associated with boundary-layer transitions and organized storm development.",
+   "section": "B. Thermodynamic, Radiative, and Column Measurements"
+  },
+  {
+   "instrument": "DL",
+   "measurement": "Wind profiles, turbulence, vertical velocity, aerosol/cloud backscatter",
+   "sqs": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7
+   ],
+   "sites": [
+    "M1",
+    "R1"
+   ],
+   "priority": 3,
+   "leverage": "Provides wind profiles, turbulence, convergence boundaries, low-level jets, wake lows, and cold-pool structure essential for understanding convective initiation and storm organization.",
+   "section": "C. Active Remote Sensing and Profiling"
+  },
+  {
+   "instrument": "MPL",
+   "measurement": "Aerosol/cloud backscatter, cloud base, aerosol layering",
+   "sqs": [
+    2,
+    3,
+    4,
+    5,
+    7
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 3,
+   "leverage": "Tracks aerosol layers, cloud-base evolution, boundary-layer depth, and aerosol transport associated with convection and aerosol-cloud interactions.",
+   "section": "C. Active Remote Sensing and Profiling"
+  },
+  {
+   "instrument": "CEIL",
+   "measurement": "Cloud base height and aerosol layer detection",
+   "sqs": [
+    2,
+    3,
+    7
+   ],
+   "sites": [
+    "M1",
+    "R1"
+   ],
+   "priority": 3,
+   "leverage": "Observations of cloud-base height, aerosol layering, and boundary-layer evolution.",
+   "section": "C. Active Remote Sensing and Profiling"
+  },
+  {
+   "instrument": "KAZR",
+   "measurement": "Cloud/precipitation structure, reflectivity, Doppler velocity",
+   "sqs": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 3,
+   "leverage": "Observes cloud and precipitation vertical structure, hydrometeor evolution, and organized storm dynamics supporting cloud lifecycle and convective-system studies.",
+   "section": "C. Active Remote Sensing and Profiling"
+  },
+  {
+   "instrument": "RWP",
+   "measurement": "ABL wind profiles, vertical velocity",
+   "sqs": [
+    1,
+    2,
+    3,
+    7
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Captures boundary-layer wind structure, vertical velocity, and nocturnal low-level jets relevant to organized convection and severe wind environments.",
+   "section": "C. Active Remote Sensing and Profiling"
+  },
+  {
+   "instrument": "ECOR",
+   "measurement": "Sensible and latent heat fluxes, CO2 flux, turbulence",
+   "sqs": [
+    1,
+    2,
+    3,
+    7
+   ],
+   "sites": [
+    "M1",
+    "S1"
+   ],
+   "priority": 3,
+   "leverage": "Directly quantifies sensible and latent heat fluxes, evapotranspiration, and land–atmosphere turbulent coupling across managed agricultural surfaces.",
+   "section": "D. Surface Fluxes, Meteorology, and Land Surface"
+  },
+  {
+   "instrument": "SEBS",
+   "measurement": "Surface energy balance components",
+   "sqs": [
+    1,
+    2,
+    3,
+    7
+   ],
+   "sites": [
+    "M1",
+    "S1"
+   ],
+   "priority": 3,
+   "leverage": "Constrains surface-energy partitioning, soil-moisture controls, and land-surface forcing influencing boundary-layer evolution and S2A predictability.",
+   "section": "D. Surface Fluxes, Meteorology, and Land Surface"
+  },
+  {
+   "instrument": "MET / METWXT",
+   "measurement": "Temperature, humidity, wind, pressure, precipitation, present weather",
+   "sqs": [
+    1,
+    2,
+    3,
+    6,
+    7
+   ],
+   "sites": [
+    "M1",
+    "S1",
+    "R1"
+   ],
+   "priority": 3,
+   "leverage": "Provides core near-surface meteorological forcing, gradients, observations across the deployment domain, storm passage characterization, and post-event recovery.",
+   "section": "D. Surface Fluxes, Meteorology, and Land Surface"
+  },
+  {
+   "instrument": "AOSMET",
+   "measurement": "Meteorological measurements at AOS inlet (temperature, humidity, pressure, wind)",
+   "sqs": [
+    2,
+    4,
+    5,
+    6
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Meteorological context for aerosol observations, linking aerosol variability to boundary-layer evolution and surface forcing.",
+   "section": "D. Surface Fluxes, Meteorology, and Land Surface"
+  },
+  {
+   "instrument": "MAWS",
+   "measurement": "Surface meteorological reference for sonde launches",
+   "sqs": [
+    3,
+    7
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Accurate near-surface meteorological reference conditions for radiosonde launches and IOP characterization.",
+   "section": "D. Surface Fluxes, Meteorology, and Land Surface"
+  },
+  {
+   "instrument": "GNDIRT / IRT",
+   "measurement": "Ground and sky infrared temperatures",
+   "sqs": [
+    2,
+    3
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Constrains surface thermal contrasts, cloud/sky infrared temperatures, and winter surface-energy conditions influencing cold-air outbreaks and land-atmosphere coupling.",
+   "section": "D. Surface Fluxes, Meteorology, and Land Surface"
+  },
+  {
+   "instrument": "WB",
+   "measurement": "Precipitation accumulation",
+   "sqs": [
+    1,
+    2,
+    3,
+    7
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 3,
+   "leverage": "Rainfall accumulation, hydrologic forcing, storm-total precipitation, post-event land-surface recharge and memory.",
+   "section": "D. Surface Fluxes, Meteorology, and Land Surface"
+  },
+  {
+   "instrument": "LDIS",
+   "measurement": "Drop size distribution and fall velocity",
+   "sqs": [
+    1,
+    2,
+    3
+   ],
+   "sites": [
+    "M1",
+    "S1",
+    "R1"
+   ],
+   "priority": 3,
+   "leverage": "Precipitation microphysics, drop-size distributions, and cold-pool forcing characteristics associated with convective systems and winter precipitation transitions.",
+   "section": "E. Precipitation Microphysics and Soundings"
+  },
+  {
+   "instrument": "VDIS",
+   "measurement": "Two-dimensional drop size and shape distributions",
+   "sqs": [
+    1,
+    2,
+    3
+   ],
+   "sites": [
+    "M1"
+   ],
+   "priority": 2,
+   "leverage": "Detailed hydrometeor size and shape information supporting precipitation microphysics and ice-phase process characterization.",
+   "section": "E. Precipitation Microphysics and Soundings"
+  },
+  {
+   "instrument": "MRR",
+   "measurement": "Vertical profiles of precipitation reflectivity and Doppler velocity",
+   "sqs": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "sites": [
+    "R1"
+   ],
+   "priority": 3,
+   "leverage": "Captures vertical precipitation structure, melting-layer evolution, rain-rate profiles, and convective-system development relevant to cold pools and storm evolution.",
+   "section": "E. Precipitation Microphysics and Soundings"
+  },
+  {
+   "instrument": "SONDE",
+   "measurement": "Temperature, humidity, wind profiles, stability, CAPE/CIN",
+   "sqs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "sites": [
+    "M1",
+    "R1"
+   ],
+   "priority": 3,
+   "leverage": "Provides thermodynamic and kinematic profiles required for closure of boundary-layer evolution, instability, shear, nocturnal convection, and severe storm environments.",
+   "section": "E. Precipitation Microphysics and Soundings"
+  }
+ ],
+ "table2_caption": "Additional ARM instruments requested for deployment at the main M1 site.",
+ "table2": [
+  {
+   "instrument": "ACSM",
+   "capability": "Aerosol chemical composition",
+   "sqs": [
+    4,
+    5,
+    6
+   ],
+   "priority": 3,
+   "justification": "Provides detailed non-refractory aerosol chemical composition needed to distinguish agricultural, biogenic, smoke, and transported aerosol sources affecting cloud activation and convective environments.",
+   "measurement": "Aerosol chemical composition"
+  },
+  {
+   "instrument": "SACR",
+   "capability": "Cloud and precipitation structure",
+   "sqs": [
+    2,
+    3,
+    5,
+    6,
+    7
+   ],
+   "priority": 3,
+   "justification": "Adds three-dimensional cloud and storm structure, precipitation evolution, convective organization, and boundary-relative storm dynamics beyond zenith-pointing radar observations.",
+   "measurement": "Cloud and precipitation structure"
+  },
+  {
+   "instrument": "SP2",
+   "capability": "Single-particle soot carbon and refractory black",
+   "sqs": [
+    4,
+    6
+   ],
+   "priority": 3,
+   "justification": "Separates combustion-derived absorbing aerosol and black carbon from agricultural and biogenic aerosol influences relevant to aerosol-radiation interactions.",
+   "measurement": "Single-particle soot carbon and refractory black"
+  },
+  {
+   "instrument": "INS",
+   "capability": "Ice nucleating particles",
+   "sqs": [
+    3,
+    4,
+    5
+   ],
+   "priority": 3,
+   "justification": "Provides direct measurements of ice-nucleating particles supporting mixed-phase cloud, glaciation, winter precipitation, and convective microphysics studies.",
+   "measurement": "Ice nucleating particles"
+  },
+  {
+   "instrument": "POPS",
+   "capability": "Aerosol size distributions",
+   "sqs": [
+    4,
+    5,
+    6
+   ],
+   "priority": 3,
+   "justification": "Extends aerosol size-distribution measurements to supplemental and redeployable sites to characterize spatial variability in agricultural aerosol environments.",
+   "measurement": "Aerosol size distributions"
+  },
+  {
+   "instrument": "ExtLidar",
+   "capability": "Aerosol extinction profiles",
+   "sqs": [
+    2,
+    4,
+    5,
+    6
+   ],
+   "priority": 3,
+   "justification": "Constrains aerosol vertical structure, aerosol transport, and aerosol radiative impacts influencing boundary-layer evolution and convective initiation.",
+   "measurement": "Aerosol extinction profiles"
+  }
+ ],
+ "table3_caption": "Table 3: ANL-supplied guest instruments proposed for deployment at Northern Illinois University (NIU) in support of DERECHO's observing strategy. Most instruments will be deployed on the trailer-based Argonne Deployable Mast (ADM) system, with its mast extendable to 10 m. These complementary observations provide enhanced characterization of boundary-layer structure, storm evolution, precipitation microphysics, and the urban-rural transition environment upstream of the Chicago metropolitan region.",
+ "table3_footnote": "*Eddy covariance measurements will be deployed at a nominal height of 10 m above ground on the ADM.",
+ "table3": [
+  {
+   "id": "CEIL",
+   "instrument": "Vaisala CL61 Dual-Polarization Ceilometer",
+   "measurement": "Cloud-base height, aerosol layering, attenuated backscatter, depolarization",
+   "site": "NIU",
+   "contribution": "Provides continuous boundary-layer depth, cloud-base evolution, and aerosol-layer characterization, including enhanced detection of lofted dust, smoke, and hydrometeor phase transitions."
+  },
+  {
+   "id": "DL",
+   "instrument": "Halo Photonics StreamLine XR Scanning Doppler Lidar",
+   "measurement": "Three-dimensional wind profiles, radial velocity, turbulence, convergence boundaries, aerosol backscatter",
+   "site": "NIU",
+   "contribution": "Captures boundary-layer evolution, low-level jets, convergence zones, gust fronts, and storm-environment kinematics during convective initiation and mature storm evolution."
+  },
+  {
+   "id": "LDIS",
+   "instrument": "OTT Parsivel2 Laser Disdrometer",
+   "measurement": "Drop size distribution, fall velocity, precipitation phase and intensity",
+   "site": "NIU",
+   "contribution": "Provides detailed precipitation microphysics and cold-pool forcing characteristics associated with convective systems and stratiform precipitation."
+  },
+  {
+   "id": "METWXT",
+   "instrument": "Vaisala WXT530 Weather Transmitter",
+   "measurement": "Temperature, humidity, pressure, wind, precipitation, and surface meteorology",
+   "site": "NIU",
+   "contribution": "Supports continuous near-surface meteorological characterization and provides environmental context for profiling and precipitation observations."
+  },
+  {
+   "id": "WB",
+   "instrument": "Tipping-bucket rain gauge",
+   "measurement": "Precipitation accumulation and rainfall intensity",
+   "site": "NIU",
+   "contribution": "Provides precipitation accumulation, hydrologic forcing, and storm-total rainfall measurements supporting convective-event and land-surface response analyses."
+  },
+  {
+   "id": "ECOR*",
+   "instrument": "METEK Sonic Anemometer + LI-7500 Eddy Covariance System",
+   "measurement": "Sensible and latent heat fluxes, CO2 fluxes, turbulence, and surface exchange",
+   "site": "NIU",
+   "contribution": "Provides direct measurements of land-atmosphere exchange, turbulent transport, and surface-energy partitioning across the agricultural-urban transition environment."
+  },
+  {
+   "id": "MRR",
+   "instrument": "METEK Micro Rain Radar",
+   "measurement": "Vertical profiles of precipitation reflectivity, Doppler velocity, and rain-rate structure",
+   "site": "NIU",
+   "contribution": "Provides high-temporal-resolution observations of precipitation evolution, melting-layer structure, and vertical rainfall characteristics associated with convective and stratiform systems."
+  },
+  {
+   "id": "SONDE",
+   "instrument": "Radiosonde Launch System",
+   "measurement": "Vertical profiles of temperature, humidity, wind, stability, and thermodynamic structure",
+   "site": "NIU",
+   "contribution": "Targeted radiosonde launches during IOPs to characterize pre-convective environments, storm evolution, boundary interactions, and low-level jet structure."
+  }
+ ],
+ "table4_caption": "Table 4: Selected observational capabilities available at the Argonne Testbed for Multiscale Observational Science (ATMOS) that will complement DERECHO observations and support characterization of land-atmosphere interactions, precipitation processes, boundary-layer evolution, and urban-rural transition environments in the Chicago region.",
+ "table4": [
+  {
+   "category": "60-m Tower Measurements",
+   "subcategory": null,
+   "instruments": [
+    "Gill sonic anemometer",
+    "Kipp & Zonen CNR4 Solar/Net radiation"
+   ],
+   "capability": "Continuous tower-based characterization of near-surface meteorology, surface forcing, and land-atmosphere interactions at 10 m and 60 m levels."
+  },
+  {
+   "category": "Precipitation and Surface Meteorology",
+   "subcategory": null,
+   "instruments": [
+    "OTT Pluvio2 weighing bucket rain gauge",
+    "Met One tipping-bucket rain gauge",
+    "Vaisala FD70 forward scatter sensor",
+    "OSI Parsivel disdrometer",
+    "Vaisala WXT536 all-precipitation weather transmitter"
+   ],
+   "capability": "Precipitation accumulation, precipitation phase, visibility, surface meteorology, and precipitation microphysics observations."
+  },
+  {
+   "category": "Eddy Covariance Fluxes",
+   "subcategory": null,
+   "instruments": [
+    "METEK/Gill sonic anemometer",
+    "Kipp & Zonen CNR4 Solar/Net radiation analyzer"
+   ],
+   "capability": "Direct measurements of sensible and latent heat fluxes, turbulence, CO2 exchange, and surface-energy partitioning."
+  },
+  {
+   "category": "Sub-surface Measurements",
+   "subcategory": null,
+   "instruments": [
+    "Campbell SoilVUE10 soil profile sensor",
+    "TEROS11 soil moisture and temperature sensors",
+    "LI-COR LI8100 soil respiration system",
+    "Lysimeter G3 drain gauge"
+   ],
+   "capability": "Characterization of soil moisture, soil temperature, soil respiration, and subsurface hydrologic conditions."
+  },
+  {
+   "category": "Aerosol and Trace Gas Measurements",
+   "subcategory": null,
+   "instruments": [
+    "Serinus 10 Ozone analyzer",
+    "Serinus 30 CO/CO2 analyzer",
+    "Serinus 40 NO/NO2/NOx analyzer",
+    "VOC100 methane/hydrocarbon analyzer",
+    "TEOM1405 & TEOM1405F PM monitors",
+    "Handix POPS aerosol spectrometer"
+   ],
+   "capability": "Surface aerosol, trace-gas, air-quality, and distribution measurements supporting aerosol-boundary-layer interaction studies."
+  },
+  {
+   "category": "Profiling and Remote Sensing",
+   "subcategory": null,
+   "instruments": [
+    "Vaisala Radar wind profiler",
+    "Scintec sodar profiler",
+    "Scanning mini-micropulse lidar",
+    "Vaisala CL61 dual-polarization ceilometer",
+    "Vaisala Nephelometer",
+    "Vaisala AQT530 air-quality sensor"
+   ],
+   "capability": "Boundary-layer profiling, aerosol and cloud-layer characterization, wind profiling, turbulence, and storm-environment observations."
+  },
+  {
+   "category": "Snow Measurements",
+   "subcategory": null,
+   "instruments": [
+    "Campbell SnowVUE10 snow-depth sensor",
+    "NovaLynx ultrasonic snow-depth sensor",
+    "FlowCapt snowdrift/blowing-snow sensor"
+   ],
+   "capability": "Snow accumulation, snow-depth variability, and blowing-snow observations supporting winter-weather studies."
+  }
+ ]
+}

@@ -179,16 +179,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./enaaafcasF1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "enaaafcasF1.b1", "2018-02-18", "2018-02-18")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("enaaafcasF1.b1", "2018-02-18", "2018-02-18"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("forward_block_temperature")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 51 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "enaaafcasF1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["counts", "laser_current", "back_block_temperature", "qc_counts", "qc_laser_current"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["laser_current", "counts", "lat", "qc_laser_current", "qc_counts", "qc_lat"],
                                 cleanup_qc=True)
 ```
 
@@ -204,7 +219,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_laser_current"].attrs["flag_meanings"])
+print(ds["qc_laser_current"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("laser_current", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -223,7 +238,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("enaaafcasF1.b1", "20170308", "20260923")
+try:
+    act.qc.print_dqr("enaaafcasF1.b1", "20170308", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data columns include a Data_Flag and a Cloud_Flag for both CAS and CIP output (ICARTT format). No links to a dedicated Data Quality (DQ) webpage were found for this instrument; an example DQ plot browser figure from the Two-Column Aerosol Project (TCAP) is shown. S&P (S high, S low, P high, P low) qualifier data are used on a particle-by-particle basis to assess whether size data are good (in focus) or should be rejected.

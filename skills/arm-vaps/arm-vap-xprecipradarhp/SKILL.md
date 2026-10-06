@@ -134,9 +134,23 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./gucxprecipradarhpS2.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "gucxprecipradarhpS2.c1", "2023-06-13", "2023-06-13")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("gucxprecipradarhpS2.c1", "2023-06-13", "2023-06-13"))   # cite what you pulled
 ```
+### First look
+
+A gridded or multi-dimensional product, so one axis is fixed to plot it.
+
+```python
+import matplotlib.pyplot as plt
+
+# This field is 3-D ('time', 'y', 'x'), so a first look has to fix an axis.
+fig, ax = plt.subplots(figsize=(8, 4))
+ds["corrected_reflectivity"].isel(x=0).plot(ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -147,7 +161,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("gucxprecipradarhpS2.c1", "20211102", "20260924")
+try:
+    act.qc.print_dqr("gucxprecipradarhpS2.c1", "20211102", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The product combines outputs from Py-ART semi-supervised classification and CSU fuzzy-logic classifiers into a unified, quality-controlled set of phase labels (Unique Phase ID/UHID) for near-surface precipitation. The handbook notes generally good agreement between SSC and FHC for liquid and low-density frozen classes in both seasons, but large discrepancies in the mixed/melting class, and states that further ground comparison and statistical analysis are needed to evaluate these differences.

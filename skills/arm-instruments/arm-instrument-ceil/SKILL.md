@@ -147,9 +147,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpceil10mC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpceil10mC1.b1", "2026-09-18", "2026-09-18")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpceil10mC1.b1", "2026-09-18", "2026-09-18"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("first_cbh", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 Lidar profile products are time-height; `act-plotting`'s `TimeSeriesDisplay` with
 `plot_time_height_xsection_from_1d_data` or a direct `pcolormesh` on the range
@@ -167,7 +182,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_first_cbh"].attrs["flag_meanings"])
+print(ds["qc_first_cbh"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("first_cbh", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -197,7 +212,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpceil10mC1.b1", "19961011", "20260923")
+try:
+    act.qc.print_dqr("sgpceil10mC1.b1", "19961011", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Most fields have a corresponding sample-by-sample automated QC field named qc_less than fieldnamegreater than  in the b1 datastream (Table 5, values 0-15 indicating combinations of missing/min/max/delta failures). Minimum/maximum/delta thresholds are defined per field in Table 6 (e.g., first_cbh: 0-7700 m; laser_pulse_energy: 10-110%, delta 100; laser_temperature: -10 to 60°C, delta 5; tilt_angle: 0-4°, delta 1). A qc_time field also flags duplicate, missing, or time-shifted samples relative to a 14-16 s window. Data quality is monitored via DQ Explorer and NCVweb; weekly mentor review...

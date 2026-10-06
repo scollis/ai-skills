@@ -140,9 +140,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpgriddedsondeC1.c0/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpgriddedsondeC1.c0", "2026-09-18", "2026-09-18")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpgriddedsondeC1.c0", "2026-09-18", "2026-09-18"))   # cite what you pulled
 ```
+### First look
+
+A 2-D field over time, so pcolormesh rather than a line.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4.5))
+disp.plot("temp", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -155,7 +170,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_temp"].attrs["flag_meanings"])
+print(ds["qc_temp"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("temp", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -183,7 +198,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpgriddedsondeC1.c0", "19990720", "20260924")
+try:
+    act.qc.print_dqr("sgpgriddedsondeC1.c0", "19990720", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Tests ensure values are within a valid range for variables interpolated from GRIDDEDSONDE, as well as for the scaled relative humidity (rh_scaled). Computed values (specific humidity, wind speed, wind direction, potential temperature) do not require QC tests. In addition to general valid-range QC for rh_scaled, ancillary QC in aqc_rh_scaled describes the quality of computed scale factors. The vapor_source variable indicates the source of PWV used for scaling relative humidity. Table 4 in the handbook indicates, per variable, whether QC data exists and whether source data (from GRIDDEDSONDE...

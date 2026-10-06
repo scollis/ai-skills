@@ -160,9 +160,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpmergesonde1maceC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpmergesonde1maceC1.c1", "2015-06-26", "2015-06-26")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpmergesonde1maceC1.c1", "2015-06-26", "2015-06-26"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("precip", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -175,7 +190,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_precip"].attrs["flag_meanings"])
+print(ds["qc_precip"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("precip", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -194,7 +209,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpmergesonde1maceC1.c1", "19960715", "20260924")
+try:
+    act.qc.print_dqr("sgpmergesonde1maceC1.c1", "19960715", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Standard bit-packed quality control variables (qc_xxxx) follow each physical variable per ARM QC Standards, with no bits set (zero) representing good data; assessments are 'Bad' (missing data, set to -9999) or 'Indeterminate' (out of valid_min/valid_max range). Additional status fields sonde_fraction and sonde_fraction_rh report the 0-1 weighting of sonde vs. model contribution to each merged value, and vapor_source reports which MWR datastream (Turner/MWRRET or MWR-LOS) was used and whether it had problems (values 0-4, with 4 meaning no MWR vapor data at all).

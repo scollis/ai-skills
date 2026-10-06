@@ -120,9 +120,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpnoaaaosavgC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpnoaaaosavgC1.b1", "2017-03-28", "2017-03-28")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpnoaaaosavgC1.b1", "2017-03-28", "2017-03-28"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("Ba_G_Dry_10um_PSAP1W_1")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 55 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
@@ -145,7 +160,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpnoaaaosavgC1.b1", "19951103", "20260923")
+try:
+    act.qc.print_dqr("sgpnoaaaosavgC1.b1", "19951103", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 ## Known artifacts and failure modes

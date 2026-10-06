@@ -138,16 +138,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./nsaskyrad60sC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "nsaskyrad60sC1.b1", "2026-09-19", "2026-09-19")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("nsaskyrad60sC1.b1", "2026-09-19", "2026-09-19"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("down_long_hemisp1", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 65 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "nsaskyrad60sC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["down_long_hemisp1", "down_long_hemisp1_max", "down_long_hemisp1_min", "qc_down_long_hemisp1", "qc_down_long_hemisp1_max", "qc_down_long_hemisp1_min"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["down_long_hemisp1", "down_long_hemisp2", "down_short_diffuse_hemisp", "qc_down_long_hemisp1", "qc_down_long_hemisp2", "qc_down_short_diffuse_hemisp"],
                                 cleanup_qc=True)
 ```
 
@@ -163,7 +178,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_down_long_hemisp1"].attrs["flag_meanings"])
+print(ds["qc_down_long_hemisp1"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("down_long_hemisp1", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -182,7 +197,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("nsaskyrad60sC1.b1", "19961009", "20260923")
+try:
+    act.qc.print_dqr("nsaskyrad60sC1.b1", "19961009", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality health and status results are available via DQ HandS (Data Quality Health and Status) and NCVweb for interactive data plotting; these contain the techniques used by ARM's data quality analysts, instrument mentors, and site scientists to monitor and diagnose data quality. All DQ Office and most Site Scientist checking techniques have been incorporated within DQ HandS and can be viewed there. Data Quality Flags are described in the SKYRAD Data Object Design Changes for ARM netCDF file header descriptions. Value-added products (VAPs) and Quality Measurement Experiments (QMEs)...

@@ -193,6 +193,82 @@ Two skills referenced by the NEXRAD tranche are **not yet published here**:
 `nexrad-site-rainfall` and `nexrad-area-over-threshold`. They belong to a later
 tranche; until then those cross-references point at nothing in this repo.
 
+### ARM data access with ACT
+
+| skill | what it does |
+|---|---|
+| [`act-arm-live`](skills/act-arm-live/) | ARM Live Data Webservice via `act-atmos`: datastream naming, the server-side concatenate/subset `mod` endpoint, DOI citation lookup, `read_arm_netcdf`. The access layer the 232 instrument and VAP skills assume |
+| [`act-qc`](skills/act-qc/) | ARM's embedded QC flags: the bit-packed-to-CF cleanup everything depends on, the `ds.qcfilter` accessor, Data Quality Report ingestion, QC summary variables |
+| [`act-retrievals`](skills/act-retrievals/) | Derived quantities from ARM data: sonde precipitable water, CAPE/CIN, Liu-Liang and Heffter PBL height, lidar PBL and Sobel cloud base, Doppler-lidar VAD winds, instrument corrections |
+| [`act-plotting`](skills/act-plotting/) | The ACT Display family: `TimeSeriesDisplay` with QC block plots and day/night shading, `SkewTDisplay`, `WindRoseDisplay`, `DistributionDisplay` |
+
+### KDP physics and retrieval
+
+| skill | what it does |
+|---|---|
+| [`kdp-physics-anchor`](skills/kdp-physics-anchor/) | Physics-first constraints for designing or scoring a KDP retrieval: the T-matrix-verified separability, the predicted KDP-core / Z-core width ratio as a falsification test, verified drop-shape polynomials |
+| [`kdp-structure-priors`](skills/kdp-structure-priors/) | Priors for the shape, size, amplitude and sign of KDP structures — columns, cores and feet, dendritic-growth bands, negative KDP aloft — with the artifacts that imitate each |
+| [`kdp-retrieval-cautionary-tale`](skills/kdp-retrieval-cautionary-tale/) | Failure modes and physical acceptance tests. Documents an oversmoothed, physically impossible field that passed every internal check |
+
+### Radar analysis and event detection
+
+| skill | what it does |
+|---|---|
+| [`nexrad-site-rainfall`](skills/nexrad-site-rainfall/) | Detect and quantify rainfall over a fixed ground site from Level II: event tabulation, Marshall-Palmer Z-R, accumulation over weeks to months |
+| [`nexrad-area-over-threshold`](skills/nexrad-area-over-threshold/) | Storm coverage and organisation rather than point intensity: area exceeding rain-rate bins, area-over-threshold time series |
+| [`nexrad-decade-archive`](skills/nexrad-decade-archive/) | Multi-year Level II to analysis-ready Zarr: case screening, codec choice on constrained filesystems, bit-exact int16 round-trip verification, resumable checkpointing |
+| [`radar-cell-tracking`](skills/radar-cell-tracking/) | Convective cell tracking with tobac: feature detection, watershed segmentation, trackpy linking, multi-threshold ladders, the `weighted_diff` denominator |
+| [`radar-advection-interpolation`](skills/radar-advection-interpolation/) | Temporal interpolation between volumes by TV-L1 optical-flow advection on native gate geometry |
+| [`gpm-storm-targeted-radar-fetch`](skills/gpm-storm-targeted-radar-fetch/) | GPM DPR overpasses as the storm detector over a ground-radar domain, then fetch only the matching volumes |
+
+### MRMS
+
+| skill | what it does |
+|---|---|
+| [`mrms-hourly-conus`](skills/mrms-hourly-conus/) | The CONUS hourly analysis as analysis-ready Zarr (dynamical.org Icechunk store): gauge-corrected and radar-only QPE, precipitation type, FLASH ratios |
+| [`mrms-case-detection`](skills/mrms-case-detection/) | Find heavy-rain hours over a fixed site from gauge-corrected QPE, confirm against ASOS / mPING / CoCoRaHS / HADS, then retrieve and classify the radar volumes |
+
+### Land-atmosphere exchange
+
+| skill | what it does |
+|---|---|
+| [`domain-et-inference`](skills/domain-et-inference/) | Inferring evapotranspiration over large domains: the four method families, their disagreement envelope, and which to trust where |
+| [`cropland-et-measurement`](skills/cropland-et-measurement/) | Measuring ET over managed croplands: eddy-covariance corrections, the energy-balance closure gap and its four residual conventions, flux footprints and tower-to-pixel bias |
+
+### Field-campaign workflows
+
+| skill | what it does |
+|---|---|
+| [`arm-site-week-survey`](skills/arm-site-week-survey/) | Survey a week at an ARM site across instruments before committing to a case |
+| [`arm-dualpol-calibration`](skills/arm-dualpol-calibration/) | Dual-polarisation calibration checks on ARM scanning radars |
+| [`arm-bnf-storm-case-study`](skills/arm-bnf-storm-case-study/) | Bankhead National Forest storm case study, end to end |
+| [`severe-weather-event-context`](skills/severe-weather-event-context/) | Place a severe event in climatological context: storm reports and damage paths, HRRR mesoscale environment, moisture back-trajectories, river-gauge response |
+
+### DERECHOS campaign
+
+Regional reference and tested data access for the proposed DOE ARM Mobile
+Facility deployment to the Iowa-Illinois Midwest. **M1 is the South East
+Research Farm (SERF), Crawfordsville; S1 is the Muscatine Island Research Farm
+(MIRF)** — the 2026 reassignment swapped the two designations.
+
+| skill | what it does |
+|---|---|
+| [`derechos-campaign`](skills/derechos/derechos-campaign/) | The campaign reference: hypotheses H1-H4, science questions SQ1-SQ7, the science traceability matrix, the array components and site roles |
+| [`derechos-data-sources`](skills/derechos/derechos-data-sources/) | Tested regional access: ARM Live, IEM mesonet, Illinois Climate Network, KDVN and KLOT, CropScape, AmeriFlux, Sentinel-2, mPING, HRRR. Carries the site coordinates and KDVN geometry |
+| [`derechos-soil-properties`](skills/derechos/derechos-soil-properties/) | ISUSM soil moisture and temperature in full including SoilVue profiles, a network-wide sensor health audit, AWDB/SCAN, and SSURGO properties |
+| [`derechos-hydrology`](skills/derechos/derechos-hydrology/) | Stream gauges, river stage and streamflow: USGS NWIS and the OGC API, NWPS flood categories, Iowa Flood Center, National Water Model |
+| [`derechos-landuse-imagery`](skills/derechos/derechos-landuse-imagery/) | Land cover and imagery: Planet, NASA Earthdata and HLS, Cropland Data Layer, NLCD, LCMAP |
+| [`derechos-domain-et-data`](skills/derechos/derechos-domain-et-data/) | Evapotranspiration and surface flux over the domain: 31 ranked sources with the traps that silently return wrong ET |
+| [`derechos-storm-database`](skills/derechos/derechos-storm-database/) | Severe-storm and derecho report databases: NCEI Storm Events, SPC WCM and the derecho archive, IEM local storm reports, damage paths |
+| [`derechos-iowa-dot`](skills/derechos/derechos-iowa-dot/) | Iowa DOT road-weather: RWIS pavement condition live and archived, 511, plow AVL and imagery, crash records, traffic counts |
+| [`derechos-iop-scorecard`](skills/derechos/derechos-iop-scorecard/) | Executable IOP scorecard: scores a forecast per science question, assigns an archetype, and makes a GO/HOLD call against the IOP budget |
+
+### Numerical practice
+
+| skill | what it does |
+|---|---|
+| [`backend-swap-validation`](skills/backend-swap-validation/) | Validate replacing a hand-rolled numerical kernel with a library implementation behind an optional-dependency engine layer |
+
 ## Using a skill
 
 With Claude Science, load by name and the helpers arrive in your kernel:
@@ -269,4 +345,4 @@ something a test can check.
 Unidata AWS buckets, the NEXRAD ARCO store, and the Google Cloud mirror); the
 data carry their own terms.
 
-_Skill contents last synced from the registry: 2026-08-26._
+_Skill contents last synced from the registry: 2026-10-06._

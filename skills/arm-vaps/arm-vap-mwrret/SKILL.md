@@ -155,16 +155,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpmwrret1liljclouC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpmwrret1liljclouC1.c1", "2026-09-15", "2026-09-15")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpmwrret1liljclouC1.c1", "2026-09-15", "2026-09-15"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("be_pwv", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 81 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpmwrret1liljclouC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['be_lwp', 'be_pwv', 'cloud_base_height', 'qc_be_lwp', 'qc_be_pwv', 'qc_cloud_base_height'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["be_pwv", "be_lwp", "cloud_base_height", "qc_be_pwv", "qc_be_lwp", "qc_cloud_base_height"],
                                 cleanup_qc=True)
 ```
 
@@ -179,7 +194,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_be_pwv"].attrs["flag_meanings"])
+print(ds["qc_be_pwv"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("be_pwv", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -207,7 +222,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpmwrret1liljclouC1.c1", "19960901", "20260924")
+try:
+    act.qc.print_dqr("sgpmwrret1liljclouC1.c1", "19960901", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: All quality flags associated with input fields are propagated to the output. Additional QC tests (developed by Jim Liljegren) are applied to MWR brightness temperatures to identify sudden abnormal instantaneous changes, covering thermal stabilization issues, spikes, and invalid optical depths. QC tests were also developed for the non-best-estimate PWV and LWP fields calculated by the VAP. In *c2 level output files, be_pwv and be_lwp samples with indeterminate QC assessments are set to the missing value -9999. Quicklook plots display colored bars along the bottom axis of the brightness...

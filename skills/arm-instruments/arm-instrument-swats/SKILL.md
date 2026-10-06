@@ -139,9 +139,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpswatsE13.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpswatsE13.b1", "2017-06-30", "2017-06-30")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpswatsE13.b1", "2017-06-30", "2017-06-30"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("tref", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -155,7 +170,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_tref"].attrs["flag_meanings"])
+print(ds["qc_tref"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("tref", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -186,7 +201,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpswatsE13.b1", "19960205", "20260923")
+try:
+    act.qc.print_dqr("sgpswatsE13.b1", "19960205", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: QC variables (e.g., qc_trise_W) are diagnostic variables equal to the sum of data quality flags for the corresponding variable, with flags: 0=within range, 1=missing (-9999), 2=below acceptable minimum, 4=above acceptable maximum, 8=failed delta check. To interpret, convert the QC value to base 2 to see which flags are set. QC variables exist for tref, tsoil, trise, soilwatpot, and soilwatcont. Instrument mentor inspects data from all sites at least once per week using graphical plots and data quality metric tables (DQ Explorer, NCVweb), and issues Data Quality Reports (DQRs) to the SGP Site...

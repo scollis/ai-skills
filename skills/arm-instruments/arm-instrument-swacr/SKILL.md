@@ -103,6 +103,11 @@ print(avail["num_found"], avail["total_size"])
 
 ## Getting the data
 
+Every file listed for this datastream fails the transfer: ARM Live prints
+`Unable to download file:` and `download_arm_data` returns an empty list. The listing
+endpoint answers normally, so the files are catalogued but not served. Order from Data
+Discovery at <https://adc.arm.gov/discovery/> instead.
+
 ARM Live needs `ARMUSER` / `ARMTOKEN` credentials; see the `act-arm-live` skill for the
 service, datastream naming and the server-side subset endpoint.
 
@@ -125,6 +130,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpswacrvptC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpswacrvptC1.b1", "2010-04-19", "2010-04-19")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpswacrvptC1.b1", "2010-04-19", "2010-04-19"))   # cite what you pulled
 ```
@@ -150,7 +156,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpswacrvptC1.b1", "20091005", "20260924")
+try:
+    act.qc.print_dqr("sgpswacrvptC1.b1", "20091005", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: There are three data quality flags in the wacr data stream: qc_time (checks sample time intervals: 1=within expected interval, 2=Delta_time zero/duplicate, 4=Delta_time greater than expected, 8=Delta_time less than expected), qc_Reflectivity (0=acceptable/within valid range, 1=missing, 2=less than valid minimum, 4=greater than valid maximum, 8=failed valid delta check relative to previous value), and qc_MeanDopplerVelocity (same 0/1/2/4/8 scheme as qc_Reflectivity). DQ HandS (Data Quality Health and Status), DQ HandS Plot Browser, and NCVweb are tools for inspecting and assessing WACR data...

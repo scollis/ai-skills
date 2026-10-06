@@ -160,9 +160,23 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgphsrlscanC1.a1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgphsrlscanC1.a1", "2026-09-13", "2026-09-13")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgphsrlscanC1.a1", "2026-09-13", "2026-09-13"))   # cite what you pulled
 ```
+### First look
+
+A gridded or multi-dimensional product, so one axis is fixed to plot it.
+
+```python
+import matplotlib.pyplot as plt
+
+# This field is 3-D ('time', 'scan_angle', 'scan_range'), so a first look has to fix an axis.
+fig, ax = plt.subplots(figsize=(8, 4))
+ds["beta_a_1064_backscatter"].isel(scan_range=0).plot(ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 Lidar profile products are time-height; `act-plotting`'s `TimeSeriesDisplay` with
 `plot_time_height_xsection_from_1d_data` or a direct `pcolormesh` on the range
@@ -180,7 +194,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgphsrlscanC1.a1", "20110121", "20260923")
+try:
+    act.qc.print_dqr("sgphsrlscanC1.a1", "20110121", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Because the HSRL data system is photon counting rather than analog detection, noise can be treated as Poisson and directly quantified; standard propagation-of-error methods applied to the Poisson statistical uncertainties of photon counts are used to derive measurement uncertainties. Rigorous error estimates can be computed for all measurements. Temporal/spatial averaging trades resolution for reduced uncertainty and must be applied before computing derived quantities to avoid nonlinearity bias.

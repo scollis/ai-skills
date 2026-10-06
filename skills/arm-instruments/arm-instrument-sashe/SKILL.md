@@ -158,16 +158,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpsashevisC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpsashevisC1.b1", "2024-05-31", "2024-05-31")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpsashevisC1.b1", "2024-05-31", "2024-05-31"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("atmos_pressure", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 60 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpsashevisC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["ad_temperature_vis", "airmass", "atmos_pressure", "qc_ad_temperature_vis", "qc_airmass", "qc_atmos_pressure"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["airmass", "atmos_pressure", "mio_temperature_mems", "qc_airmass", "qc_atmos_pressure", "qc_mio_temperature_mems"],
                                 cleanup_qc=True)
 ```
 
@@ -183,7 +198,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_airmass"].attrs["flag_meanings"])
+print(ds["qc_airmass"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("airmass", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -214,7 +229,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpsashevisC1.b1", "20110322", "20260923")
+try:
+    act.qc.print_dqr("sgpsashevisC1.b1", "20110322", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality flags are generated for almost 20 of the diagnostic and secondary variables, following standard ARM conventions. The sashe aod files include comprehensive QC for aerosol optical depth, direct and diffuse transmittances, and atmospheric pressure. Data quality health/status is available via the DQ Hands website (http://dq.arm.gov/). c1-level AOD data should be preferred over b1-level because of more confident calibration and more comprehensive QC.

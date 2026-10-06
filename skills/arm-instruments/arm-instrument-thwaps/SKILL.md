@@ -150,9 +150,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpthwapsC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpthwapsC1.b1", "2016-01-23", "2016-01-23")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpthwapsC1.b1", "2016-01-23", "2016-01-23"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("pres", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -166,7 +181,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_pres"].attrs["flag_meanings"])
+print(ds["qc_pres"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("pres", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -185,7 +200,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpthwapsC1.b1", "19990921", "20260923")
+try:
+    act.qc.print_dqr("sgpthwapsC1.b1", "19990921", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality flags (qc_ variables) are provided for each primary/diagnostic variable with defined min/max acceptable ranges (e.g., qc_pres 800-1100 hPa, qc_temp -40 to 50 C, qc_rh -2 to 104%, qc_vap_pres 0-10 kPa, qc_wspd 0-45 m/s, qc_wdir 0-360 deg, qc_sd_wdir 0-90 deg, qc_sd_temp 0-2, qc_vbat 9.6-16 V). Data Quality Health and Status (DQ HandS) and NCVweb provide interactive data plotting for quality checks (http://dq.arm.gov). The ARM Data Quality Office uses the Data Quality Assessment (DQA) system to inform Site Operators, Site Scientists, and Instrument Team members of instrument and...

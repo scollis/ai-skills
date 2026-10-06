@@ -157,16 +157,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgparealavealbC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgparealavealbC1.c1", "2022-06-25", "2022-06-25")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgparealavealbC1.c1", "2022-06-25", "2022-06-25"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("cloudfraction", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 58 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgparealavealbC1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['areal_ave_surface_albedo', 'areal_daily_ave_surface_albedo', 'cloud_base_best_estimate', 'qc_areal_ave_surface_albedo', 'qc_areal_daily_ave_surface_albedo', 'qc_cloud_base_best_estimate'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["cosine_solar_zenith_angle", "cloudfraction", "lwp", "qc_cosine_solar_zenith_angle", "qc_cloudfraction", "qc_lwp"],
                                 cleanup_qc=True)
 ```
 
@@ -181,7 +196,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_cosine_solar_zenith_angle"].attrs["flag_meanings"])
+print(ds["qc_cosine_solar_zenith_angle"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("cosine_solar_zenith_angle", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -209,7 +224,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgparealavealbC1.c1", "20040101", "20260924")
+try:
+    act.qc.print_dqr("sgparealavealbC1.c1", "20040101", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 ## Documented failure modes

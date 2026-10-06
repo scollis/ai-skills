@@ -1,0 +1,87 @@
+site,crop_or_cover,region,period,quantity,value,units,method,source_doi,source_citation
+Multiple (KBS LTER),"maize (continuous, no-till, rain-fed)",SW Michigan,"Growing season May-Sep, 2009-2011 (normal rainfall)",Growing-season ET,471 +/- 47,mm,Soil water depletion (TDR profile),10.1016/j.agwat.2019.02.049,Hussain et al. 2019
+Multiple (KBS LTER),maize (in maize-soybean rotation),SW Michigan,"Growing season May-Sep, 2009-2011",Growing-season ET,469 +/- 51,mm,Soil water depletion (TDR profile),10.1016/j.agwat.2019.02.049,Hussain et al. 2019
+Multiple (KBS LTER),soybean,SW Michigan,"Growing season May-Sep, 2009-2011",Growing-season ET,453 +/- 34,mm,Soil water depletion (TDR profile),10.1016/j.agwat.2019.02.049,Hussain et al. 2019
+Multiple (KBS LTER),soybean,SW Michigan,Growing season 2012 (drought),Growing-season ET,333,mm,Soil water depletion (TDR profile),10.1016/j.agwat.2019.02.049,Hussain et al. 2019
+Multiple (KBS LTER),maize (continuous),SW Michigan,2012 drought vs normal years,ET reduction in drought,3,%,Soil water depletion,10.1016/j.agwat.2019.02.049,Hussain et al. 2019
+Multiple (KBS LTER),maize (in rotation),SW Michigan,2012 drought vs normal years,ET reduction in drought,20,%,Soil water depletion,10.1016/j.agwat.2019.02.049,Hussain et al. 2019
+Multiple (KBS LTER),maize (continuous),SW Michigan,2009-2011,Water-use efficiency (grain+stover / ET),25.3 +/- 4.2,kg ha-1 mm-1,Yield / soil-water-depletion ET,10.1016/j.agwat.2019.02.049,Hussain et al. 2019
+Multiple (KBS LTER),maize (in rotation),SW Michigan,2009-2011,Water-use efficiency,27.3 +/- 3.1,kg ha-1 mm-1,Yield / soil-water-depletion ET,10.1016/j.agwat.2019.02.049,Hussain et al. 2019
+Multiple (KBS LTER),maize (continuous),SW Michigan,2012 drought,Water-use efficiency,14.0,kg ha-1 mm-1,Yield / soil-water-depletion ET,10.1016/j.agwat.2019.02.049,Hussain et al. 2019
+Multiple (KBS LTER),soybean,SW Michigan,2009-2011,Water-use efficiency,6.95 +/- 0.96,kg ha-1 mm-1,Yield / soil-water-depletion ET,10.1016/j.agwat.2019.02.049,Hussain et al. 2019
+KBS LTER,maize,SW Michigan,"Growing season, 4-year mean incl. 2012 drought",Growing-season ET,496 +/- 21,mm,Soil profile water change,10.1088/1748-9326/10/6/064015,Hamilton et al. 2015
+KBS LTER,switchgrass,SW Michigan,"Growing season, 4-year mean",Growing-season ET,559 +/- 14,mm,Soil profile water change,10.1088/1748-9326/10/6/064015,Hamilton et al. 2015
+KBS LTER,miscanthus,SW Michigan,"Growing season, 4-year mean",Growing-season ET,458 +/- 31,mm,Soil profile water change,10.1088/1748-9326/10/6/064015,Hamilton et al. 2015
+KBS LTER,restored prairie,SW Michigan,"Growing season, 4-year mean",Growing-season ET,519 +/- 30,mm,Soil profile water change,10.1088/1748-9326/10/6/064015,Hamilton et al. 2015
+KBS LTER,native grasses,SW Michigan,"Growing season, 4-year mean",Growing-season ET,573 +/- 37,mm,Soil profile water change,10.1088/1748-9326/10/6/064015,Hamilton et al. 2015
+KBS LTER,hybrid poplar,SW Michigan,"Growing season, 4-year mean",Growing-season ET,492 +/- 58,mm,Soil profile water change,10.1088/1748-9326/10/6/064015,Hamilton et al. 2015
+KBS LTER,maize,SW Michigan,Normal growing seasons 2010/2011/2013,Water-use efficiency,40-59,kg ha-1 mm-1,Biomass / soil-water ET,10.1088/1748-9326/10/6/064015,Hamilton et al. 2015
+KBS LTER,maize,SW Michigan,2012 drought,Water-use efficiency,29,kg ha-1 mm-1,Biomass / soil-water ET,10.1088/1748-9326/10/6/064015,Hamilton et al. 2015
+KBS LTER,growing-season rainfall,SW Michigan,"2010, 2011, 2013",Growing-season precipitation,480-610,mm,Rain gauge,10.1088/1748-9326/10/6/064015,Hamilton et al. 2015
+KBS LTER,growing-season rainfall,SW Michigan,2012 drought,Growing-season precipitation,210,mm,Rain gauge,10.1088/1748-9326/10/6/064015,Hamilton et al. 2015
+KBS / LUX sites (7 fields),annual and perennial biofuel crops,SW Michigan,"Annual (Nov-Oct), 2009-2012",Annual ET,480-639,mm,Eddy covariance,10.1111/gcbb.12239,Abraha et al. 2015
+KBS / LUX sites,unconverted CRP grassland,SW Michigan,"Annual (Nov-Oct), 2009-2012",Annual ET,622-706,mm,Eddy covariance,10.1111/gcbb.12239,Abraha et al. 2015
+KBS / LUX sites,all cropping systems,SW Michigan,"Annual (Nov-Oct), 2009-2012",ET as fraction of annual precipitation,45-77 (mean 60),%,Eddy covariance,10.1111/gcbb.12239,Abraha et al. 2015
+KBS / LUX sites,-,SW Michigan,2009-2012,Annual precipitation,848-1063,mm,Rain gauge,10.1111/gcbb.12239,Abraha et al. 2015
+"Energy Farm, Urbana",maize-soybean rotation,Central Illinois,"Establishment phase, 3 years",Ecosystem WUE (NEP / annual ET),lowest of four systems (negative biome WUE),kg ha-1 mm-1,Eddy covariance,10.1002/jgrg.20052,Zeri et al. 2013
+"Energy Farm, Urbana",miscanthus,Central Illinois,Third establishment year,Ecosystem WUE (NEP / annual ET),12.8 +/- 0.3,kg ha-1 mm-1,Eddy covariance,10.1002/jgrg.20052,Zeri et al. 2013
+"Energy Farm, Urbana",switchgrass,Central Illinois,Third establishment year,Ecosystem WUE,7.5 +/- 0.3,kg ha-1 mm-1,Eddy covariance,10.1002/jgrg.20052,Zeri et al. 2013
+"Energy Farm, Urbana",restored prairie (28 spp.),Central Illinois,Third establishment year,Ecosystem WUE,3.9 +/- 0.3,kg ha-1 mm-1,Eddy covariance,10.1002/jgrg.20052,Zeri et al. 2013
+US-Bo1 Bondville,maize/soybean rotation,Central Illinois,"Peak growing season, 2001-2017","ET/PET, extremely dry year (2012)",0.76,dimensionless,Landsat-MODIS fusion ET model (BESS-STAIR),10.5194/hess-24-1251-2020,Jiang et al. 2020
+US-Bo1 Bondville,maize/soybean rotation,Central Illinois,"Peak growing season, 2001-2017","ET/PET, wet year",0.91,dimensionless,BESS-STAIR,10.5194/hess-24-1251-2020,Jiang et al. 2020
+12 Corn Belt cropland sites,maize/soybean,US Corn Belt,"2000-2017, 85 site-years",Daily ET model-vs-tower RMSE,0.93 (2.29 MJ m-2 d-1; 26 W m-2),mm d-1,BESS-STAIR vs eddy covariance,10.5194/hess-24-1251-2020,Jiang et al. 2020
+12 Corn Belt cropland sites,maize/soybean,US Corn Belt,2000-2017,Daily ET relative error,27.9,%,BESS-STAIR vs eddy covariance,10.5194/hess-24-1251-2020,Jiang et al. 2020
+12 Corn Belt cropland sites,maize/soybean,US Corn Belt,Monthly aggregation,Monthly ET RMSE / relative error,0.48 mm d-1 / 14.3,"mm d-1, %",BESS-STAIR vs eddy covariance,10.5194/hess-24-1251-2020,Jiang et al. 2020
+US-Ne1/Ne2/Ne3 Mead,"maize, maize-soybean",Eastern Nebraska,2001-2012,Daily ET RMSE / relative error,0.89 mm d-1 / 25.3,"mm d-1, %",BESS-STAIR vs eddy covariance,10.5194/hess-24-1251-2020,Jiang et al. 2020
+"Brooks Field, IA","maize, soybean, grass",Central Iowa,April-October,"Daily ET, shoulder months (Apr, May, Sep, Oct)",< 2,mm d-1,BESS-STAIR (Landsat-MODIS fusion),10.5194/hess-24-1251-2020,Jiang et al. 2020
+152 CONUS stations (cropland subset),irrigated and rain-fed crops,CONUS,Monthly,OpenET ensemble mean absolute error,15.8 (17% of mean observed ET),mm month-1,Satellite ET ensemble vs eddy covariance,10.1038/s44221-023-00181-7,Volk et al. 2024
+152 CONUS stations (cropland subset),irrigated and rain-fed crops,CONUS,Monthly,OpenET ensemble mean bias error,-5.3 (6%),mm month-1,Satellite ET ensemble vs eddy covariance,10.1038/s44221-023-00181-7,Volk et al. 2024
+"6 cropland EC sites (Kraichgau, Swabian Jura)","maize, winter wheat, others",SW Germany,"2010-2017, 48 site-years",Mean energy balance ratio (H+LE)/(Rn-G),0.75,dimensionless,Eddy covariance + net radiometer + soil heat flux,10.5194/bg-16-521-2019,Eshonkulov et al. 2019
+6 cropland EC sites,"maize, winter wheat, others",SW Germany,2010-2017,Mean energy balance residual,41.6,W m-2,Eddy covariance energy budget,10.5194/bg-16-521-2019,Eshonkulov et al. 2019
+6 cropland EC sites,cropland,SW Germany,"Annual means, 2010-2017",Range of annual energy balance ratio,0.62-0.90,dimensionless,Eddy covariance energy budget,10.5194/bg-16-521-2019,Eshonkulov et al. 2019
+Kraichgau region,cropland,SW Germany,Best year,Smallest mean annual energy balance gap,17,%,Eddy covariance energy budget,10.5194/bg-16-521-2019,Eshonkulov et al. 2019
+Swabian Jura region,cropland,SW Germany,Best year,Smallest mean annual energy balance gap,13,%,Eddy covariance energy budget,10.5194/bg-16-521-2019,Eshonkulov et al. 2019
+FR-Aur,"maize, wheat, rapeseed",SW France,8 growing seasons,Energy balance closure (slope),82,%,Eddy covariance energy budget,10.1016/j.agrformet.2021.108529,Dare-Idowu et al. 2021
+FR-Lam,"maize, wheat, rapeseed",SW France,8 growing seasons,Energy balance closure (slope),67,%,Eddy covariance energy budget,10.1016/j.agrformet.2021.108529,Dare-Idowu et al. 2021
+FR-Aur / FR-Lam,"annual crops, active vegetation",SW France,Wet cropping seasons,LE as fraction of net radiation,> 42,%,Eddy covariance,10.1016/j.agrformet.2021.108529,Dare-Idowu et al. 2021
+FR-Aur / FR-Lam,"annual crops, low vegetation",SW France,Bare-soil / early season,Soil heat flux as fraction of net radiation,30,%,Soil heat flux plates + storage,10.1016/j.agrformet.2021.108529,Dare-Idowu et al. 2021
+EBEX-2000 (cotton),irrigated cotton,"San Joaquin Valley, CA",Field campaign 2000,Residual energy imbalance after full correction,~10,% of available energy,Multi-tower eddy covariance,10.1007/s10546-020-00529-6,Mauder et al. 2020
+Synthesis (LES + towers),various,Global,Single-tower EC,Energy spectra underestimation in inertial subrange,10-30,%,LES + distributed temperature sensing,10.1007/s10546-020-00529-6,Mauder et al. 2020
+Synthesis,various,Global,Advection-resolving experiment,Closure gap reduction when horizontal advection quantified,~50,%,Multi-tower advection measurement,10.1007/s10546-020-00529-6,Mauder et al. 2020
+GRAPEX vineyards,vineyard (analogue for row crop),California,Growing season,Daily ET uncertainty from choice of imbalance correction,up to 50,%,"Eddy covariance, alternative closure adjustments",10.1007/s00271-022-00783-1,Bambach et al. 2022
+Rollesbroich,grassland,W Germany,Year 2012,"Annual ET difference, lysimeter vs closure-corrected EC",3.8 (19 mm),%,6 weighable lysimeters vs eddy covariance,10.5194/hess-19-2145-2015,Gebler et al. 2015
+Rollesbroich,grassland,W Germany,"Monthly, summer","Best monthly agreement, lysimeter vs EC",< 8,%,Lysimeter vs eddy covariance,10.5194/hess-19-2145-2015,Gebler et al. 2015
+251 FLUXNET sites,all biomes incl. cropland,Global,Daily,T/ET spread across three partitioning methods,45-77,%,EC-based carbon-water coupling partitioning,10.1111/gcb.15314,Nelson et al. 2020
+140 FLUXNET sites,all biomes,Global,Interannual vs across-site,T/ET variability ratio (across sites : across years),1.6,dimensionless,EC-based partitioning,10.1111/gcb.15314,Nelson et al. 2020
+240 FLUXNET sites,selected ecosystems,Global,Ideal transpiring conditions,Maximum T as fraction of ET,> 95,%,Eddy covariance + boundary-line WUE analysis,10.5194/bg-16-3747-2019,Stoy et al. 2019
+214 AmeriFlux sites,all land covers,North America,Monthly 80% footprint climatology,Footprint source-area size range,1e3 - 1e7,m2,Kljun 2015 FFP footprint climatology,10.1016/j.agrformet.2021.108350,Chu et al. 2021
+214 AmeriFlux sites,all land covers,North America,Fixed 250-3000 m target areas,Bias in EVI from footprint-to-target mismatch,4-20,%,Footprint climatology vs target area,10.1016/j.agrformet.2021.108350,Chu et al. 2021
+214 AmeriFlux sites,all land covers,North America,Fixed target areas,Bias in dominant land-cover fraction,6-20,%,Footprint climatology vs target area,10.1016/j.agrformet.2021.108350,Chu et al. 2021
+Yingke and others (Heihe),irrigated cropland,NW China,2008-2009,Eddy covariance main source-area radius,250,m,Analytical footprint model,10.5194/hess-15-1291-2011,Liu et al. 2011
+Yingke and others (Heihe),irrigated cropland,NW China,2008-2009,Large-aperture scintillometer source area (2390 m path),~2000 x 700,m,LAS footprint,10.5194/hess-15-1291-2011,Liu et al. 2011
+Eastern Nebraska (3 fields),maize,Eastern Nebraska,"2001-2008, 24 field-years",Green LAI range,0 - 6.5,m2 m-2,Destructive sampling / VI calibration,10.2134/agronj2012.0065,Nguy-Robertson et al. 2012
+Eastern Nebraska (3 fields),soybean,Eastern Nebraska,"2001-2008, 24 field-years",Green LAI range,0 - 5.5,m2 m-2,Destructive sampling / VI calibration,10.2134/agronj2012.0065,Nguy-Robertson et al. 2012
+"Beaver Crossing, NE (F1-F3)",cover-crop mixture + maize residue,Eastern Nebraska,"Cover-crop seasons 2013-14, 2014-15",Cover-crop ET with maize residue vs cover crop alone,significantly lower (p<0.05),mm,"Soil water balance, center-pivot irrigated fields",10.1061/(asce)ir.1943-4774.0001214,Sharma et al. 2017
+GRAINEX,irrigated vs non-irrigated cropland,SE Nebraska,Summer 2018,Bowen ratio reduction over irrigated area,40,%,Surface flux network,10.1029/2021gl096822,Phillips et al. 2022
+GRAINEX,irrigated vs non-irrigated cropland,SE Nebraska,Summer 2018,Reduction in terrain-induced pressure gradient force,up to 67,%,Observations + WRF,10.1029/2021gl096822,Phillips et al. 2022
+GRAINEX,irrigated cropland,SE Nebraska,Summer 2018,Irrigation fraction maximising LE and mixing ratio,~60,%,WRF sensitivity to irrigation fraction,10.1175/jhm-d-21-0160.1,Rappin et al. 2022
+ARM SGP (7 fields),"winter wheat, pasture, sorghum",Oklahoma / Kansas,2001-2003 growing seasons,Between-field flux differences by planting season,50-100,%,Eddy covariance,10.1175/ei231.1,Fischer et al. 2007
+"FLUXNET (27 sites, 66 site-years)",agricultural site and deciduous forest,Global,Warm season (mid-June to late August),Bowen ratio (H/LE),0.25-0.50,dimensionless,Eddy covariance,10.1029/2001wr000989,Wilson et al. 2002
+"Continuous maize, Nebraska",maize (irrigated),Nebraska,"Model experiment, current climate","Irrigation water saving, supply-demand vs soil-moisture scheduling",-24.0,%,Hydraulically driven ecosystem model,10.1038/s41467-021-25254-7,Zhang et al. 2021
+11 temperate crops (96 profiles),"cereals, pulses, oilseeds, perennials",Temperate,Compiled database,Depth containing 50% of root mass,8-20,cm,"Root-profile database, logistic dose-response fit",10.1016/j.fcr.2016.02.013,Fan et al. 2016
+Unit conversion,-,-,-,Latent heat flux per unit ET rate (lambda = 2.45 MJ kg-1),28.4,W m-2 per mm d-1,Definition,10.1016/j.agwat.2010.12.015,Allen et al. 2011
+Unit conversion,-,-,-,ET rate per unit latent heat flux (lambda = 2.45 MJ kg-1),0.0353,mm d-1 per W m-2,Definition,10.1016/j.agwat.2010.12.015,Allen et al. 2011
+ARM ECOR (all sites),various,ARM sites,30-min,"Stated uncertainty, latent heat flux",5,%,ECOR handbook specification,10.2172/1467448,Cook 2025
+ARM ECOR (all sites),various,ARM sites,30-min,"Stated uncertainty, sensible heat flux",6,%,ECOR handbook specification,10.2172/1467448,Cook 2025
+ARM EBBR (SGP),grassland (untilled),ARM SGP,30-min,"Stated uncertainty, sensible and latent heat flux",10,%,EBBR handbook specification,10.2172/1020562,Cook 2018
+ARM EBBR (SGP),grassland (untilled),ARM SGP,30-min,"Stated uncertainty, net radiation",5,%,EBBR handbook specification,10.2172/1020562,Cook 2018
+ARM ECOR (all sites),tall vegetation incl. corn,ARM sites,"30-min, post-processed",Documented flux shortfall (largest over tall vegetation),10-25 (occasionally 35),%,"ECOR handbook, eddy covariance",10.2172/1467448,Cook 2025
+ARM ECOR (all sites),various,ARM sites,Siting requirement,Minimum fetch at 3 m sensor height (1:70 height:fetch),210,m,ECOR handbook siting rule,10.2172/1467448,Cook 2025
+ARM ECOR (all sites),various,ARM sites,30-min,Sonic wind-speed floor below which fluxes are untrustworthy,~1,m s-1,ECOR handbook,10.2172/1467448,Cook 2025
+ARM QCECOR VAP,various,ARM sites,30-min,Increase in latent heat flux from correction chain,10-30,%,QCECOR VAP vs uncorrected ECOR,10.2172/1557426,Tao et al. 2019
+ARM QCECOR VAP,various,ARM sites,30-min,Increase in sensible heat flux from correction chain,10,%,QCECOR VAP vs uncorrected ECOR,10.2172/1557426,Tao et al. 2019
+ARM QCECOR VAP,various,ARM sites,30-min,WPL contribution to CO2 flux correction,0-50,%,QCECOR VAP,10.2172/1557426,Tao et al. 2019
+ARM QCECOR VAP,various,ARM sites,30-min,Nighttime QC rejection threshold on H and LE,+/- 150,W m-2,QCECOR QC rule,10.2172/1557426,Tao et al. 2019
+ARM QCECOR VAP,various,ARM sites,30-min,Temporal-variability QC threshold (+/-3 h window) on H and LE,25,W m-2,QCECOR QC rule,10.2172/1557426,Tao et al. 2019
+ARM EBBR (SGP),grassland (untilled),ARM SGP,Siting requirement,Minimum fetch (1:40 height:fetch),120,m,EBBR handbook siting rule,10.2172/1020562,Cook 2018
+ARM EBBR (SGP),grassland (untilled),ARM SGP,30-min,Bowen ratio range in which fluxes are unreliable (near -1),-1.6 to -0.7 (approx.),dimensionless,EBBR handbook,10.2172/1020562,Cook 2018

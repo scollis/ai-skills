@@ -173,9 +173,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./mosnavM1.a1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "mosnavM1.a1", "2020-09-27", "2020-09-27")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("mosnavM1.a1", "2020-09-27", "2020-09-27"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("surge_velocity")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -187,7 +202,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("mosnavM1.a1", "20121001", "20260923")
+try:
+    act.qc.print_dqr("mosnavM1.a1", "20121001", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: While reading data from the HYDRINS unit, errors are possible from communication issues, corrupt data, or loss of signal. When an error occurs, the system stops processing and removes the current output file so that other systems do not read old or corrupted data, then attempts to re-start processing as soon as possible to minimize missing data. The searead program can be used to count records, data gaps, and checksum errors in raw data files.

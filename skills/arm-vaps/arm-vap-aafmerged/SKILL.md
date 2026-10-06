@@ -159,6 +159,7 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaafmergedF1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaafmergedF1.c1", "2016-09-20", "2016-09-20")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaafmergedF1.c1", "2016-09-20", "2016-09-20"))   # cite what you pulled
 ```
@@ -168,7 +169,7 @@ read only what you need, and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "sgpaafmergedF1.c1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=['aerosolsd_alt', 'aerosolsd_cas_flag', 'aerosolsd_cloud_flag', 'qc_aerosolsd_alt', 'qc_aerosolsd_cas_flag', 'qc_aerosolsd_cloud_flag'],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["twodsh_number_concentration", "twodsh_total_number_concentration", "twodsv_number_concentration", "qc_twodsh_number_concentration", "qc_twodsh_total_number_concentration", "qc_twodsv_number_concentration"],
                                 cleanup_qc=True)
 ```
 
@@ -183,7 +184,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_twodsh_number_concentration"].attrs["flag_meanings"])
+print(ds["qc_twodsh_number_concentration"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("twodsh_number_concentration", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -211,7 +212,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpaafmergedF1.c1", "20130715", "20260924")
+try:
+    act.qc.print_dqr("sgpaafmergedF1.c1", "20130715", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Quality controls can be applied during processing to create b1-level data files; additional mentor-edited processing with quality improvement/calibration produces 'c'-level data products. Variables carry supporting attributes (long_name, units, missing_value, and CF standard_name where applicable) to aid interpretation. Instrument-specific flags are propagated into the merged product (e.g., ams_flag, aerosolsd_cas_flag, aerosolsd_cloud_flag, aerosolsd_cvi_flag, aerosolsd_fcdp_flag, aerosolsd_fims_flag, aerosolsd_pcasp_flag, fims_heated_flag, ccna_temp_unstable, ccnb_temp_unstable) so users...

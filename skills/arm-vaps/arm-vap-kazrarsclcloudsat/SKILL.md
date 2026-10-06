@@ -169,9 +169,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgparsclkazrcloudsatC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgparsclkazrcloudsatC1.c1", "2017-08-28", "2017-08-28")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgparsclkazrcloudsatC1.c1", "2017-08-28", "2017-08-28"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("precip_mean", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -184,7 +199,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_reflectivity_best_estimate"].attrs["flag_meanings"])
+print(ds["qc_reflectivity_best_estimate"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("reflectivity_best_estimate", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -212,7 +227,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgparsclkazrcloudsatC1.c1", "20120301", "20260924")
+try:
+    act.qc.print_dqr("sgparsclkazrcloudsatC1.c1", "20120301", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Each science variable (reflectivity, reflectivity_best_estimate, mean_doppler_velocity, spectral_width, linear_depolarization_ratio, precip_mean, mwr_lwp) has a companion bit-packed qc_ variable: bit_1 = value less than valid_min (Bad), bit_2 = value greater than valid_max (Bad), bit_3 = data value not available in input file, set to missing_value (Bad); a value of 0 (no bits set) indicates the data has not failed any QC tests. reflectivity_clutter_flag distinguishes no detection, hydrometeor-only, hydrometeor+clutter, clutter-only, bad data, and missing data. instrument_availability_flag is...

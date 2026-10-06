@@ -158,16 +158,31 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./enaaoshtdmaC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "enaaoshtdmaC1.b1", "2023-05-21", "2023-05-21")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("enaaoshtdmaC1.b1", "2023-05-21", "2023-05-21"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("dry_diameter_setting", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This datastream carries 53 variables. On any window longer than a day,
 read only what you need - and ask for the QC companion at the same time:
 
 ```python
 files = act.discovery.download_arm_data(user, token, "enaaoshtdmaC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["dma_rh_avg", "dry_diameter_setting", "dry_pressure", "qc_dma_rh_avg", "qc_dry_diameter_setting", "qc_dry_pressure"],
+ds = act.io.arm.read_arm_netcdf(files, keep_variables=["dry_diameter_setting", "dry_pressure", "dry_temperature", "qc_dry_diameter_setting", "qc_dry_pressure", "qc_dry_temperature"],
                                 cleanup_qc=True)
 ```
 
@@ -183,7 +198,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_dry_diameter_setting"].attrs["flag_meanings"])
+print(ds["qc_dry_diameter_setting"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("dry_diameter_setting", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -209,7 +224,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("enaaoshtdmaC1.b1", "20121116", "20260923")
+try:
+    act.qc.print_dqr("enaaoshtdmaC1.b1", "20121116", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality evaluation involves automatic generation of plots, in collaboration with the ARM Data Quality Office: (1) humidified aerosol total particle concentrations (per ambient aerosol selection size) over time should be above 0, follow the same general trend, and not fluctuate erratically, indicating internal CPC is not out of butanol or flooded and air flows/pressures are stable; (2) humidifier RH should be close to 90%, with values below 85% indicating an issue with water level, temperature, or air flows.

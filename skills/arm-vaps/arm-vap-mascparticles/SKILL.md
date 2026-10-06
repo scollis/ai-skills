@@ -179,9 +179,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./nsamascparticlesavgC1.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "nsamascparticlesavgC1.c1", "2025-05-09", "2025-05-09")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("nsamascparticlesavgC1.c1", "2025-05-09", "2025-05-09"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("num_particles_total", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this product
 
@@ -194,7 +209,7 @@ the sensor misbehaved. Read `flag_meanings` before interpreting a filtered serie
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_num_particles_total"].attrs["flag_meanings"])
+print(ds["qc_num_particles_total"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("num_particles_total", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -222,7 +237,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("nsamascparticlesavgC1.c1", "20151101", "20260924")
+try:
+    act.qc.print_dqr("nsamascparticlesavgC1.c1", "20151101", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Quality is tracked via bit-packed qc_ variables for nearly every reported field, with bits classified as 'Bad' (data set to MISSING_VALUE, e.g., missing fallspeed, missing camera_id, missing image file, no particle detected in image) or 'Indeterminate' (data retained but flagged, e.g., value exceeds warn_max/warn_min, low particle counts for averaging). Plots generated with ARM's dq_inspector tool color data as gray (no data), green (good, badness bit not set), or yellow (indeterminate). Bad data (MISSING_VALUE) is not shown on the top portion of such plots. Users are advised it is up to them...

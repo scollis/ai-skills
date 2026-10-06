@@ -164,9 +164,23 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpxsaprmmcgI5.c1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpxsaprmmcgI5.c1", "2019-03-31", "2019-03-31")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpxsaprmmcgI5.c1", "2019-03-31", "2019-03-31"))   # cite what you pulled
 ```
+### First look
+
+A gridded or multi-dimensional product, so one axis is fixed to plot it.
+
+```python
+import matplotlib.pyplot as plt
+
+# This field is 4-D ('time', 'z', 'y', 'x'), so a first look has to fix an axis.
+fig, ax = plt.subplots(figsize=(8, 4))
+ds["corrected_differential_reflectivity"].isel(y=0, x=0).plot(ax=ax)
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 This product carries 43 variables. Over any window longer than a day,
 read only what you need, and ask for the QC companion at the same time:
@@ -186,7 +200,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpxsaprmmcgI5.c1", "20110818", "20260924")
+try:
+    act.qc.print_dqr("sgpxsaprmmcgI5.c1", "20110818", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: The MMCG data does not have quality control methods applied to it directly; quality control was performed upstream in the CMAC VAP package when the input datastreams for MMCG were created.

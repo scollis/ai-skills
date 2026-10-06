@@ -106,21 +106,16 @@ those skills define, **not** ACT functions - nothing below uses them, so every b
 runs against a bare `act-atmos` install.
 
 ```python
-import os, requests, act
+import os, requests
 
-user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
-
-# ACT has no list-only call, so size the request against ARM Live's query endpoint
-# before transferring anything.
-avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
-                     params={"user": f"{user}:{token}", "ds": "sgpokmsoilX1.c1",
-                             "start": "2020-10-22", "end": "2020-10-22", "wt": "json"}).json()
-print(avail["num_found"], avail["total_size"])            # files, bytes
-
-# Downloads into ./sgpokmsoilX1.c1/ unless you pass output=
-files = act.discovery.download_arm_data(user, token, "sgpokmsoilX1.c1", "2020-10-22", "2020-10-22")
-ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
-print(act.discovery.get_arm_doi("sgpokmsoilX1.c1", "2020-10-22", "2020-10-22"))   # cite what you pulled
+# ARM Live answers HTTP 403 for this datastream on every date tried
+# (ARM Live refuses this c1 product on every date tried). The query below documents that rather than pretending otherwise;
+# order the data from Data Discovery at <https://adc.arm.gov/discovery/> instead.
+r = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                 params={"user": f'{os.environ["ARMUSER"]}:{os.environ["ARMTOKEN"]}',
+                         "ds": "sgpokmsoilX1.c1", "start": start, "end": end,
+                         "wt": "json"})
+print(r.status_code)   # 403
 ```
 
 ## Quality control in this product
@@ -134,7 +129,10 @@ Check the DQRs before trusting a period - for a VAP they cover both the product 
 instruments feeding it:
 
 ```python
-act.qc.print_dqr("sgpokmsoilX1.c1", "19980101", "20260924")
+try:
+    act.qc.print_dqr("sgpokmsoilX1.c1", "19980101", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The report's own note on quality: Input data includes a QC flag for sensor temperature rise (qc_trise) from the sgp30okm.b1 datastream. Output variables each have a corresponding QC field: qc_sensor_temperature_rise, qc_matric_potential, qc_volumetric_water_content, and qc_fractional_water_index. The report states that the VAP was validated using "the latest revision of the OKM quality-assured input data."

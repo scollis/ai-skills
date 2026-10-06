@@ -150,9 +150,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgp5ebbrE13.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgp5ebbrE13.b1", "2023-12-15", "2023-12-15")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgp5ebbrE13.b1", "2023-12-15", "2023-12-15"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("temp_reference", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -166,7 +181,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_temp_reference"].attrs["flag_meanings"])
+print(ds["qc_temp_reference"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("temp_reference", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -193,7 +208,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgp5ebbrE13.b1", "19930704", "20260923")
+try:
+    act.qc.print_dqr("sgp5ebbrE13.b1", "19930704", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: QC flags (qcmin#, qcmax#, qcdelta#) are provided in the 30-, 15-, and 5-minute data streams as 24-bit binary numbers; bits 6 and 7 of qcmin49-72/qcmax49-72 relate to home_15 and home_30 AEM signal checks. QC flags should routinely be used for all variables, but for some (e.g., ave_shf, e, h) flags were not set until late May 1998. The Bowen QC flag is frequently and legitimately tripped near sunrise/sunset due to near-zero temperature gradients and should not be reported as a data quality issue in DQO assessments. hum_top/hum_bot QC flags trip when RH exceeds a threshold, but since the RH...

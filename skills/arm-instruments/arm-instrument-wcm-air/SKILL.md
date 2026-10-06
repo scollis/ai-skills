@@ -105,18 +105,13 @@ runs against a bare `act-atmos` install.
 import os, requests, act
 
 user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
+files = act.discovery.download_arm_data(user, token, "coraafwcmF1.a1", start, end)
 
-# ACT has no list-only call, so size the request against ARM Live's query endpoint
-# before transferring anything.
-avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
-                     params={"user": f"{user}:{token}", "ds": "coraafwcmF1.a1",
-                             "start": "2018-11-04", "end": "2018-11-04", "wt": "json"}).json()
-print(avail["num_found"], avail["total_size"])            # files, bytes
-
-# Downloads into ./coraafwcmF1.a1/ unless you pass output=
-files = act.discovery.download_arm_data(user, token, "coraafwcmF1.a1", "2018-11-04", "2018-11-04")
-ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
-print(act.discovery.get_arm_doi("coraafwcmF1.a1", "2018-11-04", "2018-11-04"))   # cite what you pulled
+# These files are gzip-compressed archive (magic 1f 8b), not netCDF - `read_arm_netcdf` fails with
+# "did not find a match in any of xarray's currently installed IO backends".
+import gzip, tarfile
+with tarfile.open(files[0], "r:gz") as tf:
+    print(tf.getnames()[:5])   # unpack, then read the members
 ```
 
 ## Quality control in this datastream
@@ -130,7 +125,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("coraafwcmF1.a1", "20181104", "20260923")
+try:
+    act.qc.print_dqr("coraafwcmF1.a1", "20181104", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Under extremely cold and humid conditions the WCM can freeze up, resulting in an unreal spike in the data; auxiliary LWC measurements on the aircraft should be used to validate. Data are also unreliable during takeoff and landing.

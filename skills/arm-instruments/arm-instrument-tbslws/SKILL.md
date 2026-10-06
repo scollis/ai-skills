@@ -94,21 +94,16 @@ those skills define, **not** ACT functions - nothing below uses them, so every b
 runs against a bare `act-atmos` install.
 
 ```python
-import os, requests, act
+import os, requests
 
-user, token = os.environ["ARMUSER"], os.environ["ARMTOKEN"]
-
-# ACT has no list-only call, so size the request against ARM Live's query endpoint
-# before transferring anything.
-avail = requests.get("https://adc.arm.gov/armlive/livedata/query",
-                     params={"user": f"{user}:{token}", "ds": "olitbslwsM1.a0",
-                             "start": "YYYY-MM-DD", "end": "YYYY-MM-DD", "wt": "json"}).json()
-print(avail["num_found"], avail["total_size"])            # files, bytes
-
-# Downloads into ./olitbslwsM1.a0/ unless you pass output=
-files = act.discovery.download_arm_data(user, token, "olitbslwsM1.a0", "YYYY-MM-DD", "YYYY-MM-DD")
-ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
-print(act.discovery.get_arm_doi("olitbslwsM1.a0", "YYYY-MM-DD", "YYYY-MM-DD"))   # cite what you pulled
+# ARM Live answers HTTP 403 for this datastream on every date tried
+# (level a0, which ARM Live does not serve). The query below documents that rather than pretending otherwise;
+# order the data from Data Discovery at <https://adc.arm.gov/discovery/> instead.
+r = requests.get("https://adc.arm.gov/armlive/livedata/query",
+                 params={"user": f'{os.environ["ARMUSER"]}:{os.environ["ARMTOKEN"]}',
+                         "ds": "olitbslwsM1.a0", "start": start, "end": end,
+                         "wt": "json"})
+print(r.status_code)   # 403
 ```
 
 ## Quality control in this datastream
@@ -122,7 +117,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("olitbslwsM1.a0", "20160418", "20260924")
+try:
+    act.qc.print_dqr("olitbslwsM1.a0", "20160418", "20260924")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Each datastream includes quality control variables for each scientific variable.

@@ -137,9 +137,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./nsagvrpC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "nsagvrpC1.b1", "2026-07-11", "2026-07-11")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("nsagvrpC1.b1", "2026-07-11", "2026-07-11"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("blackBodyTemperature", assessment_overplot=True)   # QC-flagged points in red/orange
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -153,7 +168,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_blackBodyTemperature"].attrs["flag_meanings"])
+print(ds["qc_blackBodyTemperature"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("blackBodyTemperature", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -172,7 +187,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("nsagvrpC1.b1", "20080401", "20260923")
+try:
+    act.qc.print_dqr("nsagvrpC1.b1", "20080401", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality flags are named qc_'fieldname'. Possible values: 0 (within specified range), 1 (missing value), 2 (less than specified minimum), 4 (greater than specified maximum), 8 (failed valid delta check). Thresholds given in Table 5 for BrightnessTemperature (3-320), surfacePressure (80-110 kPa), surfaceTemperature (223.15-323 K), surfaceRelativeHumidity (1-110%), blackBodyTemperature (243-320 K). Instrument mentor submits a monthly IMMS summary report performing checks: brightness temperature time series should be smooth with low noise; brightness temperatures should be between 2.75 K and...

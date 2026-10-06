@@ -159,17 +159,25 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgppgsisocoeffC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgppgsisocoeffC1.b1", "2023-04-19", "2023-04-19")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgppgsisocoeffC1.b1", "2023-04-19", "2023-04-19"))   # cite what you pulled
 ```
+### First look
 
-This datastream carries 48 variables. On any window longer than a day,
-read only what you need - and ask for the QC companion at the same time:
+Discrete samples rather than a continuous record, so markers.
 
 ```python
-files = act.discovery.download_arm_data(user, token, "sgppgsisocoeffC1.b1", start, end)
-ds = act.io.arm.read_arm_netcdf(files, keep_variables=["ch4_gain", "ch4_offset", "co2_12_gain", "qc_ch4_gain", "qc_ch4_offset", "qc_co2_12_gain"],
-                                cleanup_qc=True)
+import matplotlib.pyplot as plt
+
+# Discrete samples, not a continuous record - a line plot of one or a few points
+# is meaningless (and ACT's TimeSeriesDisplay raises IndexError on a length-1
+# series), so plot the samples as markers.
+fig, ax = plt.subplots(figsize=(9, 3.5))
+ax.plot(ds["time"], ds["ch4_gain"], marker="o", linestyle="none")
+ax.set_ylabel("ch4_gain")
+fig.autofmt_xdate()
+fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
 ```
 
 ## Quality control in this datastream
@@ -184,7 +192,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_co2_gain"].attrs["flag_meanings"])
+print(ds["qc_co2_gain"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("co2_gain", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -203,7 +211,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgppgsisocoeffC1.b1", "20130801", "20260923")
+try:
+    act.qc.print_dqr("sgppgsisocoeffC1.b1", "20130801", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: QC variables use a bit-flag method (flag_method = "bit") with 11 defined bits covering: missing value (-9999), value below/above valid_min/valid_max, missing slope or slope_err values, slope out of valid range, slope significantly nonzero, auxiliary variable QC not zero, insufficient residual correction following certain tanks, and N2 Purge Tank measurements. "Best data" are those with *_QC values of 0 for tower sample or Target measurements. Tower sample data correspond to VALCOPOSITION equal to 1, 2, 3, or 4 for the four tower sample heights. Not all Target cylinder measurements are used...

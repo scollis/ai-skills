@@ -180,9 +180,26 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgp30smosA5.a1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgp30smosA5.a1", "2004-03-29", "2004-03-29")
-ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
+
+# this datastream's time units are not CF-decodable, so read base_time instead
+ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True, use_base_time=True)
 print(act.discovery.get_arm_doi("sgp30smosA5.a1", "2004-03-29", "2004-03-29"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("wspd")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -194,7 +211,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgp30smosA5.a1", "19970422", "20260923")
+try:
+    act.qc.print_dqr("sgp30smosA5.a1", "19970422", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Quality check results are output as qc_ variables with defined Min/Max/Delta bounds for each quantity (Table 4). Data Quality Health and Status (DQ HandS) and NCVweb tools at http://dq.arm.gov provide interactive review. The ARM Data Quality Office performs routine DQA assessments on recently collected data via weekly reports (http://dq.arm.gov/weekly_reports/weekly_reports.html) and tracks problem resolution via Data Quality Problem reports. VAPs and QMEs (Quality Measurement Experiments) provide continuous assessment of input data quality via internal consistency checks, comparisons between...

@@ -126,9 +126,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaafinletisokF1.a1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaafinletisokF1.a1", "2016-09-21", "2016-09-21")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaafinletisokF1.a1", "2016-09-21", "2016-09-21"))   # cite what you pulled
 ```
+### First look
+
+ARM data is time-first; this is the shape of the record, not a publication figure.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4))
+disp.plot("temperature_isok_inlet")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -140,7 +155,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaafinletisokF1.a1", "20130624", "20260923")
+try:
+    act.qc.print_dqr("sgpaafinletisokF1.a1", "20130624", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality evaluation involves automatic flagging based on criteria developed by instrument mentors. Automatic data quality checks performed by the ARM Data Quality Office (DQO) ensure temperature, pressure, and relative humidity are within normal levels. The instrument mentor performs a more vigorous data quality check before data publication to ensure particle transmission is not biased from cases such as transmission loss and dryer performance. No plots are available for these data on Data Discovery; however, these data can be used for data masking (e.g., using the CVI flag to identify...

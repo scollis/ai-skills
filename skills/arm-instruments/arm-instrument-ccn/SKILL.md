@@ -137,9 +137,24 @@ print(avail["num_found"], avail["total_size"])            # files, bytes
 
 # Downloads into ./sgpaosccn1colspectraC1.b1/ unless you pass output=
 files = act.discovery.download_arm_data(user, token, "sgpaosccn1colspectraC1.b1", "2017-08-13", "2017-08-13")
+assert files, "nothing transferred - ARM Live rate limits with HTTP 429; retry"
 ds = act.io.arm.read_arm_netcdf(files, cleanup_qc=True)
 print(act.discovery.get_arm_doi("sgpaosccn1colspectraC1.b1", "2017-08-13", "2017-08-13"))   # cite what you pulled
 ```
+### First look
+
+A 2-D field over time, so pcolormesh rather than a line.
+
+```python
+import matplotlib.pyplot as plt
+
+# squeeze drops ARM's size-1 sensor dimensions - the tethered-balloon files carry
+# one, which otherwise sends a 1-D series through the 2-D plotting path.
+disp = act.plotting.TimeSeriesDisplay(ds.squeeze(), figsize=(11, 4.5))
+disp.plot("concentration")
+disp.fig.savefig("first_look.png", dpi=120, bbox_inches="tight")
+```
+
 
 ## Quality control in this datastream
 
@@ -153,7 +168,7 @@ filtering on only one of them silently keeps known-bad points.
 
 ```python
 # What each test would remove, one variable at a time
-print(ds["qc_N_CCN"].attrs["flag_meanings"])
+print(ds["qc_N_CCN"].attrs.get("flag_meanings", "no flag_meanings"))
 mask = ds.qcfilter.get_masked_data("N_CCN", rm_assessments=["Bad", "Indeterminate"],
                                   return_mask_only=True)
 print(int(mask.sum()), "of", mask.size, "points flagged")
@@ -180,7 +195,10 @@ Either way, check the DQRs before trusting a period - they carry the mentor's kn
 of icing, misalignment and outages that no automated test catches:
 
 ```python
-act.qc.print_dqr("sgpaosccn1colspectraC1.b1", "20050304", "20260923")
+try:
+    act.qc.print_dqr("sgpaosccn1colspectraC1.b1", "20050304", "20260923")
+except ValueError:
+    print("no DQRs for this window")   # ACT raises rather than returning empty
 ```
 
 The handbook's own note on data quality: Data quality evaluation involves automatic flagging of data based on criteria developed by instrument mentors and automatic generation of plots in collaboration with the ARM Data Quality Office. Automatic checks include verifying sheath/sample flow rate ratio is between 9.5 and 10.5, and that the OPC first-stage voltage monitor reading is below 0.2 V. Particle number concentration data at 0% supersaturation set point are automatically flagged 'bad' to exclude from analysis (no meaningful information at 0% SS; not indicative of instrument problems). Automatically generated plots include...
