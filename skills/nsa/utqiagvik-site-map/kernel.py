@@ -622,13 +622,114 @@ def legend_handles(dark=False):
 
 # ---------------------------------------------------------------- panels
 
+
+def gmrt_grid(box, resolution="high", cache="layer_cache"):
+    """GMRT topography/bathymetry (m, +up) for box=(w, e, s, n), from the
+    GMRT GridServer as Esri ASCII (no raster library needed). Cached.
+    Returns (z, extent) with z north-up and extent=(w, e, s, n)."""
+    import numpy as np
+    import requests
+
+    w, e, s, n = box
+    os.makedirs(cache, exist_ok=True)
+    path = os.path.join(cache, f"gmrt_{w}_{e}_{s}_{n}_{resolution}.asc")
+    if not os.path.exists(path):
+        r = requests.get("https://www.gmrt.org/services/GridServer", timeout=300,
+                         params=dict(minlongitude=w, maxlongitude=e,
+                                     minlatitude=s, maxlatitude=n,
+                                     format="esriascii", layer="topo",
+                                     resolution=resolution))
+        r.raise_for_status()
+        open(path, "w").write(r.text)
+    with open(path) as f:
+        hdr = {k.lower(): float(v) for k, v in (next(f).split() for _ in range(6))}
+        z = np.loadtxt(f, dtype="f4")
+    z[z == hdr["nodata_value"]] = np.nan
+    x0, y0, c = hdr["xllcorner"], hdr["yllcorner"], hdr["cellsize"]
+    nc, nr = int(hdr["ncols"]), int(hdr["nrows"])
+    return z, (x0, x0 + nc * c, y0, y0 + nr * c)
+
+
+def seaice_doc_grid():
+    """1991-2020 mean day of sea-ice closing (shipped seaice_doc_1991_2020.csv).
+
+    Day of closing = first day SIC exceeds 80% after the final summer minimum
+    of a 5-day running mean, per ice year (1 Mar - end Feb), from the
+    NOAA/NSIDC CDR v6 (G02202, doi:10.7265/b18j-z797), 25 km. Day of year from
+    1 Jan; values > 365 fall in January. Returns (x_edges, y_edges, doc, crs)
+    with crs the NSIDC north polar stereographic grid as a cartopy CRS."""
+    import sys
+
+    import cartopy.crs as ccrs
+    import numpy as np
+
+    here = os.path.dirname(sys._getframe().f_code.co_filename)
+    rows = [r for r in open(os.path.join(here, "seaice_doc_1991_2020.csv"))
+            if not r.startswith("#")]
+    x = np.array(rows[0].strip().split(",")[1:], float)
+    y = np.array([r.split(",")[0] for r in rows[1:]], float)
+    doc = np.array([[float(v) if v else np.nan for v in r.strip().split(",")[1:]]
+                    for r in rows[1:]])
+    xe = np.r_[x - 12500, x[-1] + 12500]
+    ye = np.r_[y + 12500, y[-1] - 12500]
+    hughes = ccrs.Globe(ellipse=None, semimajor_axis=6378273.0,
+                        semiminor_axis=6356889.449)
+    crs = ccrs.NorthPolarStereo(central_longitude=-45, true_scale_latitude=70,
+                                globe=hughes)
+    return xe, ye, doc, crs
+
+
+def doy_label(v):
+    import datetime as dt
+    return (dt.date(2001, 1, 1) + dt.timedelta(days=int(v) - 1)).strftime("%-d %b")
+
+
+def bathy_cmap(dark=False):
+    from matplotlib.colors import LinearSegmentedColormap
+    cols = (["#2a4f6b", "#0b1824"] if dark else ["#e3f0f7", "#4f86ad"])
+    return LinearSegmentedColormap.from_list("bathy", cols)
+
+
+def draw_bathymetry(ax, box, dark=False, fill=True, levels=(10, 20, 50, 100),
+                    resolution="max", smooth=3.0):
+    """GMRT bathymetry under the land layers (fill) and labelled isobaths.
+
+    GMRT's coastline is coarser than OSM's, so non-sea cells are filled from
+    the nearest sea cell and the field is Gaussian-smoothed (smooth, in grid
+    cells) before shading and contouring; land polygons drawn on top mask
+    the land. Colour limits fit the 2-98th percentile of true sea depths."""
+    import numpy as np
+    from scipy.ndimage import distance_transform_edt, gaussian_filter
+
+    t = map_tools()
+    z, (w, e, s, n) = gmrt_grid(box, resolution)
+    sea = np.isfinite(z) & (z < 0)
+    idx = distance_transform_edt(~sea, return_distances=False,
+                                 return_indices=True)
+    dep = gaussian_filter(np.clip(-z[tuple(idx)], 0.5, None), smooth)
+    lon = np.linspace(w, e, z.shape[1], endpoint=False) + (e - w) / z.shape[1] / 2
+    lat = np.linspace(n, s, z.shape[0], endpoint=False) - (n - s) / z.shape[0] / 2
+    vmin, vmax = np.nanpercentile(-z[sea], [2, 98])
+    im = None
+    if fill:
+        im = ax.pcolormesh(lon, lat, dep, cmap=bathy_cmap(dark), vmin=vmin,
+                           vmax=vmax, transform=t.pc, shading="nearest",
+                           zorder=0.5, rasterized=True)
+    cs = ax.contour(lon, lat, dep, levels=list(levels), transform=t.pc,
+                    colors="#9fc3dc" if dark else "#3f6f93", linewidths=0.5,
+                    zorder=0.6)
+    ax.clabel(cs, fmt="%d m", fontsize=7, inline=True)
+    return im, (vmin, vmax)
+
 def map_themes():
     """Five map variants: background treatment and which close-ups to draw.
 
     main/detail backgrounds: vector (OSM/TIGER), imagery, imagery_grey.
     palette: light or dark vector styling and label contrast.
+    inset: "seaice_doc" (1991-2020 mean day of closing) or "plain".
+    bathy: GMRT bathymetry on the main map.
     """
-    return {
+    themes = {
         "overview_vector": dict(main="vector", palette="light", details=()),
         "overview_imagery": dict(main="imagery", palette="dark", details=()),
         "reference": dict(main="vector", palette="light",
@@ -638,6 +739,12 @@ def map_themes():
         "dark_vector": dict(main="vector", palette="dark",
                             details=("b", "c", "d"), detail="vector"),
     }
+    # every theme: inset sea = mean day of ice closing; main-map sea = GMRT
+    # bathymetry (filled on vector maps, isobaths only over imagery)
+    for th in themes.values():
+        th.setdefault("inset", "seaice_doc")
+        th.setdefault("bathy", True)
+    return themes
 
 
 def palette(name):
@@ -654,16 +761,23 @@ def palette(name):
     return dark if name == "dark" else light
 
 
-def base_layers(ax, gpkg, box, pal=None, fill=True):
+def base_layers(ax, gpkg, box, pal=None, fill=True, marine=True):
     """OSM land/water/coast/buildings/roads and the TIGER town limit.
-    fill=False draws only line work, for use over imagery."""
+    fill=False draws only line work, for use over imagery. marine=False
+    drops water polygons lying outside the land layer (TIGER area water
+    includes coastal sea to a straight offshore limit), so bathymetry
+    drawn underneath stays visible."""
     pal = pal or palette("light")
     if fill:
         ax.set_facecolor(pal["ocean"])
-        draw(ax, read_layer(gpkg, "land", box), facecolor=pal["land"],
-             edgecolor="none")
+        land = read_layer(gpkg, "land", box)
+        draw(ax, land, facecolor=pal["land"], edgecolor="none")
         for name in ("water_osm", "water_tiger"):
-            draw(ax, read_layer(gpkg, name, box), facecolor=pal["water"],
+            wat = read_layer(gpkg, name, box)
+            if not marine and len(wat) and len(land):
+                inland = wat.representative_point().within(land.union_all())
+                wat = wat[inland]
+            draw(ax, wat, facecolor=pal["water"],
                  edgecolor=pal["lake_edge"], lw=0.3)
         air = read_layer(gpkg, "airport", box)
         draw(ax, air[air.geom_type.str.contains("Polygon")],
@@ -747,13 +861,26 @@ def main_map(fig, rect, A, plots, gpkg, theme, outlines=True):
     pal = palette(theme["palette"])
     ax = fig.add_axes(rect, projection=local_tm(box))
     ax.set_extent(box, t.pc)
+    bim = None
     if theme["main"] == "vector":
-        base_layers(ax, gpkg, box, pal)
+        if theme.get("bathy"):
+            bim, blim = draw_bathymetry(ax, box, dark=pal["dark"],
+                                        resolution="max")
+        base_layers(ax, gpkg, box, pal, marine=not theme.get("bathy"))
     else:
         imagery_background(ax, box, 13, grey=theme["main"] == "imagery_grey",
                            width_px=2600)
+        if theme.get("bathy"):
+            draw_bathymetry(ax, box, dark=True, fill=False, resolution="max")
         base_layers(ax, gpkg, box, palette("dark"), fill=False)
     ax.set_extent(box, t.pc)
+    if bim is not None:
+        cax = ax.inset_axes([0.44, 0.835, 0.18, 0.014])
+        cb = fig.colorbar(bim, cax=cax, orientation="horizontal")
+        cb.set_label("Sea depth (m), GMRT", fontsize=fs["small"], labelpad=1,
+                     color=pal["text"] if pal["dark"] else "k")
+        cb.ax.tick_params(labelsize=fs["small"] - 1, length=2,
+                          colors=pal["text"] if pal["dark"] else "k")
     dark = pal["dark"] or theme["main"] != "vector"
     halo = t.halo_dk if dark else t.halo
     ax.add_patch(Rectangle((beo[0], beo[2]), beo[1] - beo[0],
@@ -786,6 +913,7 @@ def main_map(fig, rect, A, plots, gpkg, theme, outlines=True):
     for lo, la, text in [(-156.835, 71.335, "Chukchi Sea"),
                          (-156.50, 71.355, "Elson Lagoon"),
                          (-156.765, 71.300, "Utqiaġvik"),
+                         (-156.60, 71.397, "Barrow Canyon"),
                          (-156.47, 71.383, "Point Barrow (Nuvuk)"),
                          (-156.53, 71.262, "Barrow Environmental\n"
                                            "Observatory (BEO)")]:
@@ -809,7 +937,11 @@ def main_map(fig, rect, A, plots, gpkg, theme, outlines=True):
     return ax
 
 
-def wide_inset(fig, rect, gpkg, pal=None):
+def wide_inset(fig, rect, gpkg, pal=None, bg="plain"):
+    """Northern-Alaska inset. bg="seaice_doc" fills the sea with the
+    1991-2020 mean day of ice closing and adds 50/200/1000 m isobaths."""
+    import numpy as np
+
     t, cfg = map_tools(), map_config()
     fs, pal = cfg["fs"], pal or palette("light")
     axi = fig.add_axes(rect, projection=t.ccrs.LambertConformal(
@@ -817,6 +949,32 @@ def wide_inset(fig, rect, gpkg, pal=None):
         standard_parallels=(66, 71)))
     axi.set_extent(cfg["inset"], t.pc)
     axi.set_facecolor(pal["ocean"])
+    if bg == "seaice_doc":
+        xe, ye, doc, crs = seaice_doc_grid()
+        lo, la = (np.array(v) for v in zip(*[t.pc.transform_point(
+            x, y, crs) for y in ye[:-1] for x in xe[:-1]]))
+        w, e, s, n = cfg["inset"]
+        inside_ = ((lo >= w) & (lo <= e) & (la >= s) & (la <= n)).reshape(doc.shape)
+        vmin, vmax = np.nanpercentile(doc[inside_], [2, 98])
+        pm = axi.pcolormesh(xe, ye, doc, cmap="Spectral", vmin=vmin, vmax=vmax,
+                            transform=crs, shading="flat", zorder=0.5)
+        z, (bw, be, bs, bn) = gmrt_grid((-170, -138, 65.5, 73.5), "med")
+        blon = np.linspace(bw, be, z.shape[1])
+        blat = np.linspace(bn, bs, z.shape[0])
+        cs = axi.contour(blon, blat, -z, levels=[50, 200, 1000],
+                         colors="#3a3a3a", linewidths=0.45, transform=t.pc,
+                         zorder=0.6)
+        axi.clabel(cs, fmt="%d m", fontsize=6, inline=True)
+        cax = axi.inset_axes([0.53, 0.20, 0.43, 0.035])
+        cb = fig.colorbar(pm, cax=cax, orientation="horizontal")
+        tk = np.arange(np.ceil(vmin / 15) * 15, vmax + 1, 15)
+        cb.set_ticks(tk)
+        cb.set_ticklabels([doy_label(v) for v in tk])
+        cb.ax.tick_params(labelsize=fs["small"] - 1.5, length=2,
+                          colors=pal["text"] if pal["dark"] else "k")
+        cb.ax.set_title("Mean day of ice closing\n(SIC > 80%), 1991–2020",
+                        fontsize=fs["small"] - 1, pad=2,
+                        color=pal["text"] if pal["dark"] else "k")
     draw(axi, read_layer(gpkg, "alaska_land"), facecolor=pal["land"],
          edgecolor=pal["coast"], lw=0.5)
     draw(axi, read_layer(gpkg, "lakes_gt5km2"), facecolor=pal["water"],
@@ -833,7 +991,7 @@ def wide_inset(fig, rect, gpkg, pal=None):
               fontsize=fs["label"])
     for lo, la, text in [(-163.5, 70.6, "Chukchi\nSea"),
                          (-145.5, 70.75, "Beaufort Sea"),
-                         (-151.5, 67.4, "North Slope\nBorough")]:
+                         (-157.0, 67.2, "North Slope\nBorough")]:
         water = "Sea" in text
         axi.text(lo, la, text, transform=t.pc, ha="center",
                  fontsize=fs["label"],
@@ -872,7 +1030,7 @@ def build_map_variant(layers_gpkg, inset_gpkg, theme="reference",
         rect, irect, lx, ncol = ([0.07, 0.215, 0.90, 0.75],
                                  [0.08, 0.72, 0.33, 0.24], 0.07, 3)
     ax = main_map(fig, rect, A, plots, layers_gpkg, th, outlines=details)
-    wide_inset(fig, irect, inset_gpkg, pal)
+    wide_inset(fig, irect, inset_gpkg, pal, bg=th.get("inset", "plain"))
     leg = fig.legend(handles=legend_handles(pal["dark"]), loc="upper left",
                      ncol=ncol,
                      bbox_to_anchor=(lx, 0.165 if details else 0.19),
@@ -887,10 +1045,15 @@ def build_map_variant(layers_gpkg, inset_gpkg, theme="reference",
            "TIGER/Line 2024 and CB 2024.")
     if th["main"] != "vector" or (details and th.get("detail") != "vector"):
         src += "\nImagery: Esri World Imagery, Vantor WorldView-3, 7 Sep 2025."
+    if th.get("inset") == "seaice_doc":
+        src += ("\nInset sea ice: 1991–2020 mean day of closing from the NOAA/NSIDC CDR v6"
+                " (G02202, doi:10.7265/b18j-z797), 25 km.")
+    if th.get("bathy"):
+        src += ("\nBathymetry: GMRT v4.5.0 (Ryan et al. 2009, doi:10.1029/2008GC002332).")
     src += ("\nARM instruments only (no VAPs or retrievals); positions from the most recent"
             " a-level file, or b-level where the a-level holds none.")
-    fig.text(lx, 0.03 if details else 0.012, src, fontsize=fs["small"],
-             linespacing=1.5,
+    fig.text(lx, 0.006 if details else 0.004, src, fontsize=fs["small"],
+             linespacing=1.4, va="bottom",
              color="#bbbbbb" if pal["dark"] else "#444")
     fig.text(lx + 0.002, 0.972, "a", fontsize=fs["letter"],
              fontweight="bold", color=tcol)

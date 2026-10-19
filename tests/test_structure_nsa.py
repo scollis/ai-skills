@@ -281,3 +281,15 @@ def test_variant_table_matches_themes():
     for r in table:
         has = bool(k["map_themes"]()[r[0]]["details"])
         assert has == (not r[2].startswith("none")), r[0]
+
+
+def test_seaice_doc_grid_and_themes():
+    k = load(MAP)
+    xe, ye, doc, crs = k["seaice_doc_grid"]()
+    assert doc.shape == (len(ye) - 1, len(xe) - 1)
+    vals = doc[doc == doc]
+    assert 4000 < vals.size < 4100 and 150 < vals.min() and vals.max() < 400
+    assert abs(abs(xe[1] - xe[0]) - 25000) < 1
+    for th in k["map_themes"]().values():
+        assert th["inset"] == "seaice_doc" and th["bathy"] is True
+

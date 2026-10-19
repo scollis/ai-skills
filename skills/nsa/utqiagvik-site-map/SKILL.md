@@ -1,6 +1,6 @@
 ---
 name: utqiagvik-site-map
-description: "Build maps of the ARM North Slope of Alaska (NSA) site and Utqiagvik (Barrow) - fetch town, coast, water, roads, buildings and airport layers from OpenStreetMap (Overpass via osmnx) and Census TIGER/CB 2024, Esri World Imagery for close-ups and backgrounds, and render five map variants (overview or four-panel with C1/NOAA BRW and E12 close-ups, on vector, colour imagery, grey imagery or a dark theme) with a northern-Alaska inset and a C1-E12-X-SAPR distance triangle. ARM markers use positions audited from the most recent file of each datastream. Records the cartopy PlateCarree latitude trap under PROJ 9.8 (about 23 km at 71 N) and the GeoDataFrame.plot aspect trap. Use for any NSA, Utqiagvik or high-latitude site map, especially one mixing XYZ tiles or pyproj coordinates with cartopy."
+description: "Build maps of the ARM North Slope of Alaska (NSA) site and Utqiagvik (Barrow) - fetch town, coast, water, roads, buildings and airport layers from OpenStreetMap (Overpass via osmnx) and Census TIGER/CB 2024, Esri World Imagery for close-ups and backgrounds, and render five map variants (overview or four-panel with C1/NOAA BRW and E12 close-ups, on vector, colour imagery, grey imagery or a dark theme) with a northern-Alaska inset shaded by the 1991-2020 mean day of sea-ice closing, GMRT bathymetry and isobaths on the main map (Barrow Canyon), and a C1-E12-X-SAPR distance triangle. ARM markers are instruments only, positioned from the most recent a-level file. Records the cartopy PlateCarree latitude trap under PROJ 9.8 (about 23 km at 71 N) and the GeoDataFrame.plot aspect trap. Use for any NSA, Utqiagvik or high-latitude site map, especially one mixing XYZ tiles or pyproj coordinates with cartopy."
 ---
 
 # Site maps for ARM NSA and Utqiagvik
@@ -77,6 +77,34 @@ lon/lat to EPSG:3857 to bilinear sample), which is exact at any panel size.
 OSM calls the E12 access road "Eastfield Road"; Sturm et al. (2025) call it Cake Eater Road.
 Label it with both. The Barrow Environmental Observatory polygon is in neither OSM nor any public
 service that answered (see `utqiagvik-research-assets`), so the map draws the BAID bounding box.
+
+## Backgrounds: sea-ice closing date and bathymetry
+
+Every theme now carries two sea backgrounds (switch off per theme with `inset="plain"`, `bathy=False`):
+
+- **Inset: 1991-2020 mean day of ice closing** (`seaice_doc_grid()`, shipped `seaice_doc_1991_2020.csv`,
+  25 km, 4027 cells). Day of closing = first day the 5-day running mean of sea-ice
+  concentration exceeds 80% after the final summer minimum, per ice year 1 Mar to end Feb (Steele et al.
+  2015 / NSIDC-0747 definition), computed from the NOAA/NSIDC CDR v6 (G02202, doi:10.7265/b18j-z797,
+  public at `noaadata.apps.nsidc.org/NOAA/G02202_V6/north/aggregate/`). Spectral, limits fitted to the
+  2-98th percentile of cells inside the inset; 50/200/1000 m GMRT isobaths over it. At the ocean cell
+  nearest C1 (14 km offshore) the mean is 8 Nov and the 1979-2025 trend is +11.7 days/decade.
+  The official NSIDC-0747 sits behind Earthdata Login on `daacdata.apps.nsidc.org`, which takes a
+  username and password through URS (an EDL bearer token is refused with "HTTP Basic: Access denied").
+- **Main map: GMRT v4.5.0 bathymetry** (`gmrt_grid()`, `draw_bathymetry()`; Ryan et al. 2009,
+  doi:10.1029/2008GC002332) from the GMRT GridServer as Esri ASCII (`www.gmrt.org` must be allowlisted).
+  Filled on vector themes, isobaths (10/20/50/100 m) only over imagery. The head of Barrow Canyon reaches
+  about 120 m in the box.
+
+Two coastline traps, both visible as artefacts until fixed:
+
+- **TIGER area water includes coastal sea** out to a straight offshore limit. Drawn over bathymetry it
+  paints a pale wedge with a ruler-straight edge that looks like a canyon wall. `base_layers(...,
+  marine=False)` keeps only water polygons inside the land layer (5 of 29 dropped here, incl. 130, 110
+  and 59 km2 sea polygons).
+- **GMRT's coastline is coarser than OSM's**, so sea-side cells at or above 0 m show as a blocky white
+  band. `draw_bathymetry` fills non-sea cells from the nearest sea cell and Gaussian-smooths (3 cells)
+  before shading and contouring; land polygons on top mask true land. Colour limits use true sea depths.
 
 ## Traps that cost a wrong figure
 
