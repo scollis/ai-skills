@@ -84,8 +84,9 @@ Every theme now carries two sea backgrounds (switch off per theme with `inset="p
 
 - **Inset: 1991-2020 mean day of ice closing** (`seaice_doc_grid()`, shipped `seaice_doc_1991_2020.csv`,
   25 km, 4027 cells). Day of closing = first day the 5-day running mean of sea-ice
-  concentration exceeds 80% after the final summer minimum, per ice year 1 Mar to end Feb (Steele et al.
-  2015 / NSIDC-0747 definition), computed from the NOAA/NSIDC CDR v6 (G02202, doi:10.7265/b18j-z797,
+  concentration exceeds 80% after the final summer minimum, per ice year 1 Mar to end Feb - the DOC
+  definition of NSIDC-0747 (Steele et al. 2019, doi:10.5067/KINANQKEZI4T; Peng et al. 2018,
+  doi:10.3390/rs10091328), with the 5-day smoothing of Stroeve et al. 2016 - computed from the NOAA/NSIDC CDR v6 (G02202, doi:10.7265/b18j-z797,
   public at `noaadata.apps.nsidc.org/NOAA/G02202_V6/north/aggregate/`). Spectral, limits fitted to the
   2-98th percentile of cells inside the inset; 50/200/1000 m GMRT isobaths over it. At the ocean cell
   nearest C1 (14 km offshore) the mean is 8 Nov and the 1979-2025 trend is +11.7 days/decade.
