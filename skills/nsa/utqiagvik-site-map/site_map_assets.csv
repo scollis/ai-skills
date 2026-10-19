@@ -1,0 +1,39 @@
+key,group,marker,precise,lat,lon,label
+c1_page,ARM,*,False,71.323,-156.615,C1 (locations page)
+c1_file,ARM,*,False,71.323,-156.609,C1 nominal (26 files)
+dl,ARM,o,True,71.322947,-156.61609,Doppler lidar
+aeri,ARM,o,True,71.32326,-156.60805,AERI
+ecor,ARM,o,True,71.32436,-156.61482,ECOR (E10)
+sebs,ARM,s,False,71.325,-156.608,"SEBS, LPM (E10)"
+aos,ARM,s,True,71.32312,-156.61143,AOS (E30/X3)
+sonde,ARM,D,False,71.32,-156.62,Sonde launch (files: 0.01°)
+xsapr,ARM,^,True,71.324745,-156.66774,X-SAPR on BARC roof
+e12,ARM,s,True,71.274734,-156.64119,ARM E12 snow array
+e11,ARM,s,False,71.393,-156.422,"ARM E11 Point Barrow (ECOR, SEBS)"
+cimel,ARM,o,True,71.3122,-156.665,Cimel / AERONET
+brw,NOAA,*,True,71.323,-156.6114,NOAA GML BRW
+bsrn,NOAA,o,False,71.323,-156.607,BSRN BAR (to 2016)
+crn,NOAA,o,True,71.3213,-156.611,USCRN 27516
+asos,NOAA,o,True,71.28703,-156.73938,ASOS PABR
+ua,NOAA,D,True,71.2889,-156.7833,NWS upper air 70026
+coops,NOAA,o,True,71.36011,-156.72986,CO-OPS Barrow Offshore (2008–10)
+tower,NEON,*,True,71.282425,-156.619319,NEON BARR tower + hut
+hut,NEON,s,True,71.28255,-156.6196,
+mp1,NEON,o,True,71.281711,-156.650219,NEON megapit (2016)
+sp1,NEON,o,True,71.282368,-156.6189,
+sp2,NEON,o,True,71.281912,-156.617746,
+sp3,NEON,o,True,71.282133,-156.61662,NEON soil plots SP1–5
+sp4,NEON,o,True,71.282086,-156.615361,
+sp5,NEON,o,True,71.282031,-156.613847,
+ngeeA,Research,o,True,71.28145,-156.61104,NGEE A
+ngeeB,Research,o,True,71.27976,-156.60348,NGEE B
+ngeeC,Research,o,True,71.28013,-156.60117,NGEE C
+ngeeD,Research,o,True,71.28214,-156.60078,NGEE D
+calm,Research,o,True,71.316807,-156.604036,CALM U1
+mag,Research,o,True,71.3225,-156.6231,USGS magnetic obs.
+sg27,Research,o,True,71.3229,-156.6103,GNSS SG27
+iceradar,Research,^,True,71.2925,-156.78833,UAF sea-ice radar
+mbs,Research,o,False,71.366,-156.542,Sea-ice mass balance site (approx.)
+b1,Research,o,True,71.32535,-156.88404,SIZONet mooring B1
+narl,Historic,s,False,71.325,-156.68056,NARL (1947–81)
+dew,Historic,s,False,71.32722,-156.63611,DEW Line LRR
