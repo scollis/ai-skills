@@ -263,6 +263,18 @@ Research Farm (SERF), Crawfordsville; S1 is the Muscatine Island Research Farm
 | [`derechos-iowa-dot`](skills/derechos/derechos-iowa-dot/) | Iowa DOT road-weather: RWIS pavement condition live and archived, 511, plow AVL and imagery, crash records, traffic counts |
 | [`derechos-iop-scorecard`](skills/derechos/derechos-iop-scorecard/) | Executable IOP scorecard: scores a forecast per science question, assigns an archetype, and makes a GO/HOLD call against the IOP budget |
 
+### ARM NSA site (Utqiaġvik)
+
+Site knowledge for the DOE ARM North Slope of Alaska observatory and its
+neighbours. At NSA the main facility is **C1**, and the X-band precipitation
+radar sits on the BARC building 1.90 km west of it.
+
+| skill | what it does |
+|---|---|
+| [`arm-nsa-site`](skills/nsa/arm-nsa-site/) | Site history from 1997, every facility code with the coordinate to trust, instrument classes per facility, campaigns, the Kollias 2019 radar-calibration offsets, and data DOIs crediting the mentors |
+| [`utqiagvik-research-assets`](skills/nsa/utqiagvik-research-assets/) | 37 non-ARM assets with sourced coordinates: NOAA GML BRW, NWS, USCRN, NSF NEON BARR, NGEE Arctic, CALM, the BEO, UAF sea-ice sites, GNSS, AERONET |
+| [`utqiagvik-site-map`](skills/nsa/utqiagvik-site-map/) | OSM and TIGER layers, Esri imagery close-ups, and a four-panel asset map with a distance triangle; records the cartopy Web-Mercator datum trap (about 23 km at 71 N) |
+
 ### Numerical practice
 
 | skill | what it does |
@@ -300,6 +312,7 @@ pytest tests/test_structure.py        # offline, all skills, runs on every push
 pytest tests/test_structure_pyart.py  # offline, pyart-* + cmac-vap claim checks
 pytest tests/test_structure_rustmatrix.py   # offline, rustmatrix-* claim checks
 pytest tests/test_arm_standards.py    # offline, arm-netcdf-standards drift + round trips
+pytest tests/test_structure_nsa.py    # offline, NSA tranche coordinates, distances, counts
 pytest tests/test_live_*.py           # hits live buckets, runs weekly
 ```
 
