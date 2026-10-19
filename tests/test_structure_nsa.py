@@ -166,7 +166,7 @@ def test_map_assets_csv_and_config():
     k = load(MAP)
     cfg = k["map_config"]()
     data = rows(MAP / "site_map_assets.csv")
-    assert len(data) == 37
+    assert len(data) == 34
     keys = {r["key"] for r in data}
     for lab in ("lab_main", "lab_c1", "lab_e12", "lab_e12_zoom"):
         assert set(cfg[lab]) <= keys, lab

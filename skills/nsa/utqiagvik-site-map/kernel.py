@@ -40,8 +40,6 @@ def map_config():
         size={"*": 210, "s": 70, "^": 95, "o": 46, "D": 50},
         lab_main={
             "xsapr": ("X-SAPR on BARC roof", -10, 30),
-            "iss": ("ARM ISS sonde\n(1998–2002)", -14, 16),
-            "cimel": ("Cimel / AERONET", -16, -12),
             "e11": ("ARM E11 Point Barrow\n(ECOR, SEBS; to 2016)", -14, -20),
             "asos": ("ASOS PABR", 14, -10),
             "ua": ("NWS upper air 70026", -16, -12),
@@ -49,7 +47,6 @@ def map_config():
             "coops": ("CO-OPS Barrow Offshore\n(2008–10)", 12, -16),
             "mbs": ("Sea-ice mass balance\nsite (approx.)", 12, 10),
             "b1": ("SIZONet\nmooring B1", 10, -16),
-            "calm": ("CALM U1", 12, -8),
             "mp1": ("NEON megapit\n(2016)", -14, -10)},
         # close-up labels: (text, x, y, ha) in axes fraction, in columns
         lab_c1={
