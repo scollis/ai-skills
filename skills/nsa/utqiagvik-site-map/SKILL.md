@@ -112,7 +112,7 @@ Colour gives the operator (Okabe-Ito: ARM blue, NOAA orange, NEON green, other r
 purple). Shape gives the asset type: star for a main facility or observatory,
 square for an extended facility or building, triangle for a scanning radar, circle for a station,
 diamond for a sounding launch. A **hollow marker means a nominal or rounded coordinate**: the C1
-page point, the C1 nominal shared by 40 instruments, SEBS/LPM at 3 decimals, sondes at 0.01 degrees,
+page point, the C1 nominal shared by 39 instruments, SEBS/LPM at 3 decimals, sondes at 0.01 degrees,
 the ISS sonde (1998–2002), BSRN, E11 and the sea-ice mass-balance site. Historic and context places (NARL,
 the DEW Line) are not drawn. Filled markers are
 instrument-specific or surveyed positions.

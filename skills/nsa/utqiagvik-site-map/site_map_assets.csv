@@ -1,5 +1,5 @@
 key,group,marker,precise,label,lat,lon,n,classes,file,file_date
-c1_file,ARM,*,False,C1 nominal (40 instruments),71.322998046875,-156.60899353027344,40,"amc, asi, ccn, ceil, gndrad, gvr, gvrp, ins, irt, kasacr, kazr, ldis, masc, maws, met, mettwr, mfr, mfrsr, mpl, mwr, mwr3c, mwrhf, mwrp, nimfr, org, precipip, rwp, sirs, skyrad, sonicwind, sp2, spmf, srs, tps, tsi, twr, wsacr",nsawsacr2cfrC1.a1.20261017.235717.nc,20261017
+c1_file,ARM,*,False,C1 nominal (39 instruments),71.322998046875,-156.60899353027344,39,"amc, asi, ccn, ceil, gndrad, gvr, gvrp, ins, irt, kasacr, kazr, ldis, masc, maws, met, mettwr, mfr, mfrsr, mpl, mwr, mwr3c, mwrhf, mwrp, nimfr, org, precipip, rwp, sirs, skyrad, sonicwind, sp2, spmf, srs, tps, tsi, twr, wsacr",nsawsacr2cfrC1.a1.20261017.235717.nc,20261017
 dl,ARM,o,True,Doppler lidar,71.322947,-156.61609,1,dl,nsadlfptC1.b1.20261017.230011.cdf,20261017
 aeri,ARM,o,True,AERI,71.32325744628906,-156.60804748535156,1,aeri,nsaaerisummaryC1.b1.20261016.000611.nc,20261016
 xsapr,ARM,^,True,X-SAPR on BARC roof,71.32474517822266,-156.66773986816406,1,xsapr,nsaxsaprcfrC1.a1.20260804.044156.nc,20260804

@@ -16,7 +16,6 @@ irt,C1,nsairt200msC1.a1,a1,nsairt200msC1.a1,nsairt200msC1.a1.20251029.000000.nc,
 isssonde,C1,nsaisssondeC1.a1,a1,nsaisssondeC1.a1,nsaisssondeC1.a1.20020510.230423.cdf,20020510,71.30000305175781,-156.7833251953125,12.0,lat,float32,0.1,6546.0,instrument-specific or facility value
 kasacr,C1,nsakasacr2cfrC1.a1,a1,nsakasacr2cfrC1.a1,nsakasacr2cfrC1.a1.20261017.235717.nc,20261017,71.322998046875,-156.60899353027344,8.0,lat,float32,131.3,215.0,C1 nominal
 kazr,C1,nsakazrcfrgeC1.a1,a1,nsakazrcfrgeC1.a1,nsakazrcfrgeC1.a1.20261017.230003.nc,20261017,71.322998046875,-156.60899353027344,8.0,lat,float32,9.2,215.0,C1 nominal
-kazr,C1,nsakazrcfrmdC1.a1,a1,nsakazrcfrmdC1.a1,nsakazrcfrmdC1.a1.20261017.230003.nc,20261017,71.322998046875,-156.60899353027344,8.0,lat,float32,9.0,215.0,C1 nominal
 ldis,C1,nsalpmC1.a1,a1,nsalpmC1.a1,nsalpmC1.a1.20260826.000000.nc,20260826,71.322998046875,-156.60899353027344,8.0,lat,float32,2.9,215.0,C1 nominal
 masc,C1,nsamascC1.b1,b1,nsamascC1.a1,nsamascC1.b1.20261017.000127.nc,20261017,71.322998046875,-156.60899353027344,8.0,lat,float32,0.2,215.0,C1 nominal
 maws,C1,nsamawsC1.b1,b1,,nsamawsC1.b1.20261016.000007.nc,20261016,71.322998046875,-156.60899353027344,8.0,lat,float32,0.1,215.0,C1 nominal

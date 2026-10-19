@@ -189,13 +189,13 @@ a- or b-level datastream that the ARM catalog does not type as a VAP, less `ceil
 satellite, model and aircraft feeds (`avhrr`, `molts`, `acars`). Position comes from the most recent a-level
 file. The b-level file of the same instrument is used when ARM serves no a-level (32 rows) or when it ranks
 higher (7 rows: imagers, MASC and AERI whose a1 holds no position, MPL a1 over the cap, and the DL, whose
-a1 `dlacf` stores only the C1 nominal while b1 `dlfpt` stores 71.32295, −156.61609). Of 98 instrument rows,
-85 carry a position:
+a1 `dlacf` stores only the C1 nominal while b1 `dlfpt` stores 71.32295, −156.61609). Of 97 instrument rows,
+84 carry a position:
 
 | flag | instruments |
 |---|---|
 | instrument-specific or facility value | 41 |
-| C1 nominal | 40 |
+| C1 nominal | 39 |
 | no position: not netCDF (movie, image or tar) | 7 |
 | rounded to 0.01 deg | 4 |
 | no position: pre-netCDF-4 format the reader rejects | 3 |
