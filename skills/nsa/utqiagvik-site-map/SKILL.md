@@ -141,20 +141,21 @@ Colour gives the operator (Okabe-Ito: ARM blue, NOAA orange, NEON green, other r
 purple). Shape gives the asset type: star for a main facility or observatory,
 square for an extended facility or building, triangle for a scanning radar, circle for a station,
 diamond for a sounding launch. A **hollow marker means a nominal or rounded coordinate**: the C1
-page point, the C1 nominal shared by 39 instruments, SEBS/LPM at 3 decimals, sondes at 0.01 degrees,
+nominal shared by 39 instruments, SEBS/LPM at 3 decimals, sondes at the 0.01-degree seed that every sounding file starts from (no measured launch position exists in the files),
 BSRN, E11 and the sea-ice mass-balance site. Historic and context places (NARL,
 the DEW Line), the ISS sonde point, CALM U1 and the Cimel/AERONET photometer are not drawn. Filled markers are
 instrument-specific or surveyed positions.
 
 ## Distances drawn
 
-Geodesic (WGS84) from the C1 locations-page coordinate. They match `nsa_distance()` in
-`arm-nsa-site`:
+Geodesic (WGS84) from the C1 file position, the site nominal 71.323, −156.609 that 39 C1 instrument
+datastreams write (215 m east of the locations-page coordinate, which the map no longer draws). They
+match `nsa_distance("c1_file", ...)` in `arm-nsa-site`:
 
 | leg | distance | bearing |
 |---|---|---|
-| C1 → E12 | 5.47 km | 190° |
-| C1 → X-SAPR | 1.90 km | 276° |
+| C1 → E12 | 5.51 km | 192° |
+| C1 → X-SAPR | 2.11 km | 275° |
 | E12 → X-SAPR | 5.66 km | 350° |
 
 ## Verified against

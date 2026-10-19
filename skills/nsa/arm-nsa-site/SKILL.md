@@ -247,8 +247,13 @@ holds now. Day sizes vary a lot: X-SAPR runs about 1.2 GB per day, so fetch a si
   ECOR-SF at 71.32436, -156.61482, about 250 m apart, while the page repeats the C1 coordinate.
 - S10 and S11 are 0,0 on the page and S1, S2 and X1 are null. Treat these as missing, never as
   a position.
-- Sonde files store the launch point to 0.01 degrees (about 380 m from C1), and the C1 sonde
-  class start date in the catalog is a 1970-01-01 placeholder.
+- **Sonde files contain no measured launch position.** A sweep of 98 random `sondewnpn` files (C1.b1
+  2002-2018, S01.b1 2014-2024, S02.b1 2018) found every track starting at exactly 71.32, -156.62, a
+  0.01-degree seed (a 1.1 km N-S x 0.36 km E-W cell) that lands in a pond south of C1. `lat`/`lon` are
+  dead-reckoned from the winds (`latitude_calculation` attribute), not GPS: the lowest five levels sit a
+  median 16 m from the seed. Averaging files cannot refine it. One file, `nsasondewnpnS02.b1.20180317.225000`,
+  starts at 36.61 N (bad metadata). Launch altitude is 8.0 m in 91 of 98 files. The C1 sonde class start
+  date in the catalog is a 1970-01-01 placeholder.
 - The page flags E11 and S02 is_active although their data ended (E11 SEBS 2016-10-07, the
   RIVAL sondes 2019). Check the datastream end dates.
 - The Cimel sun-photometer file carries the AERONET "Barrow" coordinate, 2.16 km WSW of C1.

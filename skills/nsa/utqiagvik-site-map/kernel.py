@@ -51,7 +51,6 @@ def map_config():
         # close-up labels: (text, x, y, ha) in axes fraction, in columns
         lab_c1={
             "ecor": ("ECOR", 0.30, 0.87, "right"),
-            "c1_page": ("C1 (locations page)", 0.30, 0.79, "right"),
             "dl": ("Doppler lidar", 0.30, 0.71, "right"),
             "mag": ("USGS magnetic obs.", 0.03, 0.43, "left"),
             "aos": ("Aerosol: ARM E30 + NOAA AOS", 0.50, 0.29, "right"),
@@ -76,8 +75,8 @@ def map_config():
                               "share this file position", 0.52, 0.30,
                               "left")},
         # triangle legs: name, +1 label outside the triangle, -1 inside
-        triangle=(("c1_page", "e12", "C1 → E12", 1),
-                  ("c1_page", "xsapr", "C1 → X-SAPR", -1),
+        triangle=(("c1_file", "e12", "C1 → E12", 1),
+                  ("c1_file", "xsapr", "C1 → X-SAPR", -1),
                   ("e12", "xsapr", "E12 → X-SAPR", -1)),
     )
 
@@ -887,7 +886,7 @@ def main_map(fig, rect, A, plots, gpkg, theme, outlines=True):
     ax.scatter(plots.lon, plots.lat, transform=t.pc, s=6, zorder=8, lw=0,
                c=cfg["col"]["NEON"])
     if outlines:
-        keep = A.key.isin(["c1_page", "brw", "e12", "tower"])
+        keep = A.key.isin(["c1_file", "brw", "e12", "tower"])
         shown = A[(~inside(A, cfg["c1_box"]) & ~inside(A, cfg["e12_box"]))
                   | keep]
     else:
@@ -901,7 +900,7 @@ def main_map(fig, rect, A, plots, gpkg, theme, outlines=True):
         outline(ax, cfg["c1_box"], " b", color=oc, dark=dark)
         outline(ax, cfg["e12_box"], " c", va="top", color=oc, dark=dark)
     else:
-        for k, (text, dx, dy) in (("c1_page", ("ARM C1 + NOAA BRW", 18, 26)),
+        for k, (text, dx, dy) in (("c1_file", ("ARM C1 + NOAA BRW", 18, 26)),
                                   ("e12", ("ARM E12, NEON BARR,\nNGEE Arctic",
                                            18, -30))):
             r = A[A.key == k].iloc[0]

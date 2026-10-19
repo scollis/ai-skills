@@ -96,8 +96,10 @@ LEGS = {"C1 → E12": ("c1_page", "e12"), "C1 → X-SAPR": ("c1_page", "xsapr"),
 def test_distance_tables_match_geodesic(site, skill):
     table = md_table((skill / "SKILL.md").read_text(), "| leg | distance |")
     assert table, f"{skill.name}: no distance table"
+    c1 = "c1_file" if skill == MAP else "c1_page"   # the map draws C1 at its file position
     for leg, dist, bearing in table:
-        d = site["nsa_distance"](*LEGS[leg])
+        a, b = LEGS[leg]
+        d = site["nsa_distance"](c1 if a == "c1_page" else a, b)
         assert float(dist.split()[0]) == round(d["km"], 2), leg
         assert int(bearing.rstrip("°")) == round(d["bearing_deg"]), leg
 
@@ -166,7 +168,7 @@ def test_map_assets_csv_and_config():
     k = load(MAP)
     cfg = k["map_config"]()
     data = rows(MAP / "site_map_assets.csv")
-    assert len(data) == 34
+    assert len(data) == 33
     keys = {r["key"] for r in data}
     for lab in ("lab_main", "lab_c1", "lab_e12", "lab_e12_zoom"):
         assert set(cfg[lab]) <= keys, lab
@@ -187,8 +189,8 @@ def test_map_assets_csv_and_config():
 def test_map_assets_agree_with_site_kernel(site):
     data = {r["key"]: r for r in rows(MAP / "site_map_assets.csv")}
     pos = site["nsa_positions"]()
-    for key in ("c1_page", "xsapr", "e12", "aeri", "dl"):
-        mk = {"c1_page": "c1_page"}.get(key, key)
+    for key in ("c1_file", "xsapr", "e12", "aeri", "dl"):
+        mk = key
         # audited float32 file values vs kernel literals: within float32 precision
         assert float(data[mk]["lat"]) == pytest.approx(pos[key]["lat"], abs=1e-5)
         assert float(data[mk]["lon"]) == pytest.approx(pos[key]["lon"], abs=1e-5)

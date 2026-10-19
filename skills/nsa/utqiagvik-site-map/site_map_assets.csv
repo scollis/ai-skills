@@ -10,7 +10,6 @@ e11,ARM,s,False,"ARM E11 Point Barrow
 (ECOR, SEBS; to 2016)",71.39299774169922,-156.4219970703125,2,"ecor, sebs",nsa30ecorE11.b1.20161206.000000.cdf,20161206.0
 e12,ARM,s,True,ARM E12 snow array,71.27473449707031,-156.6411895751953,6,"ldis, maws, sonicwind, spmf, srs, wb",nsawbgeonorE12.a1.20261017.000000.nc,20261017.0
 aos,ARM,s,True,ARM E30 aerosol + NOAA AOS,71.3231201171875,-156.61143493652344,14,"acsm, aeth, aos, aps, clap, cpc, nephelometer, psap, sp2",nsaaosnephdryX3.a1.20261017.000000.nc,20261017.0
-c1_page,ARM,*,False,C1 (locations page),71.323,-156.615,0,,ARM locations page,20261019.0
 brw,NOAA,*,True,NOAA GML BRW,71.323,-156.6114,0,,utqiagvik_assets.csv,
 bsrn,NOAA,o,False,BSRN BAR (to 2016),71.323,-156.607,0,,utqiagvik_assets.csv,
 crn,NOAA,o,True,USCRN 27516,71.3213,-156.611,0,,utqiagvik_assets.csv,
