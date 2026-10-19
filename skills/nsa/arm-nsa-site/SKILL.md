@@ -160,7 +160,7 @@ the individual E12 instruments.
 ## Location audit (2026-10-19)
 
 The most recent file of one datastream per instrument class per facility was opened through ARM
-Live (b1 preferred, then a1/c1; a0, 00 and the F1 aircraft skipped), and its lat/lon/alt was read
+Live (the most recent datastream, b1 preferred among current ones, then a1/c1; a0, 00 and the F1 aircraft skipped), and its lat/lon/alt was read
 from variables or global attributes. The result ships as `nsa_location_audit.csv`
 (`nsa_location_audit()`), one row per datastream with file, date, position, dtype, offset from the
 facility's page coordinate and a flag. Of 162 datastreams, 137 files carry a position:
@@ -181,6 +181,30 @@ facility's page coordinate and a flag. Of 162 datastreams, 137 files carry a pos
 
 "C1 nominal" files cannot place an instrument. The positions table above lists the ones that can.
 The 250 MB per-file cap excluded the HSRL, whose last a1 files date from 2019-07-11.
+
+### Instruments only, from a-level files
+
+`nsa_instrument_audit.csv` (`nsa_instrument_audit()`) restricts the audit to instruments: classes with an
+a- or b-level datastream that the ARM catalog does not type as a VAP, less `ceilpblht` (a retrieval) and the
+satellite, model and aircraft feeds (`avhrr`, `molts`, `acars`). Position comes from the most recent a-level
+file. The b-level file of the same instrument is used when ARM serves no a-level (32 rows) or when it ranks
+higher (7 rows: imagers, MASC and AERI whose a1 holds no position, MPL a1 over the cap, and the DL, whose
+a1 `dlacf` stores only the C1 nominal while b1 `dlfpt` stores 71.32295, −156.61609). Of 98 instrument rows,
+85 carry a position:
+
+| flag | instruments |
+|---|---|
+| instrument-specific or facility value | 41 |
+| C1 nominal | 40 |
+| no position: not netCDF (movie, image or tar) | 7 |
+| rounded to 0.01 deg | 4 |
+| no position: pre-netCDF-4 format the reader rejects | 3 |
+| no position: file over 250 MB cap | 1 |
+| no position: no lat/lon in file | 1 |
+| no position: no files in the last year of record | 1 |
+
+The a-level file fixes the ISS sonde: `isssondeC1.a1` (to 2002-05-10) stores 71.30, −156.7833, where its b1
+stores 0,0.
 
 ## Campaigns
 

@@ -362,3 +362,16 @@ def nsa_location_audit(flag=None, facility=None):
     return [r for r in rows
             if (flag is None or r["flag"].startswith(flag))
             and (facility is None or r["facility_code"] == facility)]
+
+
+def nsa_instrument_audit(flag=None, facility=None):
+    """Instrument-only position audit (2026-10-19): most recent a-level
+    file, b-level where a-level is unserved or holds no better position.
+    Columns as nsa_location_audit() plus level and a_level_datastream.
+    """
+    here = os.path.dirname(sys._getframe().f_code.co_filename)
+    with open(os.path.join(here, "nsa_instrument_audit.csv")) as f:
+        rows = list(csv.DictReader(f))
+    return [r for r in rows
+            if (flag is None or r["flag"].startswith(flag))
+            and (facility is None or r["facility_code"] == facility)]

@@ -1,16 +1,17 @@
 key,group,marker,precise,label,lat,lon,n,classes,file,file_date
-c1_file,ARM,*,False,C1 nominal (63 classes),71.322998046875,-156.60899353027344,63,"amc, aod-mfrsr, aod-nimfr, aod-nimfr-metric, aodbe, armtraj, asi, ceil, ceilpblht, cldtype, cloudradarcor, diffcor, gndrad, gvr, gvrp, ins, interpsonde, irt, kasacr, kazr, kazrarscl, kazrarsclcloudsat, ldis, masc, mascparticles, maws, mergesonde, met, mettwr, mfr, mfrsr, mpl, mplavg, mplcmask, mplcmaskml, mwr, mwr3c, mwravg, mwrhf, mwrp, mwrret, nimfr, org, pblht, precipbe, precipip, qcrad, radarcfad, radfluxanal, rwp, sirs, skyrad, sonicwind, spectrascope, spmf, srs, surfspecalb, thermocldphase, tps, tropoe, tsi, twr, wsacr",nsawsacr2cfrC1.a1.20261017.235717.nc,20261017
-dl,ARM,o,True,Doppler lidar,71.322947,-156.61609,3,"dl, dlprof-wind, dlprof-wstats",nsadlfptC1.b1.20261017.230011.cdf,20261017
-aeri,ARM,o,True,AERI,71.32325744628906,-156.60804748535156,2,"aeri, aerinf",nsaaerisummaryC1.b1.20261016.000611.nc,20261016
-xsapr,ARM,^,True,X-SAPR on BARC roof,71.32474517822266,-156.66773986816406,2,"xsapr, xsapr-cmac",nsaxsaprcfrqcC1.b1.20260113.153200.nc,20260113
+c1_file,ARM,*,False,C1 nominal (40 instruments),71.322998046875,-156.60899353027344,40,"amc, asi, ccn, ceil, gndrad, gvr, gvrp, ins, irt, kasacr, kazr, ldis, masc, maws, met, mettwr, mfr, mfrsr, mpl, mwr, mwr3c, mwrhf, mwrp, nimfr, org, precipip, rwp, sirs, skyrad, sonicwind, sp2, spmf, srs, tps, tsi, twr, wsacr",nsawsacr2cfrC1.a1.20261017.235717.nc,20261017
+dl,ARM,o,True,Doppler lidar,71.322947,-156.61609,1,dl,nsadlfptC1.b1.20261017.230011.cdf,20261017
+aeri,ARM,o,True,AERI,71.32325744628906,-156.60804748535156,1,aeri,nsaaerisummaryC1.b1.20261016.000611.nc,20261016
+xsapr,ARM,^,True,X-SAPR on BARC roof,71.32474517822266,-156.66773986816406,1,xsapr,nsaxsaprcfrC1.a1.20260804.044156.nc,20260804
 cimel,ARM,o,True,Cimel / AERONET,71.31220245361328,-156.6649932861328,1,csphot,nsacsphotzenradv3C1.a1.20261016.202921.nc,20261016
-sonde,ARM,D,False,Sonde launch (files: 0.01°),71.31999969482422,-156.6199951171875,6,"acred, qmemwrcol, sonde, sondeadjust",nsasondewnpnC1.b1.20261017.230400.nc,20261017
-sebs,ARM,o,False,"SEBS, LPM",71.32499694824219,-156.60800170898438,3,"ldis, qcecor, sebs",nsalpmE10.b1.20261017.000000.nc,20261017
-ecor,ARM,o,True,ECOR,71.3243637084961,-156.6148223876953,1,ecor,nsaecorsfE10.b1.20261017.000000.nc,20261017
+sonde,ARM,D,False,Sonde launch (files: 0.01°),71.31999969482422,-156.6199951171875,3,sonde,nsasondewnpnS01.b1.20261015.220300.nc,20261015
+sebs,ARM,o,False,"SEBS, LPM",71.32499694824219,-156.60800170898438,2,"ldis, sebs",nsasebsE10.b1.20260916.000000.cdf,20260916
+ecor,ARM,o,True,ECOR,71.3243637084961,-156.6148223876953,1,ecor,nsaecorsfwindE10.a1.20261017.000000.nc,20261017
 e11,ARM,s,False,"ARM E11 Point Barrow
-(ECOR, SEBS; to 2016)",71.39299774169922,-156.4219970703125,3,"ecor, qcecor, sebs",nsa30qcecorE11.c1.20161206.000000.nc,20161206
+(ECOR, SEBS; to 2016)",71.39299774169922,-156.4219970703125,2,"ecor, sebs",nsa30ecorE11.b1.20161206.000000.cdf,20161206
 e12,ARM,s,True,ARM E12 snow array,71.27473449707031,-156.6411895751953,6,"ldis, maws, sonicwind, spmf, srs, wb",nsawbgeonorE12.a1.20261017.000000.nc,20261017
-aos,ARM,s,True,ARM E30 aerosol + NOAA AOS,71.3231201171875,-156.61143493652344,10,"acsm, acsmcdce, aeth, aop, aos, aps, clap, cpc, nephelometer, sp2",nsaaosnephdry1mX3.b1.20261017.000030.nc,20261017
+aos,ARM,s,True,ARM E30 aerosol + NOAA AOS,71.3231201171875,-156.61143493652344,14,"acsm, aeth, aos, aps, clap, cpc, nephelometer, psap, sp2",nsaaosnephdryX3.a1.20261017.000000.nc,20261017
+iss,ARM,D,False,ARM ISS sonde (1998–2002),71.30000305175781,-156.7833251953125,1,isssonde,nsaisssondeC1.a1.20020510.230423.cdf,20020510
 c1_page,ARM,*,False,C1 (locations page),71.323,-156.615,0,,ARM locations page,20261019
 brw,NOAA,*,True,NOAA GML BRW,71.323,-156.6114,0,,utqiagvik_assets.csv,
 bsrn,NOAA,o,False,BSRN BAR (to 2016),71.323,-156.607,0,,utqiagvik_assets.csv,
@@ -36,5 +37,3 @@ sg27,Research,o,True,GNSS SG27,71.3229,-156.6103,0,,utqiagvik_assets.csv,
 iceradar,Research,^,True,UAF sea-ice radar,71.2925,-156.78833,0,,utqiagvik_assets.csv,
 mbs,Research,o,False,Sea-ice mass balance site (approx.),71.366,-156.542,0,,utqiagvik_assets.csv,
 b1,Research,o,True,SIZONet mooring B1,71.32535,-156.88404,0,,utqiagvik_assets.csv,
-narl,Historic,s,False,NARL (1947–81),71.325,-156.68056,0,,utqiagvik_assets.csv,
-dew,Historic,s,False,DEW Line LRR,71.32722,-156.63611,0,,utqiagvik_assets.csv,

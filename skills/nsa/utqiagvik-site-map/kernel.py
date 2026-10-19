@@ -40,8 +40,7 @@ def map_config():
         size={"*": 210, "s": 70, "^": 95, "o": 46, "D": 50},
         lab_main={
             "xsapr": ("X-SAPR on BARC roof", -10, 30),
-            "narl": ("NARL (1947–81)", -14, -20),
-            "dew": ("DEW Line LRR", 16, 40),
+            "iss": ("ARM ISS sonde\n(1998–2002)", -14, 16),
             "cimel": ("Cimel / AERONET", -16, -12),
             "e11": ("ARM E11 Point Barrow\n(ECOR, SEBS; to 2016)", -14, -20),
             "asos": ("ASOS PABR", 14, -10),
@@ -64,7 +63,7 @@ def map_config():
             "sebs": ("SEBS, LPM", 0.80, 0.89, "left"),
             "aeri": ("AERI", 0.80, 0.77, "left"),
             "bsrn": ("BSRN BAR\n(to 2016)", 0.80, 0.66, "left"),
-            "c1_file": ("C1 nominal\n(63 classes)", 0.80, 0.51, "left"),
+            "c1_file": ("C1 nominal\n(40 instruments)", 0.80, 0.51, "left"),
             "sg27": ("GNSS SG27", 0.80, 0.40, "left"),
             "crn": ("USCRN 27516", 0.80, 0.30, "left")},
         lab_e12={
@@ -76,8 +75,8 @@ def map_config():
             "ngeeB": ("NGEE B", 0.75, 0.40, "right"),
             "ngeeC": ("NGEE C", 0.97, 0.40, "right"),
             "e12": ("ARM E12 snow array", 0.30, 0.13, "left")},
-        lab_e12_zoom={"e12": ("ARM E12: all 9 instrument classes\n"
-                              "share this file coordinate", 0.52, 0.30,
+        lab_e12_zoom={"e12": ("ARM E12: 6 instruments\n"
+                              "share this file position", 0.52, 0.30,
                               "left")},
         # triangle legs: name, +1 label outside the triangle, -1 inside
         triangle=(("c1_page", "e12", "C1 → E12", 1),
@@ -601,8 +600,7 @@ def legend_handles(dark=False):
     h = [Line2D([], [], ls="", marker="s", ms=8, mfc=c, mec=ec, label=g)
          for g, c in [("ARM", col["ARM"]), ("NOAA", col["NOAA"]),
                       ("NSF NEON", col["NEON"]),
-                      ("Other research", col["Research"]),
-                      ("Historic / military", col["Historic"])]]
+                      ("Other research", col["Research"])]]
     h += [Line2D([], [], ls="", marker=m, ms=s, mfc="#bdbdbd", mec=ec,
                  label=text) for m, s, text in
           [("*", 13, "Main facility / observatory"),
@@ -889,7 +887,8 @@ def build_map_variant(layers_gpkg, inset_gpkg, theme="reference",
            "TIGER/Line 2024 and CB 2024.")
     if th["main"] != "vector" or (details and th.get("detail") != "vector"):
         src += "\nImagery: Esri World Imagery, Vantor WorldView-3, 7 Sep 2025."
-    src += "\nARM positions from the most recent file of each datastream."
+    src += ("\nARM instruments only (no VAPs or retrievals); positions from the most recent"
+            " a-level file, or b-level where the a-level holds none.")
     fig.text(lx, 0.03 if details else 0.012, src, fontsize=fs["small"],
              linespacing=1.5,
              color="#bbbbbb" if pal["dark"] else "#444")

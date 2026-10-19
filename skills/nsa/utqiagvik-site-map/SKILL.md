@@ -9,11 +9,12 @@ description: "Build maps of the ARM North Slope of Alaska (NSA) site and Utqiagv
 km, local Transverse Mercator) with a northern-Alaska inset top-left and geodesic distance lines from
 C1 to E12 and to the X-band radar. Some variants also carry close-ups: **b**, the C1 / NOAA BRW complex;
 **c**, E12 with NEON BARR and NGEE Arctic; **d**, E12 at 400 m. The assets come from `arm-nsa-site`
-and `utqiagvik-research-assets`, frozen into `site_map_assets.csv` (38 assets) and
+and `utqiagvik-research-assets`, frozen into `site_map_assets.csv` (37 assets) and
 `neon_barr_plot_centres.csv` (93 plot centres).
 
-ARM markers are one per distinct file position from the `arm-nsa-site` location audit (most recent
-file of each datastream, 2026-10-19), labelled with the instrument classes there. **E10 is not drawn
+ARM markers are instruments only (no VAPs or retrievals), one per distinct file position from the
+`arm-nsa-site` instrument audit (most recent a-level file, b-level where a-level is unserved or holds no
+better position; 2026-10-19), labelled with the instruments there. **E10 is not drawn
 as a site.** It is a catch-all code for instruments that are not co-located, so its SEBS/LPM and ECOR
 appear at their own positions.
 
@@ -108,11 +109,12 @@ service that answered (see `utqiagvik-research-assets`), so the map draws the BA
 ## Encoding
 
 Colour gives the operator (Okabe-Ito: ARM blue, NOAA orange, NEON green, other research reddish
-purple, historic grey). Shape gives the asset type: star for a main facility or observatory,
+purple). Shape gives the asset type: star for a main facility or observatory,
 square for an extended facility or building, triangle for a scanning radar, circle for a station,
 diamond for a sounding launch. A **hollow marker means a nominal or rounded coordinate**: the C1
-page point, the C1 nominal shared by 63 classes, SEBS/LPM at 3 decimals, sondes at 0.01 degrees,
-BSRN, E11, NARL, the DEW Line and the sea-ice mass-balance site. Filled markers are
+page point, the C1 nominal shared by 40 instruments, SEBS/LPM at 3 decimals, sondes at 0.01 degrees,
+the ISS sonde (1998–2002), BSRN, E11 and the sea-ice mass-balance site. Historic and context places (NARL,
+the DEW Line) are not drawn. Filled markers are
 instrument-specific or surveyed positions.
 
 ## Distances drawn

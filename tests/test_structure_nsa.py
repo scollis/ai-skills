@@ -166,7 +166,7 @@ def test_map_assets_csv_and_config():
     k = load(MAP)
     cfg = k["map_config"]()
     data = rows(MAP / "site_map_assets.csv")
-    assert len(data) == 38
+    assert len(data) == 37
     keys = {r["key"] for r in data}
     for lab in ("lab_main", "lab_c1", "lab_e12", "lab_e12_zoom"):
         assert set(cfg[lab]) <= keys, lab
@@ -245,14 +245,24 @@ def test_location_audit_table_matches_csv():
     assert int(m.group(2)) == sum(1 for r in data if r["lat"])
 
 
-def test_c1_nominal_label_count_matches_audit():
-    data = rows(SITE / "nsa_location_audit.csv")
-    n = sum(1 for r in data
-            if r["facility_code"] == "C1" and r["flag"] == "C1 nominal")
+def test_c1_nominal_label_count_matches_instrument_audit():
+    data = rows(SITE / "nsa_instrument_audit.csv")
+    n = sum(1 for r in data if r["flag"] == "C1 nominal")
     k = load(MAP)
-    assert f"({n} classes)" in k["map_config"]()["lab_c1"]["c1_file"][0]
+    assert f"({n} instruments)" in k["map_config"]()["lab_c1"]["c1_file"][0]
     assets = {r["key"]: r for r in rows(MAP / "site_map_assets.csv")}
-    assert assets["c1_file"]["label"] == f"C1 nominal ({n} classes)"
+    assert assets["c1_file"]["label"] == f"C1 nominal ({n} instruments)"
+    assert int(assets["c1_file"]["n"]) == n
+
+
+def test_instrument_audit_has_no_vaps():
+    data = rows(SITE / "nsa_instrument_audit.csv")
+    assert {r["level"][0] for r in data} <= {"a", "b"}
+    assert not {r["instrument_class"] for r in data} & {
+        "ceilpblht", "interpsonde", "mwrret", "qcrad", "armbe", "sondeadjust"}
+    assert sum(1 for r in data if r["lat"]) == int(re.search(
+        r"Of (\d+) instrument rows,\s+(\d+) carry a position",
+        (SITE / "SKILL.md").read_text()).group(2))
 
 
 def test_e10_is_not_drawn_as_a_site():
