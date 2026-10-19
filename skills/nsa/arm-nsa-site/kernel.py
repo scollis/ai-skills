@@ -346,3 +346,19 @@ def nsa_file_position(path):
                     out[key] = ds.attrs[n]
                     break
         return out
+
+
+def nsa_location_audit(flag=None, facility=None):
+    """Most-recent-file position audit (2026-10-19), one row per datastream.
+
+    Columns: instrument_class, facility_code, datastream, file, file_date,
+    lat, lon, alt, lat_src, lat_dtype, mb, offset_from_page_m, flag.
+    flag values include 'C1 nominal', 'rounded to 0.01 deg',
+    'instrument-specific or facility value', 'bad: ...' and 'no position: ...'.
+    """
+    here = os.path.dirname(sys._getframe().f_code.co_filename)
+    with open(os.path.join(here, "nsa_location_audit.csv")) as f:
+        rows = list(csv.DictReader(f))
+    return [r for r in rows
+            if (flag is None or r["flag"].startswith(flag))
+            and (facility is None or r["facility_code"] == facility)]

@@ -189,8 +189,9 @@ def test_map_assets_agree_with_site_kernel(site):
     pos = site["nsa_positions"]()
     for key in ("c1_page", "xsapr", "e12", "aeri", "dl"):
         mk = {"c1_page": "c1_page"}.get(key, key)
-        assert float(data[mk]["lat"]) == pytest.approx(pos[key]["lat"], abs=1e-6)
-        assert float(data[mk]["lon"]) == pytest.approx(pos[key]["lon"], abs=1e-6)
+        # audited float32 file values vs kernel literals: within float32 precision
+        assert float(data[mk]["lat"]) == pytest.approx(pos[key]["lat"], abs=1e-5)
+        assert float(data[mk]["lon"]) == pytest.approx(pos[key]["lon"], abs=1e-5)
 
 
 def test_xyz_tile_arithmetic():
@@ -200,21 +201,73 @@ def test_xyz_tile_arithmetic():
     assert (x, y) == (8510, 27874)
 
 
-def test_cartopy_web_mercator_trap_is_real_and_avoided():
+def test_cartopy_platecarree_trap_is_real_and_avoided():
+    """PROJ 9.8 made ellipsoidal eqc non-linear in latitude, so cartopy's
+    PlateCarree drifts ~23 km at 71 N; lonlat_crs() and Geodetic do not."""
     ccrs = pytest.importorskip("cartopy.crs")
     pyproj = pytest.importorskip("pyproj")
     k = load(MAP)
-    lon, lat = -156.6265, 71.3265
-    y_pyproj = pyproj.Transformer.from_crs(
-        4326, 3857, always_xy=True).transform(lon, lat)[1]
-    y_cartopy = ccrs.GOOGLE_MERCATOR.transform_point(lon, lat,
-                                                     ccrs.PlateCarree())[1]
-    # the documented trap: tens of km of Mercator y at 71 N
-    assert abs(y_cartopy - y_pyproj) > 50_000
-    # tiles_in maps a 3857 extent into a TM that agrees with PlateCarree input
+    lon, lat = -156.6, 71.3225
+    tm = ccrs.TransverseMercator(central_longitude=lon, central_latitude=lat)
+    truth = pyproj.Transformer.from_crs(4326, pyproj.CRS(tm.proj4_init),
+                                        always_xy=True).transform(lon, lat)
+    for crs in (k["lonlat_crs"](), ccrs.Geodetic()):
+        x, y = tm.transform_point(lon, lat, crs)
+        assert math.hypot(x - truth[0], y - truth[1]) < 0.01
+    y_pc = tm.transform_point(lon, lat, ccrs.PlateCarree())[1]
+    if abs(y_pc - truth[1]) < 1:
+        pytest.skip("this PROJ build has linear eqc; the trap is absent")
+    assert abs(y_pc - truth[1]) > 10_000
+    # Web Mercator is fine with true lon/lat input
+    y3857 = pyproj.Transformer.from_crs(4326, 3857, always_xy=True).transform(
+        lon, lat)[1]
+    assert abs(ccrs.GOOGLE_MERCATOR.transform_point(lon, lat, ccrs.Geodetic())[1]
+               - y3857) < 0.01
+    # tiles_in puts a 3857 corner where lonlat_crs puts the same lon/lat
     proj = k["local_tm"]((-156.63, -156.62, 71.32, 71.33))
-    x3857, y3857 = pyproj.Transformer.from_crs(
-        4326, 3857, always_xy=True).transform(lon, lat)
-    ext = k["tiles_in"](proj, (x3857, x3857 + 1, y3857, y3857 + 1))
-    direct = proj.transform_point(lon, lat, ccrs.PlateCarree())
+    x3, y3 = pyproj.Transformer.from_crs(4326, 3857, always_xy=True).transform(
+        lon, lat)
+    ext = k["tiles_in"](proj, (x3, x3 + 1, y3, y3 + 1))
+    direct = proj.transform_point(lon, lat, k["lonlat_crs"]())
     assert math.hypot(ext[0] - direct[0], ext[2] - direct[1]) < 0.01
+
+
+def test_location_audit_table_matches_csv():
+    text = (SITE / "SKILL.md").read_text()
+    data = rows(SITE / "nsa_location_audit.csv")
+    table = md_table(text, "| flag | datastreams |")
+    counts = {}
+    for r in data:
+        counts[r["flag"]] = counts.get(r["flag"], 0) + 1
+    assert {f: int(n) for f, n in table} == counts
+    m = re.search(r"Of (\d+) datastreams, (\d+) files carry a position", text)
+    assert int(m.group(1)) == len(data)
+    assert int(m.group(2)) == sum(1 for r in data if r["lat"])
+
+
+def test_c1_nominal_label_count_matches_audit():
+    data = rows(SITE / "nsa_location_audit.csv")
+    n = sum(1 for r in data
+            if r["facility_code"] == "C1" and r["flag"] == "C1 nominal")
+    k = load(MAP)
+    assert f"({n} classes)" in k["map_config"]()["lab_c1"]["c1_file"][0]
+    assets = {r["key"]: r for r in rows(MAP / "site_map_assets.csv")}
+    assert assets["c1_file"]["label"] == f"C1 nominal ({n} classes)"
+
+
+def test_e10_is_not_drawn_as_a_site():
+    k = load(MAP)
+    cfg = k["map_config"]()
+    labels = [v[0] for lab in ("lab_main", "lab_c1", "lab_e12") for v in
+              cfg[lab].values()]
+    labels += [r["label"] for r in rows(MAP / "site_map_assets.csv")]
+    assert not any("E10" in t for t in labels)
+
+
+def test_variant_table_matches_themes():
+    k = load(MAP)
+    table = md_table((MAP / "SKILL.md").read_text(), "| variant | main map |")
+    assert [r[0] for r in table] == list(k["map_themes"]())
+    for r in table:
+        has = bool(k["map_themes"]()[r[0]]["details"])
+        assert has == (not r[2].startswith("none")), r[0]

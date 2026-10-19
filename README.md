@@ -271,9 +271,9 @@ radar sits on the BARC building 1.90 km west of it.
 
 | skill | what it does |
 |---|---|
-| [`arm-nsa-site`](skills/nsa/arm-nsa-site/) | Site history from 1997, every facility code with the coordinate to trust, instrument classes per facility, campaigns, the Kollias 2019 radar-calibration offsets, and data DOIs crediting the mentors |
+| [`arm-nsa-site`](skills/nsa/arm-nsa-site/) | Site history from 1997, every facility code with the coordinate to trust (E10 is a catch-all, not a site), a most-recent-file position audit of 162 datastreams, instrument classes per facility, campaigns, the Kollias 2019 radar-calibration offsets, and data DOIs crediting the mentors |
 | [`utqiagvik-research-assets`](skills/nsa/utqiagvik-research-assets/) | 37 non-ARM assets with sourced coordinates: NOAA GML BRW, NWS, USCRN, NSF NEON BARR, NGEE Arctic, CALM, the BEO, UAF sea-ice sites, GNSS, AERONET |
-| [`utqiagvik-site-map`](skills/nsa/utqiagvik-site-map/) | OSM and TIGER layers, Esri imagery close-ups, and a four-panel asset map with a distance triangle; records the cartopy Web-Mercator datum trap (about 23 km at 71 N) |
+| [`utqiagvik-site-map`](skills/nsa/utqiagvik-site-map/) | OSM and TIGER layers, Esri imagery, and five asset-map variants (overview or close-ups; vector, imagery, grey or dark) with a distance triangle; records the cartopy PlateCarree latitude trap under PROJ 9.8 (about 23 km at 71 N) |
 
 ### Numerical practice
 

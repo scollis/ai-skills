@@ -1,39 +1,40 @@
-key,group,marker,precise,lat,lon,label
-c1_page,ARM,*,False,71.323,-156.615,C1 (locations page)
-c1_file,ARM,*,False,71.323,-156.609,C1 nominal (26 files)
-dl,ARM,o,True,71.322947,-156.61609,Doppler lidar
-aeri,ARM,o,True,71.32326,-156.60805,AERI
-ecor,ARM,o,True,71.32436,-156.61482,ECOR (E10)
-sebs,ARM,s,False,71.325,-156.608,"SEBS, LPM (E10)"
-aos,ARM,s,True,71.32312,-156.61143,AOS (E30/X3)
-sonde,ARM,D,False,71.32,-156.62,Sonde launch (files: 0.01°)
-xsapr,ARM,^,True,71.324745,-156.66774,X-SAPR on BARC roof
-e12,ARM,s,True,71.274734,-156.64119,ARM E12 snow array
-e11,ARM,s,False,71.393,-156.422,"ARM E11 Point Barrow (ECOR, SEBS)"
-cimel,ARM,o,True,71.3122,-156.665,Cimel / AERONET
-brw,NOAA,*,True,71.323,-156.6114,NOAA GML BRW
-bsrn,NOAA,o,False,71.323,-156.607,BSRN BAR (to 2016)
-crn,NOAA,o,True,71.3213,-156.611,USCRN 27516
-asos,NOAA,o,True,71.28703,-156.73938,ASOS PABR
-ua,NOAA,D,True,71.2889,-156.7833,NWS upper air 70026
-coops,NOAA,o,True,71.36011,-156.72986,CO-OPS Barrow Offshore (2008–10)
-tower,NEON,*,True,71.282425,-156.619319,NEON BARR tower + hut
-hut,NEON,s,True,71.28255,-156.6196,
-mp1,NEON,o,True,71.281711,-156.650219,NEON megapit (2016)
-sp1,NEON,o,True,71.282368,-156.6189,
-sp2,NEON,o,True,71.281912,-156.617746,
-sp3,NEON,o,True,71.282133,-156.61662,NEON soil plots SP1–5
-sp4,NEON,o,True,71.282086,-156.615361,
-sp5,NEON,o,True,71.282031,-156.613847,
-ngeeA,Research,o,True,71.28145,-156.61104,NGEE A
-ngeeB,Research,o,True,71.27976,-156.60348,NGEE B
-ngeeC,Research,o,True,71.28013,-156.60117,NGEE C
-ngeeD,Research,o,True,71.28214,-156.60078,NGEE D
-calm,Research,o,True,71.316807,-156.604036,CALM U1
-mag,Research,o,True,71.3225,-156.6231,USGS magnetic obs.
-sg27,Research,o,True,71.3229,-156.6103,GNSS SG27
-iceradar,Research,^,True,71.2925,-156.78833,UAF sea-ice radar
-mbs,Research,o,False,71.366,-156.542,Sea-ice mass balance site (approx.)
-b1,Research,o,True,71.32535,-156.88404,SIZONet mooring B1
-narl,Historic,s,False,71.325,-156.68056,NARL (1947–81)
-dew,Historic,s,False,71.32722,-156.63611,DEW Line LRR
+key,group,marker,precise,label,lat,lon,n,classes,file,file_date
+c1_file,ARM,*,False,C1 nominal (63 classes),71.322998046875,-156.60899353027344,63,"amc, aod-mfrsr, aod-nimfr, aod-nimfr-metric, aodbe, armtraj, asi, ceil, ceilpblht, cldtype, cloudradarcor, diffcor, gndrad, gvr, gvrp, ins, interpsonde, irt, kasacr, kazr, kazrarscl, kazrarsclcloudsat, ldis, masc, mascparticles, maws, mergesonde, met, mettwr, mfr, mfrsr, mpl, mplavg, mplcmask, mplcmaskml, mwr, mwr3c, mwravg, mwrhf, mwrp, mwrret, nimfr, org, pblht, precipbe, precipip, qcrad, radarcfad, radfluxanal, rwp, sirs, skyrad, sonicwind, spectrascope, spmf, srs, surfspecalb, thermocldphase, tps, tropoe, tsi, twr, wsacr",nsawsacr2cfrC1.a1.20261017.235717.nc,20261017
+dl,ARM,o,True,Doppler lidar,71.322947,-156.61609,3,"dl, dlprof-wind, dlprof-wstats",nsadlfptC1.b1.20261017.230011.cdf,20261017
+aeri,ARM,o,True,AERI,71.32325744628906,-156.60804748535156,2,"aeri, aerinf",nsaaerisummaryC1.b1.20261016.000611.nc,20261016
+xsapr,ARM,^,True,X-SAPR on BARC roof,71.32474517822266,-156.66773986816406,2,"xsapr, xsapr-cmac",nsaxsaprcfrqcC1.b1.20260113.153200.nc,20260113
+cimel,ARM,o,True,Cimel / AERONET,71.31220245361328,-156.6649932861328,1,csphot,nsacsphotzenradv3C1.a1.20261016.202921.nc,20261016
+sonde,ARM,D,False,Sonde launch (files: 0.01°),71.31999969482422,-156.6199951171875,6,"acred, qmemwrcol, sonde, sondeadjust",nsasondewnpnC1.b1.20261017.230400.nc,20261017
+sebs,ARM,o,False,"SEBS, LPM",71.32499694824219,-156.60800170898438,3,"ldis, qcecor, sebs",nsalpmE10.b1.20261017.000000.nc,20261017
+ecor,ARM,o,True,ECOR,71.3243637084961,-156.6148223876953,1,ecor,nsaecorsfE10.b1.20261017.000000.nc,20261017
+e11,ARM,s,False,"ARM E11 Point Barrow
+(ECOR, SEBS; to 2016)",71.39299774169922,-156.4219970703125,3,"ecor, qcecor, sebs",nsa30qcecorE11.c1.20161206.000000.nc,20161206
+e12,ARM,s,True,ARM E12 snow array,71.27473449707031,-156.6411895751953,6,"ldis, maws, sonicwind, spmf, srs, wb",nsawbgeonorE12.a1.20261017.000000.nc,20261017
+aos,ARM,s,True,ARM E30 aerosol + NOAA AOS,71.3231201171875,-156.61143493652344,10,"acsm, acsmcdce, aeth, aop, aos, aps, clap, cpc, nephelometer, sp2",nsaaosnephdry1mX3.b1.20261017.000030.nc,20261017
+c1_page,ARM,*,False,C1 (locations page),71.323,-156.615,0,,ARM locations page,20261019
+brw,NOAA,*,True,NOAA GML BRW,71.323,-156.6114,0,,utqiagvik_assets.csv,
+bsrn,NOAA,o,False,BSRN BAR (to 2016),71.323,-156.607,0,,utqiagvik_assets.csv,
+crn,NOAA,o,True,USCRN 27516,71.3213,-156.611,0,,utqiagvik_assets.csv,
+asos,NOAA,o,True,ASOS PABR,71.28703,-156.73938,0,,utqiagvik_assets.csv,
+ua,NOAA,D,True,NWS upper air 70026,71.2889,-156.7833,0,,utqiagvik_assets.csv,
+coops,NOAA,o,True,CO-OPS Barrow Offshore (2008–10),71.36011,-156.72986,0,,utqiagvik_assets.csv,
+tower,NEON,*,True,NEON BARR tower + hut,71.282425,-156.619319,0,,utqiagvik_assets.csv,
+hut,NEON,s,True,,71.28255,-156.6196,0,,utqiagvik_assets.csv,
+mp1,NEON,o,True,NEON megapit (2016),71.281711,-156.650219,0,,utqiagvik_assets.csv,
+sp1,NEON,o,True,,71.282368,-156.6189,0,,utqiagvik_assets.csv,
+sp2,NEON,o,True,,71.281912,-156.617746,0,,utqiagvik_assets.csv,
+sp3,NEON,o,True,NEON soil plots SP1–5,71.282133,-156.61662,0,,utqiagvik_assets.csv,
+sp4,NEON,o,True,,71.282086,-156.615361,0,,utqiagvik_assets.csv,
+sp5,NEON,o,True,,71.282031,-156.613847,0,,utqiagvik_assets.csv,
+ngeeA,Research,o,True,NGEE A,71.28145,-156.61104,0,,utqiagvik_assets.csv,
+ngeeB,Research,o,True,NGEE B,71.27976,-156.60348,0,,utqiagvik_assets.csv,
+ngeeC,Research,o,True,NGEE C,71.28013,-156.60117,0,,utqiagvik_assets.csv,
+ngeeD,Research,o,True,NGEE D,71.28214,-156.60078,0,,utqiagvik_assets.csv,
+calm,Research,o,True,CALM U1,71.316807,-156.604036,0,,utqiagvik_assets.csv,
+mag,Research,o,True,USGS magnetic obs.,71.3225,-156.6231,0,,utqiagvik_assets.csv,
+sg27,Research,o,True,GNSS SG27,71.3229,-156.6103,0,,utqiagvik_assets.csv,
+iceradar,Research,^,True,UAF sea-ice radar,71.2925,-156.78833,0,,utqiagvik_assets.csv,
+mbs,Research,o,False,Sea-ice mass balance site (approx.),71.366,-156.542,0,,utqiagvik_assets.csv,
+b1,Research,o,True,SIZONet mooring B1,71.32535,-156.88404,0,,utqiagvik_assets.csv,
+narl,Historic,s,False,NARL (1947–81),71.325,-156.68056,0,,utqiagvik_assets.csv,
+dew,Historic,s,False,DEW Line LRR,71.32722,-156.63611,0,,utqiagvik_assets.csv,

@@ -43,28 +43,28 @@ def map_config():
             "narl": ("NARL (1947–81)", -14, -20),
             "dew": ("DEW Line LRR", 16, 40),
             "cimel": ("Cimel / AERONET", -16, -12),
-            "e11": ("ARM E11 Point Barrow\n(ECOR, SEBS)", -14, -20),
+            "e11": ("ARM E11 Point Barrow\n(ECOR, SEBS; to 2016)", -14, -20),
             "asos": ("ASOS PABR", 14, -10),
             "ua": ("NWS upper air 70026", -16, -12),
             "iceradar": ("UAF sea-ice radar", -16, 12),
-            "coops": ("CO-OPS Barrow Offshore\n(2008–10)", 12, 12),
+            "coops": ("CO-OPS Barrow Offshore\n(2008–10)", 12, -16),
             "mbs": ("Sea-ice mass balance\nsite (approx.)", 12, 10),
             "b1": ("SIZONet\nmooring B1", 10, -16),
             "calm": ("CALM U1", 12, -8),
             "mp1": ("NEON megapit\n(2016)", -14, -10)},
         # close-up labels: (text, x, y, ha) in axes fraction, in columns
         lab_c1={
-            "ecor": ("ECOR (E10)", 0.30, 0.87, "right"),
+            "ecor": ("ECOR", 0.30, 0.87, "right"),
             "c1_page": ("C1 (locations page)", 0.30, 0.79, "right"),
             "dl": ("Doppler lidar", 0.30, 0.71, "right"),
             "mag": ("USGS magnetic obs.", 0.03, 0.43, "left"),
-            "aos": ("AOS (E30/X3)", 0.50, 0.29, "right"),
+            "aos": ("Aerosol: ARM E30 + NOAA AOS", 0.50, 0.29, "right"),
             "sonde": ("Sonde launch (files: 0.01°)", 0.33, 0.12, "left"),
             "brw": ("NOAA GML BRW", 0.52, 0.95, "right"),
-            "sebs": ("SEBS, LPM (E10)", 0.80, 0.89, "left"),
+            "sebs": ("SEBS, LPM", 0.80, 0.89, "left"),
             "aeri": ("AERI", 0.80, 0.77, "left"),
             "bsrn": ("BSRN BAR\n(to 2016)", 0.80, 0.66, "left"),
-            "c1_file": ("C1 nominal\n(26 files)", 0.80, 0.51, "left"),
+            "c1_file": ("C1 nominal\n(63 classes)", 0.80, 0.51, "left"),
             "sg27": ("GNSS SG27", 0.80, 0.40, "left"),
             "crn": ("USCRN 27516", 0.80, 0.30, "left")},
         lab_e12={
@@ -86,6 +86,21 @@ def map_config():
     )
 
 
+def lonlat_crs():
+    """A PlateCarree that is plain lon/lat in degrees.
+
+    With PROJ 9.8 (cartopy 0.25), ccrs.PlateCarree() is eqc on the WGS84
+    ellipsoid scaled by +to_meter; ellipsoidal eqc is no longer linear in
+    latitude, so lon/lat passed through it land about 23 km off at 71 N
+    (24 km at 45 N, 0 at the equator) in any ellipsoidal projection. On a
+    sphere globe eqc is linear and the error is zero.
+    """
+    import cartopy.crs as ccrs
+
+    return ccrs.PlateCarree(globe=ccrs.Globe(
+        ellipse=None, semimajor_axis=6378137, semiminor_axis=6378137))
+
+
 def map_tools():
     """Heavy imports and CRS objects, resolved at call time."""
     from types import SimpleNamespace
@@ -95,7 +110,7 @@ def map_tools():
     import pyproj
 
     return SimpleNamespace(
-        ccrs=ccrs, pc=ccrs.PlateCarree(),
+        ccrs=ccrs, pc=lonlat_crs(),
         geod=pyproj.Geod(ellps="WGS84"),
         to_ll=pyproj.Transformer.from_crs(3857, 4326, always_xy=True),
         halo=[pe.withStroke(linewidth=2.6, foreground="white")],
@@ -379,11 +394,10 @@ def local_tm(box):
 def tiles_in(proj, ext):
     """Map an EPSG:3857 mosaic extent into an ellipsoidal projection.
 
-    Never hand Web-Mercator tiles to ccrs.GOOGLE_MERCATOR or epsg(3857):
-    cartopy converts PlateCarree (WGS84) points to that sphere with a datum
-    shift, misplacing them by about 23 km at 71 N relative to the tiles.
-    Corners go through pyproj to lon/lat, then into the target projection;
-    over a box a few km across the residual distortion is sub-metre.
+    Corners go through pyproj to lon/lat, then (via lonlat_crs) into the
+    target projection, and the mosaic is drawn axis-aligned. Over a box a few
+    km across the residual distortion is sub-metre; for larger boxes use
+    warp_mosaic, which resamples per pixel.
     """
     import numpy as np
 
@@ -391,6 +405,32 @@ def tiles_in(proj, ext):
     lon, lat = t.to_ll.transform([ext[0], ext[1]], [ext[2], ext[3]])
     p = proj.transform_points(t.pc, np.array(lon), np.array(lat))
     return p[0, 0], p[1, 0], p[0, 1], p[1, 1]
+
+
+def warp_mosaic(img, ext, proj, box, width_px=2400):
+    """Resample an EPSG:3857 mosaic onto a regular grid in proj covering box
+    (W, E, S, N). Exact per pixel: proj -> lon/lat -> EPSG:3857 (pyproj) ->
+    bilinear sample. Returns (RGB array, extent in proj units)."""
+    import numpy as np
+    from scipy.ndimage import map_coordinates
+
+    t = map_tools()
+    c = proj.transform_points(t.pc, np.array([box[0], box[1], box[0], box[1]]),
+                              np.array([box[2], box[2], box[3], box[3]]))
+    x0, x1 = c[:, 0].min(), c[:, 0].max()
+    y0, y1 = c[:, 1].min(), c[:, 1].max()
+    h = int(width_px * (y1 - y0) / (x1 - x0))
+    gx, gy = np.meshgrid(np.linspace(x0, x1, width_px),
+                         np.linspace(y1, y0, h))
+    ll = t.pc.transform_points(proj, gx.ravel(), gy.ravel())
+    to3857 = t.to_ll.__class__.from_crs(4326, 3857, always_xy=True)
+    mx, my = to3857.transform(ll[:, 0], ll[:, 1])
+    col = (mx - ext[0]) / (ext[1] - ext[0]) * img.shape[1] - 0.5
+    row = (ext[3] - my) / (ext[3] - ext[2]) * img.shape[0] - 0.5
+    out = np.stack([map_coordinates(img[..., b].astype(float), [row, col],
+                                    order=1, mode="nearest").reshape(h, width_px)
+                    for b in range(3)], -1)
+    return out.clip(0, 255).astype(np.uint8), (x0, x1, y0, y1)
 
 
 # --------------------------------------------------------------- drawing
@@ -522,6 +562,7 @@ def distance_triangle(ax, A, legs, color="#1a1a1a"):
     import numpy as np
 
     t, fs = map_tools(), map_config()["fs"]
+    halo = t.halo_dk if color.lower() in ("#ffffff", "w", "white") else t.halo
     keys = sorted({k for leg in legs for k in leg[:2]})
     pts = {k: A[A.key == k].iloc[0] for k in keys}
     cen = ax.projection.transform_points(
@@ -533,7 +574,7 @@ def distance_triangle(ax, A, legs, color="#1a1a1a"):
         xy = ax.projection.transform_points(
             t.pc, np.array([p.lon, q.lon]), np.array([p.lat, q.lat]))[:, :2]
         ax.plot(xy[:, 0], xy[:, 1], color=color, lw=1.3, zorder=7,
-                transform=ax.projection, path_effects=t.halo)
+                transform=ax.projection, path_effects=halo)
         v = (xy[1] - xy[0]) / np.hypot(*(xy[1] - xy[0]))
         n = np.array([-v[1], v[0]])
         for e in xy:                                   # 90 m end ticks
@@ -549,29 +590,31 @@ def distance_triangle(ax, A, legs, color="#1a1a1a"):
                     xytext=out * side * 16, textcoords="offset points",
                     rotation=ang, rotation_mode="anchor", ha="center",
                     va="center", fontsize=fs["label"], fontweight="bold",
-                    color=color, path_effects=t.halo, zorder=16)
+                    color=color, path_effects=halo, zorder=16)
 
 
-def legend_handles():
+def legend_handles(dark=False):
     from matplotlib.lines import Line2D
 
     col = map_config()["col"]
-    h = [Line2D([], [], ls="", marker="s", ms=8, mfc=c, mec="k", label=g)
+    ec = "w" if dark else "k"
+    h = [Line2D([], [], ls="", marker="s", ms=8, mfc=c, mec=ec, label=g)
          for g, c in [("ARM", col["ARM"]), ("NOAA", col["NOAA"]),
                       ("NSF NEON", col["NEON"]),
                       ("Other research", col["Research"]),
                       ("Historic / military", col["Historic"])]]
-    h += [Line2D([], [], ls="", marker=m, ms=s, mfc="#bdbdbd", mec="k",
+    h += [Line2D([], [], ls="", marker=m, ms=s, mfc="#bdbdbd", mec=ec,
                  label=text) for m, s, text in
           [("*", 13, "Main facility / observatory"),
            ("s", 7, "Extended facility / building"),
            ("^", 8, "Scanning radar"), ("o", 6, "Station / instrument"),
            ("D", 6, "Sounding launch")]]
-    h += [Line2D([], [], ls="", marker="o", ms=6, mfc="none", mec="k",
+    h += [Line2D([], [], ls="", marker="o", ms=6, mfc="none", mec=ec,
                  label="Hollow = nominal or rounded coordinate"),
           Line2D([], [], ls="", marker=".", ms=5, color=col["NEON"],
                  label="NEON observational plot"),
-          Line2D([], [], color="#3a3a3a", lw=1.0, label="Road (OSM)"),
+          Line2D([], [], color="#c9ced3" if dark else "#3a3a3a", lw=1.0,
+                 label="Road (OSM)"),
           Line2D([], [], color="#8a8a8a", lw=0.9, ls=(0, (4, 2)),
                  label="Utqiaġvik city limit (TIGER)"),
           Line2D([], [], color="#7a3f8f", lw=1.0, ls=(0, (1, 1.5)),
@@ -581,82 +624,167 @@ def legend_handles():
 
 # ---------------------------------------------------------------- panels
 
-def base_layers(ax, gpkg, box):
-    """Ocean background, OSM land/water/coast/buildings/roads, TIGER town."""
-    ax.set_facecolor("#cfe3ef")
-    draw(ax, read_layer(gpkg, "land", box), facecolor="#f2efe6",
-         edgecolor="none")
-    for name in ("water_osm", "water_tiger"):
-        draw(ax, read_layer(gpkg, name, box), facecolor="#cfe3ef",
-             edgecolor="#8fb3c9", lw=0.3)
+def map_themes():
+    """Five map variants: background treatment and which close-ups to draw.
+
+    main/detail backgrounds: vector (OSM/TIGER), imagery, imagery_grey.
+    palette: light or dark vector styling and label contrast.
+    """
+    return {
+        "overview_vector": dict(main="vector", palette="light", details=()),
+        "overview_imagery": dict(main="imagery", palette="dark", details=()),
+        "reference": dict(main="vector", palette="light",
+                          details=("b", "c", "d"), detail="imagery"),
+        "grey_imagery": dict(main="imagery_grey", palette="dark",
+                             details=("b", "c", "d"), detail="imagery_grey"),
+        "dark_vector": dict(main="vector", palette="dark",
+                            details=("b", "c", "d"), detail="vector"),
+    }
+
+
+def palette(name):
+    light = dict(ocean="#cfe3ef", land="#f2efe6", water="#cfe3ef",
+                 lake_edge="#8fb3c9", coast="#5b87a6", town="#8a8a8a",
+                 airport="#d4d4d4", building="#4d4d4d", road_major="#3a3a3a",
+                 road_minor="#6b6b6b", text="#333333", sea_text="#2f5f80",
+                 line="#1a1a1a", dark=False)
+    dark = dict(ocean="#0e1a26", land="#262a2e", water="#0e1a26",
+                lake_edge="#2f4a60", coast="#5f8fb3", town="#9a9a9a",
+                airport="#3c4146", building="#b8bec4", road_major="#c9ced3",
+                road_minor="#8a9299", text="#e8e8e8", sea_text="#8fb9d8",
+                line="#f2f2f2", dark=True)
+    return dark if name == "dark" else light
+
+
+def base_layers(ax, gpkg, box, pal=None, fill=True):
+    """OSM land/water/coast/buildings/roads and the TIGER town limit.
+    fill=False draws only line work, for use over imagery."""
+    pal = pal or palette("light")
+    if fill:
+        ax.set_facecolor(pal["ocean"])
+        draw(ax, read_layer(gpkg, "land", box), facecolor=pal["land"],
+             edgecolor="none")
+        for name in ("water_osm", "water_tiger"):
+            draw(ax, read_layer(gpkg, name, box), facecolor=pal["water"],
+                 edgecolor=pal["lake_edge"], lw=0.3)
+        air = read_layer(gpkg, "airport", box)
+        draw(ax, air[air.geom_type.str.contains("Polygon")],
+             facecolor=pal["airport"], edgecolor="none")
+        draw(ax, read_layer(gpkg, "buildings", box),
+             facecolor=pal["building"], edgecolor="none")
     draw(ax, read_layer(gpkg, "coastline", box), facecolor="none",
-         edgecolor="#5b87a6", lw=0.7)
+         edgecolor=pal["coast"], lw=0.7)
     draw(ax, read_layer(gpkg, "town_boundary", box), facecolor="none",
-         edgecolor="#8a8a8a", lw=0.9, linestyle=(0, (4, 2)))
-    air = read_layer(gpkg, "airport", box)
-    draw(ax, air[air.geom_type.str.contains("Polygon")], facecolor="#d4d4d4",
-         edgecolor="none")
-    draw(ax, read_layer(gpkg, "buildings", box), facecolor="#4d4d4d",
-         edgecolor="none")
+         edgecolor=pal["town"], lw=0.9, linestyle=(0, (4, 2)))
     roads = read_layer(gpkg, "roads_osm", box)
     for kinds, ec, lw, ls in (
-            (("tertiary", "unclassified"), "#3a3a3a", 1.0, "-"),
-            (("residential", "service"), "#6b6b6b", 0.5, "-"),
-            (("track", "path", "footway", "steps"), "#6b6b6b", 0.4,
+            (("tertiary", "unclassified"), pal["road_major"], 1.0, "-"),
+            (("residential", "service"), pal["road_minor"], 0.5, "-"),
+            (("track", "path", "footway", "steps"), pal["road_minor"], 0.4,
              (0, (2, 1.5)))):
         draw(ax, roads[roads.highway.isin(kinds)], facecolor="none",
              edgecolor=ec, lw=lw, linestyle=ls)
 
 
-def detail_panel(fig, rect, A, plots, box, z, labels, letter, title):
-    """Imagery close-up in a local TM, with assets and column labels."""
-    t, fs = map_tools(), map_config()["fs"]
-    proj = local_tm(box)
-    axd = fig.add_axes(rect, projection=proj)
+def imagery_background(ax, box, z, grey=False, width_px=2400):
+    """Esri imagery resampled exactly into the axes projection.
+    grey=True desaturates and lightens it so coloured markers dominate."""
+    import numpy as np
+
     img, ext = imagery_mosaic(*box, z)
-    axd.imshow(img, extent=tiles_in(proj, ext), transform=proj,
-               origin="upper", interpolation="lanczos", zorder=0)
+    pad = (box[1] - box[0]) * 0.02, (box[3] - box[2]) * 0.02
+    big = (box[0] - pad[0], box[1] + pad[0], box[2] - pad[1], box[3] + pad[1])
+    out, oext = warp_mosaic(img, ext, ax.projection, big, width_px)
+    if grey:
+        lum = out @ np.array([0.299, 0.587, 0.114])
+        out = np.repeat((0.55 * lum + 0.45 * 200)[..., None], 3, -1)
+        out = out.clip(0, 255).astype(np.uint8)
+    ax.imshow(out, extent=oext, transform=ax.projection, origin="upper",
+              interpolation="lanczos", zorder=0)
+
+
+def detail_panel(fig, rect, A, plots, box, z, labels, letter, title,
+                 bg="imagery", gpkg=None, pal=None):
+    """Close-up in a local TM: imagery, grey imagery or vector background,
+    assets and column labels."""
+    t, fs = map_tools(), map_config()["fs"]
+    pal = pal or palette("light")
+    axd = fig.add_axes(rect, projection=local_tm(box))
     axd.set_extent(box, t.pc)
+    if bg == "vector":
+        base_layers(axd, gpkg, box, pal)
+    else:
+        imagery_background(axd, box, z, grey=bg == "imagery_grey",
+                           width_px=1800)
+    axd.set_extent(box, t.pc)
+    dark = bg != "vector" or pal["dark"]
     nb = plots[inside(plots, box)]
     axd.scatter(nb.lon, nb.lat, transform=t.pc, s=14, zorder=10, lw=0.5,
-                c=map_config()["col"]["NEON"], edgecolors="w")
-    plot_assets(axd, A[inside(A, box)], edge="w")
+                c=map_config()["col"]["NEON"],
+                edgecolors="w" if dark else "k")
+    plot_assets(axd, A[inside(A, box)], edge="w" if dark else "k")
     for k, (text, x, y, ha) in labels.items():
         r = A[A.key == k].iloc[0]
-        label(axd, r.lon, r.lat, text, x, y, dark=True, ha=ha, frac=True,
+        label(axd, r.lon, r.lat, text, x, y, dark=dark, ha=ha, frac=True,
               fontsize=fs["label"])
+    tcol = pal["text"] if pal["dark"] else "k"
     axd.text(0.0, 1.012, letter, transform=axd.transAxes, va="bottom",
-             fontsize=fs["letter"], fontweight="bold")
-    axd.text(0.05, 1.012, title, transform=axd.transAxes, va="bottom")
-    axd.text(0.99, 0.01, "Imagery: Esri, Vantor WV03 (7 Sep 2025)",
-             transform=axd.transAxes, ha="right", va="bottom",
-             fontsize=fs["small"], color="w", path_effects=t.halo_dk,
-             zorder=20)
-    return axd
+             fontsize=fs["letter"], fontweight="bold", color=tcol)
+    axd.text(0.05, 1.012, title, transform=axd.transAxes, va="bottom",
+             color=tcol)
+    if bg != "vector":
+        axd.text(0.99, 0.01, "Imagery: Esri, Vantor WV03 (7 Sep 2025)",
+                 transform=axd.transAxes, ha="right", va="bottom",
+                 fontsize=fs["small"], color="w", path_effects=t.halo_dk,
+                 zorder=20)
+    return axd, dark
 
 
-def main_map(fig, rect, A, plots, gpkg):
+def main_map(fig, rect, A, plots, gpkg, theme, outlines=True):
     import numpy as np
     from matplotlib.patches import Rectangle
 
     t, cfg = map_tools(), map_config()
-    fs, beo = cfg["fs"], cfg["beo_box"]
-    ax = fig.add_axes(rect, projection=local_tm(cfg["main"]))
-    ax.set_extent(cfg["main"], t.pc)
-    base_layers(ax, gpkg, cfg["main"])
+    fs, beo, box = cfg["fs"], cfg["beo_box"], cfg["main"]
+    pal = palette(theme["palette"])
+    ax = fig.add_axes(rect, projection=local_tm(box))
+    ax.set_extent(box, t.pc)
+    if theme["main"] == "vector":
+        base_layers(ax, gpkg, box, pal)
+    else:
+        imagery_background(ax, box, 13, grey=theme["main"] == "imagery_grey",
+                           width_px=2600)
+        base_layers(ax, gpkg, box, palette("dark"), fill=False)
+    ax.set_extent(box, t.pc)
+    dark = pal["dark"] or theme["main"] != "vector"
+    halo = t.halo_dk if dark else t.halo
     ax.add_patch(Rectangle((beo[0], beo[2]), beo[1] - beo[0],
                            beo[3] - beo[2], transform=t.pc, fc="none",
-                           ec="#7a3f8f", lw=1.0, ls=(0, (1, 1.5)), zorder=6))
+                           ec="#d9a3e6" if dark else "#7a3f8f", lw=1.0,
+                           ls=(0, (1, 1.5)), zorder=6))
     ax.scatter(plots.lon, plots.lat, transform=t.pc, s=6, zorder=8, lw=0,
                c=cfg["col"]["NEON"])
-    keep = A.key.isin(["c1_page", "brw", "e12", "tower"])
-    plot_assets(ax, A[(~inside(A, cfg["c1_box"])
-                       & ~inside(A, cfg["e12_box"])) | keep], scale=0.8)
+    if outlines:
+        keep = A.key.isin(["c1_page", "brw", "e12", "tower"])
+        shown = A[(~inside(A, cfg["c1_box"]) & ~inside(A, cfg["e12_box"]))
+                  | keep]
+    else:
+        shown = A
+    plot_assets(ax, shown, scale=0.8, edge="w" if dark else "k")
     for k, (text, dx, dy) in cfg["lab_main"].items():
         r = A[A.key == k].iloc[0]
-        label(ax, r.lon, r.lat, text, dx, dy, fontsize=fs["label"])
-    outline(ax, cfg["c1_box"], " b")
-    outline(ax, cfg["e12_box"], " c", va="top")
+        label(ax, r.lon, r.lat, text, dx, dy, dark=dark, fontsize=fs["label"])
+    if outlines:
+        oc = "w" if dark else "k"
+        outline(ax, cfg["c1_box"], " b", color=oc, dark=dark)
+        outline(ax, cfg["e12_box"], " c", va="top", color=oc, dark=dark)
+    else:
+        for k, (text, dx, dy) in (("c1_page", ("ARM C1 + NOAA BRW", 18, 26)),
+                                  ("e12", ("ARM E12, NEON BARR,\nNGEE Arctic",
+                                           18, -30))):
+            r = A[A.key == k].iloc[0]
+            label(ax, r.lon, r.lat, text, dx, dy, dark=dark,
+                  fontsize=fs["label"], fontweight="bold")
     for lo, la, text in [(-156.835, 71.335, "Chukchi Sea"),
                          (-156.50, 71.355, "Elson Lagoon"),
                          (-156.765, 71.300, "Utqiaġvik"),
@@ -664,122 +792,165 @@ def main_map(fig, rect, A, plots, gpkg):
                          (-156.53, 71.262, "Barrow Environmental\n"
                                            "Observatory (BEO)")]:
         water = "Sea" in text or "Lagoon" in text
+        col = ("w" if dark else pal["text"]) if not water else (
+            "#bfe0f5" if dark else pal["sea_text"])
         ax.text(lo, la, text, transform=t.pc, ha="center", zorder=9,
-                style="italic" if water else "normal", path_effects=t.halo,
-                color="#2f5f80" if water else "#333")
-    gl = ax.gridlines(t.pc, draw_labels=True, lw=0.3, color="#777",
-                      alpha=0.5, xlocs=np.arange(-157, -156.2, 0.1),
+                style="italic" if water else "normal", path_effects=halo,
+                color=col)
+    gl = ax.gridlines(t.pc, draw_labels=True, lw=0.3,
+                      color="#bbbbbb" if dark else "#777", alpha=0.5,
+                      xlocs=np.arange(-157, -156.2, 0.1),
                       ylocs=np.arange(71.20, 71.45, 0.05))
     gl.top_labels = gl.right_labels = False
-    gl.xlabel_style = gl.ylabel_style = dict(size=fs["small"], rotation=0)
-    scalebar(ax, 2000, "2 km", loc=(0.05, 0.035))
-    distance_triangle(ax, A, cfg["triangle"])
+    lab_col = pal["text"] if pal["dark"] else "k"
+    gl.xlabel_style = gl.ylabel_style = dict(size=fs["small"], rotation=0,
+                                             color=lab_col)
+    scalebar(ax, 2000, "2 km", loc=(0.05, 0.035), color="w" if dark else "k")
+    distance_triangle(ax, A, cfg["triangle"],
+                      color="#ffffff" if dark else "#1a1a1a")
     return ax
 
 
-def wide_inset(fig, rect, gpkg):
+def wide_inset(fig, rect, gpkg, pal=None):
     t, cfg = map_tools(), map_config()
-    fs = cfg["fs"]
+    fs, pal = cfg["fs"], pal or palette("light")
     axi = fig.add_axes(rect, projection=t.ccrs.LambertConformal(
         central_longitude=-154.5, central_latitude=69,
         standard_parallels=(66, 71)))
     axi.set_extent(cfg["inset"], t.pc)
-    axi.set_facecolor("#cfe3ef")
-    draw(axi, read_layer(gpkg, "alaska_land"), facecolor="#f2efe6",
-         edgecolor="#5b87a6", lw=0.5)
-    draw(axi, read_layer(gpkg, "lakes_gt5km2"), facecolor="#cfe3ef",
+    axi.set_facecolor(pal["ocean"])
+    draw(axi, read_layer(gpkg, "alaska_land"), facecolor=pal["land"],
+         edgecolor=pal["coast"], lw=0.5)
+    draw(axi, read_layer(gpkg, "lakes_gt5km2"), facecolor=pal["water"],
          edgecolor="none")
     draw(axi, read_layer(gpkg, "north_slope_borough"), facecolor="none",
-         edgecolor="#8a8a8a", lw=0.6, linestyle=(0, (4, 2)))
+         edgecolor=pal["town"], lw=0.6, linestyle=(0, (4, 2)))
     arm = cfg["col"]["ARM"]
     for lo, la, text, dx, dy, mk in cfg["inset_sites"]:
         main = mk == "*"
         axi.scatter(lo, la, transform=t.pc, marker=mk, lw=1.1, zorder=11,
                     s=120 if main else 36, c=arm if main else "none",
-                    edgecolors="k" if main else arm)
-        label(axi, lo, la, text, dx, dy, fontsize=fs["label"])
+                    edgecolors=("w" if pal["dark"] else "k") if main else arm)
+        label(axi, lo, la, text, dx, dy, dark=pal["dark"],
+              fontsize=fs["label"])
     for lo, la, text in [(-163.5, 70.6, "Chukchi\nSea"),
                          (-145.5, 70.75, "Beaufort Sea"),
                          (-151.5, 67.4, "North Slope\nBorough")]:
         water = "Sea" in text
         axi.text(lo, la, text, transform=t.pc, ha="center",
-                 fontsize=fs["label"], path_effects=t.halo,
+                 fontsize=fs["label"],
+                 path_effects=t.halo_dk if pal["dark"] else t.halo,
                  style="italic" if water else "normal",
-                 color="#2f5f80" if water else "#555")
+                 color=pal["sea_text"] if water else pal["text"])
+    for sp in axi.spines.values():
+        sp.set_edgecolor(pal["text"] if pal["dark"] else "k")
     return axi
+
+
+def build_map_variant(layers_gpkg, inset_gpkg, theme="reference",
+                      path="nsa_utqiagvik_asset_map.png", dpi=300):
+    """Render one of map_themes(). With close-ups: main map + inset (a),
+    C1/NOAA BRW (b), E12 with NEON and NGEE (c), E12 at 400 m (d). Without:
+    a single larger main map, every asset drawn on it.
+
+    Saves without bbox_inches='tight': a tight bbox is recomputed around the
+    manually placed inset and crops the main map away.
+    """
+    import matplotlib.pyplot as plt
+
+    th = map_themes()[theme] if isinstance(theme, str) else theme
+    cfg = map_config()
+    fs, pal = cfg["fs"], palette(th["palette"])
+    A, plots = site_map_assets()
+    plt.rcParams["savefig.bbox"] = None
+    details = bool(th["details"])
+    fig = plt.figure(figsize=(15.5, 12.8) if details else (11.0, 12.6),
+                     facecolor="#15191d" if pal["dark"] else "white")
+    tcol = pal["text"] if pal["dark"] else "k"
+    if details:
+        rect, irect, lx, ncol = ([0.045, 0.20, 0.60, 0.76],
+                                 [0.052, 0.715, 0.235, 0.245], 0.045, 4)
+    else:
+        rect, irect, lx, ncol = ([0.07, 0.215, 0.90, 0.75],
+                                 [0.08, 0.72, 0.33, 0.24], 0.07, 3)
+    ax = main_map(fig, rect, A, plots, layers_gpkg, th, outlines=details)
+    wide_inset(fig, irect, inset_gpkg, pal)
+    leg = fig.legend(handles=legend_handles(pal["dark"]), loc="upper left",
+                     ncol=ncol,
+                     bbox_to_anchor=(lx, 0.165 if details else 0.19),
+                     frameon=False,
+                     fontsize=fs["label"], labelspacing=0.6,
+                     handlelength=1.6, handletextpad=0.6, columnspacing=1.6,
+                     alignment="left", title_fontsize=fs["label"],
+                     title="Colour = operator · shape = asset type")
+    for txt in leg.get_texts() + [leg.get_title()]:
+        txt.set_color(tcol)
+    src = ("Basemap: © OpenStreetMap contributors (ODbL); US Census "
+           "TIGER/Line 2024 and CB 2024.")
+    if th["main"] != "vector" or (details and th.get("detail") != "vector"):
+        src += "\nImagery: Esri World Imagery, Vantor WorldView-3, 7 Sep 2025."
+    src += "\nARM positions from the most recent file of each datastream."
+    fig.text(lx, 0.03 if details else 0.012, src, fontsize=fs["small"],
+             linespacing=1.5,
+             color="#bbbbbb" if pal["dark"] else "#444")
+    fig.text(lx + 0.002, 0.972, "a", fontsize=fs["letter"],
+             fontweight="bold", color=tcol)
+    fig.text(lx + 0.025, 0.972, "ARM North Slope of Alaska observatory and "
+             "neighbouring research assets, Utqiaġvik",
+             fontsize=fs["title"], color=tcol)
+    if details:
+        bg = th.get("detail", "imagery")
+        axb, dk = detail_panel(fig, [0.665, 0.625, 0.325, 0.33], A, plots,
+                               cfg["c1_box"], 17, cfg["lab_c1"], "b",
+                               "Main site: ARM C1/E30 and NOAA GML BRW", bg,
+                               layers_gpkg, pal)
+        towers = read_layer(layers_gpkg, "detail_c1_towers_masts")
+        draw(axb, towers, facecolor="none", edgecolor="#ffd84d", lw=1.2,
+             zorder=9)
+        if len(towers):
+            t0 = towers.to_crs(3857).centroid.to_crs(4326).iloc[0]
+            label(axb, t0.x, t0.y, "Towers (OSM)", 0.58, 0.95, ha="left",
+                  frac=True, dark=dk, fontsize=fs["label"])
+        scalebar(axb, 200, "200 m", loc=(0.06, 0.05),
+                 color="w" if dk else "k")
+        connect(fig, ax, cfg["c1_box"], axb)
+        axc, dk = detail_panel(fig, [0.665, 0.335, 0.325, 0.25], A, plots,
+                               cfg["e12_box"], 16, cfg["lab_e12"], "c",
+                               "ARM E12 on the BEO, with NEON BARR and NGEE "
+                               "Arctic", bg, layers_gpkg, pal)
+        rd = read_layer(layers_gpkg, "roads_osm", cfg["e12_box"])
+        line_label(axc, rd[rd.name == "Eastfield Road"], cfg["e12_box"],
+                   "Cake Eater Rd\n(OSM: Eastfield Rd)", frac=0.55, rot=82)
+        scalebar(axc, 500, "500 m", loc=(0.06, 0.05),
+                 color="w" if dk else "k")
+        connect(fig, ax, cfg["e12_box"], axc)
+        e = A[A.key == "e12"].iloc[0]
+        zb = box_around(e.lat, e.lon, cfg["e12_half_m"])
+        outline(axc, zb, " d", color="w" if dk else "k", dark=dk)
+        axd, dk = detail_panel(fig, [0.665, 0.035, 0.325, 0.26], A, plots,
+                               zb, 18, cfg["lab_e12_zoom"], "d",
+                               "E12 close-up (400 m)", bg, layers_gpkg, pal)
+        rz = read_layer(layers_gpkg, "roads_osm", zb)
+        foot = rz[rz.highway == "footway"]
+        draw(axd, foot, facecolor="none", edgecolor="#ffd84d", lw=1.0,
+             zorder=9)
+        line_label(axd, foot, zb, "footway\n(OSM)", frac=0.2)
+        hut = read_layer(layers_gpkg, "detail_e12_buildings", zb)
+        draw(axd, hut, facecolor="none", edgecolor="#ffd84d", lw=1.2,
+             zorder=9)
+        if len(hut):
+            h0 = hut.to_crs(3857).centroid.to_crs(4326).iloc[0]
+            label(axd, h0.x, h0.y, "Building (OSM)", 0.62, 0.62, ha="left",
+                  frac=True, dark=dk, fontsize=fs["label"])
+        line_label(axd, rz[rz.name == "Eastfield Road"], zb, "Cake Eater Rd",
+                   frac=0.3, rot=72)
+        scalebar(axd, 50, "50 m", loc=(0.06, 0.05), color="w" if dk else "k")
+        connect(fig, axc, zb, axd, below=True)
+    fig.savefig(path, dpi=dpi, facecolor=fig.get_facecolor())
+    return fig
 
 
 def build_site_map(layers_gpkg, inset_gpkg, path="nsa_utqiagvik_asset_map.png",
                    dpi=300):
-    """Four-panel map: a) main map with the northern-Alaska inset top-left
-    and the C1-E12-X-SAPR distance triangle, b) C1/NOAA BRW imagery
-    close-up, c) E12 with NEON BARR and NGEE, d) E12 at 400 m.
-
-    layers_gpkg/inset_gpkg come from write_layers(zoom_layers(), ...) and
-    write_layers(inset_layers(), ...). Save without bbox_inches='tight':
-    the tight bbox is recomputed around the manually placed inset and crops
-    the main map away.
-    """
-    import matplotlib.pyplot as plt
-
-    cfg = map_config()
-    fs = cfg["fs"]
-    A, plots = site_map_assets()
-    plt.rcParams["savefig.bbox"] = None
-    fig = plt.figure(figsize=(15.5, 12.8))
-    ax = main_map(fig, [0.045, 0.20, 0.60, 0.76], A, plots, layers_gpkg)
-    wide_inset(fig, [0.052, 0.715, 0.235, 0.245], inset_gpkg)
-    fig.legend(handles=legend_handles(), loc="upper left", ncol=4,
-               bbox_to_anchor=(0.045, 0.165), frameon=False,
-               fontsize=fs["label"], labelspacing=0.6, handlelength=1.6,
-               handletextpad=0.6, columnspacing=1.6, alignment="left",
-               title_fontsize=fs["label"],
-               title="Colour = operator · shape = asset type")
-    fig.text(0.045, 0.035, "Basemap: © OpenStreetMap contributors (ODbL); "
-             "US Census TIGER/Line 2024 and CB 2024. Imagery (b–d): Esri "
-             "World Imagery, Vantor WorldView-3, 7 Sep 2025, 0.31 m.",
-             fontsize=fs["small"], color="#444")
-    fig.text(0.047, 0.972, "a", fontsize=fs["letter"], fontweight="bold")
-    fig.text(0.07, 0.972, "ARM North Slope of Alaska observatory and "
-             "neighbouring research assets, Utqiaġvik", fontsize=fs["title"])
-    axb = detail_panel(fig, [0.665, 0.625, 0.325, 0.33], A, plots,
-                       cfg["c1_box"], 17, cfg["lab_c1"], "b",
-                       "Main site: ARM C1/E10/E30 and NOAA GML BRW")
-    towers = read_layer(layers_gpkg, "detail_c1_towers_masts")
-    draw(axb, towers, facecolor="none", edgecolor="#ffd84d", lw=1.2,
-         zorder=9)
-    if len(towers):
-        t0 = towers.to_crs(3857).centroid.to_crs(4326).iloc[0]
-        label(axb, t0.x, t0.y, "Towers (OSM)", 0.58, 0.95, ha="left",
-              frac=True, dark=True, fontsize=fs["label"])
-    scalebar(axb, 200, "200 m", loc=(0.06, 0.05), color="w")
-    connect(fig, ax, cfg["c1_box"], axb)
-    axc = detail_panel(fig, [0.665, 0.335, 0.325, 0.25], A, plots,
-                       cfg["e12_box"], 16, cfg["lab_e12"], "c",
-                       "ARM E12 on the BEO, with NEON BARR and NGEE Arctic")
-    rd = read_layer(layers_gpkg, "roads_osm", cfg["e12_box"])
-    line_label(axc, rd[rd.name == "Eastfield Road"], cfg["e12_box"],
-               "Cake Eater Rd\n(OSM: Eastfield Rd)", frac=0.55, rot=82)
-    scalebar(axc, 500, "500 m", loc=(0.06, 0.05), color="w")
-    connect(fig, ax, cfg["e12_box"], axc)
-    e = A[A.key == "e12"].iloc[0]
-    zb = box_around(e.lat, e.lon, cfg["e12_half_m"])
-    outline(axc, zb, " d", color="w", dark=True)
-    axd = detail_panel(fig, [0.665, 0.035, 0.325, 0.26], A, plots, zb, 18,
-                       cfg["lab_e12_zoom"], "d", "E12 close-up (400 m)")
-    rz = read_layer(layers_gpkg, "roads_osm", zb)
-    foot = rz[rz.highway == "footway"]
-    draw(axd, foot, facecolor="none", edgecolor="#ffd84d", lw=1.0, zorder=9)
-    line_label(axd, foot, zb, "footway\n(OSM)", frac=0.2)
-    hut = read_layer(layers_gpkg, "detail_e12_buildings", zb)
-    draw(axd, hut, facecolor="none", edgecolor="#ffd84d", lw=1.2, zorder=9)
-    if len(hut):
-        h0 = hut.to_crs(3857).centroid.to_crs(4326).iloc[0]
-        label(axd, h0.x, h0.y, "Building (OSM)", 0.62, 0.62, ha="left",
-              frac=True, dark=True, fontsize=fs["label"])
-    line_label(axd, rz[rz.name == "Eastfield Road"], zb, "Cake Eater Rd",
-               frac=0.3, rot=72)
-    scalebar(axd, 50, "50 m", loc=(0.06, 0.05), color="w")
-    connect(fig, axc, zb, axd, below=True)
-    fig.savefig(path, dpi=dpi)
-    return fig
+    """The reference variant (vector main map, imagery close-ups)."""
+    return build_map_variant(layers_gpkg, inset_gpkg, "reference", path, dpi)

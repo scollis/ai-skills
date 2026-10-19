@@ -67,7 +67,7 @@ query day) is an open-ended placeholder.
 |---|---|---|---|---|---|---|
 | C1 | Central Facility, Barrow - the main site on the tundra east of the former NARL campus | 71.323 | -156.615 | 1997-12-11 – 2026-10-19 | 95 | 46 |
 | C2 | Central Facility, Atqasuk - about 99 km SSW of C1, near the Atqasuk airport and Meade River | 70.4718 | -157.407 | 1999-08-21 – 2011-01-17 | 22 | 0 |
-| E10 | Extended facility co-located with C1 (SEBS, ECOR-SF, LPM); the page repeats the C1 coordinate | 71.323 | -156.615 | 2011-01-01 – 2026-10-19 | 5 | 4 |
+| E10 | Not a site: a catch-all code for C1-area instruments that are not co-located (SEBS/LPM and ECOR-SF sit about 250 m apart); the page repeats the C1 coordinate | 71.323 | -156.615 | 2011-01-01 – 2026-10-19 | 5 | 4 |
 | E11 | Point Barrow remote ECOR/SEBS on the spit | 71.393 | -156.422 | 2011-01-01 – 2026-10-19 | 3 | 1 |
 | E12 | Snow-monitoring array on the Barrow Environmental Observatory, along Cake Eater Road | 71.27473611 | -156.64119444 | 2022-01-25 – 2026-10-19 | 9 | 9 |
 | E30 | ARM aerosol instruments in the new NOAA GML BRW building | 71.32312 | -156.61143 | 2024-07-01 – 2026-10-19 | 4 | 3 |
@@ -157,6 +157,31 @@ at E12 only). **The report gives no numeric coordinates, and the sub-array posit
 published.** All five E12 files opened carry the same coordinate, so no public source places
 the individual E12 instruments.
 
+## Location audit (2026-10-19)
+
+The most recent file of one datastream per instrument class per facility was opened through ARM
+Live (b1 preferred, then a1/c1; a0, 00 and the F1 aircraft skipped), and its lat/lon/alt was read
+from variables or global attributes. The result ships as `nsa_location_audit.csv`
+(`nsa_location_audit()`), one row per datastream with file, date, position, dtype, offset from the
+facility's page coordinate and a flag. Of 162 datastreams, 137 files carry a position:
+
+| flag | datastreams |
+|---|---|
+| C1 nominal | 66 |
+| instrument-specific or facility value | 59 |
+| rounded to 0.01 deg | 10 |
+| no position: not netCDF (movie, image or tar) | 8 |
+| no position: file over 250 MB cap | 5 |
+| no position: netCDF4-python cannot open the file | 5 |
+| no position: no lat/lon in file | 4 |
+| no position: ARM Live refuses the datastream (HTTP 403) | 2 |
+| bad: 0,0 | 1 |
+| bad: longitude sign (east) | 1 |
+| no position: no files in the last year of record | 1 |
+
+"C1 nominal" files cannot place an instrument. The positions table above lists the ones that can.
+The 250 MB per-file cap excluded the HSRL, whose last a1 files date from 2019-07-11.
+
 ## Campaigns
 
 | campaign | period | facility | reference |
@@ -193,8 +218,9 @@ holds now. Day sizes vary a lot: X-SAPR runs about 1.2 GB per day, so fetch a si
 
 - Do not plot instruments at the C1 facility coordinate. Most C1 files store the nominal
   71.323, -156.609; only the instruments in the positions table carry their own coordinate.
-- The page's E10 entry repeats the C1 coordinate even though E10 is described as directly north
-  of C1. Use the E10 files.
+- E10 is not a site. It is a catch-all code for instruments around C1 that are not co-located,
+  so never draw or label it as one place. Its files put SEBS/LPM at 71.325, -156.608 and the
+  ECOR-SF at 71.32436, -156.61482, about 250 m apart, while the page repeats the C1 coordinate.
 - S10 and S11 are 0,0 on the page and S1, S2 and X1 are null. Treat these as missing, never as
   a position.
 - Sonde files store the launch point to 0.01 degrees (about 380 m from C1), and the C1 sonde
@@ -203,6 +229,10 @@ holds now. Day sizes vary a lot: X-SAPR runs about 1.2 GB per day, so fetch a si
   RIVAL sondes 2019). Check the datastream end dates.
 - The Cimel sun-photometer file carries the AERONET "Barrow" coordinate, 2.16 km WSW of C1.
   Do not take it as where the ARM photometer sits without checking.
+- Bad position metadata found by the audit: `isssonde` (C1, to 2002) stores 0,0, and `varanal`
+  stores longitude +156.4 (east, wrong sign).
+- E11's last files are from 2016-12 even though the catalog lists `nsaecorwindE11.a1` to
+  2026-08-15.
 - `X10` is the NWS upper-air record (WMO 70026) re-served by ARM; it has no ARM DOI.
 
 ## Data DOIs
@@ -252,7 +282,8 @@ DataCite creators are the instrument mentors, translators and developers; credit
 ## Verified against
 
 2026-10-19: ARM locations page (13 NSA facility records), ARM catalog index (743 records,
-1099 NSA datastreams), 49 ARM Live files opened for coordinates, 37 DataCite DOIs resolved, and
+1099 NSA datastreams), 49 ARM Live files opened for coordinates and a 162-datastream
+most-recent-file location audit, 37 DataCite DOIs resolved, and
 20 literature DOIs checked on Crossref. `tests/test_structure_nsa.py` pins the facility table,
 the positions, the distance table and the class counts to `kernel.py` and `nsa_instruments.csv`.
 `tests/test_live_nsa.py` re-reads the locations page and the catalog.

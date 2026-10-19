@@ -1,0 +1,163 @@
+instrument_class,facility_code,datastream,file,file_date,lat,lon,alt,lat_src,lat_dtype,mb,offset_from_page_m,flag
+acred,C1,nsaacredC1.c1,nsaacredC1.c1.20081201.000000.cdf,20081201,71.31999969482422,-156.6199951171875,8.0,var:lat,float32,128.2,379.0,rounded to 0.01 deg
+aeri,C1,nsaaerisummaryC1.b1,nsaaerisummaryC1.b1.20261016.000611.nc,20261016,71.32325744628906,-156.60804748535156,28.0,var:lat,float32,13.0,250.0,instrument-specific or facility value
+aerinf,C1,nsaaerich2nf1turnC1.c1,nsaaerich2nf1turnC1.c1.20260930.000556.nc,20260930,71.32325744628906,-156.60804748535156,28.0,var:lat,float32,76.1,250.0,instrument-specific or facility value
+amc,C1,nsaamcC1.b1,nsaamcC1.b1.20241122.000000.nc,20241122,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.2,215.0,C1 nominal
+aod-mfrsr,C1,nsamfrsr7nchcalC1.c1,nsamfrsr7nchcalC1.c1.20261016.000000.nc,20261016,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.0,215.0,C1 nominal
+aod-nimfr,C1,nsanimfr7nchaod1michC1.c1,nsanimfr7nchaod1michC1.c1.20261016.000000.nc,20261016,71.322998046875,-156.60899353027344,8.0,var:lat,float32,29.9,215.0,C1 nominal
+aod-nimfr-metric,C1,nsanimfraodmetrichrC1.c1,nsanimfraodmetrichrC1.c1.20080101.000000.cdf,20080101,71.322998046875,-156.60899353027344,8.0,var:lat,float32,1.1,215.0,C1 nominal
+aodbe,C1,nsaaodbe5chC1.c1,nsaaodbe5chC1.c1.20250608.100000.nc,20250608,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.6,215.0,C1 nominal
+armbe,C1,nsaarmbecldradhiresC1.c1,nsaarmbecldradhiresC1.c1.20240101.000500.nc,20240101,,,,,,,,no position: file over 250 MB cap
+armtraj,C1,nsaarmtrajsfcC1.c1,nsaarmtrajsfcC1.c1.20260930.000000.nc,20260930,71.322998046875,-156.60899353027344,8.0,var:lat,float32,1.7,215.0,C1 nominal
+arscl,C1,nsaarsclcbh1clothC1.c1,nsaarsclcbh1clothC1.c1.20110323.000000.cdf,20110323,,,,,,0.2,,no position: no lat/lon in file
+asi,C1,nsaasiskycoverC1.b1,nsaasiskycoverC1.b1.20261017.000000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.4,215.0,C1 nominal
+caminst,C1,nsacamudsmovieC1.a1,nsacamudsmovieC1.a1.20261017.100930.mpg,20261017,,,,,,,,"no position: not netCDF (movie, image or tar)"
+camsite,C1,nsatwrcam40mC1.a1,nsatwrcam40mC1.a1.20261017.002702.jpg.tar,20261017,,,,,,,,"no position: not netCDF (movie, image or tar)"
+ceil,C1,nsaceil10mC1.b1,nsaceil10mC1.b1.20261016.000005.nc,20261016,71.322998046875,-156.60899353027344,8.0,var:lat,float32,17.5,215.0,C1 nominal
+ceilpblht,C1,nsaceilpblhtC1.b1,nsaceilpblhtC1.b1.20261016.000000.nc,20261016,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.4,215.0,C1 nominal
+cldtype,C1,nsacldtypeC1.c1,nsacldtypeC1.c1.20260630.000000.nc,20260630,71.322998046875,-156.60899353027344,8.0,var:lat,float32,9.1,215.0,C1 nominal
+cloudradarcor,C1,nsakazrcfrcormdC1.c0,nsakazrcfrcormdC1.c0.20261013.000001.nc,20261013,71.322998046875,-156.60899353027344,8.0,var:lat,float32,205.3,215.0,C1 nominal
+csphot,C1,nsacsphotzenradv3C1.a1,nsacsphotzenradv3C1.a1.20261016.202921.nc,20261016,71.31220245361328,-156.6649932861328,8.0,var:lat,float32,0.0,2156.0,instrument-specific or facility value
+diffcor,C1,nsaskyrad1duttC1.c1,nsaskyrad1duttC1.c1.20010613.000000.cdf,20010613,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.3,215.0,C1 nominal
+dl,C1,nsadlfptC1.b1,nsadlfptC1.b1.20261017.230011.cdf,20261017,71.322947,-156.61609,8.0,var:lat,float64,7.1,39.0,instrument-specific or facility value
+dlprof-wind,C1,nsadlprofwind5newsC1.c1,nsadlprofwind5newsC1.c1.20260913.000304.nc,20260913,71.32294464111328,-156.6160888671875,8.0,var:lat,float32,0.9,39.0,instrument-specific or facility value
+dlprof-wstats,C1,nsadlprofwstats4newsC1.c1,nsadlprofwstats4newsC1.c1.20261016.000000.nc,20261016,71.32294464111328,-156.6160888671875,8.0,var:lat,float32,0.8,39.0,instrument-specific or facility value
+gndrad,C1,nsagndrad60sC1.b1,nsagndrad60sC1.b1.20261017.000000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.2,215.0,C1 nominal
+gvr,C1,nsagvrC1.b1,nsagvrC1.b1.20240707.000006.cdf,20240707,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.5,215.0,C1 nominal
+gvrp,C1,nsagvrpC1.b1,nsagvrpC1.b1.20260714.000524.cdf,20260714,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.5,215.0,C1 nominal
+hsrl,C1,nsahsrl5sC1.a1,nsahsrl5sC1.a1.20190711.000000.nc,20190711,,,,,,,,no position: file over 250 MB cap
+ins,C1,nsainpC1.a1,nsainpC1.a1.20251201.184500.nc,20251201,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.0,215.0,C1 nominal
+interpsonde,C1,nsainterpolatedsondeC1.c1,nsainterpolatedsondeC1.c1.20261013.000030.nc,20261013,71.322998046875,-156.60899353027344,8.0,var:lat,float32,17.7,215.0,C1 nominal
+irt,C1,nsagndirtC1.b1,nsagndirtC1.b1.20261015.000000.nc,20261015,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.1,215.0,C1 nominal
+isssonde,C1,nsaisssonde10sC1.b1,nsaisssonde10sC1.b1.20020514.225845.cdf,20020514,0.0,0.0,12.0,var:lat,float32,0.0,,"bad: 0,0"
+kasacr,C1,nsakasacr2cfrC1.a1,nsakasacr2cfrC1.a1.20261017.235717.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,131.3,215.0,C1 nominal
+kazr,C1,nsakazrcfrgeC1.a1,nsakazrcfrgeC1.a1.20261017.230003.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,9.2,215.0,C1 nominal
+kazrarscl,C1,nsaarsclkazr1kolliasC1.c0,nsaarsclkazr1kolliasC1.c0.20260630.000000.nc,20260630,71.322998046875,-156.60899353027344,8.0,var:lat,float32,35.7,215.0,C1 nominal
+kazrarsclcloudsat,C1,nsaarsclkazrcloudsatC1.c1,nsaarsclkazrcloudsatC1.c1.20170630.000000.nc,20170630,71.322998046875,-156.60899353027344,8.0,var:lat,float32,48.4,215.0,C1 nominal
+kazrcor,C1,nsakazrcormdC1.c1,nsakazrcormdC1.c1.20140207.000000.nc,20140207,,,,,,,,no position: file over 250 MB cap
+ldis,C1,nsalpmC1.b1,nsalpmC1.b1.20261017.000000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,3.1,215.0,C1 nominal
+masc,C1,nsamascC1.b1,nsamascC1.b1.20261017.000127.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.2,215.0,C1 nominal
+mascparticles,C1,nsamascparticlesC1.c1,nsamascparticlesC1.c1.20250520.022025.nc,20250520,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.1,215.0,C1 nominal
+maws,C1,nsamawsC1.b1,nsamawsC1.b1.20261016.000007.nc,20261016,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.1,215.0,C1 nominal
+mergesonde,C1,nsamergesonde1maceC1.c1,nsamergesonde1maceC1.c1.20150629.000000.cdf,20150629,71.322998046875,-156.60899353027344,8.0,var:lat,float32,41.4,215.0,C1 nominal
+met,C1,nsametC1.b1,nsametC1.b1.20261017.000000.cdf,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.4,215.0,C1 nominal
+mettwr,C1,nsamettwrC1.b1,nsamettwrC1.b1.20031022.000000.cdf,20031022,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.7,215.0,C1 nominal
+mfr,C1,nsamfr7nch10mC1.b1,nsamfr7nch10mC1.b1.20261017.110000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.7,215.0,C1 nominal
+mfrsr,C1,nsamfrsr7nchC1.b1,nsamfrsr7nchC1.b1.20261017.110000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,2.1,215.0,C1 nominal
+microbase,C1,nsamicrobaseC1.c1,nsamicrobaseC1.c1.20251231.000000.nc,20251231,,,,,,,,no position: file over 250 MB cap
+mmcr,C1,nsammcrmomC1.b1,nsammcrmomC1.b1.20110323.000012.cdf,20110323,,,,,,,,no position: file over 250 MB cap
+mmcrmode,C1,nsammcrmode4ro200712011clothC1.c1,nsammcrmode4ro200712011clothC1.c1.20110323.000012.cdf,20110323,,,,,,0.0,,no position: netCDF4-python cannot open the file
+mpl,C1,nsaminimplC1.b1,nsaminimplC1.b1.20261017.000006.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,139.3,215.0,C1 nominal
+mplavg,C1,nsamplpolavgC1.c1,nsamplpolavgC1.c1.20100706.000030.cdf,20100706,71.322998046875,-156.60899353027344,8.0,var:lat,float32,92.4,215.0,C1 nominal
+mplcmask,C1,nsa30smplcmask1zwangC1.c1,nsa30smplcmask1zwangC1.c1.20260120.000004.nc,20260120,71.322998046875,-156.60899353027344,8.0,var:lat,float32,21.2,215.0,C1 nominal
+mplcmaskml,C1,nsamplcmaskmlC1.c1,nsamplcmaskmlC1.c1.20260120.000004.nc,20260120,71.322998046875,-156.60899353027344,8.0,var:lat,float32,115.4,215.0,C1 nominal
+mwr,C1,nsamwrlosC1.b1,nsamwrlosC1.b1.20261017.000000.cdf,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.7,215.0,C1 nominal
+mwr3c,C1,nsamwr3cC1.b1,nsamwr3cC1.b1.20261017.000000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,20.4,215.0,C1 nominal
+mwravg,C1,nsa5mwravgC1.c1,nsa5mwravgC1.c1.20070604.000000.cdf,20070604,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.0,215.0,C1 nominal
+mwrhf,C1,nsamwrhfC1.b1,nsamwrhfC1.b1.20210607.000000.cdf,20210607,71.322998046875,-156.60899353027344,8.0,var:lat,float32,4.9,215.0,C1 nominal
+mwrp,C1,nsamwrpC1.b1,nsamwrpC1.b1.20230928.000814.cdf,20230928,71.322998046875,-156.60899353027344,8.0,var:lat,float32,4.8,215.0,C1 nominal
+mwrret,C1,nsamwrret1liljclouC1.c1,nsamwrret1liljclouC1.c1.20261013.000000.nc,20261013,71.322998046875,-156.60899353027344,8.0,var:lat,float32,1.2,215.0,C1 nominal
+nimfr,C1,nsanimfr7nchC1.b1,nsanimfr7nchC1.b1.20261017.110000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,19.4,215.0,C1 nominal
+org,C1,nsaorgC1.b1,nsaorgC1.b1.20031013.000000.cdf,20031013,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.1,215.0,C1 nominal
+pblht,C1,nsapblhtsonde1mcfarlC1.c1,nsapblhtsonde1mcfarlC1.c1.20261017.230400.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.2,215.0,C1 nominal
+precipbe,C1,nsaprecipbestatsC1.c0,nsaprecipbestatsC1.c0.20260930.145800.nc,20260930,71.322998046875,-156.60899353027344,8.0,var:lat,float64,0.1,215.0,C1 nominal
+precipip,C1,nsaprecipipmpC1.a1,nsaprecipipmpC1.a1.20260930.000400.nc,20260930,71.322998046875,-156.60899353027344,8.0,var:lat,float32,2.1,215.0,C1 nominal
+qcrad,C1,nsaqcrad1longC1.c1,nsaqcrad1longC1.c1.20261009.000000.nc,20261009,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.5,215.0,C1 nominal
+qmeaerilbl,C1,nsaaerilblcloudsC1.c1,nsaaerilblcloudsC1.c1.20070606.000233.cdf,20070606,71.32286834716797,-156.61590576171875,1.0,var:lat,float32,0.7,36.0,instrument-specific or facility value
+qmemwrcol,C1,nsaqmemwrcolC1.c1,nsaqmemwrcolC1.c1.20040622.225900.cdf,20040622,71.31999969482422,-156.6199951171875,8.0,var:lat,float32,0.0,379.0,rounded to 0.01 deg
+radarcfad,C1,nsakazrcfadC1.c1,nsakazrcfadC1.c1.20170630.000000.nc,20170630,71.322998046875,-156.60899353027344,8.0,var:lat,float32,35.5,215.0,C1 nominal
+radfluxanal,C1,nsaradflux1longC1.c1,nsaradflux1longC1.c1.20250815.100000.nc,20250815,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.4,215.0,C1 nominal
+rwp,C1,nsa915rwpwindconC1.a1,nsa915rwpwindconC1.a1.20171024.000007.cdf,20171024,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.1,215.0,C1 nominal
+sirs,C1,nsasirsC1.b1,nsasirsC1.b1.20261017.000000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.6,215.0,C1 nominal
+skyrad,C1,nsaskyrad60sC1.b1,nsaskyrad60sC1.b1.20261017.000000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.4,215.0,C1 nominal
+sonde,C1,nsasondewnpnC1.b1,nsasondewnpnC1.b1.20261017.230400.nc,20261017,71.31999969482422,-156.6199951171875,13.899999618530273,var:lat,float32,0.6,379.0,rounded to 0.01 deg
+sondeadjust,C1,nsasondeadjustC1.c1,nsasondeadjustC1.c1.20120716.173000.cdf,20120716,71.31999969482422,-156.6199951171875,8.0,var:lat,float32,0.4,379.0,rounded to 0.01 deg
+sonicwind,C1,nsasonicwind3dC1.b1,nsasonicwind3dC1.b1.20261017.000000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,1.0,215.0,C1 nominal
+spectrascope,C1,nsakazrspectrascopemdC1.c0,nsakazrspectrascopemdC1.c0.20161231.230003.nc,20161231,71.322998046875,-156.60899353027344,8.0,var:lat,float32,30.5,215.0,C1 nominal
+spmf,C1,nsaspmfC1.b1,nsaspmfC1.b1.20261017.000000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,1.4,215.0,C1 nominal
+srs,C1,nsasrsC1.a1,nsasrsC1.a1.20261017.000000.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.2,215.0,C1 nominal
+surfspecalb,C1,nsasurfspecalb7nch1mlawerC1.c1,nsasurfspecalb7nch1mlawerC1.c1.20240717.080000.nc,20240717,71.322998046875,-156.60899353027344,8.0,var:lat,float32,29.3,215.0,C1 nominal
+thermocldphase,C1,nsathermocldphaseC1.c0,nsathermocldphaseC1.c0.20260120.000000.nc,20260120,71.322998046875,-156.60899353027344,8.0,var:lat,float32,33.2,215.0,C1 nominal
+tps,C1,nsatpsauxC1.b1,nsatpsauxC1.b1.20140521.000000.cdf,20140521,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.1,215.0,C1 nominal
+tropoe,C1,nsatropoeC1.c1,nsatropoeC1.c1.20260120.001002.nc,20260120,71.322998046875,-156.60899353027344,8.0,var:lat,float32,4.8,215.0,C1 nominal
+tsi,C1,nsatsiskycoverC1.b1,nsatsiskycoverC1.b1.20241030.000000.cdf,20241030,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.1,215.0,C1 nominal
+twr,C1,nsatwrC1.b1,nsatwrC1.b1.20261017.000000.cdf,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.5,215.0,C1 nominal
+varanal,C1,nsa180iopsndgv1varanaC1.c1,nsa180iopsndgv1varanaC1.c1.20080401.000000.cdf,20080401,71.30000305175781,156.39999389648438,8.0,var:lat,float32,0.7,,bad: longitude sign (east)
+wsacr,C1,nsawsacr2cfrC1.a1,nsawsacr2cfrC1.a1.20261017.235717.nc,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,125.7,215.0,C1 nominal
+wsi,C1,nsawsipatchsummaryC1.b1,nsawsipatchsummaryC1.b1.20040102.000000.cdf,20040102,,,,,,0.0,,no position: netCDF4-python cannot open the file
+wsicloud,C1,nsawsicloudsummaryC1.c1,nsawsicloudsummaryC1.c1.20040102.000000.cdf,20040102,,,,,,0.0,,no position: netCDF4-python cannot open the file
+xsapr,C1,nsaxsaprcfrC1.a1,nsaxsaprcfrC1.a1.20260804.044156.nc,20260804,71.32474517822266,-156.66773986816406,17.0,var:lat,float32,47.8,1896.0,instrument-specific or facility value
+xsapr-cmac,C1,nsaxsaprcmacppiC1.c1,nsaxsaprcmacppiC1.c1.20200924.190658.nc,20200924,71.32474517822266,-156.66773986816406,17.0,var:latitude,float32,117.1,1896.0,instrument-specific or facility value
+aod-mfrsr,C2,nsamfrsrcalC2.c1,nsamfrsrcalC2.c1.20101113.000000.cdf,20101113,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.0,0.0,instrument-specific or facility value
+aod-nimfr,C2,nsanimfraod1michC2.c1,nsanimfraod1michC2.c1.20101112.000000.cdf,20101112,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,1.6,0.0,instrument-specific or facility value
+aodbe,C2,nsaaodbe5chC2.c1,nsaaodbe5chC2.c1.20101113.100000.nc,20101113,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.5,0.0,instrument-specific or facility value
+camsite,C2,nsatwrcam3mC2.a1,nsatwrcam3mC2.a1.20110117.003122.jpg.tar,20110117,,,,,,,,"no position: not netCDF (movie, image or tar)"
+ceil,C2,nsaceilC2.b1,nsaceilC2.b1.20110117.000001.nc,20110117,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,4.8,0.0,instrument-specific or facility value
+diffcor,C2,nsaskyrad1duttC2.c1,nsaskyrad1duttC2.c1.20010619.000000.cdf,20010619,70.4718017578125,-157.40660095214844,20.0,var:lat,float32,0.3,15.0,instrument-specific or facility value
+gndrad,C2,nsagndrad60sC2.b1,nsagndrad60sC2.b1.20110117.000000.cdf,20110117,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.1,0.0,instrument-specific or facility value
+met,C2,nsametC2.b1,nsametC2.b1.20110117.000000.cdf,20110117,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.3,0.0,instrument-specific or facility value
+mettwr,C2,nsapwsC2.b1,nsapwsC2.b1.20031025.013101.cdf,20031025,70.4718017578125,-157.40660095214844,20.0,var:lat,float32,0.1,15.0,instrument-specific or facility value
+mfr,C2,nsamfr10mC2.b1,nsamfr10mC2.b1.20101118.000000.cdf,20101118,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.4,0.0,instrument-specific or facility value
+mfrsr,C2,nsamfrsrC2.b1,nsamfrsrC2.b1.20101118.000000.cdf,20101118,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,2.0,0.0,instrument-specific or facility value
+mwr,C2,nsamwrlosC2.b1,nsamwrlosC2.b1.20110103.162253.cdf,20110103,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.0,0.0,instrument-specific or facility value
+mwravg,C2,nsa5mwravgC2.c1,nsa5mwravgC2.c1.20060828.000000.cdf,20060828,70.4718017578125,-157.40660095214844,20.0,var:lat,float32,0.0,15.0,instrument-specific or facility value
+mwrret,C2,nsamwrret1liljclouC2.c2,nsamwrret1liljclouC2.c2.20101231.000038.cdf,20101231,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,1.2,0.0,instrument-specific or facility value
+nimfr,C2,nsanimfrC2.b1,nsanimfrC2.b1.20101118.000000.cdf,20101118,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.8,0.0,instrument-specific or facility value
+qcrad,C2,nsaqcrad1longC2.c1,nsaqcrad1longC2.c1.20110116.000000.cdf,20110116,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.4,0.0,instrument-specific or facility value
+radfluxanal,C2,nsaradflux1longC2.c2,nsaradflux1longC2.c2.20101013.100000.nc,20101013,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.4,0.0,instrument-specific or facility value
+skyrad,C2,nsaskyrad60sC2.b1,nsaskyrad60sC2.b1.20110117.000000.cdf,20110117,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.2,0.0,instrument-specific or facility value
+twr,C2,nsatwrC2.b1,nsatwrC2.b1.20110117.000000.cdf,20110117,70.4718017578125,-157.40699768066406,20.0,var:lat,float32,0.1,0.0,instrument-specific or facility value
+wsi,C2,nsawsipatchsummaryC2.b1,nsawsipatchsummaryC2.b1.20040101.000000.cdf,20040101,,,,,,0.0,,no position: netCDF4-python cannot open the file
+wsicloud,C2,nsawsicloudsummaryC2.c1,nsawsicloudsummaryC2.c1.20040101.000000.cdf,20040101,,,,,,0.0,,no position: netCDF4-python cannot open the file
+caminst,E10,nsacamlpmmovieE10.a1,nsacamlpmmovieE10.a1.20261017.100530.mpg,20261017,,,,,,,,"no position: not netCDF (movie, image or tar)"
+ecor,E10,nsaecorsfE10.b1,nsaecorsfE10.b1.20261017.000000.nc,20261017,71.3243637084961,-156.6148223876953,4.0,var:lat,float32,0.1,152.0,instrument-specific or facility value
+ldis,E10,nsalpmE10.b1,nsalpmE10.b1.20261017.000000.nc,20261017,71.32499694824219,-156.60800170898438,5.0,var:lat,float32,3.1,335.0,instrument-specific or facility value
+qcecor,E10,nsa30qcecorE10.c1,nsa30qcecorE10.c1.20240930.000000.nc,20240930,71.32499694824219,-156.60800170898438,5.0,var:lat,float32,0.0,335.0,instrument-specific or facility value
+sebs,E10,nsasebsE10.b1,nsasebsE10.b1.20260916.000000.cdf,20260916,71.32499694824219,-156.60800170898438,5.0,var:lat,float32,0.0,335.0,instrument-specific or facility value
+ecor,E11,nsa30ecorE11.b1,nsa30ecorE11.b1.20161206.000000.cdf,20161206,71.39299774169922,-156.4219970703125,0.0,var:lat,float32,0.0,0.0,instrument-specific or facility value
+qcecor,E11,nsa30qcecorE11.c1,nsa30qcecorE11.c1.20161206.000000.nc,20161206,71.39299774169922,-156.4219970703125,0.0,var:lat,float32,0.0,0.0,instrument-specific or facility value
+sebs,E11,nsasebsE11.b1,nsasebsE11.b1.20161007.000000.cdf,20161007,71.39299774169922,-156.4219970703125,0.0,var:lat,float32,0.0,0.0,instrument-specific or facility value
+caminst,E12,nsacamsrsmovieE12.a1,nsacamsrsmovieE12.a1.20261017.100700.mpg,20261017,,,,,,,,"no position: not netCDF (movie, image or tar)"
+camsite,E12,nsacamprecipmovieE12.a1,nsacamprecipmovieE12.a1.20261017.100100.mpg,20261017,,,,,,,,"no position: not netCDF (movie, image or tar)"
+ldis,E12,nsalpmE12.b1,nsalpmE12.b1.20261017.000000.nc,20261017,71.27473449707031,-156.6411895751953,10.0,var:lat,float32,3.1,0.0,instrument-specific or facility value
+maws,E12,nsamawsE12.b1,nsamawsE12.b1.20261017.000005.nc,20261017,71.27473449707031,-156.6411895751953,10.0,var:lat,float32,0.3,0.0,instrument-specific or facility value
+sonicwind,E12,nsasonicwind3dE12.b1,nsasonicwind3dE12.b1.20261017.000000.nc,20261017,71.27473449707031,-156.6411895751953,10.0,var:lat,float32,1.0,0.0,instrument-specific or facility value
+spmf,E12,nsaspmfE12.b1,nsaspmfE12.b1.20261017.000000.nc,20261017,71.27473449707031,-156.6411895751953,10.0,var:lat,float32,1.4,0.0,instrument-specific or facility value
+srs,E12,nsasrsE12.a1,nsasrsE12.a1.20261017.000000.nc,20261017,71.27473449707031,-156.6411895751953,10.0,var:lat,float32,0.2,0.0,instrument-specific or facility value
+wb,E12,nsawbgeonorE12.a1,nsawbgeonorE12.a1.20261017.000000.nc,20261017,71.27473449707031,-156.6411895751953,10.0,var:lat,float32,0.5,0.0,instrument-specific or facility value
+acsm,E30,nsaaosacsmtofspecE30.b1,nsaaosacsmtofspecE30.b1.20261015.000328.nc,20261015,71.3231201171875,-156.61143493652344,11.0,var:lat,float32,0.0,0.0,instrument-specific or facility value
+acsmcdce,E30,nsaacsmtofcdceE30.c1,nsaacsmtofcdceE30.c1.20261015.000328.nc,20261015,71.3231201171875,-156.61143493652344,11.0,var:lat,float32,0.1,0.0,instrument-specific or facility value
+aps,E30,nsaaosapsE30.b1,nsaaosapsE30.b1.20261017.000000.nc,20261017,71.3231201171875,-156.61143493652344,11.0,var:lat,float32,48.1,0.0,instrument-specific or facility value
+sp2,E30,nsaaossp2xrE30.b1,nsaaossp2xrE30.b1.20260531.000000.nc,20260531,71.3231201171875,-156.61143493652344,11.0,var:lat,float32,1.5,0.0,instrument-specific or facility value
+skyrad,S01,nsaskyrad60sS01.b1,nsaskyrad60sS01.b1.20261017.000000.cdf,20261017,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.4,215.0,C1 nominal
+sonde,S01,nsasondewnpnS01.b1,nsasondewnpnS01.b1.20261015.220300.nc,20261015,71.31999969482422,-156.6199951171875,20.399999618530273,var:lat,float32,0.6,379.0,rounded to 0.01 deg
+sonde,S02,nsasondewnpnS02.b1,nsasondewnpnS02.b1.20191020.215700.cdf,20191020,71.31999969482422,-156.6199951171875,8.0,var:lat,float32,0.6,516.0,rounded to 0.01 deg
+acars,X1,nsaacarsX1.a1,nsaacarsX1.a1.20080531.000000.cdf,20080531,80.0,-141.00999450683594,10363.0,var:latitude,float32,0.0,,rounded to 0.01 deg
+aeth,X1,nsaaosaeth2spotX1.a1,nsaaosaeth2spotX1.a1.20201022.160000.nc,20201022,71.322998046875,-156.6114044189453,11.0,var:lat,float32,0.0,,instrument-specific or facility value
+aip,X1,nsaaipavg1ogrenX1.c1,nsaaipavg1ogrenX1.c1.20160628.000000.cdf,20160628,71.322998046875,-156.6114044189453,11.0,var:lat,float32,0.1,,instrument-specific or facility value
+aop,X1,nsaaopclap1flynn1mX1.c1,nsaaopclap1flynn1mX1.c1.20201021.000030.nc,20201021,,,,var:lat,float32,0.9,,no position: no lat/lon in file
+aos,X1,nsaaosimpactorX1.b1,nsaaosimpactorX1.b1.20210831.000000.nc,20210831,71.322998046875,-156.6114044189453,11.0,var:lat,float32,0.1,,instrument-specific or facility value
+avhrr,X1,nsaavhrr18radX1.a1,nsaavhrr18radX1.a1.20070401.230903.hdf,20070401,,,,,,,,"no position: not netCDF (movie, image or tar)"
+ccn,X1,nsanoaaaosccn100X1.b1,nsanoaaaosccn100X1.b1.20121231.000000.cdf,20121231,71.31999969482422,-156.60000610351562,11.0,var:lat,float32,0.3,,rounded to 0.01 deg
+clap,X1,nsaaosclap3w1mX1.b1,nsaaosclap3w1mX1.b1.20201022.000030.nc,20201022,71.322998046875,-156.6114044189453,11.0,var:lat,float32,0.1,,instrument-specific or facility value
+cpc,X1,nsaaoscpcX1.b1,nsaaoscpcX1.b1.20210901.180000.nc,20210901,71.322998046875,-156.6114044189453,11.0,var:lat,float32,0.0,,instrument-specific or facility value
+ecmwfdiag,X1,nsaecmwfvarX1.c1,,,,,,,,,,no position: ARM Live refuses the datastream (HTTP 403)
+gnss,X1,nsagnssiwvX1.b1,nsagnssiwvX1.b1.20261016.010543.tro.tar,20261016,,,,,,,,"no position: not netCDF (movie, image or tar)"
+molts,X1,nsamoltsedassndclass1X1.a1,nsamoltsedassndclass1X1.a1.20130731.000000.cdf,20130731,,,,,,1.6,,no position: no lat/lon in file
+ncepgfs,X1,nsancepgfsbrwzprofX1.c1,nsancepgfsbrwzprofX1.c1.20100701.000000.cdf,20100701,71.31999969482422,-156.6199951171875,0.0,var:lat,float32,3.2,,rounded to 0.01 deg
+nephelometer,X1,nsaaosnephdry1mX1.b1,nsaaosnephdry1mX1.b1.20210831.000030.nc,20210831,71.322998046875,-156.6114044189453,11.0,var:lat,float32,0.2,,instrument-specific or facility value
+noaacrn,X1,nsa60noaacrnX1.b1,nsa60noaacrnX1.b1.20261017.010000.cdf,20261017,71.31999969482422,-156.61000061035156,15.0,var:lat,float32,0.0,,rounded to 0.01 deg
+noaarad,X1,nsanoaaradbrwX1.b1,nsanoaaradbrwX1.b1.20170922.000100.cdf,20170922,,,,,,0.2,,no position: no lat/lon in file
+precipip,X1,nsaprecipipvidX1.a1,,,,,,,,,,no position: no files in the last year of record
+psap,X1,nsaaospsap3wX1.a1,nsaaospsap3wX1.a1.20150126.000000.nc,20150126,71.322998046875,-156.6114044189453,11.0,var:lat,float32,0.1,,instrument-specific or facility value
+sp2,X1,nsaaossp2bc60sX1.b1,nsaaossp2bc60sX1.b1.20201011.000000.nc,20201011,71.323,-156.60899999999998,8.0,var:lat,float64,2.3,,C1 nominal
+tsi,X1,nsatsiskycoverX1.b1,nsatsiskycoverX1.b1.20051109.203130.cdf,20051109,71.322998046875,-156.60899353027344,8.0,var:lat,float32,0.1,,C1 nominal
+varanal,X1,nsa180varanaecmwfocnX1.c1,,,,,,,,,,no position: ARM Live refuses the datastream (HTTP 403)
+visst,X1,nsavisstpx2dterminnisX1.c1,nsavisstpx2dterminnisX1.c1.20260630.230000.cdf,20260630,74.00965881347656,-147.7408905029297,,var:latitude,float32,0.6,,instrument-specific or facility value
+nwsupa,X10,nsanwsupa1sX10.b1,nsanwsupa1sX10.b1.20160731.110028.cdf,20160731,71.28099822998047,-156.78900146484375,15.0,var:lat,float32,0.6,0.0,instrument-specific or facility value
+aeth,X3,nsaaosaeth2spotX3.a1,nsaaosaeth2spotX3.a1.20261017.000000.nc,20261017,71.3231201171875,-156.61143493652344,11.0,var:lat,float32,0.3,0.0,instrument-specific or facility value
+aop,X3,nsaaopclap1flynn1mX3.c1,nsaaopclap1flynn1mX3.c1.20261017.000030.nc,20261017,71.3231201171875,-156.61143493652344,11.0,var:lat,float32,0.9,0.0,instrument-specific or facility value
+aos,X3,nsaaosimpactorX3.b1,nsaaosimpactorX3.b1.20261017.000000.nc,20261017,71.3231201171875,-156.61143493652344,11.0,var:lat,float32,0.1,0.0,instrument-specific or facility value
+clap,X3,nsaaosclap3w1mX3.b1,nsaaosclap3w1mX3.b1.20261017.000030.nc,20261017,71.3231201171875,-156.61143493652344,11.0,var:lat,float32,0.2,0.0,instrument-specific or facility value
+cpc,X3,nsaaoswcpcX3.b1,nsaaoswcpcX3.b1.20261017.000000.nc,20261017,71.3231201171875,-156.61143493652344,11.0,var:lat,float32,0.1,0.0,instrument-specific or facility value
+nephelometer,X3,nsaaosnephdry1mX3.b1,nsaaosnephdry1mX3.b1.20261017.000030.nc,20261017,71.3231201171875,-156.61143493652344,11.0,var:lat,float32,0.3,0.0,instrument-specific or facility value
