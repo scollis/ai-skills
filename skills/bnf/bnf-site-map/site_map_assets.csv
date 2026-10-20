@@ -1,0 +1,68 @@
+key,group,marker,precise,label,lat,lon,n,classes,layer,source
+m1,ARM,*,True,M1: 42 instruments,34.34248,-87.338181,42,acsm;aos;aosmet;aps;asi;caps-pmex;ccn;ceil;co-analyzer;cpc;gndrad;hsrl;htdma;ins;irt;kazr;ldis;maws;met;mfrsr;monitorinst;mpl;msems;mwr3c;nephelometer;opc;ozone;psap;rwp;sirs;skyrad;smps;so2;sp2;tbsdts;tbsground;tbsins;tbsmet;uhsas;vdis;wb,main,ARM file position (arm-bnf-site)
+m1_aeri,ARM,o,True,M1 AERI,34.342083,-87.337982,1,aeri,detail,ARM file position (arm-bnf-site)
+m1_csphot,ARM,o,True,M1 CSPHOT,34.342201,-87.337997,1,csphot,detail,ARM file position (arm-bnf-site)
+m1_dl,ARM,o,True,M1 DL,34.342338,-87.33786,1,dl,detail,ARM file position (arm-bnf-site)
+s10_tower,ARM,s,True,S10: 14 instruments,34.343727,-87.350441,14,asi;ceil;co2flx;dts;irt;ldis;mfr;par;pgsiso;radsys;rain;sebs;stamp;twr,main,ARM file position (arm-bnf-site)
+s13,ARM,s,True,S13: 5 instruments,34.344013,-87.350624,5,irt;metwxt;par;sebs;stamp,detail,ARM file position (arm-bnf-site)
+s13_ecor,ARM,o,True,S13 ECOR,34.344002,-87.350578,1,ecor,detail,ARM file position (arm-bnf-site)
+s14,ARM,s,True,S14: 5 instruments,34.343399,-87.350861,5,irt;metwxt;par;sebs;stamp,detail,ARM file position (arm-bnf-site)
+s14_ecor,ARM,o,True,S14 ECOR,34.34338,-87.350853,1,ecor,detail,ARM file position (arm-bnf-site)
+s20,ARM,s,True,S20: 11 instruments,34.653786,-87.292679,11,gndrad;irt;met;mfrsr;msems;mwr3c;opc;sebs;sirs;skyrad;stamp,main,ARM file position (arm-bnf-site)
+s20_ecor,ARM,o,True,S20 ECOR,34.653671,-87.292671,1,ecor,detail,ARM file position (arm-bnf-site)
+s20_dl,ARM,o,True,S20 DL,34.653994,-87.292464,1,dl,detail,ARM file position (arm-bnf-site)
+s20_aeri,ARM,o,True,S20 AERI,34.653793,-87.29277,1,aeri,detail,ARM file position (arm-bnf-site)
+s3_csapr2,ARM,^,True,"S3 CSAPR, LDIS",34.630806,-87.133118,2,csapr;ldis,main,ARM file position (arm-bnf-site)
+s30,ARM,s,True,S30: 10 instruments,34.38483,-86.927902,10,gndrad;irt;ldis;met;mfrsr;rwp;sebs;sirs;skyrad;stamp,main,ARM file position (arm-bnf-site)
+s30_ecor,ARM,o,True,S30 ECOR,34.38446,-86.927841,1,ecor,detail,ARM file position (arm-bnf-site)
+s4_sacr,ARM,^,True,"S4 KASACR, LDIS, XSACR",34.464279,-87.236,3,kasacr;ldis;xsacr,main,ARM file position (arm-bnf-site)
+s40,ARM,s,True,S40: 10 instruments,34.178795,-87.453903,10,gndrad;irt;met;mfrsr;mwr;mwr3c;sebs;sirs;skyrad;stamp,main,ARM file position (arm-bnf-site)
+s40_dl,ARM,o,True,S40 DL,34.179543,-87.453466,1,dl,detail,ARM file position (arm-bnf-site)
+s40_ecor,ARM,o,True,S40 ECOR,34.17915,-87.453537,1,ecor,detail,ARM file position (arm-bnf-site)
+s40_aeri,ARM,o,True,S40 AERI,34.17897,-87.453651,1,aeri,detail,ARM file position (arm-bnf-site)
+sonde_launch,ARM,D,False,M1 sonde launch (first fix),34.349998,-87.339996,1,sonde,main,ARM file position (arm-bnf-site)
+tbs_launch,ARM,D,True,M1 TBS launch (first fix),34.341717,-87.338264,1,tbswind,detail,ARM file position (arm-bnf-site)
+u2_takeoff,ARM,o,True,U2 ArcticShark take-off (first fix),34.278336,-87.598404,1,nav-air,main,ARM file position (arm-bnf-site)
+M1_S10,anchor,,False,,34.3431035,-87.344311,0,,none,midpoint m1-s10_tower
+improve_sips1,Other,o,True,IMPROVE SIPS1,34.342904,-87.33973,1,aerosol speciation sampler,detail,bnf-research-assets: IMPROVE Sipsey Wilderness (SIPS1)
+bhfa1,Other,o,True,RAWS BHFA1,34.3441,-87.3375,1,automated dcp weather station,detail,bnf-research-assets: HADS DCP Bankhead National Forest (BHFA1)
+usgs_02450250,Other,o,True,USGS 02450250,34.28537757,-87.3989084,1,stream gauge (iv),main,bnf-research-assets: USGS Sipsey Fork Near Grayson Al (02450250)
+moua1,NOAA,o,True,COOP MOUA1,34.4884,-87.299,1,cooperative climate station,main,bnf-research-assets: NWS COOP Moulton 2 (MOUA1)
+usfs_office,Other,s,False,USFS office,34.17023,-87.40222,1,ranger district office,main,bnf-research-assets: USFS Bankhead Ranger District office
+scan_2179,Other,o,True,SCAN 2179,34.17973,-87.45618,1,soil-climate station,detail,bnf-research-assets: NRCS SCAN Sudduth Farms (2179)
+adda1,NOAA,o,True,COOP ADDA1,34.2031,-87.1814,1,cooperative climate station,main,bnf-research-assets: NWS COOP Addison (ADDA1)
+1m4,Other,o,True,AWOS 1M4,34.267,-87.6,1,surface station (awos),detail,"bnf-research-assets: Posey Field AWOS (1M4), Haleyville"
+hvla1,NOAA,o,True,COOP HVLA1,34.2311,-87.6347,1,cooperative climate station,main,bnf-research-assets: NWS COOP Haleyville (HVLA1)
+lma_k,Other,o,True,LMA K,34.6578669,-87.3436469,1,vhf lightning mapping station,main,bnf-research-assets: NALMA station K (courtland)
+9a4,Other,o,True,AWOS 9A4,34.659,-87.349,1,surface station (awos),main,bnf-research-assets: Courtland Airport AWOS (9A4)
+psl_ctd,NOAA,o,False,PSL ctd,34.66,-87.35,1,"449 mhz wind profiler, rass, surface met",main,bnf-research-assets: NOAA PSL Courtland profiler site (ctd)
+lcxa1,NOAA,o,True,USRCRN LCXA1,34.6602,-87.3462,1,climate reference station,main,bnf-research-assets: USRCRN Courtland 2 WSW (WBAN 63868)
+usgs_03586500,Other,o,True,USGS 03586500,34.67009046,-87.3172429,1,stream gauge (iv),main,bnf-research-assets: USGS Big Nance Creek At Courtland Al (03586500)
+wpta1,NOAA,o,True,COOP WPTA1,34.2448,-86.9586,1,cooperative climate station,main,bnf-research-assets: NWS COOP West Point (WPTA1)
+usgs_03576500,Other,o,True,USGS 03576500,34.373184,-86.9336049,1,stream gauge (iv),main,bnf-research-assets: USGS Flint Creek Near Falkville Al (03576500)
+lma_n,Other,o,True,LMA N,34.6174344,-87.1013386,1,vhf lightning mapping station,main,bnf-research-assets: NALMA station N (landfill)
+lma_j,Other,o,True,LMA J,34.5231382,-86.9681644,1,vhf lightning mapping station,main,bnf-research-assets: NALMA station J (hospital)
+usgs_03577119,Other,o,True,USGS 03577119,34.5061111,-86.9561111,1,stream gauge (iv),main,"bnf-research-assets: USGS Flint Creek At Red Bank Rd Se Nr Decatur, Al (03577119)"
+aqs_01_103_0011,Other,o,True,AQS 01-103-0011,34.530717,-86.967536,1,ozone and pm2.5 monitor,main,bnf-research-assets: ADEM Decatur air monitor
+cmd,Other,o,True,AWOS CMD,34.26869,-86.858,1,surface station (awos),main,bnf-research-assets: Cullman Regional Airport Folsom Field AWOS (KCMD)
+dcu,NOAA,o,True,ASOS DCU,34.65798,-86.94343,1,surface station (asos),main,bnf-research-assets: Decatur Pryor Field ASOS (KDCU)
+armor,Other,^,True,ARMOR,34.646145,-86.771527,1,c-band dual-pol radar,inset,bnf-research-assets: UAH ARMOR C-band dual-pol radar
+sonde_74001,Other,D,True,sonde 74001,34.6,-86.6333,1,radiosonde site,inset,"bnf-research-assets: Redstone Arsenal upper-air site (WMO 74001), historic"
+nws_hun,NOAA,s,False,NWS HUN,34.72419,-86.64422,1,forecast office,inset,bnf-research-assets: NWS Weather Forecast Office Huntsville (HUN)
+kgwx,NOAA,^,True,KGWX,33.89691,-88.32919,1,s-band dual-pol radar,inset,bnf-research-assets: WSR-88D KGWX (Columbus AFB)
+khtx,NOAA,^,True,KHTX,34.93055,-86.08361,1,s-band dual-pol radar,inset,bnf-research-assets: WSR-88D KHTX (Northeast Alabama)
+sonde_72230,NOAA,D,True,sonde 72230,33.1789,-86.7822,1,radiosonde site,inset,bnf-research-assets: NWS Birmingham (BMX) upper-air site (WMO 72230)
+kbmx,NOAA,^,True,KBMX,33.17194,-86.76972,1,s-band dual-pol radar,inset,bnf-research-assets: WSR-88D KBMX (Birmingham)
+neon_mayf,NEON,o,True,NEON MAYF,32.960404,-87.407571,1,core aquatic site,inset,bnf-research-assets: NEON Mayfield Creek (MAYF) met station
+neon_tall,NEON,o,True,NEON TALL,32.950461,-87.393269,1,core terrestrial site,inset,bnf-research-assets: NEON Talladega National Forest (TALL) tower
+tbna,Other,^,False,TBNA,35.98,-86.662,1,c-band terminal doppler radar,inset,bnf-research-assets: TDWR TBNA (Nashville)
+neon_blwa,NEON,o,True,NEON BLWA,32.541529,-87.798151,1,gradient aquatic site,inset,bnf-research-assets: NEON Black Warrior River (BLWA) site reference point
+neon_dela,NEON,o,True,NEON DELA,32.541733,-87.803883,1,gradient terrestrial site,inset,bnf-research-assets: NEON Dead Lake (DELA) tower
+sonde_72327,NOAA,D,True,sonde 72327,36.2333,-86.55,1,radiosonde site,inset,bnf-research-assets: NWS Nashville (OHX) upper-air site (WMO 72327)
+kohx,NOAA,^,True,KOHX,36.24722,-86.5625,1,s-band dual-pol radar,inset,bnf-research-assets: WSR-88D KOHX (Nashville)
+kmxx,NOAA,^,True,KMXX,32.53664,-85.78975,1,s-band dual-pol radar,inset,bnf-research-assets: WSR-88D KMXX (Maxwell AFB)
+tmem,Other,^,False,TMEM,34.896,-89.993,1,c-band terminal doppler radar,inset,bnf-research-assets: TDWR TMEM (Memphis)
+knqa,NOAA,^,True,KNQA,35.34472,-89.87333,1,s-band dual-pol radar,inset,bnf-research-assets: WSR-88D KNQA (Memphis)
+khpx,NOAA,^,True,KHPX,36.73666,-87.28499,1,s-band dual-pol radar,inset,bnf-research-assets: WSR-88D KHPX (Ft Campbell)
+neon_tomb,NEON,o,True,NEON TOMB,31.853431,-88.158872,1,gradient aquatic site,inset,bnf-research-assets: NEON Lower Tombigbee River (TOMB) site reference point
+neon_leno,NEON,o,True,NEON LENO,31.85386,-88.16118,1,gradient terrestrial site,inset,bnf-research-assets: NEON Lenoir Landing (LENO) tower
