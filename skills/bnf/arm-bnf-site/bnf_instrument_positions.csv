@@ -1,0 +1,25 @@
+key,kind,lat,lon,alt_m,facilities,n_instruments,instruments,example_file,offset_from_page_m,note,dist_m1_km,bearing_from_m1_deg
+m1,fixed,34.34248,-87.338181,293.0,M1;S1,42,acsm;aos;aosmet;aps;asi;caps-pmex;ccn;ceil;co-analyzer;cpc;gndrad;hsrl;htdma;ins;irt;kazr;ldis;maws;met;mfrsr;monitorinst;mpl;msems;mwr3c;nephelometer;opc;ozone;psap;rwp;sirs;skyrad;smps;so2;sp2;tbsdts;tbsground;tbsins;tbsmet;tbsmet;uhsas;vdis;wb,bnftbsinpM1.a1.20250615.164900.nc,0.4,,0.0,0.0
+m1_aeri,fixed,34.342083,-87.337982,295.0,M1,1,aeri,bnfaeriengineerM1.b1.20261018.000350.nc,47.7,,0.048,157.4
+m1_csphot,fixed,34.342201,-87.337997,293.0,M1,1,csphot,bnfcsphotsdav3M1.a1.20261004.181906.nc,35.2,,0.035,151.3
+m1_dl,fixed,34.342338,-87.33786,297.0,M1,1,dl,bnfdlppiM1.b1.20261019.235006.cdf,33.2,,0.033,118.1
+s10_tower,fixed,34.343727,-87.350441,284.0,S10,14,asi;ceil;co2flx;dts;irt;ldis;mfr;par;pgsiso;radsys;rain;sebs;stamp;twr,bnfsebsS10.b1.20261019.000000.cdf,0.3,,1.137,277.0
+s13,fixed,34.344013,-87.350624,286.0,S13,5,irt;metwxt;par;sebs;stamp,bnfsebsS13.b1.20261019.000000.cdf,0.3,,1.157,278.5
+s13_ecor,fixed,34.344002,-87.350578,290.0,S13,1,ecor,bnfecorsfwindS13.a1.20261016.000000.nc,4.3,,1.153,278.4
+s14,fixed,34.343399,-87.350861,282.0,S14,5,irt;metwxt;par;sebs;stamp,bnfmetwxtS14.b1.20261015.000000.nc,0.2,,1.171,275.0
+s14_ecor,fixed,34.34338,-87.350853,286.0,S14,1,ecor,bnfecorsfwindS14.a1.20261019.000000.nc,2.2,,1.17,274.9
+s20,fixed,34.653786,-87.292679,178.0,S20,11,gndrad;irt;met;mfrsr;msems;mwr3c;opc;sebs;sirs;skyrad;stamp,bnfmwr3ctipS20.a1.20261018.000000.nc,0.3,,34.786,6.9
+s20_ecor,fixed,34.653671,-87.292671,178.0,S20,1,ecor,bnfecorsfwindS20.a1.20261019.000000.nc,12.5,,34.773,6.9
+s20_dl,fixed,34.653994,-87.292464,178.0,S20,1,dl,bnfdlppiS20.b1.20261019.234503.cdf,30.3,,34.811,6.9
+s20_aeri,fixed,34.653793,-87.29277,180.0,S20,1,aeri,bnfaeriengineerS20.b1.20261018.000338.nc,8.7,,34.785,6.9
+s3_csapr2,fixed,34.630806,-87.133118,180.0,S3,2,csapr;ldis,bnfldS3.b1.20261019.000000.cdf,0.0,,37.119,30.4
+s30,fixed,34.38483,-86.927902,183.0,S30,10,gndrad;irt;ldis;met;mfrsr;rwp;sebs;sirs;skyrad;stamp,bnfsebsS30.b1.20261019.000000.cdf,0.3,,38.032,82.8
+s30_ecor,fixed,34.38446,-86.927841,183.8,S30,1,ecor,bnfecorsfwindS30.a1.20261019.000000.nc,41.3,,38.033,82.9
+s4_sacr,fixed,34.464279,-87.236,197.0,S4,3,kasacr;ldis;xsacr,bnfkasacrcfrspcxpolS4.a1.20261010.235633.nc,0.1,,16.457,34.8
+s40,fixed,34.178795,-87.453903,236.0,S40,10,gndrad;irt;met;mfrsr;mwr;mwr3c;sebs;sirs;skyrad;stamp,bnfmwr3ctipS40.a1.20241220.000000.nc,0.2,,21.054,210.4
+s40_dl,fixed,34.179543,-87.453466,231.0,S40,1,dl,bnfdlppiS40.b1.20261019.234503.cdf,92.2,,20.962,210.5
+s40_ecor,fixed,34.17915,-87.453537,232.0,S40,1,ecor,bnfecorsfwindS40.a1.20261019.000000.nc,51.9,,21.003,210.4
+s40_aeri,fixed,34.17897,-87.453651,230.0,S40,1,aeri,bnfaeriengineerS40.b1.20261018.000436.nc,30.3,,21.026,210.4
+sonde_launch,first fix,34.349998,-87.339996,306.1,M1,1,sonde,bnfsondewnpnM1.b1.20261019.233000.nc,,launch point stored to 0.01 deg,0.851,348.7
+tbs_launch,first fix,34.341717,-87.338264,295.2,M1,1,tbswind,bnftbswindM1.a1.20260726.222537.nc,,first GPS fix of the TBS wind sonde,0.085,185.2
+u2_takeoff,first fix,34.278336,-87.598404,298.0,U2,1,nav-air,bnfaafnavaimsU2.a1.20260916.122446.nc,,first ArcticShark navigation fix of the flight,24.987,253.5
