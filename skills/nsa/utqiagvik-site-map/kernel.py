@@ -54,7 +54,7 @@ def map_config():
             "dl": ("Doppler lidar", 0.30, 0.71, "right"),
             "mag": ("USGS magnetic obs.", 0.03, 0.43, "left"),
             "aos": ("Aerosol: ARM E30 + NOAA AOS", 0.50, 0.29, "right"),
-            "sonde": ("Sonde launch (files: 0.01°)", 0.33, 0.12, "left"),
+            "sonde": ("Sonde start point (file):\n71.31999969, -156.61999512", 0.33, 0.12, "left"),
             "brw": ("NOAA GML BRW", 0.52, 0.95, "right"),
             "sebs": ("SEBS, LPM", 0.80, 0.89, "left"),
             "aeri": ("AERI", 0.80, 0.77, "left"),
