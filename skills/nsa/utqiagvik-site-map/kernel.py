@@ -54,12 +54,11 @@ def map_config():
             "dl": ("Doppler lidar", 0.30, 0.71, "right"),
             "mag": ("USGS magnetic obs.", 0.03, 0.43, "left"),
             "aos": ("Aerosol: ARM E30 + NOAA AOS", 0.50, 0.29, "right"),
-            "sonde": ("Sonde start point (file):\n71.31999969, -156.61999512", 0.33, 0.12, "left"),
             "brw": ("NOAA GML BRW", 0.52, 0.95, "right"),
             "sebs": ("SEBS, LPM", 0.80, 0.89, "left"),
             "aeri": ("AERI", 0.80, 0.77, "left"),
             "bsrn": ("BSRN BAR\n(to 2016)", 0.80, 0.66, "left"),
-            "c1_file": ("C1 nominal\n(39 instruments)", 0.80, 0.51, "left"),
+            "c1_file": ("C1 nominal\n(39 instruments)\n+ sonde launch", 0.80, 0.51, "left"),
             "sg27": ("GNSS SG27", 0.80, 0.40, "left"),
             "crn": ("USCRN 27516", 0.80, 0.30, "left")},
         lab_e12={

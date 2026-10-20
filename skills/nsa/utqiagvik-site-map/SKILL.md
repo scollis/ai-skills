@@ -141,9 +141,11 @@ Colour gives the operator (Okabe-Ito: ARM blue, NOAA orange, NEON green, other r
 purple). Shape gives the asset type: star for a main facility or observatory,
 square for an extended facility or building, triangle for a scanning radar, circle for a station,
 diamond for a sounding launch. A **hollow marker means a nominal or rounded coordinate**: the C1
-nominal shared by 39 instruments, SEBS/LPM at 3 decimals, sondes at the 0.01-degree seed that every sounding file starts from (no measured launch position exists in the files),
+nominal shared by 39 instruments, SEBS/LPM at 3 decimals, 
 BSRN, E11 and the sea-ice mass-balance site. Historic and context places (NARL,
-the DEW Line), the ISS sonde point, CALM U1 and the Cimel/AERONET photometer are not drawn. Filled markers are
+the DEW Line), the ISS sonde point, CALM U1 and the Cimel/AERONET photometer are not drawn. Soundings are anchored to C1: every sounding file starts at the stored 0.01-degree point 71.32, -156.62
+(516 m at 230 deg from the C1 file position, with no measured launch position in the files), so the map draws no
+separate sonde marker and the C1 label carries the sonde launch. Filled markers are
 instrument-specific or surveyed positions.
 
 **E11 is drawn 1.87 km from its file coordinate.** Every E11 ECOR/SEBS file (2011-2016) and the locations page
