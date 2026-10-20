@@ -1,0 +1,145 @@
+class,facility,name,datastreams,start,end,last_file_date,active
+acsm,M1,Aerosol Chemical Speciation Monitor,bnfaosacsmM1.a0;bnfaosacsmM1.b1;bnfaosacsmM1.b2;bnfaosacsmtofspecM1.a1;bnfaosacsmtofspecM1.b1,2023-09-01,2026-10-20,2026-10-18,True
+aeri,M1,Atmospheric Emitted Radiance Interferometer,bnfaerich1M1.b1;bnfaerich2M1.b1;bnfaeriengineerM1.b1;bnfaerisummaryM1.b1,2024-10-01,2026-10-18,2026-10-18,True
+aeri,S20,Atmospheric Emitted Radiance Interferometer,bnfaerich1S20.b1;bnfaerich2S20.b1;bnfaeriengineerS20.b1;bnfaerisummaryS20.b1,2024-10-01,2026-10-18,2026-10-18,True
+aeri,S40,Atmospheric Emitted Radiance Interferometer,bnfaerich1S40.b1;bnfaerich2S40.b1;bnfaeriengineerS40.b1;bnfaerisummaryS40.b1,2024-10-01,2026-10-18,2026-10-18,True
+aimms20-air,U2,Aircraft Integrated Meteorological Measurement System aboard aircraft,bnfaafmetaims100hzU2.a1;bnfaafnavaims100hzU2.a1,2024-07-29,2026-09-13,2026-09-13,True
+aos,M1,Aerosol Observing System,bnfaosimpactorM1.a1;bnfaosimpactorM1.b1,2024-10-01,2026-10-19,2026-10-19,True
+aosmet,M1,Meteorological Measurements associated with the Aerosol Observing System,bnfaosmetM1.a1,2024-10-02,2026-10-19,2026-10-19,True
+aps,M1,Aerodynamic Particle Sizer,bnfaosapsM1.a1;bnfaosapsM1.b1,2024-02-29,2026-10-20,2026-10-07,True
+asi,M1,All Sky Imager,bnfasicldmaskM1.a1;bnfasicldmaskM1.b1;bnfasimovieM1.a1;bnfasiskycoverM1.b0;bnfasiskycoverM1.b1;bnfasiskyimageM1.a1,2023-09-01,2026-10-20,2026-10-18,True
+asi,S10,All Sky Imager,bnfasicldmaskS10.a1;bnfasicldmaskS10.b1;bnfasimovieS10.a1;bnfasiskycoverS10.b0;bnfasiskycoverS10.b1;bnfasiskyimageS10.a1,2023-09-01,2026-10-20,2026-10-18,True
+caminst,M1,camera that monitors an instrument,bnfcaminstnortheastM1.a1;bnfcaminstnortheastmovieM1.a1;bnfcaminstsouthM1.a1;bnfcaminstsouthmovieM1.a1;bnfcammwr3cM1.a1;bnfcammwr3cmovieM1.a1,2025-07-17,2026-10-19,2026-10-19,True
+camsite,M1,camera that monitors a site area,bnfcamsceneM1.a1;bnfcamscenemovieM1.a1,2023-09-01,2026-10-20,,False
+camsite,S10,camera that monitors a site area,bnfcamscene43mS10.a1;bnfcamscene43mmovieS10.a1;bnfcamsoutheast43mS10.a1;bnfcamsoutheast43mmovieS10.a1;bnfcamsoutheast4mS10.a1;bnfcamsoutheast4mmovieS10.a1;bnfcamsoutheast6mS10.a1;bnfcamsoutheast6mmovieS10.a1;bnfcamsouthwest43mS10.a1;bnfcamsouthwest43mmovieS10.a1;bnfcamsouthwest4mS10.a1;bnfcamsouthwest4mmovieS10.a1;bnfcamsouthwest6mS10.a1;bnfcamsouthwest6mmovieS10.a1;bnfcamwest43mS10.a1;bnfcamwest43mmovieS10.a1,2023-09-01,2026-10-20,2026-10-18,True
+camsite,S20,camera that monitors a site area,bnfcamsceneS20.a1;bnfcamscenemovieS20.a1,2025-09-19,2026-10-19,2026-10-19,True
+camspec-air,U2,Camera aboard an aircraft capturing thermal and multispectral imagery,bnfaafcamspecU2.a1,2024-09-30,2026-10-20,,False
+caps-pmex,M1,Cavity Attenuated Phase Shift Extinction Monitor,bnfaoscaps3wM1.a1;bnfaoscaps3wM1.b1;bnfaoscapsM1.a1;bnfaoscapsM1.b1,2023-09-01,2026-10-20,2025-06-16,False
+ccn,M1,Cloud Condensation Nuclei Particle Counter,bnfaosccn200M1.a1;bnfaosccn2colaM1.b1;bnfaosccn2colaavgM1.b1;bnfaosccn2colaspectraM1.b1;bnfaosccn2colbM1.b1;bnfaosccn2colbavgM1.b1;bnfaosccn2colbspectraM1.b1,2024-11-06,2026-10-18,2026-10-18,True
+cdp-air,U2,Cloud Droplet Probe aboard aircraft,bnfaafcdpU2.a1;bnfaafcdpU2.b1,2024-07-26,2024-08-07,2024-08-07,False
+ceil,M1,Ceilometer,bnfceil10mM1.b1;bnfceilM1.b1,2024-09-30,2026-10-18,2026-10-18,True
+ceil,S10,Ceilometer,bnfceil10mS10.b1;bnfceilS10.b1,2025-08-27,2026-10-11,2026-10-11,True
+co-analyzer,M1,Carbon Monoxide Analyzer,bnfaoscoM1.a1;bnfaoscoM1.b1,2024-10-01,2026-10-19,2026-10-19,True
+co2flx,S10,Carbon Dioxide Flux Measurement Systems,bnfco2flx22mS10.b1;bnfco2flx25mS10.b1;bnfco2flx40mS10.b1;bnfco2flx43mS10.b1;bnfco2flx45mS10.b1;bnfco2flx4mS10.b1;bnfco2flx60mS10.b1;bnfco2flxaux20mS10.a1;bnfco2flxaux22mS10.a1;bnfco2flxaux36mS10.a1;bnfco2flxaux40mS10.a1;bnfco2flxaux45mS10.a1;bnfco2flxgas22mS10.a1;bnfco2flxgas40mS10.a1;bnfco2flxgas45mS10.a1;bnfco2flxgas4mS10.a1;bnfco2flxrad4mS10.b1;bnfco2flxslo22mS10.a1;bnfco2flxslo40mS10.a1;bnfco2flxslo45mS10.a1;bnfco2flxsoilS10.b1;bnfco2flxwind22mS10.a1;bnfco2flxwind25mS10.a1;bnfco2flxwind40mS10.a1;bnfco2flxwind43mS10.a1;bnfco2flxwind45mS10.a1;bnfco2flxwind4mS10.a1;bnfco2flxwind60mS10.a1;bnfco2flxwindS10.b1;bnfco2storageS10.a1;bnfco2storageS10.b1,2023-09-01,2026-10-20,2026-10-19,True
+cpc,M1,Condensation Particle Counter,bnfaoscpcf1mM1.b1;bnfaoscpcfM1.a1;bnfaoscpcfM1.b1;bnfaoscpcu1mM1.b1;bnfaoscpcuM1.a1;bnfaoscpcuM1.b1;bnfaoscpcuf1mM1.b1;bnfaoscpcufM1.a1;bnfaoscpcufM1.b1,2023-09-01,2026-10-20,2026-10-19,True
+cpc-air,U2,Condensation particle counter aboard aircraft,bnfaafmcpcU2.a1;bnfaafmcpcU2.b1;bnfaafwcpcU2.a1;bnfaafwcpcU2.b1,2025-02-08,2026-09-16,2026-09-16,True
+csapr,S3,C-Band Scanning ARM Precipitation Radar,bnfcsapr2cfrS3.a1;bnfcsapr2cfrcrcS3.a1;bnfcsapr2cfrcrcauxS3.a0;bnfcsapr2cfrhcaS3.a0;bnfcsapr2cfrhsrhiS3.a1;bnfcsapr2cfrhsrhiauxS3.a0;bnfcsapr2cfrmrhiS3.a1;bnfcsapr2cfrmrhiauxS3.a0;bnfcsapr2cfrppiS3.a1;bnfcsapr2cfrppiauxS3.a0;bnfcsapr2cfrqcS3.b1;bnfcsapr2cfrrhiS3.a1;bnfcsapr2cfrrhiauxS3.a0;bnfcsapr2cfrzppiS3.a1;bnfcsapr2cfrzppiauxS3.a0,2024-04-06,2026-10-20,2026-10-15,True
+csphot,M1,Sunphotometer,bnfcsphotalmM1.a1;bnfcsphotalmv3M1.a1;bnfcsphotaodfiltqav3M1.a1;bnfcsphotaodfiltv3M1.a1;bnfcsphotaodlunarfiltqav3M1.a1;bnfcsphotaodlunarfiltv3M1.a1;bnfcsphotaodlunarv3M1.a1;bnfcsphotaodv3M1.a1;bnfcsphotaotM1.a1;bnfcsphotaotfiltM1.a1;bnfcsphotaotfiltqaM1.a1;bnfcsphothybv3M1.a1;bnfcsphotppM1.a1;bnfcsphotppv3M1.a1;bnfcsphotsdafiltqav3M1.a1;bnfcsphotsdafiltv3M1.a1;bnfcsphotsdalunarfiltqav3M1.a1;bnfcsphotsdalunarfiltv3M1.a1;bnfcsphotsdalunarv3M1.a1;bnfcsphotsdav3M1.a1;bnfcsphotzenradv3M1.a1,2023-09-01,2026-10-20,2026-10-16,True
+dl,M1,Doppler Lidar,bnfdlacfM1.a1;bnfdlcal1M1.b1;bnfdlcal2M1.b1;bnfdlfptM1.b1;bnfdlppi2M1.b1;bnfdlppiM1.b1;bnfdlrhi2M1.b1;bnfdlrhiM1.b1;bnfdlusrM1.b1,2023-09-01,2026-10-20,2026-10-19,True
+dl,S1,Doppler Lidar,bnfdlfptS1.b1;bnfdlppi2S1.b1;bnfdlppiS1.b1,2025-06-07,2026-10-20,2026-07-27,False
+dl,S20,Doppler Lidar,bnfdlacfS20.a1;bnfdlcal1S20.b1;bnfdlcal2S20.b1;bnfdlfptS20.b1;bnfdlppi2S20.b1;bnfdlppiS20.b1;bnfdlrhi2S20.b1;bnfdlrhiS20.b1;bnfdlusrS20.b1,2024-09-05,2026-10-20,2026-10-19,True
+dl,S40,Doppler Lidar,bnfdlacfS40.a1;bnfdlcal1S40.b1;bnfdlcal2S40.b1;bnfdlfptS40.b1;bnfdlppi2S40.b1;bnfdlppiS40.b1;bnfdlrhi2S40.b1;bnfdlrhiS40.b1;bnfdlusrS40.b1,2024-09-30,2026-10-20,2026-10-19,True
+dts,S10,Distributed Temperature Sensing,bnftowerdtsch1S10.b1;bnftowerdtsch2S10.b1;bnftowerdtsch3S10.b1;bnftowerdtsch4S10.b1;bnftowerdtssxch1S10.00;bnftowerdtssxch2S10.00;bnftowerdtssxch3S10.00;bnftowerdtssxch4S10.00,2023-09-01,2026-10-20,2026-10-18,True
+ecor,S13,Eddy Correlation Flux Measurement System,bnfecorsfS13.b1;bnfecorsfwindS13.a1,2025-05-28,2026-10-16,2026-10-16,True
+ecor,S14,Eddy Correlation Flux Measurement System,bnfecorsfS14.b1;bnfecorsfwindS14.a1,2025-04-09,2026-10-19,2026-10-19,True
+ecor,S20,Eddy Correlation Flux Measurement System,bnfecorsfS20.b1;bnfecorsfwindS20.a1,2024-10-01,2026-10-19,2026-10-19,True
+ecor,S30,Eddy Correlation Flux Measurement System,bnfecorsfS30.b1;bnfecorsfwindS30.a1,2024-10-01,2026-10-19,2026-10-19,True
+ecor,S40,Eddy Correlation Flux Measurement System,bnfecorsfS40.b1;bnfecorsfwindS40.a1,2024-10-01,2026-10-19,2026-10-19,True
+filteraerosol-air,U2,"ARM Aerial Facility (AAF) - Unmanned Aircraft Systems, Filter Aerosol Sampler",bnfaaffiltsampU2.a1;bnfaaffiltsampU2.b1,2024-07-23,2026-09-16,2026-09-16,True
+gndrad,M1,Ground Radiometers on Stand for Upwelling Radiation,bnfgndrad20sM1.a0;bnfgndrad60sM1.b1;bnfgndradM1.00,2023-09-01,2026-10-20,2026-10-19,True
+gndrad,S20,Ground Radiometers on Stand for Upwelling Radiation,bnfgndrad20sS20.a0;bnfgndrad60sS20.b1,2024-09-30,2026-10-20,2026-10-19,True
+gndrad,S30,Ground Radiometers on Stand for Upwelling Radiation,bnfgndrad20sS30.a0;bnfgndrad60sS30.b1,2024-09-30,2026-10-20,2026-10-19,True
+gndrad,S40,Ground Radiometers on Stand for Upwelling Radiation,bnfgndrad20sS40.a0;bnfgndrad60sS40.b1,2024-09-30,2026-10-20,2026-10-19,True
+h2o-air,U2,Water Vapor Analyzer aboard aircraft,bnfaafh2oU2.a1;bnfaafh2oU2.b1,2026-07-29,2026-09-16,2026-09-16,True
+hsrl,M1,High Spectral Resolution Lidar,bnfhsrl5sM1.a1;bnfhsrlM1.a1;bnfhsrlscanM1.a1,2025-03-11,2026-10-18,2026-10-18,True
+htdma,M1,Humidified Tandem Differential Mobility Analyzer,bnfaoshtdmaM1.a1;bnfaoshtdmaM1.b1,2024-10-28,2024-11-17,2024-11-17,False
+ins,M1,Ice Nucleation Spectrometer for INP measurement,bnfinpM1.00;bnfinpM1.a1,2024-10-07,2025-07-07,2025-07-07,False
+irt,M1,Infrared Thermometer,bnfirt200msM1.a1;bnfirtM1.b1,2024-10-01,2025-08-07,2025-08-07,False
+irt,S10,Infrared Thermometer,bnfgndirt21mS10.a0;bnfgndirt21mS10.b1;bnfgndirt42mS10.a0;bnfgndirt42mS10.b1;bnfgndirt43mS10.a0;bnfgndirt43mS10.b1;bnfgndirt4mS10.b1;bnfgndirt6mS10.a0;bnfgndirt6mS10.b1,2023-09-01,2026-10-20,2026-10-19,True
+irt,S13,Infrared Thermometer,bnfgndirt2mS13.a0;bnfgndirt2mS13.b1;bnfgndirt8mS13.a0;bnfgndirt8mS13.b1;bnfgndirtS13.b1,2023-09-01,2026-10-20,2026-10-19,True
+irt,S14,Infrared Thermometer,bnfgndirt2mS14.a0;bnfgndirt2mS14.b1;bnfgndirt8mS14.a0;bnfgndirt8mS14.b1;bnfgndirtS14.b1,2023-09-01,2026-10-20,2026-10-19,True
+irt,S20,Infrared Thermometer,bnfirt200msS20.a1;bnfirtS20.b1,2024-10-01,2025-06-30,2025-06-30,False
+irt,S30,Infrared Thermometer,bnfirt200msS30.a1;bnfirtS30.b1,2024-10-01,2025-08-04,2025-08-04,False
+irt,S40,Infrared Thermometer,bnfirt200msS40.a1;bnfirtS40.b1,2024-10-04,2025-08-04,2025-08-04,False
+irt-air,U2,Infrared Thermometer - Airborne,bnfaafirtU2.a1;bnfaafirtU2.b1,2024-07-23,2026-09-16,2026-09-16,True
+kasacr,S4,Ka-Band Scanning ARM Cloud Radar,bnfkasacrcfrS4.a1;bnfkasacrcfrauxS4.a0;bnfkasacrcfrqcS4.b1;bnfkasacrcfrspccopolS4.a1;bnfkasacrcfrspccrossS4.a1;bnfkasacrcfrspcxpolS4.a1,2023-09-01,2026-10-20,2026-10-19,True
+kazr,M1,Ka ARM Zenith Radar,bnfkazr2cfrgeM1.a1;bnfkazr2cfrgeauxM1.a0;bnfkazr2cfrgeqcM1.b1;bnfkazr2cfrmdM1.a1;bnfkazr2cfrmdauxM1.a0;bnfkazr2cfrmdqcM1.b1;bnfkazr2cfrprM1.a1;bnfkazr2cfrprauxM1.a0;bnfkazr2cfrprqcM1.b1;bnfkazr2cfrspcgecopolM1.a1;bnfkazr2cfrspcgecrossM1.a1;bnfkazr2cfrspcgexpolM1.a1;bnfkazr2cfrspcmdcopolM1.a1;bnfkazr2cfrspcmdcrossM1.a1;bnfkazr2cfrspcmdxpolM1.a1;bnfkazr2cfrspcprcopolM1.a1;bnfkazr2cfrspcprcrossM1.a1;bnfkazr2cfrspcprxpolM1.a1,2023-09-01,2026-10-20,2026-10-19,True
+ldis,M1,Laser Disdrometer,bnfldM1.b1,2024-10-01,2026-10-19,2026-10-19,True
+ldis,S10,Laser Disdrometer,bnfld43mS10.b1,2025-04-30,2026-10-19,2026-10-19,True
+ldis,S3,Laser Disdrometer,bnfldS3.b1,2026-06-04,2026-10-19,2026-10-19,True
+ldis,S30,Laser Disdrometer,bnfldS30.b1,2024-10-01,2026-10-19,2026-10-19,True
+ldis,S4,Laser Disdrometer,bnfldS4.b1,2026-05-21,2026-10-19,2026-10-19,True
+maws,M1,Automatic Weather Station,bnfmawsM1.b1,2024-10-01,2026-10-19,2026-10-19,True
+met,M1,Surface Meteorological Instrumentation,bnfmetM1.b1,2024-10-01,2026-10-19,2026-10-19,True
+met,S20,Surface Meteorological Instrumentation,bnfmetS20.b1,2024-10-01,2026-10-19,2026-10-19,True
+met,S30,Surface Meteorological Instrumentation,bnfmetS30.b1,2024-10-01,2026-10-19,2026-10-19,True
+met,S40,Surface Meteorological Instrumentation,bnfmetS40.b1,2024-10-01,2026-10-19,2026-10-19,True
+met-air,U2,Meteorological Instrumentation aboard Aircraft,bnfaafmetaimsU2.a1;bnfaafmetaimsU2.b1;bnfaaftempfiboptU2.a1;bnfaaftempfiboptU2.b1;bnfaaftrhU2.a1;bnfaaftrhU2.b1,2024-07-23,2026-09-20,2026-09-20,True
+metwxt,S13,WXT520/530 Meteorological Instrument System,bnfmetwxtS13.b1,2025-05-12,2026-10-14,2026-10-14,True
+metwxt,S14,WXT520/530 Meteorological Instrument System,bnfmetwxtS14.b1,2024-11-30,2026-10-15,2026-10-15,True
+mfr,S10,Multifilter Radiometer,bnfmfr7nch10mS10.a0;bnfmfr7nch10mS10.b1;bnfmfr7nch36mS10.a0;bnfmfr7nch36mS10.b1;bnfmfr7nch43mS10.a0;bnfmfr7nch43mS10.b1,2023-09-01,2026-10-20,2026-09-23,True
+mfrsr,M1,Multifilter Rotating Shadowband Radiometer,bnfmfrsr7nchM1.a0;bnfmfrsr7nchM1.b1;bnfmfrsraux7nchM1.a0,2023-09-01,2026-10-20,2026-10-19,True
+mfrsr,S20,Multifilter Rotating Shadowband Radiometer,bnfmfrsr7nchS20.b1;bnfmfrsrS20.a0;bnfmfrsrS20.b1;bnfmfrsrauxS20.a0,2024-09-20,2026-10-20,2026-10-19,True
+mfrsr,S30,Multifilter Rotating Shadowband Radiometer,bnfmfrsr7nchS30.b1;bnfmfrsrS30.a0;bnfmfrsrS30.b1;bnfmfrsrauxS30.a0,2024-08-20,2026-10-20,2026-10-19,True
+mfrsr,S40,Multifilter Rotating Shadowband Radiometer,bnfmfrsr7nchS40.b1;bnfmfrsrS40.a0;bnfmfrsrS40.b1;bnfmfrsraux7nchS40.a0,2024-08-26,2026-10-20,2026-10-19,True
+monitorinst,M1,sensors for providing instrument system monitoring,bnfaosptrhM1.a1;bnfaosptrhM1.b1,2024-09-03,2026-10-20,2026-10-19,True
+mpl,M1,Micropulse Lidar,bnfmplpolfsM1.b1;bnfmplpolfsextM1.a1,2024-10-01,2026-10-19,2026-10-19,True
+msems,M1,Miniatured Scanning Electrical Mobility Sizer,bnfminiaosmsemsM1.a1;bnfminiaosmsemsM1.b1,2025-11-10,2026-10-20,2026-07-02,False
+msems,S20,Miniatured Scanning Electrical Mobility Sizer,bnfminiaosmsemsS20.a1;bnfminiaosmsemsS20.b1,2026-07-11,2026-10-20,2026-10-18,True
+msems-air,U2,ARM Aerial Facility (AAF) Miniaturized Scanning Electrical Mobility Sizer,bnfaafmsemsU2.a1;bnfaafmsemsU2.b1,2025-03-11,2025-06-20,2025-06-20,False
+mwr,S40,Microwave Radiometer,bnfmwrlosS40.b1;bnfmwrtipS40.a1,2025-01-06,2026-10-19,2026-10-19,True
+mwr3c,M1,"Microwave Radiometer, 3 Channel",bnfmwr3cM1.b1;bnfmwr3ctipM1.a1,2025-01-02,2026-10-19,2026-10-19,True
+mwr3c,S20,"Microwave Radiometer, 3 Channel",bnfmwr3cS20.b1;bnfmwr3ctipS20.a1,2024-10-01,2026-10-18,2026-10-18,True
+mwr3c,S40,"Microwave Radiometer, 3 Channel",bnfmwr3cS40.b1;bnfmwr3ctipS40.a1,2024-10-01,2024-12-20,2024-12-20,False
+nav-air,U2,"Navigational Location, Motion, and Attitude for Airborne Platforms",bnfaafnavU2.b1;bnfaafnavaimsU2.a1;bnfaafnavpiccoloU2.a1;bnfaafnavvecU2.a1,2024-05-07,2026-09-16,2026-09-16,True
+nephelometer,M1,Nephelometer,bnfaosnephdry1mM1.b1;bnfaosnephdryM1.a1;bnfaosnephdryM1.b1;bnfaosnephwet1mM1.b1;bnfaosnephwetM1.a1;bnfaosnephwetM1.b1,2023-09-01,2026-10-20,2026-10-19,True
+opc,M1,Optical Particle Counter,bnfminiaosopcM1.a1;bnfminiaosopcM1.b1,2025-11-15,2026-07-02,2026-07-02,False
+opc,S20,Optical Particle Counter,bnfminiaosopcS20.a1;bnfminiaosopcS20.b1,2026-07-12,2026-10-19,2026-10-19,True
+opc-air,U2,Optical Particle Counter aboard aircraft,bnfaafmopcU2.a1;bnfaafmopcU2.b1,2024-07-23,2026-09-16,2026-09-16,True
+ozone,M1,Ozone Monitor,bnfaoso3M1.a1;bnfaoso3M1.b0;bnfaoso3M1.b1;bnfaoso3calM1.b0,2024-10-08,2026-07-27,2026-07-27,False
+par,S10,Photosynthetically Active Radiation Sensors,bnfparS10.b1,2024-08-05,2026-10-19,2026-10-19,True
+par,S13,Photosynthetically Active Radiation Sensors,bnfparS13.b1,2025-05-13,2026-10-14,2026-10-14,True
+par,S14,Photosynthetically Active Radiation Sensors,bnfparS14.b1,2025-05-28,2026-10-14,2026-10-14,True
+pgsiso,S10,Precision Gas System Isotope Analyzer,bnfpgsisoS10.a1;bnfpgsisoS10.b0;bnfpgsisoS10.b1;bnfpgsisoauxS10.00;bnfpgsisocoeffS10.b1;bnfpgsisospectraS10.00,2023-09-01,2026-10-20,2026-10-19,True
+pops-air,U2,portable optical particle spectrometer aboard an airborne platform,bnfaafpopsU2.a1;bnfaafpopsU2.b1,2024-07-29,2026-09-16,2026-09-16,True
+psap,M1,Particle Soot Absorption Photometer,bnfaospsap3w1mM1.b1;bnfaospsap3w1sM1.b1;bnfaospsap3wM1.a1;bnfaospsap3wM1.b1,2024-10-01,2026-10-19,2026-10-19,True
+psap-air,M1,Particle soot absorption photometer aboard aircraft,bnfaafpsaprM1.a0,2023-09-01,2026-10-20,,False
+radsys,S10,SPN1 and high quality upwelling and downwelling pyrgeometers and pyranometers.,bnfradsys2m60sS10.b1;bnfradsys2mS10.a0;bnfradsys2mS10.a1;bnfradsys43m60sS10.b1;bnfradsys43mS10.a0;bnfradsys43mS10.a1;bnftowerrad2mS10.b1;bnftowerrad43mS10.b1,2023-09-01,2026-10-20,2026-10-19,True
+rain,S10,Rain Gauge,bnftowermettbS10.a1,2025-04-15,2026-10-19,2026-10-19,True
+rl,M1,Raman Lidar,bnfrlM1.a0;bnfrllogM1.a0,2023-09-01,2026-10-20,,False
+rwp,M1,Radar Wind Profiler,bnf915rwpprecipavghiresM1.a1;bnf915rwpprecipmomhiM1.a0;bnf915rwpprecipmomloM1.a0;bnf915rwpprecipspechiM1.a0;bnf915rwpprecipspecloM1.a0;bnf915rwpwindavgM1.a1;bnf915rwpwindavghiresM1.a1;bnf915rwpwindcnsM1.a1;bnf915rwpwindmomhiM1.a0;bnf915rwpwindmomloM1.a0;bnf915rwpwindspechiM1.a0;bnf915rwpwindspecloM1.a0,2024-09-11,2026-10-16,2026-09-29,True
+rwp,S30,Radar Wind Profiler,bnf915rwpprecipavghiresS30.a1;bnf915rwpprecipmomhiS30.a0;bnf915rwpprecipmomloS30.a0;bnf915rwpprecipspechiS30.a0;bnf915rwpprecipspecloS30.a0;bnf915rwpwindavgS30.a1;bnf915rwpwindavghiresS30.a1;bnf915rwpwindcnsS30.a1;bnf915rwpwindmomhiS30.a0;bnf915rwpwindmomloS30.a0;bnf915rwpwindspechiS30.a0;bnf915rwpwindspecloS30.a0,2024-08-23,2026-10-19,2026-10-19,True
+sebs,S10,Surface Energy Balance System,bnfsebsS10.b1,2025-03-27,2026-10-19,2026-10-19,True
+sebs,S13,Surface Energy Balance System,bnfsebsS13.b1,2025-05-01,2026-10-19,2026-10-19,True
+sebs,S14,Surface Energy Balance System,bnfsebsS14.b1,2025-04-10,2026-10-19,2026-10-19,True
+sebs,S20,Surface Energy Balance System,bnfsebsS20.b1,2025-01-08,2026-10-19,2026-10-19,True
+sebs,S30,Surface Energy Balance System,bnfsebsS30.b1,2025-01-07,2026-10-19,2026-10-19,True
+sebs,S40,Surface Energy Balance System,bnfsebsS40.b1,2025-01-07,2026-10-19,2026-10-19,True
+sirs,M1,Solar and Infrared Radiation Station for Downwelling and Upwelling Radiation,bnfsirs20sM1.a0;bnfsirsM1.a0;bnfsirsM1.a1;bnfsirsM1.a2;bnfsirsM1.b1,2023-09-01,2026-10-20,2026-10-19,True
+sirs,S20,Solar and Infrared Radiation Station for Downwelling and Upwelling Radiation,bnfsirsS20.b1,2024-10-01,2026-10-19,2026-10-19,True
+sirs,S30,Solar and Infrared Radiation Station for Downwelling and Upwelling Radiation,bnfsirsS30.b1,2024-10-01,2026-10-19,2026-10-19,True
+sirs,S40,Solar and Infrared Radiation Station for Downwelling and Upwelling Radiation,bnfsirsS40.b1,2024-10-01,2026-10-19,2026-10-19,True
+skyrad,M1,Sky Radiometers on Stand for Downwelling Radiation,bnfskyrad20sM1.a0;bnfskyrad60sM1.b1;bnfskyradM1.00,2023-09-01,2026-10-20,2026-10-19,True
+skyrad,S20,Sky Radiometers on Stand for Downwelling Radiation,bnfskyrad20sS20.a0;bnfskyrad60sS20.b1,2024-09-30,2026-10-20,2026-10-19,True
+skyrad,S30,Sky Radiometers on Stand for Downwelling Radiation,bnfskyrad20sS30.a0;bnfskyrad60sS30.b1,2024-09-30,2026-10-20,2026-10-19,True
+skyrad,S40,Sky Radiometers on Stand for Downwelling Radiation,bnfskyrad20sS40.a0;bnfskyrad60sS40.b1,2024-09-30,2026-10-20,2026-10-19,True
+smps,M1,Scanning mobility particle sizer,bnfaossmpsM1.a1;bnfaossmpsM1.b1;bnfaossmpstrhM1.a1,2023-09-01,2026-10-20,2026-10-19,True
+so2,M1,Sulfur Dioxide Monitor,bnfaosso2M1.a1;bnfaosso2M1.b0;bnfaosso2M1.b1;bnfaosso2calM1.b0,2024-10-08,2026-10-19,2026-10-19,True
+sonde,M1,Balloon-Borne Sounding System,bnfsondewnpnM1.b1,2024-10-01,2026-10-20,2026-10-19,True
+sp2,M1,Single Particle Soot Photometer,bnfaossp2auxM1.a0;bnfaossp2xrM1.b1;bnfaossp2xrauxM1.a1;bnfaossp2xrpbpM1.a1,2023-09-01,2026-10-20,2026-10-19,True
+stamp,S10,Soil Temperature and Moisture Profiles,bnfstampS10.b1;bnfstamppcpS10.b1,2025-06-03,2026-10-19,2026-10-19,True
+stamp,S13,Soil Temperature and Moisture Profiles,bnfstampS13.b1;bnfstamppcpS13.b1,2025-06-03,2026-10-19,2026-10-19,True
+stamp,S14,Soil Temperature and Moisture Profiles,bnfstampS14.b1;bnfstamppcpS14.b1,2025-05-22,2026-10-19,2026-10-19,True
+stamp,S20,Soil Temperature and Moisture Profiles,bnfstampS20.b1;bnfstamppcpS20.b1,2024-10-01,2026-10-19,2026-10-19,True
+stamp,S30,Soil Temperature and Moisture Profiles,bnfstampS30.b1;bnfstamppcpS30.b1,2024-10-01,2026-10-19,2026-10-19,True
+stamp,S40,Soil Temperature and Moisture Profiles,bnfstampS40.b1;bnfstamppcpS40.b1,2024-10-01,2026-10-19,2026-10-19,True
+stereocam,S10,Stereo Cameras for Clouds,bnfstereocamaS10.a1;bnfstereocamamovieS10.a1;bnfstereocambS10.a1;bnfstereocambmovieS10.a1,2025-06-28,2026-10-19,2026-10-18,True
+tap-air,U2,Tricolor Absorption Photometer aboard aircraft,bnfaafstapU2.a1;bnfaafstapU2.b1,2024-07-23,2026-09-16,2026-09-16,True
+tbscpc,M1,Condensation Particle Counter aboard Tethered Balloon System,bnftbscpcM1.b1,2025-03-21,2026-07-26,2026-07-26,False
+tbscpc,S1,Condensation Particle Counter aboard Tethered Balloon System,bnftbscpcS1.b1,2026-03-29,2026-05-14,2026-05-14,False
+tbsdts,M1,Distributed Temperature Sensing aboard Tethered Balloon System,bnftbsdtsch1M1.b1;bnftbsdtsch2M1.b1,2025-03-01,2026-10-20,2026-05-17,False
+tbsdts,S1,Distributed Temperature Sensing aboard Tethered Balloon System,bnftbsdtsch1S1.b1;bnftbsdtsch2S1.b1,2024-10-01,2026-10-20,,False
+tbsground,M1,Tethered Balloon System Ground Measurement,bnftbsgroundM1.b1,2025-03-24,2026-10-19,2026-10-19,True
+tbsins,M1,Ice Nucleation Spectrometer for INP measurements aboard Tethered Balloon System,bnftbsinpM1.00;bnftbsinpM1.a1,2025-03-21,2025-06-15,2025-06-15,False
+tbsins,S1,Ice Nucleation Spectrometer for INP measurements aboard Tethered Balloon System,bnftbsinpS1.a1,2025-02-01,2026-10-20,,False
+tbsmet,M1,Meteorological Instrumentation aboard TBS,bnftbsimetM1.a1;bnftbsimetM1.b1;bnftbsimetxq2M1.b1,2025-03-21,2026-07-27,2026-07-27,False
+tbsmet,S1,Meteorological Instrumentation aboard TBS,bnftbsimetS1.a1;bnftbsimetS1.b1;bnftbsimetxq2S1.b1,2026-03-29,2026-05-14,2026-05-14,False
+tbspops,M1,Portable Optical Particle Spectrometer aboard Tethered Balloon System,bnftbspopsM1.b1,2025-03-21,2026-07-27,2026-07-27,False
+tbspops,S1,Portable Optical Particle Spectrometer aboard Tethered Balloon System,bnftbspopsS1.b1,2026-03-29,2026-05-14,2026-05-14,False
+tbswind,M1,Anemometers aboard Tethered Balloon System,bnftbswind3dM1.a1;bnftbswind3dM1.b1;bnftbswindM1.a1;bnftbswindM1.b1,2025-03-21,2026-10-20,2026-07-26,False
+tbswind,S1,Anemometers aboard Tethered Balloon System,bnftbswind3dS1.a1;bnftbswind3dS1.b1;bnftbswindS1.a1;bnftbswindS1.b1,2026-03-16,2026-10-20,2026-05-10,False
+twr,S10,Facility-specific multi-level Meteorological Instrumentation,bnftowermet10mS10.a1;bnftowermet15mS10.a1;bnftowermet20mS10.a1;bnftowermet36mS10.a1;bnftowermet38mS10.a1;bnftowermet43mS10.a1;bnftowermetS10.b1,2025-04-15,2026-10-19,2026-10-19,True
+uhsas,M1,Ultra-High Sensitivity Aerosol Spectrometer,bnfaosuhsasM1.a1;bnfaosuhsasM1.b1,2024-10-01,2026-10-19,2026-10-19,True
+vdis,M1,Video Disdrometer,bnfvdisM1.b1;bnfvdisdropsM1.b1,2024-11-20,2026-10-18,2026-10-18,True
+wb,M1,Weighing Bucket Precipitation Gauge,bnfwbpluvio2M1.a1,2024-09-06,2026-10-19,2026-10-19,True
+xsacr,S4,X-Band Scanning ARM  Cloud Radar,bnfxsacrcfrS4.a1;bnfxsacrcfrauxS4.a0;bnfxsacrcfrqcS4.b1;bnfxsacrcfrspccopolS4.a1;bnfxsacrcfrspccrossS4.a1;bnfxsacrcfrspcxpolS4.a1,2024-04-06,2026-10-20,2026-10-19,True

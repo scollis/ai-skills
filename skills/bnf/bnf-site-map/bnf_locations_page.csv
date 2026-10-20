@@ -1,0 +1,14 @@
+facility,name,lat,lon,alt,start,classes
+M1,"Bankhead National Forest, AL, AMF3 (Main Site)",34.342481,-87.338177,293.0,2024-10-01,acsm;acsmcdce;aeri;aerinf;aod-mfrsr;aop;aos;aosmet;aps;armtraj;armtraj-air;asi;caminst;caps-pmex;ccn;ccnkappa;ceil;ceilpblht;cldtype;cloudradarcor;co-analyzer;cpc;csphot;dl;dlprof-wind;dlprof-wstats;gndrad;hsrl;htdma;ins;interpsonde;irt;kazr;kazrarscl;ldis;ldquants;maws;mergedaerosol;mergedsmpsaps;mergedsmpsapsml;met;mfrsr;monitorinst;mpl;mplcmask;msems;mwr3c;mwrretv2;nephelometer;opc;ozone;pblht;pblhtbeml;precipbe;psap;qcrad;rl;rlprof;rlprofmr;rlproftemp;rwp;rwpprecipcor;sirs;skyrad;smps;so2;sonde;sondegrid;sondeparam;sp2;spectrascope;synopweareg;tbscpc;tbsdts;tbsground;tbsins;tbsmerged;tbsmet;tbspops;tbswind;thermocldphase;tropoe;uhsas;varanal;vdis;vdisquants;wb
+S1,"Bankhead National Forest, AL, AMF3 (Collocated Main Site) ",34.342481,-87.338177,293.0,2024-10-01,dl;tbscpc;tbsmet;tbspops;tbswind
+S2,"Bankhead National Forest, AL, AMF3 (Collocated Main Site)",34.342481,-87.338177,293.0,2024-10-01,
+S3,"Bankhead National Forest, AL, AMF3 (for CSAPR2 near Main Site)",34.630806,-87.133118,180.0,2024-10-01,csapr;csapr2-cmac;ldis;radclss;squire
+S4,"Bankhead National Forest, AL, AMF3 (for SACR near Main Site)",34.464279,-87.236001,197.0,2024-10-01,kasacr;kasacrgridppi;kasacrgridrhi;ldis;xsacr;xsacrgridppi;xsacrgridrhi
+S10,"Bankhead National Forest, AL, AMF3 (Tower Site)",34.3437276,-87.35044401,284.0,2024-10-01,asi;camsite;ceil;ceilpblht;co2flx;dts;irt;ldis;mfr;par;pgsiso;radsys;rain;sebs;stamp;stereocam;twr
+S11,"Bankhead National Forest, AL, AMF3 (Collocated Tower Site)",0.0,0.0,0.0,2024-10-01,
+S13,"Bankhead National Forest, AL, Supplemental facility for STAMP2 near Tower Site",34.344015,-87.35062209,286.0,2024-10-01,ecor;irt;metwxt;par;sebs;stamp
+S14,"Bankhead National Forest, AL, Supplemental facility for STAMP3 near Tower Site",34.343399,-87.350858,282.0,2024-10-01,ecor;irt;metwxt;par;sebs;stamp
+S20,"Bankhead National Forest, AL, Supplemental facility at Courtland",34.653784,-87.292676,178.0,2024-10-01,aeri;aerinf;aod-mfrsr;armtraj;camsite;dl;dlprof-wind;dlprof-wstats;ecor;gndrad;irt;met;mfrsr;msems;mwr3c;mwrretv2;opc;precipbe;sebs;sirs;skyrad;stamp;tropoe
+S30,"Bankhead National Forest, AL, Supplemental facility at Falkville",34.384829,-86.927905,183.0,2024-10-01,aod-mfrsr;armtraj;ecor;gndrad;irt;ldis;ldquants;met;mfrsr;precipbe;rwp;sebs;sirs;skyrad;stamp
+S40,"Bankhead National Forest, AL, Supplemental facility at Double Springs",34.178796,-87.453905,236.0,2024-10-01,aeri;aerinf;aod-mfrsr;armtraj;dl;dlprof-wind;dlprof-wstats;ecor;gndrad;irt;met;mfrsr;mwr;mwr3c;mwrret;mwrretv2;precipbe;sebs;sirs;skyrad;stamp;tropoe
+U2,"ARM Aerial Facility (AAF) - Unmanned Aircraft Systems, ArcticShark",34.280111,-87.597858,279.0,2024-07-15,aimms20-air;armtraj-air;cdp-air;cpc-air;filteraerosol-air;h2o-air;irt-air;met-air;msems-air;nav-air;opc-air;pops-air;tap-air

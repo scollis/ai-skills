@@ -1,0 +1,14 @@
+code,name,lat,lon,alt_m,start,end,page_is_active,n_classes,n_active,role
+M1,"Bankhead National Forest, AL, AMF3 (Main Site)",34.342481,-87.338177,293.0,2024-10-01,2026-10-20,True,52,36,"Main site in the forest clearing at the USFS Black Warrior Work Center: AMF3 core, KAZR, lidars, AOS, sondes"
+S1,"Bankhead National Forest, AL, AMF3 (Collocated Main Site)",34.342481,-87.338177,293.0,2024-10-01,2026-10-20,True,7,0,Collocated with M1: tethered balloon system (TBS) payloads and a second Doppler lidar
+S2,"Bankhead National Forest, AL, AMF3 (Collocated Main Site)",34.342481,-87.338177,293.0,2024-10-01,2026-10-20,True,0,0,"Collocated with M1: reserved code, no datastreams"
+S3,"Bankhead National Forest, AL, AMF3 (for CSAPR2 near Main Site)",34.630806,-87.133118,180.0,2024-10-01,2026-10-20,True,2,2,"C-SAPR2 C-band scanning precipitation radar site, north of the forest"
+S4,"Bankhead National Forest, AL, AMF3 (for SACR near Main Site)",34.464279,-87.236001,197.0,2024-10-01,2026-10-20,True,3,3,Ka/X-band scanning cloud radar (KASACR/XSACR) site near Moulton
+S10,"Bankhead National Forest, AL, AMF3 (Tower Site)",34.3437276,-87.35044401,284.0,2024-10-01,2026-10-20,True,16,16,43 m walk-up tower in the canopy about 1.1 km west of M1
+S11,"Bankhead National Forest, AL, AMF3 (Collocated Tower Site)",,,,2024-10-01,2026-10-20,True,0,0,"Collocated with the tower: page holds 0,0, no datastreams"
+S13,"Bankhead National Forest, AL, Supplemental facility for STAMP2 near Tower Site",34.344015,-87.35062209,286.0,2024-10-01,2026-10-20,True,6,6,STAMP2 soil profile and SEBS/ECOR plot beside the tower
+S14,"Bankhead National Forest, AL, Supplemental facility for STAMP3 near Tower Site",34.343399,-87.350858,282.0,2024-10-01,2026-10-20,True,6,6,STAMP3 soil profile and SEBS/ECOR plot beside the tower
+S20,"Bankhead National Forest, AL, Supplemental facility at Courtland",34.653784,-87.292676,178.0,2024-10-01,2026-10-20,True,15,14,"Supplemental site at Courtland (north, agricultural valley)"
+S30,"Bankhead National Forest, AL, Supplemental facility at Falkville",34.384829,-86.927905,183.0,2024-10-01,2026-10-20,True,11,10,Supplemental site at Falkville (east)
+S40,"Bankhead National Forest, AL, Supplemental facility at Double Springs",34.178796,-87.453905,236.0,2024-10-01,2026-10-20,True,13,11,Supplemental site at Double Springs (south-west)
+U2,"ARM Aerial Facility (AAF) - Unmanned Aircraft Systems, ArcticShark",34.280111,-87.597858,279.0,2024-07-15,2026-10-20,True,13,10,"ARM Aerial Facility ArcticShark UAS; page point is Posey Field (1M4), Haleyville"

@@ -1,0 +1,72 @@
+datastream,dqr,category,subject,start,end
+bnfcsapr2cfrS3.a1,D250314.16,Missing,Missing Data,2025-03-09 11:00:00,2025-03-10 21:30:00
+bnfcsapr2cfrS3.a1,D250623.7,Missing,Missing Data,2025-06-20 05:51:00,2025-06-23 14:50:00
+bnfcsapr2cfrS3.a1,D250710.5,Missing,Missing Data,2025-06-23 16:30:00,2026-01-19 23:40:00
+bnfcsapr2cfrS3.a1,D260210.2,Missing,Missing Data,2026-01-28 21:20:00,2026-06-02 20:39:00
+bnfcsapr2cfrS3.a1,D260709.6,Missing,Missing Data,2026-06-14 00:37:00,2026-06-16 17:55:00
+bnfcsapr2cfrS3.a1,D260709.6,Missing,Missing Data,2026-06-27 06:21:00,2026-06-29 18:01:00
+bnfcsapr2cfrS3.a1,D260709.6,Missing,Missing Data,2026-07-07 07:37:00,2026-07-10 19:53:00
+bnfcsapr2cfrS3.a1,D260709.6,Missing,Missing Data,2026-07-13 18:53:00,2026-07-14 19:23:00
+bnfcsapr2cfrS3.a1,D260709.6,Missing,Missing Data,2026-07-19 06:02:00,2026-07-20 16:39:00
+bnfcsapr2cfrS3.a1,D260709.6,Missing,Missing Data,2026-07-25 01:25:00,2026-07-27 19:57:00
+bnfcsapr2cfrS3.a1,D260818.4,Missing,Missing Data,2026-08-08 18:18:00,2026-08-18 18:46:00
+bnfcsapr2cfrS3.a1,D260918.1,Missing,Missing Data,2026-08-22 17:55:00,2026-08-24 16:28:00
+bnfcsapr2cfrS3.a1,D261008.1,Missing,Missing Data,2026-10-06 17:17:00,2026-10-08 16:20:00
+bnfcsapr2cfrS3.a1,D250314.17,Incorrect,One Bad Elevation Angle,2025-03-03 18:00:00,2025-03-05 03:00:00
+bnfcsapr2cfrS3.a1,D250324.3,Incorrect,Incorrect Data,2025-03-20 20:40:00,2025-03-22 01:00:00
+bnfcsapr2cfrS3.a1,D250605.4,Incorrect,Incorrect Data during Maintenance/Repairs,2025-06-04 21:30:00,2025-06-04 23:00:00
+bnfcsapr2cfrS3.a1,D260122.3,Incorrect,Incorrect Processing Parameters,2026-01-19 23:40:00,2026-01-21 19:10:00
+bnfcsapr2cfrS3.a1,D260709.9,Incorrect,"Suspect Differential Phase, Incorrect Phase Products",2026-06-02 20:39:00,2026-07-31 21:14:00
+bnfcsapr2cfrS3.a1,D260901.43,Incorrect,Questionable Phase Products,2026-07-31 21:14:00,None
+bnfcsapr2cfrS3.a1,D260914.12,Incorrect,Clutter Filter Testing,2026-09-11 18:19:00,2026-09-11 19:15:00
+bnfxsacrcfrS4.a1,D250314.12,Missing,No Data,2025-02-13 14:41:06,2025-02-14 23:59:59
+bnfxsacrcfrS4.a1,D250523.11,Missing,No Data,2025-05-10 18:00:00,2025-05-11 23:42:38
+bnfxsacrcfrS4.a1,D250530.12,Missing,Missing Data,2024-12-18 18:00:00,2024-12-19 21:00:00
+bnfxsacrcfrS4.a1,D250605.7,Missing,Missing Data,2025-06-02 13:05:22,2025-06-03 21:52:20
+bnfxsacrcfrS4.a1,D250627.2,Missing,Missing Data,2025-06-13 14:11:00,2025-06-26 19:00:02
+bnfxsacrcfrS4.a1,D250812.6,Missing,No Data,2025-07-25 02:07:01,2025-08-08 16:59:59
+bnfxsacrcfrS4.a1,D251111.2,Missing,Missing Data,2025-10-26 10:38:35,2025-10-27 14:35:59
+bnfxsacrcfrS4.a1,D251111.2,Missing,Missing Data,2026-02-12 01:00:00,2026-02-14 20:06:59
+bnfxsacrcfrS4.a1,D260722.4,Missing,Missing Data,2026-07-03 00:00:00,2026-07-06 17:30:00
+bnfxsacrcfrS4.a1,D260831.7,Missing,Missing Data,2026-07-28 13:00:00,2026-07-29 19:00:00
+bnfxsacrcfrS4.a1,D260831.7,Missing,Missing Data,2026-08-01 06:30:00,2026-08-07 00:00:00
+bnfxsacrcfrS4.a1,D260831.7,Missing,Missing Data,2026-08-08 18:30:00,2026-08-10 22:00:00
+bnfxsacrcfrS4.a1,D250402.2,Suspect,Tilted Appearance to Clouds in HSRHIs,2025-01-06 03:38:45,2025-04-01 23:59:59
+bnfxsacrcfrS4.a1,D250718.4,Suspect,Questionable Data,2025-05-31 00:00:00,2025-08-11 01:00:00
+bnfxsacrcfrS4.a1,D250812.7,Suspect,Suspect Data,2025-08-08 16:59:59,2025-08-11 01:00:00
+bnfxsacrcfrS4.a1,D260421.6,Suspect,Failed Azimuth Encoder,2026-03-24 00:13:10,2026-03-26 15:11:11
+bnfxsacrcfrS4.a1,D251125.9,Incorrect,Incorrect Data - Elevation Stuck,2025-11-09 13:55:00,2025-11-10 17:27:00
+bnfxsacrcfrS4.a1,D251125.9,Incorrect,Incorrect Data - Elevation Stuck,2025-11-21 07:44:00,2025-11-25 18:18:00
+bnfxsacrcfrS4.a1,D260106.9,Incorrect,Incorrect Data,2025-12-24 19:49:52,2025-12-28 20:20:37
+bnfxsacrcfrS4.a1,D260217.3,Incorrect,Incorrect Data,2026-01-23 19:26:15,2026-02-15 20:11:03
+bnfkasacrcfrS4.a1,D250314.13,Missing,No Data,2025-02-13 14:41:06,2025-02-14 23:59:59
+bnfkasacrcfrS4.a1,D250605.7,Missing,Missing Data,2025-06-02 13:05:22,2025-06-03 21:52:20
+bnfkasacrcfrS4.a1,D250627.2,Missing,Missing Data,2025-06-13 14:11:00,2025-06-26 19:00:02
+bnfkasacrcfrS4.a1,D250812.6,Missing,No Data,2025-07-25 02:07:01,2025-08-08 16:59:59
+bnfkasacrcfrS4.a1,D250822.4,Missing,Missing Data,2025-07-13 13:00:00,2025-07-14 16:06:59
+bnfkasacrcfrS4.a1,D251111.3,Missing,Missing Data,2025-10-26 10:38:35,2025-10-27 14:35:59
+bnfkasacrcfrS4.a1,D260422.7,Missing,No Data,2026-03-16 15:10:55,2026-03-18 15:32:10
+bnfkasacrcfrS4.a1,D260722.4,Missing,Missing Data,2026-07-03 00:00:00,2026-07-06 17:30:00
+bnfkasacrcfrS4.a1,D260722.5,Missing,Missing Data,2026-06-27 20:14:55,2026-06-30 16:06:38
+bnfkasacrcfrS4.a1,D260831.7,Missing,Missing Data,2026-07-28 13:00:00,2026-07-29 19:00:00
+bnfkasacrcfrS4.a1,D260831.7,Missing,Missing Data,2026-08-01 06:30:00,2026-08-07 00:00:00
+bnfkasacrcfrS4.a1,D260831.7,Missing,Missing Data,2026-08-08 18:30:00,2026-08-10 22:00:00
+bnfkasacrcfrS4.a1,D250402.2,Suspect,Tilted Appearance to Clouds in HSRHIs,2025-01-06 03:38:45,2025-04-01 23:59:59
+bnfkasacrcfrS4.a1,D250812.7,Suspect,Suspect Data,2025-08-08 16:59:59,2025-08-11 01:00:00
+bnfkasacrcfrS4.a1,D260421.6,Suspect,Failed Azimuth Encoder,2026-03-24 00:13:10,2026-03-26 15:11:11
+bnfkasacrcfrS4.a1,D251125.9,Incorrect,Incorrect Data - Elevation Stuck,2025-11-09 13:55:00,2025-11-10 17:27:00
+bnfkasacrcfrS4.a1,D251125.9,Incorrect,Incorrect Data - Elevation Stuck,2025-11-21 07:44:00,2025-11-25 18:18:00
+bnfkazr2cfrgeM1.a1,D250213.5,Missing,Missing Data,2024-12-10 18:26:12,2024-12-11 20:19:55
+bnfkazr2cfrgeM1.a1,D250213.5,Missing,Missing Data,2025-01-01 11:37:08,2025-01-02 14:41:01
+bnfkazr2cfrgeM1.a1,D250224.5,Missing,Missing Data due to KAZR Chiller Hardware Work,2025-02-12 15:59:59,2025-02-18 17:55:53
+bnfkazr2cfrgeM1.a1,D250224.6,Missing,Missing Data,2025-02-25 07:09:41,2025-02-27 22:58:59
+bnfkazr2cfrgeM1.a1,D251111.5,Missing,Missing Data,2025-11-01 03:27:29,2025-11-03 21:54:16
+bnfkazr2cfrgeM1.a1,D260302.10,Missing,Missing Data,2026-02-07 03:54:11,2026-02-09 15:00:37
+bnfkazr2cfrgeM1.a1,D260330.9,Missing,No Data,2026-03-16 05:02:55,2026-03-17 14:02:55
+bnfkazr2cfrgeM1.a1,D260819.6,Missing,No Data,2026-08-04 14:00:00,2026-08-11 17:00:00
+bnfkazr2cfrgeM1.a1,D260923.8,Missing,Missing Data,2026-08-22 00:00:00,2026-08-24 18:00:00
+bnfkazr2cfrgeM1.a1,D260923.8,Missing,Missing Data,2026-09-05 04:00:00,2026-09-17 21:00:00
+bnfkazr2cfrgeM1.a1,D250606.2,Suspect,Ze and LDR Shift After a Restart,2025-06-04 23:59:00,2025-06-05 20:00:59
+bnfkazr2cfrgeM1.a1,D250717.9,Suspect,Data Under Evaluation,2024-11-08 20:00:00,2024-11-10 07:00:00
+bnfkazr2cfrgeM1.a1,D251211.5,Suspect,Suspect Data,2025-12-09 18:41:00,2025-12-09 19:00:00
+bnfkazr2cfrgeM1.a1,D251104.1,Incorrect,Radar not Transmitting,2025-09-14 18:30:00,2025-09-18 23:59:59
