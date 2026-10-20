@@ -40,7 +40,7 @@ def map_config():
         size={"*": 210, "s": 70, "^": 95, "o": 46, "D": 50},
         lab_main={
             "xsapr": ("X-SAPR on BARC roof", -10, 30),
-            "e11": ("ARM E11 Point Barrow\n(ECOR, SEBS; to 2016)", -14, -20),
+            "e11": ("ARM E11 Point Barrow\n(ECOR, SEBS; to 2016)", -14, 26),
             "asos": ("ASOS PABR", 14, -10),
             "ua": ("NWS upper air 70026", -16, -12),
             "iceradar": ("UAF sea-ice radar", -16, 12),
@@ -910,7 +910,7 @@ def main_map(fig, rect, A, plots, gpkg, theme, outlines=True):
                          (-156.50, 71.355, "Elson Lagoon"),
                          (-156.765, 71.300, "Utqiaġvik"),
                          (-156.60, 71.397, "Barrow Canyon"),
-                         (-156.47, 71.383, "Point Barrow (Nuvuk)"),
+                         (-156.445, 71.3745, "Point Barrow (Nuvuk)"),
                          (-156.53, 71.262, "Barrow Environmental\n"
                                            "Observatory (BEO)")]:
         water = "Sea" in text or "Lagoon" in text

@@ -6,8 +6,7 @@ xsapr,ARM,^,True,X-SAPR on BARC roof,71.32474517822266,-156.66773986816406,1,xsa
 sonde,ARM,D,False,Sonde launch (files: 0.01°),71.31999969482422,-156.6199951171875,3,sonde,nsasondewnpnS01.b1.20261015.220300.nc,20261015.0
 sebs,ARM,o,False,"SEBS, LPM",71.32499694824219,-156.60800170898438,2,"ldis, sebs",nsasebsE10.b1.20260916.000000.cdf,20260916.0
 ecor,ARM,o,True,ECOR,71.3243637084961,-156.6148223876953,1,ecor,nsaecorsfwindE10.a1.20261017.000000.nc,20261017.0
-e11,ARM,s,False,"ARM E11 Point Barrow
-(ECOR, SEBS; to 2016)",71.39299774169922,-156.4219970703125,2,"ecor, sebs",nsa30ecorE11.b1.20161206.000000.cdf,20161206.0
+e11,ARM,s,False,"ARM E11 Point Barrow\n(ECOR, SEBS; to 2016)",71.386559,-156.470483,2,"ecor, sebs",nsa30ecorE11.b1.20161206.000000.cdf,20161206.0
 e12,ARM,s,True,ARM E12 snow array,71.27473449707031,-156.6411895751953,6,"ldis, maws, sonicwind, spmf, srs, wb",nsawbgeonorE12.a1.20261017.000000.nc,20261017.0
 aos,ARM,s,True,ARM E30 aerosol + NOAA AOS,71.3231201171875,-156.61143493652344,14,"acsm, aeth, aos, aps, clap, cpc, nephelometer, psap, sp2",nsaaosnephdryX3.a1.20261017.000000.nc,20261017.0
 brw,NOAA,*,True,NOAA GML BRW,71.323,-156.6114,0,,utqiagvik_assets.csv,

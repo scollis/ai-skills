@@ -146,6 +146,12 @@ BSRN, E11 and the sea-ice mass-balance site. Historic and context places (NARL,
 the DEW Line), the ISS sonde point, CALM U1 and the Cimel/AERONET photometer are not drawn. Filled markers are
 instrument-specific or surveyed positions.
 
+**E11 is drawn 1.87 km from its file coordinate.** Every E11 ECOR/SEBS file (2011-2016) and the locations page
+give 71.393, -156.422, alt 0.0, which lies 1.43 km offshore, north of all mapped land. The ECOR handbook gives
+the E11 fetch as sea 350-100 deg and beach gravel otherwise. At the user's direction the map places E11 at
+71.386559, -156.470483, 28 m inland of the shore at the tip of Point Barrow (hollow marker). Replace it when the
+mentor supplies the surveyed position.
+
 ## Distances drawn
 
 Geodesic (WGS84) from the C1 file position, the site nominal 71.323, −156.609 that 39 C1 instrument
