@@ -57,6 +57,21 @@ lives only in `cmac-vap`. A Py-ART user should never have to install
 `scikit-fuzzy` to follow a `pyart-*` skill; `test_structure_pyart.py` enforces
 that boundary.
 
+### Blender scenes and cloud rendering
+
+| skill | what it does |
+|---|---|
+| [`blender-remote-mcp`](skills/blender/blender-remote-mcp/) | Driving Blender on the Mac through the MCP connector: headless jobs, async renders, file transfer, Blender 5.x API gotchas |
+| [`blender-engineering-asset`](skills/blender/blender-engineering-asset/) | Dimensionally accurate procedural hardware assets (radars, met stations, aircraft) and verifying them by silhouette overlay |
+| [`blender-landscape-realism`](skills/blender/blender-landscape-realism/) | Geo-referenced site scenes in Cycles: lidar/NAIP terrain, haze, materials, vegetation, radar siting checks |
+| [`blender-arm-instruments`](skills/blender/blender-arm-instruments/) | ARM instruments as standalone assets from the ARM handbooks: PDF text/figure extraction, the shared build harness, previews, orbit queue, placing them in site scenes |
+| [`c850-blender-aircraft`](skills/blender/c850-blender-aircraft/) | The ARM AAF Challenger 850 (N850RJ): APM-verified dimensions, glazing and livery, probe placement rules, animation props |
+| [`cm1-cloud-simulation`](skills/blender/cm1-cloud-simulation/) | Building and running CM1 on Apple silicon: supercell recipe with stretched grid, cumulus LES (BOMEX, towering Cu), memory guards, known blow-ups |
+| [`cm1-clouds-to-blender`](skills/blender/cm1-clouds-to-blender/) | CM1 output to split-species OpenVDB, per-species physical optics within Cycles' closure limit, placement, cameras, timelapses |
+| [`blender-cloud-lightning`](skills/blender/blender-cloud-lightning/) | Lightning in a CM1 storm: flash sites from graupel and updraft, in-cloud glow as skin emission, cloud-to-ground bolts, timing |
+
+Workflow notes from the DERECHOS / "ARM on the FARM" Blender scenes (Blender 5.2, M-series Macs, Metal). Numbers here are observations with dates in the source runs, not test-checked facts; no `kernel.py` ships with this tranche.
+
 ### ARM data standards
 
 | skill | what it does |
